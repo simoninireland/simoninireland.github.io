@@ -5,6 +5,7 @@ __pycache__
 # Nikola support
 .doit.db.db
 output/
+cache/
 
 # Backup files
 .*~
