@@ -1,0 +1,13 @@
+[Core]
+name = bib_shortcode
+module = bib
+
+[Nikola]
+PluginCategory = Shortcode
+
+[Documentation]
+author = Simon Dobson
+version = 0.1
+website = http://www.simondobson.org
+description = Shortcodes for BibTeX integration
+
