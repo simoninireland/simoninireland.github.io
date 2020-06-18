@@ -1,0 +1,7 @@
+# Python bits
+venv3/
+__pycache__
+
+# Backup files
+.*~
+
