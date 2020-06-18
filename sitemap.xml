@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2020-06-18T20:53:00Z</lastmod>
+  <lastmod>2020-06-18T20:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2020/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-06-18T20:53:00Z</lastmod>
+  <lastmod>2020-06-18T20:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/biography/</loc>
@@ -58,6 +58,10 @@
   <lastmod>2020-06-18T20:53:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/cncp-book/</loc>
+  <lastmod>2020-06-18T20:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/cncp/</loc>
   <lastmod>2020-06-18T20:53:00Z</lastmod>
  </url>
@@ -68,6 +72,10 @@
  <url>
   <loc>https://simondobson.org/current-group/</loc>
   <lastmod>2020-06-18T20:53:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/em-book/</loc>
+  <lastmod>2020-06-18T20:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/epyc/</loc>

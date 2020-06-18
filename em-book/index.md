@@ -1,6 +1,6 @@
 <!--
 .. title: Epidemic modelling -- some notes, maths, and code
-.. slug: introduction-to-epidemics
+.. slug: em-book
 .. date: 2020-06-17 16:50:13 UTC+01:00
 .. tags: book, python, complex networks, epidemic spreading
 .. category: writing
