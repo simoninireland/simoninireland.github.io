@@ -1,6 +1,6 @@
 <!--
 .. title: Complex networks, complex processes
-.. slug: cncp
+.. slug: cncp-book
 .. date: 2020-06-17 16:56:48 UTC+01:00
 .. tags: book, complex networks, epidemic spreading
 .. category: writing

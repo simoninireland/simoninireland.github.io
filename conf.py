@@ -39,8 +39,8 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ("/introduction-to-epidemics/", "Epidemic modelling"),
-                ("/cncp/", "Complex networks, complex processes"),
+                ("/em-book/", "Epidemic modelling"),
+                ("/cncp-book/", "Complex networks, complex processes"),
             ),
             "Writing"
         ),
