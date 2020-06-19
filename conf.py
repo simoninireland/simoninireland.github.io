@@ -4,7 +4,7 @@ import time
 
 BLOG_AUTHOR = "Simon Dobson"  # (translatable)
 BLOG_TITLE = "Simon Dobson"  # (translatable)
-SITE_URL = "https://simondobson.org/"
+SITE_URL = "https://www.simondobson.org/"
 BLOG_EMAIL = "simon.dobson@computer.org"
 BLOG_DESCRIPTION = "Aut tace aut loquere meliora silentio"  # (translatable)
 

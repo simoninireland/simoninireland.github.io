@@ -4,7 +4,8 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: Home page, Professor Simon Dobson, University, St Andrews, Scotland, UK 
+.. description: Home page, Professor Simon Dobson, University, St
+   Andrews, Scotland, UK, academic, scientist, computer scientist, researcher 
 .. type: text
 
 .. image:: /160216-0008.jpg
