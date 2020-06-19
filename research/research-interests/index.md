@@ -26,10 +26,10 @@ affect each others’ behaviours, and whose connections can change in
 response to events.
 
 As part of this work I've written an accessible introduction to
-[modelling epidemics on networks](/pages/introduction-to-epidemics/)
+[modelling epidemics on networks](/writing/em-book/)
 and I’m writing a [textbook]/pages/cncp/) to
 make the subject more accessible to computer scientists.
-I'm also building and a library for [simulating](/pages/epydemic/)
+I'm also building and a library for [simulating](/development/epydemic/)
 epidemic (and other) network processes
 
 
@@ -49,7 +49,7 @@ long-lived observations to be made of phenomena that are otherwise
 hard to observe. I work on **error management** to reduce noise and other
 problems in the data stream. This has led to an interest in using
 algebraic topology for these problems, which in turn led me to write a
-[library for simplicial topology](/pages/simplicial/).
+[library for simplicial topology](/development/simplicial/).
 
 I'm also interested in **sensor network software design**, especially
 building scientific-standard systems using off-the-shelf components so
