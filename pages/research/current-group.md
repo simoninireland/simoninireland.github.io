@@ -24,5 +24,5 @@
 - Diego Arenas Contreras: industrial-scale use and deployment of
   machine learning (EngD joint with Aggreko)
 
-See also the [former group members](/old-research-group)  
+See also the [former group members](/research/old-research-group).  
 

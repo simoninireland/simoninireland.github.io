@@ -22,34 +22,34 @@ NAVIGATION_LINKS = {
         ("/blog/", "What's happening"),
         (
             (
-                ("/about-me/", "About me"),
-                ("/contact/", "Contact details"),
-                ("/biography/", "Biography"),
+                ("/personal/about-me/", "About me"),
+                ("/personal/contact/", "Contact details"),
+                ("/personal/biography/", "Biography"),
             ),
             "About me"
         ),
         (
             (
-                ("/research-interests/", "Current interests"),
-                ("/current-group/", "Current group"),
-                ("/publications/", "Publications"),
-                ("/publications-by-year/", "Publications by year"),
+                ("/research/research-interests/", "Current interests"),
+                ("/research/current-group/", "Current group"),
+                ("/research/publications/", "Publications"),
+                ("/research/publications-by-year/", "Publications by year"),
             ),
             "Research"
         ),
         (
             (
-                ("/em-book/", "Epidemic modelling"),
-                ("/cncp-book/", "Complex networks, complex processes"),
+                ("/writing/em-book/", "Epidemic modelling"),
+                ("/writing/cncp-book/", "Complex networks, complex processes"),
             ),
             "Writing"
         ),
         (
             (
-                ("/epyc/", "epyc"),
-                ("/epydemic/", "epydemic"),
-                ("/simplicial/", "simplicial"),
-                ("/old-development/", "Older projects"),
+                ("/development/epyc/", "epyc"),
+                ("/development/epydemic/", "epydemic"),
+                ("/development/simplicial/", "simplicial"),
+                ("/development/old-development/", "Older projects"),
             ),
             "Development"
         ),

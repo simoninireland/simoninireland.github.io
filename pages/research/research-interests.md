@@ -70,5 +70,4 @@ experimenting with blended approaches to my own teaching, with some
 slightly surprising results.
 
 
-My research interests have [changed over the
-years](/old-research-interests/).
+My research interests have [changed over the years](/research/old-research-interests/).
