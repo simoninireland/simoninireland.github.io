@@ -2,11 +2,14 @@
 venv3/
 __pycache__
 
+# Mac bits
+.DS_Store
+
 # Nikola support
 .doit.db.db
 output/
 cache/
 
 # Backup files
-.*~
+*~
 
