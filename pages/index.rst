@@ -8,7 +8,7 @@
    Andrews, Scotland, UK, academic, scientist, computer scientist, researcher 
 .. type: text
 
-.. image:: /160216-0008.jpg
+.. image:: /images/160216-0008.jpg
    :width: 100%
 	   
 .. raw:: html

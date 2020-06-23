@@ -26,7 +26,7 @@ NAVIGATION_LINKS = {
                 ("/personal/contact/", "Contact details"),
                 ("/personal/biography/", "Biography"),
             ),
-            "About me"
+            "About"
         ),
         (
             (
@@ -53,12 +53,23 @@ NAVIGATION_LINKS = {
             ),
             "Development"
         ),
-    ),
+        ("/galleries/", "Photography"),
+    )
+}
+
+NAVIGATION_ALT_LINKS = {
+    DEFAULT_LANG: (
+    )
 }
 
 INDEX_PATH = 'blog'
 INDEX_PAGES_MAIN = True
 INDEX_TEASERS = True
+
+GALLERY_SORT_BY_DATE = True
+PRESEVRE_EXIF_DATA = False
+EXIF_WHITELIST = {}
+PRESERVE_ICC_PROFILES = True
 
 BIBFILE = 'files/sd.bib'
 
@@ -74,11 +85,9 @@ EXTRA_HEAD_DATA = '''
 </script>
 '''
 
-NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: (
-    )
-}
-
+CONTENT_FOOTER = '''
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="/images/cc-by-nc-sa-4.0.png" /></a>
+'''
 THEME = "bootblog4"
 THEME_COLOR = '#5670d4'
 THEME_CONFIG = {
@@ -819,7 +828,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+#CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
