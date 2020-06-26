@@ -12,4 +12,6 @@ cache/
 
 # Backup files
 *~
-
+.#*
+*#
+*.bak

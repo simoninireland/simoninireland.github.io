@@ -71,6 +71,13 @@ PRESEVRE_EXIF_DATA = False
 EXIF_WHITELIST = {}
 PRESERVE_ICC_PROFILES = True
 
+TWITTER_CARD = {
+    'use_twitter_cards': True,
+    'card': 'summary',
+    'site': '@simoninireland',
+    'creator': '@simoninireland',
+}
+
 BIBFILE = 'files/sd.bib'
 
 EXTRA_HEAD_DATA = '''
