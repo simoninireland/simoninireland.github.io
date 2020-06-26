@@ -2,10 +2,10 @@
 .. title: First outing of "Epidemic modelling"
 .. slug: i-to-e-first
 .. date: 2020-06-17 10:31:32 UTC+01:00
-.. tags: book, complex-networks, epidemic-spreading, research
+.. tags: book, complex networks, epidemic spreading, research
 .. category: writing
 .. link: https://simoninireland.github.io/introduction-to-epidemics
-.. description: 
+.. description: My lockdown project is now ready for its first outing.
 .. type: text
 -->
 
