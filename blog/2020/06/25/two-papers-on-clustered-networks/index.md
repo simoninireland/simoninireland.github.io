@@ -6,7 +6,7 @@
 .. category: research
 .. link: 
 .. description: Two papers on the analysis of networks with clustering
-.. previewimage: /images/slcc.png
+.. previewimage: /images/posts/slcc-20200625.png
 .. type: text
 -->
 
@@ -37,13 +37,18 @@ increase the probability of someone becoming infected, meaning that
 epidemics spread faster and become larger than you'd expect in systems
 that don't have clustering.
 
+![Phase transitions](/images/posts/slcc-20200625.png)
+
 These two papers -- mainly written by Peter Mann, and co-authored by
 Anne Smith, John Mitchell, and myself -- look at the underlying
 mathematics of these clustered networks. We study both "weak" and
 "strong" clusters consisting of cycles of arbitrary length that may
 also have short-cuts across them. We derive a model that lets us
 predict the behaviour of percolation-type processes on these
-networks. We also look at how these results affect multiplex networks,
+networks. There are some interesting phenomena on show, not least a
+suggestion us using the size of the second-largest component as a marker
+for phase changes in the largest (giant) component. We also look
+at how these results affect multiplex networks,
 of the kind one finds when two recognisably-distinct groups of people
 meet and mingle.
 
