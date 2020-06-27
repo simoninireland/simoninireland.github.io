@@ -7,6 +7,40 @@
 .. description: 
 .. type: text
 
+
+.. raw:: html
+
+      <style type="text/css" media="screen">
+        .gr_grid_container {
+          /* customize grid container div here. eg: width: 500px; */
+        }
+
+        .gr_grid_book_container {
+          /* customize book cover container div here */
+          float: left;
+          width: 98px;
+          height: 160px;
+          padding: 0px 0px;
+          overflow: hidden;
+        }
+      </style>
+      <div id="gr_grid_widget_1593284649">
+        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+            <h2>
+      <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/8492165-simon-dobson?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Currently reading</a>
+    </h2>
+  <div class="gr_grid_container">
+    <div class="gr_grid_book_container"><a title="The Electric Kool-Aid Acid Test" rel="nofollow" href="https://www.goodreads.com/book/show/214721.The_Electric_Kool_Aid_Acid_Test"><img alt="The Electric Kool-Aid Acid Test" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1172769916l/214721._SX98_.jpg" /></a></div>
+    <div class="gr_grid_book_container"><a title="Lost in Thought: The Hidden Pleasures of an Intellectual Life" rel="nofollow" href="https://www.goodreads.com/book/show/48692505-lost-in-thought"><img alt="Lost in Thought: The Hidden Pleasures of an Intellectual Life" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1585142352l/48692505._SX98_.jpg" /></a></div>
+    <div class="gr_grid_book_container"><a title="The Order of Time" rel="nofollow" href="https://www.goodreads.com/book/show/38714658-the-order-of-time"><img alt="The Order of Time" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1519238759l/38714658._SX98_.jpg" /></a></div>
+    <br style="clear: both"/><br/><a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/8492165-simon-dobson">Simon Dobson's favorite books »</a>
+  <noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Simon, and even join a <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript>
+  </div>
+
+      </div>
+      <script src="https://www.goodreads.com/review/grid_widget/8492165.Currently%20reading?cover_size=medium&hide_link=&hide_title=&num_books=5&order=d&shelf=currently-reading&sort=date_started&widget_id=1593284649" type="text/javascript" charset="utf-8"></script>
+  
+   
 .. raw:: html
 
       <style type="text/css" media="screen">
@@ -55,7 +89,6 @@
 
       </div>
       <script src="https://www.goodreads.com/review/grid_widget/8492165.Recently%20read?cover_size=medium&hide_link=&hide_title=&num_books=20&order=d&shelf=read&sort=date_read&widget_id=1593280278" type="text/javascript" charset="utf-8"></script>
-
 
 
 .. raw:: html
