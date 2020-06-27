@@ -35,7 +35,7 @@ NAVIGATION_LINKS = {
                 ("/research/publications/", "Publications"),
                 ("/research/publications-by-year/", "Publications by year"),
             ),
-            "Research"
+            "Researching"
         ),
         (
             (
@@ -51,9 +51,15 @@ NAVIGATION_LINKS = {
                 ("/development/simplicial/", "simplicial"),
                 ("/development/old-development/", "Older projects"),
             ),
-            "Development"
+            "Coding"
         ),
-        ("/galleries/", "Photography"),
+        (
+            (
+                ("/personal/reading/", "Reading"),
+                ("/galleries/", "Photography"),
+            ),
+            "Hobbies"
+        ),  
     )
 }
 
@@ -95,8 +101,11 @@ EXTRA_HEAD_DATA = '''
 CONTENT_FOOTER = '''
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="/images/cc-by-nc-sa-4.0.png" /></a>
 '''
-THEME = "bootblog4"
-THEME_COLOR = '#5670d4'
+
+#THEME = "bootblog4"
+#THEME_COLOR = '#5670d4'
+THEME = "bootstrap4"
+
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.

@@ -27,7 +27,7 @@ response to events.
 
 As part of this work I've written an accessible introduction to
 [modelling epidemics on networks](/writing/em-book/)
-and I’m writing a [textbook](/writing/cncp/) to
+and I’m writing a [textbook](/writing/cncp-book/) to
 make the subject more accessible to computer scientists.
 I'm also building and a library for [simulating](/development/epydemic/)
 epidemic (and other) network processes
