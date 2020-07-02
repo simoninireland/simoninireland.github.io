@@ -2,8 +2,8 @@
 .. title: Two papers on clustered networks
 .. slug: two-papers-on-clustered-networks
 .. date: 2020-06-25 16:23:49 UTC+01:00
-.. tags: paper, complex networks
-.. category: research
+.. tags: news, paper, complex networks
+.. category:
 .. link: 
 .. description: Two papers on the analysis of networks with clustering
 .. previewimage: /images/posts/slcc-20200625.png
