@@ -18,8 +18,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/index.html", "Home"),
-        ("/blog/", "What's happening"),
+        ("/whats-happening/", "What's happening"),
         (
             (
                 ("/personal/about-me/", "About me"),
@@ -58,7 +57,7 @@ NAVIGATION_LINKS = {
                 ("/personal/reading/", "Reading"),
                 ("/galleries/", "Photography"),
             ),
-            "Hobbies"
+            "Doing"
         ),  
     )
 }
@@ -104,7 +103,7 @@ CONTENT_FOOTER = '''
 
 #THEME = "bootblog4"
 #THEME_COLOR = '#5670d4'
-THEME = "bootstrap4"
+THEME = "bootstrap4-jinja"
 
 THEME_CONFIG = {
     DEFAULT_LANG: {
