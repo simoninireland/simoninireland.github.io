@@ -8,6 +8,19 @@ SITE_URL = "https://www.simondobson.org/"
 BLOG_EMAIL = "simon.dobson@computer.org"
 BLOG_DESCRIPTION = "Aut tace aut loquere meliora silentio"  # (translatable)
 
+INDEX_PATH = 'blog'
+INDEX_PAGES_MAIN = True
+INDEX_TEASERS = True
+
+SHOW_SOURCELINK = False
+COPY_SOURCES = False
+
+GENERATE_RSS = True
+GENERATE_ATOM = False
+
+EXTRA_HEAD_DATA = ''
+
+# Languages and translations
 DEFAULT_LANG = "en"
 TRANSLATIONS = {
     DEFAULT_LANG: "",
@@ -16,6 +29,7 @@ TRANSLATIONS = {
 }
 TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
+# Navigation menus
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/whats-happening/", "What's happening"),
@@ -61,21 +75,33 @@ NAVIGATION_LINKS = {
         ),  
     )
 }
-
 NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
     )
 }
 
-INDEX_PATH = 'blog'
-INDEX_PAGES_MAIN = True
-INDEX_TEASERS = True
+# Post and page structure
+POSTS = (
+    ("posts/*.rst", "blog", "post.tmpl"),
+    ("posts/*.md", "blog", "post.tmpl"),
+    ("posts/*.txt", "blog", "post.tmpl"),
+    ("posts/*.html", "blog", "post.tmpl"),
+    ("posts/*.ipynb", "blog", "post.tmpl"),
+)
+PAGES = (
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
+)
 
+# Galleries
 GALLERY_SORT_BY_DATE = True
 PRESEVRE_EXIF_DATA = False
 EXIF_WHITELIST = {}
 PRESERVE_ICC_PROFILES = True
 
+# Twitter Cards
 TWITTER_CARD = {
     'use_twitter_cards': True,
     'card': 'summary',
@@ -83,10 +109,16 @@ TWITTER_CARD = {
     'creator': '@simoninireland',
 }
 
+# Plugin bib
 BIBFILE = 'files/sd.bib'
 
-EXTRA_HEAD_DATA = '''
+# Font Awsome icons (for social media links)
+EXTRA_HEAD_DATA += '''
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+'''
+
+# Google Analytics tracker
+EXTRA_HEAD_DATA += '''
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -97,14 +129,13 @@ EXTRA_HEAD_DATA = '''
 </script>
 '''
 
+# Licence in footer
 CONTENT_FOOTER = '''
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="/images/cc-by-nc-sa-4.0.png" /></a>
 '''
 
-#THEME = "bootblog4"
-#THEME_COLOR = '#5670d4'
+# Theming
 THEME = "bootstrap4-jinja"
-
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
@@ -122,20 +153,6 @@ THEME_CONFIG = {
         'sidebar': ''
     }
 }
-
-POSTS = (
-    ("posts/*.rst", "blog", "post.tmpl"),
-    ("posts/*.md", "blog", "post.tmpl"),
-    ("posts/*.txt", "blog", "post.tmpl"),
-    ("posts/*.html", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl"),
-)
-PAGES = (
-    ("pages/*.rst", "", "page.tmpl"),
-    ("pages/*.md", "", "page.tmpl"),
-    ("pages/*.txt", "", "page.tmpl"),
-    ("pages/*.html", "", "page.tmpl"),
-)
 
 
 # Below this point, everything is optional
