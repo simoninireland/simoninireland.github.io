@@ -7,5 +7,10 @@
 .. description: 
 .. type: text
 
-{{%bibliography sort-by=-year group-by=year %}}
+Submitted and under review
+--------------------------
+
+{{% bibliography category='submitted' %}}
+
+{{% bibliography sort-by=-year group-by=year %}}
 	     

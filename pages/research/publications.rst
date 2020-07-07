@@ -7,4 +7,74 @@
 .. description: 
 .. type: text
 
-{{%bibliography %}}
+Submitted and under review
+--------------------------
+
+{{% bibliography category='submitted' %}}
+
+
+Journal
+-------
+
+{{% bibliography category='journal' %}}
+
+
+Major conference
+----------------
+
+{{% bibliography category='major conference' %}}
+
+
+Workshop or minor conference
+----------------------------
+
+{{% bibliography category='workshop' %}}
+
+
+Posters
+-------
+
+{{% bibliography category='poster' %}}
+
+
+Edited books and proceedings
+----------------------------
+
+{{% bibliography category='edited book' %}}
+
+
+
+Book chapters
+-------------
+
+{{% bibliography category='book chapter' %}}
+
+
+Strategic reports
+-----------------
+
+{{% bibliography category='strategic report' %}}
+
+
+Magazine articles
+-----------------
+
+{{% bibliography category='media article' %}}
+
+
+Technical reports
+-----------------
+
+{{% bibliography category='technical report' %}}
+
+
+Keynotes
+--------
+
+{{% bibliography category='keynote' %}}
+
+
+Invited talks
+-------------
+
+{{% bibliography category='invited talk' %}}

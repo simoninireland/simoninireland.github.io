@@ -10,7 +10,7 @@ class Bibtex(ShortcodePlugin):
     '''Provides bibliography-related shortcodes:
     - {{%reference *key* %}}
       includes the reference given its key
-    - {{%bibliograhy [sort=by=*[-]f*, *[-]f*,...] [group-by=*f*] %}}
+    - {{%bibliography [sort=by=*[-]f*, *[-]f*,...] [group-by=*f*] [category=*c*]%}}
       includes a bibliography that can be sorted by a number of fields (in reverse order
       if preceded by a -) and grouped by another field 
     '''
@@ -77,7 +77,18 @@ class Bibtex(ShortcodePlugin):
         :param group-by: (optional) grouping of references
         :returns: the bibliography and dependencies'''
         entries = self._bibdata.entries.values()
-        
+
+        # extract category (if specified)
+        if 'category' in kwds.keys():
+            category = kwds['category']
+            es = []
+            for e in entries:
+                if 'category' in e.fields.keys():
+                    cs = [ c.strip() for c in e.fields['category'].split(',') ]
+                    if category in cs:
+                        es.append(e)
+            entries = es
+            
         # sort entries by fields (if specified)
         if 'sort-by' in kwds.keys():
             fields = kwds['sort-by'].split(',')
@@ -92,7 +103,18 @@ class Bibtex(ShortcodePlugin):
                         fields[i] = fields[i][1:]
                     else:
                         order.append(False)
-            for i in range(len(fields) -1, -1, -1):
+
+            # restrict to entries that have all the fields
+            es = []
+            for e in entries:
+                for f in fields:
+                    if f not in e.fields.keys():
+                        continue
+                es.append(e)
+            entries = es
+
+            # sort the entries
+            for i in range(len(fields) - 1, -1, -1):
                 entries.sort(key=lambda e: e.fields.get(fields[i], ''), reverse=order[i])
 
         # emit in groups (if specified)
