@@ -38,6 +38,8 @@ NAVIGATION_LINKS = {
                 ("/personal/about-me/", "About me"),
                 ("/personal/contact/", "Contact details"),
                 ("/personal/biography/", "Biography"),
+                ("/personal/reading/", "What I'm reading"),
+                ("/galleries/", "Photography"),
             ),
             "About"
         ),
@@ -48,10 +50,11 @@ NAVIGATION_LINKS = {
                 ("/research/publications/", "Publications"),
                 ("/research/publications-by-year/", "Publications by year"),
             ),
-            "Researching"
+            "Research"
         ),
         (
             (
+                ("/writing/essays/", "Essays and articles"),
                 ("/writing/em-book/", "Epidemic modelling"),
                 ("/writing/cncp-book/", "Complex networks, complex processes"),
             ),
@@ -64,15 +67,8 @@ NAVIGATION_LINKS = {
                 ("/development/simplicial/", "simplicial"),
                 ("/development/old-development/", "Older projects"),
             ),
-            "Coding"
+            "Software projects"
         ),
-        (
-            (
-                ("/personal/reading/", "Reading"),
-                ("/galleries/", "Photography"),
-            ),
-            "Doing"
-        ),  
     )
 }
 NAVIGATION_ALT_LINKS = {

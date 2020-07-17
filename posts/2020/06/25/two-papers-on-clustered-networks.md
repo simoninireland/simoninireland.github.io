@@ -6,7 +6,7 @@
 .. category:
 .. link: 
 .. description: Two papers on the analysis of networks with clustering
-.. previewimage: /images/posts/slcc-20200625.png
+.. previewimage: /images/posts/20200625-slcc.png
 .. type: text
 -->
 

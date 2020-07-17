@@ -13,20 +13,26 @@ Submitted and under review
 {{% bibliography category='submitted' %}}
 
 
-Journal
--------
+Books
+-----
+
+{{% bibliography category='book' %}}
+
+
+Journals
+--------
 
 {{% bibliography category='journal' %}}
 
 
-Major conference
-----------------
+Major conferences
+-----------------
 
 {{% bibliography category='major conference' %}}
 
 
-Workshop or minor conference
-----------------------------
+Workshops or minor conferences
+------------------------------
 
 {{% bibliography category='workshop' %}}
 
@@ -41,7 +47,6 @@ Edited books and proceedings
 ----------------------------
 
 {{% bibliography category='edited book' %}}
-
 
 
 Book chapters

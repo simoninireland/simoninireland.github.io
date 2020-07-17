@@ -22,6 +22,11 @@ saying, and so forth. So I decided to write an introduction to the
 parts of this vast and complicated subject that I know something
 about: epidemic spreading on networks.
 
-[To read online](https://simoninireland.github.io/introduction-to-epidemics) <br>
+The book is now available in its first edition. I've also written an
+article about [the process](/blog/2020/07/22/self-publishing/) of
+self-publishing for anyone who has a similar ambition.
+
+[Read online](https://simoninireland.github.io/introduction-to-epidemics)<br>
+[Buy a print copy on Amazon](https://www.amazon.co.uk/dp/1838535659/)<br>
 [Repository on Github](https://github.com/simoninireland/introduction-to-epidemics)
 

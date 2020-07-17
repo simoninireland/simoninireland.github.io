@@ -6,14 +6,12 @@
     <ul class="post-list">
         {% for post in posts %}
             <li class="post-list-item">
-	        <h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a>&nbsp;({{ post.formatted_date(date_format)|e }})</h2>
-                <div>
-		    {% if post.previewimage %}
-    		        <img src="{{ post.previewimage }}" width="200px" style="display:inline-block" />
-			<p>
-		    {% endif %} 
-    	            {{ post.text(lang, teaser_only=True) }}
-    	        <div>
+            <h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></h2>
+            <div>
+                {{ post.text(lang, teaser_only=True) }}
+	    </div>
+	    <p>
+	    ({{ post.formatted_date(date_format)|e }}, {{ post.reading_time }} minute read)
             </li>
         {% endfor %}
     </ul>
