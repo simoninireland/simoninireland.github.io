@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://www.simondobson.org/</loc>
-  <lastmod>2020-07-07T09:59:00Z</lastmod>
+  <lastmod>2020-07-17T17:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://www.simondobson.org/2020/</loc>
@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://www.simondobson.org/archive.html</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-07-17T17:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://www.simondobson.org/blog/</loc>
@@ -30,8 +30,12 @@
   <lastmod>2020-07-07T09:57:00Z</lastmod>
  </url>
  <url>
+  <loc>https://www.simondobson.org/blog/2020/07/17/self-publishing/</loc>
+  <lastmod>2020-07-08T17:14:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://www.simondobson.org/categories/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-07-17T17:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://www.simondobson.org/categories/book/</loc>
@@ -46,6 +50,14 @@
   <lastmod>2020-07-07T09:57:00Z</lastmod>
  </url>
  <url>
+  <loc>https://www.simondobson.org/categories/essay/</loc>
+  <lastmod>2020-07-17T17:17:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://www.simondobson.org/categories/experience/</loc>
+  <lastmod>2020-07-17T17:17:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://www.simondobson.org/categories/news/</loc>
   <lastmod>2020-07-07T09:57:00Z</lastmod>
  </url>
@@ -56,6 +68,10 @@
  <url>
   <loc>https://www.simondobson.org/categories/research/</loc>
   <lastmod>2020-07-07T09:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://www.simondobson.org/categories/self-publishing/</loc>
+  <lastmod>2020-07-17T17:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://www.simondobson.org/development/epyc/</loc>
@@ -72,6 +88,10 @@
  <url>
   <loc>https://www.simondobson.org/development/simplicial/</loc>
   <lastmod>2020-07-07T09:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://www.simondobson.org/essays/</loc>
+  <lastmod>2020-07-17T17:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://www.simondobson.org/galleries/</loc>
@@ -160,5 +180,9 @@
  <url>
   <loc>https://www.simondobson.org/writing/em-book/</loc>
   <lastmod>2020-07-07T09:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://www.simondobson.org/writing/essays/</loc>
+  <lastmod>2020-07-17T17:03:00Z</lastmod>
  </url>
 </urlset>
