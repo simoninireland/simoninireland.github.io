@@ -1,7 +1,7 @@
 <!--
 .. title: "Epidemic modelling" published
 .. slug: em-book-published
-.. date: 2020-07-22 09:00:00 UTC+01:00
+.. date: 2020-07-17 09:00:00 UTC+01:00
 .. tags: news, book, complex networks, epidemic spreading, research
 .. status:
 .. category: 
