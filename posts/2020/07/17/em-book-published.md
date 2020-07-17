@@ -11,8 +11,8 @@
 .. type: text
 -->
 
-My book "Epidemic modelling -- Some notes, maths, and code" is now available
-from [Amazon](https://www.amazon.co.uk/dp/1838535659/)
+My book "Epidemic modelling -- Some notes, maths, and code" is now
+available to pre-order from [Amazon](https://www.amazon.co.uk/dp/1838535659/)
 as well as [online](https://simoninireland.github.io/introduction-to-epidemics)
 
 <!-- TEASER_END -->
