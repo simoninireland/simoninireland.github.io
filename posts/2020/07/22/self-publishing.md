@@ -1,7 +1,7 @@
 <!--
 .. title: Self-publishing "Epidemic modelling"
 .. slug: self-publishing
-.. date: 2020-07-22 18:03:14 UTC+01:00
+.. date: 2020-07-17 18:03:14 UTC+01:00
 .. tags: essay, self-publishing, experience
 .. status:
 .. category: 
