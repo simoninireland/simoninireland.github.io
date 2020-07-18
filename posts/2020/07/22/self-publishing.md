@@ -5,7 +5,7 @@
 .. tags: essay, self-publishing, experience
 .. status:
 .. category: 
-.. link: https://www.amazon.co.uk/dp/1838535659/
+.. link:
 .. description: A journey into the practicalities of hacker self-publication
 .. previewimage: /images/posts/20200722-em-book.png
 .. type: text
@@ -565,6 +565,29 @@ compared to print (although you still need to buy an ISBN).
 
 
 ## Psychology
+
+Not having a publisher is a double-edged sword. On the one hand, it
+frees you to write (or not) as you see fit; on the other, it's hard to
+actually bring things to an end when there's always something more you
+could add. For this book the scope was quite clearly delineated form
+the start, and the end to the content was equally easy to decide.
+
+I never found it hard to do writing, although I did sometimes struggle
+with exactly *what* to write -- or rather, how to put something. I'm
+much more used to writing for an academic audience, but actually the
+effort of simplifying and re-writing to make the text simpler, more
+easily grasped, and (hopefully) more memorable and better crafted are
+things I'll try to take forward into *all* my writing. There's no
+reason for scientific prose to be hard to digest, and in fact the
+easier concepts and explained the more likely they are to be picked up
+and used (and cited!). 
+
+But I still found it hard to let go! The hardest thing was pushing the
+button to "approve" the printed proof ahead of distribution. I must
+have uploaded 20 versions, each with subtle differences in layout and
+another corrected typo. In the end I realised I was just trying to
+perfect things in order not to commit the book to the public, and just
+forced myself to go through with it. The relief was palpable.
 
 
 ## Conclusions
