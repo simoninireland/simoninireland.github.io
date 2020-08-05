@@ -35,8 +35,7 @@ NAVIGATION_LINKS = {
         ("/whats-happening/", "What's happening"),
         (
             (
-                ("/personal/about-me/", "About me"),
-                ("/personal/contact/", "Contact details"),
+                ("/personal/about-me/", "Welcome"),
                 ("/personal/biography/", "Biography"),
                 ("/personal/reading/", "What I'm reading"),
                 ("/galleries/", "Photography"),
@@ -49,6 +48,7 @@ NAVIGATION_LINKS = {
                 ("/research/current-group/", "Current group"),
                 ("/research/publications/", "Publications"),
                 ("/research/publications-by-year/", "Publications by year"),
+                ("/research/bibliometrics/", "Bibliometrics"),
             ),
             "Research"
         ),
@@ -67,8 +67,9 @@ NAVIGATION_LINKS = {
                 ("/development/simplicial/", "simplicial"),
                 ("/development/old-development/", "Older projects"),
             ),
-            "Software projects"
+            "Software"
         ),
+        ("/personal/contact/", "Contact"),
     )
 }
 NAVIGATION_ALT_LINKS = {

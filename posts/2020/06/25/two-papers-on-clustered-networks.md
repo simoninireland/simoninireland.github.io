@@ -37,7 +37,7 @@ increase the probability of someone becoming infected, meaning that
 epidemics spread faster and become larger than you'd expect in systems
 that don't have clustering.
 
-![Phase transitions](/images/posts/slcc-20200625.png)
+![Phase transitions](/images/posts/20200625-slcc.png)
 
 These two papers -- mainly written by Peter Mann, and co-authored by
 Anne Smith, John Mitchell, and myself -- look at the underlying
@@ -54,9 +54,9 @@ meet and mingle.
 
 Both papers are under review by *Physical Review E*.
 
-{{%reference PercolationHigherOrderClustering-PRE20 %}}
+{{%bibitem PercolationHigherOrderClustering-PRE20 %}}
 
-{{%reference ArbitraryClustering-PRE20 %}}
+{{%bibitem ArbitraryClustering-PRE20 %}}
 
 
 

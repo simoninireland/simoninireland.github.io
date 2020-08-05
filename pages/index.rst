@@ -30,12 +30,6 @@
       </a>
    </span>
    <span class="fa-stack fa-2x">
-      <a href="https://www.goodreads.com/user/show/8492165-simon-dobson">
-         <i class="fa fa-circle fa-stack-2x"></i>
-         <i class="fa fa-book fa-inverse fa-stack-1x"></i>
-      </a>
-   </span>
-   <span class="fa-stack fa-2x">
       <a href="https://twitter.com/simoninireland">
          <i class="fa fa-circle fa-stack-2x"></i>
          <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>

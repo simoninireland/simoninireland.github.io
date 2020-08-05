@@ -8,7 +8,7 @@ from pybtex.style.formatting import BaseStyle, plain
 
 class Bibtex(ShortcodePlugin):
     '''Provides bibliography-related shortcodes:
-    - {{%reference *key* %}}
+    - {{%bibitem *key* %}}
       includes the reference given its key
     - {{%bibliography [sort=by=*[-]f*, *[-]f*,...] [group-by=*f*] [category=*c*]%}}
       includes a bibliography that can be sorted by a number of fields (in reverse order
@@ -38,7 +38,7 @@ class Bibtex(ShortcodePlugin):
         self._backend = html.Backend()
 
         # register the shortcodes
-        self._site.register_shortcode('reference', self.reference)
+        self._site.register_shortcode('bibitem', self.bibitem)
         self._site.register_shortcode('bibliography', self.bibliography)
 
 
@@ -47,22 +47,34 @@ class Bibtex(ShortcodePlugin):
     def _layout(self, key):
         '''Lay out a single reference given its key.
 
-        :param: the reference's key in the reference database
+        :param key: the reference's key in the reference database
         :returns: the reference'''
         return self._layoutEntry(self._bibdata.entries[key])
 
     def _layoutEntry(self, entry):
         '''Lay out a single reference.
 
-        :param: the reference's database entry
+        :param entry: the reference's database entry
         :returns: the reference'''
         f = self._style.format_entry('', entry)
         return f.text.render(self._backend)
 
+
+    def _hasAllFields(self, entry, fs ):
+        '''True if the entry has all the given fields.
+
+        :param entry: the entry
+        :param fs: the fields
+        :returns: True if all the fields are present'''
+        for f in fs:
+            if entry.fields.get(f, None) is None:
+                return False
+        return True
     
+
     # ---------- Shortcode handlers ----------
     
-    def reference(self, key, **kwds):
+    def bibitem(self, key, **kwds):
         '''Include the reference with the given key, laid-out in the current style.
 
         :param key: the key
@@ -106,16 +118,14 @@ class Bibtex(ShortcodePlugin):
 
             # restrict to entries that have all the fields
             es = []
-            for e in entries:
-                for f in fields:
-                    if f not in e.fields.keys():
-                        continue
-                es.append(e)
+            for entry in entries:
+                if self._hasAllFields(entry, fields):
+                    es.append(entry)
             entries = es
 
             # sort the entries
             for i in range(len(fields) - 1, -1, -1):
-                entries.sort(key=lambda e: e.fields.get(fields[i], ''), reverse=order[i])
+                entries.sort(key=lambda e: e.fields[fields[i]], reverse=order[i])
 
         # emit in groups (if specified)
         if 'group-by' in kwds.keys():
