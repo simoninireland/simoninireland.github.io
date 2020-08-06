@@ -6,7 +6,10 @@
     <ul class="post-list">
         {% for post in posts %}
             <li class="post-list-item">
-	        <h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a>&nbsp;({{ post.formatted_date(date_format)|e }})</h2>
+	        <h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></h2>
+		</a>
+		({{ post.formatted_date(date_format)|e }})
+		<p>
                 <div>
 		    {% if post.previewimage %}
     		        <img src="{{ post.previewimage }}" width="200px" style="display:inline-block" />
