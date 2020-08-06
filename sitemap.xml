@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-08-05T12:13:00Z</lastmod>
+  <lastmod>2020-08-06T10:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
@@ -30,10 +30,6 @@
   <lastmod>2020-07-07T09:57:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2020/07/17/em-book-published/</loc>
-  <lastmod>2020-07-17T17:28:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/blog/2020/07/22/em-book-published/</loc>
   <lastmod>2020-07-18T21:54:00Z</lastmod>
  </url>
@@ -42,12 +38,24 @@
   <lastmod>2020-07-17T17:27:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/2020/08/06/how-to-write-an-abstract/</loc>
+  <lastmod>2020-08-06T10:28:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-07-17T17:27:00Z</lastmod>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/abstracts/</loc>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/book/</loc>
   <lastmod>2020-07-07T09:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_research/</loc>
+  <lastmod>2020-08-06T10:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/complex-networks/</loc>
@@ -80,6 +88,10 @@
  <url>
   <loc>https://simondobson.org/categories/self-publishing/</loc>
   <lastmod>2020-07-17T17:27:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/writing/</loc>
+  <lastmod>2020-08-06T10:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/epyc/</loc>
@@ -163,11 +175,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/research/publications-by-year/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-08-05T12:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/publications/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-08-05T12:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/research-interests/</loc>

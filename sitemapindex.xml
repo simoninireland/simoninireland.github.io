@@ -6,12 +6,20 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://simondobson.org/categories/abstracts.xml</loc>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
   <lastmod>2020-08-05T08:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/cat_research.xml</loc>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/complex-networks.xml</loc>
-  <lastmod>2020-08-05T08:05:00Z</lastmod>
+  <lastmod>2020-08-05T12:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epidemic-spreading.xml</loc>
@@ -19,19 +27,19 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/essay.xml</loc>
-  <lastmod>2020-07-18T14:04:00Z</lastmod>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/experience.xml</loc>
-  <lastmod>2020-07-18T14:04:00Z</lastmod>
+  <lastmod>2020-08-06T10:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2020-08-05T08:05:00Z</lastmod>
+  <lastmod>2020-08-05T12:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/paper.xml</loc>
-  <lastmod>2020-08-05T08:04:00Z</lastmod>
+  <lastmod>2020-08-05T12:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/research.xml</loc>
@@ -39,7 +47,11 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/self-publishing.xml</loc>
-  <lastmod>2020-07-18T14:04:00Z</lastmod>
+  <lastmod>2020-08-06T10:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/writing.xml</loc>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
@@ -71,10 +83,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2020-08-05T08:05:00Z</lastmod>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2020-08-05T12:18:00Z</lastmod>
+  <lastmod>2020-08-06T10:40:00Z</lastmod>
  </sitemap>
 </sitemapindex>
