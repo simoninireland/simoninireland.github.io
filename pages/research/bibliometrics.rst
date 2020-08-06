@@ -14,8 +14,7 @@
    <div class="text-left">
    <p>
    <a href="https://scholar.google.com/citations?user=AbJrH_EAAAAJ">
-      <img
-      src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Scholar_logo_2015.PNG" width="20%">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Scholar_logo_2015.PNG" width="20%">
       &nbsp; Google Scholar profile
    </a>
    <p>
@@ -24,7 +23,7 @@
       &nbsp; ORCID profile
    </a>
    <p>
-   <a href="https://dblp.uni-trier.de/pers/hd/d/Dobson:Simon_A=">
+   <a href="https://dblp.org/pid/d/SimonADobson">
       <img src="https://dblp.org/img/logo.320x120.png" width="20%">
       &nbsp; dblp profile
    </a>

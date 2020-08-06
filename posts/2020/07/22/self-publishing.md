@@ -11,6 +11,12 @@
 .. type: text
 -->
 
+I thought I should record the journey I took to self-publishing a
+science book, in case anyone else decides they want to follow me on
+it.
+
+<!-- TEASER_END -->
+
 When I first decided to write [a book on epidemic
 modelling](https://www.amazon.co.uk/dp/1838535659/) I didn't really have a
 clear idea what I intended. Was it supposed to be a tutorial? Popular
@@ -25,10 +31,6 @@ questions. It was a popular science tutorial complete with code. It
 technology is accessible and rewarding for the dedicated hacker
 (although possibly an indescribable frustration to anyone else).
 
-I thought I should record the journey in case anyone else decides they
-want to follow me on it.
-
-<!-- TEASER_END -->
 
 ## The backstory
 
