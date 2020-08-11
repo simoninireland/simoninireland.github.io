@@ -13,7 +13,19 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2020/07/22/em-book-published/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -90,7 +102,7 @@ navbar-dark bg-dark
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
             <div class="dropdown-menu">
                     <a href="../../../../../writing/essays/" class="dropdown-item">Essays and articles</a>
-                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
                     <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
             </div>
             </li>
