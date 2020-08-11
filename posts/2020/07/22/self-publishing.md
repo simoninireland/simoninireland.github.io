@@ -546,9 +546,9 @@ normally absorb. In my case these have been roughly:
 - £65 to be included in their advertising material and catalogue
 - £60 for library deposits (see below)
 
-Call it £200 -- or, to put it another way, needing about 300 royalty
-payments to break even after tax. To have a hope of that happening
-will require some marketing, which won't be free.
+Call it £200 -- or, to put it another way, needing about 130 royalty
+payments to break even. To have a hope of that happening will require
+some marketing, which won't be free.
 
 One of the costs above need explaining. Any book published in the UK
 [must by law have a copy deposited (at publisher's expense) with the

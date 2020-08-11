@@ -55,7 +55,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/writing/essays/", "Essays and articles"),
-                ("/writing/em-book/", "Epidemic modelling"),
+                ("/writing/em-book/", "Epidemic modelling -- Some notes, maths, and code"),
                 ("/writing/cncp-book/", "Complex networks, complex processes"),
             ),
             "Writing"
@@ -150,6 +150,23 @@ THEME_CONFIG = {
         'sidebar': ''
     }
 }
+
+# Allow the old-style $...$ syntax fore inline maths
+MATHJAX_CONFIG = """
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+"""
 
 
 # Below this point, everything is optional
