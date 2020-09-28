@@ -15,11 +15,13 @@ just published in IEEE Technology and Society Magazine.
 
 <!-- TEASER_END -->
 
-This paper arose out of a workshop I attended at the Symposium on
-Self-Adaptive and Self-organising Systems (SASO) in 2019 in Trento,
-IT. The basic issue of how to design systems whose components were
+This paper arose out of a workshop I attended at the
+[Symposium on Self-Adaptive and Self-organising Systems (SASO) in 2018](https://saso2018.fbk.eu/)
+in beautiful Trento, Italy. The basic issue of how to design systems whose components were
 both humans and computational processes, and how to understand the
 ways in which these systems might adapt to changing circumstances.
+
+![Paper front page](/images/posts/20200928-cas-paper.jpg)
 
 The main challenge, of course, is understanding how to integrate
 largely uncontrollable and unpredictable human behaviour into a system
