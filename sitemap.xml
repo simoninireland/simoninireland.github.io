@@ -7,202 +7,234 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2020-07-17T17:03:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2020/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-08-11T14:53:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
-  <lastmod>2020-08-06T12:49:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2020/06/17/i-to-e-first/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2020/06/25/two-papers-on-clustered-networks/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2020/07/22/em-book-published/</loc>
-  <lastmod>2020-07-18T21:54:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2020/07/22/self-publishing/</loc>
-  <lastmod>2020-07-17T17:27:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2020/08/06/how-to-write-an-abstract/</loc>
-  <lastmod>2020-08-06T10:28:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2020/09/07/living-virtual-life/</loc>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2020/09/28/new-paper-cas/</loc>
+  <lastmod>2020-09-28T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-08-06T10:40:00Z</lastmod>
+  <lastmod>2020-09-28T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
-  <lastmod>2020-08-06T10:40:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/adaptive-systems/</loc>
+  <lastmod>2020-09-28T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/book/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cas/</loc>
+  <lastmod>2020-09-28T17:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_news-paper-cas-adaptive-systems-saso/</loc>
+  <lastmod>2020-09-28T17:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_research/</loc>
-  <lastmod>2020-08-06T10:29:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_writing/</loc>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/complex-networks/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/essay/</loc>
-  <lastmod>2020-07-17T17:27:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/experience/</loc>
-  <lastmod>2020-07-17T17:27:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/linux/</loc>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/news/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/paper/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/research/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/saso/</loc>
+  <lastmod>2020-09-28T17:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/self-publishing/</loc>
-  <lastmod>2020-07-17T17:27:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/virtualisation/</loc>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/writing/</loc>
-  <lastmod>2020-08-06T10:29:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/epyc/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/epydemic/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/old-development/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/simplicial/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/</loc>
-  <lastmod>2020-07-07T09:56:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/holga/</loc>
-  <lastmod>2020-07-07T09:56:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/pittenweem/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/sanday/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/tuscany-bologna/</loc>
-  <lastmod>2020-07-07T09:56:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/venice/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/galleries/westray/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/listings/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/personal/about-me/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/personal/biography/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/personal/contact/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/personal/reading/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/bibliometrics/</loc>
-  <lastmod>2020-08-05T12:18:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/current-group/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/old-research-group/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/old-research-interests/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/publications-by-year/</loc>
-  <lastmod>2020-08-05T12:53:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/publications/</loc>
-  <lastmod>2020-08-05T12:53:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/research-interests/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/research/research-projects/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/whats-happening/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/writing/cncp-book/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/writing/em-book/</loc>
-  <lastmod>2020-07-07T09:57:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/writing/essays/</loc>
-  <lastmod>2020-07-17T17:03:00Z</lastmod>
+  <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
 </urlset>

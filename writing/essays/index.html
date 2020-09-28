@@ -11,21 +11,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/writing/essays/">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -57,7 +45,7 @@ dissertations, and this has inevitably ">
 navbar-dark bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://simondobson.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Simon Dobson</span>
         </a>
@@ -126,8 +114,8 @@ navbar-dark bg-dark
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Begin post-list post_list_a5c24a2e0e9d4af0952599c6df5b2471 -->
-<div id="post_list_a5c24a2e0e9d4af0952599c6df5b2471" class="post-list">
+<!-- Begin post-list post_list_af4fa8e6ef364064b1f19d514ef4deb9 -->
+<div id="post_list_af4fa8e6ef364064b1f19d514ef4deb9" class="post-list">
     <ul class="post-list">
 <li class="post-list-item">
             <h3><a href="../../blog/2020/08/06/how-to-write-an-abstract/">How to write an abstract</a></h3>
@@ -160,7 +148,7 @@ it.</p>
             </li>
     </ul>
 </div>
-<!-- End post-list post_list_a5c24a2e0e9d4af0952599c6df5b2471 -->
+<!-- End post-list post_list_af4fa8e6ef364064b1f19d514ef4deb9 -->
 </div>
     </div>
     
@@ -171,9 +159,9 @@ it.</p>
 </div>
 </div>
 
-        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-        moment.locale("en");
-        fancydates(2, "YYYY-MM-DD HH:mm");
+        <script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
         </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',

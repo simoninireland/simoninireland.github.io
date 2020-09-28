@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A paper on the social aspects of engineering collective adaptive systems">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New paper on collective adaptive systems | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2020/09/28/new-paper-cas/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../08/06/how-to-write-an-abstract/" title="How to write an abstract" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="New paper on collective adaptive systems">
+<meta property="og:url" content="https://simondobson.org/blog/2020/09/28/new-paper-cas/">
+<meta property="og:description" content="A paper on the social aspects of engineering collective adaptive systems">
+<meta property="og:image" content="https://simondobson.org/images/posts/20200928-cas-paper.jpg">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-09-28T17:59:20+01:00">
+<meta property="article:tag" content="adaptive systems">
+<meta property="article:tag" content="cas">
+<meta property="article:tag" content="news">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="SASO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays and articles</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../development/old-development/" class="dropdown-item">Older projects</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">New paper on collective adaptive systems</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-09-28T17:59:20+01:00" itemprop="datePublished" title="2020-09-28 17:59">2020-09-28 17:59</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Our paper "On the social implications of complex adaptive systems" was
+just published in IEEE Technology and Society Magazine.</p>
+<!-- TEASER_END -->
+
+<p>This paper arose out of a workshop I attended at the Symposium on
+Self-Adaptive and Self-organising Systems (SASO) in 2019 in Trento,
+IT. The basic issue of how to design systems whose components were
+both humans and computational processes, and how to understand the
+ways in which these systems might adapt to changing circumstances.</p>
+<p>The main challenge, of course, is understanding how to integrate
+largely uncontrollable and unpredictable human behaviour into a system
+description: how to you capture what someone <em>should</em> do (but might
+not), and the implications for the system if they don't? (Not to
+mention how to decide whether they did or not.) This notion of
+"designing with and for" and quite fascinating, and ties into wider
+notions of how computer-aided human processes might behave: will they
+be more, or less, reliable and responsive than either fully automated
+or fully manual systems in particular scenarios?</p>
+<p>Antonio Bucchiarone, Giacomo Cabri, Roberto Casadei, Mirko <span class="bibtex-protected">D'Angelo</span>, Marina <span class="bibtex-protected">De Sanctis</span>, Simon Dobson, Danilo Pianini, and Mirko Viroli.
+On the social implications of collective adaptive systems.
+<em>IEEE Technology and Society Magazine</em>, 39(3):36–46, September 2020.
+URL: <a href="http://dx.doi.org/10.1109/MTS.2020.3012324">http://dx.doi.org/10.1109/MTS.2020.3012324</a>.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/adaptive-systems/" rel="tag">adaptive systems</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/cas/" rel="tag">cas</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/news/" rel="tag">news</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/paper/" rel="tag">paper</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/saso/" rel="tag">SASO</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../08/06/how-to-write-an-abstract/" rel="prev" title="How to write an abstract">Previous post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

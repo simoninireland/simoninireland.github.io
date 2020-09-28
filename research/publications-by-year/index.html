@@ -11,21 +11,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/research/publications-by-year/">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -37,9 +25,9 @@ MathJax.Hub.Config({
 <meta property="og:title" content="Publications by year">
 <meta property="og:url" content="https://simondobson.org/research/publications-by-year/">
 <meta property="og:description" content="Submitted and under review
-Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.
-Percolation in random graphs with higher-order clustering.
-Submitted to Physical Review E. Preprint available on ">
+Lei Fang, Juan Ye, and Simon Dobson.
+Bayesian inference federated learning for heart rate prediction.
+Submitted to Mobihealth.Peter Mann, V. Anne Smith, John Mitchell, and S">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-06-17T10:56:12+01:00">
 <meta name="twitter:card" content="summary">
@@ -55,7 +43,7 @@ Submitted to Physical Review E. Preprint available on ">
 navbar-dark bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://simondobson.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Simon Dobson</span>
         </a>
@@ -126,6 +114,9 @@ navbar-dark bg-dark
     <div class="section" id="submitted-and-under-review">
 <h2>Submitted and under review</h2>
 <p></p>
+<p>Lei Fang, Juan Ye, and Simon Dobson.
+Bayesian inference federated learning for heart rate prediction.
+Submitted to Mobihealth.</p>
 <p>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.
 Percolation in random graphs with higher-order clustering.
 Submitted to Physical Review E. Preprint available on arXiv.
@@ -147,8 +138,8 @@ ISBN 978-183853-565-0.
 URL: <a href="https://simoninireland.github.io/introduction-to-epidemics/">https://simoninireland.github.io/introduction-to-epidemics/</a>.</p>
 <p>Antonio Bucchiarone, Giacomo Cabri, Roberto Casadei, Mirko <span class="bibtex-protected">D'Angelo</span>, Marina <span class="bibtex-protected">De Sanctis</span>, Simon Dobson, Danilo Pianini, and Mirko Viroli.
 On the social implications of collective adaptive systems.
-<em>IEEE Technology and Society Magazine</em>, 2020.
-To appear.</p>
+<em>IEEE Technology and Society Magazine</em>, 39(3):36–46, September 2020.
+URL: <a href="http://dx.doi.org/10.1109/MTS.2020.3012324">http://dx.doi.org/10.1109/MTS.2020.3012324</a>.</p>
 <p>Michael Pitcher, Simon Dobson, Tom Kelsey, Mark Chaplain, Derek Sloan, Simon Dobson, Stephen Gillespie, and Ruth Bowness.
 How mechanistic \textit <span class="bibtex-protected">in silico</span> simulations can improve understanding of tuberculosis disease and treatment.
 <em>International Journal of Tuberculosis and Lung Disease</em>, 2020.
@@ -1194,9 +1185,9 @@ In <em>Proceedings of the First BCS Workshop on Abstract Machine Models for High
 </div>
 </div>
 
-        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-        moment.locale("en");
-        fancydates(2, "YYYY-MM-DD HH:mm");
+        <script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
         </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',

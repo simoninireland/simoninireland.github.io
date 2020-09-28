@@ -11,21 +11,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/categories/paper/">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -43,7 +31,7 @@ MathJax.Hub.Config({
 navbar-dark bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://simondobson.org/">
+        <a class="navbar-brand" href="../../">
 
             <span id="blog-title">Simon Dobson</span>
         </a>
@@ -118,6 +106,9 @@ navbar-dark bg-dark
         
     </header><ul class="postlist">
 <li>
+<time class="listdate" datetime="2020-09-28T17:59:20+01:00" title="2020-09-28 17:59">2020-09-28 17:59</time><a href="../../blog/2020/09/28/new-paper-cas/" class="listtitle">New paper on collective adaptive systems</a><a></a>
+</li>
+            <li>
 <time class="listdate" datetime="2020-06-25T16:23:49+01:00" title="2020-06-25 16:23">2020-06-25 16:23</time><a href="../../blog/2020/06/25/two-papers-on-clustered-networks/" class="listtitle">Two papers on clustered networks</a><a></a>
 </li>
         </ul></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../images/cc-by-nc-sa-4.0.png"></a>
@@ -127,9 +118,9 @@ navbar-dark bg-dark
 </div>
 </div>
 
-        <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-        moment.locale("en");
-        fancydates(2, "YYYY-MM-DD HH:mm");
+        <script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
         </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',

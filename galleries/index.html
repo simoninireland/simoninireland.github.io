@@ -11,21 +11,9 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://simondobson.org/galleries/">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -41,6 +29,7 @@ MathJax.Hub.Config({
         position: absolute;
     }
 </style>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -51,7 +40,7 @@ MathJax.Hub.Config({
 navbar-dark bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="https://simondobson.org/">
+        <a class="navbar-brand" href="../">
 
             <span id="blog-title">Simon Dobson</span>
         </a>
@@ -118,14 +107,14 @@ navbar-dark bg-dark
     <nav class="breadcrumbs"><ul class="breadcrumb">
 <li class="breadcrumb-item active">galleries</li>
 </ul></nav><h1>galleries</h1>
-    <ul>
+            <ul>
 <li><a href="holga/">📂 Holga</a></li>
-        <li><a href="pittenweem/">📂 Pittenweem</a></li>
-        <li><a href="sanday/">📂 Sanday</a></li>
-        <li><a href="tuscany-bologna/">📂 Tuscany and Bologna</a></li>
-        <li><a href="venice/">📂 Venice</a></li>
-        <li><a href="westray/">📂 Westray</a></li>
-    </ul>
+                <li><a href="pittenweem/">📂 Pittenweem</a></li>
+                <li><a href="sanday/">📂 Sanday</a></li>
+                <li><a href="tuscany-bologna/">📂 Tuscany and Bologna</a></li>
+                <li><a href="venice/">📂 Venice</a></li>
+                <li><a href="westray/">📂 Westray</a></li>
+            </ul>
 <div id="gallery_container"></div>
         <!--End of body content-->
 
@@ -136,9 +125,9 @@ navbar-dark bg-dark
 </div>
 </div>
 
-        <script src="../assets/js/all-nocdn.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-        moment.locale("en");
-        fancydates(2, "YYYY-MM-DD HH:mm");
+        <script src="../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
         </script><!-- end fancy dates --><script src="../assets/js/justified-layout.min.js"></script><script src="../assets/js/gallery.min.js"></script><script>
 var jsonContent = [];
 var thumbnailSize = 180;
