@@ -12,7 +12,7 @@
 Simon Dobson is Professor of Computer Science and Head of School in
 the [School of Computer
 Science](https://www,st-andrews.ac.uk/computer-science/) at the
-[University of St Andrews](https://www.st-andrews.ac.uk).  He works on
+[University of St Andrews](https://www.st-andrews.ac.uk). He works on
 complex and sensor systems, especially on sensor analytics and the
 modelling of complex processes.  His research has generated over 150
 internationally peer-reviewed publications, driven by leadership roles
@@ -35,12 +35,13 @@ Simon has previously worked at the [UK STFC‘s Rutherford Appleton
 Laboratory](https://www.stfc.ac.uk); at [Trinity College
 Dublin](https://www.trcd.ie) and [UCD Dublin](https://www.ucd.ie) in
 Ireland; and was also the founder and CEO of Aurium, a research-led
-Dublin-based start-up company.  He holds a BSc from the [University of
+Dublin-based start-up company. He holds a BSc from the [University of
 Newcastle upon Tyne](https://www.newcastle.ac.uk) and DPhil from the
 [University of York](https://www.york.ac.uk), both in computer
-science, ia a [Chartered Engineer](https://www.engc.org.uk/) and a
-Fellow of the [British Computer Society](https://www.bcs.org.uk) and
-the [Royal Society of Edinburgh](https://www.rse.org.uk).
+science, is a [Chartered Engineer](https://www.engc.org.uk/) and a
+Fellow of the [British Computer Society](https://www.bcs.org.uk). He
+was elected a Fellow of the [Royal Society of
+Edinburgh](https://www.rse.org.uk), Scotland's national academy, in 2020.
 
 (See also my [2-page](/short-cv.pdf) and [complete](/medium-cv.pdf) CVs.)
 
