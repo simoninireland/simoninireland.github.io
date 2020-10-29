@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/adaptive-systems.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-09-28T17:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-09-28T17:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_research.xml</loc>
@@ -35,19 +35,23 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/essay.xml</loc>
-  <lastmod>2020-09-28T17:16:00Z</lastmod>
+  <lastmod>2020-10-29T16:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/experience.xml</loc>
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/linux.xml</loc>
+  <lastmod>2020-10-29T13:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-09-28T17:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/paper.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-09-28T17:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/research.xml</loc>
@@ -55,15 +59,19 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/saso.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-09-28T17:52:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/self-publishing.xml</loc>
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/virtualisation.xml</loc>
+  <lastmod>2020-10-29T13:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/writing.xml</loc>
-  <lastmod>2020-09-11T09:55:00Z</lastmod>
+  <lastmod>2020-10-29T16:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
@@ -95,10 +103,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2020-09-28T17:19:00Z</lastmod>
+  <lastmod>2020-10-29T16:18:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2020-09-28T17:36:00Z</lastmod>
+  <lastmod>2020-10-29T16:25:00Z</lastmod>
  </sitemap>
 </sitemapindex>

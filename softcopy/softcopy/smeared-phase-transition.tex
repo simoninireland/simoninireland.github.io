@@ -1,0 +1,781 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{bibentry}
+\usepackage{graphicx}
+\usepackage{nameref}
+\usepackage{wasysym}
+%\usepackage{pbox}
+%\usepackage{framed}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\newtheorem{defn}{Definition}
+
+
+% ---------- Title etc ----------
+
+\title{A possible smeared phase transition in epidemic track-and-trace}
+\author{Simon Dobson}
+\institute{%
+  \center
+  \parbox[t]{5cm}{%
+    \center
+    School of Computer Science \\ University of St Andrews \\ Scotland UK \\[0.25cm]
+    \url{simon.dobson@st-andrews.ac.uk} \\[0.25cm]
+    \includegraphics[width=5cm,keepaspectratio]{03-foundation-colour}
+  }
+}
+\date{}
+
+
+% ---------- Theming ----------
+
+\makeatletter
+
+\usetheme{bjeldbak}
+%\setbeamercovered{invisible}
+
+% on-going tables of contents per section
+\AtBeginSection[]{%
+  \begin{frame}{Structure of this talk}
+    \tableofcontents[currentsection] 
+  \end{frame}
+}
+
+% citations as footnotes and entered into bibliography 
+\renewcommand{\cite}[1]{
+  %\renewcommand{\thefootnote}{}
+  \footnote[frame]{\tiny{\bibentry{#1}}}
+}
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+\nobibliography*
+
+% colour theme
+\definecolor{cornsilk}{RGB}{255,248,220}
+\definecolor{floral-white}{RGB}{255,250,240}
+\setbeamercolor{background canvas}{bg=floral-white}
+
+% show hyperlinks
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue
+}
+
+% code style 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\lstset{%
+  language=Python,
+  basicstyle=\ttfamily\tiny,
+  keywordstyle=\color{codegreen},
+  commentstyle=\color{magenta},
+  breaklines=false,
+  keepspaces=true,
+}
+
+%\renewcommand{\emph}[1]{\textbf{#1}}
+
+\makeatother
+  
+
+% ---------- The slides ----------
+
+\begin{document}
+
+
+% ---------- Frontmatter ----------
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Introduction}
+
+  \begin{columns}
+    \begin{column}{.88\textwidth}
+      \begin{block}{Exploring epidemics using network science\cite{em-book} }
+        \begin{itemize}
+        \item Disease models and parameters
+        \item Contact structures
+        \item Countermeasures
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{In the course of writing about these ideas I stumbled
+          across something I can't readily explain}
+        \begin{itemize}
+        \item A change on behaviour that should be crisp, but doesn't
+          seem to be
+        \item Deserves more exploration
+        \end{itemize}
+      \end{block}      
+    \end{column}
+    \begin{column}[t]{.12\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{front}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+% ---------- Background ----------
+
+\section{Background}
+
+\subsection{Measuring diseases}
+
+\begin{frame}
+  \frametitle{Real diseases -- 1}
+
+  \begin{center}
+    \includegraphics[width=.6\textwidth,keepaspectratio]{disease-periods}          
+  \end{center}
+
+  \begin{block}{Different periods}
+    \begin{itemize}
+    \item \emph{Incubation}: from infection to onset of symptoms
+    \item \emph{Latent}: from exposure to infectiousness
+    \item \emph{Infectious}: overlapping with symptoms (usually)
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Periods defined by biology, of both disease and host}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Real diseases -- 2}
+
+  \begin{center}
+    \includegraphics[width=\textwidth,keepaspectratio]{disease-types}          
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{$\mathcal{R}$ and all that\cite{R}}
+
+  \begin{block}{$\mathcal{R}$, the case reproduction number}
+    \begin{itemize}
+    \item Number of secondary cases per primary
+    \item Especially $\mathcal{R}_0$, reproduction absent countermeasures
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{$r$, the case reproduction rate}
+    \begin{itemize}
+    \item Doubling time for an epidemic
+    \item Also sometimes see $T_g$, the inter-generation time
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{$k$, the overdispersion parameter}
+    \begin{itemize}
+    \item Essentially a variance of the distribution around $R$
+    \item Small number of individuals can drive most cases
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The ``wickedness'' of \textsc{covid-19}}
+
+  \begin{block}{$\mathcal{R}_0 \approx 3$ is not particularly infectious}
+    \begin{itemize}
+    \item Straightforward to get $\mathcal{R} \approx 1.5$; harder to get $\mathcal{R} < 1$
+    \item Significant overdispersion
+    \item Infection seems to convey only temporary immunity
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Case fatality rate is about 1\%}
+    \begin{itemize}
+    \item Too large to comfortably ignore, but not so large as to
+      admit no arguments
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Substantial asymptomatic transmission} 
+    \begin{itemize}
+    \item Asymmetric costs (spreading \textit{vs} dying, ``long \textsc{covid}'')
+    \item Effective countermeasures are collective (and expensive)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\subsection{Compartmented models of disease}
+
+\begin{frame}
+  \frametitle{The goals of modelling}
+
+  \begin{block}{What are we trying to find out?}
+    \begin{itemize}
+    \item Concrete: how will this \textit{particular} outbreak behave, in this
+      \textit{particular} population?
+    \item Abstract: how can diseases behave \textit{in general}? Are
+      there common mathematical structures?
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Compartmented models}
+
+  \begin{block}{Traditional epidemic modelling uses the framework of a
+      \emph{compartmented model} of a disease}
+    \begin{itemize}
+    \item A number of compartments holding some fraction of the
+      population
+    \item (Can also think of this as the state of each individual)
+    \item Rules on how these fractions change over time
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Continuous SIR}
+  
+  \begin{columns}
+    \begin{column}[t]{.45\textwidth}
+      \begin{block}{The model}
+          \begin{itemize}
+          \item \emph{S}usceptible individuals can catch the infection
+            from \emph{I}nfected individuals
+          \item \ldots who then are \emph{R}emoved from the dynamics
+            by recovery (or death) 
+          \end{itemize}
+        \end{block}
+      \end{column}
+
+      \begin{column}[t]{.45\textwidth}
+        \begin{block}{Epidemic dynamics}
+          \begin{itemize}
+          \item Susceptibles infected per contact with probability
+            $\beta$
+          \item Infecteds removed with probability $\alpha$ 
+          \end{itemize}
+        \end{block}
+      \end{column}
+  \end{columns}
+
+  \vspace{.5cm}
+  $$
+  \frac{dS}{dt} = -\beta SI \qquad
+  \frac{dI}{dt} = \beta SI - \alpha I \qquad
+  \frac{dR}{dt} = \alpha I
+  $$
+\end{frame}
+
+\begin{frame}
+  \frametitle{Solution}
+
+  \centering
+  \includegraphics[height=0.8\textheight,keepaspectratio]{sir-progress-dt}
+\end{frame}
+
+\begin{frame}
+  \frametitle{A range of models with increasing complexity}
+
+  \begin{block}{Can model different disease structures\cite{Hethcote-CompartmentedModels}}
+    \begin{itemize}
+    \item SIR -- simple infection offering complete immunity
+      post-infection
+    \item SIS -- infection confers no immunity
+    \item SEIR -- exposed individuals are infectious before symptoms
+    \item MSEIR -- initial immunity passed from mother to child
+    \item SEIRS -- immunity wears off with time
+    \item \ldots
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\subsection{Epidemics on networks}
+
+\begin{frame}
+  \frametitle{Epidemics on networks -- 1}
+
+  \begin{columns}
+    \begin{column}[c]{.5\textwidth}
+      \begin{block}{Complete homogeneous mixing implies populations have no structure,
+          which clearly isn't true}
+        \begin{itemize}
+        \item Not everyone meets everyone else
+        \item Some are massively more (or less) connected than
+          average
+        \end{itemize}
+      \end{block}      
+    \end{column}
+    
+    \begin{column}[c]{.5\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{irishcentral-superspreader}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Epidemics on networks -- 2}
+  \begin{block}{Use a network as the substrate for the epidemic\cite{NewmanEpidemicDisease}}
+    \begin{itemize}
+    \item Only nodes that are adjacent can interact
+    \item Compartment = label on node
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Leads to some more modelling decisions}
+    \begin{itemize}
+    \item Degree distribution: probability $p_k$ of node having degree
+      $k$
+    \item Often treat the mean degree $\langle k \rangle$ as ``representative''
+    \item Topological fine structure: loops, modules, layers, \ldots
+    \item Adaptive behaviour to change these features in response to
+      the progression of the disease (\textit{e.g.}, quarantine)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to do analysis}
+
+  \begin{columns}
+    \begin{column}[c]{.6\textwidth}
+      \begin{block}{The ``gold standard'' is an analytic model with
+          numerical validation}
+        \begin{itemize}
+        \item Find an analytic description for what happens under
+          different infection parameters
+        \item Run process on random networks with the given topology
+        \item Lots of repetitions to squeeze out variance
+        \item (Hopefully) sample points land on solutions of the equations\cite{PercolationHigherOrderClustering-PRE20}
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}[c]{.4\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{gcc-cliques}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to do numerical validation}
+
+  \begin{block}{A networked population}
+    \begin{itemize}
+    \item Set all to susceptible
+    \item Change a fraction to infected, chosen at random
+    \item Run the model rules until equilibrium
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Discrete-event simulation\cite{Gil77}}
+    \begin{itemize}
+    \item After a time $\tau$ we  see an event $e$ (infection,
+      removal, \ldots)
+    \item Draw the next time and event from joint distribution
+      $P(\tau, e)$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Field lacks standard tooling}
+
+  \begin{block}{So we built some :-)}
+    \begin{itemize}
+    \item \texttt{epydemic}: models, standard topologies, \ldots
+    \item \texttt{epyc}: experiments, parallelism, dataset management
+    \end{itemize}
+  \end{block}
+
+  \begin{lstlisting}
+lab = epyc.ClusterLab(profile='hogun')
+
+lab[epydemic.ERNetwork.N] = 10000
+lab[epydemic.ERNetwork.KMEAN] = 40
+        
+lab[epydemic.SIR.P_INFECTED] = 0.001
+lab[epydemic.SIR.P_REMOVE] = 0.002
+lab[epydemic.SIR.P_INFECT] = numpy.linspace(0.00001, 0.0002, num=50)
+        
+m = epydemic.SIR()
+g = epydemic.ERNetwork()
+e = epydemic.StochasticDynamics(m, g)
+        
+lab.runExperiment(epyc.RepeatedExperiment(e, 100))
+  \end{lstlisting}
+
+  \hfill{\tiny \url{https://github.com/simoninireland}}
+\end{frame}
+
+
+% ---------- Experiments ----------
+
+\section{Exploring diseases on networks}
+
+\subsection{Changing the contact network}
+
+\begin{frame}
+  \frametitle{What do human contact networks look like?}
+
+  \begin{block}{Networks with particular contact structure}
+    \begin{itemize}
+    \item Tend to have cycles (friends of friends)
+    \item Highly variable numbers of contacts
+    \item Often modular, having different local and global structures 
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Construction}
+    \begin{itemize}
+    \item Theoretically, using a process to generate the structures
+    \item Empirically, structured from survey data\cite{Polymod}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{ER networks and the epidemic threshold}
+
+  \begin{block}{Erd\H{o}s-R\'enyi (ER) networks}
+    \begin{itemize}
+    \item For $N$ nodes build the complete network $K_N$
+    \item For each edge, retain (``occupy'') it with probability
+      $p_{infect}$
+    \item Leads to $p_k$ normally distributed around $\langle k
+      \rangle = p_{infect}N$ 
+    \end{itemize}
+  \end{block}
+
+  \centering
+  \hfill\includegraphics[width=.35\textwidth,keepaspectratio]{thresholds-er-raw} \hfill
+  \includegraphics[width=.35\textwidth,keepaspectratio]{thresholds-er-errorbars} \hfill~
+\end{frame}
+
+\begin{frame}
+  \frametitle{Not all networks behave like this}
+
+  \begin{block}{Too ``even'' to be a good model of human contacts}
+    \begin{itemize}
+    \item Powerlaw with cutoff, $p_k \propto k^{-\alpha} e^{K/\kappa}$
+
+      \centering
+      \hfill\includegraphics[width=.35\textwidth,keepaspectratio]{hcn-large-kappa} \hfill
+      \includegraphics[width=.35\textwidth,keepaspectratio]{hcn-small-kappa} \hfill~
+     
+    \item Relatively insensitive to $p_{infect}$, but sensitive to
+      $\alpha$ and $\kappa$ 
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+
+\subsection{Immunity}
+
+\begin{frame}
+  \frametitle{Herd immunity}
+
+  \begin{columns}
+    \begin{column}[c]{.6\textwidth}
+      \begin{block}{Sufficient immune/recovered individuals to stop an
+          epidemic propagating}
+        \begin{itemize}
+        \item Infecteds never adjacent to enough susceptibles
+        \item First epidemic changes the effective topology
+        \item ``Effective'' $\langle k \rangle$ drops from 20 to 5.5
+        \item (Interested to explore other topological changes)
+        \end{itemize}    
+      \end{block}
+    \end{column}
+    \begin{column}[c]{.4\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{herd-progress}
+      \\[.5cm]
+      \includegraphics[width=\textwidth,keepaspectratio]{herd-finals}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Why this is a bad idea}
+
+  \begin{block}{Herd immunity has been seriously advocated as a
+      strategy for \textsc{covid-19}\footnote{See the ``Great
+        Barrington Declaration'', \url{https://gbdeclaration.org}}}
+  \end{block}
+
+  \begin{block}{Ignores some rather inconvenient facts}
+    \begin{itemize}
+    \item A 1\% death rate = 700K UK deaths, about one year's excess
+    \item At a rate that would collapse health services
+    \item Immunity may not be permanent -- which makes herd immunity
+      behave differently (or not appear at all)
+    \item Long \textsc{covid} not accounted for in the costs
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Vaccination}
+
+  \begin{block}{``Herd immunity without the bad bits''}
+    \begin{itemize}
+    \item Aim for the herd immunity threshold, generally about 60\% of
+      the population
+    \item \ldots without anyone actually being infected
+    \end{itemize}
+  \end{block}
+  
+  \begin{columns}
+    \begin{column}[c]{.65\textwidth}
+      \begin{block}{Epidemic proceeds at different rates depending on
+          topology}
+        \begin{itemize}
+        \item ``Enough'' contacts stabilise the size of outbreak 
+        \end{itemize}
+      \end{block}
+
+    \end{column}
+    \begin{column}[c]{.35\textwidth}
+       \includegraphics[width=\textwidth,keepaspectratio]{vaccination-sir-hcn}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Vaccination strategies}
+
+  \begin{columns}
+    \begin{column}[c]{.7\textwidth}
+       \begin{block}{Randomly vaccinate 60\% of the population}
+        \begin{itemize}
+        \item Massive reduction in epidemic size
+        \item Only catching high-degree nodes at random
+        \item Sensitive to missing people
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{If we target vaccination we can reduce the
+          threshold needed to get the same effect}
+        \begin{itemize}
+        \item Target highest-degree 2\% of nodes
+        \item Take out the super-spreaders
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[c]{.3\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{vaccination-60}
+       \\[.5cm]
+       \includegraphics[width=\textwidth,keepaspectratio]{vaccination-super}      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\subsection{Physical countermeasures}
+
+\begin{frame}
+  \frametitle{Physical distancing}
+
+  \begin{block}{What does a physically-distanced network look like?}
+    \begin{itemize}
+    \item Good question
+    \item (I have two SH projects looking at this at University level)
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{One possible model}
+    \begin{itemize}
+    \item Normally-distributed, fully connected family ``bubbles'' of mean size 4
+    \item A couple of members with outside contacts
+    \item Exponentially-distributed connections between the contacts in different bubbles
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lockdown changes propagation}
+
+  \begin{columns}
+    \begin{column}[c]{.7\textwidth}
+      \begin{block}{Changes the epidemic threshold compared to an ER network}
+        \begin{itemize}
+        \item Needs a higher infectivity to take off
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{Slower take-off}
+        \begin{itemize}
+        \item Not like a powerlaw network
+        \item Get bursts of infection if the infection gets into a bubble
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[c]{.3\textwidth}
+      \includegraphics[width=\textwidth,keepaspectratio]{distancing-no}       
+      \\[.5cm]
+      \includegraphics[width=\textwidth,keepaspectratio]{distancing-slower}       
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+% ---------- SEIR ----------
+
+\section{Track and trace}
+
+\subsection{SEIR infections}
+
+\begin{frame}
+  \frametitle{Asymptomatic transmission}
+
+  \begin{block}{Because \textsc{covid-19} is essentially SEIR (or
+      maybe SEIRS) it invites other countermeasures}
+    \begin{itemize}
+    \item Self-isolating on showing symptoms is ineffective
+    \item Try to find the asymptomatic carriers
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{This is the basis for track-and-trace}
+    \begin{itemize}
+    \item Identify contacts of that person
+    \item Quarantine them if they're infected -- means we catch
+      infecting individuals before they knew to self-isolate
+    \item Quarantine the symptomatic individual too
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Track and trace in practice}
+
+  \begin{block}{A large-scale procedure, unlike the local procedure of
+      self-isolation when symptomatic}
+    \begin{itemize}
+    \item Requires organisation by some authority
+    \item What can possibly go wrong?\ldots
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Unlikely to be fully accurate even if done
+      competently}
+    \begin{itemize}
+    \item Some proportion of people don't quarantine? ($p_{rewire}$)
+    \item Only test some proportion of contacts? ($p_{detect}$)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The impact of detection rates}
+
+  \begin{block}{Hold $p_{rewire}$ constant and vary $p_{detect}$}
+  \end{block}
+
+  \centering
+  \includegraphics[width=.6\textwidth,keepaspectratio]{seir-waterfall}  
+\end{frame}
+
+
+\subsection{Wild speculations}
+
+\begin{frame}
+  \frametitle{Interpreting the plot}
+
+  \begin{columns}
+    \begin{column}[c]{.6\textwidth}
+      \begin{block}{Very dependent on detection rate}
+        \begin{itemize}
+        \item Quarantine can still sometimes damp epidemic anyway
+        \item High detection is very effective
+        \end{itemize}
+      \end{block}
+      
+      \begin{block}{Seems to be unstable in the mid range}
+        \begin{itemize}
+        \item All sizes of epidemic are possible
+        \item No clean break
+        \item Phase transition is ``smeared out'' rather than
+          occurring cleanly
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[c]{.4\textwidth}
+       \includegraphics[width=\textwidth,keepaspectratio]{seir-waterfall}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What's happening?}
+
+  \begin{block}{This phenomenon only entered the literature last year\cite{Smeared-19}}  
+  \end{block}
+
+  \begin{block}{Possible explanations}
+    \begin{itemize}
+    \item It's an artefact of ER networks
+    \item It's an artefact of not simulating long enough to crush
+      the variance
+    \item It's a function of network fine structure like clustering
+    \item SEIR propagation is really driven by asymptomatic infection
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Possible implications}
+
+  \begin{block}{Designing track-and-trace}
+    \begin{itemize}
+    \item Very sensitive to the proportion of contacts tested
+    \item Need to check at least 40\% to have any effect at all
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Effectiveness}
+    \begin{itemize}
+    \item Even very effective tracing doesn't guarantee elimination
+    \item Although it does reduce the peak significantly once above
+      about 80\%
+    \item Understanding the smearing might let us improve the test
+      strategy
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Four things to take away}
+
+  \begin{enumerate}
+  \item Epidemic spreading still isn't fully understood, even now --
+    there's lots of exciting work still to do, mathematically and computationally
+  \item Explore of possible public policy decisions 
+  \item Need (in my copious free time) to understand what's going on
+    with this possible smeared phase transition
+  \item Especially interested in how small-scale topological
+    structures affect network-based processes
+  \end{enumerate}
+\end{frame}
+
+
+% ---------- Endmatter ----------
+
+\begin{frame}
+  \frametitle{References}
+
+  \bibliographystyle{abbrvnat}
+  {
+    \tiny
+    \bibliography{smeared}
+  }
+\end{frame}
+
+\end{document}
