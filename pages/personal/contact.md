@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-**Professor Simon Dobson** CEng FBCS FRSE <br>
+**Professor Simon Dobson** FRSE CEng FBCS <br>
 Professor of Computer Science <br>
 Head of School for Computer Science <br>
 

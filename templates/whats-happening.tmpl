@@ -9,7 +9,7 @@
 	        {% if post.previewimage %}
     		    <img src="{{ post.previewimage }}" height="100px" style="display:inline-block" /> &nbsp;
 		{% endif %}
-		<span style="font-size: 200%;"><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a> ({{ post.formatted_date(date_format)|e }})</span>
+		<span style="font-size: 200%;"><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></span> ({{ post.formatted_date(date_format)|e }})
 		<p>
                 {{ post.text(lang, teaser_only=True) }}
             </li>
