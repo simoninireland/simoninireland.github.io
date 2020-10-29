@@ -5,7 +5,6 @@
 .. tags: writing, essay, linux, virtualisation, system administration
 .. category: 
 .. link: 
-.. status: draft
 .. description: Livin' la vida virtual 
 .. type: text
 -->
@@ -379,7 +378,7 @@ the router.
 # Evaluation: is it all worth it?
 
 If you're still with me, you must be wondering if this was worth it. I
-can answer that i several ways. The short answer would be that I'm writing
+can answer that in several ways. The short answer would be that I'm writing
 this article on my "everyday VM", which I've been using now for a
 month or so, so it can't be *too* bad. The longer answer is that there
 have been several pros and cons, which I'll present below so you can
@@ -390,6 +389,11 @@ make your own mind up.
 The VM system is very stable: there seems to be no stability cost from
 virtualising, and little or no performance cost. I've had no crashes
 of the host at all, in fact.
+
+The use of containers for services is a benefit too: less
+configuration (usually no) and less chance of conflicts with other
+services. The orchestrated containers are essentially pre-configured
+services to which you make storage available.
 
 The guest has had problems once or twice, but here virtualisation is
 an advantage: I can shut down the VM and still have a working
@@ -446,6 +450,23 @@ a cost over bare metal -- or could be that my 2012-vintage physical
 cores can't handle the modern codecs properly. This is clearly an
 issue when working from home in the pandemic, and means I have my Mac
 kept live purely for meetings.
+
+
+# Conclusion
+
+Actually I think I missed out the biggest pro:
+
+If I decide that I can indeed move fully to Linux for all my
+computing, I'll buy a bigger machine (laptop or desktop, or possibly
+both). In that case my VM will move trivially to the new machine:
+there'll be no re-installing, just copy a couple of (rather large)
+files over onto the (hopefully larger) host and boot up. That's a
+*major* simplification compared to most machine upgrades, and it comes
+purely from virtualising the machine on which you do most of the work
+and customisation, sitting it on top of a stable and persistent host
+and hypervisor. That's enough to make me think I'll stick with the
+virtual life.
+
 
 
 
