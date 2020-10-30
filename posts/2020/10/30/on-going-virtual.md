@@ -411,10 +411,11 @@ more.
 
 If I'd made this mistake for a real machine, I'd've had to
 re-partition the disc. With a virtual disc image, however, it's fairly
-straightforward to re-size make the image larger and then re-size the
-filing system it contains. *Voila*, the 20Gb boot disc is suddenly a
-48Gb boot disc. That's an enormous saving of time and effort from
-going virtual.
+straightforward to [re-size make the image larger and then re-size the
+filing system it
+contains](https://fatmin.com/2016/12/20/how-to-resize-a-qcow2-image-and-filesystem-with-virt-resize/)
+-- and a 20Gb boot disc is suddenly a 48Gb boot disc. That's an
+enormous saving of time and effort from going virtual.
 
 ## Pro/Con: Use of resources
 
@@ -427,14 +428,14 @@ the physical machine to manage; as a guest, that decision is made *a
 priori* and may result in some memory (for example) not being used to
 its best advantage.
 
-I suspect that, if I had 32Mb of physical memory and 16 cores, I'd be
-worrying a lot less. But there's certaijly the potential to
+I suspect that if I had 32Mb of physical memory and 16 cores I'd be
+worrying a lot less. But there's certainly the potential to
 under- or over-allocate resources when splitting between host and
 guest. This would be exacerbated in the case of multiple guests.
 
 ## Con: Removable media
 
-If you plus a USB drive into the physical machine, it appears on the
+If you plug a USB drive into the physical machine, it appears on the
 host, not the guest. This confused me the first time it happened,
 because I'd kind of forgotten I was using a virtual guest. You can fix
 it easily enough by telling `virt-manager` to map the drive (or indeed
@@ -449,7 +450,7 @@ mis-configuration, or it might be a place where virtualisation incurs
 a cost over bare metal -- or could be that my 2012-vintage physical
 cores can't handle the modern codecs properly. This is clearly an
 issue when working from home in the pandemic, and means I have my Mac
-kept live purely for meetings.
+kept live purely for meetings, at least for the time being.
 
 
 # Conclusion
