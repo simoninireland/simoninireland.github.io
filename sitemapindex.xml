@@ -35,11 +35,15 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/essay.xml</loc>
-  <lastmod>2020-10-29T16:18:00Z</lastmod>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/experience.xml</loc>
   <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/linux.xml</loc>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
@@ -62,8 +66,16 @@
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/system-administration.xml</loc>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/virtualisation.xml</loc>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/writing.xml</loc>
-  <lastmod>2020-10-29T16:18:00Z</lastmod>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
@@ -95,10 +107,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2020-10-29T16:18:00Z</lastmod>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2020-10-29T16:35:00Z</lastmod>
+  <lastmod>2020-10-30T17:35:00Z</lastmod>
  </sitemap>
 </sitemapindex>
