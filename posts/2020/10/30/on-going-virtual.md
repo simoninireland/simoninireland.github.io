@@ -86,66 +86,8 @@ Both services already have containerised versions of themselves
 available, complete with [Docker
 Compose](https://docs.docker.com/compose/) files to orchestrate
 them. The only issue was therefore to change from using Docker volumes
-to use the volumes I already had built from earlier. In the case of
-OwnCloud, for example, the original `docker-compose.yml` file has some
-volumes set up at the start which Docker then creates locally:
-
-```
-version: '2.1'
-
-volumes:
-  files:
-    driver: local
-  mysql:
-    driver: local
-  backup:
-    driver: local
-  redis:
-    driver: local
-```
-
-Then there are corresponding sections in the descriptions of the
-different containers: for MySQL, for example, we have:
-
-```
-services:
-  db:
-    image: webhippie/mariadb:latest
-    restart: always
-    environment:
-      - MARIADB_ROOT_PASSWORD=...
-      - MARIADB_USERNAME=...
-      - MARIADB_PASSWORD=...
-      - MARIADB_DATABASE=owncloud
-      - MARIADB_MAX_ALLOWED_PACKET=128M
-      - MARIADB_INNODB_LOG_FILE_SIZE=64M
-    healthcheck:
-      test: ["CMD", "/usr/bin/healthcheck"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    volumes:
-      - mysql:/var/lib/mysql
-      - backup:/var/lib/backup
-```
-
-where the last lines map the Docker-declared volumes into the
-container's filespace. To dispense with the automatic management and
-put the files where I wanted them, I simply changed these lines to:
-
-```
-services:
-  db:
-    ...
-    volumes:
-      - /mnt/data/owncloud/mysql:/var/lib/mysql
-      - /mnt/data/owncloud/backup:/var/lib/backup
-```
-
-which maps the directories on the host into the container. Do the same
-for OwnCloud itself, and for [Redis](https://redis.io/) (which is also
-used by the setup), and it's good to go. The same procedure applies
-for Plex, giving it access to all my media.
+to use the volumes I already had built from earlier. The same
+procedure applies for Plex, giving it access to all my media.
 
 ## Gateway to the internet
 
@@ -321,9 +263,8 @@ and mount it into the guest. This has a number of advantages:
   
 If you were going to use anything other than Linux you'd want to
 create the home directory using a file system that can be read by all
-the OSs you intend to use. For Linux world, I chose ext4.
-
-...
+the OSs you intend to use. For Linux world, I chose ext4 with
+encryption, populated from the OwnCloud synchronisation copy.
 
 
 # Tuning
@@ -372,7 +313,7 @@ to do some work managing the translated addresses. You can speed
 things up by creating a bridge network to which you attach the host's
 physical ethernet device, and then connect this bridge to the guest's
 (virtual) ethernet adaptor. This can require changes in DHCP set-up at
-the router.
+the router so that the guest gets leased an IP address.
 
 
 # Evaluation: is it all worth it?
@@ -415,7 +356,8 @@ straightforward to [re-size make the image larger and then re-size the
 filing system it
 contains](https://fatmin.com/2016/12/20/how-to-resize-a-qcow2-image-and-filesystem-with-virt-resize/)
 -- and a 20Gb boot disc is suddenly a 48Gb boot disc. That's an
-enormous saving of time and effort from going virtual.
+enormous saving of time and effort from going virtual. The same would
+be the case for the home directory disc, of course. 
 
 ## Pro/Con: Use of resources
 
@@ -444,13 +386,15 @@ it's hardly plug-and-play.
 
 ## Con: Video conferencing
 
-The audio on video conferencing systems like Microsoft Teams
-stutters. (The video seems fine.) This may simply be a
-mis-configuration, or it might be a place where virtualisation incurs
-a cost over bare metal -- or could be that my 2012-vintage physical
-cores can't handle the modern codecs properly. This is clearly an
-issue when working from home in the pandemic, and means I have my Mac
-kept live purely for meetings, at least for the time being.
+The audio on video conferencing systems like Microsoft Teams stutters
+badly. (The video seems fine, as is audio when just playing video:
+it's the interactive audio that's a problem, with lots of noise and
+echoes.) This may simply be a mis-configuration, or it might be a
+place where virtualisation incurs a cost over bare metal -- or could
+be that my 2012-vintage physical cores can't handle the modern codecs
+properly. This is clearly an issue when working from home in the
+pandemic, and means I have my Mac kept live purely for meetings, at
+least for the time being.
 
 
 # Conclusion

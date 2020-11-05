@@ -4,7 +4,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: Home page, Professor Simon Dobson, University, St Andrews, Scotland, UK, academic, scientist, computer scientist, researcher, complex systems, network science, self-adaptive systems, sensor networks
+.. description: Home page, Professor Simon Dobson, University, St Andrews, Scotland, UK, academic, scientist, computer scientist, researcher, complex systems, network science, complex networks, self-adaptive systems, sensor networks
 .. type: text
 
 .. image:: /images/200929-0001.jpg
