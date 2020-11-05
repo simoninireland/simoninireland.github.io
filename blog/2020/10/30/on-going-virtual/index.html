@@ -23,6 +23,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
   gtag('config', 'UA-10943215-1');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../09/28/new-paper-cas/" title="New paper on collective adaptive systems" type="text/html">
+<link rel="next" href="../../../11/05/commuting/" title="Commuting again" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
 <meta property="og:title" content="On going virtual">
 <meta property="og:url" content="https://simondobson.org/blog/2020/10/30/on-going-virtual/">
@@ -189,63 +190,8 @@ containerised service to access what I already had.</p>
 available, complete with <a href="https://docs.docker.com/compose/">Docker
 Compose</a> files to orchestrate
 them. The only issue was therefore to change from using Docker volumes
-to use the volumes I already had built from earlier. In the case of
-OwnCloud, for example, the original <code>docker-compose.yml</code> file has some
-volumes set up at the start which Docker then creates locally:</p>
-<pre class="code literal-block"><span></span><code><span class="k">version</span><span class="p">:</span> <span class="s1">'2.1'</span>
-
-<span class="n">volumes</span><span class="p">:</span>
-  <span class="n">files</span><span class="p">:</span>
-    <span class="n">driver</span><span class="p">:</span> <span class="k">local</span>
-  <span class="n">mysql</span><span class="p">:</span>
-    <span class="n">driver</span><span class="p">:</span> <span class="k">local</span>
-  <span class="n">backup</span><span class="p">:</span>
-    <span class="n">driver</span><span class="p">:</span> <span class="k">local</span>
-  <span class="n">redis</span><span class="p">:</span>
-    <span class="n">driver</span><span class="p">:</span> <span class="k">local</span>
-</code></pre>
-
-
-<p>Then there are corresponding sections in the descriptions of the
-different containers: for MySQL, for example, we have:</p>
-<pre class="code literal-block"><span></span><code><span class="n">services</span><span class="o">:</span>
-  <span class="n">db</span><span class="o">:</span>
-    <span class="n">image</span><span class="o">:</span> <span class="n">webhippie</span><span class="o">/</span><span class="n">mariadb</span><span class="o">:</span><span class="n">latest</span>
-    <span class="n">restart</span><span class="o">:</span> <span class="n">always</span>
-    <span class="n">environment</span><span class="o">:</span>
-      <span class="o">-</span> <span class="n">MARIADB_ROOT_PASSWORD</span><span class="o">=...</span>
-      <span class="o">-</span> <span class="n">MARIADB_USERNAME</span><span class="o">=...</span>
-      <span class="o">-</span> <span class="n">MARIADB_PASSWORD</span><span class="o">=...</span>
-      <span class="o">-</span> <span class="n">MARIADB_DATABASE</span><span class="o">=</span><span class="n">owncloud</span>
-      <span class="o">-</span> <span class="n">MARIADB_MAX_ALLOWED_PACKET</span><span class="o">=</span><span class="mi">128</span><span class="n">M</span>
-      <span class="o">-</span> <span class="n">MARIADB_INNODB_LOG_FILE_SIZE</span><span class="o">=</span><span class="mi">64</span><span class="n">M</span>
-    <span class="n">healthcheck</span><span class="o">:</span>
-      <span class="n">test</span><span class="o">:</span> <span class="o">[</span><span class="s2">"CMD"</span><span class="o">,</span> <span class="s2">"/usr/bin/healthcheck"</span><span class="o">]</span>
-      <span class="n">interval</span><span class="o">:</span> <span class="mi">30</span><span class="n">s</span>
-      <span class="n">timeout</span><span class="o">:</span> <span class="mi">10</span><span class="n">s</span>
-      <span class="n">retries</span><span class="o">:</span> <span class="mi">5</span>
-    <span class="n">volumes</span><span class="o">:</span>
-      <span class="o">-</span> <span class="n">mysql</span><span class="o">:/</span><span class="n">var</span><span class="sr">/lib/</span><span class="n">mysql</span>
-      <span class="o">-</span> <span class="n">backup</span><span class="o">:/</span><span class="n">var</span><span class="sr">/lib/</span><span class="n">backup</span>
-</code></pre>
-
-
-<p>where the last lines map the Docker-declared volumes into the
-container's filespace. To dispense with the automatic management and
-put the files where I wanted them, I simply changed these lines to:</p>
-<pre class="code literal-block"><span></span><code><span class="n">services</span><span class="o">:</span>
-  <span class="n">db</span><span class="o">:</span>
-    <span class="o">...</span>
-    <span class="n">volumes</span><span class="o">:</span>
-      <span class="o">-</span> <span class="sr">/mnt/data/owncloud/mysql:/var/lib/</span><span class="n">mysql</span>
-      <span class="o">-</span> <span class="sr">/mnt/data/owncloud/backup:/var/lib/</span><span class="n">backup</span>
-</code></pre>
-
-
-<p>which maps the directories on the host into the container. Do the same
-for OwnCloud itself, and for <a href="https://redis.io/">Redis</a> (which is also
-used by the setup), and it's good to go. The same procedure applies
-for Plex, giving it access to all my media.</p>
+to use the volumes I already had built from earlier. The same
+procedure applies for Plex, giving it access to all my media.</p>
 <h3>Gateway to the internet</h3>
 <p>Some people worry that pre-built containers have security holes -- or
 at least make security decisions that they disagree with. This was
@@ -393,8 +339,8 @@ and mount it into the guest. This has a number of advantages:</p>
 </ul>
 <p>If you were going to use anything other than Linux you'd want to
 create the home directory using a file system that can be read by all
-the OSs you intend to use. For Linux world, I chose ext4.</p>
-<p>...</p>
+the OSs you intend to use. For Linux world, I chose ext4 with
+encryption, populated from the OwnCloud synchronisation copy.</p>
 <h2>Tuning</h2>
 <p>Just as you have to decide how big a hard disc to buy and how much
 memory to put into your host, you have decisions to make about the
@@ -433,7 +379,7 @@ to do some work managing the translated addresses. You can speed
 things up by creating a bridge network to which you attach the host's
 physical ethernet device, and then connect this bridge to the guest's
 (virtual) ethernet adaptor. This can require changes in DHCP set-up at
-the router.</p>
+the router so that the guest gets leased an IP address.</p>
 <h2>Evaluation: is it all worth it?</h2>
 <p>If you're still with me, you must be wondering if this was worth it. I
 can answer that in several ways. The short answer would be that I'm writing
@@ -466,7 +412,8 @@ straightforward to <a href="https://fatmin.com/2016/12/20/how-to-resize-a-qcow2-
 filing system it
 contains</a>
 -- and a 20Gb boot disc is suddenly a 48Gb boot disc. That's an
-enormous saving of time and effort from going virtual.</p>
+enormous saving of time and effort from going virtual. The same would
+be the case for the home directory disc, of course. </p>
 <h3>Pro/Con: Use of resources</h3>
 <p>Having retained 4Gb and 2 cores for the host, I immediately started to
 worry whether this was too little. No, it turns out: the containers
@@ -488,13 +435,15 @@ it easily enough by telling <code>virt-manager</code> to map the drive (or indee
 other USB device) through to the guest: I do that for my camera. But
 it's hardly plug-and-play. </p>
 <h3>Con: Video conferencing</h3>
-<p>The audio on video conferencing systems like Microsoft Teams
-stutters. (The video seems fine.) This may simply be a
-mis-configuration, or it might be a place where virtualisation incurs
-a cost over bare metal -- or could be that my 2012-vintage physical
-cores can't handle the modern codecs properly. This is clearly an
-issue when working from home in the pandemic, and means I have my Mac
-kept live purely for meetings, at least for the time being.</p>
+<p>The audio on video conferencing systems like Microsoft Teams stutters
+badly. (The video seems fine, as is audio when just playing video:
+it's the interactive audio that's a problem, with lots of noise and
+echoes.) This may simply be a mis-configuration, or it might be a
+place where virtualisation incurs a cost over bare metal -- or could
+be that my 2012-vintage physical cores can't handle the modern codecs
+properly. This is clearly an issue when working from home in the
+pandemic, and means I have my Mac kept live purely for meetings, at
+least for the time being.</p>
 <h2>Conclusion</h2>
 <p>Actually I think I missed out the biggest pro:</p>
 <p>If I decide that I can indeed move fully to Linux for all my
@@ -519,6 +468,9 @@ virtual life.</p>
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../../../09/28/new-paper-cas/" rel="prev" title="New paper on collective adaptive systems">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../11/05/commuting/" rel="next" title="Commuting again">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
 

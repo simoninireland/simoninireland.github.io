@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-10-30T17:35:00Z</lastmod>
+  <lastmod>2020-11-05T13:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
@@ -50,8 +50,12 @@
   <lastmod>2020-10-30T17:35:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/2020/11/05/commuting/</loc>
+  <lastmod>2020-11-05T13:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-10-30T17:35:00Z</lastmod>
+  <lastmod>2020-11-05T13:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -78,6 +82,10 @@
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/categories/covid-19/</loc>
+  <lastmod>2020-11-05T13:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
@@ -90,12 +98,20 @@
   <lastmod>2020-09-11T09:55:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/categories/humour/</loc>
+  <lastmod>2020-11-05T13:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/linux/</loc>
   <lastmod>2020-10-30T17:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/news/</loc>
   <lastmod>2020-09-11T09:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/pandemic/</loc>
+  <lastmod>2020-11-05T13:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/paper/</loc>
@@ -116,6 +132,14 @@
  <url>
   <loc>https://simondobson.org/categories/system-administration/</loc>
   <lastmod>2020-10-30T17:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/teaching/</loc>
+  <lastmod>2020-11-05T13:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/university/</loc>
+  <lastmod>2020-11-05T13:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/virtualisation/</loc>
