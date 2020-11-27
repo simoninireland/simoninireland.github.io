@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metrics and the Research Evaluation Framework | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2011/07/01/metrics/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../06/27/computing-experience/" title="The changing student computing experience" type="text/html">
+<link rel="next" href="../../05/arts-humanities/" title="On not funding the arts and humanities" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Metrics and the Research Evaluation Framework">
+<meta property="og:url" content="https://simondobson.org/blog/2011/07/01/metrics/">
+<meta property="og:description" content="Is the success of the UK and US in global university research rankings any more than a consequence of the choice of particular metrics? And does this explain the design of the funding and evaluation m">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-07-01T08:00:29+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="university">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Metrics and the Research Evaluation Framework</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2011-07-01T08:00:29+01:00" itemprop="datePublished" title="2011-07-01 08:00">2011-07-01 08:00</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>Is the success of the UK and US in global university research rankings any more than a consequence of the choice of particular metrics? And does this explain the design of the funding and evaluation methodologies?</p>
+<!--more-->
+
+<p>We're currently at the start of the UK's periodic <a href="http://www.hefce.ac.uk/research/ref/" target="_blank">Research Evaluation Framework (REF)</a> process, during which every School and Department in every university in the country is evaluated against every other, and against international benchmarks, to rate the quality of our research. As one might imagine, this isn't the most popular process with the academics involved (especially those like me who are directors of research and so have to manage the return of our School's submission).</p>
+<p>It certainly absorbs a lot of intellectual capacity. In principle it shouldn't: the REF is intended to generate a fair reflection of a School's behaviour, is supposed to measure those activities that academics working at the cutting edge would do anyway, and to encourage people to adopt best practices by rewarding them in the assessment methodology. In reality of course the stakes are so high that the process can distort behaviour, as people (for example) target their published work at venues that will be good in the REF (to get a better REF result) and not necessarily those that would give the work the best exposure in the appropriate community. In principle this sort of arbitrage is impossible as the REF should value most highly those venues that are "best" -- a sort of academic version of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Efficient-market_hypothesis" target="_blank">efficient markets hypothesis</a>. In reality there's often a difference, or at least a perceived difference. In computer science, for example, we often use conferences in preference to journals for really new results because they get the word out faster into the community. Other sciences don't do this, so we worry that conferences (which in other fields are quite peripheral to the publications process) won't be judged as seriously even though they might be scientifically more valuable.</p>
+<p>Managing our engagement with the REF process has made me think more widely about what the REF is trying to achieve, and how it's achieving it. In particular, are the outcomes the REF encourages actually the ones we should be encouraging?</p>
+<p>If we look at universities across the world, one thing that stands out is the way that, in  science and technology at any rate,  the UK comes a close second to the US (and way above all other countries) in terms of publications, citations, patents and other concrete outputs of research -- despite the smaller population and even smaller proportional science budget. Despite the perpetual worries about a brain-drain of the best scientists to better-funded US Schools, the top UK institutions continue to do amazingly well.</p>
+<p>The US and the UK also have strikingly similar funding models for universities. A small number of funding agencies, mostly national, disburse funding to Schools in particular fields according to priorities that are set at least notionally by the researchers (known in the UK as the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Haldane_principle" target="_blank">Haldane Principle</a>) but also and increasingly with regard to nationally-defined "strategic priorities" (usually in defence or security in the US). The agencies are constantly pressured about the value they return for taxpayers' money -- disproportionately pressured, given the relatively small sums involved -- and so tend to adopt risk-reduction strategies such as following their money and increasing the funding of individuals and groups who have had previous funding and have not made a mess of it. This has three consequences: it becomes harder for junior staff to make their names on their own; it concentrates funding in a few institutions that are able to exploit their "famous names" to acquire follow-on funding; and, over time, it subtly encourages ambitious and talented people to gravitate to these well-funded institutions. The medium-term result is the creation of larger research-intensive Schools that absorb a relatively large proportion of the available funding (and to a lesser extent talent).</p>
+<p>One can argue about whether this is a good outcome or not. Proponents would claim that it generates a "critical mass" of researchers who can work together to do better work. Critics would argue that larger Schools can rapidly become too large for comfortable interaction, and that the focus needed to grow can come at the expense of cross-disciplinary research can discourage people from undertaking risky projects, since these might damage (or at least not advance) the School's collective reputation.</p>
+<p>Do these two processes -- high impact and winner-takes-most funding -- run together? Is one causative of the other? It seems to be that they're actually both a consequence of a more basic decision: the choice of metrics for evaluation. And this in turn tells us where the REF fits in.</p>
+<p>The UK and US systems have chosen specific, measurable outcomes of research, in terms of a broadly-defined international "impact". Given this choice, the funding model makes perfect sense: find groups that perform well under these metrics, fund them more (to get more good results) and help them to grow (to create more people who do well under the metrics). The system then feeds-back on itself to improve the results the country gets under it's chosen framework for evaluation.</p>
+<p>This all seems so logical that it's worth pointing out that there's nothing inherently "right" about this choice of metrics, that there are alternatives, and that the current system is in conflict with other parts of universities' missions.</p>
+<p>A noticeable feature of the US and UK system is that they are increasingly two-tier, with research-led institutions and more general teaching institutions doing little or no research -- even in fields that don't actually benefit as much from economies of scale or critical masses of researchers (like mathematics). This means that students at the teaching institutions don't get exposure to the research leaders, which is one of the main benefits of attending a research-led university. This is bound to have an impact on student satisfaction and achievement -- and is explicitly excluded from the REF and similar metrics. It's interesting to note that, in the university rankings that include student-centred metrics such as those performed in the UK by the <a href="http://extras.timesonline.co.uk/stug/universityguide.php" target="_blank">Sunday Times</a> and the <a href="http://www.guardian.co.uk/education/universityguide" target="_blank">Guardian</a>, the sets of  institutions at the top are shuffled compared to the research-only rankings. (St Andrews, for example, does enormously better in surveys that take account of the student experience over those that focus purely on research. We would argue this is a good thing.)</p>
+<p>If we accept the  choice of metrics as given, then experience seems to suggest that the UK's evaluation and funding structures are  optimised to deliver  success against them. This is hardly surprising. However, one could also choose different sets of equally defensible metrics and get radically different results. If one takes the view, for example, that the desirable metric is to expose as many students as possible to a range of world-class researchers, one could set up a system which eschews critical mass and instead distributes researchers evenly around a country's institutions. This is in fact roughly what happens in France and Italy, and while I can't say that this is a direct consequence of a deliberate choice of metrics, it's certainly consistent with one.
+</p>
+<blockquote>There is nothing so useless as doing efficiently that which should not be done at all.
+<p>Peter Drucker</p>
+</blockquote>
+Like many things, this is actually about economics: not in the narrow sense of money, but in the broad sense of how people respond to incentives. Rather than ask how well we do under REF metrics, we should perhaps ask what behaviours the REF metrics incentivise in academics and institutions, and whether these are the behaviours that are of best overall social benefit to the country. Certainly scientific excellence and impact are of vital importance: but one can also argue that the broadest possible exposure to excellence, and the motivational effect this can have on a wider class of students, is of equal or greater importance to the success and competitiveness of the country. The narrow, research-only metrics may simply be <em>too</em> narrow, and it'd be a mistake to optimise against them if in doing so -- and achieving "a good result" according to them -- we destroyed something of greater value that simply wasn't being measured.</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/university/" rel="tag">university</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../06/27/computing-experience/" rel="prev" title="The changing student computing experience">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../05/arts-humanities/" rel="next" title="On not funding the arts and humanities">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

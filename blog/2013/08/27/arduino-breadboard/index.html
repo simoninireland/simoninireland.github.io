@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low-power Arduino-on-a-breadboard | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2013/08/27/arduino-breadboard/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../18/ambient-backscatter/" title="Ambient backscatter" type="text/html">
+<link rel="next" href="../../28/uploading-sketches/" title="Uploading sketches to a breadboard Arduino" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Low-power Arduino-on-a-breadboard">
+<meta property="og:url" content="https://simondobson.org/blog/2013/08/27/arduino-breadboard/">
+<meta property="og:description" content="Putting an Arduino together from scratch lets us look at where the power consumption might be reduced -- and is just an interesting thing to do anyway.
+
+
+One of the most exciting things about the Ardu">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-08-27T11:47:45+01:00">
+<meta property="article:tag" content="arduino">
+<meta property="article:tag" content="ditch">
+<meta property="article:tag" content="making">
+<meta property="article:tag" content="power management">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Low-power Arduino-on-a-breadboard</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-08-27T11:47:45+01:00" itemprop="datePublished" title="2013-08-27 11:47">2013-08-27 11:47</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Putting an Arduino together from scratch lets us look at where the power consumption might be reduced -- and is just an interesting thing to do anyway.</p>
+<!--more-->
+
+<p>One of the most exciting things about the Arduino is that it's open-source, so you can build them yourself -- and potentially vary the way they're put together for specific projects, which is very useful as a starting point for people (like me!) who aren't hardware engineers.</p>
+<p>The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the <a href="../../../07/31/power/">quiescent current of the power regulator</a>.</p>
+<p>As a starting point, I used an <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">on-line guide </a>to build an Arduino on a breadboard:</p>
+<p><img alt="An Arduino build from components" src="../../../../../images/citizen-sensing/breadboard-arduino.jpg"></p>
+<p>Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../../07/31/power/">earlier</a>.</p>
+<p>Measuring power for a simple "blink" program gives the following result:</p>
+<table style="border: 1"><tbody>
+<tr>
+<td>Activity</td>
+<td>Power mode</td>
+<td>Current</td>
+</tr>
+<tr>
+<td>Nothing</td>
+<td>Deep sleep</td>
+<td>4.5mA</td>
+</tr>
+<tr>
+<td>Flashing LED</td>
+<td>Awake</td>
+<td>17mA</td>
+</tr>
+</tbody></table>
+<p>So in deep sleep mode the system draws about a seventh the power as a
+"real" Arduino. This is all down to the choice of voltage regulator:
+an L7805 with a design maximum quiescent current of 6mA. To put this
+into perspective, a system that could last a week on a standard
+Arduino board would last the best part of two months in this
+configuration. Put another way, we can build a sensor mote with an
+Arduino architecture and dramatically increased lifetime by changing a
+core component and using SleepySketch to keep the system asleep by
+default.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/arduino/" rel="tag">arduino</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/ditch/" rel="tag">ditch</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/making/" rel="tag">making</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/power-management/" rel="tag">power management</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../18/ambient-backscatter/" rel="prev" title="Ambient backscatter">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../28/uploading-sketches/" rel="next" title="Uploading sketches to a breadboard Arduino">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

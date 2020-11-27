@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contextual processes | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2010/06/18/contextual-processes/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../11/power-comics/" title="The power of comics" type="text/html">
+<link rel="next" href="../../22/monads-language-design-perspective/" title="Monads: a language designer's perspective" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Contextual processes">
+<meta property="og:url" content="https://simondobson.org/blog/2010/06/18/contextual-processes/">
+<meta property="og:description" content="Context-aware systems are intended to follow and augment user-led, real-world processes. These differ somewhat from traditional workflow processes, but share some characteristics. Might the techniques">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-06-18T06:00:53+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="context">
+<meta property="article:tag" content="pervasive computing">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="web services">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Contextual processes</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2010-06-18T06:00:53+01:00" itemprop="datePublished" title="2010-06-18 06:00">2010-06-18 06:00</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>Context-aware systems are intended to follow and augment user-led, real-world processes. These differ somewhat from traditional workflow processes, but share some characteristics. Might the techniques used to implement business processes <em>via</em> web service orchestration fit into the context-aware landscape too?</p>
+<!--more-->
+
+<p>These ideas arose as a result of discussions at the <a href="http://www.pmmps.org">PMMPS</a> workshop at <a href="../../../../../2010/05/impressions-pervasive-2010/">PERVASIVE 2010 in Helsinki</a>. In particular, I was thinking about comments <a href="http://aquigley.blogspot.com/2010/04/april-2009-keynote-talk-ides-for.html">Aaron Quigley made in his keynote</a> about the need to build platforms and development environments if we're to avoid forever building just demos. The separation of function from process seems to be working in the web world: might it work in the pervasive world too?</p>
+<p>In building a pervasive system we need to integrate several components:
+</p>
+<ol>
+<li>A collection of <em>sensors</em> that allow us to observe users in the real world</li>
+    <li>A <em>user</em> or <em>situation model</em> describing what the users are supposed to be doing, in terms of the possible observations we might make and inferences we might draw</li>
+    <li>A <em>context model</em> that brings together sensor observations and situations, allowing us to infer the latter from a sequence of the former</li>
+    <li>Some <em>behaviour</em> that's triggered depending on the situation we believe we're observing</li>
+</ol>
+Most current pervasive systems have quite simple versions of all these components. The number of sensors is often small -- sometimes only one or two, observing one user. The situation model is more properly an <em>activity model</em> in that it classifies a user's immediate current activity, independently of any other activity at another time. The context model encapsulates a mapping from sensors to activities, which then manifest themselves in a activating or deactivating a single behaviour. Despite their simplicity, such systems can perform a lot of useful tasks.
+<p>However, pervasive activities clearly live on a timeline: you leave home <em>and then</em> walk to work <em>and then</em> enter your office <em>and then</em> check your email, and so forth. One can treat these activities as independent, but that might lose continuity of behaviour, when what you want to do depends on the route by which you got to a particular situation. Alternatively we could treat the timeline as a process, and track the user's progress along it, in the manner of an office workflow.</p>
+<p>Of course the problem is that users don't actually follow workflows like this -- or, rather, they tend to interleave actions, perform them in odd orders, leave bits out, drop one process and do another before picking-up the first (or not), and so on. So pervasive workflows aren't at all like "standard" office processes. They aren't discriminated from <em>other</em> workflows (and non-workflow activities) happening simultaneously in the same space, with the same people and resources involved. In some simple systems the workflow actually is "closed", for example computer theatre (Pinhanez, Mase and Bobick. Interval scripts: a design paradigm for story-based interactive systems., Proceedings of CHI'97. 1997.) -- but in most cases its "open". So the question becomes, how do we describe "loose" workflows in which there is a sequence of activities, each one of which reinforces our confidence in later ones, but which contain noise and extraneous activities that interfere with the inferencing?</p>
+<p>There are several formalisms for describing sequences of activities. The one that underlies Pinhanez' work mentioned above is Allen algebra (Allen and Ferguson. Actions and events in interval temporal logic. Journal of Logic and Computation <strong>4</strong>(5), pp.531--579. 1994.) which provides a notation for specifying how intervals of time relate: an interval <em>a</em> occurs strictly before another <em>b</em>, for example, which in turn contains wholly within it another interval <em>c</em>. It's easy to see how such a process provides a model for how events from the world <em>should</em> be observed: if we see that <em>b</em> has ended, we can infer that <em>c</em> has ended also because we know that <em>c</em> is contained within <em>b</em>, and so forth. We can do this if we don't -- or can't -- directly observe the end of <em>c</em>. However, this implies that we can specify the relationships between intervals precisely. If we have multiple possible relationships the inferencing power degrades rapidly.</p>
+<p>Another way to look at things is to consider what "noise" means. In terms of the components we set out earlier, noise is the observation of events that don't relate to the process we're trying to observe. Suppose I'm trying to support a "going to work" process. If I'm walking to work and stop at a shop, for example, this doesn't interfere with my going to work -- it's "noise" in the sense of "something that happened that's non-contradictory of what we expected to see". On the other hand if, after leaving the shop, I go home again, that might be considered as "not noise", in the sense of "something that happened that contradicts the model we have of the process".<em></em> As well as events that support a process, we also have events that contradict it, and events that provide no information.</p>
+<p>Human-centred processes are therefore stochastic, and we need a stochastic process formalism. I'm not aware of any that really fit the bill: process algebras seem too rigid. Markov processes are probably the closest, but they're really designed to capture frequencies with which paths are taken rather than detours and the like. Moreover we need to enrich the event space so that observations support or refute hypotheses as to which process is being followed and where we are in it. This is rather richer than is normal, where events are purely confirmatory. In essence what we have is <em>process as hypothesis</em> in which we try to confirm that this process is indeed happening, and where we are in it, using the event stream.</p>
+<p>It's notable that we can describe a process separately from the probabilities that constrain how it's likely to evolve, though. That suggests to me that we might need an approach like <a href="http://en.wikipedia.org/wiki/Business_Process_Execution_Language">BPEL</a>, where we separate the description of the process from the actions we take as a result, and also form the ways in which we move the process forward. In other words, we have a description of <em>what it means</em> to go to work, expressed separately from <em>how</em> we confirm that this is what's being observed in terms of sensors and events, and separated further from <em>what happens</em> as a result of this process being followed. That sounds  a lot easier than it is, because some events are confirmatory and some aren't. Furthermore we may have several processes that can be supported  by observations up to a point and then diverge: going to work and going shopping are pretty similar until I go into a shop, and/or until I leave the shop and don't go to work. How do we handle this? We could enforce common-prefix behaviour, but that breaks the separation between process and action. We could insist on "undo" actions for "failed", no-longer-supported-by-the-observations processes, which severely complicates programming and might lead to interactions between different failed processes. Clearly there's something missing from our understanding of how to structure more complex, temporally elongated behaviours that'll need significant work to get right.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/context/" rel="tag">context</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/pervasive-computing/" rel="tag">pervasive computing</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/programming/" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/web-services/" rel="tag">web services</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../11/power-comics/" rel="prev" title="The power of comics">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../22/monads-language-design-perspective/" rel="next" title="Monads: a language designer's perspective">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about cfp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/cfp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Call for papers: 3rd Workshop on Engineering Collective Adaptive Systems (eCAS 2018)</title><link>https://simondobson.org/blog/2018/05/03/ecas-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Come and join us in Trento for eCAS.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong&gt;eCAS2018&lt;/strong&gt;&lt;/h3&gt;
+&lt;strong&gt;CALL FOR PAPERS&lt;/strong&gt;
+&lt;p&gt;3rd Workshop on Engineering Collective Adaptive Systems – eCAS 2018
+In conjunction with &lt;a href="http://fasstar.org/"&gt;FAS* 2018&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;September 7&lt;sup&gt;th&lt;/sup&gt;, 2018
+Fondazione Bruno Kessler (FBK) &amp;amp; University of Trento - Trento, Italy&lt;/p&gt;
+&lt;p&gt;Web site: &lt;a href="http://ecas2018.apice.unibo.it/"&gt;ecas2018.apice.unibo.it&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AIMS AND MOTIVATION&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Modern software systems are becoming more and more collective, composed of many distributed and heterogeneous entities. These systems operate under continuous perturbations making manual adjustments infeasible. For a collective system to be resilient, its adaptation must also be collective, in the sense that multiple entities must adapt in a way that addresses critical runtime conditions while preserving the benefits of the collaborative interdependencies. Decision-making in such systems is distributed and possibly highly dispersed, and interaction between the entities may lead to the emergence of unexpected phenomena.&lt;/p&gt;
+&lt;p&gt;In such systems, a new approach for adaptation is needed to allow (i) multiple entities to collectively adapt with (ii) negotiations to decide which collective changes are best. Collective adaptation also raises a second important challenge: which parts of the system (things, services, people) should be engaged in an adaptation? This is not trivial, since multiple solutions to the same problem may be generated at different levels. The challenge here is to understand these levels and create mechanisms to decide the right scope for an adaptation for a given problem.&lt;/p&gt;
+&lt;p&gt;This workshop solicits papers that address new methodologies, theories and principles that can be used in order to develop a better understanding of the fundamental factors underpinning the operation of such systems, so that we can better design, build, and analyze them, as well as case studies and applications showing such approaches in action. Interdisciplinary work is particularly welcomed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Suggested Topics (but not limited to):&lt;/strong&gt;
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Novel theories relating to operating principles of CAS&lt;/li&gt;
+    &lt;li&gt;Novel design principles for building CAS systems&lt;/li&gt;
+    &lt;li&gt;Insights into the short and long-term adaptation of CAS systems&lt;/li&gt;
+    &lt;li&gt;Insights into emergent properties of CAS&lt;/li&gt;
+    &lt;li&gt;Insights into general properties of large scale, distributed CAS&lt;/li&gt;
+    &lt;li&gt;Decision-making approaches in CAS&lt;/li&gt;
+    &lt;li&gt;Methodologies for studying, analyzing, and building CAS&lt;/li&gt;
+    &lt;li&gt;Frameworks for analyzing or developing CAS case studies&lt;/li&gt;
+    &lt;li&gt;Languages, platforms, APIs and other tools for CAS&lt;/li&gt;
+    &lt;li&gt;Scenarios, case studies, and experience reports of CAS in different contexts (e.g., Smart Mobility, Smart Energy/Smart Grid, Smart Buildings, traffic management, emergency response, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;SCOPE&lt;/strong&gt;
+&lt;p&gt;The workshop is expected to attract participants from many disciplines, including Autonomic Computing, Biology, Game Theory, Evolutionary Computing, Network Science, Self-Organizing Systems, Pervasive Computing, and to be of interest to anyone working with the domain of large-scale self-adaptive systems. In addition, the European Commission has funded seven scientific projects and a Coordination Action in this area, with projects starting at the beginning of 2013. Thus, the workshop provides a natural base for the projects to meet and share ideas, even if it is in no way limited to this audience, and is likely to have broad appeal to a wide range of researchers. Potential audience members might work in application areas relating to large-scale distributed systems, or may come from any of the many disciplines that can provide insights into the operation and design of such systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT DATES&lt;/strong&gt;
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Abstract submission: June 4, 2018&lt;/li&gt;
+    &lt;li&gt;Workshop paper submission: June 11, 2018&lt;/li&gt;
+    &lt;li&gt;Workshop paper notification: July 9, 2018&lt;/li&gt;
+    &lt;li&gt;Camera-Ready Version: July 15, 2018&lt;/li&gt;
+    &lt;li&gt;Workshop: September 3, 2018&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;SUBMISSION INSTRUCTIONS and REVIEW CRITERIA&lt;/strong&gt;
+&lt;p&gt;The length of a workshop paper may not exceed 6 pages including references and follow the IEEE Computer Society Press proceedings style guide.&lt;/p&gt;
+&lt;p&gt;All papers should be submitted in PDF format. You can submit the paper through EasyChair using this link:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://easychair.org/conferences/?conf=ecas2018"&gt;https://easychair.org/conferences/?conf=ecas2018&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By submitting a paper, the authors confirm that in case of acceptance, at least one author will attend the workshop to present the work.&lt;/p&gt;
+&lt;p&gt;Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WORKSHOP ORGANISERS&lt;/strong&gt;
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews, UK, &lt;a href="mailto:simon.dobson@st-andrews.ac.uk"&gt;simon.dobson@st-andrews.ac.uk&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Martina De Sanctis, Fondazione Bruno Kessler, Trento, Italy, &lt;a href="mailto:msanctis@fbk.eu"&gt;msanctis@fbk.eu&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Giacomo Cabri, Università di Modena e Reggio Emilia, Italy, &lt;a href="mailto:giacomo.cabri@unimore.it"&gt;giacomo.cabri@unimore.it&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;STEERING COMMITTEE&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;Jacob Beal, Raytheon BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Giacomo Cabri, University of Modena And Reggio Emilia, Italy&lt;/li&gt;
+    &lt;li&gt;Nicola Capodieci, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
+    &lt;li&gt;Emma Hart, Edinburgh Napier University, U.K&lt;/li&gt;
+    &lt;li&gt;Jane Hillston, University of Edinburgh, U.K&lt;/li&gt;
+    &lt;li&gt;Mirko Viroli, University of Bologna, Italy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;WORKSHOP PROGRAM COMMITTEE (PROVISIONAL)&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;Gerrit Anders, Augsburg University&lt;/li&gt;
+    &lt;li&gt;Franco Bagnoli, Università di Firenze&lt;/li&gt;
+    &lt;li&gt;Ezio Bartocci, TU Wien&lt;/li&gt;
+    &lt;li&gt;Luca Bortolussi, University of Trieste&lt;/li&gt;
+    &lt;li&gt;Johann Bourcier, IRISA/INRIA-Universite de Rennes 1&lt;/li&gt;
+    &lt;li&gt;Javier Camara, Carnegie Mellon University&lt;/li&gt;
+    &lt;li&gt;Siobhan Clarke, Trinity College Dublin&lt;/li&gt;
+    &lt;li&gt;Daniel Coore, University of the West Indies&lt;/li&gt;
+    &lt;li&gt;Ferruccio Damiani, Dipartimento di Informatica, Università di Torino&lt;/li&gt;
+    &lt;li&gt;Rocco De Nicola, IMT - School for Advanced Studies Lucca&lt;/li&gt;
+    &lt;li&gt;Giovanna Di Marzo Serugendo, University of Geneva&lt;/li&gt;
+    &lt;li&gt;Schahram Dustdar, TU Wien&lt;/li&gt;
+    &lt;li&gt;Jane Hillston, University of Edinburgh&lt;/li&gt;
+    &lt;li&gt;Paola Inverardi, University of L’Aquila&lt;/li&gt;
+    &lt;li&gt;Eva Kühn, TU Wien&lt;/li&gt;
+    &lt;li&gt;Peter Lewis, Aston University&lt;/li&gt;
+    &lt;li&gt;Nicolas Markey, LSV, CNRS &amp;amp; ENS Cachan&lt;/li&gt;
+    &lt;li&gt;Annapaola Marconi, Fondazione Bruno Kessler, Trento&lt;/li&gt;
+    &lt;li&gt;Hernan Melgratti -- University of Buenos Aires, Argentina&lt;/li&gt;
+    &lt;li&gt;Monjur Mourshed, Cardiff University, UK&lt;/li&gt;
+    &lt;li&gt;Mirco Musolesi, University College London&lt;/li&gt;
+    &lt;li&gt;Carlo Pinciroli, École Polytechnique de Montreal&lt;/li&gt;
+    &lt;li&gt;Alexander Schiendorfer, University Augsburg&lt;/li&gt;
+    &lt;li&gt;Bradley Schmerl, Carnegie Mellon University&lt;/li&gt;
+    &lt;li&gt;Antoine Spicher, LACL University Paris Est Creteil&lt;/li&gt;
+    &lt;li&gt;Katia Sycara, Carnegie Mellon University&lt;/li&gt;
+    &lt;li&gt;Christof Teuscher, Portland State University&lt;/li&gt;
+    &lt;li&gt;Mirko Viroli, Università di Bologna&lt;/li&gt;
+    &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;strong&gt;REGISTRATION&lt;/strong&gt;
+&lt;p&gt;All attendees at the workshop must register for SASO through the conference website:  &lt;a href="https://saso2018.fbk.eu/index.php/registration/"&gt;https://saso2018.fbk.eu/index.php/registration/&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><guid>https://simondobson.org/blog/2018/05/03/ecas-cfp/</guid><pubDate>Thu, 03 May 2018 17:27:42 GMT</pubDate></item><item><title>CfP: SASO 2018</title><link>https://simondobson.org/blog/2018/03/09/cfp-saso2018/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Come and join us in Trento for SASO 2018.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="https://saso2018.fbk.eu/"&gt;12th IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO 2018)&lt;/a&gt;
+3-7 September 2018, Trento, Italy&lt;/h3&gt;
+&lt;h4&gt;Aims and Motivation&lt;/h4&gt;
+The aim of the Self-Adaptive and Self-Organizing Systems conference series (SASO) is to provide a forum for the presentation and discussion of research on the foundations of engineered systems that self-adapt and self-organize. The complexity of current and emerging networks, software, and services can be characterized by issues such as scale, heterogeneity, openness, and dynamics in the environment. This has led the software engineering, distributed systems, and management communities to look for inspiration in diverse fields (e.g., complex systems, control theory, artificial intelligence, chemistry, psychology, sociology, and biology) to find new ways of designing and managing such computing systems in a principled way. In this endeavor, self-organization and self-adaptation have emerged as two promising interrelated approaches. They form the basis of many other so-called self-&lt;em&gt; properties, such as self-configuration, self-healing, or self-optimization. SASO aims to be an interdisciplinary meeting, where contributions from participants with different backgrounds leads to the fostering of a cross-pollination of ideas, and where innovative theories, frameworks, methodologies, tools, and applications can emerge.
+&lt;h4&gt;Scope&lt;/h4&gt;
+The twelfth edition of the SASO conference embraces this interdisciplinary nature, and welcomes novel contributions to both the foundational and application-focused dimensions of self-adaptive and self-organizing systems research. We are looking for contributions that present new fundamental understanding of self-adaptive and self-organizing systems and how they can be engineered and used. The topics of interest include, but are not limited to:
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/em&gt; Systems theory: nature-inspired and socially-inspired paradigms and heuristics; inter-operation of self-&lt;em&gt; mechanisms; theoretical frameworks and models; control theory;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;/strong&gt;&lt;/li&gt;&lt;/em&gt; System properties: robustness; resilience; stability; anti-fragility; diversity; self-reference and reflection; emergent behavior; computational awareness and self-awareness;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;em&gt; Systems engineering&lt;/em&gt;&lt;/strong&gt;: reusable mechanisms and algorithms; design patterns; architectures; methodologies; software and middleware development frameworks and methods; platforms and toolkits; multi-agent systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Theory and practice of self-organization&lt;/strong&gt;: self-governance, change management, electronic institutions, distributed consensus, commons, knowledge management, and the general use of rules, policies, etc. in self- systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Theory and practice of self-adaptation&lt;/strong&gt;: mechanisms for adaptation, including evolution, logic, learning; adaptability, plasticity, flexibility;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Socio-technical self-&lt;em&gt; systems&lt;/em&gt;&lt;/strong&gt;: human and social factors; visualization; crowdsourcing and collective awareness; humans-in-the-loop; ethics and humanities in self- systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Data-driven approaches to self-&lt;em&gt; systems&lt;/em&gt;&lt;/strong&gt;: data mining; machine learning; data science and other statistical techniques to analyze, understand, and manage the behavior of complex systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Self-adaptive and self-organizing hardware&lt;/strong&gt;: self- materials; self-construction; reconfigurable hardware;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;em&gt; Systems Education&lt;/em&gt;&lt;/strong&gt;: experience reports; curricula; innovative course concepts; methodological aspects of self- systems education;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Applications and experiences with self-* systems&lt;/strong&gt;: smart grid, smart cities, smart homes, adaptive industrial plants, cyber-physical systems; autonomous vehicles and robotics; traffic management; self-adaptive cyber-security; Internet of Things; fog/edge computing; etc.&lt;/li&gt;
+
+&lt;h4&gt;Important Dates&lt;/h4&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Abstract submission&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;April 16, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Paper submission&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;April 23, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notification&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;June 4, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Camera ready copy due&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;July 2, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Conference&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;September 3-7, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+Submissions can have up to 10 pages formatted according to the standard IEEE Computer Society Press proceedings style guide (&lt;a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html"&gt;see templates here&lt;/a&gt;). Please submit your papers electronically in PDF format using the SASO 2018 conference management system:
+&lt;a href="https://easychair.org/conferences/?conf=saso2018"&gt;https://easychair.org/conferences/?conf=saso2018&lt;/a&gt;.
+&lt;p&gt;The proceedings will be published by IEEE Computer Society Press, and made available as a part of the IEEE Digital Library. Note that a separate Call for Poster and Demo Submissions will also be issued. As per the standard IEEE policies, all submissions should be original, i.e., they should not have been previously published in any conference proceedings, book, or journal and should not currently be under review for another archival conference. We would like to also highlight IEEE’s policies regarding plagiarism and self-plagiarism (&lt;a href="http://www.ieee.org/publications_standards/publications/rights/ID_Plagiarism.html"&gt;http://www.ieee.org/publications_standards/publications/rights/ID_Plagiarism.html&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Where relevant and appropriate, accepted papers will also be encouraged to participate in the Demo or Poster Sessions.
+&lt;/p&gt;&lt;h4&gt;Review Criteria&lt;/h4&gt;
+Papers should present novel ideas in the cross-disciplinary research context described in this call, motivated by problems from current practice or applied research. Both theoretical and empirical contributions should be highlighted, substantiated by formal analysis, simulation, experimental evaluations, or comparative studies, etc. Appropriate references must be made to related work. Due to the cross-disciplinary nature of the SASO conference, we encourage papers to be intelligible and relevant to researchers who are not members of the same specialized sub-field.
+&lt;p&gt;Authors are also encouraged to submit papers describing applications. Application papers should provide an indication of the real-world relevance of the problem that is solved, including a description of the domain, and an evaluation of performance, usability, or comparison to alternative approaches. Experience papers are also welcome, especially if they highlight insights into any aspect of design, implementation or management of self-* systems that would be of benefit to practitioners and the SASO community. All submissions will be rigorously peer reviewed and evaluated based on the quality of their technical contribution, originality, soundness, significance, presentation, understanding of the state of the art, and overall quality.
+&lt;/p&gt;&lt;h4&gt;Contact Information&lt;/h4&gt;
+&lt;h5&gt;Conference General Chairs&lt;/h5&gt;
+Antonio Bucchiarone,
+Fondazione Bruno Kessler, IT
+&lt;p&gt;Alberto Montresor,
+University of Trento, IT
+&lt;/p&gt;&lt;h5&gt;Programme Chairs&lt;/h5&gt;
+Jake Beal,
+Raytheon BBN Technologies, USA
+&lt;p&gt;Nelly Bencomo,
+Aston University, UK&lt;/p&gt;
+&lt;p&gt;Jean Botev,
+University of Luxembourg, LU&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>saso</category><category>self-organising systems</category><guid>https://simondobson.org/blog/2018/03/09/cfp-saso2018/</guid><pubDate>Fri, 09 Mar 2018 15:46:24 GMT</pubDate></item><item><title>Call for papers: 11th IEEE International Conference on Self-Adaptive and Self-Organizing Systems</title><link>https://simondobson.org/blog/2017/03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;SASO 2017 is now accepting paper submissions. Come and join us in Arizona!&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="https://saso2017.telecom-paristech.fr/"&gt;&lt;img class="alignleft size-medium" src="https://saso2017.telecom-paristech.fr/resources/saso_banner_landscape1.png" width="1280" height="302"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="saso-banner-title"&gt;SASO 2017&lt;/h2&gt;
+&lt;div id="saso-banner-subtitle"&gt;&lt;a href="https://saso2017.telecom-paristech.fr/"&gt;11th IEEE International Conference on Self-Adaptive and Self-Organizing Systems&lt;/a&gt;&lt;/div&gt;
+&lt;div id="saso-banner-location"&gt;University of Arizona, Tucson, AZ · 18-22 September 2017&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;Aims and Scope&lt;/h3&gt;
+The aim of the Self-Adaptive and Self-Organizing Systems conference series (SASO) is to provide a forum for the presentation and discussion of research on the foundations of engineered systems that self-adapt and self-organize. The complexity of current and emerging networks, software, and services can be characterized by issues such as scale, heterogeneity, openness, and dynamics in the environment. This has led the software engineering, distributed systems, and management communities to look for inspiration in diverse fields (e.g., complex systems, control theory, artificial intelligence, chemistry, psychology, sociology, and biology) to find new ways of designing and managing such computing systems in a principled way. In this endeavor, self-organization and self-adaptation have emerged as two promising interrelated approaches. They form the basis for many other so-called self-* properties, such as self-configuration, self-healing, or self-optimization. SASO aims to be an interdisciplinary meeting, where contributions from participants with different backgrounds leads to the fostering of a cross-pollination of ideas, and where innovative theories, frameworks, methodologies, tools, and applications can emerge.
+&lt;p&gt;The eleventh edition of the SASO conference embraces this inter-disciplinary nature, and welcomes novel contributions to both the foundational and application-focused dimensions of self-adaptive and self-organizing systems research. The topics of interest include, but are not limited to:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Systems theory: nature-inspired and socially-inspired paradigms and heuristics; inter-operation of self-&lt;em&gt; mechanisms; theoretical frameworks and models; control theory;&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;System properties: robustness; resilience; stability; anti-fragility; diversity; self-reference and reflection; emergent behavior; computational awareness and self-awareness;&lt;/li&gt;
+    &lt;li&gt;Systems engineering: reusable mechanisms and algorithms; design patterns; architectures; methodologies; software and middleware development frameworks and methods; platforms and toolkits; multi-agent systems;&lt;/li&gt;
+    &lt;li&gt;Theory and practice of organization: self-governance, change management, electronic institutions, distributed consensus, commons, knowledge management, and the general use of rules, policies, etc. in self- systems&lt;/li&gt;
+    &lt;li&gt;Theory and practice of adaptation: mechanisms for adaptation, including evolution, logic, learning; adaptability, plasticity, flexibility&lt;/li&gt;
+    &lt;li&gt;Socio-technical systems: human and social factors; visualization; crowdsourcing and collective awareness; humans-in-the-loop; ethics and humanities in self-&lt;em&gt; systems;&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Data-driven approaches: data mining; machine learning; data science and other statistical techniques to analyze, understand, and manage behavior of complex systems;&lt;/li&gt;
+    &lt;li&gt;Self-adaptive and self-organizing hardware: self- materials; self-construction; reconfigurable hardware;&lt;/li&gt;
+    &lt;li&gt;Education: experience reports; curricula; innovative course concepts; methodological aspects of self-&lt;em&gt; systems education;&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Applications and experiences with self- systems in any of the following domains are of particular interest:
+&lt;ul&gt;
+    &lt;li&gt;Smart systems: smart grids, smart cities, smart environments, smart homes, etc.&lt;/li&gt;
+    &lt;li&gt;Industrial automation: embedded self-&lt;em&gt; systems, adaptive industrial plants, Industry 4.0, cyber physical systems&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Transportation: autonomous vehicles, traffic optimization&lt;/li&gt;
+    &lt;li&gt;Autonomous systems: aerial vehicles, undersea vehicles, autonomous robotics&lt;/li&gt;
+    &lt;li&gt;Internet of Things: self- for network management, self-&lt;em&gt; applied to cyber security&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+We are looking for contributions that present new fundamental understanding of self-adaptive and self-organizing systems and how they can be engineered and used, including: novel theoretical or experimental results, novel design patterns, mechanisms, system architectures, frameworks, tools, and practical experiences in building or deploying systems and applications. Contributions contrasting different approaches for engineering a given family of systems, or demonstrating the applicability of a certain approach for different systems, are equally encouraged. Likewise, papers describing substantial innovation or insights in the use and communication of self- systems in the classroom are welcome.
+&lt;p&gt;Where relevant and appropriate, accepted papers will also be encouraged to participate in the Demo or Poster Sessions.
+&lt;/p&gt;&lt;h3&gt;Important Dates&lt;/h3&gt;
+&lt;table class="dates-table"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Abstract submission&lt;/td&gt;
+&lt;td class="date"&gt;May 1, 2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Paper submission&lt;/td&gt;
+&lt;td class="date"&gt;May 10, 2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notification&lt;/td&gt;
+&lt;td class="date"&gt;June 30, 2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Camera ready copy due&lt;/td&gt;
+&lt;td class="date"&gt;July 12, 2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Conference&lt;/td&gt;
+&lt;td class="date"&gt;September 18-22, 2017&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Submission Instructions&lt;/h3&gt;
+Submissions can be up to 10 pages, formatted according to the standard IEEE Computer Society Press proceedings style guide, and submitted electronically in PDF format. Please submit your papers using the SASO 2017 conference management system:
+&lt;p&gt;&lt;a href="https://easychair.org/conferences/?conf=saso2017" target="_blank"&gt;https://easychair.org/conferences/?conf=saso2017&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The proceedings will be published by IEEE Computer Society Press, and made available as a part of the IEEE Digital Library. Note that a separate Call for Poster and Demo Submissions will also be issued. As per the standard IEEE policies, all submissions should be original, i.e., they should not have been previously published in any conference proceedings, book, or journal and should not currently be under review for another archival conference. We also highlight IEEE’s policies regarding plagiarism and self-plagiarism (&lt;a href="http://www.ieee.org/publications_standards/publications/rights/ID_Plagiarism.html" target="_blank"&gt;http://www.ieee.org/.../ID_Plagiarism.html&lt;/a&gt;).
+&lt;/p&gt;&lt;h3&gt;Review Criteria&lt;/h3&gt;
+Papers should present novel ideas in the cross-disciplinary research context described in this call, motivated by problems from current practice or applied research. Both theoretical and empirical contributions should be highlighted, substantiated by formal analysis, simulation, experimental evaluations, or comparative studies, etc. Appropriate references must be made to related work. Because SASO is a cross-disciplinary conference, we encourage papers to be intelligible and relevant to researchers who are not members of the same specialized sub-field.
+&lt;p&gt;Authors are also encouraged to submit papers describing applications. Application papers should provide an indication of the real-world relevance of the problem that is solved, including a description of the domain, and an evaluation of performance, usability, or comparison to alternative approaches. Experience papers are also welcome, especially if they highlight insights into any aspect of design, implementation or management of self-* systems that would be of benefit to practitioners and the SASO community. All submissions will be rigorously peer reviewed and evaluated based on the quality of their technical contribution, originality, soundness, significance, presentation, understanding of the state of the art, and overall quality.
+&lt;/p&gt;&lt;h3&gt;Contact Information&lt;/h3&gt;
+&lt;h4&gt;Conference General Chair&lt;/h4&gt;
+Ada Diaconescu
+Telecom Paris-Tech, Paris, FR
+&lt;h4&gt;Program Chairs&lt;/h4&gt;
+Peter Lewis,
+Aston University, Birmingham, UK
+&lt;p&gt;Sam Malek,
+University of California, Irvine, USA&lt;/p&gt;
+&lt;p&gt;Hella Seebach,
+Augsburg University, Augsburg, DE&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>saso</category><category>self-organising systems</category><guid>https://simondobson.org/blog/2017/03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/</guid><pubDate>Wed, 01 Mar 2017 18:33:45 GMT</pubDate></item><item><title>FAS* 2017 Call for Workshops</title><link>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Workshops now open for the  FAS* (ICCAC and SASO) conferences in Arizona in September&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The FAS&lt;em&gt; 2017 Steering Committee invites proposals for the Workshop Program to be held along with the technical conferences SASO 2017 and ICCAC 2017. FAS&lt;/em&gt;W workshops will provide a meeting for presenting novel ideas in a less formal and possibly  ore focused way than the conferences themselves. Their aim is to stimulate and facilitate active exchange, interaction, and comparison of approaches, methods, and ideas related to specific topics, both theoretical and applied, in the general area of Self-Adaptive and Self-Organizing Systems as well as Cloud and Autonomic Computing. To motivate the discussion and participation of all the workshop attendants, we encourage organizers to get away of the typical "mini-conference" format of a workshop, and include more discussion sessions, panels, etc. Members from all areas of the SASO and ICCAC communities are invited to submit workshop proposals for review. Workshops on global challenges, applications or on new and emerging topics are particularly encouraged. Workshops can vary in length, but most will be one full day in duration. Optionally, if desired by the organizers, workshop proceedings can be published through IEEE. Attendance of workshops will be included in the registration fee for the main SASO/ICCAC conference.
+&lt;/p&gt;&lt;h3&gt;Important dates&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Workshop proposal submission deadline: April 7, 2017&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Workshop acceptance notification: April 14, 2017&lt;/li&gt;
+    &lt;li&gt;CfP submission deadline: April 21, 2017&lt;/li&gt;
+    &lt;li&gt;Workshop paper submission deadline: July 7, 2017&lt;/li&gt;
+    &lt;li&gt;Workshop paper acceptance notification: July 21, 2017&lt;/li&gt;
+    &lt;li&gt;Early registration deadline: TBD&lt;/li&gt;
+    &lt;li&gt;Camera-ready papers due: July 26, 2017&lt;/li&gt;
+    &lt;li&gt;Workshop notes submission to workshop chairs: July 28, 2017&lt;/li&gt;
+    &lt;li&gt;Workshops dates: September 18 &amp;amp; 22, 2017&lt;/li&gt;
+&lt;/ul&gt;
+* Please submit your workshop proposals as soon as possible (i.e. before April 7)! We will try to decide earlier on workshop acceptance in order to give the organizers more time to solicit papers.
+&lt;h3&gt;Requirements for submission&lt;/h3&gt;
+Proposals for workshops should be separated in two parts. The first part should be organized as preliminary call for papers or call for participation, depending on the intended format of the workshop, with a maximum of two pages and contain the following information:
+&lt;p&gt;PART 1:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Title of the workshop.&lt;/li&gt;
+    &lt;li&gt;A brief technical description of the workshop, specifying the workshop goals, the technical issues that it will address, and the relevance of the workshop to the main conferences. Please specify, which of the two main conferences the workshop assigned to (if any)!&lt;/li&gt;
+    &lt;li&gt;Description of paper review process (if any) and acceptance standards in order to keep the workshop high in quality. Note that papers must be in the same format as the conference proceedings and may not be more than 6 pages in length.&lt;/li&gt;
+    &lt;li&gt;The names, affiliations, postal addresses, phone numbers, and email addresses of the proposed workshop organizing committee. This committee should consist of three or four people knowledgeable about the technical issues to be addressed. The organizing committee should include individuals from multiple institutions.&lt;/li&gt;
+    &lt;li&gt;The primary email address for contacting the organizing committee.&lt;/li&gt;
+    &lt;li&gt;Expected duration of the workshop (half or full day). - A brief description of the workshop format.&lt;/li&gt;
+    &lt;li&gt;List of potential program committee members (if applicable), including their title and affiliations.&lt;/li&gt;
+    &lt;li&gt;List of potential invited speakers, panelists, or disputants (if applicable).&lt;/li&gt;
+&lt;/ul&gt;
+PART 2:
+&lt;p&gt;The second part with a maximum of three pages should contain additional information not suitable for a Call for Papers, including:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;A discussion of why and to whom the workshop is of interest.&lt;/li&gt;
+    &lt;li&gt;A list of related workshops held within the last three years, if any, and their relation to the proposed workshop.&lt;/li&gt;
+    &lt;li&gt;Information about previous offerings of the proposed workshop: when and where it has been offered in the past, organizers names and affiliations, number of submissions, acceptances and registered attendees.&lt;/li&gt;
+    &lt;li&gt;An indication of the envisaged acceptance rate (if applicable).&lt;/li&gt;
+    &lt;li&gt;A description of the qualifications of the individual committee members with respect to organizing a SASO or ICCAC workshop, including a list of workshops previously arranged by any members of the proposed organizing committee, if any.&lt;/li&gt;
+    &lt;li&gt;A list of places (distribution lists, web sites, journals, etc.) where the workshop is planned to be advertised.&lt;/li&gt;
+&lt;/ul&gt;
+All proposals should be submitted in plain ASCII text or PDF format by electronic mail to the FAS&lt;em&gt;W 2017 Workshop Chairs, via Christopher Frantz, as described below.
+&lt;h3&gt;Selection Criteria&lt;/h3&gt;
+The selection of the workshops to be included in the final FAS&lt;/em&gt; 2017 Workshop program will be based upon multiple factors, including:
+&lt;ul&gt;
+    &lt;li&gt;the scientific/technical interest of the topics,&lt;/li&gt;
+    &lt;li&gt;the quality of the proposal,&lt;/li&gt;
+    &lt;li&gt;complementarity with the conference topics,&lt;/li&gt;
+    &lt;li&gt;balance and distinctness of workshop topics, and&lt;/li&gt;
+    &lt;li&gt;the capacity of the conference workshop program.&lt;/li&gt;
+&lt;/ul&gt;
+Note that authors of proposals addressing similar and/or overlapping content areas and/or audiences may be requested to merge their proposals.
+&lt;h3&gt;Responsibilities of FAS&lt;em&gt; 2017 Workshop Chairs&lt;/em&gt;&lt;/h3&gt;
+For all accepted proposals, FAS 2017 will be responsible for:
+&lt;ul&gt;
+    &lt;li&gt;Providing publicity for the workshop series as a whole. - Providing logistical support and a meeting place for the workshops.&lt;/li&gt;
+    &lt;li&gt;Together with the organizers, determining the workshop date and time.&lt;/li&gt;
+    &lt;li&gt;Liaising and coordinating between the workshop chairs and the finance chair, publicity chair, registration chair, and web chair for FAS&lt;em&gt;.&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Arranging for publication of proceedings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Responsibilities of Workshop Organizers&lt;/h3&gt;
+Workshop organizers will be responsible for the following:
+&lt;ul&gt;
+    &lt;li&gt;Setting up a web site for the workshop.&lt;/li&gt;
+    &lt;li&gt;Advertising the workshop (and the main FAS conference), and issuing a call for papers and a call for participation.&lt;/li&gt;
+    &lt;li&gt;Collecting and evaluating submissions, notifying authors of acceptance or rejection on a timely basis, and ensuring a transparent and fair selection process. All workshop organizers commit themselves to adopt the deadlines set by the committee.&lt;/li&gt;
+    &lt;li&gt;Making the pdf of the whole workshop notes available to the workshop chair, as well as a list of audio-visual requirements and any special room requirements.&lt;/li&gt;
+    &lt;li&gt;Writing a 1-page organizers' introduction for the workshop proceedings. Ensuring that the workshop organizers and the participants register for the workshop and/or the main conference (at least one author must register for the paper to appear in the proceedings).&lt;/li&gt;
+&lt;/ul&gt;
+FAS* reserves the right to cancel any workshop if the above responsibilities are not fulfilled, or if too few attendees register for the workshop to support its running costs.
+&lt;h3&gt;Submissions and Inquiries&lt;/h3&gt;
+Please send proposals (as a PDF document) and inquiries to: Christopher Frantz (&lt;a class="moz-txt-link-abbreviated" href="mailto:cf@christopherfrantz.org"&gt;cf@christopherfrantz.org&lt;/a&gt;) or Jeremy Pitt (&lt;a class="moz-txt-link-abbreviated" href="mailto:j.pitt@imperial.ac.uk"&gt;j.pitt@imperial.ac.uk&lt;/a&gt;)
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://saso2017.telecom-paristech.fr/committees.html"&gt;https://saso2017.telecom-paristech.fr/committees.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>autonomic systems</category><category>Blog</category><category>cfp</category><category>iccac</category><category>saso</category><category>self-organising systems</category><guid>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</guid><pubDate>Mon, 27 Feb 2017 14:24:08 GMT</pubDate></item><item><title>CfP: Collective adaptive systems</title><link>https://simondobson.org/blog/2016/07/18/cfp-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;A special track of the 32nd ACM Symposium on Applied Computing (SAC'17) looking for contributions.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;COLLECTIVE ADAPTIVE SYSTEMS&lt;/h2&gt;
+Special Track of the 32nd ACM Symposium on Applied Computing (SAC'17)
+&lt;a class="moz-txt-link-freetext" href="http://sac-cas2017.apice.unibo.it"&gt;http://sac-cas2017.apice.unibo.it&lt;/a&gt;
+April 3 - 7, 2017 Marrakech, Morocco
+&lt;p&gt;Nowadays, most aspects of our daily life are affected by pervasive technology, consisting of massive numbers of heterogeneous units/nodes (computers, devices, software applications, smart objects, etc.), complex interactions, and humans-in-the-loop. The distributed and open nature of these systems and their large scale make sensing, decision-making, planning and acting possibly highly dispersed: this may cause on the one hand the emergence of unexpected phenomena, but on the other hand it can be the key to support inherent adaptation and resilience.&lt;/p&gt;
+&lt;p&gt;These complex systems are typically referred to as Collective Adaptive Systems (CAS). They have to be equipped with dynamic and autonomous adaptation capabilities, to deal with changes in their working environments and within themselves. CAS involve huge collections of cooperating components, trading off individual tasks, properties, objectives and actions, with overall system goals.&lt;/p&gt;
+&lt;p&gt;To properly engineer and exploit CAS, a deep scientific understanding of the principles underpinning their operation is required. The development of CAS is closely related to other contemporary (software) engineering approaches, such as component-based systems and middleware platforms, as well as other Computer Science areas, such as Distributed Artificial Intelligence, Formal Methods, Agent-based Programming, Pervasive Computing, Internet of Things, and Autonomic Computing. This track aims at providing a common forum for discussing the various different viewpoints over CAS, attracting relevant and consistent contributions from different research communities, with the ultimate goal of filling the gap between theory and practice, hence paving the way towards implementation of relevant applications.&lt;/p&gt;
+&lt;p&gt;The Special Track on Collective Adaptive Systems takes deliberately a broad view of what CAS are and how they should be designed, analysed, built and deployed. In particular, the track's interest is both in the foundational view (e.g., theories, methods, formalisms, models) and the practical aspects (e.g., development methodologies, programming languages, middleware, development and runtime environments, tools). Moreover, also applications of CAS solutions to real-world case studies are welcomed.&lt;/p&gt;
+&lt;p&gt;Major topics of interest this year will include the following:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Novel models, languages, programming and implementation techniques for CAS&lt;/li&gt;
+    &lt;li&gt;CAS technologies and infrastructures&lt;/li&gt;
+    &lt;li&gt;CAS applications&lt;/li&gt;
+    &lt;li&gt;Scenarios, case studies and experience reports of CAS&lt;/li&gt;
+    &lt;li&gt;Formal aspects (semantics, reasoning, verification) in CAS development&lt;/li&gt;
+    &lt;li&gt;Business Processes in CAS - Self-* and emerging properties of CAS&lt;/li&gt;
+    &lt;li&gt;Security and privacy in CAS - Policy-based coordination and self-adaptation in CAS&lt;/li&gt;
+    &lt;li&gt;Middleware platforms for CAS&lt;/li&gt;
+    &lt;li&gt;Software architectures and engineering methodologies for CAS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Important Dates&lt;/h3&gt;
+Sep 15, 2016: Papers and SRC research abstracts submission
+Nov 10, 2016: Author notification
+Nov 25, 2016: Camera-ready copies
+Dec 10, 2016: Author registration
+&lt;h3&gt;Programme Co-Chairs&lt;/h3&gt;
+Mirko Viroli Alma Mater Studiorum - University of Bologna, Italy &lt;a class="moz-txt-link-freetext" href="http://mirkoviroli.apice.unibo.it"&gt;http://mirkoviroli.apice.unibo.it&lt;/a&gt; email: &lt;a class="moz-txt-link-abbreviated" href="mailto:mirko.viroli@unibo.it"&gt;mirko.viroli@unibo.it&lt;/a&gt;
+&lt;p&gt;Francesco Tiezzi University of Camerino, Italy &lt;a class="moz-txt-link-freetext" href="http://tiezzi.unicam.it/"&gt;http://tiezzi.unicam.it/&lt;/a&gt; email: francesco.tiezzi@ unicam.it
+&lt;/p&gt;&lt;h3&gt;Program Committee Members&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Jacob Beal, BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Olivier Boissier, Ecole des Mines de Saint-Etienne, France&lt;/li&gt;
+    &lt;li&gt;Tomas Bures, Charles University in Prague, Czech Republic&lt;/li&gt;
+    &lt;li&gt;Siobhan Clarke, Trinity College Dublin, Ireland&lt;/li&gt;
+    &lt;li&gt;Daniel Coore, University of the West Indies, Jamaica&lt;/li&gt;
+    &lt;li&gt;Ferruccio Damiani, University of Torino, Italy Rocco De Nicola, IMT Institute for Advanced Studies Lucca, Italy&lt;/li&gt;
+    &lt;li&gt;Giovanna Di Marzo Serugendo, University of Geneve, Switzerland&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews&lt;/li&gt;
+    &lt;li&gt;Schahram Dustdar, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Kurt Geihs, Universitaet Kassel, Germany&lt;/li&gt;
+    &lt;li&gt;Jane Hillston, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Christine Julien, University of Texas at Austin, USA&lt;/li&gt;
+    &lt;li&gt;Hung La, University of Nevada, Reno, USA&lt;/li&gt;
+    &lt;li&gt;Peter Lewis, Aston University, UK&lt;/li&gt;
+    &lt;li&gt;Alberto Lluch Lafuente, DTU, Denmark&lt;/li&gt;
+    &lt;li&gt;Michele Loreti, University of Firenze, Italy&lt;/li&gt;
+    &lt;li&gt;Andrea Omicini, University of Bologna, Italy&lt;/li&gt;
+    &lt;li&gt;Carlo Pinciroli, Ecole Polytechnique de Montreal, Canada&lt;/li&gt;
+    &lt;li&gt;Rosario Pugliese, University of Firenze, Italy&lt;/li&gt;
+    &lt;li&gt;Barbara Re, University of Camerino, Italy&lt;/li&gt;
+    &lt;li&gt;Jan-Philipp Steghöfer, Chalmers Technical University, Sweden&lt;/li&gt;
+    &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen, Germany&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Proceedings&lt;/h3&gt;
+Papers accepted for the Special Track on Collective Adaptive Systems will be published by ACM both in the SAC 2017 proceedings and in the Digital Library.
+&lt;p&gt;CAS Special Track organisers also plan to invite authors of selected papers for a Special Issue in a high impact journal, such as ACM Transactions on Autonomous and Adaptive Systems or Science of Computer Programming.
+&lt;/p&gt;&lt;h3&gt;Paper submission and format&lt;/h3&gt;
+All papers should represent original and previously unpublished works that currently are not under review in any conference or journal.
+&lt;p&gt;The author(s) name(s) and address(es) must NOT appear in the body of the paper, and self-reference should be in the third person. This is to facilitate blind review. Only the title should be shown at the first page without the authors' information.&lt;/p&gt;
+&lt;p&gt;Submitted papers must be in the ACM two-column page format (doc template, pdf template, latex template). The length of the papers is 6 pages (included in the registration) plus up to 2 extra pages (at extra charge), i.e. total 8 pages maximum.&lt;/p&gt;
+&lt;p&gt;Paper registration is required, allowing the inclusion of the paper/poster in the conference proceedings. An author or a proxy attending SAC MUST present the paper: This is a requirement for the paper/poster to be included in the ACM/IEEE digital library. No-show of scheduled papers and posters will result in excluding them from the ACM/IEEE digital library.&lt;/p&gt;
+&lt;p&gt;Submission is entirely automated via the STAR Submission System, which is available from:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;(for regular papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac2017/"&gt;https://www.softconf.com/h/sac2017/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;(for SRC papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac-src2017/"&gt;https://www.softconf.com/h/sac-src2017/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Poster Sessions&lt;/h3&gt;
+Papers that received high reviews (that is acceptable by reviewer standards) but were not accepted due to space limitation can be invited for the poster session. Poster should be not longer than 3 pages (included in the registration) plus 1 extra page (at extra charge), i.e. total 4 pages maximum. The poster session procedures and details will be posted on SAC 2017 website as soon as they become available.
+&lt;h3&gt;Student research abstracts competition&lt;/h3&gt;
+Graduate students are invited to submit Student Research Competition (SRC) abstracts (maximum of 2 pages in ACM camera-ready format) following the instructions published at SAC 2017 website. Submission of the same abstract to multiple tracks is not allowed. All research abstract submissions will be reviewed by researchers and practitioners with expertise in the track focus area to which they are submitted. Authors of selected abstracts (up to 20 students) will have the opportunity to give poster and oral presentations of their work and compete for three top-winning places. The winners will receive medals, cash awards, and SIGAPP recognition certificates during the conference banquet. Invited students receive SRC travel support (US$500) and are eligible to apply to the SIGAPP Student Travel Award Program (STAP) for additional travel support.&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><category>conference</category><guid>https://simondobson.org/blog/2016/07/18/cfp-cas/</guid><pubDate>Mon, 18 Jul 2016 09:07:23 GMT</pubDate></item><item><title>Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</title><link>https://simondobson.org/blog/2016/06/02/fasw/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;There is a doctoral symposium at the SASO  conference this year.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;Call For Doctoral Symposium Submissions Doctoral Symposium on Foundations and Applications of Self-&lt;em&gt; Systems (FAS&lt;/em&gt;W)&lt;/h3&gt;
+Augsburg, Germany, September 12 &amp;amp; 16, 2016
+&lt;p&gt;&lt;strong&gt;EXTENDED DEADLINES:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Abstract Submission due: June 12, 2016
+Paper Submission due: June 20, 2016
+&lt;a class="moz-txt-link-freetext" href="http://fasstar2016.informatik.uni-augsburg.de/"&gt;http://fasstar2016.informatik.uni-augsburg.de/&lt;/a&gt;
+&lt;a class="moz-txt-link-freetext" href="http://iccac2016.se.rit.edu/"&gt;http://iccac2016.se.rit.edu/&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://uni-augsburg.de/saso2016"&gt;http://uni-augsburg.de/saso2016
+&lt;/a&gt;@SASO2016Conf&lt;/p&gt;
+&lt;p&gt;Foundations and Applications of Self&lt;em&gt; Systems (FAS&lt;/em&gt;) is the umbrella for two closely related but independent conferences, the International Conference on Self-Adaptive and Self-Organizing Systems (SASO) and the International Conference on Cloud and Autonomic Computing (ICCAC). The FAS&lt;em&gt; Doctoral Symposium provides an international forum for PhD Students working in research areas addressed by FAS&lt;/em&gt;. In this forum, PhD students will get unique opportunities to subject their research to the scrutiny of external experts, gain experience in the presentation of research, connect to peers and experts addressing similar problems, and get advice from a panel of internationally leading researchers.&lt;/p&gt;
+&lt;p&gt;Different from the technical tracks of the conference, the FAS* Doctoral Symposium focuses on the specific needs of young researchers at the beginning of their career. As such, particular emphasis will be placed on a critical and constructive feedback that shall help participants to successfully conclude their PhD studies.&lt;/p&gt;
+&lt;p&gt;PhD students working in any area addressed by the FAS&lt;em&gt; conferences are invited to submit a Doctoral Symposium paper in which they describe the key motivation and objectives of their research project, and reflect on the methodology as well as the current status of their PhD studies. Complementing the thematic focus of FAS&lt;/em&gt;, we particularly solicit contributions in the following areas:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Engineering of self-organizing and self-adaptive systems.&lt;/em&gt; We solicit theoretical and applied works addressing fundamental principles underlying self-organizing systems, as well as methods that allow to quantify, model and reproduce the self-&lt;em&gt; characteristics of complex systems in biological, social, physical and technical systems. Examples include mechanisms underlying distributed decision- making and collective intelligence, software engineering challenges in self-adaptive systems, as well as general application of self-&lt;/em&gt; principles in the engineering of technical systems.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Complex Cyber-physical and socio-technical systems.&lt;/em&gt; We welcome contributions that apply self-* principles to address challenges in the design of complex cyber- physical and socio-technical systems. Particular examples include smart grid infrastructures, sensor networks, opportunistic networking scenarios, as well as large-scale social information systems. Works addressing challenges such as the security, privacy and anonymity of users, or mechanisms to prevent censorship, manipulation or unfairness in socio-technical systems are especially welcome. We further solicit works on socio- technical and socio-economic challenges in P2P systems, such as the design of incentive, trust and reputation mechanisms.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Self-&lt;em&gt; approaches in Massive-Scale Decentralized Systems.&lt;/em&gt; Works in this area use self-&lt;/em&gt; approaches to address challenges in the design and operation of massive scale decentralized systems. Examples include Peer-to-Peer technologies, as well as overlay topology management schemes. We are further interested in decentralized data mining and machine learning approaches, as well as decentralized approaches to monitor, model and adapt distributed systems. Works using self-* principles to address the inherent challenges in the design of massive-scale systems with unreliable and heterogeneous are of particular interest.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Autonomic Computing.&lt;/em&gt; Systems Here we are interested in all works addressing the self-configuration, self-optimization and self-adaptation of cloud computing services, data centers and general distributed computing systems. Examples for questions addressed in this area include the monitoring and modeling of cloud services, the design of efficient resource allocation mechanisms, the application of data mining and machine learning techniques to analyze and predict the behavior of technical systems, as well as the characterization of distributed computing workloads.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Application of Self-&lt;em&gt; in Robotics and Spatial Computing.&lt;/em&gt; Finally, we welcome contributions using self-&lt;/em&gt; principles in the areas of robotics, swarm robotics and spatial computing. Here, examples for works of interest include environmental modeling and perception, machine vision, and self-adaptation mechanisms in robotics, distributed coordination and collective intelligence in multi- robot systems, as well as novel paradigms for the programming of autonomous, spatially distributed entities.
+&lt;/p&gt;&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+Submissions should have a length of max. six pages and be formatted according to the IEEE Computer Society Press proceedings style guide. Authors should submit their papers using the EasyChair installation of the main conference, which is available at:
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://easychair.org/conferences/?conf=saso2016"&gt;https://easychair.org/conferences/?conf=saso2016&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please note that only single-author submissions are accepted, which focus on the topic of the doctoral work. The name of the supervisor (« supervised by ... ») should be clearly marked below the author’s name in the paper. Submissions should further adhere to the following structure:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Motivation: motivate the open problem that you want to address and briefly summarize existing approaches along with their deficiencies.&lt;/li&gt;
+    &lt;li&gt;Objectives: describe the key objectives of your PhD project and argue how achieving them will solve the open problem outlined in the motivation.&lt;/li&gt;
+    &lt;li&gt;Methodology: outline what methodology you will adopt to meet the objectives of your project. Clearly state on what existing works your work will build.&lt;/li&gt;
+    &lt;li&gt;Research Plan: describe what preliminary results – if any – you have already achieved and summarize your plans for future work. Please add a rough schedule that allows to judge whether your research plan is feasible.&lt;/li&gt;
+&lt;/ul&gt;
+Authors of accepted papers shall prepare a final, camera ready version of the paper, taking into account all feedback from reviewers, and formatted according to the IEEE Computer Society Press proceedings style guide. Doctoral Symposium papers will be advertised in the final program, and will be submitted to IEEE Xplore as part of the SASO proceedings. Papers will also be made available in the IEEE Digital Library.
+&lt;h4&gt;Review Process&lt;/h4&gt;
+Each submission will be reviewed by at least two Doctoral Symposium experts (see list below) that cover the different areas of interest of the conference. Submissions will be evaluated based on their relevance to FAS*, the motivation and quality of the proposed research, as well as the suitability of the chosen methodology.
+&lt;p&gt;Authors of accepted papers will have different opportunities to present their project at the conference. Besides a full presentation during the PhD Symposium session, an “Elevator Pitch Session” will be organized during the main conference, where authors get the chance to briefly showcase their research. In addition, the Best Doctoral Symposium paper will be selected and the award will be presented during the main conference. Finally, selected authors will have the additional chance to present their work via a poster in the poster session of the main conference.
+&lt;/p&gt;&lt;h4&gt;Invited Talk&lt;/h4&gt;
+To be announced
+&lt;h4&gt;Doctoral Symposium Experts&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Ozalp Babaoglu – University of Bologna, IT&lt;/li&gt;
+    &lt;li&gt;Jacob Beal – BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Kurt Geihs – Universitaet Kassel, DE&lt;/li&gt;
+    &lt;li&gt;Tom Holvoet – KU Leuven, BE&lt;/li&gt;
+    &lt;li&gt;Manish Parashar – Rutgers University, USA&lt;/li&gt;
+    &lt;li&gt;Jeremy Pitt – Imperial College London, UK&lt;/li&gt;
+    &lt;li&gt;Mark Jelasity – University of Szeged, HU&lt;/li&gt;
+    &lt;li&gt;Burkhard Stiller – University of Zurich, CH&lt;/li&gt;
+    &lt;li&gt;Giuseppe Valetto – Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+    &lt;li&gt;Salim Hariri – University of Arizona, USA&lt;/li&gt;
+    &lt;li&gt;Simon Dobson – University of St Andrews, Scotland, UK&lt;/li&gt;
+    &lt;li&gt;Antonio Bucchiarone - Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Important Dates (Extended)&lt;/h4&gt;
+Abstract Submission due (extended): June 12, 2016
+Paper Submission due (extended): June 20, 2016
+Notifications due: July 10, 2016
+Camera ready version due: July 24, 2016
+Conference date: September 12-16, 2016
+&lt;h4&gt;Contact Information&lt;/h4&gt;
+For any further information, please contact the Doctoral Symposium chairs:
+&lt;p&gt;Pradeep Murukannaiah Department of Computer Science North Carolina State University Raleigh, NC, 27606, USA
+&lt;a class="moz-txt-link-abbreviated" href="mailto:pmuruka@ncsu.edu"&gt;pmuruka@ncsu.edu&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www4.ncsu.edu/%7Epmuruka/"&gt;http://www4.ncsu.edu/~pmuruka/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dr. Ingo Scholtes Chair of Systems Design ETH Zurich CH-8092 Zurich Switzerland
+&lt;a class="moz-txt-link-abbreviated" href="mailto:ischoltes@ethz.ch"&gt;ischoltes@ethz.ch&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www.ingoscholtes.net"&gt;http://www.ingoscholtes.net&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>doctoral symposium</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2016/06/02/fasw/</guid><pubDate>Thu, 02 Jun 2016 15:56:55 GMT</pubDate></item><item><title>Doctoral Symposium on Foundations and Applications of Self-* Systems 2016</title><link>https://simondobson.org/blog/2016/02/21/fas-doctoral-symposium/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The call for participation in the FAS 2016 doctoral symposium is now open.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;FAS&lt;em&gt;W 2016 (SASO and ICCAC)
+Call For Doctoral Symposium Submissions Doctoral Symposium on Foundations and Applications of Self-&lt;/em&gt; Systems (FAS*W)&lt;/h3&gt;
+Augsburg, Germany, September 12 &amp;amp; 16, 2016
+&lt;a class="moz-txt-link-freetext" href="http://fasstar2016.informatik.uni-augsburg.de/"&gt;http://fasstar2016.informatik.uni-augsburg.de/&lt;/a&gt;
+&lt;a class="moz-txt-link-freetext" href="http://iccac2016.se.rit.edu/"&gt;http://iccac2016.se.rit.edu/&lt;/a&gt;
+&lt;a class="moz-txt-link-freetext" href="http://uni-augsburg.de/saso2016"&gt;http://uni-augsburg.de/saso2016
+&lt;/a&gt;@SASO2016Conf
+&lt;p&gt;Foundations and Applications of Self&lt;em&gt; Systems (FAS&lt;/em&gt;) is the umbrella for two closely related but independent conferences, the International Conference on Self-Adaptive and Self-Organizing Systems (SASO) and the International Conference on Cloud and Autonomic Computing (ICCAC). The FAS&lt;em&gt; Doctoral Symposium provides an international forum for PhD Students working in research areas addressed by FAS&lt;/em&gt;. In this forum, PhD students will get unique opportunities to subject their research to the scrutiny of external experts, gain experience in the presentation of research, connect to peers and experts addressing similar problems, and get advice from a panel of internationally leading researchers. Different from the technical tracks of the conference, the FAS* Doctoral Symposium focuses on the specific needs of young researchers at the beginning of their career. As such, particular emphasis will be placed on a critical and constructive feedback that shall help participants to successfully conclude their PhD studies.&lt;/p&gt;
+&lt;p&gt;PhD students working in any area addressed by the FAS&lt;em&gt; conferences are invited to submit a Doctoral Symposium paper in which they describe the key motivation and objectives of their research project, and reflect on the methodology as well as the current status of their PhD studies. Complementing the thematic focus of FAS&lt;/em&gt;, we particularly solicit contributions in the following areas:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Engineering of self-organizing and self-adaptive systems.&lt;/strong&gt; We solicit theoretical and applied works addressing fundamental principles underlying self-organizing systems, as well as methods that allow to quantify, model and reproduce the self-&lt;em&gt; characteristics of complex systems in biological, social, physical and technical systems. Examples include mechanisms underlying distributed decision- making and collective intelligence, software engineering challenges in self-adaptive systems, as well as general application of self-&lt;/em&gt; principles in the engineering of technical systems.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Complex Cyber-physical and socio-technical systems. &lt;/strong&gt;We welcome contributions that apply self-&lt;em&gt; principles to address challenges in the design of complex cyber- physical and socio-technical systems. Particular examples include smart grid infrastructures, sensor networks, opportunistic networking scenarios, as well as large-scale social information systems. Works addressing challenges such as the security, privacy and anonymity of users, or mechanisms to prevent censorship, manipulation or unfairness in socio-technical systems are especially welcome. We further solicit works on socio- technical and socio-economic challenges in P2P systems, such as the design of incentive, trust and reputation mechanisms.&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Self- approaches in Massive-Scale Decentralized Systems. &lt;/strong&gt;Works in this area use self-&lt;em&gt; approaches to address challenges in the design and operation of massive scale decentralized systems. Examples include Peer-to-Peer technologies, as well as overlay topology management schemes. We are further interested in decentralized data mining and machine learning approaches, as well as decentralized approaches to monitor, model and adapt distributed systems. Works using self-&lt;/em&gt; principles to address the inherent challenges in the design of massive-scale systems with unreliable and heterogeneous are of particular interest.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Autonomic Computing Systems. &lt;/strong&gt;Here we are interested in all works addressing the self-configuration, self-optimization and self-adaptation of cloud computing services, data centers and general distributed computing systems. Examples for questions addressed in this area include the monitoring and modeling of cloud services, the design of efficient resource allocation mechanisms, the application of data mining and machine learning techniques to analyze and predict the behavior of technical systems, as well as the characterization of distributed computing workloads.&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Application of Self-&lt;em&gt; in Robotics and Spatial Computing,&lt;/em&gt;&lt;/strong&gt; Finally, we welcome contributions using self- principles in the areas of robotics, swarm robotics and spatial computing. Here, examples for works of interest include environmental modeling and perception, machine vision, and self-adaptation mechanisms in robotics, distributed coordination and collective intelligence in multi- robot systems, as well as novel paradigms for the programming of autonomous, spatially distributed entities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+Submissions should have a length of max. six pages and be formatted according to the IEEE Computer Society Press proceedings style guide. Authors should submit their papers using the EasyChair installation of the main conference, which is available at:
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://easychair.org/conferences/?conf=saso2016"&gt;https://easychair.org/conferences/?conf=saso2016&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please note that only single-author submissions are accepted, which focus on the topic of the doctoral work. The name of the supervisor (« supervised by ... ») should be clearly marked below the author’s name in the paper. Submissions should further adhere to the following structure:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Motivation: motivate the open problem that you want to address and briefly summarize existing approaches along with their deficiencies.&lt;/li&gt;
+    &lt;li&gt;Objectives: describe the key objectives of your PhD project and argue how achieving them will solve the open problem outlined in the motivation.&lt;/li&gt;
+    &lt;li&gt;Methodology: outline what methodology you will adopt to meet the objectives of your project. Clearly state on what existing works your work will build.&lt;/li&gt;
+    &lt;li&gt;Research Plan: describe what preliminary results – if any – you have already achieved and summarize your plans for future work. Please add a rough schedule that allows to judge whether your research plan is feasible.&lt;/li&gt;
+&lt;/ul&gt;
+Authors of accepted papers shall prepare a final, camera ready version of the paper, taking into account all feedback from reviewers, and formatted according to the IEEE Computer Society Press proceedings style guide. Doctoral Symposium papers will be advertised in the final program, and will be submitted to IEEE Xplore as part of the SASO proceedings. Papers will also be made available in the IEEE Digital Library.
+&lt;h4&gt;Review Process&lt;/h4&gt;
+Each submission will be reviewed by at least two Doctoral Symposium experts (see list below) that cover the different areas of interest of the conference. Submissions will be evaluated based on their relevance to FAS*, the motivation and quality of the proposed research, as well as the suitability of the chosen methodology.
+&lt;p&gt;Authors of accepted papers will have different opportunities to present their project at the conference. Besides a full presentation during the PhD Symposium session, an “Elevator Pitch Session” will be organized during the main conference, where authors get the chance to briefly showcase their research. In addition, the Best Doctoral Symposium paper will be selected and the award will be presented during the main conference. Finally, selected authors will have the additional chance to present their work via a poster in the poster session of the main conference.
+&lt;/p&gt;&lt;h4&gt;Invited Talk&lt;/h4&gt;
+To be announced
+&lt;h4&gt;Doctoral Symposium Experts&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Ozalp Babaoglu – University of Bologna, IT&lt;/li&gt;
+    &lt;li&gt;Jacob Beal – BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Kurt Geihs – Universitaet Kassel, DE&lt;/li&gt;
+    &lt;li&gt;Tom Holvoet – KU Leuven, BE&lt;/li&gt;
+    &lt;li&gt;Manish Parashar – Rutgers University, USA&lt;/li&gt;
+    &lt;li&gt;Jeremy Pitt – Imperial College London, UK&lt;/li&gt;
+    &lt;li&gt;Mark Jelasity – University of Szeged, HU&lt;/li&gt;
+    &lt;li&gt;Burkhard Stiller – University of Zurich, CH&lt;/li&gt;
+    &lt;li&gt;Giuseppe Valetto – Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+    &lt;li&gt;Salim Hariri – University of Arizona, USA&lt;/li&gt;
+    &lt;li&gt;Simon Dobson – University of St Andrews, Scotland, UK&lt;/li&gt;
+    &lt;li&gt;Antonio Bucchiarone - Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+&lt;/ul&gt;
+To be completed
+&lt;h4&gt;Important Dates&lt;/h4&gt;
+Abstract Submission due: May 29, 2016
+Paper Submission due: June 12, 2016
+Notifications due: July 10, 2016
+Camera ready version due: July 24, 2016
+Conference date: September 12-16, 2016
+&lt;h4&gt;Contact Information&lt;/h4&gt;
+For any further information, please contact the Doctoral Symposium chairs:
+&lt;p&gt;Pradeep Murukannaiah Department of Computer Scienc North Carolina State University Raleigh, NC, 27606, USA &lt;a class="moz-txt-link-abbreviated" href="mailto:pmuruka@ncsu.edu"&gt;pmuruka@ncsu.edu&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www4.ncsu.edu/%7Epmuruka/"&gt;http://www4.ncsu.edu/~pmuruka/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dr. Ingo Scholtes Chair of Systems Design ETH Zurich CH-8092 Zurich Switzerland &lt;a class="moz-txt-link-abbreviated" href="mailto:ischoltes@ethz.ch"&gt;ischoltes@ethz.ch&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www.ingoscholtes.net"&gt;http://www.ingoscholtes.net&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>doctoral symposium</category><guid>https://simondobson.org/blog/2016/02/21/fas-doctoral-symposium/</guid><pubDate>Sun, 21 Feb 2016 17:42:13 GMT</pubDate></item><item><title>CfP: Spatial and Collective Awareness workshop at SASO'15</title><link>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The first workshop on Spatial Awareness is being held in Boston in September as part of the &lt;a href="http://saso2015.mit.edu/" target="_blank"&gt;SASO conference&lt;/a&gt;.
+&lt;!--more--&gt;
+&lt;/p&gt;&lt;h3&gt;First International Workshop on Spatial and COllective PErvasive Computing Systems (SCOPES) Workshop&lt;/h3&gt;
+Co-located with IEEE SASO 2015, located at MIT, Cambridge, USA
+&lt;p&gt;September 21, 2015&lt;/p&gt;
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="http://www.spatial-computing.org/scopes"&gt;http://www.spatial-computing.org/scopes&lt;/a&gt;
+&lt;/p&gt;&lt;h4&gt;Overview&lt;/h4&gt;
+This workshop aims at combining three distinct, yet closely related areas of research, which will likely together play a major role in producing the key technical results needed to develop large-scale adaptive distributed systems of future networked scenarios.
+&lt;ul&gt;
+    &lt;li&gt;Spatial computing: Spatial computing systems are systems of individual entities, typically situated in a physical environment, in which the “functional goals” of the system are generally defined in terms of the system's spatial structure. Typically, such systems are developed following a self-organisation approach, making spatial patterns arise by emergence.&lt;/li&gt;
+    &lt;li&gt;Collective adaptive systems: Collective computing systems are systems of tightly entangled components, achieving an overall goal through widespread cooperation, typically relying on self-adaptation techniques and collective/social intelligence.&lt;/li&gt;
+    &lt;li&gt;Pervasive computing: Pervasive computing systems and the “Internet of Things” deal with current and emerging scenarios in which humans, sensors, mobile, and embedded devices engage in complex interactions in a shared environment.&lt;/li&gt;
+&lt;/ul&gt;
+The goal of this workshop is to foster the creation of general-purpose solutions for supporting the development of these kinds of systems, particularly as regards generalizable techniques and architectures. Topics of interest include:
+&lt;ul&gt;
+    &lt;li&gt;Foundational models of spatially embedded collective systems, exhibiting resilience, robustness and scalability properties as required by emerging pervasive computing scenarios.&lt;/li&gt;
+    &lt;li&gt;Tools and tool-chains targeting large-scale situated systems: programming or specification languages, compilers and proof-checking techniques, simulators, tools for property verification, libraries and APIs, supporting platforms, whole infrastructures.&lt;/li&gt;
+    &lt;li&gt;Innovative methods and techniques for system development, including design patterns, software methodologies, best practices, and practical experience reports.&lt;/li&gt;
+    &lt;li&gt;Applications contexts and scenarios of general interest to foster the identification of new problems and solutions, taking inspiration from cyber-physical systems, the Internet of things, sensor networks, smart-cities, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Paper submission&lt;/h4&gt;
+Papers should present original work and be no longer than 6 pages in the standard IEEE two-column format. All manuscripts should be submitted in PDF form through the submissions system for SCOPES at EasyChair. Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings. Post-proceedings publication in a journal is planned. Questions should be addressed to &lt;a class="moz-txt-link-abbreviated" href="mailto:saso.scopes2015@easychair.org"&gt;saso.scopes2015@easychair.org&lt;/a&gt;.
+&lt;h4&gt;Important Dates&lt;/h4&gt;
+Workshop paper submission: July 11, 2015
+Notification of accepted papers: July 31, 2015
+Camera-ready paper deadline: August 10, 2015
+Workshop at SASO: September 21, 2015
+&lt;h4&gt;Organisers&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Dr. Jacob Beal (Raytheon BBN Technologies, USA)&lt;/li&gt;
+    &lt;li&gt;Prof. Jane Hillson (University of Edinburgh, UK)&lt;/li&gt;
+    &lt;li&gt;Dr. Mirko Viroli (University of Bologna, Italy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Program Committee&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Ezio Bartocci, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Spring Berman, Arizona State University, USA&lt;/li&gt;
+    &lt;li&gt;Luca Bortolussi, University of Trieste, Italy&lt;/li&gt;
+    &lt;li&gt;Sven Brueckner, Axon Connected LLC, USA&lt;/li&gt;
+    &lt;li&gt;Siobhan Clarke, Trinity College Dublin, IE&lt;/li&gt;
+    &lt;li&gt;Daniel Coore, University of the West Indies&lt;/li&gt;
+    &lt;li&gt;Jamaica Ferruccio Damiani, Università di Torino, Italy&lt;/li&gt;
+    &lt;li&gt;Rocco De Nicola, IMT - Institute for Advanced Studies Lucca, Italy&lt;/li&gt;
+    &lt;li&gt;Giovanna Di Marzo Serugendo, University of Geneve, Switzerland&lt;/li&gt;
+    &lt;li&gt;Ada Diaconescu, Telecom ParisTech, CNRS LTCI, France&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews, UK&lt;/li&gt;
+    &lt;li&gt;Matt Duckham, University of Melbourne, Australia&lt;/li&gt;
+    &lt;li&gt;Stefan Dulman, CWI, Netherlands&lt;/li&gt;
+    &lt;li&gt;Schahram Dustdar, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Eva Kühn, Vienna University of Technology, Austria&lt;/li&gt;
+    &lt;li&gt;Mieke Massink, CNR-ISTI, Italy&lt;/li&gt;
+    &lt;li&gt;Mirco Musolesi, University College London UK&lt;/li&gt;
+    &lt;li&gt;Silvia Nittel, University of Maine, USA&lt;/li&gt;
+    &lt;li&gt;Antoine Spicher, LACL University Paris Est Creteil, France&lt;/li&gt;
+    &lt;li&gt;Katia Sycara, Carnegie Mellon University, USA&lt;/li&gt;
+    &lt;li&gt;Christof Teuscher, Portland State University, USA&lt;/li&gt;
+    &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen, Germany&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>cfp</category><category>conference</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</guid><pubDate>Wed, 17 Jun 2015 10:00:31 GMT</pubDate></item><item><title>Call for papers: new journal on self-adaptive systems</title><link>https://simondobson.org/blog/2014/05/15/eai-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Papers are welcome for the EAI Endorsed Transactions on Self-Adaptive Systems.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;EAI Transactions on Self-Adaptive Systems&lt;/h3&gt;
+&lt;a href="http://eai.eu/transaction/self-adaptive-systems" target="_blank"&gt;http://eai.eu/transaction/self-adaptive-systems&lt;/a&gt;
+&lt;p&gt;Editor-in-Chief: &lt;a href="mailto:emil@vassev.com"&gt;Dr. Emil Vassev&lt;/a&gt;, &lt;a href="http://www.lero.ie" target="_blank"&gt;Lero, the Irish Software Engineering Centre&lt;/a&gt;, University of Limerick, Ireland&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SCOPE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This journal seeks contributions from leading experts from research and practice of self-adaptive systems that will provide the connection between theory and practice with the ultimate goal to bring both the science and industry closer to the so-called "autonomic culture" and successful realization of self-adaptive systems. Both theoretical and applied contributions related to the relevance and potential of engineering methods, approaches and tools for self-adaptive systems are particularly welcome. This applies to application areas and technologies such as:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;adaptable user interfaces&lt;/li&gt;
+    &lt;li&gt;adaptable security and privacy&lt;/li&gt;
+    &lt;li&gt;autonomic computing&lt;/li&gt;
+    &lt;li&gt;dependable computing&lt;/li&gt;
+    &lt;li&gt;embedded systems&lt;/li&gt;
+    &lt;li&gt;genetic algorithms&lt;/li&gt;
+    &lt;li&gt;knowledge representation and reasoning&lt;/li&gt;
+    &lt;li&gt;machine learning&lt;/li&gt;
+    &lt;li&gt;mobile &lt;em&gt;ad hoc&lt;/em&gt; networks&lt;/li&gt;
+    &lt;li&gt;mobile and autonomous robots&lt;/li&gt;
+    &lt;li&gt;multi-agent systems&lt;/li&gt;
+    &lt;li&gt;peer-to-peer applications&lt;/li&gt;
+    &lt;li&gt;sensor networks&lt;/li&gt;
+    &lt;li&gt;service-oriented architectures&lt;/li&gt;
+    &lt;li&gt;ubiquitous computing&lt;/li&gt;
+&lt;/ul&gt;
+It also hold for many research fields, which have already investigated some aspects of self-adaptation from their own perspective, such as
+fault-tolerant computing, distributed systems, biologically inspired computing, distributed artificial intelligence, integrated management, robotics, knowledge-based systems, machine learning, control theory, etc.
+&lt;p&gt;&lt;strong&gt;MANUSCRIPT SUBMISSION&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Manuscripts should present original work in the scope of the journal and must be exclusively submitted to this journal, must not have been published before, and must not be under consideration for publication elsewhere. Significantly extended and expanded versions of papers published in conference proceedings can be submitted, providing also a detailed description of the additions. Regular papers are limited to a maximum of 20 pages. Prepare and submit your manuscript by following the instructions provided &lt;a href="http://eai.eu/transaction/self-adaptive-systems" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OPEN ACCESS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Authors are not charged with any publication fees and their papers will be published online with Open Access. Open Access is a publishing model where the electronic copy of the article is made freely available with permission for sharing and redistribution. Currently, all articles published in all journals in the EAI Endorsed Transactions series are Open Access under the terms of the Creative Commons with Attribution license and published in the European Union Digital Library.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDITORIAL BOARD&lt;/strong&gt;
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Christopher Rouff , Johns Hopkins Applied Physics Laboratory, USA&lt;/li&gt;
+    &lt;li&gt;Danny Weyns , Linnaeus University, Sweden&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli , UNIMORE, Italy&lt;/li&gt;
+    &lt;li&gt;Genaina Rodrigues , University of Brasilia, Brazil&lt;/li&gt;
+    &lt;li&gt;Giacomo Cabri , UNIMORE, Italy&lt;/li&gt;
+    &lt;li&gt;Imrich Chlamtac , CREATE-NET Research Consortium, University of Trento, Italy&lt;/li&gt;
+    &lt;li&gt;James Windsor , ESTEC, European Space Agency, Netherlands&lt;/li&gt;
+    &lt;li&gt;Michael O'Neill , UCD, Ireland&lt;/li&gt;
+    &lt;li&gt;Mike Hinchey , Lero, the Irish Software Engineering Research Centre, University of Limerick, Ireland&lt;/li&gt;
+    &lt;li&gt;Richard Antony , University of Greenwich, UK&lt;/li&gt;
+    &lt;li&gt;Simon Dobson , Uni­ver­sity of St Andrews, UK&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;/div&gt;</description><category>autonomic systems</category><category>Blog</category><category>cfp</category><category>journal</category><category>open access</category><guid>https://simondobson.org/blog/2014/05/15/eai-cfp/</guid><pubDate>Thu, 15 May 2014 13:24:08 GMT</pubDate></item><item><title>Call for papers: Midsens 2012</title><link>https://simondobson.org/blog/2012/07/11/call-papers-midsens-2012/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The Seventh International Workshop on Middleware Tools, Services and Run-time Support for Sensor Networks (&lt;a href="http://www.midsens.org/" target="_blank"&gt;MidSens’12&lt;/a&gt;) will be co-located with &lt;a href="http://middleware2012.cs.mcgill.ca/"&gt;Middleware 2012&lt;/a&gt; (December 3rd - 7th, 2012) in Montreal, Canada&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The aim of MidSens'12 is to stimulate research in the specific domain of middleware for sensor networks. The particular focus of MidSens'12 is the realization of &lt;strong&gt;multi-user, multi-purpose and federated sensing platforms&lt;/strong&gt; that are capable of supporting next-generation application scenarios such as &lt;strong&gt;smart cities&lt;/strong&gt;. Along with the core topic of middleware architectures, services and tool support, MidSens'12 will also seek papers describing novel programming languages, run-time support and relevant experience reports. MidSens'12 will investigate how middleware support can relieve developers from low-level, platform specific concerns, while enabling the optimal exploitation of heterogeneous resources to create &lt;strong&gt;sensing infrastructures of massive scale&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Effectively developing, deploying and managing sensor network platforms requires supporting middleware services, tools and run-time support. MidSens'12 welcomes papers on the following research topics:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Middleware Tools and Architectures:&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;Software architectures for sensor networks&lt;/li&gt;
+    &lt;li&gt;Novel programming abstractions for large-scale sensor networks&lt;/li&gt;
+    &lt;li&gt;Architectures to combine mobile devices and sensor motes&lt;/li&gt;
+    &lt;li&gt;Lightweight autonomic middleware for embedded systems&lt;/li&gt;
+    &lt;li&gt;Testing and simulation tools for sensor network middleware&lt;/li&gt;
+    &lt;li&gt;Fault identification, diagnosis and repair&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;Middleware services:&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;Location tracking, localization, and synchronization.&lt;/li&gt;
+    &lt;li&gt;Support for real-time and safety-critical systems.&lt;/li&gt;
+    &lt;li&gt;Data management, aggregation and filtering.&lt;/li&gt;
+    &lt;li&gt;Energy-aware middleware mechanisms.&lt;/li&gt;
+    &lt;li&gt;Fault tolerance, reliability and quality of service.&lt;/li&gt;
+    &lt;li&gt;Privacy and security services.&lt;/li&gt;
+    &lt;li&gt;Virtualization, sharing and trading of resources.&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;Run-time Support:&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;Overlay and topology creation, maintenance and management.&lt;/li&gt;
+    &lt;li&gt;Resource/Service discovery and management.&lt;/li&gt;
+    &lt;li&gt;Support for reconfiguration and adaptation.&lt;/li&gt;
+    &lt;li&gt;Effective naming and addressing schemes.&lt;/li&gt;
+    &lt;li&gt;Support for modeling and enacting safe software reconfiguration.&lt;/li&gt;
+&lt;/ul&gt;
+    &lt;li&gt;Management and Experiences:&lt;/li&gt;
+&lt;ul&gt;
+    &lt;li&gt;Managing heterogeneity and network dynamism.&lt;/li&gt;
+    &lt;li&gt;Integration of embedded systems with web services.&lt;/li&gt;
+    &lt;li&gt;Experience and evaluation of middleware platforms.&lt;/li&gt;
+    &lt;li&gt;Support for the unification of various embedded platforms.&lt;/li&gt;
+    &lt;li&gt;Shared infrastructure embedded systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;
+Submitted papers must be original work in English without substantial overlap with papers that have been published or that are simultaneously submitted to a journal or conference with proceedings. Submissions must not exceed 6 pages, must strictly follow the ACM conference proceedings format, and must be submitted in PDF format.
+&lt;p&gt;All accepted papers will appear in the &lt;strong&gt;ACM Digital Library&lt;/strong&gt; and will be indexed in &lt;strong&gt; DBLP&lt;/strong&gt;.
+&lt;/p&gt;&lt;h3&gt;Important Dates:&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Paper Submission deadline: August 15, 2012&lt;/li&gt;
+    &lt;li&gt;Acceptance notification: September 21, 2012&lt;/li&gt;
+    &lt;li&gt;Author registration deadline: October 5, 2012&lt;/li&gt;
+    &lt;li&gt;Camera-ready version due: October 5, 2012&lt;/li&gt;
+    &lt;li&gt;Workshop: December 3-7, 2012&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>sensor networks</category><guid>https://simondobson.org/blog/2012/07/11/call-papers-midsens-2012/</guid><pubDate>Wed, 11 Jul 2012 12:00:26 GMT</pubDate></item></channel></rss>

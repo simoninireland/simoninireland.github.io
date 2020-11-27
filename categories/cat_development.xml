@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about development)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/cat_development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Nov 2020 17:40:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Where am I (in git)?</title><link>https://simondobson.org/blog/2020/11/27/where-am-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently started using &lt;code&gt;git&lt;/code&gt; and &lt;a href="https://github.com/simoninireland/"&gt;Github&lt;/a&gt;
+in a more serious way than I've done in the past -- and promptly
+started getting horrendously lost in the process.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/11/27/where-am-i/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>git</category><category>linux</category><guid>https://simondobson.org/blog/2020/11/27/where-am-i/</guid><pubDate>Fri, 27 Nov 2020 11:14:08 GMT</pubDate></item><item><title>Citizen sensing with Arduino</title><link>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Introducing some notes on low-power Arduino programming.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;In 2013 I did a summer project on using the &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt; as a platform for "citizen sensing". This rapidly became an exploration of how to create hardware and software that can do sensing while operating in a very low-power regime, such as one would need for an environmental sensor.&lt;/p&gt;
+&lt;p&gt;There were several results from this project -- one of which &lt;em&gt;wasn't&lt;/em&gt; an actual solution to the motivating problem I'd come up with. However, it did generate a lot of notes about low-power Arduino programming, both for hardware and software, and a software library that embodies some of them&lt;/p&gt;
+&lt;p&gt;I recently decommissioned the web site I was using to host this content, so I've ported it onto my main blog as a collection of &lt;a href="https://simondobson.org/development/citizen-sensing/"&gt;research and development notes&lt;/a&gt; in case it's still of interest to anyone.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>hardware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</guid><pubDate>Thu, 24 May 2018 12:26:34 GMT</pubDate></item><item><title>Uploading sketches to a breadboard Arduino</title><link>https://simondobson.org/blog/2013/08/28/uploading-sketches/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;It turns out there there are quite a few versions of the "same" components out there. Uploading sketches to an Arduino-on-a-breadboard is trickier than it first appears.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The &lt;a href="https://simondobson.org/blog/2013/08/27/arduino-breadboard/"&gt;Arduino-on-a-breadboard showed&lt;/a&gt; that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it &lt;em&gt;via&lt;/em&gt; the USB breakout board didn't work -- repeatedly.&lt;/p&gt;
+&lt;p&gt;It turns out that the &lt;a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener"&gt;breadboard tutorial on the Arduino web site&lt;/a&gt; is actually flawed for the current versions of the components concerned. There are actually two problems: the microcontroller needs to be manually reset before uploading a sketch; and the USB breakout board needs slightly more supporting electronics to talk to the microcontroller.&lt;/p&gt;
+&lt;p&gt;The first problem stems from the microcontroller needing to be reset before code can be uploaded to it. Essentially the reset makes the bootloader wait for code for a few seconds, and start the existing program if none arrives. On older Arduino models you have to physically reset the board using the reset switch just before uploading a sketch; on newer models, this reset happens automatically. Setting up the breakout board to reset the microcontroller immediately before it tries to talk to it will solve this.&lt;/p&gt;
+&lt;p&gt;The second problem is more subtle. The USB breakout board is actually a USB to serial converter. The &lt;a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener"&gt;tutorial&lt;/a&gt; suggests that it is enough to connect the transmit and receive (Tx and Rx) lines to the microcontroller, but this turns out not to be the case: one also needs to connect some handshaking lines to make the system synchronise and communicate correctly. I eventually found a &lt;a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener"&gt;post&lt;/a&gt; that explains this: however, &lt;em&gt;that post is flawed too&lt;/em&gt;, because it relies on a particular pin-out for the USB breakout board that's different tothe one I have. So here's a debugged explanation of what needs to happen.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="FT232r breakout board" src="https://simondobson.org/images/citizen-sensing/ft232r-breakout.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;We need to connect the basic TxD, RxD, Vcc and Gnd lines on the breakout board as you'd expect. The picture to the right shows the the underside of my breakout board, with the pins named. If we number the pins counter-clockwise from the top left (so DCD is pin 1, TXD is 9, TXLED is 11, and VCC is 13), we connect pins 3 and 10 to ground, pin 13 to power, pin 9 to pin 2 of the ATMega microcontroller, and pin 5 to ATMega pin 3.&lt;/p&gt;
+&lt;p&gt;What now also need to happen is that we need to connect the CTS and DTR lines to something. DTR (Data Transfer Ready) is sent low when the USB has data ready: we want this to trigger a reset of at ATMega. We then need to send CTS (Clear To Send) low so that the board starts sending data. This is basic serial-port handshaking. The timing can be accomplished using an RC circuit consisting of a 100ohm resistor and a 100nF capacitor attached appropriately. Putting this circuit onto the breadboard sorts out the handshaking, and the Arduino IDE happily uploads sketches just as it would to a "real" Arduino.&lt;/p&gt;
+&lt;p&gt;The net result of this is to add some more wiring to the USB end of the Arduino breadboard:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="USB end" src="https://simondobson.org/images/citizen-sensing/usb-end.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Note the resistor and capacitor. (The red wire crossing the breakout board is a Gnd connection, needed because my breadboard only had single power rails top and bottom.) The circuit involved is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Handshaking circuit" src="https://simondobson.org/images/citizen-sensing/breadboard-handshake.png"&gt;&lt;/p&gt;
+&lt;p&gt;For my particular breakout board shown above, this means connecting pin 7 to the capacitor and pin 15 to the following resistor. (It's this last step that the &lt;a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener"&gt;post&lt;/a&gt; gets wrong -- or at least uses a different pin for CTS.) The net result is an Arduino-on-a-breadboard that looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Second Arduino-on-a-breadboard" src="https://simondobson.org/images/citizen-sensing/breadboard-arduino-2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Somewhat more complicated, but rather more functional.&lt;/p&gt;
+&lt;p&gt;I think you have to maintain a sense of perspective about these issues, annoying as they are: in many ways it's good that the components change and evolve rather than staying exactly the same, as it means that they're being developed and refined over time. On the other hand, it means you have to be &lt;em&gt;very&lt;/em&gt; circumspect about following blindly the tutorials and explanations on blog posts from even a relatively short time ago.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>ditch</category><category>making</category><category>usb</category><guid>https://simondobson.org/blog/2013/08/28/uploading-sketches/</guid><pubDate>Wed, 28 Aug 2013 20:50:04 GMT</pubDate></item><item><title>Low-power Arduino-on-a-breadboard</title><link>https://simondobson.org/blog/2013/08/27/arduino-breadboard/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Putting an Arduino together from scratch lets us look at where the power consumption might be reduced -- and is just an interesting thing to do anyway.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;One of the most exciting things about the Arduino is that it's open-source, so you can build them yourself -- and potentially vary the way they're put together for specific projects, which is very useful as a starting point for people (like me!) who aren't hardware engineers.&lt;/p&gt;
+&lt;p&gt;The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the &lt;a href="https://simondobson.org/blog/2013/07/31/power/"&gt;quiescent current of the power regulator&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As a starting point, I used an &lt;a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener"&gt;on-line guide &lt;/a&gt;to build an Arduino on a breadboard:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An Arduino build from components" src="https://simondobson.org/images/citizen-sensing/breadboard-arduino.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as &lt;a href="https://simondobson.org/blog/2013/07/31/power/"&gt;earlier&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Measuring power for a simple "blink" program gives the following result:&lt;/p&gt;
+&lt;table style="border: 1"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Activity&lt;/td&gt;
+&lt;td&gt;Power mode&lt;/td&gt;
+&lt;td&gt;Current&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nothing&lt;/td&gt;
+&lt;td&gt;Deep sleep&lt;/td&gt;
+&lt;td&gt;4.5mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Flashing LED&lt;/td&gt;
+&lt;td&gt;Awake&lt;/td&gt;
+&lt;td&gt;17mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So in deep sleep mode the system draws about a seventh the power as a
+"real" Arduino. This is all down to the choice of voltage regulator:
+an L7805 with a design maximum quiescent current of 6mA. To put this
+into perspective, a system that could last a week on a standard
+Arduino board would last the best part of two months in this
+configuration. Put another way, we can build a sensor mote with an
+Arduino architecture and dramatically increased lifetime by changing a
+core component and using SleepySketch to keep the system asleep by
+default.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>ditch</category><category>making</category><category>power management</category><guid>https://simondobson.org/blog/2013/08/27/arduino-breadboard/</guid><pubDate>Tue, 27 Aug 2013 10:47:45 GMT</pubDate></item><item><title>XBee sleeping</title><link>https://simondobson.org/blog/2013/08/02/xbee-sleeping/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield slightly.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Our &lt;a href="https://simondobson.org/blog/2013/07/31/power/"&gt;previous measurements&lt;/a&gt; indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.&lt;/p&gt;
+&lt;p&gt;Since XBees work as a &lt;a href="https://simondobson.org/blog/2013/07/02/mesh-network/"&gt;mesh network&lt;/a&gt;, it's clearly going to be an issue as to &lt;em&gt;when&lt;/em&gt; a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pins relating to XBee sleep mode" src="https://simondobson.org/images/citizen-sensing/sleep-pin.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the &lt;a href="https://simondobson.org/blog/2013/07/23/arduino-watchdog/"&gt;Arduino's sleep modes&lt;/a&gt;. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.&lt;/p&gt;
+&lt;p&gt;Also note I/O line 7, pin 12 (in green): we'll come back to this later.&lt;/p&gt;
+&lt;p&gt;We'll deal with the hardware part first, and then the software.&lt;/p&gt;
+&lt;h3&gt;Getting access to the sleep pin&lt;/h3&gt;
+
+&lt;p&gt;The XBee shield doesn't connect the sleep pin to anything by default, so to control it we have to connect it. There are several ways we could do this, with the simplest being to solder a wire from the pan on pin 9 to an appropriate header on the shield, which is then connected to a digital pin on the Arduino. For simplicity we'll start with a wire that's long enough to reach &lt;em&gt;any&lt;/em&gt; header: we'll actually plug it into the header for the Arduino's D7 pin.&lt;/p&gt;
+&lt;p&gt;There's a slight concern about voltage levels in this approach, as the
+Arduino operates at 5V while the XBee uses 3.3V. Experimentally this
+doesn't seem to make a difference; for a production system we'd
+probably want to create a resistor network to drop the voltage to that
+needed by the radio, to avoid any risk of damage. We'd also probably
+want to solder a header to XBee pin 9's pad to make it easier to
+connect the wiring.&lt;/p&gt;
+&lt;h3&gt;Setting the sleep mode&lt;/h3&gt;
+
+&lt;p&gt;The XBee's sleep mode is controlled by a single AT command called (unsurprisingly) SM. The default (SM 0) is for the radio to be on all the time; SM 1 selects the pin-sleep mode described above, and is the one we'll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio's timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in control.)&lt;/p&gt;
+&lt;p&gt;Setting the sleep mode is simply a matter of &lt;a href="https://simondobson.org/blog/2013/08/02/at-commands-2"&gt;issuing the appropriate AT command&lt;/a&gt;. However, as with a lot of things to do with hardware, we have to set things up slightly first.&lt;/p&gt;
+&lt;p&gt;The first issue concerns the setting of the XBee's sleep pin. If we
+select pin-sleep mode with the pin high, the XBee will sleep
+immediately, which might not be what we intended. So if we've
+connected the sleep pin to D7, we need to set things up so that the
+pin is low to keep the radio awake, and then select its sleep mode:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#define XBEE_SLEEP 7                &lt;/span&gt;&lt;span class="c1"&gt;// Xbee sleep pin on D7&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="p"&gt;...&lt;/span&gt;
+   &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;XBEE_SLEEP&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;     &lt;span class="c1"&gt;// sleep control&lt;/span&gt;
+   &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;XBEE_SLEEP&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;   &lt;span class="c1"&gt;// deassert to keep radio awake when sleep mode selected&lt;/span&gt;
+   &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;(Some early mistakes showed that -- contrary to what might be expected -- the sleep pin defaults to high (send radio to sleep) rather than low. So this step is important.)&lt;/p&gt;
+&lt;p&gt;The next issue concerns the rather intricate behaviour of the XBee's other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it's asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield's designers have connected this pin to the Arduino's reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. &lt;a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank"&gt;Some posts suggest&lt;/a&gt; that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn't: we simply need to disable the output of this pin, using another AT command:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;atCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"D7"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;This disables the XBee's D7 line (not to be confused with the Arduino's D7 line, which we've attached to the XBee's sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this &lt;em&gt;did&lt;/em&gt; take quite a while to work out, since you ask...)&lt;/p&gt;
+&lt;p&gt;We can now put all this together to place the XBee into SM 1  and let the Arduino sleep it at will:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#define LED 13&lt;/span&gt;
+&lt;span class="cp"&gt;#define XBEE_SLEEP 7                &lt;/span&gt;&lt;span class="c1"&gt;// XBee sleep pin on D7&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LED&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;            &lt;span class="c1"&gt;// LED signal&lt;/span&gt;
+   &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;XBEE_SLEEP&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;     &lt;span class="c1"&gt;// sleep control&lt;/span&gt;
+   &lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9600&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setSerial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+   &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;XBEE_SLEEP&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;   &lt;span class="c1"&gt;// deassert to keep radio awake when sleep mode selected&lt;/span&gt;
+   &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;atCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"D7"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;atCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"SM"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="c1"&gt;// AT commands failed, flash frantically&lt;/span&gt;
+      &lt;span class="p"&gt;...&lt;/span&gt;
+   &lt;span class="p"&gt;}&lt;/span&gt;
+   &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;Note that we've used local AT commands to set the radio's mode. It's
+also possible to do this &lt;a href="https://simondobson.org/2013/07/xctu/"&gt;statically using
+X-CTU&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Results&lt;/h3&gt;
+
+&lt;p&gt;&lt;img alt="XBee with sleep control" src="https://simondobson.org/images/citizen-sensing/xbee-sleep.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the radio.&lt;/p&gt;
+&lt;p&gt;Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range -- far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some work).&lt;/p&gt;
+&lt;p&gt;Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more exploration.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>at command</category><category>ditch</category><category>making</category><category>power management</category><category>xbee</category><guid>https://simondobson.org/blog/2013/08/02/xbee-sleeping/</guid><pubDate>Fri, 02 Aug 2013 14:41:30 GMT</pubDate></item><item><title>Issuing AT commands</title><link>https://simondobson.org/blog/2013/08/02/at-commands-2/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Controlling the XBee requires issuing AT commands. The XBee library has the low-level machinery to do this.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;AT commands are the basis for controlling almost all modems, and the XBee is no different. In API mode, AT commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use form.&lt;/p&gt;
+&lt;p&gt;The basic approach is to send an AT command request packet and then
+read a returned packet acknowledging the command. For the moment we'll
+stick to "setting" commands, where the AT command takes an integer
+parameter: the other are needed less frequently. We construct the
+request packet, send it, read the response, and check that all went
+well. This isolates the rest of the program from the message exchange,
+but also hides the exact nature of any error.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;XBee.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="n"&gt;XBee&lt;/span&gt; &lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;atCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint8_t&lt;/span&gt; &lt;span class="n"&gt;param&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// send local AT command&lt;/span&gt;
+  &lt;span class="n"&gt;AtCommandRequest&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;AtCommandRequest&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;amp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;param&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+  &lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// receive response frame&lt;/span&gt;
+  &lt;span class="n"&gt;AtCommandResponse&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;AtCommandResponse&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readPacket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;                               &lt;span class="c1"&gt;// read packet from radio&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getResponse&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="n"&gt;getApiId&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;AT_RESPONSE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;    &lt;span class="c1"&gt;// right type?&lt;/span&gt;
+       &lt;span class="n"&gt;radio&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getResponse&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="n"&gt;getAtCommandResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+       &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isOk&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;                                     &lt;span class="c1"&gt;// not an error?&lt;/span&gt;
+         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+       &lt;span class="p"&gt;}&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="c1"&gt;// if we get here, return a failure&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;This function can be used to issue the different control codes for the radio. Some parameters can be &lt;a href="https://simondobson.org/blog/2013/07/02/xctu/"&gt;set using X-CTU &lt;/a&gt;when the radio firmware is installed, but commands are sometimes needed at run-time too.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>at command</category><category>ditch</category><category>making</category><category>xbee</category><guid>https://simondobson.org/blog/2013/08/02/at-commands-2/</guid><pubDate>Fri, 02 Aug 2013 11:03:54 GMT</pubDate></item><item><title>Basic power measurements</title><link>https://simondobson.org/blog/2013/07/31/power/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Some initial measurements of power consumption.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes is:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Normal &lt;code&gt;delay()&lt;/code&gt; loop&lt;/li&gt;
+    &lt;li&gt;Deep sleep for a period (deep sleep)&lt;/li&gt;
+    &lt;li&gt;Flash the LED (awake)&lt;/li&gt;
+    &lt;li&gt;Flash the LED differently while sending out radio messages (awake and transmitting)&lt;/li&gt;
+&lt;/ul&gt;
+We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
+&lt;p&gt;The results are as follows:&lt;/p&gt;
+&lt;table style="border: 1"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Activity&lt;/td&gt;
+&lt;td&gt;Power mode&lt;/td&gt;
+&lt;td&gt;Current&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nothing&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;delay()&lt;/code&gt; loop&lt;/td&gt;
+&lt;td&gt;43mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nothing&lt;/td&gt;
+&lt;td&gt;Deep sleep&lt;/td&gt;
+&lt;td&gt;33mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Steady LED&lt;/td&gt;
+&lt;td&gt;Deep sleep&lt;/td&gt;
+&lt;td&gt;34mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Flashing LED&lt;/td&gt;
+&lt;td&gt;Awake&lt;/td&gt;
+&lt;td&gt;45mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Xbee (quiet)&lt;/td&gt;
+&lt;td&gt;Deep sleep&lt;/td&gt;
+&lt;td&gt;72mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Xbee (quiet)&lt;/td&gt;
+&lt;td&gt;Awake&lt;/td&gt;
+&lt;td&gt;85mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Xbee (transmitting)&lt;/td&gt;
+&lt;td&gt;Awake&lt;/td&gt;
+&lt;td&gt;87mA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of using &lt;code&gt;delay()&lt;/code&gt; is quite power-hungry. The bad news is that the "at rest" power consumption of an Arduino even in deep sleep  -- the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing -- is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there's some variation happening faster than the ammeter's sample time).&lt;/p&gt;
+&lt;p&gt;The radio isn't put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the time.&lt;/p&gt;
+&lt;p&gt;[UPDATE 1Aug2013: made the table layout a bit clearer.]&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>ditch</category><category>making</category><category>power management</category><category>xbee</category><guid>https://simondobson.org/blog/2013/07/31/power/</guid><pubDate>Wed, 31 Jul 2013 17:12:55 GMT</pubDate></item><item><title>Some improvements to SleepySketch</title><link>https://simondobson.org/blog/2013/07/26/improvements/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.&lt;/p&gt;
+&lt;p&gt;The second issue concerns scheduling -- or rather regular
+scheduling. Most sampling and communication tasks occur on predictable
+schedules, say every five hours. In an &lt;a href="https://simondobson.org/blog/2013/06/01/actor-systems/" target="_blank"&gt;actor
+framework&lt;/a&gt;, that means the actor instance (or another one) has to
+be re-scheduled after the first has run. We can do this within the
+definition of the actor, for example using the &lt;code&gt;post()&lt;/code&gt;
+action:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="nl"&gt;PeriodicActor&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;behaviour&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;...&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="n"&gt;PeriodicActor&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;(This also demonstrates the &lt;code&gt;expandTime()&lt;/code&gt; function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use &lt;code&gt;PeriodicActor&lt;/code&gt; on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for &lt;em&gt;every&lt;/em&gt; actor that wants to run repeatedly.&lt;/p&gt;
+&lt;p&gt;A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;RepeatingActor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;The &lt;code&gt;RepeatingActor&lt;/code&gt; runs the behaviour of
+&lt;code&gt;SomeActor&lt;/code&gt; every 5 hours, and we initially schedule it to
+run in 5 hours. We can actually encapsulate all of this by adding a
+method to &lt;code&gt;SleepySketch&lt;/code&gt; itself:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleEvery&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;to perform the wrapping and initial scheduling automatically.&lt;/p&gt;
+&lt;p&gt;Simple sleepy sketches can now be created at set-up, by scheduling
+repeating actors, and we can define the various actors and re-use them
+in different scheduling situations without complicating their own
+code.&lt;/p&gt;&lt;/div&gt;</description><category>actors</category><category>ditch</category><category>framework</category><category>making</category><category>power management</category><category>sleepysketch</category><category>software</category><guid>https://simondobson.org/blog/2013/07/26/improvements/</guid><pubDate>Fri, 26 Jul 2013 15:20:38 GMT</pubDate></item><item><title>Radio survey</title><link>https://simondobson.org/blog/2013/07/26/radio-survey/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;A simple radio survey establishes the ranges that the radios can manage.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The 2mW XBee radios we've got have a nominal range of 100m -- but that's in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There's a reasonable chance that these obstacles will reduce the real range significantly.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="https://simondobson.org/images/citizen-sensing/sensor-enclosure.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station -- something as simple as possible, like sending a single packet with a count every ten seconds -- and keep careful track of the return values coming back from the radio library. We then use the only output device we have -- an LED -- to indicate the success or failure of each operation, preferably with an indication of &lt;em&gt;why&lt;/em&gt; it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we've reached the edge of the effective range.&lt;/p&gt;
+&lt;p&gt;With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect &lt;em&gt;via&lt;/em&gt; the first, automatically. That's the theory, anyway...&lt;/p&gt;
+&lt;p&gt;(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an ATJV1 command issued to it. The easiest way to do this is at set-up, &lt;a href="https://simondobson.org/blog/2013/07/02/xctu/" target="_blank"&gt;through the advanced settings in X-CTU&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30--40m -- somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10--20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no effort.&lt;/p&gt;
+&lt;p&gt;This is somewhat disappointing, but that's what this project is all about: the practicalities of sensor networking with cheap hardware.&lt;/p&gt;
+&lt;p&gt;There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the enclosure.&lt;/p&gt;
+&lt;p&gt;It's also worth noting that the radio segment is horrendously hard to debug with only a single LED for signalling. Adding more LEDs might help, but it's still a very poor debugging interface, even compared to printing status messages to the USB port.&lt;/p&gt;&lt;/div&gt;</description><category>ditch</category><category>making</category><category>network</category><category>wireless</category><category>xbee</category><guid>https://simondobson.org/blog/2013/07/26/radio-survey/</guid><pubDate>Fri, 26 Jul 2013 11:11:52 GMT</pubDate></item><item><title>Sleepy sketches</title><link>https://simondobson.org/blog/2013/07/25/sleepy-sketches/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;The standard Arduino software model is, well, standard: programs ("sketches") are structured in terms of a &lt;code&gt;setup()&lt;/code&gt; function that runs once when the system restarts and a &lt;code&gt;loop()&lt;/code&gt; function that is run repeatedly. This suggests that the system spends its time running, which possibly isn't all that desirable: a sensor system typically tries to &lt;a href="https://simondobson.org/blog/2013/07/23/arduino-watchdog"&gt;stay in a low-power mode&lt;/a&gt; as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.&lt;/p&gt;
+&lt;p&gt;There are at least two ways to do this. The simplest is a library that lets &lt;code&gt;loop()&lt;/code&gt; sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means that &lt;code&gt;loop()&lt;/code&gt; encapsulates all the program's logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another&lt;/p&gt;
+&lt;p&gt;If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an &lt;a href="https://simondobson.org/blog/2013/06/01/actor-systems/"&gt;actor system&lt;/a&gt; where the fragments are actors that are scheduled from an actor queue.&lt;/p&gt;
+&lt;p&gt;Turning this into code, we get the &lt;code&gt;SleepySketch&lt;/code&gt; library: a library for building Arduino sketches that spend most of their time sleeping.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SleepySketch design" src="https://simondobson.org/images/citizen-sensing/sleepysketch.png"&gt;&lt;/p&gt;
+&lt;p&gt;There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance RAM usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways: a &lt;code&gt;BusySleeper&lt;/code&gt; that uses the normal &lt;code&gt;delay()&lt;/code&gt; function (a busy loop) with no power-saving functions, a &lt;code&gt;HeavySleeper&lt;/code&gt; that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing the &lt;code&gt;Actor&lt;/code&gt; class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.&lt;/p&gt;
+&lt;p&gt;The standard library uses singleton classes quite a lot, so for example the &lt;code&gt;Serial&lt;/code&gt; object represents the USB connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a singleton, &lt;code&gt;Sleepy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The program structure then loops something like this. If we assume
+that we've defined an actor class &lt;code&gt;PingActor&lt;/code&gt;, then we can
+do the following:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9600&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;HeavySleeper&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+
+   &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;PingActor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Ping!"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+   &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;The &lt;code&gt;setup()&lt;/code&gt; code initialises the serial port and the sleepy sketch using a &lt;code&gt;HeavySleeper&lt;/code&gt;, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If the &lt;code&gt;PingActor&lt;/code&gt; instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.&lt;/p&gt;
+&lt;p&gt;This is a first design, now just about working. It's still not as easy
+as it could be, however, and needs some testing to make sure that the
+power savings do actually materialise.&lt;/p&gt;&lt;/div&gt;</description><category>actors</category><category>ditch</category><category>framework</category><category>making</category><category>power management</category><category>sleepysketch</category><category>software</category><guid>https://simondobson.org/blog/2013/07/25/sleepy-sketches/</guid><pubDate>Thu, 25 Jul 2013 12:00:01 GMT</pubDate></item></channel></rss>

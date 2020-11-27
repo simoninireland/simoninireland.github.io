@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about open access)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/open-access.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Call for papers: new journal on self-adaptive systems</title><link>https://simondobson.org/blog/2014/05/15/eai-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Papers are welcome for the EAI Endorsed Transactions on Self-Adaptive Systems.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;EAI Transactions on Self-Adaptive Systems&lt;/h3&gt;
+&lt;a href="http://eai.eu/transaction/self-adaptive-systems" target="_blank"&gt;http://eai.eu/transaction/self-adaptive-systems&lt;/a&gt;
+&lt;p&gt;Editor-in-Chief: &lt;a href="mailto:emil@vassev.com"&gt;Dr. Emil Vassev&lt;/a&gt;, &lt;a href="http://www.lero.ie" target="_blank"&gt;Lero, the Irish Software Engineering Centre&lt;/a&gt;, University of Limerick, Ireland&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SCOPE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This journal seeks contributions from leading experts from research and practice of self-adaptive systems that will provide the connection between theory and practice with the ultimate goal to bring both the science and industry closer to the so-called "autonomic culture" and successful realization of self-adaptive systems. Both theoretical and applied contributions related to the relevance and potential of engineering methods, approaches and tools for self-adaptive systems are particularly welcome. This applies to application areas and technologies such as:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;adaptable user interfaces&lt;/li&gt;
+    &lt;li&gt;adaptable security and privacy&lt;/li&gt;
+    &lt;li&gt;autonomic computing&lt;/li&gt;
+    &lt;li&gt;dependable computing&lt;/li&gt;
+    &lt;li&gt;embedded systems&lt;/li&gt;
+    &lt;li&gt;genetic algorithms&lt;/li&gt;
+    &lt;li&gt;knowledge representation and reasoning&lt;/li&gt;
+    &lt;li&gt;machine learning&lt;/li&gt;
+    &lt;li&gt;mobile &lt;em&gt;ad hoc&lt;/em&gt; networks&lt;/li&gt;
+    &lt;li&gt;mobile and autonomous robots&lt;/li&gt;
+    &lt;li&gt;multi-agent systems&lt;/li&gt;
+    &lt;li&gt;peer-to-peer applications&lt;/li&gt;
+    &lt;li&gt;sensor networks&lt;/li&gt;
+    &lt;li&gt;service-oriented architectures&lt;/li&gt;
+    &lt;li&gt;ubiquitous computing&lt;/li&gt;
+&lt;/ul&gt;
+It also hold for many research fields, which have already investigated some aspects of self-adaptation from their own perspective, such as
+fault-tolerant computing, distributed systems, biologically inspired computing, distributed artificial intelligence, integrated management, robotics, knowledge-based systems, machine learning, control theory, etc.
+&lt;p&gt;&lt;strong&gt;MANUSCRIPT SUBMISSION&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Manuscripts should present original work in the scope of the journal and must be exclusively submitted to this journal, must not have been published before, and must not be under consideration for publication elsewhere. Significantly extended and expanded versions of papers published in conference proceedings can be submitted, providing also a detailed description of the additions. Regular papers are limited to a maximum of 20 pages. Prepare and submit your manuscript by following the instructions provided &lt;a href="http://eai.eu/transaction/self-adaptive-systems" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OPEN ACCESS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Authors are not charged with any publication fees and their papers will be published online with Open Access. Open Access is a publishing model where the electronic copy of the article is made freely available with permission for sharing and redistribution. Currently, all articles published in all journals in the EAI Endorsed Transactions series are Open Access under the terms of the Creative Commons with Attribution license and published in the European Union Digital Library.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDITORIAL BOARD&lt;/strong&gt;
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Christopher Rouff , Johns Hopkins Applied Physics Laboratory, USA&lt;/li&gt;
+    &lt;li&gt;Danny Weyns , Linnaeus University, Sweden&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli , UNIMORE, Italy&lt;/li&gt;
+    &lt;li&gt;Genaina Rodrigues , University of Brasilia, Brazil&lt;/li&gt;
+    &lt;li&gt;Giacomo Cabri , UNIMORE, Italy&lt;/li&gt;
+    &lt;li&gt;Imrich Chlamtac , CREATE-NET Research Consortium, University of Trento, Italy&lt;/li&gt;
+    &lt;li&gt;James Windsor , ESTEC, European Space Agency, Netherlands&lt;/li&gt;
+    &lt;li&gt;Michael O'Neill , UCD, Ireland&lt;/li&gt;
+    &lt;li&gt;Mike Hinchey , Lero, the Irish Software Engineering Research Centre, University of Limerick, Ireland&lt;/li&gt;
+    &lt;li&gt;Richard Antony , University of Greenwich, UK&lt;/li&gt;
+    &lt;li&gt;Simon Dobson , Uni­ver­sity of St Andrews, UK&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;/div&gt;</description><category>autonomic systems</category><category>Blog</category><category>cfp</category><category>journal</category><category>open access</category><guid>https://simondobson.org/blog/2014/05/15/eai-cfp/</guid><pubDate>Thu, 15 May 2014 13:24:08 GMT</pubDate></item></channel></rss>

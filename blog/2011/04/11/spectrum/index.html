@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adventures at either end of the performance spectrum | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2011/04/11/spectrum/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../03/23/situations/" title="The next challenges for situation recognition" type="text/html">
+<link rel="next" href="../../27/valuable/" title="Some data is just too valuable" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Adventures at either end of the performance spectrum">
+<meta property="og:url" content="https://simondobson.org/blog/2011/04/11/spectrum/">
+<meta property="og:description" content="Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.
+
+
+Most of my work">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-04-11T19:00:43+01:00">
+<meta property="article:tag" content="arduino">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="sensor networks">
+<meta property="article:tag" content="virtualisation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Adventures at either end of the performance spectrum</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2011-04-11T19:00:43+01:00" itemprop="datePublished" title="2011-04-11 19:00">2011-04-11 19:00</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.</p>
+<!--more-->
+
+<p>Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that's actually somewhat <em>less</em> capable than many of the nodes we work with. They're basically a hobbyist platform and are often looked down upon by professionals as being toys.</p>
+<p>I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren't needed in many applications. Secondly, unlike a lot of sensor network hardware, they're <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function -- co-ordination -- and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.</p>
+<p>In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I'm reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That's an interesting story for another time.)</p>
+<p>One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi's range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that's great for sensor systems, and I'm looking forward to understanding them better,</p>
+<p>However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-CTU)  only runs on Windows. As might not be a complete surprise, I don't have any Windows machines.</p>
+<p>I doubt I'm unusual in this: if you're the sort of person who's likely to play around with hobbyist hardware, there's a reasonable chance that you run Linux and/or Mac OS X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.</p>
+<p>By a strange quirk I also don't have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-CTU under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone PC on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-CTU -- all to change the firmware on a radio with significantly less computational power than a central heating thermostat.</p>
+<p>It's things like this that make one realise how ludicrously, insanely overpowered modern computers are.</p>
+<p>The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it's a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap -- so cheap that it's not worth worrying about it, and we haven't come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain -- and <a href="../../../../../2010/03/things-that-wont-change/">I think it is</a> -- it's something we need to consider in the ways we teach computer science.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/arduino/" rel="tag">arduino</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/programming/" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/sensor-networks/" rel="tag">sensor networks</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/virtualisation/" rel="tag">virtualisation</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../03/23/situations/" rel="prev" title="The next challenges for situation recognition">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../27/valuable/" rel="next" title="Some data is just too valuable">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Some improvements to SleepySketch | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2013/07/26/improvements/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../radio-survey/" title="Radio survey" type="text/html">
+<link rel="next" href="../../31/big-rich/" title="Big, or just rich?" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Some improvements to SleepySketch">
+<meta property="og:url" content="https://simondobson.org/blog/2013/07/26/improvements/">
+<meta property="og:description" content="It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.
+
+
+The first issue is obvious: milliseconds are a ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-07-26T16:20:38+01:00">
+<meta property="article:tag" content="actors">
+<meta property="article:tag" content="ditch">
+<meta property="article:tag" content="framework">
+<meta property="article:tag" content="making">
+<meta property="article:tag" content="power management">
+<meta property="article:tag" content="sleepysketch">
+<meta property="article:tag" content="software">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Some improvements to SleepySketch</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-07-26T16:20:38+01:00" itemprop="datePublished" title="2013-07-26 16:20">2013-07-26 16:20</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
+<!--more-->
+
+<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
+<p>The second issue concerns scheduling -- or rather regular
+scheduling. Most sampling and communication tasks occur on predictable
+schedules, say every five hours. In an <a href="../../../06/01/actor-systems/" target="_blank">actor
+framework</a>, that means the actor instance (or another one) has to
+be re-scheduled after the first has run. We can do this within the
+definition of the actor, for example using the <code>post()</code>
+action:</p>
+<pre class="code literal-block"><span></span><code><span class="n">class</span> <span class="nl">PeriodicActor</span> <span class="p">:</span> <span class="n">public</span> <span class="n">Actor</span> <span class="p">{</span>
+   <span class="kt">void</span> <span class="n">post</span><span class="p">();</span>
+   <span class="kt">void</span> <span class="nf">behaviour</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kt">void</span> <span class="n">PeriodicActor</span><span class="o">::</span><span class="n">post</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+
+
+<p>(This also demonstrates the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for <em>every</em> actor that wants to run repeatedly.</p>
+<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)</p>
+<pre class="code literal-block"><span></span><code><span class="n">Actor</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="n">new</span> <span class="n">RepeatingActor</span><span class="p">(</span><span class="n">new</span> <span class="n">SomeActor</span><span class="p">(),</span> <span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre>
+
+
+<p>The <code>RepeatingActor</code> runs the behaviour of
+<code>SomeActor</code> every 5 hours, and we initially schedule it to
+run in 5 hours. We can actually encapsulate all of this by adding a
+method to <code>SleepySketch</code> itself:</p>
+<pre class="code literal-block"><span></span><code><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleEvery</span><span class="p">(</span><span class="n">new</span> <span class="n">SomeActor</span><span class="p">(),</span> <span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+</code></pre>
+
+
+<p>to perform the wrapping and initial scheduling automatically.</p>
+<p>Simple sleepy sketches can now be created at set-up, by scheduling
+repeating actors, and we can define the various actors and re-use them
+in different scheduling situations without complicating their own
+code.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/actors/" rel="tag">actors</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/ditch/" rel="tag">ditch</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/framework/" rel="tag">framework</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/making/" rel="tag">making</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/power-management/" rel="tag">power management</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/sleepysketch/" rel="tag">sleepysketch</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/software/" rel="tag">software</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../radio-survey/" rel="prev" title="Radio survey">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../31/big-rich/" rel="next" title="Big, or just rich?">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

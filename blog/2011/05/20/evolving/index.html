@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evolving programming languages | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2011/05/20/evolving/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../17/work-life/" title="Not a work/life balance" type="text/html">
+<link rel="next" href="../../23/code/" title="Why we have code" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Evolving programming languages">
+<meta property="og:url" content="https://simondobson.org/blog/2011/05/20/evolving/">
+<meta property="og:description" content="Most programming languages have fixed definitions and hard boundaries. In thinking about building software for domains we don't understand very well, a case can be made for a more relaxed, evolutionar">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2011-05-20T08:00:11+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="forth">
+<meta property="article:tag" content="haskell">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="sensor networks">
+<meta property="article:tag" content="smalltalk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Evolving programming languages</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2011-05-20T08:00:11+01:00" itemprop="datePublished" title="2011-05-20 08:00">2011-05-20 08:00</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<div id="heystaks_preview" style="width: 100%;height: 100%"></div>
+Most programming languages have fixed definitions and hard boundaries. In thinking about building software for domains we don't understand very well, a case can be made for a more relaxed, evolutionary approach to language design.
+<!--more-->
+
+<p>I've been thinking a lot about languages this week, for various reasons: mainly about the recurring theme of what are the right programming structures for systems driven by sensors, whether they're pervasive systems or sensor networks. In either case, the structures we've evolved for dealing with desktop and server systems don't feel like they're the right abstractions to effectively take things forward.</p>
+<p>A favourite example is the <tt>if</tt> statement: first decide whether a condition is true or false, and execute one piece of code or another depending on which it is. In a sensor-driven system we often can't make this determination cleanly because of noise and uncertainty -- and if we can, it's often only probably true, and only for a particular period. So are <tt>if</tt> statements (and <tt>while</tt> loops and the like) actually appropriate constructs, when we can't make the decisions definitively?</p>
+<p>Whatever you think of this example (and plenty of people hate it) there are certainly differences between what we want to do between traditional and highly sensorised systems, and consequently how we program them. The question is, how do we work out what the right structures are?</p>
+<p>Actually, the question is broader than this. It should be: how do we improve our ability to develop languages that match the needs of particular computational and conceptual domains?</p>
+<p>Domain-specific languages (DSLs) have a tangled history in computer science, pitched between those who like the idea and those who prefer their programming languages general-purpose and re-usable across a <em>range</em> of domains. There are strong arguments on both sides: general-purpose languages are more productive to learn and are often more mature, but can be less efficient and more cumbersome to apply; DSLs mean learning <em>another</em> language that may not last long and will probably have far weaker support, but can be enormously more productive and well-targeted in use.</p>
+<p>In some ways, though, the similarities between traditional languages and DSLs are very strong. As a general rule both will have syntax and semantics defined up-front: they won't be experimental in the sense of allowing experimentation <em>within the language itself</em>. If we don't know what we're building, does it make sense to be this definite?</p>
+<p>There are alternatives. One that I'm quite keen on is the idea of <a href="../../../../../2010/05/languages-extensible-vms/" target="_blank">extensible virtual machines</a>, where the primitives of a language are left "soft" to be extended as required. This style has several advantages. Firstly, it encourages experimentation by not forcing a strong division of concepts between the language we write (the target language) and the language this is implemented in (the host language): the two co-evolve. Secondly, it allows extensions to be as efficient as "base" elements, assuming we can reduce the cost of building new elements appropriately low. Thirdly, it allows multiple paradigms and approaches to co-exist within the same system, since they can share some elements while having other that differ.</p>
+<p>Another related feature is the ability to modify the compiler: that is, don't fix the syntax <em>or</em> the way in which its handled. So as well as making the low level soft, we also make the high level soft. The advantage here is two-fold. Firstly, we can modify the forms of expression we allow to capture concepts precisely. A good example would be the ability to add concurrency control to a language: the low-level might use semaphores, but programing might demand monitors or some other construct. Modifying the high-level form of the language allows these constructs to be added if required -- and ignored if not.</p>
+<p>This actually leads to the  second advantage, that we can <em>avoid</em> features we don't want to be available, for example not providing general recursion for languages that need to complete all operations in a finite time. This is something that's surprisingly uncommon in language design despite being common in teaching programming: leaving stuff out can have a major simplifying effect.</p>
+<p>Some people argue that syntax modification is unnecessary in a language that's sufficiently expressive, for example Haskell. I don't agree. The counter-example is actually in Haskell itself, in the form of the <tt>do</tt> block syntactic sugar for simplifying monadic computations. This <em>had</em> to be in the language to make it in any way usable, which implied a change of definition, and the monad designers couldn't add it without the involvement of the language "owners", even though the construct is really just a <a href="../../../../../2010/06/monads-language-design-perspective/" target="_blank">re-formulation and generalisation of one common in other languages</a>. There are certainly other areas in which such sugaring would be desirable to make the forms of expression simpler and more intuitive. The less well we understand a domain, the more likely this is to happen.</p>
+<p>Perhaps surprisingly, there are a couple of existing examples of systems that do pretty much what I'm suggesting. Forth is a canonical example (which explains my current work on <a href="http://www.threaded-interpreter.org" target="_blank">Attila</a>); Smalltalk is another, where the parser an run-time are almost completely exposed, although abstracted behind several layers of higher-level structure. Both the languages are quite old, have devoted followings, and weakly and dynamically typed -- and may have a lot to teach us about how to develop languages for new domains. They share a design philosophy of allowing a language to <em>evolve</em> to meet new applications. In Forth, you don't so much write applications as extend the language to meet the problem; in Smalltalk you develop a model of co-operating objects that provide   direct-manipulation interaction through the GUI.</p>
+<p>In both cases the whole language, including the definition and control structures, is built in the language itself <em>via</em> bootstrapping and cross-compilation. Both languages are compiled, but in both cases the separation between run-time and compile-time are weak, in the sense that the compiler is by default available interactively. Interestingly this doesn't stop you building "normal" compiled applications: cross-compile a system without including the compiler itself, a process that can still take advantage of any extensions added into the compiler without cluttering-up the compiled code. You're unlikely to get strictly the best performance or memory footprint as you might with a mature C compiler, but you <em>do</em> get advantages in terms of expressiveness and experimentation which seem to outweigh these in a domain we don't understand well. In particular, it means you can evolve the language quickly, easily, and within itself, to explore the design space more effectively and find out whether your wackier ideas are actually worth pursuing further.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/forth/" rel="tag">forth</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/haskell/" rel="tag">haskell</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/programming/" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/sensor-networks/" rel="tag">sensor networks</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/smalltalk/" rel="tag">smalltalk</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../17/work-life/" rel="prev" title="Not a work/life balance">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../23/code/" rel="next" title="Why we have code">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

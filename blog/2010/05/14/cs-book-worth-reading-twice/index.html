@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The only computer science book worth reading twice? | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2010/05/14/cs-book-worth-reading-twice/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../08/grey-philistines/" title="Are the grey philistines really in charge?" type="text/html">
+<link rel="next" href="../../21/impressions-pervasive-2010/" title="Impressions of Pervasive 2010" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="The only computer science book worth reading twice?">
+<meta property="og:url" content="https://simondobson.org/blog/2010/05/14/cs-book-worth-reading-twice/">
+<meta property="og:description" content="I was talking to one of my students earlier, and lent him a book to read over summer. It was only after he'd left that I realised  that -- for me at any rate -- the book I'd given him is probably the ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-05-14T06:00:35+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="book">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="review">
+<meta property="article:tag" content="scheme">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">The only computer science book worth reading twice?</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2010-05-14T06:00:35+01:00" itemprop="datePublished" title="2010-05-14 06:00">2010-05-14 06:00</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>I was talking to one of my students earlier, and lent him a book to read over summer. It was only after he'd left that I realised  that -- for me at any rate -- the book I'd given him is probably the most seminal work in the whole of computer science, and certainly the book that's most influenced my career and research interests.</p>
+<!--more-->
+
+<p>So what's the book? <em>Structure and interpretation of computer programs</em> by Hal Abelson and Jerry Sussman <span> (MIT Press. 1984. ISBN 0-262-01077-1), also known as <em>SICP</em>. </span>The book's still in print, but -- even better -- is <a href="http://mitpress.mit.edu/sicp/">available online in its entirety</a>.</p>
+<p><span>OK, everyone has their favourite book: why's this one so special to me? The first reason is the time I first encountered it: in </span><a href="http://www.cs.newcastle.ac.uk/">Newcastle upon Tyne</a> in <span>the second year of my first degree. I was still finding my way in computer science, and this book was a recommended text after you'd finished the first programming courses. It's the book that introduced me to programming <em>as it could be</em> (rather than programming <em>as it was</em>, in Pascal at the time). What I mean by that is that SICP starts out by introducing the elements of programming -- values, names, binding, control and so on -- and then runs with them to explore a quite dazzling breadth of issues including:</span>
+</p>
+<ul>
+<li><span>lambda-abstraction and higher-order computation</span></li>
+    <li><span>complex data structures, including structures with embedded computational content</span></li>
+    <li><span>modularity and mutability</span></li>
+    <li><span>streams</span></li>
+    <li><span>lazy evaluation</span></li>
+    <li><span>interpreter and compiler construction</span></li>
+    <li><span>storage management, garbage collection and virtual memory
+</span></li>
+    <li><span>machine code
+</span></li>
+    <li><span>domain-specific languages</span></li>
+</ul>
+<span>...and so forth. The list of concepts is bewildering, and only stays coherent because the authors are skilled writers devoted to their craft. But it's also a remarkable achievement to handle all these concepts within a single language framework -- Scheme -- in such a way that each builds on what's gone before.
+</span>
+<p><span>The second reason is the way in which Hal and Jerry view everything as an exercise in language design:</span>
+</p>
+<blockquote>We have also obtained a glimpse of another crucial idea about languages and program design. This is the approach of stratified design, the notion that a complex system should be structured as a sequence of levels that are described using a sequence of languages. Each level is constructed by combining parts that are regarded as primitive at that level, and the parts constructed at each level are used as primitives at the next level. The language used at each level of a stratified design has primitives, means of combination, and means of abstraction appropriate to that level of detail.</blockquote>
+Layered abstraction of course is second nature to all computer scientists. What's novel in this view is that each level should be <em>programmable</em>: that the layers are all about computation and transformation, and not simply about hiding information. We don't see that in the mainstream of programming languages, because layering doesn't extend the language at all: Java is Java from top to bottom, with class and libraries but no new control structures. If a particular domain has concepts that would benefit from dedicated language constructs, that's just tough. Conversely (and this is something that very much interests me) if there are constructs it'd be desirable <em>not</em> to have in some domain, they can't be removed. (Within the language, anyway: Java-ME dumps some capabilities in the interests of running on small devices, but that's not something you can do without re-writing the compiler.)
+<p>The third influential feature is the clear-sighted view of what computer science is actually about:
+</p>
+<blockquote>The computer revolution is a revolution in the way we think and in the way we express what we think.  The essence of this change is the emergence of what might best be called <em>procedural epistemology</em> -- the study of the structure of knowledge from an imperative point of view, as opposed to the more declarative point of view taken by classical mathematical subjects. Mathematics provides a framework for dealing precisely with notions of "what is."  Computation provides a framework for dealing precisely with notions of "how to."</blockquote>
+I've taken a view before about <a href="../../../../../2010/04/computer-microscope/">computers being the new microscopes</a>, opening-up new science on their own as well as facilitating existing approaches. The "how to" aspect of computer science re-appears everywhere in this: in describing the behaviours of sensor networks that can adapt while continuing the reflect the phenomena they've been deployed to sense; in the interpretation of large-scale data mined and mashed-up across the web; in capturing scientific methods and processes for automation; and so forth. The richness of these domains mitigates against packaged software and encourages integration through programming languages like <a href="http://www.r-project.org">R</a>, so that the interfaces and structures remain "soft" and open to experimentation.
+<p><span>When I looked at my copy, the date I'd written on the inside was September 1988. So a book I bought nearly 22 years ago is still relevant. <em> </em>In fact, I'd go further and say that it's the only computer science book of that age that I'd happily and usefully read again without it being just for historical interest: the content has barely aged at all. That's not all that unusual for mathematics books, but it's almost unheard of in computer science, where the ideas move so quickly and where much of what's written about is ephemeral rather than foundational. It goes to show how well SICP nailed the core concepts. In this sense, it's certainly one of the very few  books on computer science that it's worth reading twice (or more). SICP is to computer science what Feynman's <em>Lectures on Physics</em> are to physics: an accessible distillation of the essence of the subject that's stood the test of time.
+</span></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/book/" rel="tag">book</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/programming/" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/review/" rel="tag">review</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/scheme/" rel="tag">scheme</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../08/grey-philistines/" rel="prev" title="Are the grey philistines really in charge?">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../21/impressions-pervasive-2010/" rel="next" title="Impressions of Pervasive 2010">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

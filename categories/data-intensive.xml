@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about data-intensive)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/data-intensive.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let's teach everyone about big data</title><link>https://simondobson.org/blog/2014/04/05/big-data/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Demolishing the straw men of big data.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;This post comes about from reading &lt;a href="http://www.ft.com/cms/s/2/21a6e7d8-b479-11e3-a09a-00144feabdc0.html" target="_blank"&gt;Tim Harford's opinion piece in the &lt;em&gt;Financial Times&lt;/em&gt;&lt;/a&gt; in which he offers a critique of "big data", the idea that we can perform all the science we want to simply by collecting large datasets and then letting machine learning and other algorithms loose on it. Harford deploys a whole range of criticisms against this claim, all of which are perfectly valid: sampling bias will render a lot of datasets worthless; correlations will appear without causation; the search goes on without hypotheses to guide it, and so isn't well-founded in falsifiable predictions; and an investigator without a solid background in the science underlying the data is going to have no way to correct these errors.&lt;/p&gt;
+&lt;p&gt;The critique is, in other words, damning. The only problem is, that's not what most scientists with an interest in data-intensive research are claiming to do.&lt;/p&gt;
+&lt;p&gt;Let's consider the biggest data-driven project to date, the Large Hadron Collider's search for the Higgs boson. This project involved building a huge experiment that then generated huge data volumes that were trawled for the signature of Higgs interactions. The challenge was so great that the consortium had to develop new computer architectures, data storage, and triage techniques just to keep up with the avalanche of data.&lt;/p&gt;
+&lt;p&gt;None of this was, however, an "hypothesis-free" search through the data for correlation. On the contrary, the theory underlying the search for the Higgs made quite definite predictions as to what its signature should look like. Nonetheless, there would have been no way of confirming or refuting the correctness of those predictions without collecting the data volumes necessary to make the signal stand out from the noise.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;That's&lt;/em&gt; data-intensive research: using new data-driven techniques to confirm or refute hypotheses about the world. It gives us another suite of techniques to deploy, changing both the way we do science and the science that we do. It doesn't replace the other ways of doing science, any more than the introduction of any other technology necessarily invalidates hat came before. Microscopes did not remove the need for, or value of, searching for or classifying new species: they just provided a new, complementary approach to both.&lt;/p&gt;
+&lt;p&gt;That's not to say that all the big data propositions are equally appropriate, and I'm certainly with Harford in the view that approaches like &lt;a href="http://www.google.org/flutrends/" target="_blank"&gt;Google Flu&lt;/a&gt; are deeply and fundamentally flawed, over-hyped attempts to grab the limelight. Where he and I diverge is that Harford is worried that &lt;em&gt;all&lt;/em&gt; data-driven research falls into this category, and that's clearly not true. He may be right that a lot of big data research is a corporate plot to re-direct science, but he's wrong to worry that all projects working with big data are similarly driven.&lt;/p&gt;
+&lt;p&gt;I've argued before that &lt;a href="https://simondobson.org/2014/03/data-scientists/" target="_blank"&gt;"data scientist" is a nonsense term&lt;/a&gt;, and I still think so. Data-driven research is just research, and needs the same skills of understanding and critical thinking. The fact that some companies and others with agendas are hijacking the term worries me a little, but in reality is no more significant than the New Age movement's hijacking of terms like "energy" and "quantum" -- and one doesn't stop doing physics because of that.&lt;/p&gt;
+&lt;p&gt;In fact, I think Harford's critique is a valuable and significant contribution to the debate precisely because it highlights the need for understanding &lt;em&gt;beyond&lt;/em&gt; the data: it's essentially a call for scientists to only use data-driven techniques in the service of science, not as a replacement for it. An argument, in other words, for a broadly-based education in data-driven techniques for &lt;em&gt;all&lt;/em&gt; scientists, and indeed all researchers, since the techniques are equally (if not more) applicable to social sciences and humanities. The new techniques open-up new areas, and we have to understand their strengths and limitations, and use them to bring our subjects forwards -- not simply step away because we're afraid of their potential for misuse.&lt;/p&gt;
+&lt;p&gt;UPDATE 7Apr2014: &lt;a href="http://www.nytimes.com/2014/04/07/opinion/eight-no-nine-problems-with-big-data.html?_r=2" target="_blank"&gt;An opinion piece in the New York Times&lt;/a&gt; agrees: "big data can work well as an adjunct to scientific inquiry but rarely succeeds as a wholesale replacement." The number of statistical land mines is enormous, but the right approach is to be aware of them and make the general research community aware too, so we can use the data properly and to best effect.&lt;/p&gt;&lt;/div&gt;</description><category>big data</category><category>Blog</category><category>data-intensive</category><guid>https://simondobson.org/blog/2014/04/05/big-data/</guid><pubDate>Sat, 05 Apr 2014 12:09:48 GMT</pubDate></item><item><title>Call for papers: Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems</title><link>https://simondobson.org/blog/2010/12/02/3dpas-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div&gt;
+&lt;div&gt;We're looking for papers on the topics of programming with large, dynamic data for a workshop co-located with HPDC in San Jose next year.&lt;/div&gt;
+&lt;div&gt;&lt;!--more--&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;strong&gt;Call for papers
+&lt;p&gt;Workshop on Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems (3DAPAS)&lt;/p&gt;&lt;/strong&gt;
+&lt;div&gt;To be held in conjunction with &lt;a rel="nofollow" href="http://www.hpdc.org/2011/" target="_blank"&gt;HPDC-2011&lt;/a&gt;, 8 June 2011, San Jose, CA&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;a href="http://sites.google.com/site/3dapas"&gt;
+http://sites.google.com/site/3dapas/&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;strong&gt;
+&lt;/strong&gt;&lt;/div&gt;
+&lt;div&gt;There  has been a lot of effort in managing and distributing tasks where  computational loads are dominant. Such applications have after all, been  historically the drivers of "grid" computing.  There has, however, been  relatively less effort on tasks where the computational load is matched  by the data load, or even dominated by the data load. For such tasks to  be able to operate at scale, there are conceptually simple run-time  trade-offs that need to be made, such as determining whether to move  data to compute versus keeping data localized and move computational  tasks to operate on the data in situ, or possibly neither, and with data  regenerated on-the-fly. Due to fluctuating resource availability and  capabilities, as well as insufficient prior information about  application requirements, such decisions must be made at run-time.  Furthermore, resource, connectivity and/or storage constraints may  require the data to be manipulated in-transit so that it is "made-right"  for the consumer. Currently it is very difficult to implement these  dynamic decisions or the underlying mechanisms in a general-purpose and  scalable fashion.
+&lt;div&gt;
+&lt;div&gt;Although   the increasing volumes and complexity of data will make many problems  data load dominated, the computational requirements will still be high.   In practice, data-intensive applications will encompass data-driven  applications.  For example, many data-driven applications will involve  computational activities triggered as a consequence of independently  created data; thus it is imperative for an application to be able to  respond  to unplanned changes in data load or content.  Therefore, understanding  how to support dynamic computations is a fundamental, but currently  missing element in data-intensive computing.This   workshop will operate at the triple point of dynamic and distributed  and data-intensive (3D) attributes. This workshop will operate at the  triple point of dynamic, distributed and data-intensive (3D) attributes.  It will also focus on innovative approaches for scalability in the  end-to-end real-time processing of scientific data. We refer to 3D  applications as those  are data-intensive, need to support and respond to dynamic data, and,  either are  fundamentally, or need to be, distributed. We are interested in papers  that span the spectrum from the design of cyberinfrastructure to support  3D applications, to novel application examples. We are also looking to  bring researchers together to look at holistic, rather than piecewise,  approaches to the end-to-end processing and managing of scientific data.
+&lt;p&gt;3DAPAS  builds upon a 3 year research theme on Distributed Programming  Abstractions (DPA), which has held a series of related workshops (see: &lt;a rel="nofollow" href="http://wiki.esi.ac.uk/Distributed_Programming_Abstractions#Past_Events" target="_blank"&gt;DPA Past Events&lt;/a&gt;) including  but not limited to e-Science2008, EuroPar 2008 and the CLADE series.  3DAPAS will also draw on ideas from the ongoing &lt;a rel="nofollow" href="http://wiki.esi.ac.uk/3DPAS" target="_blank"&gt;3DPAS&lt;/a&gt; Research Theme funded by the NSF and UK EPSRC.&lt;/p&gt;
+&lt;p&gt;Topics of interest include but are not limited to:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;ul&gt;
+    &lt;li&gt;Case studies of development, deployment and execution of representative 3D applications&lt;/li&gt;
+    &lt;li&gt;Programming systems, abstractions, and models for 3D applications&lt;/li&gt;
+    &lt;li&gt;What are the common, minimally complete, characteristics of 3D application?&lt;/li&gt;
+    &lt;li&gt;What are major barriers to the development, deployment, and execution  of 3D applications? What are the primary challenges of 3D applications  at scale?&lt;/li&gt;
+    &lt;li&gt;What patterns exist within 3D applications, and are there commonalities in the way such patterns are used?&lt;/li&gt;
+    &lt;li&gt;How can programming models, abstraction and systems for data-intensive  applications be extended to support dynamic data applications?&lt;/li&gt;
+    &lt;li&gt;Tools, environments and programming support that exist to enable  emerging distributed infrastructure to support the requirements of  dynamic applications (including but not limited to streaming data and  in-transit data analysis)&lt;/li&gt;
+    &lt;li&gt;Data-intensive dynamic workflow and in-transit data manipulation&lt;/li&gt;
+    &lt;li&gt;Abstractions and mechanisms for dynamic code deployment and "moving the code to the data"&lt;/li&gt;
+    &lt;li&gt;Application drivers for end-to-end scientific data management&lt;/li&gt;
+    &lt;li&gt;Runtime support for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;System support for high end workflows&lt;/li&gt;
+    &lt;li&gt;Hybrid computing solutions for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;Technologies to enable multi-platform workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;&lt;strong&gt;Submission Requirements&lt;/strong&gt;:
+&lt;/span&gt;Authors  are invited to submit technical papers of at most 8 pages in PDF  format, including all figures and references. Papers should be formatted  in the &lt;a rel="nofollow" href="http://www.acm.org/sigs/publications/proceedings-templates" target="_blank"&gt;ACM Proceedings Style&lt;/a&gt; and submitted via &lt;a rel="nofollow" href="http://www.easychair.org/conferences/?conf=3dapas" target="_blank"&gt;EasyChair&lt;/a&gt;. Accepted papers will appear in the conference proceedings, and will be incorporated into the ACM Digital Library.
+&lt;p&gt;Submission of a paper implies that at least one author will attend the workshop to present the paper, if it is accepted.&lt;/p&gt;
+&lt;p&gt;Papers  must be self-contained and provide the technical substance required for  the program committee to evaluate the paper's contribution. Papers  should thoughtfully address all related work. Submitted papers must be  original work that has not appeared in and is not under consideration  for another conference or a journal. See the &lt;a rel="nofollow" href="http://www.acm.org/publications/policies/sim_submissions" target="_blank"&gt;ACM Prior Publication Policy&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;strong&gt;&lt;span style="color: #000000"&gt;Important Dates&lt;/span&gt;&lt;/strong&gt;&lt;span style="color: #000000"&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;
+&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Submissions Due: 31 Jan 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Paper Decisions Announced: 28 Feb 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Final Camera-Ready Papers Due: 24 Mar 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Workshop Date: 8 June 2011&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;(all dates are firm)
+&lt;p&gt;&lt;strong&gt;Organizers:&lt;/strong&gt;
+&lt;/p&gt;&lt;/span&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Daniel S. Katz, University of Chicago &amp;amp; Argonne National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Shantenu Jha, Louisiana State University, USA &amp;amp; e-Science Institute, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Jon Weissman, University of Minnesota, USA&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;&lt;strong&gt;Programme Committee Members:&lt;/strong&gt;
+&lt;/span&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Gabrielle Allen, Louisiana State University, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Malcolm Atkinson, eSI &amp;amp; University of Edinburgh, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Henri Bal, Vrije Universiteit, Netherlands&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Jon Blower, Reading e-Science Centre, University of Reading, UK
+&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Shawn Brown, University of Pittsburgh &amp;amp; Pittsburgh Supercomputing Center, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Simon Dobson, University of St. Andrews, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Dennis Gannon, Microsoft, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Keith R. Jackson, Lawrence Berkeley National Lab, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;John R. Johnson, Pacific Northwest National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Scott Klasky, University of Tennessee &amp;amp; Oak Ridge National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Bertram Ludäscher, University of California, Davis, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Abani Patra, University of Buffalo, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Manish Parashar, Rutgers &amp;amp; NSF, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Omer Rana, Cardiff University, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Joel Saltz, Emory University, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Domenico Talia, Universita' della Calabria, Italy&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>data-intensive</category><guid>https://simondobson.org/blog/2010/12/02/3dpas-cfp/</guid><pubDate>Thu, 02 Dec 2010 08:00:03 GMT</pubDate></item></channel></rss>

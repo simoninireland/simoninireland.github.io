@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big, or just rich? | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2013/07/31/big-rich/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../26/improvements/" title="Some improvements to SleepySketch" type="text/html">
+<link rel="next" href="../power/" title="Basic power measurements" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Big, or just rich?">
+<meta property="og:url" content="https://simondobson.org/blog/2013/07/31/big-rich/">
+<meta property="og:description" content="The current focus on &quot;big data&quot; may be obscuring something more interesting: it's often not the pure size of a dataset that's important.
+
+
+The idea of extracting insight from large bodies of data prom">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-07-31T14:58:49+01:00">
+<meta property="article:tag" content="big data">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="machine learning">
+<meta property="article:tag" content="uncertainty">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Big, or just rich?</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-07-31T14:58:49+01:00" itemprop="datePublished" title="2013-07-31 14:58">2013-07-31 14:58</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>The current focus on "big data" may be obscuring something more interesting: it's often not the pure size of a dataset that's important.</p>
+<!--more-->
+
+<p>The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, "big data" techniques cover a number of possible approaches:
+</p>
+<ul>
+<li>Look through the data for recurring patterns (data mining)</li>
+    <li>Present a summary of the data to highlight features (analytics)</li>
+    <li>(Less commonly) Identify automatically from the dataset what's happening in the real world (situation recognition)</li>
+</ul>
+There's a wealth of <a href="http://data.gov.uk/" target="_blank">UK government data available</a>, for example. Making it machine-readable means it can be presented in different ways, for example <a href="http://www.telegraph.co.uk/news/uknews/crime/8294450/Crime-maps-are-just-the-beginning.html" target="_blank">geographically</a>. The real opportunities seem to come from cross-overs between datasets, though, where they can be mined and manipulated to find relationships that might otherwise remain hidden, for example the effects of crime on house prices.
+<p>Although the size and availability of datasets clearly makes a difference here -- big open data -- we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.</p>
+<p><em>Big data</em> is a strange name to start with: when is data "big"? The only meaningful definition I can think of is "a dataset that's large relative to the current computing and storage capacity being deployed against it" -- which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less "big" if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can't readily name a science that <em>isn't</em> based on data. (This isn't just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren't, covered by big data/data science research.)</p>
+<p>It's worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there's an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won't reliably help you to distinguish between these options without further, non-data-driven insight.</p>
+<p>Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you're trying to relate data to the the real world, it's essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it's the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).</p>
+<p>Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset -- because they look indistinguishably alike -- the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don't</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.</p>
+<p>I've been struggling to think of an example of this idea, and this is the best I've come up with (and it's not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.</p>
+<p>There's a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he's actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it's increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.</p>
+<p>Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people's actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.</p>
+<p></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/big-data/" rel="tag">big data</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/machine-learning/" rel="tag">machine learning</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/uncertainty/" rel="tag">uncertainty</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../26/improvements/" rel="prev" title="Some improvements to SleepySketch">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../power/" rel="next" title="Basic power measurements">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanilla | Simon Dobson</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/development/vanilla/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Vanilla">
+<meta property="og:url" content="https://simondobson.org/development/vanilla/">
+<meta property="og:description" content="The Vanilla project was an experiment in language design, intended to
+test two hypotheses:
+
+To what extent are programming languages composed of independent
+    sub-features that can themselves be ind">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-06-17T16:43:17+01:00">
+<meta property="article:tag" content="compiler">
+<meta property="article:tag" content="interpreter">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../epyc/" class="dropdown-item">epyc</a>
+                    <a href="../epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="." class="dropdown-item active">Vanilla (1997-1999) <span class="sr-only">(active)</span></a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Vanilla</a></h1>
+
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>The Vanilla project was an experiment in language design, intended to
+test two hypotheses:</p>
+<ol>
+<li>To what extent are programming languages composed of independent
+    sub-features that can themselves be independently described and
+    composed?, and,</li>
+<li>If this is so to a large extent, is it possible to build effective
+    language tools (specifically interpreters) from such
+    independently-compiled features?</li>
+</ol>
+<p>The answer to the first question is a qualified “yes”: a programming
+language is, to a large extent, composed of features that are either
+independent of other features or interact with them in modular
+ways. An if statement, for example, depends on there being a <code>Boolean</code>
+type in the language, but is independent of the types and expressions
+that appear in its two arms. This suggests that we should be able to
+define the typing and semantic rules of if statements independently of
+almost all other language features.</p>
+<p>In developing Vanilla we developed a modular, composable type-checking
+and interpretation framework within which to define language features
+and their associated rules. We then developed a large range of
+language features within the framework, including most of the
+machinery needed to build imperative, object-oriented and (strict)
+functional languages.</p>
+<p>The main disadvantage of Vanilla is that it uses Java, both as a
+run-time host language and for expressing the rules and
+structures. The code that designers have to write is extremely
+stylised and repetitive. It would be better to have a more powerful
+language for describing languages, and also to allow rule-based
+expressions.</p>
+<h3>Publications</h3>
+<p></p>
+<p>Paddy Nixon, Vinny Wade, Simon Dobson, John Fuller, and Sotirios Terzis.
+Designing components for a virtual organisation: a case study.
+In <em>Proceedings of Objects, Components and the Virtual Enterprise</em>. 1998.
+URL: <a href="https://simondobson.org/softcopy/virtues-ocve-1998.pdf">https://simondobson.org/softcopy/virtues-ocve-1998.pdf</a>.</p>
+<p>Simon Dobson and Paddy Nixon.
+(<span class="bibtex-protected">F</span>ree) radical programming languages.
+In <em>Proceedings of the 5th CaberNet Radicals workshop</em>. 1998.</p>
+<p>Linda Farragher and Simon Dobson.
+<span class="bibtex-protected">J</span>ava <span class="bibtex-protected">D</span>ecaffeinated: experiences building a programming language from components.
+Technical Report TCD-CS-2000-22, Department of Computer Science, Trinity College Dublin, 2000.
+URL: <a href="https://simondobson.org/softcopy/TCD-CS-2000-22.pdf">https://simondobson.org/softcopy/TCD-CS-2000-22.pdf</a>.</p>
+<p>Simon Dobson.
+The <span class="bibtex-protected">O2</span> programming language.
+Technical Report, Department of Computer Science, Trinity College Dublin, 1998.
+Reference manual for the Vanilla implementation of Abadí and Cardelli's O2 language.</p>
+<p>Simon Dobson.
+A first taste of <span class="bibtex-protected">V</span>anilla.
+Technical Report TCD-CS-1998-20, Department of Computer Science, Trinity College Dublin, 1998.
+URL: <a href="https://simondobson.org/softcopy/TCD-CS-1998-20.ps">https://simondobson.org/softcopy/TCD-CS-1998-20.ps</a>.</p>
+<p>Simon Dobson.
+Modular parsers.
+Technical Report TCD-CS-1998-19, Department of Computer Science, Trinity College Dublin, 1998.
+URL: <a href="https://simondobson.org/softcopy/TCD-CS-1998-19.ps">https://simondobson.org/softcopy/TCD-CS-1998-19.ps</a>.</p>
+<p>Simon Dobson.
+Building programming languages from components.
+Invited talk to the Microsoft Research Institute, 2000.
+URL: <a href="https://simondobson.org/softcopy/vanilla-microsoft-2000.ppt">https://simondobson.org/softcopy/vanilla-microsoft-2000.ppt</a>.</p>
+<p>Simon Dobson.
+Fragmenting languages.
+Invited talk to the Department of Computer Science, California Institute of Technology, 1998.
+URL: <a href="https://simondobson.org/softcopy/vanilla-caltech-1998.ppt">https://simondobson.org/softcopy/vanilla-caltech-1998.ppt</a>.</p>
+</div>
+    </div>
+    
+</article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

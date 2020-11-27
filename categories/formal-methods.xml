@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about formal methods)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/formal-methods.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Call for papers: Formal methods for Pervasive Systems</title><link>https://simondobson.org/blog/2011/01/31/fmps-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We are looking for papers on the application of formal methods to pervasive computing, for a workshop at FM'11. (Full disclosure: I'm the keynote speaker.)&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Formal Methods for Pervasive Systems [Pervasive@FM2011]&lt;/h2&gt;
+A workshop held as part of &lt;a href="http://fm2011.lero.ie"&gt;FORMAL METHODS 2011&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;DEADLINE:&lt;/strong&gt; 20th March 2011
+&lt;/p&gt;&lt;h3&gt;WORKSHOP TOPICS&lt;/h3&gt;
+Logics, Process calculi, Automata, Specification languages, Probabilistic analysis, Model checking, Theorem-proving, Tools, Automated deduction
+&lt;p&gt;&lt;em&gt;FOR THE&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;privacy, behaviour, security, reliability, interoperability, context-aware, mobility, resource requirements, temporal&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;ASPECTS OF&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;pervasive healthcare systems, sensor networks, e-commerce, cloud computing, MANETs/VANETs, telephony, device swarms, electronic tags, human-device interaction, etc.
+&lt;/p&gt;&lt;h3&gt;SUBMISSIONS&lt;/h3&gt;
+Our aim is to have productive discussions and a true workshop "feel". Thus, we invite two kinds of submission:
+&lt;ol&gt;
+    &lt;li&gt; Original research papers concerning any of the above topics; or&lt;/li&gt;
+    &lt;li&gt; Survey papers providing an overview of some of the above topics.&lt;/li&gt;
+&lt;/ol&gt;
+Submissions should be written in English, formatted according Springer LNCS style, and not exceed 20 pages in length. Submissions must be made via &lt;a href="http://www.easychair.org/conferences/?conf=pervasivefm2011"&gt;Easychair&lt;/a&gt;.
+&lt;p&gt;Our aim is for an informal proceedings based on these submissions to be available during the workshop. Depending upon the success of the workshop, we intend to produce an edited book based (at least in part) upon the contributions or develop a special issue of a journal.
+&lt;/p&gt;&lt;h3&gt;IMPORTANT DATES&lt;/h3&gt;
+Submission deadline:          20th March 2011
+Notification of acceptance:    1st May 2011
+Pre-proceedings version due:  20th May 2011
+Workshop:                     20th or 21st June, 2011
+&lt;h3&gt;INVITED SPEAKER&lt;/h3&gt;
+Simon Dobson (School of Computer Science, University of St. Andrews)
+&lt;h3&gt;WORKSHOP CO-CHAIRS&lt;/h3&gt;
+Michael Fisher    (University of Liverpool, UK)
+Brian Logan       (University of Nottingham, UK)
+&lt;h3&gt;PROGRAMME COMMITTEE&lt;/h3&gt;
+Natasha Alechina    (Nottingham, UK)
+Myrto Arapinis      (Birmingham, UK)
+Mohamed Bakhouya    (Belfort, FR)
+Doina Bucur         (INCAS3, NL)
+Michael Butler      (Southampton, UK)
+Muffy Calder        (Glasgow, UK)
+Antonio Coronato    (CNR, IT)
+Soren Debois        (Copenhagen, DK)
+Giuseppe De Pietro  (CNR, IT)
+Marina De Vos       (Bath, UK)
+Simon Dobson        (St Andrews, UK)
+Michael Fisher      (Liverpool, UK)
+Michael Harrison    (Newcastle, UK)
+Savas Konur         (Liverpool, UK)
+Brian Logan         (Nottingham, UK)
+Alessio Lomuscio    (Imperial, UK)
+Ka Lok Man          (XJTLU, CN)
+Julian Padget       (Bath, UK)
+Anand Ranganathan   (IBM, USA)
+Alessandro Russo    (Imperial, UK)
+Mark Ryan           (Birmingham, UK)
+Chris Unsworth      (Glasgow, UK)
+Kaiyu Wan           (XJTLU, CN)
+&lt;h3&gt;STEERING COMMITTEE&lt;/h3&gt;
+Natasha Alechina    (University of Nottingham, UK)
+Muffy Calder        (University of Glasgow, UK)
+Michael Fisher      (University of Liverpool, UK)
+Brian Logan         (University of Nottingham, UK)
+Mark Ryan           (University of Birmingham, UK)&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>formal methods</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2011/01/31/fmps-cfp/</guid><pubDate>Mon, 31 Jan 2011 11:34:52 GMT</pubDate></item></channel></rss>

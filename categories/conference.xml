@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about conference)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/conference.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CfP: SASO 2018</title><link>https://simondobson.org/blog/2018/03/09/cfp-saso2018/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Come and join us in Trento for SASO 2018.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="https://saso2018.fbk.eu/"&gt;12th IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO 2018)&lt;/a&gt;
+3-7 September 2018, Trento, Italy&lt;/h3&gt;
+&lt;h4&gt;Aims and Motivation&lt;/h4&gt;
+The aim of the Self-Adaptive and Self-Organizing Systems conference series (SASO) is to provide a forum for the presentation and discussion of research on the foundations of engineered systems that self-adapt and self-organize. The complexity of current and emerging networks, software, and services can be characterized by issues such as scale, heterogeneity, openness, and dynamics in the environment. This has led the software engineering, distributed systems, and management communities to look for inspiration in diverse fields (e.g., complex systems, control theory, artificial intelligence, chemistry, psychology, sociology, and biology) to find new ways of designing and managing such computing systems in a principled way. In this endeavor, self-organization and self-adaptation have emerged as two promising interrelated approaches. They form the basis of many other so-called self-&lt;em&gt; properties, such as self-configuration, self-healing, or self-optimization. SASO aims to be an interdisciplinary meeting, where contributions from participants with different backgrounds leads to the fostering of a cross-pollination of ideas, and where innovative theories, frameworks, methodologies, tools, and applications can emerge.
+&lt;h4&gt;Scope&lt;/h4&gt;
+The twelfth edition of the SASO conference embraces this interdisciplinary nature, and welcomes novel contributions to both the foundational and application-focused dimensions of self-adaptive and self-organizing systems research. We are looking for contributions that present new fundamental understanding of self-adaptive and self-organizing systems and how they can be engineered and used. The topics of interest include, but are not limited to:
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/em&gt; Systems theory: nature-inspired and socially-inspired paradigms and heuristics; inter-operation of self-&lt;em&gt; mechanisms; theoretical frameworks and models; control theory;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;/strong&gt;&lt;/li&gt;&lt;/em&gt; System properties: robustness; resilience; stability; anti-fragility; diversity; self-reference and reflection; emergent behavior; computational awareness and self-awareness;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;em&gt; Systems engineering&lt;/em&gt;&lt;/strong&gt;: reusable mechanisms and algorithms; design patterns; architectures; methodologies; software and middleware development frameworks and methods; platforms and toolkits; multi-agent systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Theory and practice of self-organization&lt;/strong&gt;: self-governance, change management, electronic institutions, distributed consensus, commons, knowledge management, and the general use of rules, policies, etc. in self- systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Theory and practice of self-adaptation&lt;/strong&gt;: mechanisms for adaptation, including evolution, logic, learning; adaptability, plasticity, flexibility;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Socio-technical self-&lt;em&gt; systems&lt;/em&gt;&lt;/strong&gt;: human and social factors; visualization; crowdsourcing and collective awareness; humans-in-the-loop; ethics and humanities in self- systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Data-driven approaches to self-&lt;em&gt; systems&lt;/em&gt;&lt;/strong&gt;: data mining; machine learning; data science and other statistical techniques to analyze, understand, and manage the behavior of complex systems;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Self-adaptive and self-organizing hardware&lt;/strong&gt;: self- materials; self-construction; reconfigurable hardware;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Self-&lt;em&gt; Systems Education&lt;/em&gt;&lt;/strong&gt;: experience reports; curricula; innovative course concepts; methodological aspects of self- systems education;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Applications and experiences with self-* systems&lt;/strong&gt;: smart grid, smart cities, smart homes, adaptive industrial plants, cyber-physical systems; autonomous vehicles and robotics; traffic management; self-adaptive cyber-security; Internet of Things; fog/edge computing; etc.&lt;/li&gt;
+
+&lt;h4&gt;Important Dates&lt;/h4&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Abstract submission&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;April 16, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Paper submission&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;April 23, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notification&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;June 4, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Camera ready copy due&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;July 2, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Conference&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;September 3-7, 2018&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+Submissions can have up to 10 pages formatted according to the standard IEEE Computer Society Press proceedings style guide (&lt;a href="https://www.ieee.org/conferences_events/conferences/publishing/templates.html"&gt;see templates here&lt;/a&gt;). Please submit your papers electronically in PDF format using the SASO 2018 conference management system:
+&lt;a href="https://easychair.org/conferences/?conf=saso2018"&gt;https://easychair.org/conferences/?conf=saso2018&lt;/a&gt;.
+&lt;p&gt;The proceedings will be published by IEEE Computer Society Press, and made available as a part of the IEEE Digital Library. Note that a separate Call for Poster and Demo Submissions will also be issued. As per the standard IEEE policies, all submissions should be original, i.e., they should not have been previously published in any conference proceedings, book, or journal and should not currently be under review for another archival conference. We would like to also highlight IEEE’s policies regarding plagiarism and self-plagiarism (&lt;a href="http://www.ieee.org/publications_standards/publications/rights/ID_Plagiarism.html"&gt;http://www.ieee.org/publications_standards/publications/rights/ID_Plagiarism.html&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Where relevant and appropriate, accepted papers will also be encouraged to participate in the Demo or Poster Sessions.
+&lt;/p&gt;&lt;h4&gt;Review Criteria&lt;/h4&gt;
+Papers should present novel ideas in the cross-disciplinary research context described in this call, motivated by problems from current practice or applied research. Both theoretical and empirical contributions should be highlighted, substantiated by formal analysis, simulation, experimental evaluations, or comparative studies, etc. Appropriate references must be made to related work. Due to the cross-disciplinary nature of the SASO conference, we encourage papers to be intelligible and relevant to researchers who are not members of the same specialized sub-field.
+&lt;p&gt;Authors are also encouraged to submit papers describing applications. Application papers should provide an indication of the real-world relevance of the problem that is solved, including a description of the domain, and an evaluation of performance, usability, or comparison to alternative approaches. Experience papers are also welcome, especially if they highlight insights into any aspect of design, implementation or management of self-* systems that would be of benefit to practitioners and the SASO community. All submissions will be rigorously peer reviewed and evaluated based on the quality of their technical contribution, originality, soundness, significance, presentation, understanding of the state of the art, and overall quality.
+&lt;/p&gt;&lt;h4&gt;Contact Information&lt;/h4&gt;
+&lt;h5&gt;Conference General Chairs&lt;/h5&gt;
+Antonio Bucchiarone,
+Fondazione Bruno Kessler, IT
+&lt;p&gt;Alberto Montresor,
+University of Trento, IT
+&lt;/p&gt;&lt;h5&gt;Programme Chairs&lt;/h5&gt;
+Jake Beal,
+Raytheon BBN Technologies, USA
+&lt;p&gt;Nelly Bencomo,
+Aston University, UK&lt;/p&gt;
+&lt;p&gt;Jean Botev,
+University of Luxembourg, LU&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>saso</category><category>self-organising systems</category><guid>https://simondobson.org/blog/2018/03/09/cfp-saso2018/</guid><pubDate>Fri, 09 Mar 2018 15:46:24 GMT</pubDate></item><item><title>CfP: Collective adaptive systems</title><link>https://simondobson.org/blog/2016/07/18/cfp-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;A special track of the 32nd ACM Symposium on Applied Computing (SAC'17) looking for contributions.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;COLLECTIVE ADAPTIVE SYSTEMS&lt;/h2&gt;
+Special Track of the 32nd ACM Symposium on Applied Computing (SAC'17)
+&lt;a class="moz-txt-link-freetext" href="http://sac-cas2017.apice.unibo.it"&gt;http://sac-cas2017.apice.unibo.it&lt;/a&gt;
+April 3 - 7, 2017 Marrakech, Morocco
+&lt;p&gt;Nowadays, most aspects of our daily life are affected by pervasive technology, consisting of massive numbers of heterogeneous units/nodes (computers, devices, software applications, smart objects, etc.), complex interactions, and humans-in-the-loop. The distributed and open nature of these systems and their large scale make sensing, decision-making, planning and acting possibly highly dispersed: this may cause on the one hand the emergence of unexpected phenomena, but on the other hand it can be the key to support inherent adaptation and resilience.&lt;/p&gt;
+&lt;p&gt;These complex systems are typically referred to as Collective Adaptive Systems (CAS). They have to be equipped with dynamic and autonomous adaptation capabilities, to deal with changes in their working environments and within themselves. CAS involve huge collections of cooperating components, trading off individual tasks, properties, objectives and actions, with overall system goals.&lt;/p&gt;
+&lt;p&gt;To properly engineer and exploit CAS, a deep scientific understanding of the principles underpinning their operation is required. The development of CAS is closely related to other contemporary (software) engineering approaches, such as component-based systems and middleware platforms, as well as other Computer Science areas, such as Distributed Artificial Intelligence, Formal Methods, Agent-based Programming, Pervasive Computing, Internet of Things, and Autonomic Computing. This track aims at providing a common forum for discussing the various different viewpoints over CAS, attracting relevant and consistent contributions from different research communities, with the ultimate goal of filling the gap between theory and practice, hence paving the way towards implementation of relevant applications.&lt;/p&gt;
+&lt;p&gt;The Special Track on Collective Adaptive Systems takes deliberately a broad view of what CAS are and how they should be designed, analysed, built and deployed. In particular, the track's interest is both in the foundational view (e.g., theories, methods, formalisms, models) and the practical aspects (e.g., development methodologies, programming languages, middleware, development and runtime environments, tools). Moreover, also applications of CAS solutions to real-world case studies are welcomed.&lt;/p&gt;
+&lt;p&gt;Major topics of interest this year will include the following:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Novel models, languages, programming and implementation techniques for CAS&lt;/li&gt;
+    &lt;li&gt;CAS technologies and infrastructures&lt;/li&gt;
+    &lt;li&gt;CAS applications&lt;/li&gt;
+    &lt;li&gt;Scenarios, case studies and experience reports of CAS&lt;/li&gt;
+    &lt;li&gt;Formal aspects (semantics, reasoning, verification) in CAS development&lt;/li&gt;
+    &lt;li&gt;Business Processes in CAS - Self-* and emerging properties of CAS&lt;/li&gt;
+    &lt;li&gt;Security and privacy in CAS - Policy-based coordination and self-adaptation in CAS&lt;/li&gt;
+    &lt;li&gt;Middleware platforms for CAS&lt;/li&gt;
+    &lt;li&gt;Software architectures and engineering methodologies for CAS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Important Dates&lt;/h3&gt;
+Sep 15, 2016: Papers and SRC research abstracts submission
+Nov 10, 2016: Author notification
+Nov 25, 2016: Camera-ready copies
+Dec 10, 2016: Author registration
+&lt;h3&gt;Programme Co-Chairs&lt;/h3&gt;
+Mirko Viroli Alma Mater Studiorum - University of Bologna, Italy &lt;a class="moz-txt-link-freetext" href="http://mirkoviroli.apice.unibo.it"&gt;http://mirkoviroli.apice.unibo.it&lt;/a&gt; email: &lt;a class="moz-txt-link-abbreviated" href="mailto:mirko.viroli@unibo.it"&gt;mirko.viroli@unibo.it&lt;/a&gt;
+&lt;p&gt;Francesco Tiezzi University of Camerino, Italy &lt;a class="moz-txt-link-freetext" href="http://tiezzi.unicam.it/"&gt;http://tiezzi.unicam.it/&lt;/a&gt; email: francesco.tiezzi@ unicam.it
+&lt;/p&gt;&lt;h3&gt;Program Committee Members&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Jacob Beal, BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Olivier Boissier, Ecole des Mines de Saint-Etienne, France&lt;/li&gt;
+    &lt;li&gt;Tomas Bures, Charles University in Prague, Czech Republic&lt;/li&gt;
+    &lt;li&gt;Siobhan Clarke, Trinity College Dublin, Ireland&lt;/li&gt;
+    &lt;li&gt;Daniel Coore, University of the West Indies, Jamaica&lt;/li&gt;
+    &lt;li&gt;Ferruccio Damiani, University of Torino, Italy Rocco De Nicola, IMT Institute for Advanced Studies Lucca, Italy&lt;/li&gt;
+    &lt;li&gt;Giovanna Di Marzo Serugendo, University of Geneve, Switzerland&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews&lt;/li&gt;
+    &lt;li&gt;Schahram Dustdar, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Kurt Geihs, Universitaet Kassel, Germany&lt;/li&gt;
+    &lt;li&gt;Jane Hillston, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Christine Julien, University of Texas at Austin, USA&lt;/li&gt;
+    &lt;li&gt;Hung La, University of Nevada, Reno, USA&lt;/li&gt;
+    &lt;li&gt;Peter Lewis, Aston University, UK&lt;/li&gt;
+    &lt;li&gt;Alberto Lluch Lafuente, DTU, Denmark&lt;/li&gt;
+    &lt;li&gt;Michele Loreti, University of Firenze, Italy&lt;/li&gt;
+    &lt;li&gt;Andrea Omicini, University of Bologna, Italy&lt;/li&gt;
+    &lt;li&gt;Carlo Pinciroli, Ecole Polytechnique de Montreal, Canada&lt;/li&gt;
+    &lt;li&gt;Rosario Pugliese, University of Firenze, Italy&lt;/li&gt;
+    &lt;li&gt;Barbara Re, University of Camerino, Italy&lt;/li&gt;
+    &lt;li&gt;Jan-Philipp Steghöfer, Chalmers Technical University, Sweden&lt;/li&gt;
+    &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen, Germany&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Proceedings&lt;/h3&gt;
+Papers accepted for the Special Track on Collective Adaptive Systems will be published by ACM both in the SAC 2017 proceedings and in the Digital Library.
+&lt;p&gt;CAS Special Track organisers also plan to invite authors of selected papers for a Special Issue in a high impact journal, such as ACM Transactions on Autonomous and Adaptive Systems or Science of Computer Programming.
+&lt;/p&gt;&lt;h3&gt;Paper submission and format&lt;/h3&gt;
+All papers should represent original and previously unpublished works that currently are not under review in any conference or journal.
+&lt;p&gt;The author(s) name(s) and address(es) must NOT appear in the body of the paper, and self-reference should be in the third person. This is to facilitate blind review. Only the title should be shown at the first page without the authors' information.&lt;/p&gt;
+&lt;p&gt;Submitted papers must be in the ACM two-column page format (doc template, pdf template, latex template). The length of the papers is 6 pages (included in the registration) plus up to 2 extra pages (at extra charge), i.e. total 8 pages maximum.&lt;/p&gt;
+&lt;p&gt;Paper registration is required, allowing the inclusion of the paper/poster in the conference proceedings. An author or a proxy attending SAC MUST present the paper: This is a requirement for the paper/poster to be included in the ACM/IEEE digital library. No-show of scheduled papers and posters will result in excluding them from the ACM/IEEE digital library.&lt;/p&gt;
+&lt;p&gt;Submission is entirely automated via the STAR Submission System, which is available from:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;(for regular papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac2017/"&gt;https://www.softconf.com/h/sac2017/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;(for SRC papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac-src2017/"&gt;https://www.softconf.com/h/sac-src2017/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Poster Sessions&lt;/h3&gt;
+Papers that received high reviews (that is acceptable by reviewer standards) but were not accepted due to space limitation can be invited for the poster session. Poster should be not longer than 3 pages (included in the registration) plus 1 extra page (at extra charge), i.e. total 4 pages maximum. The poster session procedures and details will be posted on SAC 2017 website as soon as they become available.
+&lt;h3&gt;Student research abstracts competition&lt;/h3&gt;
+Graduate students are invited to submit Student Research Competition (SRC) abstracts (maximum of 2 pages in ACM camera-ready format) following the instructions published at SAC 2017 website. Submission of the same abstract to multiple tracks is not allowed. All research abstract submissions will be reviewed by researchers and practitioners with expertise in the track focus area to which they are submitted. Authors of selected abstracts (up to 20 students) will have the opportunity to give poster and oral presentations of their work and compete for three top-winning places. The winners will receive medals, cash awards, and SIGAPP recognition certificates during the conference banquet. Invited students receive SRC travel support (US$500) and are eligible to apply to the SIGAPP Student Travel Award Program (STAP) for additional travel support.&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><category>conference</category><guid>https://simondobson.org/blog/2016/07/18/cfp-cas/</guid><pubDate>Mon, 18 Jul 2016 09:07:23 GMT</pubDate></item><item><title>Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</title><link>https://simondobson.org/blog/2016/06/02/fasw/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;There is a doctoral symposium at the SASO  conference this year.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;Call For Doctoral Symposium Submissions Doctoral Symposium on Foundations and Applications of Self-&lt;em&gt; Systems (FAS&lt;/em&gt;W)&lt;/h3&gt;
+Augsburg, Germany, September 12 &amp;amp; 16, 2016
+&lt;p&gt;&lt;strong&gt;EXTENDED DEADLINES:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Abstract Submission due: June 12, 2016
+Paper Submission due: June 20, 2016
+&lt;a class="moz-txt-link-freetext" href="http://fasstar2016.informatik.uni-augsburg.de/"&gt;http://fasstar2016.informatik.uni-augsburg.de/&lt;/a&gt;
+&lt;a class="moz-txt-link-freetext" href="http://iccac2016.se.rit.edu/"&gt;http://iccac2016.se.rit.edu/&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://uni-augsburg.de/saso2016"&gt;http://uni-augsburg.de/saso2016
+&lt;/a&gt;@SASO2016Conf&lt;/p&gt;
+&lt;p&gt;Foundations and Applications of Self&lt;em&gt; Systems (FAS&lt;/em&gt;) is the umbrella for two closely related but independent conferences, the International Conference on Self-Adaptive and Self-Organizing Systems (SASO) and the International Conference on Cloud and Autonomic Computing (ICCAC). The FAS&lt;em&gt; Doctoral Symposium provides an international forum for PhD Students working in research areas addressed by FAS&lt;/em&gt;. In this forum, PhD students will get unique opportunities to subject their research to the scrutiny of external experts, gain experience in the presentation of research, connect to peers and experts addressing similar problems, and get advice from a panel of internationally leading researchers.&lt;/p&gt;
+&lt;p&gt;Different from the technical tracks of the conference, the FAS* Doctoral Symposium focuses on the specific needs of young researchers at the beginning of their career. As such, particular emphasis will be placed on a critical and constructive feedback that shall help participants to successfully conclude their PhD studies.&lt;/p&gt;
+&lt;p&gt;PhD students working in any area addressed by the FAS&lt;em&gt; conferences are invited to submit a Doctoral Symposium paper in which they describe the key motivation and objectives of their research project, and reflect on the methodology as well as the current status of their PhD studies. Complementing the thematic focus of FAS&lt;/em&gt;, we particularly solicit contributions in the following areas:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Engineering of self-organizing and self-adaptive systems.&lt;/em&gt; We solicit theoretical and applied works addressing fundamental principles underlying self-organizing systems, as well as methods that allow to quantify, model and reproduce the self-&lt;em&gt; characteristics of complex systems in biological, social, physical and technical systems. Examples include mechanisms underlying distributed decision- making and collective intelligence, software engineering challenges in self-adaptive systems, as well as general application of self-&lt;/em&gt; principles in the engineering of technical systems.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Complex Cyber-physical and socio-technical systems.&lt;/em&gt; We welcome contributions that apply self-* principles to address challenges in the design of complex cyber- physical and socio-technical systems. Particular examples include smart grid infrastructures, sensor networks, opportunistic networking scenarios, as well as large-scale social information systems. Works addressing challenges such as the security, privacy and anonymity of users, or mechanisms to prevent censorship, manipulation or unfairness in socio-technical systems are especially welcome. We further solicit works on socio- technical and socio-economic challenges in P2P systems, such as the design of incentive, trust and reputation mechanisms.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Self-&lt;em&gt; approaches in Massive-Scale Decentralized Systems.&lt;/em&gt; Works in this area use self-&lt;/em&gt; approaches to address challenges in the design and operation of massive scale decentralized systems. Examples include Peer-to-Peer technologies, as well as overlay topology management schemes. We are further interested in decentralized data mining and machine learning approaches, as well as decentralized approaches to monitor, model and adapt distributed systems. Works using self-* principles to address the inherent challenges in the design of massive-scale systems with unreliable and heterogeneous are of particular interest.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Autonomic Computing.&lt;/em&gt; Systems Here we are interested in all works addressing the self-configuration, self-optimization and self-adaptation of cloud computing services, data centers and general distributed computing systems. Examples for questions addressed in this area include the monitoring and modeling of cloud services, the design of efficient resource allocation mechanisms, the application of data mining and machine learning techniques to analyze and predict the behavior of technical systems, as well as the characterization of distributed computing workloads.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Application of Self-&lt;em&gt; in Robotics and Spatial Computing.&lt;/em&gt; Finally, we welcome contributions using self-&lt;/em&gt; principles in the areas of robotics, swarm robotics and spatial computing. Here, examples for works of interest include environmental modeling and perception, machine vision, and self-adaptation mechanisms in robotics, distributed coordination and collective intelligence in multi- robot systems, as well as novel paradigms for the programming of autonomous, spatially distributed entities.
+&lt;/p&gt;&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+Submissions should have a length of max. six pages and be formatted according to the IEEE Computer Society Press proceedings style guide. Authors should submit their papers using the EasyChair installation of the main conference, which is available at:
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://easychair.org/conferences/?conf=saso2016"&gt;https://easychair.org/conferences/?conf=saso2016&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Please note that only single-author submissions are accepted, which focus on the topic of the doctoral work. The name of the supervisor (« supervised by ... ») should be clearly marked below the author’s name in the paper. Submissions should further adhere to the following structure:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Motivation: motivate the open problem that you want to address and briefly summarize existing approaches along with their deficiencies.&lt;/li&gt;
+    &lt;li&gt;Objectives: describe the key objectives of your PhD project and argue how achieving them will solve the open problem outlined in the motivation.&lt;/li&gt;
+    &lt;li&gt;Methodology: outline what methodology you will adopt to meet the objectives of your project. Clearly state on what existing works your work will build.&lt;/li&gt;
+    &lt;li&gt;Research Plan: describe what preliminary results – if any – you have already achieved and summarize your plans for future work. Please add a rough schedule that allows to judge whether your research plan is feasible.&lt;/li&gt;
+&lt;/ul&gt;
+Authors of accepted papers shall prepare a final, camera ready version of the paper, taking into account all feedback from reviewers, and formatted according to the IEEE Computer Society Press proceedings style guide. Doctoral Symposium papers will be advertised in the final program, and will be submitted to IEEE Xplore as part of the SASO proceedings. Papers will also be made available in the IEEE Digital Library.
+&lt;h4&gt;Review Process&lt;/h4&gt;
+Each submission will be reviewed by at least two Doctoral Symposium experts (see list below) that cover the different areas of interest of the conference. Submissions will be evaluated based on their relevance to FAS*, the motivation and quality of the proposed research, as well as the suitability of the chosen methodology.
+&lt;p&gt;Authors of accepted papers will have different opportunities to present their project at the conference. Besides a full presentation during the PhD Symposium session, an “Elevator Pitch Session” will be organized during the main conference, where authors get the chance to briefly showcase their research. In addition, the Best Doctoral Symposium paper will be selected and the award will be presented during the main conference. Finally, selected authors will have the additional chance to present their work via a poster in the poster session of the main conference.
+&lt;/p&gt;&lt;h4&gt;Invited Talk&lt;/h4&gt;
+To be announced
+&lt;h4&gt;Doctoral Symposium Experts&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Ozalp Babaoglu – University of Bologna, IT&lt;/li&gt;
+    &lt;li&gt;Jacob Beal – BBN Technologies, USA&lt;/li&gt;
+    &lt;li&gt;Kurt Geihs – Universitaet Kassel, DE&lt;/li&gt;
+    &lt;li&gt;Tom Holvoet – KU Leuven, BE&lt;/li&gt;
+    &lt;li&gt;Manish Parashar – Rutgers University, USA&lt;/li&gt;
+    &lt;li&gt;Jeremy Pitt – Imperial College London, UK&lt;/li&gt;
+    &lt;li&gt;Mark Jelasity – University of Szeged, HU&lt;/li&gt;
+    &lt;li&gt;Burkhard Stiller – University of Zurich, CH&lt;/li&gt;
+    &lt;li&gt;Giuseppe Valetto – Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+    &lt;li&gt;Salim Hariri – University of Arizona, USA&lt;/li&gt;
+    &lt;li&gt;Simon Dobson – University of St Andrews, Scotland, UK&lt;/li&gt;
+    &lt;li&gt;Antonio Bucchiarone - Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Important Dates (Extended)&lt;/h4&gt;
+Abstract Submission due (extended): June 12, 2016
+Paper Submission due (extended): June 20, 2016
+Notifications due: July 10, 2016
+Camera ready version due: July 24, 2016
+Conference date: September 12-16, 2016
+&lt;h4&gt;Contact Information&lt;/h4&gt;
+For any further information, please contact the Doctoral Symposium chairs:
+&lt;p&gt;Pradeep Murukannaiah Department of Computer Science North Carolina State University Raleigh, NC, 27606, USA
+&lt;a class="moz-txt-link-abbreviated" href="mailto:pmuruka@ncsu.edu"&gt;pmuruka@ncsu.edu&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www4.ncsu.edu/%7Epmuruka/"&gt;http://www4.ncsu.edu/~pmuruka/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dr. Ingo Scholtes Chair of Systems Design ETH Zurich CH-8092 Zurich Switzerland
+&lt;a class="moz-txt-link-abbreviated" href="mailto:ischoltes@ethz.ch"&gt;ischoltes@ethz.ch&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www.ingoscholtes.net"&gt;http://www.ingoscholtes.net&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>doctoral symposium</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2016/06/02/fasw/</guid><pubDate>Thu, 02 Jun 2016 15:56:55 GMT</pubDate></item><item><title>CfP: Spatial and Collective Awareness workshop at SASO'15</title><link>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The first workshop on Spatial Awareness is being held in Boston in September as part of the &lt;a href="http://saso2015.mit.edu/" target="_blank"&gt;SASO conference&lt;/a&gt;.
+&lt;!--more--&gt;
+&lt;/p&gt;&lt;h3&gt;First International Workshop on Spatial and COllective PErvasive Computing Systems (SCOPES) Workshop&lt;/h3&gt;
+Co-located with IEEE SASO 2015, located at MIT, Cambridge, USA
+&lt;p&gt;September 21, 2015&lt;/p&gt;
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="http://www.spatial-computing.org/scopes"&gt;http://www.spatial-computing.org/scopes&lt;/a&gt;
+&lt;/p&gt;&lt;h4&gt;Overview&lt;/h4&gt;
+This workshop aims at combining three distinct, yet closely related areas of research, which will likely together play a major role in producing the key technical results needed to develop large-scale adaptive distributed systems of future networked scenarios.
+&lt;ul&gt;
+    &lt;li&gt;Spatial computing: Spatial computing systems are systems of individual entities, typically situated in a physical environment, in which the “functional goals” of the system are generally defined in terms of the system's spatial structure. Typically, such systems are developed following a self-organisation approach, making spatial patterns arise by emergence.&lt;/li&gt;
+    &lt;li&gt;Collective adaptive systems: Collective computing systems are systems of tightly entangled components, achieving an overall goal through widespread cooperation, typically relying on self-adaptation techniques and collective/social intelligence.&lt;/li&gt;
+    &lt;li&gt;Pervasive computing: Pervasive computing systems and the “Internet of Things” deal with current and emerging scenarios in which humans, sensors, mobile, and embedded devices engage in complex interactions in a shared environment.&lt;/li&gt;
+&lt;/ul&gt;
+The goal of this workshop is to foster the creation of general-purpose solutions for supporting the development of these kinds of systems, particularly as regards generalizable techniques and architectures. Topics of interest include:
+&lt;ul&gt;
+    &lt;li&gt;Foundational models of spatially embedded collective systems, exhibiting resilience, robustness and scalability properties as required by emerging pervasive computing scenarios.&lt;/li&gt;
+    &lt;li&gt;Tools and tool-chains targeting large-scale situated systems: programming or specification languages, compilers and proof-checking techniques, simulators, tools for property verification, libraries and APIs, supporting platforms, whole infrastructures.&lt;/li&gt;
+    &lt;li&gt;Innovative methods and techniques for system development, including design patterns, software methodologies, best practices, and practical experience reports.&lt;/li&gt;
+    &lt;li&gt;Applications contexts and scenarios of general interest to foster the identification of new problems and solutions, taking inspiration from cyber-physical systems, the Internet of things, sensor networks, smart-cities, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Paper submission&lt;/h4&gt;
+Papers should present original work and be no longer than 6 pages in the standard IEEE two-column format. All manuscripts should be submitted in PDF form through the submissions system for SCOPES at EasyChair. Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings. Post-proceedings publication in a journal is planned. Questions should be addressed to &lt;a class="moz-txt-link-abbreviated" href="mailto:saso.scopes2015@easychair.org"&gt;saso.scopes2015@easychair.org&lt;/a&gt;.
+&lt;h4&gt;Important Dates&lt;/h4&gt;
+Workshop paper submission: July 11, 2015
+Notification of accepted papers: July 31, 2015
+Camera-ready paper deadline: August 10, 2015
+Workshop at SASO: September 21, 2015
+&lt;h4&gt;Organisers&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Dr. Jacob Beal (Raytheon BBN Technologies, USA)&lt;/li&gt;
+    &lt;li&gt;Prof. Jane Hillson (University of Edinburgh, UK)&lt;/li&gt;
+    &lt;li&gt;Dr. Mirko Viroli (University of Bologna, Italy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Program Committee&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Ezio Bartocci, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Spring Berman, Arizona State University, USA&lt;/li&gt;
+    &lt;li&gt;Luca Bortolussi, University of Trieste, Italy&lt;/li&gt;
+    &lt;li&gt;Sven Brueckner, Axon Connected LLC, USA&lt;/li&gt;
+    &lt;li&gt;Siobhan Clarke, Trinity College Dublin, IE&lt;/li&gt;
+    &lt;li&gt;Daniel Coore, University of the West Indies&lt;/li&gt;
+    &lt;li&gt;Jamaica Ferruccio Damiani, Università di Torino, Italy&lt;/li&gt;
+    &lt;li&gt;Rocco De Nicola, IMT - Institute for Advanced Studies Lucca, Italy&lt;/li&gt;
+    &lt;li&gt;Giovanna Di Marzo Serugendo, University of Geneve, Switzerland&lt;/li&gt;
+    &lt;li&gt;Ada Diaconescu, Telecom ParisTech, CNRS LTCI, France&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews, UK&lt;/li&gt;
+    &lt;li&gt;Matt Duckham, University of Melbourne, Australia&lt;/li&gt;
+    &lt;li&gt;Stefan Dulman, CWI, Netherlands&lt;/li&gt;
+    &lt;li&gt;Schahram Dustdar, TU Wien, Austria&lt;/li&gt;
+    &lt;li&gt;Eva Kühn, Vienna University of Technology, Austria&lt;/li&gt;
+    &lt;li&gt;Mieke Massink, CNR-ISTI, Italy&lt;/li&gt;
+    &lt;li&gt;Mirco Musolesi, University College London UK&lt;/li&gt;
+    &lt;li&gt;Silvia Nittel, University of Maine, USA&lt;/li&gt;
+    &lt;li&gt;Antoine Spicher, LACL University Paris Est Creteil, France&lt;/li&gt;
+    &lt;li&gt;Katia Sycara, Carnegie Mellon University, USA&lt;/li&gt;
+    &lt;li&gt;Christof Teuscher, Portland State University, USA&lt;/li&gt;
+    &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen, Germany&lt;/li&gt;
+    &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>cfp</category><category>conference</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</guid><pubDate>Wed, 17 Jun 2015 10:00:31 GMT</pubDate></item><item><title>The middleware doughnut</title><link>https://simondobson.org/blog/2011/12/16/middleware-doughnut/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Where has the "middle" of middleware gone?&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;This week I attended a couple of the workshops at the &lt;a href="http://2011.middleware-conference.org/" target="_blank"&gt;Middleware conference&lt;/a&gt;, the main venue for the research community working on systems integration middleware. In particular I was an invited speaker at the &lt;a href="http://2011.middleware-conference.org/fome/fome2011" target="_blank"&gt;Future of Middleware (FoME) workshop&lt;/a&gt;, which attracted a great bunch of people with views on where the field is going.&lt;/p&gt;
+&lt;p&gt;Listening to all the talks, one of the things that jumped out was the diversity of concerns people were expressing. Those working at enterprise level were concerned with scaling-out systems to millions of users using cloud computing; at the other extreme were sensor networks people like me, worried about programming  low-powered sensor motes with at least a semblance of programming language support and software engineering process. That a group of people with this spread of interests can find useful things to talk about together says a lot about how broad a term middleware actually is.&lt;/p&gt;
+&lt;p&gt;But if we compare this to years past, it was also clear that the concerns  asymmetrically affected the different groups. There were very few issues that really commanded broad interest. This led me to wonder: where has the "middle" gone from "middleware"?&lt;/p&gt;
+&lt;p&gt;In the 1990s, middleware people (including me) were working with &lt;a href="https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture" target="_blank"&gt;CORBA&lt;/a&gt; and the like. These systems were intended for broad application in integrating client and server components into single systems. In CORBA's case this involved designing object-oriented domain models that could then be implemented using any chosen programming language and support interactions seamlessly, regardless of  implementation or distribution. CORBA provided (and indeed provides) a lot of supporting infrastructure, including dedicated wire protocols, a shared type system and object model, higher-level services, binding, call models and other groovy toys. It achieved enormous penetration into markets that value long-term interoperability and evolution, such as financial services. It also influenced a whole range of subsequent developments, including web services and service-oriented architectures that are, to some extent, defined by their similarity to, or differences with, CORBA. (For a discussion of these differences see Baker and Dobson. &lt;a href="https://simondobson.org/research/publications#Compare-SOA-DOA" target="_blank"&gt;Comparing service-oriented and distributed object architectures&lt;/a&gt;. LNCS 3760. 2005.)&lt;/p&gt;
+&lt;p&gt;As is pretty much apparent from this, CORBA sits resolutely in the middle of middleware. It is intended to integrate disparate systems and allow them to work together, and evolve somewhat separately, while managing the complexity of the overall architecture. It tries to avoid the problem, identified by Bertrand Meyer, that large systems exhibit non-linear behaviour in which the cost of making any change to them is proportional, not to the size of the change being made, but to the size of the system being changed. It doesn't completely succeed in this, of course -- no system does -- but it provides a common centre around which to organise largely independent components.&lt;/p&gt;
+&lt;p&gt;Another way of looking at CORBA is less flattering: that it was inherently compromised by conflicting, and in large part irreconcilable, goals. It was reasonably performant, but by no stretch of the imagination high-performance given the overheads of a complex and general-purpose wire format. It was reasonably portable, as long as one accepted the limits imposed by the single type system: no first-class functions or mobile code, for example. It was reasonably easy to port and to support new languages, but every new language binding did require considerable ingenuity both in terms of technical design and standardisation of interfaces.&lt;/p&gt;
+&lt;p&gt;Sitting in the middle, in other words, was tricky and uncomfortable.&lt;/p&gt;
+&lt;p&gt;The causes of, and justifications for, these compromises aren't hard to find: what else can one do if one is trying to support the whole range of applications? Each piece of middleware sits at a particular point in the design space, trading-off performance against generality for example, or advanced typing against making bindings awkward or impossible for some languages.&lt;/p&gt;
+&lt;p&gt;And it's this generality that seemed to be missing from discussions of the future of middleware: no-one &lt;em&gt;intends&lt;/em&gt; to support this range any more. Instead we're seeing a division of the design space in which different application communities focus on one or two design dimensions that are undoubtedly the most important -- and largely forget the rest. For Twitter, for example, the main design goal is lightweight interaction at clients so that Twitter clients are easy to writ. They have no concern whatever with typing or reliability: if tweets are lost, who cares? For the web services community -- perhaps closest to the "spirit of the middle" -- the issues are extensibility and use of standards, with no concern for protocols, performance or end-point complexity. It's fairly easy to see that these design issues are simply too diverse to be spanned by a single middleware platform.&lt;/p&gt;
+&lt;p&gt;I don't think this necessarily spells the death of integrating middleware -- and that's just as well, given that we still have to integrate these systems &lt;em&gt;despite&lt;/em&gt; their increasing heterogeneity. What it does do, though, is change the locus of innovation away from ever-larger, more complex and more general platforms towards more specialised platforms that can integrate as far as needed -- and no further, so as not to over-burden applications or developers. Several speakers talked about using component-based approaches to build platforms as well as applications. In our talk we discussed similar ideas, removing the &lt;em&gt;a priori&lt;/em&gt; assumptions underlying middleware platforms and focusing instead on how to optimise what hits the metal. (Dearle and Dobson. &lt;a href="https://simondobson.org/research/publications#FOME-11" target="_blank"&gt;Mission-oriented middleware for sensor-driven scientific systems&lt;/a&gt;. Journal of Internet Services and Applications. 2011.) This will give rise to a whole range of further challenges -- how do we guarantee the right features are available? How do we add (and remove) features on the fly? How do we find the features we need? --  that are radically different from those encountered for CORBA and similar systems. But the result will (hopefully) be to improve our ability to create, manage and evolve ever more sophisticated combinations of applications and  services, and make it easier to roll-out and scale-out the next generation of applications and scientific experiments.&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>corba</category><category>fome</category><category>middleware</category><category>sensor networks</category><category>web services</category><guid>https://simondobson.org/blog/2011/12/16/middleware-doughnut/</guid><pubDate>Fri, 16 Dec 2011 11:09:49 GMT</pubDate></item><item><title>Call for papers: MidSens'11</title><link>https://simondobson.org/blog/2011/06/06/cfp-midsens11/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Papers are invited on topics in middleware, tools and services  for sensor and other embedded systems.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Sixth International Workshop on Middleware Tools, Services and  Run-time Support for Networked Embedded Systems (&lt;a href="http://www.midsens.org/index.html" target="_blank"&gt;MidSens’11&lt;/a&gt;)&lt;/h2&gt;
+&lt;h3&gt;Co-located with &lt;a href="http://2011.middleware-conference.org/"&gt;Middleware 2011&lt;/a&gt; (December 12th - December 16th, 2011), Lisbon, Portugal&lt;/h3&gt;
+The aim of MidSens’11 is to stimulate research in the  specific domain of middleware for networked embedded systems. This  year’s focus is on sensor networks and robotics control – a broader  focus than the previous editions – since we believe that the extended  scope will result in complementary and synergetic submissions from  researchers working in both niches. Along with the ‘core’ topic of  middleware architectures, services and tool support, MidSens’11 will  also seek quality papers describing novel programming languages,  run-time support and relevant experience reports. As with previous  editions of this workshop, MidSens’11 will investigate how middleware  support can relieve developers from low-level, platform specific  concerns, while enabling optimal exploitation of available resources. We  hope that you will be able to join us in Lisbon on December 12th 2011.
+&lt;p&gt;Middleware for networked embedded systems such as sensor networks and  robotics is a critical research domain which addresses key challenges  that application developers are facing today. The five previous editions  of this workshop (&lt;a href="http://www.cs.kuleuven.ac.be/conference/MidSens2006/"&gt;MidSens'06&lt;/a&gt;, &lt;a href="http://www.cs.kuleuven.be/conference/MidSens2007/"&gt;MidSens'07&lt;/a&gt;, &lt;a href="http://www.comp.lancs.ac.uk/computing/midsens08/"&gt;MidSens'08&lt;/a&gt;, &lt;a href="http://distrinet.cs.kuleuven.be/events/midsens09/"&gt;MidSens'09&lt;/a&gt; and &lt;a href="http://www.midsens.org/2010/"&gt; MidSens'10&lt;/a&gt;)  attracted researchers from Europe, Asia, and the United States. The  MidSens workshop series has served to trigger and guide research efforts  to create an &lt;em&gt;integrated middleware vision&lt;/em&gt;, which is required to  handle the challenges inherent in developing, deploying and managing  complex networked embedded applications in an efficient way.&lt;/p&gt;
+&lt;p&gt;The workshop seeks papers in, but not limited to:
+&lt;/p&gt;&lt;ul&gt;
+    &lt;li&gt;Middleware Tools and Architectures:
+&lt;ul&gt;
+    &lt;li&gt; Architectures for networked embedded systems.&lt;/li&gt;
+    &lt;li&gt; Novel programming abstractions.&lt;/li&gt;
+    &lt;li&gt; Lightweight agent middleware for embedded systems.&lt;/li&gt;
+    &lt;li&gt; Testing and simulation tools.&lt;/li&gt;
+    &lt;li&gt; Fault identification, diagnosis and repair.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+    &lt;li&gt;Middleware services:
+&lt;ul&gt;
+    &lt;li&gt; Location tracking, localization, and synchronization.&lt;/li&gt;
+    &lt;li&gt; Support for real-time and safety-critical systems.&lt;/li&gt;
+    &lt;li&gt; Data management, aggregation and filtering.&lt;/li&gt;
+    &lt;li&gt; Energy-aware middleware mechanisms.&lt;/li&gt;
+    &lt;li&gt; Fault tolerance, reliability and quality of service.&lt;/li&gt;
+    &lt;li&gt; Privacy and security services.&lt;/li&gt;
+    &lt;li&gt; Virtualization, sharing and trading of resources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+    &lt;li&gt;Run-time Support:
+&lt;ul&gt;
+    &lt;li&gt; Overlay and topology creation, maintenance and   management.&lt;/li&gt;
+    &lt;li&gt; Resource/Service discovery and management.&lt;/li&gt;
+    &lt;li&gt; Support for reconfiguration and adaptation.&lt;/li&gt;
+    &lt;li&gt; Effective naming and addressing schemes.&lt;/li&gt;
+    &lt;li&gt; Support for modeling and enacting safe software  reconfiguration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+    &lt;li&gt;Management and Experiences:
+&lt;ul&gt;
+    &lt;li&gt; Managing heterogeneity and network dynamism.&lt;/li&gt;
+    &lt;li&gt; Integration of embedded systems with web services.&lt;/li&gt;
+    &lt;li&gt; Experience and evaluation of middleware platforms.&lt;/li&gt;
+    &lt;li&gt; Support for the unification of various networked embedded platforms.&lt;/li&gt;
+    &lt;li&gt; Shared infrastructure embedded systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Submission&lt;/h3&gt;
+Submitted papers must be original work in English without substantial  overlap with papers that have been published or that are simultaneously  submitted to a journal or conference with proceedings. Submissions must  not exceed 6 pages, must strictly follow the ACM conference proceedings  format, and must be submitted in PDF format.  All workshop papers will  be uploaded to the ACM Digital Library. Full instructions can be found &lt;a href="http://www.midsens.org/2011/submission.html" target="_blank"&gt;here&lt;/a&gt;.
+&lt;h3&gt;Important dates&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Paper submission: 15 August 2011&lt;/li&gt;
+    &lt;li&gt;Review notification: 29 September 2011&lt;/li&gt;
+    &lt;li&gt;Camera-ready: 10 October 2011&lt;/li&gt;
+    &lt;li&gt;Registration: 7 October 2011&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Programme committee&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Gordon Blair, Lancaster University, UK&lt;/li&gt;
+    &lt;li&gt;Vinny Cahill, Trinity College, Ireland&lt;/li&gt;
+    &lt;li&gt;Paolo Costa, Imperial College London, UK&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St. Andrews, UK&lt;/li&gt;
+    &lt;li&gt;Michael Fisher, University of Liverpool, UK&lt;/li&gt;
+    &lt;li&gt;Wen Hu, CSIRO, Australia&lt;/li&gt;
+    &lt;li&gt;Joerg Kaiser, University of Magdeburg, Germany&lt;/li&gt;
+    &lt;li&gt;Torsten Kroeger, Stanford University, USA&lt;/li&gt;
+    &lt;li&gt;Ajay Kshemkalyani, University of Illinois at Chicago&lt;/li&gt;
+    &lt;li&gt;Kristof Van Laerhoven, Technical University of Darmstadt&lt;/li&gt;
+    &lt;li&gt;Sam Michiels, K.U.Leuven, Belgium&lt;/li&gt;
+    &lt;li&gt;Nader Mohamed, United Arab Emirates University, UAE&lt;/li&gt;
+    &lt;li&gt;Luca Mottola, SICS, Sweden&lt;/li&gt;
+    &lt;li&gt;Mirco Musolesi, University of Birmingham, UK&lt;/li&gt;
+    &lt;li&gt;Dennis Pfisterer, University of Lübeck, Germany&lt;/li&gt;
+    &lt;li&gt;Kay Römer, University of Lübeck, Germany&lt;/li&gt;
+    &lt;li&gt;Coen De Roover, Vrije Universiteit Brussel, Belgium&lt;/li&gt;
+    &lt;li&gt;Romain Rouvoy, INRIA Lille, France&lt;/li&gt;
+    &lt;li&gt;Jo Ueyama, Universidade de Sao Paulo, Brazil&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>middleware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2011/06/06/cfp-midsens11/</guid><pubDate>Mon, 06 Jun 2011 09:30:18 GMT</pubDate></item><item><title>Call for papers: D3Science</title><link>https://simondobson.org/blog/2011/06/06/cfp-d3science/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Papers are solicited for a workshop on data-intensive, distributed and dynamic e-science problems.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="http://www.ci.uchicago.edu/D3Science/" target="_blank"&gt;Workshop on D3Science&lt;/a&gt; - Call for Papers&lt;/h2&gt;
+&lt;div&gt;
+&lt;h3&gt;(To be held with &lt;a href="http://www.escience2011.org/" target="_blank"&gt;IEEE e-Science 2011&lt;/a&gt;)
+Monday, 5 December 2011
+Stockholm, Sweden&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;This workshop is interested in data-intensive, distributed, and dynamic (D3) science. It will also focus on innovative approaches for scalability in the end-to-end real-time processing of scientific data. We refer to D3 applications as those are data-intensive, are fundamentally, or need to be, distributed, and need to support and respond to data that may be non-persistent and is dynamically generated. We are also looking to bring researchers together to look at holistic, rather than piecewise, approaches to the end-to-end processing and managing of scientific data.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;There has been a lot of effort in managing and distributing tasks where computation is dominant. Such applications have after all, been historically the drivers of "grid" computing. There has been, however, relatively less effort on tasks where the computationalload is matched by the data load, or even dominated by the data load. For such tasks to be able to operate at scale, there are conceptually simple run-time tradeoffs that need to be made, such as determining whether to move data to compute versus moving compute to data, or possibly regenerating data on-the-fly. Due to fluctuating resource availability and capabilities, as well as insufficient prior information about application requirements, such decisions must be made at run-time. Furthermore, resource, connectivity and/or storage constraints may require the data to be manipulated in-transit so that it is "made-right" for the consumer. Currently it is very difficult to implement these dynamic decisions or the underlying mechanisms in a general-purpose and scalable fashion. Although the increasing volumes and complexity of data will make many problems data-dominated, the computational requirements will still be high. In practice, data-intensive applications will encompass data-driven applications. For example, many data-driven applications will involve computational activities triggered as a consequence of independently created data; thus it is imperative for an application to be able to respond to unplanned changes in data load or content. Therefore, understanding how to support dynamic computations is a fundamental, but currently missing element in data-intensive computing.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;The D3Science workshop builds upon a 3 year research theme on Distributed Programming Abstractions (DPA, &lt;a href="http://wiki.esi.ac.uk/Distributed_Programming_Abstractions"&gt;http://wiki.esi.ac.uk/Distributed_Programming_Abstractions&lt;/a&gt;), which has held a series of related workshops including but not limited to e-Science 2008, EuroPar 2008 and the CLADE series, and the ongoing 3DPAS (&lt;a href="http://wiki.esi.ac.uk/3DPAS"&gt;http://wiki.esi.ac.uk/3DPAS&lt;/a&gt;) research theme funded by the NSF and UK EPSRC, which is holding one workshop in June 2011: the 3DAPAS workshop (&lt;a href="https://sites.google.com/site/3dapas/"&gt;https://sites.google.com/site/3dapas/&lt;/a&gt;). The workshop is intended to lead to a funding proposal for transcontinental collaboration, with contributors as potential members of the collaboration, and as such, we are particularly interested is discussing both existing and future projects that are suitable for transcontinental collaboration.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;p&gt;Topics of interest include but are not limited to:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;ul&gt;
+    &lt;li&gt;Case studies of development, deployment and execution of representative&lt;/li&gt;
+    &lt;li&gt;D3 applications, particularly projects suitable for transcontinental collaboration&lt;/li&gt;
+    &lt;li&gt;Programming systems, abstractions, and models for D3 applications&lt;/li&gt;
+    &lt;li&gt;Discussion of the common, minimally complete, characteristics of D3 application&lt;/li&gt;
+    &lt;li&gt;Major barriers to the development, deployment, and execution of D3 applications, and primary challenges of D3 applications at scale&lt;/li&gt;
+    &lt;li&gt;Patterns that exist within D3 applications, and commonalities in the way such patterns are used&lt;/li&gt;
+    &lt;li&gt;How programming models, abstraction and systems for data-intensive applications can be extended to support dynamic data applications&lt;/li&gt;
+    &lt;li&gt;Tools, environments and programming support that exist to enable emerging distributed infrastructure to support the requirements of dynamic applications (including but not limited to streaming data and in-transit data analysis)&lt;/li&gt;
+    &lt;li&gt;Data-intensive dynamic workflow and in-transit data manipulation&lt;/li&gt;
+    &lt;li&gt;Adaptive/pervasive computing applications and systems&lt;/li&gt;
+    &lt;li&gt;Abstractions and mechanisms for dynamic code deployment and "moving code to data"&lt;/li&gt;
+    &lt;li&gt;Application drivers for end-to-end scientific data management&lt;/li&gt;
+    &lt;li&gt;Runtime support for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;System support for high end workflows&lt;/li&gt;
+    &lt;li&gt;Hybrid computing solutions for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;Technologies to enable multi-platform workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Submission instructions&lt;/h3&gt;
+Authors are invited to submit papers containing unpublished, original work (not under review elesewhere) of up to 8 pages of double column text using single spaced 10 point size on 8.5 x 11 inch pages, as per IEEE 8.5 x 11 manuscript guidelines. Templates are available:&lt;a href="http://www.ieee.org/web/publications/pubservices/confpub/AuthorTools/conferenceTemplates.html"&gt; http://www.ieee.org/web/publications/pubservices/confpub/AuthorTools/conferenceTemplates.html&lt;/a&gt; Authors should submit a PDF or PostScript (level 2) file that will print on a PostScript printer. Papers conforming to the above guidelines can be submitted through the workshop's paper submission system: &lt;a href="http://www.easychair.org/conferences/?conf=d3science"&gt;http://www.easychair.org/conferences/?conf=d3science&lt;/a&gt; It is a requirement that at least one author of each accepted paper register and attend the conference.
+&lt;h3&gt;Important dates&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;17 July 2011 - submission date&lt;/li&gt;
+    &lt;li&gt;23 August 2011 - decisions announced&lt;/li&gt;
+    &lt;li&gt;23 September 2011 - final versions of papers due to IEEE for proceedings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Organizers&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Daniel S. Katz, University of Chicago &amp;amp; Argonne National Laboratory, USA&lt;/li&gt;
+    &lt;li&gt;Neil Chue Hong, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Shantenu Jha, Rutgers University &amp;amp; Louisiana State University, USA&lt;/li&gt;
+    &lt;li&gt;Omer Rana, Cardiff University, UK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;PC members&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Gagan Aggarwal, Ohio State University, USA&lt;/li&gt;
+    &lt;li&gt;Deb Agarwal, Lawrence Berkeley National Lab, USA&lt;/li&gt;
+    &lt;li&gt;Gabrielle Allen, Lousiana State University, USA&lt;/li&gt;
+    &lt;li&gt;Malcolm Atkinson, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Adam Barker, University of St Andrews, UK&lt;/li&gt;
+    &lt;li&gt;Paolo Besana, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Jon Blower, University of Reading, UK&lt;/li&gt;
+    &lt;li&gt;Yun-He Chen-Burger, University of Edinburgh, UK&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews, UK&lt;/li&gt;
+    &lt;li&gt;Gilles Fedak, INRIA, France&lt;/li&gt;
+    &lt;li&gt;Cécile Germain, University Paris Sud, France&lt;/li&gt;
+    &lt;li&gt;Keith R. Jackson, Lawrence Berkeley National Lab, USA&lt;/li&gt;
+    &lt;li&gt;Manish Parashar, Rutgers, USA&lt;/li&gt;
+    &lt;li&gt;Abani Patra, University of Buffalo, USA&lt;/li&gt;
+    &lt;li&gt;Yacine Rezgui, Cardiff University, UK&lt;/li&gt;
+    &lt;li&gt;Yogesh Simmhan, University of Southern California, USA&lt;/li&gt;
+    &lt;li&gt;Domenico Talia, University of Calabria, Italy&lt;/li&gt;
+    &lt;li&gt;Paul Watson, Newcastle University, UK&lt;/li&gt;
+    &lt;li&gt;Jon Weissman, University of Minnesota, USA&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>e-science</category><guid>https://simondobson.org/blog/2011/06/06/cfp-d3science/</guid><pubDate>Mon, 06 Jun 2011 09:20:44 GMT</pubDate></item><item><title>Call for papers: Formal methods for Pervasive Systems</title><link>https://simondobson.org/blog/2011/01/31/fmps-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We are looking for papers on the application of formal methods to pervasive computing, for a workshop at FM'11. (Full disclosure: I'm the keynote speaker.)&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Formal Methods for Pervasive Systems [Pervasive@FM2011]&lt;/h2&gt;
+A workshop held as part of &lt;a href="http://fm2011.lero.ie"&gt;FORMAL METHODS 2011&lt;/a&gt;
+&lt;p&gt;&lt;strong&gt;DEADLINE:&lt;/strong&gt; 20th March 2011
+&lt;/p&gt;&lt;h3&gt;WORKSHOP TOPICS&lt;/h3&gt;
+Logics, Process calculi, Automata, Specification languages, Probabilistic analysis, Model checking, Theorem-proving, Tools, Automated deduction
+&lt;p&gt;&lt;em&gt;FOR THE&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;privacy, behaviour, security, reliability, interoperability, context-aware, mobility, resource requirements, temporal&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;ASPECTS OF&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;pervasive healthcare systems, sensor networks, e-commerce, cloud computing, MANETs/VANETs, telephony, device swarms, electronic tags, human-device interaction, etc.
+&lt;/p&gt;&lt;h3&gt;SUBMISSIONS&lt;/h3&gt;
+Our aim is to have productive discussions and a true workshop "feel". Thus, we invite two kinds of submission:
+&lt;ol&gt;
+    &lt;li&gt; Original research papers concerning any of the above topics; or&lt;/li&gt;
+    &lt;li&gt; Survey papers providing an overview of some of the above topics.&lt;/li&gt;
+&lt;/ol&gt;
+Submissions should be written in English, formatted according Springer LNCS style, and not exceed 20 pages in length. Submissions must be made via &lt;a href="http://www.easychair.org/conferences/?conf=pervasivefm2011"&gt;Easychair&lt;/a&gt;.
+&lt;p&gt;Our aim is for an informal proceedings based on these submissions to be available during the workshop. Depending upon the success of the workshop, we intend to produce an edited book based (at least in part) upon the contributions or develop a special issue of a journal.
+&lt;/p&gt;&lt;h3&gt;IMPORTANT DATES&lt;/h3&gt;
+Submission deadline:          20th March 2011
+Notification of acceptance:    1st May 2011
+Pre-proceedings version due:  20th May 2011
+Workshop:                     20th or 21st June, 2011
+&lt;h3&gt;INVITED SPEAKER&lt;/h3&gt;
+Simon Dobson (School of Computer Science, University of St. Andrews)
+&lt;h3&gt;WORKSHOP CO-CHAIRS&lt;/h3&gt;
+Michael Fisher    (University of Liverpool, UK)
+Brian Logan       (University of Nottingham, UK)
+&lt;h3&gt;PROGRAMME COMMITTEE&lt;/h3&gt;
+Natasha Alechina    (Nottingham, UK)
+Myrto Arapinis      (Birmingham, UK)
+Mohamed Bakhouya    (Belfort, FR)
+Doina Bucur         (INCAS3, NL)
+Michael Butler      (Southampton, UK)
+Muffy Calder        (Glasgow, UK)
+Antonio Coronato    (CNR, IT)
+Soren Debois        (Copenhagen, DK)
+Giuseppe De Pietro  (CNR, IT)
+Marina De Vos       (Bath, UK)
+Simon Dobson        (St Andrews, UK)
+Michael Fisher      (Liverpool, UK)
+Michael Harrison    (Newcastle, UK)
+Savas Konur         (Liverpool, UK)
+Brian Logan         (Nottingham, UK)
+Alessio Lomuscio    (Imperial, UK)
+Ka Lok Man          (XJTLU, CN)
+Julian Padget       (Bath, UK)
+Anand Ranganathan   (IBM, USA)
+Alessandro Russo    (Imperial, UK)
+Mark Ryan           (Birmingham, UK)
+Chris Unsworth      (Glasgow, UK)
+Kaiyu Wan           (XJTLU, CN)
+&lt;h3&gt;STEERING COMMITTEE&lt;/h3&gt;
+Natasha Alechina    (University of Nottingham, UK)
+Muffy Calder        (University of Glasgow, UK)
+Michael Fisher      (University of Liverpool, UK)
+Brian Logan         (University of Nottingham, UK)
+Mark Ryan           (University of Birmingham, UK)&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>formal methods</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2011/01/31/fmps-cfp/</guid><pubDate>Mon, 31 Jan 2011 11:34:52 GMT</pubDate></item><item><title>Call for papers: Programming methods for mobile and pervasive systems</title><link>https://simondobson.org/blog/2011/01/09/pmmps2011-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We are looking for papers on programming models, methods and tools for pervasive and mobile systems, for a workshop at the PERVASIVE conference in San Francisco.&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;2nd International Workshop on Programming Methods for Mobile and Pervasive Systems (PMMPS)&lt;/h3&gt;
+&lt;a href="http://www.pmmps.org/"&gt;http://www.pmmps.org&lt;/a&gt;
+&lt;p&gt;San Francisco, California, USA, June 12, 2011.
+Co-located with &lt;a href="http://www.pervsiveconference.org"&gt;PERVASIVE 2011&lt;/a&gt;
+&lt;/p&gt;&lt;p lang="x-western"&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Pervasive mobile computing is here, but how these devices and services should be programmed is still something of a mystery. Programming mobile and pervasive applications is more than than building client-server or peer-peer systems with mobility, and it is more than providing usable interfaces for mobile devices that may interact with the surrounding context. It includes aspects such as disconnected and low-attention working, spontaneous collaboration, evolving and uncertain security regimes, and integration into services and workflows hosted on the internet.  In the past, efforts have focused on the form of human-device interfaces that can be built using mobile and distributed computing tools, or on human computer interface design based on, for example, the limited screen resolution and real estate provided by a smartphone.&lt;/p&gt;
+&lt;p&gt;Much of the challenge in building pervasive systems is in bringing together users' expectations of their interactions with the system with the model of a physical and virtual environment with which users interact in the context of the pervasive application.&lt;/p&gt;
+&lt;p&gt;The aim of this workshop is to bring together researchers in programming languages, software architecture and design, and pervasive systems to present and discuss results and approaches to the development of mobile and pervasive systems. The goal is to begin the process of developing the software design and development tools necessary for the next generation of services in dynamic environments, including mobile and pervasive computing, wireless sensor networks, and adaptive devices.
+&lt;/p&gt;&lt;h4&gt;&lt;strong&gt;Submission&lt;/strong&gt;&lt;/h4&gt;
+Potential workshop participants are asked to submit a paper on topics relevant to programming models for mobile and pervasive systems. We are primarily seeking short position papers (2–4 pages), although full papers that have not been published and are not under consideration elsewhere will also be considered (a maximum of 10 pages). Position papers that lay out some of the challenges to programming mobile and pervasive systems, including past failures, are welcome.  Papers longer than 10 pages may be automatically rejected by the chairs or the programme committee. From the submissions, the programme committee will strive to balance participation between academia and industry and across topics. Selected papers will appear on the workshop web site; PMMPS has no formal published proceedings. Authors of selected papers will be invited to submit extended versions for publication in an appropriate journal (under negotiation).
+&lt;p&gt;Submissions will be accepted through the workshop web site, &lt;a href="http://www.pmmps.org/"&gt;http://www.pmmps.org&lt;/a&gt;
+&lt;/p&gt;&lt;h4&gt;Important dates&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Submission: 4 February 2011&lt;/li&gt;
+    &lt;li&gt;Notifications: 11 March 2011&lt;/li&gt;
+    &lt;li&gt;Camera-ready: 2 May 2011&lt;/li&gt;
+    &lt;li&gt;Workshop date: 12 June 2011&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Organisers&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Dominic Duggan, Stevens Institute of Technology NJ&lt;/li&gt;
+    &lt;li&gt;Simon Dobson, University of St Andrews UK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p lang="x-western"&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2011/01/09/pmmps2011-cfp/</guid><pubDate>Sun, 09 Jan 2011 13:17:53 GMT</pubDate></item><item><title>Call for papers: Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems</title><link>https://simondobson.org/blog/2010/12/02/3dpas-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;div&gt;
+&lt;div&gt;We're looking for papers on the topics of programming with large, dynamic data for a workshop co-located with HPDC in San Jose next year.&lt;/div&gt;
+&lt;div&gt;&lt;!--more--&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;strong&gt;Call for papers
+&lt;p&gt;Workshop on Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems (3DAPAS)&lt;/p&gt;&lt;/strong&gt;
+&lt;div&gt;To be held in conjunction with &lt;a rel="nofollow" href="http://www.hpdc.org/2011/" target="_blank"&gt;HPDC-2011&lt;/a&gt;, 8 June 2011, San Jose, CA&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;a href="http://sites.google.com/site/3dapas"&gt;
+http://sites.google.com/site/3dapas/&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;strong&gt;
+&lt;/strong&gt;&lt;/div&gt;
+&lt;div&gt;There  has been a lot of effort in managing and distributing tasks where  computational loads are dominant. Such applications have after all, been  historically the drivers of "grid" computing.  There has, however, been  relatively less effort on tasks where the computational load is matched  by the data load, or even dominated by the data load. For such tasks to  be able to operate at scale, there are conceptually simple run-time  trade-offs that need to be made, such as determining whether to move  data to compute versus keeping data localized and move computational  tasks to operate on the data in situ, or possibly neither, and with data  regenerated on-the-fly. Due to fluctuating resource availability and  capabilities, as well as insufficient prior information about  application requirements, such decisions must be made at run-time.  Furthermore, resource, connectivity and/or storage constraints may  require the data to be manipulated in-transit so that it is "made-right"  for the consumer. Currently it is very difficult to implement these  dynamic decisions or the underlying mechanisms in a general-purpose and  scalable fashion.
+&lt;div&gt;
+&lt;div&gt;Although   the increasing volumes and complexity of data will make many problems  data load dominated, the computational requirements will still be high.   In practice, data-intensive applications will encompass data-driven  applications.  For example, many data-driven applications will involve  computational activities triggered as a consequence of independently  created data; thus it is imperative for an application to be able to  respond  to unplanned changes in data load or content.  Therefore, understanding  how to support dynamic computations is a fundamental, but currently  missing element in data-intensive computing.This   workshop will operate at the triple point of dynamic and distributed  and data-intensive (3D) attributes. This workshop will operate at the  triple point of dynamic, distributed and data-intensive (3D) attributes.  It will also focus on innovative approaches for scalability in the  end-to-end real-time processing of scientific data. We refer to 3D  applications as those  are data-intensive, need to support and respond to dynamic data, and,  either are  fundamentally, or need to be, distributed. We are interested in papers  that span the spectrum from the design of cyberinfrastructure to support  3D applications, to novel application examples. We are also looking to  bring researchers together to look at holistic, rather than piecewise,  approaches to the end-to-end processing and managing of scientific data.
+&lt;p&gt;3DAPAS  builds upon a 3 year research theme on Distributed Programming  Abstractions (DPA), which has held a series of related workshops (see: &lt;a rel="nofollow" href="http://wiki.esi.ac.uk/Distributed_Programming_Abstractions#Past_Events" target="_blank"&gt;DPA Past Events&lt;/a&gt;) including  but not limited to e-Science2008, EuroPar 2008 and the CLADE series.  3DAPAS will also draw on ideas from the ongoing &lt;a rel="nofollow" href="http://wiki.esi.ac.uk/3DPAS" target="_blank"&gt;3DPAS&lt;/a&gt; Research Theme funded by the NSF and UK EPSRC.&lt;/p&gt;
+&lt;p&gt;Topics of interest include but are not limited to:&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;ul&gt;
+    &lt;li&gt;Case studies of development, deployment and execution of representative 3D applications&lt;/li&gt;
+    &lt;li&gt;Programming systems, abstractions, and models for 3D applications&lt;/li&gt;
+    &lt;li&gt;What are the common, minimally complete, characteristics of 3D application?&lt;/li&gt;
+    &lt;li&gt;What are major barriers to the development, deployment, and execution  of 3D applications? What are the primary challenges of 3D applications  at scale?&lt;/li&gt;
+    &lt;li&gt;What patterns exist within 3D applications, and are there commonalities in the way such patterns are used?&lt;/li&gt;
+    &lt;li&gt;How can programming models, abstraction and systems for data-intensive  applications be extended to support dynamic data applications?&lt;/li&gt;
+    &lt;li&gt;Tools, environments and programming support that exist to enable  emerging distributed infrastructure to support the requirements of  dynamic applications (including but not limited to streaming data and  in-transit data analysis)&lt;/li&gt;
+    &lt;li&gt;Data-intensive dynamic workflow and in-transit data manipulation&lt;/li&gt;
+    &lt;li&gt;Abstractions and mechanisms for dynamic code deployment and "moving the code to the data"&lt;/li&gt;
+    &lt;li&gt;Application drivers for end-to-end scientific data management&lt;/li&gt;
+    &lt;li&gt;Runtime support for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;System support for high end workflows&lt;/li&gt;
+    &lt;li&gt;Hybrid computing solutions for in-situ analysis&lt;/li&gt;
+    &lt;li&gt;Technologies to enable multi-platform workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;&lt;strong&gt;Submission Requirements&lt;/strong&gt;:
+&lt;/span&gt;Authors  are invited to submit technical papers of at most 8 pages in PDF  format, including all figures and references. Papers should be formatted  in the &lt;a rel="nofollow" href="http://www.acm.org/sigs/publications/proceedings-templates" target="_blank"&gt;ACM Proceedings Style&lt;/a&gt; and submitted via &lt;a rel="nofollow" href="http://www.easychair.org/conferences/?conf=3dapas" target="_blank"&gt;EasyChair&lt;/a&gt;. Accepted papers will appear in the conference proceedings, and will be incorporated into the ACM Digital Library.
+&lt;p&gt;Submission of a paper implies that at least one author will attend the workshop to present the paper, if it is accepted.&lt;/p&gt;
+&lt;p&gt;Papers  must be self-contained and provide the technical substance required for  the program committee to evaluate the paper's contribution. Papers  should thoughtfully address all related work. Submitted papers must be  original work that has not appeared in and is not under consideration  for another conference or a journal. See the &lt;a rel="nofollow" href="http://www.acm.org/publications/policies/sim_submissions" target="_blank"&gt;ACM Prior Publication Policy&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;strong&gt;&lt;span style="color: #000000"&gt;Important Dates&lt;/span&gt;&lt;/strong&gt;&lt;span style="color: #000000"&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;
+&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Submissions Due: 31 Jan 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Paper Decisions Announced: 28 Feb 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Final Camera-Ready Papers Due: 24 Mar 2011&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;span style="font-family: 'times new roman',serif"&gt;&lt;span style="color: #000000"&gt;Workshop Date: 8 June 2011&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;(all dates are firm)
+&lt;p&gt;&lt;strong&gt;Organizers:&lt;/strong&gt;
+&lt;/p&gt;&lt;/span&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Daniel S. Katz, University of Chicago &amp;amp; Argonne National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Shantenu Jha, Louisiana State University, USA &amp;amp; e-Science Institute, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Jon Weissman, University of Minnesota, USA&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span style="font-family: 'times new roman',serif;color: #000000"&gt;&lt;strong&gt;Programme Committee Members:&lt;/strong&gt;
+&lt;/span&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Gabrielle Allen, Louisiana State University, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Malcolm Atkinson, eSI &amp;amp; University of Edinburgh, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Henri Bal, Vrije Universiteit, Netherlands&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Jon Blower, Reading e-Science Centre, University of Reading, UK
+&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Shawn Brown, University of Pittsburgh &amp;amp; Pittsburgh Supercomputing Center, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Simon Dobson, University of St. Andrews, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Dennis Gannon, Microsoft, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Keith R. Jackson, Lawrence Berkeley National Lab, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;John R. Johnson, Pacific Northwest National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Scott Klasky, University of Tennessee &amp;amp; Oak Ridge National Laboratory, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Bertram Ludäscher, University of California, Davis, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Abani Patra, University of Buffalo, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Manish Parashar, Rutgers &amp;amp; NSF, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Omer Rana, Cardiff University, UK&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Joel Saltz, Emory University, USA&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style="font-family: 'times new roman',serif"&gt;Domenico Talia, Universita' della Calabria, Italy&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>data-intensive</category><guid>https://simondobson.org/blog/2010/12/02/3dpas-cfp/</guid><pubDate>Thu, 02 Dec 2010 08:00:03 GMT</pubDate></item></channel></rss>
