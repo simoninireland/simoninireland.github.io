@@ -1,0 +1,1 @@
+<html><body><p>We have five more PhD scholarships tenable from September, for students interested in any of our areas of research. The details are available <a href="http://www.jobs.ac.uk/job/AEL878/funded-phd-research-studentship/" target="_blank">here</a>. Please note that I'm not taking on a PhD student this year, so don't bother applying to work with me.</p></body></html>

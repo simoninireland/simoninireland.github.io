@@ -9,9 +9,11 @@
 	        {% if post.previewimage %}
     		    <img src="{{ post.previewimage }}" height="100px" style="display:inline-block" /> &nbsp;
 		{% endif %}
-		<span style="font-size: 200%;"><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></span> ({{ post.formatted_date(date_format)|e }})
+		<h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></h2>
 		<p>
-                {{ post.text(lang, teaser_only=True) }}
+                {{ post.text(lang, teaser_only=True, show_read_more_link=False) }}
+   	    	({{ post.formatted_date(date_format)|e }}. {{ post.reading_time }} minute read)
+		&nbsp;<br>&nbsp;<br>
             </li>
         {% endfor %}
     </ul>

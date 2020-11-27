@@ -38,7 +38,6 @@ NAVIGATION_LINKS = {
                 ("/personal/about-me/", "Welcome"),
                 ("/personal/biography/", "Biography"),
                 ("/personal/reading/", "What I'm reading"),
-                ("/galleries/", "Photography"),
             ),
             "About"
         ),
@@ -50,13 +49,15 @@ NAVIGATION_LINKS = {
                 ("/research/publications-by-year/", "Publications by year"),
                 ("/research/bibliometrics/", "Bibliometrics"),
             ),
-            "Research"
+            "Academic"
         ),
         (
             (
-                ("/writing/essays/", "Essays and articles"),
+                ("/writing/essays/", "Essays"),
                 ("/writing/em-book/", "Epidemic modelling -- Some notes, maths, and code"),
                 ("/writing/cncp-book/", "Complex networks, complex processes"),
+                ("/categories/", "Articles by topic"),
+                ("/archive.html", "Article by date"),
             ),
             "Writing"
         ),
@@ -65,9 +66,19 @@ NAVIGATION_LINKS = {
                 ("/development/epyc/", "epyc"),
                 ("/development/epydemic/", "epydemic"),
                 ("/development/simplicial/", "simplicial"),
-                ("/development/old-development/", "Older projects"),
+                ("/galleries/", "Photography"),
             ),
-            "Software"
+            "Current projects"
+        ),
+        (
+            (
+                ("/development/citizen-sensing/", "Citizen sensing with Arduino (2013)"),
+                ("/development/sleepysketch/", "Arduino SleepySketch (2013--2014)"),
+                ("/research/sapere/", "Sapere (2010--2013)"),
+                ("/development/attila/", "Attila (2010--2013)"),
+                ("/development/vanilla/", "Vanilla (1997-1999)")
+            ),
+            "Older projects"
         ),
         ("/personal/contact/", "Contact"),
     )

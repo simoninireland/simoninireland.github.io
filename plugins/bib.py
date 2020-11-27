@@ -84,7 +84,8 @@ class Bibtex(ShortcodePlugin):
     def bibliography(self, **kwds):
         '''Include the bibliography, laid-out in the current style.
 
-        :param key: the key
+        :param category: (optional) category of the reference
+        :param keywords: (optional) keywords that have to be present, comma-separated
         :param sort-by: (optional) comma-separated list of fields to sort, reversed if preceded by -
         :param group-by: (optional) grouping of references
         :returns: the bibliography and dependencies'''
@@ -100,7 +101,20 @@ class Bibtex(ShortcodePlugin):
                     if category in cs:
                         es.append(e)
             entries = es
-            
+
+        # extract keywords (if specfied)
+        if 'keywords' in kwds.keys():
+            ks = set([ c.strip() for c in kwds['keywords'].split(',') ])
+            print('looking for {ks}'.format(ks=ks))
+            es = []
+            for e in entries:
+                if 'keywords' in e.fields.keys():
+                    eks =  set([ c.strip() for c in e.fields['keywords'].split(',') ])
+                    print('keywords {eks}'.format(eks=eks))
+                    if ks.issubset(eks):
+                        es.append(e)
+            entries = es
+                            
         # sort entries by fields (if specified)
         if 'sort-by' in kwds.keys():
             fields = kwds['sort-by'].split(',')

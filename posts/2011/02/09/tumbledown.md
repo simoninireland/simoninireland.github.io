@@ -1,0 +1,9 @@
+<html><body><p>The west of Ireland is full of old, decrepit buildings that seem to have been left behind by the Celtic Tiger years -- and just crying out to be photographed.
+
+<!--more-->
+
+Over summer 2010 I spent a happy few days touring around Sligo and nearby counties taking shots of the half-hidden, half-derelict houses hidden in the undergrowth. Then I discovered on-demand book publishing, so now the collection is a book.
+</p><div style="text-align:left;width:450px"><a target="_new" href="http://www.blurb.com/books/preview/1807775?ce=blurb_ew&amp;utm_source=widget"><img src="http://bookshow.blurb.com/bookshow/cache/P2507577/md/wcover_2.png"></a><div><a href="http://www.blurb.com/bookstore/detail/1807775?ce=blurb_ew&amp;utm_source=widget" target="_blank" style="margin:12px 3px">Tumbledown by Simon Dobson</a></div></div>
+The publishing service is called <a href="http://www.blurb.com">Blurb</a>, and lets you download a desktop-publishing program that can be used to generate books from a range of different templates, including some that are designed for art photography. The quality of the printing is excellent -- <em>far</em> better than results I've had from other similar services. What's even better is that Blurb hosts a bookshop from which anyone else can buy a copy of your book, so if you'd like a copy just follow the link above.
+
+I have a feeling this sort of vanity publishing could become quite addictive. I've thought of half a dozen other photo projects that'd make decent books -- undoubtedly <a href="/2011/01/unpopular-book/">more popular than any of my technical writing</a>, anyway. For art books it's clearly much more attractive than an ebook; and while it's more expensive per book than traditional publishing, the huge advantage is that you don't have to pay for, stack up and distribute inventory beforehand.  It certainly reduces the barriers to entry for stroking your own ego, anyway :-)</body></html>

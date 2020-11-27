@@ -37,9 +37,9 @@ things as they would have done anyway).
 
 And it's so *complicated*! I had to pack a bag to do my "commute", and
 remember (and then find) lots of things to take with me that I already
-have in the first place. A laptop. A notebook and pen. Hand sanitiser
-and a mask. I had to take a bottle of water, because the water
-dispensers in the other place are shut down and the kitchens are
+have in the first place. A laptop. A notebook and pen. My ID. Hand
+sanitiser and a mask. I had to take a bottle of water, because the
+water dispensers in the other place are shut down and the kitchens are
 closed. The coffee machines are in the kitchens, so no tea of coffee,
 leaving me as grumpy as might be expected by the time I got home. And
 of course I inevitably forgot something that I then needed: sunglasses

@@ -2,7 +2,7 @@
 .. title: Old research group
 .. slug: old-research-group
 .. date: 2020-06-18 11:44:08 UTC+01:00
-.. tags: ols
+.. tags: old
 .. category: university
 .. link: 
 .. description: 
@@ -11,6 +11,9 @@
 
 ## Postdocs
 
+- [Dr Lei Fang](https://www.st-andrews.ac.uk/computer-science/people/lf28)
+  (now my colleague at St Andrews): sensor correlation, error detection, and inference, using
+  statistical methods
 - [Dr Juan Ye](http://sites.google.com/site/juanyeresearch/) (now my colleague at the University of St Andrews): situation recognition in pervasive and sensor-driven systems
 - Dr Davide Cellai (now at the Central Bank of Ireland): network science
 - [Dr Lorcan Coyle](http://lorcancoyle.org/) (now at Intercomm): pervasive systems and machine learning
@@ -22,9 +25,9 @@
 Graduated PhD students
 
 - Dr Michael Pitcher (now at King’s College London): in silico modelling of tuberculosis (joint with St Andrews’ School of Medicine)
-- Dr Chris Schneider (now at Nvidia): Using unsupervised machine learning for fault identification in virtual machines
+- Dr Chris Schneider (now at Google): Using unsupervised machine learning for fault identification in virtual machines
 - Dr Lei Fang (now my postdoc): statistical methods for managing errors in sensor networks
-- Dr Graeme Stevenson: pro­gram­ming with ontologically-structured data
+- Dr Graeme Stevenson: programming with ontologically-structured data
 - [Dr Saray Shai](https://www.wesleyan.edu/academics/faculty/sshai/profile.html) (now at Wesleyan University): coupled adaptive complex networks
 - Dr Graham Williamson: Epidemic data dissemination in wireless sensor networks
 - Dr Hui Zhang (now at Amazon): coverage problems in dense homological and sparse mobile sensor networks

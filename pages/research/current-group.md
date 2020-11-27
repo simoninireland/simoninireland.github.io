@@ -11,9 +11,7 @@
 
 ## Postdocs
 
-- Lei Fang: sensor correlation, error detection, and inference, using
-  statistical methods
-- Yasmee Rafiq: modelling sensor degradation
+- Yasmeen Rafiq: modelling sensor degradation
 
 
 ## Graduate students

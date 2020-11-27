@@ -1,0 +1,9 @@
+<html><body><p>We're looking to recruit new academics as part of a large on-going expansion of our academic staff. We wish to appoint two new <a href="https://www.vacancies.st-andrews.ac.uk/ViewVacancyV2.aspx?enc=mEgrBL4XQK0+ld8aNkwYmLYAYEGVHElLWsnTJgL+CarIHBCM/EiQaeKOsYHKP51KpI3DcpxT/zQcAl/8iq/B+IMGPJwugR63L68sBJUS3+i3hCU7JR/EJv31DirWmhwtDXIz2HSywsmfeey5lSxnIg==">Lecturers/Senior Lecturers</a> (depending on experience) to join our vibrant teaching and research community that is ranked amongst the top venues for Computer Science education and research worldwide.
+
+<!--more-->
+
+The successful candidate will be expected to have a range of interests, to be active in research publication that strengthens or complements those in the School and to be capable of teaching the subject to undergraduate and taught postgraduate students who come to us with a wide range of backgrounds.
+
+Excellent teaching skills and an interest in promoting knowledge exchange are essential. You should also have some familiarity with grant-seeking processes in relation to research councils and other sources.
+
+More details are available on the <a href="https://www.vacancies.st-andrews.ac.uk/ViewVacancyV2.aspx?enc=mEgrBL4XQK0+ld8aNkwYmLYAYEGVHElLWsnTJgL+CarIHBCM/EiQaeKOsYHKP51KpI3DcpxT/zQcAl/8iq/B+IMGPJwugR63L68sBJUS3+i3hCU7JR/EJv31DirWmhwtDXIz2HSywsmfeey5lSxnIg==">university vacancies page</a>. Informal enquiries can be directed to Professor Steve Linton (<a href="mailto:hos-cs@st-andrews.ac.uk">hos-cs@st-andrews.ac.uk</a>) or Dr Dharini Balasubramaniam (<a href="mailto:dot-cs@st-andrews.ac.uk">dot-cs@st-andrews.ac.uk</a>).</p></body></html>
