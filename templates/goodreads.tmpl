@@ -1,0 +1,25 @@
+{#  -*- coding: utf-8 -*- #}
+{% block content %}
+   <div>
+	<div>
+		<div>
+			<img src='{{ item.book_medium_image_url }}' style='float: left; margin-right: 10px'>
+			<div>
+				<h2>{{ item.author_name}}</h2>
+				{% if item.book_published %}
+				   {{ item.book_published }}
+				{% endif %}
+				<p>
+				<hr>
+			</div>
+		</div>
+		<p>
+		{{ item.user_review }}
+		<p>
+   		{% if item.user_date_added %}
+		    Finished on {{ item.user_date_added|e }}.
+		{% endif %}
+                {{ item.user_rating }}*/5*.
+	</div>
+   </div>
+{% endblock %}
