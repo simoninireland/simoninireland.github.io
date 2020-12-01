@@ -18,10 +18,6 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/admin.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/android.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
@@ -74,6 +70,10 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/books.xml</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
@@ -92,10 +92,6 @@
  <sitemap>
   <loc>https://simondobson.org/categories/cloud-computing.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://simondobson.org/categories/cncp.xml</loc>
-  <lastmod>2020-11-27T17:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/competition.xml</loc>
@@ -178,18 +174,6 @@
   <lastmod>2020-11-27T17:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/epyc.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://simondobson.org/categories/epydemic.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://simondobson.org/categories/er-network.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/erasmus-mundus.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
@@ -236,6 +220,10 @@
  <sitemap>
   <loc>https://simondobson.org/categories/git.xml</loc>
   <lastmod>2020-11-27T16:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/goodreads.xml</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/grays-laws.xml</loc>
@@ -458,6 +446,10 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/reviews.xml</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
@@ -511,10 +503,6 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/sicsa.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://simondobson.org/categories/simulation.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
@@ -606,10 +594,6 @@
   <lastmod>2020-11-27T17:50:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/unversity.xml</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/usb.xml</loc>
   <lastmod>2020-11-27T17:32:00Z</lastmod>
  </sitemap>
@@ -659,38 +643,38 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/pittenweem/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/sanday/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/tuscany-bologna/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/venice/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/westray/rss.xml</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2020-11-27T18:15:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2020-11-27T18:17:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>

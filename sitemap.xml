@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2020-11-27T13:19:00Z</lastmod>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -46,16 +46,20 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2019/</loc>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/2020/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2010/02/26/216/</loc>
@@ -662,35 +666,11 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2017/02/03/site-changes/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/02/19/cncp-blog/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2017/03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/04/14/concepts-networks/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/04/21/concepts-networks-and-geometry/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/04/28/concepts-simple-networks/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/05/05/concepts-degree/</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
@@ -702,59 +682,7 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2017/05/12/concepts-neighbnourhoods-and-paths/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/05/19/concepts-processes/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/05/26/epidemic-spreading/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/blog/2017/05/28/academic-positions/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/06/02/compartmented-models-of-disease/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/06/09/erdos-renyi-networks/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/06/16/the-mathematics-of-er-networks/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/06/23/concepts-connectivity/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/06/30/er-components/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/07/07/continuous-discrete/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/07/28/epydemic/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/08/04/epidemic-simulation/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/08/18/synchronous-simulation/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/blog/2017/08/25/gillespie-simulation/</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
@@ -806,88 +734,512 @@
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2020/11/27/where-am-i-in-git/</loc>
-  <lastmod>2020-11-27T11:14:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/blog/2020/11/27/where-am-i/</loc>
   <lastmod>2020-11-27T11:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/goodreads/ada-lovelace-the-making-of-a-computer-scientist/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/airhead-the-imperfect-art-of-making-news/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/all-the-presidents-men/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/ashenden/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/aurora/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/autobiography/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/be-like-the-fox-machiavelli-in-his-world/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/carrying-the-fire-an-astronauts-journeys/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/chernobyl-history-of-a-tragedy/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/children-of-time/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/circe/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/command-and-control/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/connections/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/crusaders-an-epic-history-of-the-wars-for-the-holy-lands/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/death-in-florence-the-medici-savonarola-and-the-battle-for-the-soul-of-man/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/debt-the-first-5000-years/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/democracy-a-very-short-introduction/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/earth-abides/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/educated/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/essays-in-idleness-and-hojoki/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/exactly-how-precision-engineers-created-the-modern-world/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/four-fields/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/from-dictatorship-to-democracy/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/good-strategybad-strategy-the-difference-and-why-it-matters/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/his-bloody-project-documents-relating-to-the-case-of-roderick-macrae/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/how-to-change-your-mind-what-the-new-science-of-psychedelics-teaches-us-about-consciousness-dying-addiction-depression-and-transcendence/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/how-to/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/in-extremis-the-life-of-war-correspondent-marie-colvin/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/jack-of-shadows/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/killers-of-the-flower-moon-oil-money-murder-and-the-birth-of-the-fbi/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/lord-of-light/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/lost-in-thought-the-hidden-pleasures-of-an-intellectual-life/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/lotharingia-a-personal-history-of-europes-lost-country/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/manchesters-ship-canal-th-big-ditch/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/mars-rover-curiosity-an-inside-account-from-curiositys-chief-engineer/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/mistakes-were-made-but-not-by-me-why-we-justify-foolish-beliefs-bad-decisions-and-hurtful-acts/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/musicophilia-tales-of-music-and-the-brain/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/nervous-states-how-feeling-took-over-the-world/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/new-moon-luna-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/noumenon-noumenon-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/now-we-have-your-attention-inside-britains-radical-new-politics/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/orientalism/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/our-man-in-havana/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/pale-rider-the-spanish-flu-of-1918-and-how-it-changed-the-world/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/permanent-record/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/poverty-safari/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/prisoners-of-geography-ten-maps-that-tell-you-everything-you-need-to-know-about-global-politics/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/riddle-and-the-knight/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/rosewater-the-wormwood-trilogy-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/say-nothing-a-true-story-of-murder-and-memory-in-northern-ireland/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/seven-brief-lessons-on-physics/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/sherlock-holmes-and-the-lady-in-black/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/strategy/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/straw-dogs-thoughts-on-humans-and-other-animals/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-atrocity-archives-laundry-files-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-beauty-and-the-terror-an-alternative-history-of-the-italian-renaissance/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-book-of-iona-an-anthology/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-children-of-hurin/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-coddling-of-the-american-mind-how-good-intentions-and-bad-ideas-are-setting-up-a-generation-for-failure/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-consuming-fire-the-interdependency-2/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-cyberiad-fables-for-the-cybernetic-age/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-daily-stoic-366-meditations-on-wisdom-perseverance-and-the-art-of-living/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-devils-disciples/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-doomsday-machine-confessions-of-a-nuclear-war-planner/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-dukes-cut-bridgewater-canal/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-electric-kool-aid-acid-test/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-ethical-carnivore-my-year-killing-to-eat/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-forever-war-the-forever-war-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-house-of-belonging/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-house-that-hitler-built/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-jennifer-morgue-laundry-files-2/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-naked-god-nights-dawn-3/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-neutronium-alchemist-nights-dawn-2/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-order-of-time/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-path-between-the-seas-the-creation-of-the-panama-canal-1870-1914/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-real-heroes-of-telemark/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-reality-dysfunction-nights-dawn-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-rig/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-rise-and-fall-of-the-third-reich-a-history-of-nazi-germany/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-secret-life-of-books-why-they-mean-more-than-words/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-shortest-history-of-germany/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-song-of-achilles/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-spy-and-the-traitor-the-greatest-espionage-story-of-the-cold-war/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-three-body-problem-remembrance-of-earths-past-1/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-travels-of-sir-john-mandeville/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-uninhabitable-earth-a-story-of-the-future/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-volunteer-the-true-story-of-the-resistance-hero-who-infiltrated-auschwitz/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-weather-machine-how-we-see-into-the-future/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/the-windup-girl/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/tickbox/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/trading-spaces-the-colonial-marketplace-and-the-foundations-of-american-capitalism/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/travels-with-herodotus/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/underland/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/upstream-selected-essays/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/utopia-for-realists-and-how-we-can-get-there/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/what-is-life-understand-biology-in-five-steps/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/why-im-no-longer-talking-to-white-people-about-race/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/why-we-sleep-the-new-science-of-sleep-and-dreams/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/you-look-like-a-thing-and-i-love-you-how-artificial-intelligence-works-and-why-its-making-the-world-a-weirder-place/</loc>
+  <lastmod>2020-12-01T14:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/blog/index-1.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-10.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-11.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-12.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-13.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-14.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-15.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-16.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-17.html</loc>
-  <lastmod>2020-11-27T17:37:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-18.html</loc>
-  <lastmod>2020-11-27T17:36:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-19.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-2.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-20.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-21.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-22.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-23.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-24.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-25.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-26.html</loc>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-3.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-4.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-5.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-6.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-7.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-8.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-9.html</loc>
-  <lastmod>2020-11-27T18:16:00Z</lastmod>
+  <lastmod>2020-12-01T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-11-27T16:28:00Z</lastmod>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -899,10 +1251,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/adaptive-systems/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/admin/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
@@ -958,6 +1306,10 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/categories/books/</loc>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/cas/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
@@ -975,10 +1327,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/cloud-computing/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/cncp/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
@@ -1062,18 +1410,6 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/categories/epyc/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/epydemic/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/er-network/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/categories/erasmus-mundus/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
@@ -1120,6 +1456,10 @@
  <url>
   <loc>https://simondobson.org/categories/git/</loc>
   <lastmod>2020-11-27T11:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/goodreads/</loc>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/grays-laws/</loc>
@@ -1342,6 +1682,10 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/categories/reviews/</loc>
+  <lastmod>2020-11-30T18:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/risk/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
@@ -1395,10 +1739,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/sicsa/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/simulation/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
@@ -1490,10 +1830,6 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/categories/unversity/</loc>
-  <lastmod>2020-11-20T15:46:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/categories/usb/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
@@ -1555,10 +1891,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/development/epydemic/</loc>
-  <lastmod>2020-11-20T15:47:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/development/old-development/</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </url>
  <url>
@@ -1662,12 +1994,12 @@
   <lastmod>2020-11-23T14:42:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/skeepysketch/</loc>
-  <lastmod>2020-11-27T13:19:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/whats-happening/</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/writing/book-reviews/</loc>
+  <lastmod>2020-11-30T18:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/writing/cncp-book/</loc>

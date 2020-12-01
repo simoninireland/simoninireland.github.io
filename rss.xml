@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Nov 2020 18:15:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Where am I (in git)?</title><link>https://simondobson.org/blog/2020/11/27/where-am-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently started using &lt;code&gt;git&lt;/code&gt; and &lt;a href="https://github.com/simoninireland/"&gt;Github&lt;/a&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Dec 2020 14:21:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Where am I (in git)?</title><link>https://simondobson.org/blog/2020/11/27/where-am-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently started using &lt;code&gt;git&lt;/code&gt; and &lt;a href="https://github.com/simoninireland/"&gt;Github&lt;/a&gt;
 in a more serious way than I've done in the past -- and promptly
 started getting horrendously lost in the process.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/11/27/where-am-i/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>git</category><category>linux</category><guid>https://simondobson.org/blog/2020/11/27/where-am-i/</guid><pubDate>Fri, 27 Nov 2020 11:14:08 GMT</pubDate></item><item><title>Commuting again</title><link>https://simondobson.org/blog/2020/11/05/commuting/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Today, for the first time since mid-March, I went physically back to
@@ -9,24 +9,107 @@ offer huge flexibility in managing large and/or complicated
 installations. But what about for individual use, as a power user and
 developer? Would that work? Would it be worth it? In the interests of
 science, I decided to find out.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/10/30/on-going-virtual/"&gt;Read more…&lt;/a&gt; (14 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>essay</category><category>linux</category><category>system administration</category><category>virtualisation</category><category>writing</category><guid>https://simondobson.org/blog/2020/10/30/on-going-virtual/</guid><pubDate>Fri, 30 Oct 2020 09:28:21 GMT</pubDate></item><item><title>New paper on collective adaptive systems</title><link>https://simondobson.org/blog/2020/09/28/new-paper-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200928-cas-paper.jpg"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper "On the social implications of complex adaptive systems" was
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/10/30/on-going-virtual/"&gt;Read more…&lt;/a&gt; (14 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>essay</category><category>linux</category><category>system administration</category><category>virtualisation</category><category>writing</category><guid>https://simondobson.org/blog/2020/10/30/on-going-virtual/</guid><pubDate>Fri, 30 Oct 2020 09:28:21 GMT</pubDate></item><item><title>Our Man In Havana</title><link>https://simondobson.org/blog/goodreads/our-man-in-havana/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582135707l/51479195._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Graham Greene&lt;/h2&gt;
+				   1958
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		A study of the dangers and absurdities of intelligence work, in which by definition it's hard to tell if information was made up or is just really, &lt;i&gt;really&lt;/i&gt; hard to find.&lt;br&gt;&lt;br&gt;The book starts off quite slowly and only really gathers pace when the Wormold's inventions start to come out – at which point things get very interesting indeed. It's interesting to compare the slow and rather plodding protagonist to the racier Bond – or even &lt;a href="https://www.goodreads.com/book/show/887797.Ashenden" title="Ashenden by W. Somerset Maugham" rel="nofollow noopener"&gt;Ashenden&lt;/a&gt;, for that matter. Greene almost certainly captures reality more closely.
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Wed, 11 Nov 2020 07:55:05 -0800.
+                3*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/our-man-in-havana/</guid><pubDate>Fri, 30 Oct 2020 07:00:00 GMT</pubDate></item><item><title>The Beauty and the Terror: An Alternative History of the Italian Renaissance</title><link>https://simondobson.org/blog/goodreads/the-beauty-and-the-terror-an-alternative-history-of-the-italian-renaissance/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572906473l/48706204._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Catherine Fletcher&lt;/h2&gt;
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		An excellent tour through the Renaissance that doesn't steer away from the bits that don;t fit the usual narrative. Whether I'd agree with the subtitle of "alternative" history I'm less certain: it certainly mentions the role of women and the prevalence of slavery more than other books, and also explores the relationship between Italians and Spaniards in the conquest of the New World in interesting ways, though.
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Sun, 01 Nov 2020 06:06:38 -0800.
+                5*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-beauty-and-the-terror-an-alternative-history-of-the-italian-renaissance/</guid><pubDate>Wed, 28 Oct 2020 07:00:00 GMT</pubDate></item><item><title>What Is Life?: Understand Biology In Five Steps</title><link>https://simondobson.org/blog/goodreads/what-is-life-understand-biology-in-five-steps/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1595344916l/54625938._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Paul Nurse&lt;/h2&gt;
+				   2020
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		A quick and clear introduction to all the main currents in modern biology, especially cell and molecular biology, explained with a fantastic clarity.&lt;br&gt;&lt;br&gt;The five main chapters and the conclusion all address the core idea of approaching the question of "what is life?" from multiple perspectives. But there's also an additional chapter on how science and scientists need to engage with the wider world, with decision-makers and popular culture, that deserves more prominence than as what is, essentially, an essay sitting slightly uncomfortably with the thrust of the rest of the book.
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Sun, 01 Nov 2020 06:13:24 -0800.
+                5*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/what-is-life-understand-biology-in-five-steps/</guid><pubDate>Fri, 23 Oct 2020 07:00:00 GMT</pubDate></item><item><title>Upstream: Selected Essays</title><link>https://simondobson.org/blog/goodreads/upstream-selected-essays/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576250092l/44244826._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Mary Oliver&lt;/h2&gt;
+				   2016
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Sun, 01 Nov 2020 06:14:11 -0800.
+                4*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/upstream-selected-essays/</guid><pubDate>Fri, 09 Oct 2020 07:00:00 GMT</pubDate></item><item><title>Permanent Record</title><link>https://simondobson.org/blog/goodreads/permanent-record/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1564666396l/46223297._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Edward Snowden&lt;/h2&gt;
+				   2019
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		The story of a dissident. In Snowden's telling he dissented for entirely principled reasons having found evidence of illegal wiretapping and other activities on the part of his employer, the NSA. And it's certainly true that many subsequent events bear out his story, as Congress has shut down or otherwise controlled the activities he revealed – but without pardoning or exonerating the whistleblower. &lt;br&gt;&lt;br&gt;It's a story that could only happen in America, though, and some americana show through (for Valentine's Day he buys his girlfriend "the revolver she's always wanted"). But it's really a story of conscience followed to its logical conclusion, regardless of the personal consequences. And even having finished the book it's hard to really know what drove Snowden's actions: sacrificing everything to a principle of liberty that he felt wasn't being upheld seems somehow inadequate.&lt;br&gt;&lt;br&gt;There's a broader message here too, to do with how the privatisation of government has affected the behaviour and loyalty of the people involved. A system where you can leave government services, become a contractor, and earn ten times the money for the same job in the same facility alongside the same people – simply to reduce the headline staff cost (by replacing it with an enormously larger contracting cost). It's a recipe for self-serving, and also for moving government-developed technology and approaches into the private sector for private profit.&lt;br&gt;
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Sun, 01 Nov 2020 06:03:19 -0800.
+                4*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/permanent-record/</guid><pubDate>Thu, 01 Oct 2020 07:00:00 GMT</pubDate></item><item><title>New paper on collective adaptive systems</title><link>https://simondobson.org/blog/2020/09/28/new-paper-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200928-cas-paper.jpg"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper "On the social implications of complex adaptive systems" was
 just published in IEEE Technology and Society Magazine.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/09/28/new-paper-cas/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>cas</category><category>news</category><category>paper</category><category>saso</category><guid>https://simondobson.org/blog/2020/09/28/new-paper-cas/</guid><pubDate>Mon, 28 Sep 2020 16:59:20 GMT</pubDate></item><item><title>How to write an abstract</title><link>https://simondobson.org/blog/2020/08/06/how-to-write-an-abstract/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I've spent much of this week working with MSc students writing their
-dissertations, and this has inevitably led to the part of a
-dissertation that often causes the most pain to write (and read, for
-that matter): the abstract.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/08/06/how-to-write-an-abstract/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>abstracts</category><category>essay</category><category>writing</category><guid>https://simondobson.org/blog/2020/08/06/how-to-write-an-abstract/</guid><pubDate>Thu, 06 Aug 2020 10:25:21 GMT</pubDate></item><item><title>"Epidemic modelling" published</title><link>https://simondobson.org/blog/2020/07/22/em-book-published/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200722-cover.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;My book "Epidemic modelling -- Some notes, maths, and code" is now available
-from &lt;a href="https://www.amazon.co.uk/dp/1838535659/"&gt;Amazon&lt;/a&gt;
-as well as &lt;a href="https://simoninireland.github.io/introduction-to-epidemics"&gt;online&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/07/22/em-book-published/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>book</category><category>complex networks</category><category>epidemic spreading</category><category>news</category><category>research</category><guid>https://simondobson.org/blog/2020/07/22/em-book-published/</guid><pubDate>Wed, 22 Jul 2020 08:00:00 GMT</pubDate></item><item><title>Self-publishing "Epidemic modelling"</title><link>https://simondobson.org/blog/2020/07/22/self-publishing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200722-em-book.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;I thought I should record the journey I took to self-publishing a
-science book, in case anyone else decides they want to follow me on
-it.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/07/22/self-publishing/"&gt;Read more…&lt;/a&gt; (24 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>essay</category><category>experience</category><category>self-publishing</category><guid>https://simondobson.org/blog/2020/07/22/self-publishing/</guid><pubDate>Fri, 17 Jul 2020 17:03:14 GMT</pubDate></item><item><title>Two papers on clustered networks</title><link>https://simondobson.org/blog/2020/06/25/two-papers-on-clustered-networks/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200625-slcc.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;We just put pre-prints of two new papers dealing with the analysis of
-clustered networks  onto arXiv.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/06/25/two-papers-on-clustered-networks/"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>news</category><category>paper</category><guid>https://simondobson.org/blog/2020/06/25/two-papers-on-clustered-networks/</guid><pubDate>Thu, 25 Jun 2020 15:23:49 GMT</pubDate></item><item><title>First outing of "Epidemic modelling"</title><link>https://simondobson.org/blog/2020/06/17/i-to-e-first/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;My lockdown project is now ready for its first outing.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/06/17/i-to-e-first/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>book</category><category>complex networks</category><category>epidemic spreading</category><category>news</category><category>research</category><guid>https://simondobson.org/blog/2020/06/17/i-to-e-first/</guid><pubDate>Wed, 17 Jun 2020 09:31:32 GMT</pubDate></item><item><title>Citizen sensing with Arduino</title><link>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Introducing some notes on low-power Arduino programming.&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;In 2013 I did a summer project on using the &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt; as a platform for "citizen sensing". This rapidly became an exploration of how to create hardware and software that can do sensing while operating in a very low-power regime, such as one would need for an environmental sensor.&lt;/p&gt;
-&lt;p&gt;There were several results from this project -- one of which &lt;em&gt;wasn't&lt;/em&gt; an actual solution to the motivating problem I'd come up with. However, it did generate a lot of notes about low-power Arduino programming, both for hardware and software, and a software library that embodies some of them&lt;/p&gt;
-&lt;p&gt;I recently decommissioned the web site I was using to host this content, so I've ported it onto my main blog as a collection of &lt;a href="https://simondobson.org/development/citizen-sensing/"&gt;research and development notes&lt;/a&gt; in case it's still of interest to anyone.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>hardware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</guid><pubDate>Thu, 24 May 2018 12:26:34 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/09/28/new-paper-cas/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>cas</category><category>news</category><category>paper</category><category>saso</category><guid>https://simondobson.org/blog/2020/09/28/new-paper-cas/</guid><pubDate>Mon, 28 Sep 2020 16:59:20 GMT</pubDate></item><item><title>In Extremis: The Life of War Correspondent Marie Colvin</title><link>https://simondobson.org/blog/goodreads/in-extremis-the-life-of-war-correspondent-marie-colvin/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1538076290l/39731655._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Lindsey Hilsum&lt;/h2&gt;
+				   2018
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		Hard to think of a better way to tackle the life of such a complex individual in such complex circumstances. This is an excellent read both for its subject matter and for the general experience of war reporting.&lt;br&gt;&lt;br&gt;I don't think we ever really get to the bottom of Marie Colvin's complexity. though. Perhaps that's inevitable at such a short distance from the events. Lindsey Hilsum avoids the facile explanations (daddy issues, thrill-seeking), but is left with very little else. She (Hilsum) seems to think that the same basic issues drove both Colvin's reporting and her self-destructive personal life that repeated a pattern of unsuitable men: she even shows how Colvin herself knew this was happening and yet seemed unable to escape the pattern. But as to what drove Colvin to the extremes she went to, reporting on stories that even other war reporters thought were too risky, remains in the shade for now at least.
+		&lt;/p&gt;&lt;p&gt;
+		    Finished on Tue, 22 Sep 2020 04:11:26 -0700.
+                4*/5*.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/in-extremis-the-life-of-war-correspondent-marie-colvin/</guid><pubDate>Mon, 21 Sep 2020 07:00:00 GMT</pubDate></item></channel></rss>
