@@ -56,6 +56,7 @@ NAVIGATION_LINKS = {
                 ("/writing/essays/", "Essays"),
                 ("/writing/em-book/", "Epidemic modelling -- Some notes, maths, and code"),
                 ("/writing/cncp-book/", "Complex networks, complex processes"),
+                ("/writing/book-reviews", "Book reviews"),
                 ("/categories/", "Articles by topic"),
                 ("/archive.html", "Article by date"),
             ),
@@ -179,6 +180,23 @@ MathJax.Hub.Config({
 </script>
 """
 
+# Feeds for continuous import
+FEEDS = {
+    'goodreads': {
+        'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
+        'output_folder': 'posts/goodreads',
+        'template': 'goodreads.tmpl',
+        'format': 'html',
+        'lang': 'en',
+        'category': 'writing',
+        'tags': 'books, reviews, goodreads',
+        'metadata': {
+            'title': 'title',
+            'previewimage': 'book_medium_image_url',
+            'date': [ 'user_read_at', 'user_date_added', 'published' ]
+            }
+        }
+    }
 
 # Below this point, everything is optional
 
