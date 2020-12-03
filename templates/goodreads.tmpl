@@ -16,10 +16,14 @@
 		<p>
 		{{ item.user_review }}
 		<p>
-   		{% if item.user_date_added %}
-		    Finished on {{ item.user_date_added|e }}.
+		{% if item.user_read_at %}
+		   Finished on {{ item.user_read_at|e }}. &nbsp;
+		{% elif item.user_date_added %}
+		   Finished on {{ item.user_date_added|e }}. &nbsp;
+		{% elif item.published %}
+		   Finished on {{ item.published|e }}. &nbsp;
 		{% endif %}
-                {{ item.user_rating }}*/5*.
+		Rating {{ item.user_rating }}*/5*.
 	</div>
    </div>
 {% endblock %}

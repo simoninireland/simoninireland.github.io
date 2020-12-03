@@ -9,6 +9,6 @@
 
 .. post-list::
    :type: posts
-   :template: articles.tmpl
+   :template: whats-happening.tmpl
    :tags: essay
    

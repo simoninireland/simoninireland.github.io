@@ -11,11 +11,11 @@ REQUIREMENTS = requirements.txt
 BUILD_DIR = output
 
 # Run a live local server
-live: import
+live:
 	$(ACTIVATE) && $(NIKOLA) auto
 
 # Upload to github remote 
-upload: import
+upload:
 	$(ACTIVATE) && $(NIKOLA) github_deploy
 
 # Run the continuous import job to refresh from other sites
