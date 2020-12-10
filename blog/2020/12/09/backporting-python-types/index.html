@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backporting Python type annotations | Simon Dobson</title>
+<link href="../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/blog/2020/12/09/backporting-python-types/">
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../03/random-graphs-clustering/" title="Random graphs with arbitrary clustering and their applications" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Backporting Python type annotations">
+<meta property="og:url" content="https://simondobson.org/blog/2020/12/09/backporting-python-types/">
+<meta property="og:description" content="I recently added type annotations to my
+epyc and
+epydemic libraries. Making these work
+while not sacrificing interoperability a wide range of Python versions
+is quite delicate.
+
+
+Python is inherently ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-12-09T10:45:43Z">
+<meta property="article:tag" content="epyc">
+<meta property="article:tag" content="epydemic">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../../../../">
+
+            <span id="blog-title">Simon Dobson</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../../../whats-happening/" class="nav-link">What's happening</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../personal/about-me/" class="dropdown-item">Welcome</a>
+                    <a href="../../../../../personal/biography/" class="dropdown-item">Biography</a>
+                    <a href="../../../../../personal/reading/" class="dropdown-item">What I'm reading</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academic</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../research/research-interests/" class="dropdown-item">Current interests</a>
+                    <a href="../../../../../research/current-group/" class="dropdown-item">Current group</a>
+                    <a href="../../../../../research/publications/" class="dropdown-item">Publications</a>
+                    <a href="../../../../../research/publications-by-year/" class="dropdown-item">Publications by year</a>
+                    <a href="../../../../../research/bibliometrics/" class="dropdown-item">Bibliometrics</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Writing</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../writing/essays/" class="dropdown-item">Essays</a>
+                    <a href="../../../../../writing/em-book/" class="dropdown-item">Epidemic modelling -- Some notes, maths, and code</a>
+                    <a href="../../../../../writing/cncp-book/" class="dropdown-item">Complex networks, complex processes</a>
+                    <a href="../../../../../writing/book-reviews" class="dropdown-item">Book reviews</a>
+                    <a href="../../../../../categories/" class="dropdown-item">Articles by topic</a>
+                    <a href="../../../../../archive.html" class="dropdown-item">Article by date</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/epyc/" class="dropdown-item">epyc</a>
+                    <a href="../../../../../development/epydemic/" class="dropdown-item">epydemic</a>
+                    <a href="../../../../../development/simplicial/" class="dropdown-item">simplicial</a>
+                    <a href="../../../../../galleries/" class="dropdown-item">Photography</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older projects</a>
+            <div class="dropdown-menu">
+                    <a href="../../../../../development/citizen-sensing/" class="dropdown-item">Citizen sensing with Arduino (2013)</a>
+                    <a href="../../../../../development/sleepysketch/" class="dropdown-item">Arduino SleepySketch (2013--2014)</a>
+                    <a href="../../../../../research/sapere/" class="dropdown-item">Sapere (2010--2013)</a>
+                    <a href="../../../../../development/attila/" class="dropdown-item">Attila (2010--2013)</a>
+                    <a href="../../../../../development/vanilla/" class="dropdown-item">Vanilla (1997-1999)</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../../../personal/contact/" class="nav-link">Contact</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Backporting Python type annotations</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-12-09T10:45:43Z" itemprop="datePublished" title="2020-12-09 10:45">2020-12-09 10:45</time></a>
+            </p>
+            
+        </div>
+        
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I recently added type annotations to my
+<a href="../../../../../development/epyc/"><code>epyc</code></a> and
+<a href="../../../../../development/epydemic/"><code>epydemic</code></a> libraries. Making these work
+while not sacrificing interoperability a wide range of Python versions
+is quite delicate.</p>
+<!-- TEASER_END -->
+
+<p>Python is inherently a dynamically-typed language. The parameters to
+methods and functions are checked as they are called, leading to
+<code>TypeError</code> and <code>ValueError</code> exceptions if they're used
+incorrectly. Dignifying this by calling it <a href="https://opensource.com/article/20/5/duck-typing-python">"duck
+typing"</a>
+doesn't alter the fundamental weakness -- from the perspective of a
+programming language person -- that this opens-up in the heart of a
+codebase. Unit testing isn't a proper substitute for static checks.</p>
+<p>Parts of the Python community have recently embraced this view too,
+leading to the
+<a href="https://docs.python.org/3/library/typing.html"><code>typing</code></a> module
+available from Python 3.5. This allows (but doesn't require)
+programmers to add type annotations to code that can then be checked
+by external typecheckers. There are a range, including
+<a href="http://mypy-lang.org/"><code>mypy</code></a> and
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"><code>pylance</code></a>
+(which is built into Microsoft's VS Code).</p>
+<p>As with any emerging feature in any language, the problem then becomes
+one of backwards compatibility. I wanted to retain compatibility with
+previous versions of Python prior to my current Python 3.8 -- ideally
+all the way back to Python 3.5. That turned out to be a version too
+far, but getting support for Python 3.6 and later proved possible.</p>
+<h3>Basic type annotations as they are intended</h3>
+<p>We should of course start with the features we want. Type annotations
+can be attached to method declarations and object attributes:</p>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my name'</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
+</code></pre>
+
+
+<p>Hopefully self-explanatory, and note that it doesn't need any special
+imports. If we were to extend things a little, for example to use
+lists or dicts, then we need some more machinery:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+    <span class="n">names</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">values</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">addPair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">asDict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">d</span>
+</code></pre>
+
+
+<p>Note that <code>List[]</code> and <code>Dict[]</code> are <em>type constructors</em> taking
+their element types in square brackets. A typechecker can now work out
+before execution that, for example <code>(b.asDict())[1]</code> is
+type-incorrect.</p>
+<h3>Self types</h3>
+<p>How about a method that returns an instance of <code>self</code> (or similar)?
+The obvious approach is:</p>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</code></pre>
+
+
+<p>Surprisingly this will fail, as <code>C</code> isn't in scope in its own
+definition. This is such a natural thing, though, that it's going to
+be supported in future versions and, from Python 3.8, is available as
+an import from the <code>__future__</code> module:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>    <span class="c1"># now typechecks</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</code></pre>
+
+
+<p>(Remember that <code>__future__</code> imports have to appear as the first code
+line of a source file.)</p>
+<h3>Backporting type annotations</h3>
+<p>This all works fine in Python 3.8, so if that's all you care about you
+can stop here. However, a lot of Python scripts want (or need) to
+continue to work with earlier versions, preferably without the
+disaster-waiting-to-happen of maintaining parallel codebases. So can
+we use <code>typing</code> for earlier versions?</p>
+<p>Type annotations first appeared in Python 3.5, but the ideas have been
+evolving. If all you use are "normal" types such as builtins, class
+names, <code>List[]</code> and so on, then everything works fine. But I
+discovered that there are three exceptions.</p>
+<p><strong>1. <code>Final[]</code> (and other) types</strong></p>
+<p>Suppose you have an attribute that you want to be constant. The
+<code>Final[]</code> type constructor lets you denote this:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
+
+<span class="k">class</span> <span class="nc">D</span>
+    <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
+</code></pre>
+
+
+<p><code>Final[]</code> wasn't added to <code>typing</code> until Python 3.8, though, so
+running this code on Python 3.7 (for example) will fail. However,
+there's another module, <code>typing_extensions</code>, that backports many new
+features which can be imported if needed:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+    <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Final</span>
+
+<span class="k">class</span> <span class="nc">D</span>
+    <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
+</code></pre>
+
+
+<p>(The
+<a href="https://github.com/python/typing/blob/master/typing_extensions/README.rst">documentation</a>
+for <code>typing_extensions</code> specifies the types it provides. They're all
+very specialised apart from <code>Final[]</code>.)  One the one hand this kind
+of conditional importing is messy and inelegant; on the other hand, it
+makes something possible that otherwise isn't.</p>
+<p>Of course you need to have <code>typing_extensions</code> available to be
+imported. This means that it has to be included in the
+<code>requirements.txt</code> and/or the <code>setup.py</code> files for the
+module. This requires using version annotations in those files. For
+<code>requirements.txt</code> we can "guard" the import with the Python
+versions for which it applied:</p>
+<pre class="code literal-block"><span></span><code><span class="n">typing_extensions</span><span class="p">;</span> <span class="n">python_version</span> <span class="o">&lt;=</span> <span class="s1">'3.7'</span>
+</code></pre>
+
+
+<p>For <code>setup.py</code> we similarly include it as an "extra" requirement,
+guarded by the version:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'README.rst'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">longDescription</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'my_module'</span><span class="p">,</span>
+      <span class="n">version</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+      <span class="n">packages</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+      <span class="n">package_data</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'my_module'</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'py.typed'</span> <span class="p">]</span> <span class="p">},</span>
+      <span class="n">zip_safe</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+      <span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
+      <span class="n">extra_requires</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">':python_version &lt; 3.8'</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'typing_extensions'</span> <span class="p">]</span> <span class="p">},</span>
+<span class="p">)</span>
+</code></pre>
+
+
+<p>(All the <code>...</code>s are whatever you'd normally have in your setup
+script.)</p>
+<p>Notice the <code>package_data</code> attribute. This points to a file called
+<code>py.typed</code> which sits in the source tree and does ... absolutely
+nothing, <em>except</em> indicate that the module has type annotations that
+can then be used by <em>other</em> modules that import it.</p>
+<p><strong>2. Self types</strong></p>
+<p>Methods that return instances of their own class need a <code>__future__</code>
+import that's only available from Python 3.8 onwards: used with
+earlier versions, it will be rejected. Fortunately there's a
+workaround, which is that type annotations can be strings rather than
+more general objects. So to annotate self types portably, replace the
+<code>__fiture__</code> import and use of the class name with a use of the
+<em>string name</em> of the class name:</p>
+<pre class="code literal-block"><span></span><code><span class="c1"># Too far into the future...</span>
+<span class="c1">#from __future__ import annotations</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'C'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</code></pre>
+
+
+<p>I find this very messy -- but again, if you want portability, it's a
+way round the problem that hopefully only appears in a few places
+within the code.</p>
+<p><strong>3. Variable annotations</strong></p>
+<p>Type annotations were introduced in Python 3.5, but annotations for
+<em>variables</em> only came in with Python 3.6. So code of this form will
+fail with a syntax error when run on Python 3.5:</p>
+<pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">E</span><span class="p">:</span>
+    <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my value'</span>
+</code></pre>
+
+
+<p>And as far as I can tell there's nothing to be done about this: the
+syntax simply isn't available. If you desperately need Python 3.5 then
+you need to not annotate variables; otherwise, your backport stops
+with Python 3.6. In my case I chose the latter option, as I had a lot
+of constant strings that needed to be annotated. Your constraints
+might lead to a different choice.</p>
+<h3>Conclusion</h3>
+<p>Feelings vary on the usefulness and Pythonic qualities of Python type
+annotations. For me, they help eliminate logic errors and improve the
+effectiveness of testing. The typecheckers do an impressive job of
+type inference too, which reduces the need for excessive annotations:
+I almost never use them for variables within methods, for example,
+just for method signatures and attributes. The backporting isn't
+perfect but at least it's possible, and it extends the usefulness of
+codebases without overly complicating things. I find that quite
+a Pythonic idea.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../categories/epyc/" rel="tag">epyc</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/epydemic/" rel="tag">epydemic</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/programming/" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../../categories/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../03/random-graphs-clustering/" rel="prev" title="Random graphs with arbitrary clustering and their applications">Previous post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../../images/cc-by-nc-sa-4.0.png"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+        <script src="../../../../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../../../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+        luxon.Settings.defaultLocale = "en";
+        fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
+        </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

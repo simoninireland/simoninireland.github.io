@@ -55,7 +55,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2020-12-09T10:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
@@ -742,8 +742,12 @@
   <lastmod>2020-12-03T13:39:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2020/12/03/random-graphs-with-arbitrary-clustering-and-their-applications/</loc>
-  <lastmod>2020-12-03T13:32:00Z</lastmod>
+  <loc>https://simondobson.org/blog/2020/12/09/backporting-python-type-annotations/</loc>
+  <lastmod>2020-12-09T10:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2020/12/09/backporting-python-types/</loc>
+  <lastmod>2020-12-09T11:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/goodreads/ada-lovelace-the-making-of-a-computer-scientist/</loc>
@@ -1227,7 +1231,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-27.html</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2020-12-09T10:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-3.html</loc>
@@ -1259,7 +1263,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-12-03T13:39:00Z</lastmod>
+  <lastmod>2020-12-09T11:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1432,6 +1436,14 @@
  <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/epyc/</loc>
+  <lastmod>2020-12-09T11:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/epydemic/</loc>
+  <lastmod>2020-12-09T11:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/erasmus-mundus/</loc>
@@ -1696,6 +1708,10 @@
  <url>
   <loc>https://simondobson.org/categories/publishing/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/python/</loc>
+  <lastmod>2020-12-09T11:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/rdf/</loc>
