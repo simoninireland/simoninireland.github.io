@@ -54,7 +54,7 @@ meet and mingle.
 
 Both papers are under review by *Physical Review E*.
 
-{{%bibitem PercolationHigherOrderClustering-PRE20 %}}
+{{%bibitem PercolationHigherOrderClustering-PRE21 %}}
 
 {{%bibitem ArbitraryClustering-PRE20 %}}
 

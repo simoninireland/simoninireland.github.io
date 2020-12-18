@@ -10,6 +10,10 @@ VENV = venv3
 REQUIREMENTS = requirements.txt
 BUILD_DIR = output
 
+# New post
+post:
+	$(ACTIVATE) && $(NIKOLA) new_post -d -f markdown
+
 # Run a live local server
 live:
 	$(ACTIVATE) && $(NIKOLA) auto
