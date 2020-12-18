@@ -43,7 +43,8 @@ and software that can do sensing while operating i'>
 <!-- Menubar -->
 
 <nav class="navbar navbar-expand-md static-top mb-4
-navbar-dark bg-dark
+navbar-dark
+bg-dark
 "><div class="container">
 <!-- This keeps the margins nice -->
         <a class="navbar-brand" href="../../">
@@ -138,8 +139,8 @@ up with. However, it did generate a lot of notes about low-power
 Arduino programming, both for hardware and software, and a software
 library that embodies some of them</p>
 <p>Below are some notes I made as the project went along.</p>
-<!-- Begin post-list post_list_f43e69cd2e774c71b4d500cc432030b3 -->
-<div id="post_list_f43e69cd2e774c71b4d500cc432030b3" class="post-list">
+<!-- Begin post-list post_list_16469df2e6d54335b05a606d4cbe9eac -->
+<div id="post_list_16469df2e6d54335b05a606d4cbe9eac" class="post-list">
     <ul class="post-list">
 <li class="post-list-item">
             2013-08-28 21:50
@@ -248,7 +249,7 @@ library that embodies some of them</p>
             </li>
     </ul>
 </div>
-<!-- End post-list post_list_f43e69cd2e774c71b4d500cc432030b3 -->
+<!-- End post-list post_list_16469df2e6d54335b05a606d4cbe9eac -->
 </div>
     </div>
     
@@ -265,9 +266,7 @@ library that embodies some of them</p>
         </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
-        captions: function(element) {
-            return element.getElementsByTagName('img')[0].alt;
-    }});
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
 </body>
 </html>

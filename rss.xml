@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 09 Dec 2020 11:44:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Backporting Python type annotations</title><link>https://simondobson.org/blog/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Dec 2020 18:45:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Co-infection dynamics paper submitted</title><link>https://simondobson.org/blog/2020/12/18/coinfection-dynamics/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20201218-cycles.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;What happens when two diseases spread through a population?&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/18/coinfection-dynamics/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>news</category><category>paper</category><guid>https://simondobson.org/blog/2020/12/18/coinfection-dynamics/</guid><pubDate>Fri, 18 Dec 2020 18:26:10 GMT</pubDate></item><item><title>Backporting Python type annotations</title><link>https://simondobson.org/blog/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
 &lt;a href="https://simondobson.org/development/epyc/"&gt;&lt;code&gt;epyc&lt;/code&gt;&lt;/a&gt; and
 &lt;a href="https://simondobson.org/development/epydemic/"&gt;&lt;code&gt;epydemic&lt;/code&gt;&lt;/a&gt; libraries. Making these work
 while not sacrificing interoperability a wide range of Python versions
@@ -82,21 +83,4 @@ science, I decided to find out.&lt;/p&gt;
 		   Finished on Wed, 28 Oct 2020 00:00:00 -0700.  
 		Rating 5*/5*.
 	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-beauty-and-the-terror-an-alternative-history-of-the-italian-renaissance/</guid><pubDate>Wed, 28 Oct 2020 07:00:00 GMT</pubDate></item><item><title>What Is Life?: Understand Biology In Five Steps</title><link>https://simondobson.org/blog/goodreads/what-is-life-understand-biology-in-five-steps/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1595344916l/54625938._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Paul Nurse&lt;/h2&gt;
-				   2020
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A quick and clear introduction to all the main currents in modern biology, especially cell and molecular biology, explained with a fantastic clarity.&lt;br&gt;&lt;br&gt;The five main chapters and the conclusion all address the core idea of approaching the question of "what is life?" from multiple perspectives. But there's also an additional chapter on how science and scientists need to engage with the wider world, with decision-makers and popular culture, that deserves more prominence than as what is, essentially, an essay sitting slightly uncomfortably with the thrust of the rest of the book.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Fri, 23 Oct 2020 00:00:00 -0700.  
-		Rating 5*/5*.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/what-is-life-understand-biology-in-five-steps/</guid><pubDate>Fri, 23 Oct 2020 07:00:00 GMT</pubDate></item></channel></rss>
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-beauty-and-the-terror-an-alternative-history-of-the-italian-renaissance/</guid><pubDate>Wed, 28 Oct 2020 07:00:00 GMT</pubDate></item></channel></rss>
