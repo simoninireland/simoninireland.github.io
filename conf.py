@@ -37,7 +37,6 @@ NAVIGATION_LINKS = {
             (
                 ("/personal/about-me/", "Welcome"),
                 ("/personal/biography/", "Biography"),
-                ("/personal/reading/", "What I'm reading"),
             ),
             "About"
         ),

@@ -21,7 +21,7 @@ discrete-event simulation that underlie [``epydemic``](/development/epydemic/).
 I also spent some time talking about the "waterfall" phase transition
 that I found when looking at test-and-trace approaches.
 
-![The waterfall phase transition](/images/posts/20201218-waterfall.png)
+![The waterfall phase transition](/images/posts/20201219-waterfall.png)
 
 In retrospect I slightly regret including this in the book, as it's
 the one thing I'm not *sure* about: I still don't know if this is a
