@@ -11,5 +11,5 @@
    :type: posts
    :template: whats-happening.tmpl
    :tags: news
-   :stop: 4
+   :stop: 8
    
