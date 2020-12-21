@@ -71,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2020-12-20T13:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_research.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cfp.xml</loc>
@@ -98,6 +98,10 @@
   <lastmod>2020-12-03T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/clustering.xml</loc>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/competition.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
  </sitemap>
@@ -107,7 +111,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-networks.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-systems.xml</loc>
@@ -235,7 +239,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/goodreads.xml</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2020-12-20T13:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/grays-laws.xml</loc>
@@ -375,7 +379,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/onewire.xml</loc>
@@ -395,11 +399,15 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/paper.xml</loc>
-  <lastmod>2020-12-18T18:45:00Z</lastmod>
+  <lastmod>2020-12-21T15:47:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/parsing.xml</loc>
   <lastmod>2020-11-20T15:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/percolation.xml</loc>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/performance.xml</loc>
@@ -467,7 +475,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/reviews.xml</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2020-12-20T13:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
@@ -663,38 +671,38 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/pittenweem/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/sanday/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/tuscany-bologna/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/venice/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/westray/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-20T13:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2020-12-19T18:31:00Z</lastmod>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2020-12-19T18:32:00Z</lastmod>
+  <lastmod>2020-12-21T16:04:00Z</lastmod>
  </sitemap>
 </sitemapindex>
