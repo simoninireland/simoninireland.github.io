@@ -37,6 +37,7 @@ NAVIGATION_LINKS = {
             (
                 ("/personal/about-me/", "Welcome"),
                 ("/personal/biography/", "Biography"),
+                ("/personal/contact/", "Contact"),
             ),
             "About"
         ),
@@ -79,8 +80,7 @@ NAVIGATION_LINKS = {
                 ("/development/vanilla/", "Vanilla (1997-1999)")
             ),
             "Older projects"
-        ),
-        ("/personal/contact/", "Contact"),
+        )
     )
 }
 NAVIGATION_ALT_LINKS = {

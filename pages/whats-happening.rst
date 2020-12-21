@@ -11,5 +11,10 @@
    :type: posts
    :template: whats-happening.tmpl
    :tags: news
-   :stop: 8
+   :stop: 4
+
+`See all news </categories/news/>`_
+
+     
+
    

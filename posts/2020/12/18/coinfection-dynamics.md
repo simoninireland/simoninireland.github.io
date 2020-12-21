@@ -25,7 +25,7 @@ complicated patterns of infection history.
 
 ![Outbreak fractions](/images/posts/20201218-outbreaks.png)
 
-We managed to chow that clustering affects the epidemic threshold for
+We managed to show that clustering affects the epidemic threshold for
 a disease outbreak in surprising ways, increasing the threshold on a
 clustered human contact network: the opposite to what happens in an ER
 network. (Creating that plot, incidentally, involved over a week of
