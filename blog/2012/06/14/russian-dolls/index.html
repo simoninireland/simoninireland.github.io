@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2012/06/14/russian-dolls/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../05/17/5-studentships/" title="5 studentships in Computer Science and St Andrews" type="text/html">
 <link rel="next" href="../../19/asensis/" title="Workshop on naturally-inspired service ecosystems" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -28,8 +28,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="og:url" content="https://simondobson.org/blog/2012/06/14/russian-dolls/">
 <meta property="og:description" content="The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?
 
-
-Anyone who's built a large piece of software knows tha">
+Anyone who's built a large piece of software knows that">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-06-14T08:00:52+01:00">
 <meta property="article:tag" content="Blog">
@@ -142,7 +141,6 @@ bg-dark
 <p></p>
 <p>The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?</p>
 <!--more-->
-
 <p>Anyone who's built a large piece of software knows that much of the effort is in managing the complexity of the project: which other software a piece of code relies on, how to keep the various aspects separate, how to manage changes and upgrades, and so on. This isn't something that's got easier over time: it has for a given code size and style, as we've understood build processes and dependency management better; but the code sizes have relentlessly increased to compensate for our improved understanding; and modern practices don't make life any easier. Downloaded code, dynamic modules and classes, client-server and the like all generate their own intrinsic complexity.</p>
 <p>One of the biggest sources of complexity is the use of multiple applications, especially in enterprise systems. A typical e-commerce system, for example, will make use of a web server to present pages (which themselves might contain embedded JavaScript for client-side processing), a database to track orders and inventory, a procurement system to fulfil orders, and possibly a supply-chain management system to order new inventory. That's the application. Then there'll be the operating system, a logging facility, a facilities management system, and a load of administrative tools and scripts. And the operating system may itself be virtualised and running as a guest within another, host operating system and hypervisor, which needs its own toolset. The interactions between these tools can be mind-boggling.</p>
 <p>Someone once asked: who knows how to work the <a href="http://httpd.apache.org/" target="_blank">Apache web server</a>? It sounds like a simple question -- any competent web manager? the main developers? -- but the sting in the tail is that Apache is very configurable: so configurable, in fact, that it's pretty much impossible to work out what a given combination of options will do (or, conversely, what combination of options to use to achieve a given effect). The interactions are just too complicated, and the web abounds with examples where interactions between (for example) the thread pool size, the operating system block size, and the Java virtual machine parameters conspire to crash a system that looks like it should be working fine. If you can't work one server properly -- one component of the system -- what hope is there to get a complete system humming along?</p>

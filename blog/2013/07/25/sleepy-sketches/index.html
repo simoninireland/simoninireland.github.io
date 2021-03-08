@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2013/07/25/sleepy-sketches/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../23/arduino-watchdog/" title="Understanding Arduino sleep modes: the watchdog timer" type="text/html">
 <link rel="next" href="../../26/radio-survey/" title="Radio survey" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -166,7 +166,6 @@ do the following:</p>
    <span class="n">Sleepy</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
-
 
 <p>The <code>setup()</code> code initialises the serial port and the sleepy sketch using a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.</p>
 <p>This is a first design, now just about working. It's still not as easy

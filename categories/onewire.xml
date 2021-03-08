@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about onewire)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/onewire.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Nov 2020 17:01:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Temperature sensors working</title><link>https://simondobson.org/blog/2013/07/09/temperature-sensors-working/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Temperature sensing using digital temperature sensors is easy to get working.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about onewire)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/onewire.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Temperature sensors working</title><link>https://simondobson.org/blog/2013/07/09/temperature-sensors-working/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Temperature sensing using digital temperature sensors is easy to get working.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The &lt;a href="https://simondobson.org/blog/2013/07/08/ds18b20/"&gt;DS18B20 temperature sensor &lt;/a&gt;seems well-suited for the job.&lt;/p&gt;
@@ -27,7 +27,6 @@
   &lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;That's it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Three DS18B30s on a prototyping shield" src="https://simondobson.org/images/citizen-sensing/ds18b20-prototype.jpg"&gt;&lt;/p&gt;

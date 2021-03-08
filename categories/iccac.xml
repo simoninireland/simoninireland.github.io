@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about iccac)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/iccac.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FAS* 2017 Call for Workshops</title><link>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Workshops now open for the  FAS* (ICCAC and SASO) conferences in Arizona in September&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about iccac)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/iccac.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FAS* 2017 Call for Workshops</title><link>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Workshops now open for the  FAS* (ICCAC and SASO) conferences in Arizona in September&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;The FAS&lt;em&gt; 2017 Steering Committee invites proposals for the Workshop Program to be held along with the technical conferences SASO 2017 and ICCAC 2017. FAS&lt;/em&gt;W workshops will provide a meeting for presenting novel ideas in a less formal and possibly  ore focused way than the conferences themselves. Their aim is to stimulate and facilitate active exchange, interaction, and comparison of approaches, methods, and ideas related to specific topics, both theoretical and applied, in the general area of Self-Adaptive and Self-Organizing Systems as well as Cloud and Autonomic Computing. To motivate the discussion and participation of all the workshop attendants, we encourage organizers to get away of the typical "mini-conference" format of a workshop, and include more discussion sessions, panels, etc. Members from all areas of the SASO and ICCAC communities are invited to submit workshop proposals for review. Workshops on global challenges, applications or on new and emerging topics are particularly encouraged. Workshops can vary in length, but most will be one full day in duration. Optionally, if desired by the organizers, workshop proceedings can be published through IEEE. Attendance of workshops will be included in the registration fee for the main SASO/ICCAC conference.
 &lt;/p&gt;&lt;h3&gt;Important dates&lt;/h3&gt;
 &lt;ul&gt;
-    &lt;li&gt;Workshop proposal submission deadline: April 7, 2017&lt;em&gt;&lt;/em&gt;&lt;/li&gt;
-    &lt;li&gt;Workshop acceptance notification: April 14, 2017&lt;/li&gt;
+    &lt;li&gt;Workshop proposal submission deadline: April 7, 2017*&lt;/li&gt;
+    &lt;li&gt;Workshop acceptance notification: April 14, 2017*&lt;/li&gt;
     &lt;li&gt;CfP submission deadline: April 21, 2017&lt;/li&gt;
     &lt;li&gt;Workshop paper submission deadline: July 7, 2017&lt;/li&gt;
     &lt;li&gt;Workshop paper acceptance notification: July 21, 2017&lt;/li&gt;
@@ -15,11 +15,13 @@
     &lt;li&gt;Workshop notes submission to workshop chairs: July 28, 2017&lt;/li&gt;
     &lt;li&gt;Workshops dates: September 18 &amp;amp; 22, 2017&lt;/li&gt;
 &lt;/ul&gt;
-* Please submit your workshop proposals as soon as possible (i.e. before April 7)! We will try to decide earlier on workshop acceptance in order to give the organizers more time to solicit papers.
+&lt;ul&gt;
+&lt;li&gt;Please submit your workshop proposals as soon as possible (i.e. before April 7)! We will try to decide earlier on workshop acceptance in order to give the organizers more time to solicit papers.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Requirements for submission&lt;/h3&gt;
-Proposals for workshops should be separated in two parts. The first part should be organized as preliminary call for papers or call for participation, depending on the intended format of the workshop, with a maximum of two pages and contain the following information:
-&lt;p&gt;PART 1:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;Proposals for workshops should be separated in two parts. The first part should be organized as preliminary call for papers or call for participation, depending on the intended format of the workshop, with a maximum of two pages and contain the following information:&lt;/p&gt;
+&lt;p&gt;PART 1:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Title of the workshop.&lt;/li&gt;
     &lt;li&gt;A brief technical description of the workshop, specifying the workshop goals, the technical issues that it will address, and the relevance of the workshop to the main conferences. Please specify, which of the two main conferences the workshop assigned to (if any)!&lt;/li&gt;
     &lt;li&gt;Description of paper review process (if any) and acceptance standards in order to keep the workshop high in quality. Note that papers must be in the same format as the conference proceedings and may not be more than 6 pages in length.&lt;/li&gt;
@@ -29,9 +31,9 @@ Proposals for workshops should be separated in two parts. The first part should 
     &lt;li&gt;List of potential program committee members (if applicable), including their title and affiliations.&lt;/li&gt;
     &lt;li&gt;List of potential invited speakers, panelists, or disputants (if applicable).&lt;/li&gt;
 &lt;/ul&gt;
-PART 2:
-&lt;p&gt;The second part with a maximum of three pages should contain additional information not suitable for a Call for Papers, including:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;PART 2:&lt;/p&gt;
+&lt;p&gt;The second part with a maximum of three pages should contain additional information not suitable for a Call for Papers, including:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;A discussion of why and to whom the workshop is of interest.&lt;/li&gt;
     &lt;li&gt;A list of related workshops held within the last three years, if any, and their relation to the proposed workshop.&lt;/li&gt;
     &lt;li&gt;Information about previous offerings of the proposed workshop: when and where it has been offered in the past, organizers names and affiliations, number of submissions, acceptances and registered attendees.&lt;/li&gt;
@@ -39,9 +41,9 @@ PART 2:
     &lt;li&gt;A description of the qualifications of the individual committee members with respect to organizing a SASO or ICCAC workshop, including a list of workshops previously arranged by any members of the proposed organizing committee, if any.&lt;/li&gt;
     &lt;li&gt;A list of places (distribution lists, web sites, journals, etc.) where the workshop is planned to be advertised.&lt;/li&gt;
 &lt;/ul&gt;
-All proposals should be submitted in plain ASCII text or PDF format by electronic mail to the FAS&lt;em&gt;W 2017 Workshop Chairs, via Christopher Frantz, as described below.
+&lt;p&gt;All proposals should be submitted in plain ASCII text or PDF format by electronic mail to the FAS*W 2017 Workshop Chairs, via Christopher Frantz, as described below.&lt;/p&gt;
 &lt;h3&gt;Selection Criteria&lt;/h3&gt;
-The selection of the workshops to be included in the final FAS&lt;/em&gt; 2017 Workshop program will be based upon multiple factors, including:
+&lt;p&gt;The selection of the workshops to be included in the final FAS* 2017 Workshop program will be based upon multiple factors, including:&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;the scientific/technical interest of the topics,&lt;/li&gt;
     &lt;li&gt;the quality of the proposal,&lt;/li&gt;
@@ -49,25 +51,25 @@ The selection of the workshops to be included in the final FAS&lt;/em&gt; 2017 W
     &lt;li&gt;balance and distinctness of workshop topics, and&lt;/li&gt;
     &lt;li&gt;the capacity of the conference workshop program.&lt;/li&gt;
 &lt;/ul&gt;
-Note that authors of proposals addressing similar and/or overlapping content areas and/or audiences may be requested to merge their proposals.
-&lt;h3&gt;Responsibilities of FAS&lt;em&gt; 2017 Workshop Chairs&lt;/em&gt;&lt;/h3&gt;
-For all accepted proposals, FAS 2017 will be responsible for:
+&lt;p&gt;Note that authors of proposals addressing similar and/or overlapping content areas and/or audiences may be requested to merge their proposals.&lt;/p&gt;
+&lt;h3&gt;Responsibilities of FAS* 2017 Workshop Chairs&lt;/h3&gt;
+&lt;p&gt;For all accepted proposals, FAS* 2017 will be responsible for:&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Providing publicity for the workshop series as a whole. - Providing logistical support and a meeting place for the workshops.&lt;/li&gt;
     &lt;li&gt;Together with the organizers, determining the workshop date and time.&lt;/li&gt;
-    &lt;li&gt;Liaising and coordinating between the workshop chairs and the finance chair, publicity chair, registration chair, and web chair for FAS&lt;em&gt;.&lt;/em&gt;&lt;/li&gt;
+    &lt;li&gt;Liaising and coordinating between the workshop chairs and the finance chair, publicity chair, registration chair, and web chair for FAS*.&lt;/li&gt;
     &lt;li&gt;Arranging for publication of proceedings.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Responsibilities of Workshop Organizers&lt;/h3&gt;
-Workshop organizers will be responsible for the following:
+&lt;p&gt;Workshop organizers will be responsible for the following:&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Setting up a web site for the workshop.&lt;/li&gt;
-    &lt;li&gt;Advertising the workshop (and the main FAS conference), and issuing a call for papers and a call for participation.&lt;/li&gt;
+    &lt;li&gt;Advertising the workshop (and the main FAS* conference), and issuing a call for papers and a call for participation.&lt;/li&gt;
     &lt;li&gt;Collecting and evaluating submissions, notifying authors of acceptance or rejection on a timely basis, and ensuring a transparent and fair selection process. All workshop organizers commit themselves to adopt the deadlines set by the committee.&lt;/li&gt;
     &lt;li&gt;Making the pdf of the whole workshop notes available to the workshop chair, as well as a list of audio-visual requirements and any special room requirements.&lt;/li&gt;
     &lt;li&gt;Writing a 1-page organizers' introduction for the workshop proceedings. Ensuring that the workshop organizers and the participants register for the workshop and/or the main conference (at least one author must register for the paper to appear in the proceedings).&lt;/li&gt;
 &lt;/ul&gt;
-FAS* reserves the right to cancel any workshop if the above responsibilities are not fulfilled, or if too few attendees register for the workshop to support its running costs.
+&lt;p&gt;FAS* reserves the right to cancel any workshop if the above responsibilities are not fulfilled, or if too few attendees register for the workshop to support its running costs.&lt;/p&gt;
 &lt;h3&gt;Submissions and Inquiries&lt;/h3&gt;
-Please send proposals (as a PDF document) and inquiries to: Christopher Frantz (&lt;a class="moz-txt-link-abbreviated" href="mailto:cf@christopherfrantz.org"&gt;cf@christopherfrantz.org&lt;/a&gt;) or Jeremy Pitt (&lt;a class="moz-txt-link-abbreviated" href="mailto:j.pitt@imperial.ac.uk"&gt;j.pitt@imperial.ac.uk&lt;/a&gt;)
+&lt;p&gt;Please send proposals (as a PDF document) and inquiries to: Christopher Frantz (&lt;a class="moz-txt-link-abbreviated" href="mailto:cf@christopherfrantz.org"&gt;cf@christopherfrantz.org&lt;/a&gt;) or Jeremy Pitt (&lt;a class="moz-txt-link-abbreviated" href="mailto:j.pitt@imperial.ac.uk"&gt;j.pitt@imperial.ac.uk&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://saso2017.telecom-paristech.fr/committees.html"&gt;https://saso2017.telecom-paristech.fr/committees.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>autonomic systems</category><category>Blog</category><category>cfp</category><category>iccac</category><category>saso</category><category>self-organising systems</category><guid>https://simondobson.org/blog/2017/02/27/fas-2017-call-for-workshops/</guid><pubDate>Mon, 27 Feb 2017 14:24:08 GMT</pubDate></item></channel></rss>

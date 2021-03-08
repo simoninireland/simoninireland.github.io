@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about pervasive systems)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/pervasive-systems.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</title><link>https://simondobson.org/blog/2016/06/02/fasw/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;There is a doctoral symposium at the SASO  conference this year.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about pervasive systems)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/pervasive-systems.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</title><link>https://simondobson.org/blog/2016/06/02/fasw/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;There is a doctoral symposium at the SASO  conference this year.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h3&gt;Call For Doctoral Symposium Submissions Doctoral Symposium on Foundations and Applications of Self-&lt;em&gt; Systems (FAS&lt;/em&gt;W)&lt;/h3&gt;
 Augsburg, Germany, September 12 &amp;amp; 16, 2016
 &lt;p&gt;&lt;strong&gt;EXTENDED DEADLINES:&lt;/strong&gt;&lt;/p&gt;
@@ -17,23 +16,23 @@ Paper Submission due: June 20, 2016
 &lt;p&gt;&lt;em&gt;Complex Cyber-physical and socio-technical systems.&lt;/em&gt; We welcome contributions that apply self-* principles to address challenges in the design of complex cyber- physical and socio-technical systems. Particular examples include smart grid infrastructures, sensor networks, opportunistic networking scenarios, as well as large-scale social information systems. Works addressing challenges such as the security, privacy and anonymity of users, or mechanisms to prevent censorship, manipulation or unfairness in socio-technical systems are especially welcome. We further solicit works on socio- technical and socio-economic challenges in P2P systems, such as the design of incentive, trust and reputation mechanisms.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Self-&lt;em&gt; approaches in Massive-Scale Decentralized Systems.&lt;/em&gt; Works in this area use self-&lt;/em&gt; approaches to address challenges in the design and operation of massive scale decentralized systems. Examples include Peer-to-Peer technologies, as well as overlay topology management schemes. We are further interested in decentralized data mining and machine learning approaches, as well as decentralized approaches to monitor, model and adapt distributed systems. Works using self-* principles to address the inherent challenges in the design of massive-scale systems with unreliable and heterogeneous are of particular interest.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Autonomic Computing.&lt;/em&gt; Systems Here we are interested in all works addressing the self-configuration, self-optimization and self-adaptation of cloud computing services, data centers and general distributed computing systems. Examples for questions addressed in this area include the monitoring and modeling of cloud services, the design of efficient resource allocation mechanisms, the application of data mining and machine learning techniques to analyze and predict the behavior of technical systems, as well as the characterization of distributed computing workloads.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Application of Self-&lt;em&gt; in Robotics and Spatial Computing.&lt;/em&gt; Finally, we welcome contributions using self-&lt;/em&gt; principles in the areas of robotics, swarm robotics and spatial computing. Here, examples for works of interest include environmental modeling and perception, machine vision, and self-adaptation mechanisms in robotics, distributed coordination and collective intelligence in multi- robot systems, as well as novel paradigms for the programming of autonomous, spatially distributed entities.
-&lt;/p&gt;&lt;h4&gt;Submission Instructions&lt;/h4&gt;
-Submissions should have a length of max. six pages and be formatted according to the IEEE Computer Society Press proceedings style guide. Authors should submit their papers using the EasyChair installation of the main conference, which is available at:
+&lt;p&gt;&lt;em&gt;Application of Self-&lt;em&gt; in Robotics and Spatial Computing.&lt;/em&gt; Finally, we welcome contributions using self-&lt;/em&gt; principles in the areas of robotics, swarm robotics and spatial computing. Here, examples for works of interest include environmental modeling and perception, machine vision, and self-adaptation mechanisms in robotics, distributed coordination and collective intelligence in multi- robot systems, as well as novel paradigms for the programming of autonomous, spatially distributed entities.&lt;/p&gt;
+&lt;h4&gt;Submission Instructions&lt;/h4&gt;
+&lt;p&gt;Submissions should have a length of max. six pages and be formatted according to the IEEE Computer Society Press proceedings style guide. Authors should submit their papers using the EasyChair installation of the main conference, which is available at:&lt;/p&gt;
 &lt;p&gt;&lt;a class="moz-txt-link-freetext" href="https://easychair.org/conferences/?conf=saso2016"&gt;https://easychair.org/conferences/?conf=saso2016&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Please note that only single-author submissions are accepted, which focus on the topic of the doctoral work. The name of the supervisor (« supervised by ... ») should be clearly marked below the author’s name in the paper. Submissions should further adhere to the following structure:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;Please note that only single-author submissions are accepted, which focus on the topic of the doctoral work. The name of the supervisor (« supervised by ... ») should be clearly marked below the author’s name in the paper. Submissions should further adhere to the following structure:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Motivation: motivate the open problem that you want to address and briefly summarize existing approaches along with their deficiencies.&lt;/li&gt;
     &lt;li&gt;Objectives: describe the key objectives of your PhD project and argue how achieving them will solve the open problem outlined in the motivation.&lt;/li&gt;
     &lt;li&gt;Methodology: outline what methodology you will adopt to meet the objectives of your project. Clearly state on what existing works your work will build.&lt;/li&gt;
     &lt;li&gt;Research Plan: describe what preliminary results – if any – you have already achieved and summarize your plans for future work. Please add a rough schedule that allows to judge whether your research plan is feasible.&lt;/li&gt;
 &lt;/ul&gt;
-Authors of accepted papers shall prepare a final, camera ready version of the paper, taking into account all feedback from reviewers, and formatted according to the IEEE Computer Society Press proceedings style guide. Doctoral Symposium papers will be advertised in the final program, and will be submitted to IEEE Xplore as part of the SASO proceedings. Papers will also be made available in the IEEE Digital Library.
+&lt;p&gt;Authors of accepted papers shall prepare a final, camera ready version of the paper, taking into account all feedback from reviewers, and formatted according to the IEEE Computer Society Press proceedings style guide. Doctoral Symposium papers will be advertised in the final program, and will be submitted to IEEE Xplore as part of the SASO proceedings. Papers will also be made available in the IEEE Digital Library.&lt;/p&gt;
 &lt;h4&gt;Review Process&lt;/h4&gt;
-Each submission will be reviewed by at least two Doctoral Symposium experts (see list below) that cover the different areas of interest of the conference. Submissions will be evaluated based on their relevance to FAS*, the motivation and quality of the proposed research, as well as the suitability of the chosen methodology.
-&lt;p&gt;Authors of accepted papers will have different opportunities to present their project at the conference. Besides a full presentation during the PhD Symposium session, an “Elevator Pitch Session” will be organized during the main conference, where authors get the chance to briefly showcase their research. In addition, the Best Doctoral Symposium paper will be selected and the award will be presented during the main conference. Finally, selected authors will have the additional chance to present their work via a poster in the poster session of the main conference.
-&lt;/p&gt;&lt;h4&gt;Invited Talk&lt;/h4&gt;
-To be announced
+&lt;p&gt;Each submission will be reviewed by at least two Doctoral Symposium experts (see list below) that cover the different areas of interest of the conference. Submissions will be evaluated based on their relevance to FAS*, the motivation and quality of the proposed research, as well as the suitability of the chosen methodology.&lt;/p&gt;
+&lt;p&gt;Authors of accepted papers will have different opportunities to present their project at the conference. Besides a full presentation during the PhD Symposium session, an “Elevator Pitch Session” will be organized during the main conference, where authors get the chance to briefly showcase their research. In addition, the Best Doctoral Symposium paper will be selected and the award will be presented during the main conference. Finally, selected authors will have the additional chance to present their work via a poster in the poster session of the main conference.&lt;/p&gt;
+&lt;h4&gt;Invited Talk&lt;/h4&gt;
+&lt;p&gt;To be announced&lt;/p&gt;
 &lt;h4&gt;Doctoral Symposium Experts&lt;/h4&gt;
 &lt;ul&gt;
     &lt;li&gt;Ozalp Babaoglu – University of Bologna, IT&lt;/li&gt;
@@ -50,30 +49,30 @@ To be announced
     &lt;li&gt;Antonio Bucchiarone - Fondazione Bruno Kessler, Trento, IT&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Important Dates (Extended)&lt;/h4&gt;
-Abstract Submission due (extended): June 12, 2016
+&lt;p&gt;Abstract Submission due (extended): June 12, 2016
 Paper Submission due (extended): June 20, 2016
 Notifications due: July 10, 2016
 Camera ready version due: July 24, 2016
-Conference date: September 12-16, 2016
+Conference date: September 12-16, 2016&lt;/p&gt;
 &lt;h4&gt;Contact Information&lt;/h4&gt;
-For any further information, please contact the Doctoral Symposium chairs:
+&lt;p&gt;For any further information, please contact the Doctoral Symposium chairs:&lt;/p&gt;
 &lt;p&gt;Pradeep Murukannaiah Department of Computer Science North Carolina State University Raleigh, NC, 27606, USA
 &lt;a class="moz-txt-link-abbreviated" href="mailto:pmuruka@ncsu.edu"&gt;pmuruka@ncsu.edu&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www4.ncsu.edu/%7Epmuruka/"&gt;http://www4.ncsu.edu/~pmuruka/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Dr. Ingo Scholtes Chair of Systems Design ETH Zurich CH-8092 Zurich Switzerland
-&lt;a class="moz-txt-link-abbreviated" href="mailto:ischoltes@ethz.ch"&gt;ischoltes@ethz.ch&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www.ingoscholtes.net"&gt;http://www.ingoscholtes.net&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>doctoral symposium</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2016/06/02/fasw/</guid><pubDate>Thu, 02 Jun 2016 15:56:55 GMT</pubDate></item><item><title>CfP: Spatial and Collective Awareness workshop at SASO'15</title><link>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The first workshop on Spatial Awareness is being held in Boston in September as part of the &lt;a href="http://saso2015.mit.edu/" target="_blank"&gt;SASO conference&lt;/a&gt;.
+&lt;a class="moz-txt-link-abbreviated" href="mailto:ischoltes@ethz.ch"&gt;ischoltes@ethz.ch&lt;/a&gt; &lt;a class="moz-txt-link-freetext" href="http://www.ingoscholtes.net"&gt;http://www.ingoscholtes.net&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>doctoral symposium</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2016/06/02/fasw/</guid><pubDate>Thu, 02 Jun 2016 15:56:55 GMT</pubDate></item><item><title>CfP: Spatial and Collective Awareness workshop at SASO'15</title><link>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;The first workshop on Spatial Awareness is being held in Boston in September as part of the &lt;a href="http://saso2015.mit.edu/" target="_blank"&gt;SASO conference&lt;/a&gt;.&lt;/p&gt;
 &lt;!--more--&gt;
-&lt;/p&gt;&lt;h3&gt;First International Workshop on Spatial and COllective PErvasive Computing Systems (SCOPES) Workshop&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h3&gt;First International Workshop on Spatial and COllective PErvasive Computing Systems (SCOPES) Workshop&lt;/h3&gt;
 Co-located with IEEE SASO 2015, located at MIT, Cambridge, USA
 &lt;p&gt;September 21, 2015&lt;/p&gt;
-&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="http://www.spatial-computing.org/scopes"&gt;http://www.spatial-computing.org/scopes&lt;/a&gt;
-&lt;/p&gt;&lt;h4&gt;Overview&lt;/h4&gt;
-This workshop aims at combining three distinct, yet closely related areas of research, which will likely together play a major role in producing the key technical results needed to develop large-scale adaptive distributed systems of future networked scenarios.
+&lt;p&gt;&lt;a class="moz-txt-link-freetext" href="http://www.spatial-computing.org/scopes"&gt;http://www.spatial-computing.org/scopes&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Overview&lt;/h4&gt;
+&lt;p&gt;This workshop aims at combining three distinct, yet closely related areas of research, which will likely together play a major role in producing the key technical results needed to develop large-scale adaptive distributed systems of future networked scenarios.&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Spatial computing: Spatial computing systems are systems of individual entities, typically situated in a physical environment, in which the “functional goals” of the system are generally defined in terms of the system's spatial structure. Typically, such systems are developed following a self-organisation approach, making spatial patterns arise by emergence.&lt;/li&gt;
     &lt;li&gt;Collective adaptive systems: Collective computing systems are systems of tightly entangled components, achieving an overall goal through widespread cooperation, typically relying on self-adaptation techniques and collective/social intelligence.&lt;/li&gt;
     &lt;li&gt;Pervasive computing: Pervasive computing systems and the “Internet of Things” deal with current and emerging scenarios in which humans, sensors, mobile, and embedded devices engage in complex interactions in a shared environment.&lt;/li&gt;
 &lt;/ul&gt;
-The goal of this workshop is to foster the creation of general-purpose solutions for supporting the development of these kinds of systems, particularly as regards generalizable techniques and architectures. Topics of interest include:
+&lt;p&gt;The goal of this workshop is to foster the creation of general-purpose solutions for supporting the development of these kinds of systems, particularly as regards generalizable techniques and architectures. Topics of interest include:&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Foundational models of spatially embedded collective systems, exhibiting resilience, robustness and scalability properties as required by emerging pervasive computing scenarios.&lt;/li&gt;
     &lt;li&gt;Tools and tool-chains targeting large-scale situated systems: programming or specification languages, compilers and proof-checking techniques, simulators, tools for property verification, libraries and APIs, supporting platforms, whole infrastructures.&lt;/li&gt;
@@ -81,12 +80,12 @@ The goal of this workshop is to foster the creation of general-purpose solutions
     &lt;li&gt;Applications contexts and scenarios of general interest to foster the identification of new problems and solutions, taking inspiration from cyber-physical systems, the Internet of things, sensor networks, smart-cities, etc.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Paper submission&lt;/h4&gt;
-Papers should present original work and be no longer than 6 pages in the standard IEEE two-column format. All manuscripts should be submitted in PDF form through the submissions system for SCOPES at EasyChair. Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings. Post-proceedings publication in a journal is planned. Questions should be addressed to &lt;a class="moz-txt-link-abbreviated" href="mailto:saso.scopes2015@easychair.org"&gt;saso.scopes2015@easychair.org&lt;/a&gt;.
+&lt;p&gt;Papers should present original work and be no longer than 6 pages in the standard IEEE two-column format. All manuscripts should be submitted in PDF form through the submissions system for SCOPES at EasyChair. Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings. Post-proceedings publication in a journal is planned. Questions should be addressed to &lt;a class="moz-txt-link-abbreviated" href="mailto:saso.scopes2015@easychair.org"&gt;saso.scopes2015@easychair.org&lt;/a&gt;.&lt;/p&gt;
 &lt;h4&gt;Important Dates&lt;/h4&gt;
-Workshop paper submission: July 11, 2015
+&lt;p&gt;Workshop paper submission: July 11, 2015
 Notification of accepted papers: July 31, 2015
 Camera-ready paper deadline: August 10, 2015
-Workshop at SASO: September 21, 2015
+Workshop at SASO: September 21, 2015&lt;/p&gt;
 &lt;h4&gt;Organisers&lt;/h4&gt;
 &lt;ul&gt;
     &lt;li&gt;Dr. Jacob Beal (Raytheon BBN Technologies, USA)&lt;/li&gt;
@@ -118,7 +117,8 @@ Workshop at SASO: September 21, 2015
     &lt;li&gt;Christof Teuscher, Portland State University, USA&lt;/li&gt;
     &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen, Germany&lt;/li&gt;
     &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>cfp</category><category>conference</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</guid><pubDate>Wed, 17 Jun 2015 10:00:31 GMT</pubDate></item><item><title>Research fellowships available in Dublin</title><link>https://simondobson.org/blog/2014/05/16/research-fellowships/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Two post-doctoral positions in smart cities now available at Trinity College Dublin.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>cfp</category><category>conference</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2015/06/17/spatial-collective-awareness/</guid><pubDate>Wed, 17 Jun 2015 10:00:31 GMT</pubDate></item><item><title>Research fellowships available in Dublin</title><link>https://simondobson.org/blog/2014/05/16/research-fellowships/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Two post-doctoral positions in smart cities now available at Trinity College Dublin.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;&lt;strong&gt;Research Fellowships in Autonomic Service-Oriented Computing for Smart Cities&lt;/strong&gt;&lt;/p&gt;
@@ -189,36 +189,35 @@ The recent furore over tracking mobile phones is a warning of what happens when 
 &lt;p&gt;The  third challenge is also one of interaction, but this time involving  multiple people. One person might be making lunch whilst another watches  television, then the phone rings and one of them answers, realises the  call is for the other, and passes it over. So as well as  interpenetration we now have multiple agents generating sensor events,  perhaps without being able to determine exactly which person caused  which event. (A motion sensor sees movement: it doesn't see who's  moving, and the individuals may not be tagged in such a way that they  can be identified or even differentiated between.) Real spaces involve  multiple people, and this may place limits on the behaviours we can  demonstrate. But at the very least we need to be able to &lt;em&gt;describe processes involving multiple agents&lt;/em&gt; and to &lt;em&gt;support simultaneous situations in the same or different populations&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;So for me the next challenges of situation recognition boil down to how we describe what we're expecting to observe in a way that reflects noise, complexity and concurrency of real-world conditions.  Once we have these we can explore and improve the techniques we use to  map from sensor data (itself &lt;a href="https://simondobson.org/2010/02/216/"&gt;noisy and hard to program with&lt;/a&gt;) to identified situations, and thence  to behaviour. In many ways this is a real-world version of the  concurrency theories and process algebras that were developed to  describe concurrent computing processes: process languages brought into  the real world, perhaps. This is the approach we're taking in a  European-funded research project, &lt;a href="http://www.sapere-project.eu/"&gt;SAPERE&lt;/a&gt;, in which we're hoping to understand how to engineer smart, context-aware systems on large and flexible scales.&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>context</category><category>pervasive systems</category><category>programming</category><guid>https://simondobson.org/blog/2011/03/23/situations/</guid><pubDate>Wed, 23 Mar 2011 09:45:18 GMT</pubDate></item><item><title>Call for papers: Formal methods for Pervasive Systems</title><link>https://simondobson.org/blog/2011/01/31/fmps-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We are looking for papers on the application of formal methods to pervasive computing, for a workshop at FM'11. (Full disclosure: I'm the keynote speaker.)&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Formal Methods for Pervasive Systems [Pervasive@FM2011]&lt;/h2&gt;
 A workshop held as part of &lt;a href="http://fm2011.lero.ie"&gt;FORMAL METHODS 2011&lt;/a&gt;
-&lt;p&gt;&lt;strong&gt;DEADLINE:&lt;/strong&gt; 20th March 2011
-&lt;/p&gt;&lt;h3&gt;WORKSHOP TOPICS&lt;/h3&gt;
-Logics, Process calculi, Automata, Specification languages, Probabilistic analysis, Model checking, Theorem-proving, Tools, Automated deduction
+&lt;p&gt;&lt;strong&gt;DEADLINE:&lt;/strong&gt; 20th March 2011&lt;/p&gt;
+&lt;h3&gt;WORKSHOP TOPICS&lt;/h3&gt;
+&lt;p&gt;Logics, Process calculi, Automata, Specification languages, Probabilistic analysis, Model checking, Theorem-proving, Tools, Automated deduction&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;FOR THE&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;privacy, behaviour, security, reliability, interoperability, context-aware, mobility, resource requirements, temporal&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;ASPECTS OF&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;pervasive healthcare systems, sensor networks, e-commerce, cloud computing, MANETs/VANETs, telephony, device swarms, electronic tags, human-device interaction, etc.
-&lt;/p&gt;&lt;h3&gt;SUBMISSIONS&lt;/h3&gt;
-Our aim is to have productive discussions and a true workshop "feel". Thus, we invite two kinds of submission:
+&lt;p&gt;pervasive healthcare systems, sensor networks, e-commerce, cloud computing, MANETs/VANETs, telephony, device swarms, electronic tags, human-device interaction, etc.&lt;/p&gt;
+&lt;h3&gt;SUBMISSIONS&lt;/h3&gt;
+&lt;p&gt;Our aim is to have productive discussions and a true workshop "feel". Thus, we invite two kinds of submission:&lt;/p&gt;
 &lt;ol&gt;
     &lt;li&gt; Original research papers concerning any of the above topics; or&lt;/li&gt;
     &lt;li&gt; Survey papers providing an overview of some of the above topics.&lt;/li&gt;
 &lt;/ol&gt;
-Submissions should be written in English, formatted according Springer LNCS style, and not exceed 20 pages in length. Submissions must be made via &lt;a href="http://www.easychair.org/conferences/?conf=pervasivefm2011"&gt;Easychair&lt;/a&gt;.
-&lt;p&gt;Our aim is for an informal proceedings based on these submissions to be available during the workshop. Depending upon the success of the workshop, we intend to produce an edited book based (at least in part) upon the contributions or develop a special issue of a journal.
-&lt;/p&gt;&lt;h3&gt;IMPORTANT DATES&lt;/h3&gt;
-Submission deadline:          20th March 2011
+&lt;p&gt;Submissions should be written in English, formatted according Springer LNCS style, and not exceed 20 pages in length. Submissions must be made via &lt;a href="http://www.easychair.org/conferences/?conf=pervasivefm2011"&gt;Easychair&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our aim is for an informal proceedings based on these submissions to be available during the workshop. Depending upon the success of the workshop, we intend to produce an edited book based (at least in part) upon the contributions or develop a special issue of a journal.&lt;/p&gt;
+&lt;h3&gt;IMPORTANT DATES&lt;/h3&gt;
+&lt;p&gt;Submission deadline:          20th March 2011
 Notification of acceptance:    1st May 2011
 Pre-proceedings version due:  20th May 2011
-Workshop:                     20th or 21st June, 2011
+Workshop:                     20th or 21st June, 2011&lt;/p&gt;
 &lt;h3&gt;INVITED SPEAKER&lt;/h3&gt;
-Simon Dobson (School of Computer Science, University of St. Andrews)
+&lt;p&gt;Simon Dobson (School of Computer Science, University of St. Andrews)&lt;/p&gt;
 &lt;h3&gt;WORKSHOP CO-CHAIRS&lt;/h3&gt;
-Michael Fisher    (University of Liverpool, UK)
-Brian Logan       (University of Nottingham, UK)
+&lt;p&gt;Michael Fisher    (University of Liverpool, UK)
+Brian Logan       (University of Nottingham, UK)&lt;/p&gt;
 &lt;h3&gt;PROGRAMME COMMITTEE&lt;/h3&gt;
-Natasha Alechina    (Nottingham, UK)
+&lt;p&gt;Natasha Alechina    (Nottingham, UK)
 Myrto Arapinis      (Birmingham, UK)
 Mohamed Bakhouya    (Belfort, FR)
 Doina Bucur         (INCAS3, NL)
@@ -240,10 +239,10 @@ Anand Ranganathan   (IBM, USA)
 Alessandro Russo    (Imperial, UK)
 Mark Ryan           (Birmingham, UK)
 Chris Unsworth      (Glasgow, UK)
-Kaiyu Wan           (XJTLU, CN)
+Kaiyu Wan           (XJTLU, CN)&lt;/p&gt;
 &lt;h3&gt;STEERING COMMITTEE&lt;/h3&gt;
-Natasha Alechina    (University of Nottingham, UK)
+&lt;p&gt;Natasha Alechina    (University of Nottingham, UK)
 Muffy Calder        (University of Glasgow, UK)
 Michael Fisher      (University of Liverpool, UK)
 Brian Logan         (University of Nottingham, UK)
-Mark Ryan           (University of Birmingham, UK)&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>formal methods</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2011/01/31/fmps-cfp/</guid><pubDate>Mon, 31 Jan 2011 11:34:52 GMT</pubDate></item></channel></rss>
+Mark Ryan           (University of Birmingham, UK)&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>conference</category><category>formal methods</category><category>pervasive systems</category><guid>https://simondobson.org/blog/2011/01/31/fmps-cfp/</guid><pubDate>Mon, 31 Jan 2011 11:34:52 GMT</pubDate></item></channel></rss>

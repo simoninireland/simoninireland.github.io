@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2013/08/02/xbee-sleeping/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../at-commands-2/" title="Issuing AT commands" type="text/html">
 <link rel="next" href="../../18/abstracts/" title="How to write an abstract" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -178,12 +178,10 @@ pin is low to keep the radio awake, and then select its sleep mode:</p>
 <span class="p">}</span>
 </code></pre>
 
-
 <p>(Some early mistakes showed that -- contrary to what might be expected -- the sleep pin defaults to high (send radio to sleep) rather than low. So this step is important.)</p>
 <p>The next issue concerns the rather intricate behaviour of the XBee's other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it's asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield's designers have connected this pin to the Arduino's reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. <a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank">Some posts suggest</a> that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn't: we simply need to disable the output of this pin, using another AT command:</p>
 <pre class="code literal-block"><span></span><code><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
-
 
 <p>This disables the XBee's D7 line (not to be confused with the Arduino's D7 line, which we've attached to the XBee's sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this <em>did</em> take quite a while to work out, since you ask...)</p>
 <p>We can now put all this together to place the XBee into SM 1  and let the Arduino sleep it at will:</p>
@@ -204,7 +202,6 @@ pin is low to keep the radio awake, and then select its sleep mode:</p>
    <span class="p">...</span>
 <span class="p">}</span>
 </code></pre>
-
 
 <p>Note that we've used local AT commands to set the radio's mode. It's
 also possible to do this <a href="../../../../../2013/07/xctu/">statically using

@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2010/05/21/impressions-pervasive-2010/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../14/cs-book-worth-reading-twice/" title="The only computer science book worth reading twice?" type="text/html">
 <link rel="next" href="../../28/languages-extensible-vms/" title="Languages for extensible virtual machines" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -139,7 +139,6 @@ bg-dark
 <p></p>
 <p>I've spent this week at the <a href="http://www.pervasive2010.org">Pervasive 2010 conference</a> on pervasive computing, along with the <a href="http://www.pmmps.org">Programming Methods for Mobile and Pervasive Systems</a> workshop I co-arranged with <a href="http://www.dominicduggan.org/">Dominic Duggan</a>. Both events have been fascinating.</p>
 <!--more-->
-
 <p>The PMMPS workshop is something we've wanted to run for a while, bringing together the programming language and pervasive/mobile communities to see where languages  ought to go. We received a diverse set of submissions: keynotes from Roy Campbell and Aaron Quigley, talks covering topics including debugging, software processes, temporal aspects (me), context collectionvisual programming ang a lot more. Some threads emerge quite strongly, but I think they'll have to wait for a later post after I've collected my thoughts a bit more.</p>
 <p>The main conference included many  papers so good that it seems a shame to single any out. The following are simply those that spoke most strongly to me:</p>
 <p><strong>Panorama and Cascadia.</strong> The University of Washington presented work on a "complex" events system, combining lower-level raw events. Simple sensor events are noisy and often limited in their coverage. Cascadiais an event service that allows complex events to be defined over the raw event stream, using Bayesian particle filters to interpolate missing events or those from uncovered areas: so it's possible in principle to inferentially  "sense" someone's location even in places without explicit sensor coverage, using a model of the space being observed. This is something that could be generalised to other model-based sensor streams. The Panorama tool allows end-users to specify complex events by manipulating thresholds, which seems little unsatisfactory: there's no principled way to determine the thresholds, and it still begs the question of how to program with the uncertain event stream. Still, I have to say this is the first complex event system I've seen that I actually believe could work.</p>

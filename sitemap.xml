@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2020-11-30T18:30:00Z</lastmod>
+  <lastmod>2021-02-23T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -54,12 +54,16 @@
   <lastmod>2020-11-20T15:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2021/</loc>
+  <lastmod>2021-02-23T11:02:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2020-12-21T15:55:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
-  <lastmod>2020-12-03T15:34:00Z</lastmod>
+  <lastmod>2021-01-08T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2010/02/26/216/</loc>
@@ -758,8 +762,16 @@
   <lastmod>2020-12-21T16:04:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/blog/2020/12/21/paper-on-clustered-percolation-accepted/</loc>
-  <lastmod>2020-12-21T15:55:00Z</lastmod>
+  <loc>https://simondobson.org/blog/2021/01/08/newman-ziff/</loc>
+  <lastmod>2021-01-08T12:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2021/01/08/the-newman-ziff-algorithm/</loc>
+  <lastmod>2021-01-08T12:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2021/02/23/ide-convergence/</loc>
+  <lastmod>2021-02-23T11:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/goodreads/ada-lovelace-the-making-of-a-computer-scientist/</loc>
@@ -1175,115 +1187,115 @@
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-1.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-10.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-11.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-12.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-13.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-14.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-15.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-16.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-17.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-18.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-19.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-2.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-20.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-21.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-22.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-23.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-24.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-25.html</loc>
-  <lastmod>2020-12-21T15:47:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-26.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-27.html</loc>
-  <lastmod>2020-12-21T15:55:00Z</lastmod>
+  <lastmod>2021-03-08T08:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-3.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-4.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-5.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-6.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-7.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-8.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-9.html</loc>
-  <lastmod>2020-12-20T13:39:00Z</lastmod>
+  <lastmod>2021-03-08T08:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2020-12-21T16:04:00Z</lastmod>
+  <lastmod>2021-02-23T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1456,6 +1468,10 @@
  <url>
   <loc>https://simondobson.org/categories/ebooks/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/emacs/</loc>
+  <lastmod>2021-02-23T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
@@ -1912,6 +1928,10 @@
  <url>
   <loc>https://simondobson.org/categories/virtualisation/</loc>
   <lastmod>2020-11-20T15:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/vs-code/</loc>
+  <lastmod>2021-02-23T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/web-services/</loc>

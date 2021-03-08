@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about development)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/cat_development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 09 Dec 2020 11:44:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Backporting Python type annotations</title><link>https://simondobson.org/blog/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about development)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/cat_development.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>IDE convergence</title><link>https://simondobson.org/blog/2021/02/23/ide-convergence/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently tried out a new development environment for my Python
+development, and noticed an unexpected convergence in the designs of
+the two tools.&lt;/p&gt;
+&lt;!-- TASTER_END --&gt;
+
+&lt;p&gt;I've been a long-time &lt;a href="https://emacs.org"&gt;Emacs&lt;/a&gt; user. I periodically
+get a desire to try something new, something less old-school, just to
+see whether there are advantages. There always &lt;em&gt;are&lt;/em&gt; advantages, of
+course -- but often significant disadvantages as well, which often
+keep me coming back to my comfort zone.&lt;/p&gt;
+&lt;p&gt;My most recent excursion was to try Microsoft's &lt;a href="https://code.visualstudio.com/"&gt;VS
+Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Microsoft VS Code" src="https://simondobson.org/images/posts/20210223-vscode.png"&gt;&lt;/p&gt;
+&lt;p&gt;This is handily cross-platform, being built in Javascript on top of
+&lt;a href="https://www.electronjs.org/"&gt;Electron&lt;/a&gt;. It's got a lot of nice
+features: a tree view of the project in the left-hand pane, syntax
+colouring, code style linting, integrated debugging and unit test
+running, integrated connection to git, and so on. Looking a little
+closer there are all sorts of status markers around the code and in
+the ribbons at the bottom of panes and the window overall to show
+status that might be important.&lt;/p&gt;
+&lt;p&gt;But it's so &lt;em&gt;slow&lt;/em&gt;. That's a feature of VS Code, not of Electron (as I
+first suspected), because other Electron-based editors like
+&lt;a href="https://atom.io/"&gt;Atom&lt;/a&gt; aren't as slow. And my development box isn't
+the latest, but it also isn't &lt;em&gt;that&lt;/em&gt; old.&lt;/p&gt;
+&lt;p&gt;So I reverted to Emacs, but upgraded it a little to more modern
+standards. Specifically, I installed the
+&lt;a href="https://elpy.readthedocs.io/en/latest/index.html"&gt;elpy&lt;/a&gt; Python IDE,
+with assorted other packages suggested by various sites. The result is
+this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Emacs with elpy" src="https://simondobson.org/images/posts/20210223-emacs.png"&gt;&lt;/p&gt;
+&lt;p&gt;Now for anyone who's used Emacs for a while, it's definitely still
+Emacs -- not least with the convoluted keystrokes and infinite
+customisation you either love or hate. But it's striking how similar
+the two IDEs now are, and striking how VS Code has inherited some
+ideas from Emacs: resizeable panes, modelines in the ribbon, markers
+in pane gutters, and so forth -- things that Emacs-based applications
+have had for years, which have now migrated into "the mainstream".
+Both the feature sets and the visuals of the two systems are very
+similar indeed. Both are entirely cross-platform and extensible. For
+VS Code you write extensions in Javascript; for Emacs you write them
+in Lisp; and that's about it. And Emacs is a &lt;em&gt;lot&lt;/em&gt; faster on my
+set-up. There are some limitations -- I've yet to get the hang of
+using &lt;code&gt;pdb&lt;/code&gt; as a debugger, for example, especially for modules
+and from within tests -- but the functionality is really quite comparable.&lt;/p&gt;
+&lt;p&gt;I think it's safe to say there's been cross-fertilisation between VS
+Code (and other IDEs) and Emacs over the years. A lot of the
+developers of the former quite possibly used the latter. But I
+strongly suspect that most of the traffic has gone &lt;em&gt;from&lt;/em&gt; Emacs &lt;em&gt;to&lt;/em&gt;
+the other systems: the similarities are just too great to be
+accidental. It's interesting to think that a system that emerged at
+the dawn of the free-software movement has had -- and is still having
+-- such an influence on modern development tools. And I'm happily back
+in my comfort zone.&lt;/p&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><category>software engineering</category><category>vs code</category><guid>https://simondobson.org/blog/2021/02/23/ide-convergence/</guid><pubDate>Tue, 23 Feb 2021 12:21:05 GMT</pubDate></item><item><title>Backporting Python type annotations</title><link>https://simondobson.org/blog/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
 &lt;a href="https://simondobson.org/development/epyc/"&gt;&lt;code&gt;epyc&lt;/code&gt;&lt;/a&gt; and
 &lt;a href="https://simondobson.org/development/epydemic/"&gt;&lt;code&gt;epydemic&lt;/code&gt;&lt;/a&gt; libraries. Making these work
 while not sacrificing interoperability a wide range of Python versions
@@ -104,12 +157,10 @@ pin is low to keep the radio awake, and then select its sleep mode:&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-
 &lt;p&gt;(Some early mistakes showed that -- contrary to what might be expected -- the sleep pin defaults to high (send radio to sleep) rather than low. So this step is important.)&lt;/p&gt;
 &lt;p&gt;The next issue concerns the rather intricate behaviour of the XBee's other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it's asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield's designers have connected this pin to the Arduino's reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. &lt;a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank"&gt;Some posts suggest&lt;/a&gt; that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn't: we simply need to disable the output of this pin, using another AT command:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;atCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"D7"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;This disables the XBee's D7 line (not to be confused with the Arduino's D7 line, which we've attached to the XBee's sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this &lt;em&gt;did&lt;/em&gt; take quite a while to work out, since you ask...)&lt;/p&gt;
 &lt;p&gt;We can now put all this together to place the XBee into SM 1  and let the Arduino sleep it at will:&lt;/p&gt;
@@ -130,7 +181,6 @@ pin is low to keep the radio awake, and then select its sleep mode:&lt;/p&gt;
    &lt;span class="p"&gt;...&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;Note that we've used local AT commands to set the radio's mode. It's
 also possible to do this &lt;a href="https://simondobson.org/2013/07/xctu/"&gt;statically using
@@ -175,7 +225,6 @@ but also hides the exact nature of any error.&lt;/p&gt;
   &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;This function can be used to issue the different control codes for the radio. Some parameters can be &lt;a href="https://simondobson.org/blog/2013/07/02/xctu/"&gt;set using X-CTU &lt;/a&gt;when the radio firmware is installed, but commands are sometimes needed at run-time too.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>at command</category><category>ditch</category><category>making</category><category>xbee</category><guid>https://simondobson.org/blog/2013/08/02/at-commands-2/</guid><pubDate>Fri, 02 Aug 2013 11:03:54 GMT</pubDate></item><item><title>Basic power measurements</title><link>https://simondobson.org/blog/2013/07/31/power/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Some initial measurements of power consumption.&lt;/p&gt;
 &lt;!--more--&gt;
@@ -248,7 +297,7 @@ be re-scheduled after the first has run. We can do this within the
 definition of the actor, for example using the &lt;code&gt;post()&lt;/code&gt;
 action:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="nl"&gt;PeriodicActor&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;post&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;behaviour&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -259,13 +308,11 @@ action:&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-
 &lt;p&gt;(This also demonstrates the &lt;code&gt;expandTime()&lt;/code&gt; function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use &lt;code&gt;PeriodicActor&lt;/code&gt; on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for &lt;em&gt;every&lt;/em&gt; actor that wants to run repeatedly.&lt;/p&gt;
 &lt;p&gt;A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;RepeatingActor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;The &lt;code&gt;RepeatingActor&lt;/code&gt; runs the behaviour of
 &lt;code&gt;SomeActor&lt;/code&gt; every 5 hours, and we initially schedule it to
@@ -274,20 +321,8 @@ method to &lt;code&gt;SleepySketch&lt;/code&gt; itself:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleEvery&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-
 &lt;p&gt;to perform the wrapping and initial scheduling automatically.&lt;/p&gt;
 &lt;p&gt;Simple sleepy sketches can now be created at set-up, by scheduling
 repeating actors, and we can define the various actors and re-use them
 in different scheduling situations without complicating their own
-code.&lt;/p&gt;&lt;/div&gt;</description><category>actors</category><category>ditch</category><category>framework</category><category>making</category><category>power management</category><category>sleepysketch</category><category>software</category><guid>https://simondobson.org/blog/2013/07/26/improvements/</guid><pubDate>Fri, 26 Jul 2013 15:20:38 GMT</pubDate></item><item><title>Radio survey</title><link>https://simondobson.org/blog/2013/07/26/radio-survey/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;A simple radio survey establishes the ranges that the radios can manage.&lt;/p&gt;
-&lt;!--more--&gt;
-
-&lt;p&gt;The 2mW XBee radios we've got have a nominal range of 100m -- but that's in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There's a reasonable chance that these obstacles will reduce the real range significantly.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="https://simondobson.org/images/citizen-sensing/sensor-enclosure.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station -- something as simple as possible, like sending a single packet with a count every ten seconds -- and keep careful track of the return values coming back from the radio library. We then use the only output device we have -- an LED -- to indicate the success or failure of each operation, preferably with an indication of &lt;em&gt;why&lt;/em&gt; it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we've reached the edge of the effective range.&lt;/p&gt;
-&lt;p&gt;With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect &lt;em&gt;via&lt;/em&gt; the first, automatically. That's the theory, anyway...&lt;/p&gt;
-&lt;p&gt;(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an ATJV1 command issued to it. The easiest way to do this is at set-up, &lt;a href="https://simondobson.org/blog/2013/07/02/xctu/" target="_blank"&gt;through the advanced settings in X-CTU&lt;/a&gt;.)&lt;/p&gt;
-&lt;p&gt;The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30--40m -- somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10--20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no effort.&lt;/p&gt;
-&lt;p&gt;This is somewhat disappointing, but that's what this project is all about: the practicalities of sensor networking with cheap hardware.&lt;/p&gt;
-&lt;p&gt;There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the enclosure.&lt;/p&gt;
-&lt;p&gt;It's also worth noting that the radio segment is horrendously hard to debug with only a single LED for signalling. Adding more LEDs might help, but it's still a very poor debugging interface, even compared to printing status messages to the USB port.&lt;/p&gt;&lt;/div&gt;</description><category>ditch</category><category>making</category><category>network</category><category>wireless</category><category>xbee</category><guid>https://simondobson.org/blog/2013/07/26/radio-survey/</guid><pubDate>Fri, 26 Jul 2013 11:11:52 GMT</pubDate></item></channel></rss>
+code.&lt;/p&gt;&lt;/div&gt;</description><category>actors</category><category>ditch</category><category>framework</category><category>making</category><category>power management</category><category>sleepysketch</category><category>software</category><guid>https://simondobson.org/blog/2013/07/26/improvements/</guid><pubDate>Fri, 26 Jul 2013 15:20:38 GMT</pubDate></item></channel></rss>

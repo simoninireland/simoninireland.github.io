@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2014/03/12/data-scientists/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../02/14/nocost-journals/" title="No-cost journals" type="text/html">
 <link rel="next" href="../../17/tooling-terabytes/" title="It's the tooling, not the terabytes" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -28,8 +28,7 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="og:url" content="https://simondobson.org/blog/2014/03/12/data-scientists/">
 <meta property="og:description" content='"Data science" and "data scientist" are not good terms -- for anything.
 
-
-The recent revolution in our ability to monitor more and more human (and indeed non-human) activity has spawned a whole new fi'>
+The recent revolution in our ability to monitor more and more human (and indeed non-human) activity has spawned a whole new fie'>
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2014-03-12T11:00:29Z">
 <meta property="article:tag" content="big data">
@@ -139,7 +138,6 @@ bg-dark
 <p></p>
 <p>"Data science" and "data scientist" are not good terms -- for anything.</p>
 <!--more-->
-
 <p>The recent revolution in our ability to monitor more and more human (and indeed non-human) activity has spawned a whole new field of study. Known variously as "big data", "data science", and "digital humanities", the idea is that -- by studying the data collected -- we can perform feats of prediction and customisation that defeat other approaches.</p>
 <p>This is not all hype. There's no doubt that deriving algorithms from data -- known as "data-driven design" -- can often work better than <em>a priori</em> design. The best-known example of this is <a href="http://translate.google.com/" target="_blank">Google Translate</a>, whose translation approach is driven almost entirely by applying statistical learning to a large corpus of documents with for which exact translations exist across languages, and using the correlations found as the basis for translation. (The documents in question were actually the core agreements governing the operation of the EU, the <em>acquis communautaire</em>, which explains why Google Translate works best on bureaucratese and worst on poetry.) It turns out that data-driven learning works better in most cases than grammar-directed parsing.</p>
 <p>The data-driven approach rests on several pillars. Chief among them is applied machine learning as mentioned above, allowing algorithms to look through bodies of data and learn the correlations that exist between events. (We use similar techniques to analyse sensor data and perform situation recognition. See Ye, Dobson and McKeever. <a href="http://dx.doi.org/10.1016/j.pmcj.2011.01.004" target="_blank">Situation identification techniques in pervasive computing: a review</a>. Pervasive and Mobile Computing <strong>8</strong>(1), pp. 36--66. 2012.) Various other statistical techniques can also be applied, ranging up from simple mean and variance calculations. One can usually augment the basic techniques using more structural methods: if you know the structure of the links in a web site, for example, you can learn more about how people navigate because you know that some routes are more probable (by clicking hyperlinks) than others. The results of these analyses then need to be presented as analytics for consumption by managers and decision-makers, and distilling large volumes of information into visually compelling and comprehensible form is a skill in itself.</p>

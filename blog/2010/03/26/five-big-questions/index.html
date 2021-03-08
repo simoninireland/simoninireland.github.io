@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2010/03/26/five-big-questions/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../22/both-ends-of-the-data-intensive-spectrum/" title="Both ends of the data-intensive spectrum" type="text/html">
 <link rel="next" href="../../../04/01/computer-microscope/" title="The computer is the new microscope" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -137,7 +137,6 @@ bg-dark
 <p></p>
 <p>If you try to do everything, you always end up doing nothing. Which is why <a href="http://www.simondobson.org/2010/03/both-ends-of-the-data-intensive-spectrum/">Gray's laws</a> suggest searching for the twenty "big questions" in a field and then focusing-in the first five as the ones that'll generate the biggest return on the effort invested. So what are the five biggest open issues in programming for sensorised systems?</p>
 <!--more-->
-
 <p>Of course we should start with a big fat disclaimer: these are <em>my</em> five biggest open issues, which probably don't relate well to anyone else's -- but that's what blogs are for, right? :-) So here goes: five questions, with an associated suggestion for a research programme.</p>
 <p><strong>1. Programming with uncertainty.</strong> This is definitely the one I feel is most important. I've <a href="http://www.simondobson.org/2010/02/216/">mentioned before</a> that there's a mismatch between traditional computer science and what we have to deal with for sensor systems: the input is uncertain and often of very poor quality, but the output  behaviour has to be a "best attempt" based on what's available and has to be robust against small perturbations due to noise and the like. But uncertainty is something that computers (and computer scientists) are quite bad at handling, so there's a major change that has to happen.</p>
 <p>To deal with this we need to re-think the programming models we use, and the ways in which we express behaviour. For example we could look at how programs respond to perturbation, or design languages in which perturbations have a small impact by design. A calculus of <em>stable functions</em> might be a good starting-point, where perturbation tends to die-out over time and space, but long-term changes are propagated. We might also look at how to program more effectively with Bayesian statistics, or how to program with machine leaning: turn things that are currently either libraries or applications into core constructs from which to build programs.</p>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about adaptive systems)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/adaptive-systems.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 20 Nov 2020 15:47:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New paper on collective adaptive systems</title><link>https://simondobson.org/blog/2020/09/28/new-paper-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200928-cas-paper.jpg"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper "On the social implications of complex adaptive systems" was
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about adaptive systems)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/adaptive-systems.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New paper on collective adaptive systems</title><link>https://simondobson.org/blog/2020/09/28/new-paper-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20200928-cas-paper.jpg"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper "On the social implications of complex adaptive systems" was
 just published in IEEE Technology and Society Magazine.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/09/28/new-paper-cas/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>cas</category><category>news</category><category>paper</category><category>saso</category><guid>https://simondobson.org/blog/2020/09/28/new-paper-cas/</guid><pubDate>Mon, 28 Sep 2020 16:59:20 GMT</pubDate></item><item><title>Call for papers: 3rd Workshop on Engineering Collective Adaptive Systems (eCAS 2018)</title><link>https://simondobson.org/blog/2018/05/03/ecas-cfp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Come and join us in Trento for eCAS.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong&gt;eCAS2018&lt;/strong&gt;&lt;/h3&gt;
 &lt;strong&gt;CALL FOR PAPERS&lt;/strong&gt;
 &lt;p&gt;3rd Workshop on Engineering Collective Adaptive Systems – eCAS 2018
@@ -15,8 +14,8 @@ Fondazione Bruno Kessler (FBK) &amp;amp; University of Trento - Trento, Italy&lt
 &lt;p&gt;Modern software systems are becoming more and more collective, composed of many distributed and heterogeneous entities. These systems operate under continuous perturbations making manual adjustments infeasible. For a collective system to be resilient, its adaptation must also be collective, in the sense that multiple entities must adapt in a way that addresses critical runtime conditions while preserving the benefits of the collaborative interdependencies. Decision-making in such systems is distributed and possibly highly dispersed, and interaction between the entities may lead to the emergence of unexpected phenomena.&lt;/p&gt;
 &lt;p&gt;In such systems, a new approach for adaptation is needed to allow (i) multiple entities to collectively adapt with (ii) negotiations to decide which collective changes are best. Collective adaptation also raises a second important challenge: which parts of the system (things, services, people) should be engaged in an adaptation? This is not trivial, since multiple solutions to the same problem may be generated at different levels. The challenge here is to understand these levels and create mechanisms to decide the right scope for an adaptation for a given problem.&lt;/p&gt;
 &lt;p&gt;This workshop solicits papers that address new methodologies, theories and principles that can be used in order to develop a better understanding of the fundamental factors underpinning the operation of such systems, so that we can better design, build, and analyze them, as well as case studies and applications showing such approaches in action. Interdisciplinary work is particularly welcomed.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Suggested Topics (but not limited to):&lt;/strong&gt;
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;Suggested Topics (but not limited to):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Novel theories relating to operating principles of CAS&lt;/li&gt;
     &lt;li&gt;Novel design principles for building CAS systems&lt;/li&gt;
     &lt;li&gt;Insights into the short and long-term adaptation of CAS systems&lt;/li&gt;
@@ -28,29 +27,29 @@ Fondazione Bruno Kessler (FBK) &amp;amp; University of Trento - Trento, Italy&lt
     &lt;li&gt;Languages, platforms, APIs and other tools for CAS&lt;/li&gt;
     &lt;li&gt;Scenarios, case studies, and experience reports of CAS in different contexts (e.g., Smart Mobility, Smart Energy/Smart Grid, Smart Buildings, traffic management, emergency response, etc.)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;strong&gt;SCOPE&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;SCOPE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The workshop is expected to attract participants from many disciplines, including Autonomic Computing, Biology, Game Theory, Evolutionary Computing, Network Science, Self-Organizing Systems, Pervasive Computing, and to be of interest to anyone working with the domain of large-scale self-adaptive systems. In addition, the European Commission has funded seven scientific projects and a Coordination Action in this area, with projects starting at the beginning of 2013. Thus, the workshop provides a natural base for the projects to meet and share ideas, even if it is in no way limited to this audience, and is likely to have broad appeal to a wide range of researchers. Potential audience members might work in application areas relating to large-scale distributed systems, or may come from any of the many disciplines that can provide insights into the operation and design of such systems.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;IMPORTANT DATES&lt;/strong&gt;
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT DATES&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Abstract submission: June 4, 2018&lt;/li&gt;
     &lt;li&gt;Workshop paper submission: June 11, 2018&lt;/li&gt;
     &lt;li&gt;Workshop paper notification: July 9, 2018&lt;/li&gt;
     &lt;li&gt;Camera-Ready Version: July 15, 2018&lt;/li&gt;
     &lt;li&gt;Workshop: September 3, 2018&lt;/li&gt;
 &lt;/ul&gt;
-&lt;strong&gt;SUBMISSION INSTRUCTIONS and REVIEW CRITERIA&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;SUBMISSION INSTRUCTIONS and REVIEW CRITERIA&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The length of a workshop paper may not exceed 6 pages including references and follow the IEEE Computer Society Press proceedings style guide.&lt;/p&gt;
 &lt;p&gt;All papers should be submitted in PDF format. You can submit the paper through EasyChair using this link:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://easychair.org/conferences/?conf=ecas2018"&gt;https://easychair.org/conferences/?conf=ecas2018&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;By submitting a paper, the authors confirm that in case of acceptance, at least one author will attend the workshop to present the work.&lt;/p&gt;
 &lt;p&gt;Papers will be peer reviewed on the basis of originality, readability, relevance to themes, soundness, and overall quality. Workshop proceedings will be published on IEEE Xplore in parallel with the main conference proceedings.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;WORKSHOP ORGANISERS&lt;/strong&gt;
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;WORKSHOP ORGANISERS&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Simon Dobson, University of St Andrews, UK, &lt;a href="mailto:simon.dobson@st-andrews.ac.uk"&gt;simon.dobson@st-andrews.ac.uk&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;Martina De Sanctis, Fondazione Bruno Kessler, Trento, Italy, &lt;a href="mailto:msanctis@fbk.eu"&gt;msanctis@fbk.eu&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;Giacomo Cabri, Università di Modena e Reggio Emilia, Italy, &lt;a href="mailto:giacomo.cabri@unimore.it"&gt;giacomo.cabri@unimore.it&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;strong&gt;STEERING COMMITTEE&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;STEERING COMMITTEE&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Jacob Beal, Raytheon BBN Technologies, USA&lt;/li&gt;
     &lt;li&gt;Giacomo Cabri, University of Modena And Reggio Emilia, Italy&lt;/li&gt;
@@ -59,7 +58,7 @@ Fondazione Bruno Kessler (FBK) &amp;amp; University of Trento - Trento, Italy&lt
     &lt;li&gt;Jane Hillston, University of Edinburgh, U.K&lt;/li&gt;
     &lt;li&gt;Mirko Viroli, University of Bologna, Italy&lt;/li&gt;
 &lt;/ul&gt;
-&lt;strong&gt;WORKSHOP PROGRAM COMMITTEE (PROVISIONAL)&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;WORKSHOP PROGRAM COMMITTEE (PROVISIONAL)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Gerrit Anders, Augsburg University&lt;/li&gt;
     &lt;li&gt;Franco Bagnoli, Università di Firenze&lt;/li&gt;
@@ -91,10 +90,9 @@ Fondazione Bruno Kessler (FBK) &amp;amp; University of Trento - Trento, Italy&lt
     &lt;li&gt;Mirko Viroli, Università di Bologna&lt;/li&gt;
     &lt;li&gt;Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen&lt;/li&gt;
 &lt;/ul&gt;
-&lt;strong&gt;REGISTRATION&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;REGISTRATION&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;All attendees at the workshop must register for SASO through the conference website:  &lt;a href="https://saso2018.fbk.eu/index.php/registration/"&gt;https://saso2018.fbk.eu/index.php/registration/&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><guid>https://simondobson.org/blog/2018/05/03/ecas-cfp/</guid><pubDate>Thu, 03 May 2018 17:27:42 GMT</pubDate></item><item><title>CfP: Collective adaptive systems</title><link>https://simondobson.org/blog/2016/07/18/cfp-cas/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;A special track of the 32nd ACM Symposium on Applied Computing (SAC'17) looking for contributions.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;COLLECTIVE ADAPTIVE SYSTEMS&lt;/h2&gt;
 Special Track of the 32nd ACM Symposium on Applied Computing (SAC'17)
 &lt;a class="moz-txt-link-freetext" href="http://sac-cas2017.apice.unibo.it"&gt;http://sac-cas2017.apice.unibo.it&lt;/a&gt;
@@ -103,8 +101,8 @@ April 3 - 7, 2017 Marrakech, Morocco
 &lt;p&gt;These complex systems are typically referred to as Collective Adaptive Systems (CAS). They have to be equipped with dynamic and autonomous adaptation capabilities, to deal with changes in their working environments and within themselves. CAS involve huge collections of cooperating components, trading off individual tasks, properties, objectives and actions, with overall system goals.&lt;/p&gt;
 &lt;p&gt;To properly engineer and exploit CAS, a deep scientific understanding of the principles underpinning their operation is required. The development of CAS is closely related to other contemporary (software) engineering approaches, such as component-based systems and middleware platforms, as well as other Computer Science areas, such as Distributed Artificial Intelligence, Formal Methods, Agent-based Programming, Pervasive Computing, Internet of Things, and Autonomic Computing. This track aims at providing a common forum for discussing the various different viewpoints over CAS, attracting relevant and consistent contributions from different research communities, with the ultimate goal of filling the gap between theory and practice, hence paving the way towards implementation of relevant applications.&lt;/p&gt;
 &lt;p&gt;The Special Track on Collective Adaptive Systems takes deliberately a broad view of what CAS are and how they should be designed, analysed, built and deployed. In particular, the track's interest is both in the foundational view (e.g., theories, methods, formalisms, models) and the practical aspects (e.g., development methodologies, programming languages, middleware, development and runtime environments, tools). Moreover, also applications of CAS solutions to real-world case studies are welcomed.&lt;/p&gt;
-&lt;p&gt;Major topics of interest this year will include the following:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;Major topics of interest this year will include the following:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Novel models, languages, programming and implementation techniques for CAS&lt;/li&gt;
     &lt;li&gt;CAS technologies and infrastructures&lt;/li&gt;
     &lt;li&gt;CAS applications&lt;/li&gt;
@@ -116,14 +114,14 @@ April 3 - 7, 2017 Marrakech, Morocco
     &lt;li&gt;Software architectures and engineering methodologies for CAS&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Important Dates&lt;/h3&gt;
-Sep 15, 2016: Papers and SRC research abstracts submission
+&lt;p&gt;Sep 15, 2016: Papers and SRC research abstracts submission
 Nov 10, 2016: Author notification
 Nov 25, 2016: Camera-ready copies
-Dec 10, 2016: Author registration
+Dec 10, 2016: Author registration&lt;/p&gt;
 &lt;h3&gt;Programme Co-Chairs&lt;/h3&gt;
-Mirko Viroli Alma Mater Studiorum - University of Bologna, Italy &lt;a class="moz-txt-link-freetext" href="http://mirkoviroli.apice.unibo.it"&gt;http://mirkoviroli.apice.unibo.it&lt;/a&gt; email: &lt;a class="moz-txt-link-abbreviated" href="mailto:mirko.viroli@unibo.it"&gt;mirko.viroli@unibo.it&lt;/a&gt;
-&lt;p&gt;Francesco Tiezzi University of Camerino, Italy &lt;a class="moz-txt-link-freetext" href="http://tiezzi.unicam.it/"&gt;http://tiezzi.unicam.it/&lt;/a&gt; email: francesco.tiezzi@ unicam.it
-&lt;/p&gt;&lt;h3&gt;Program Committee Members&lt;/h3&gt;
+&lt;p&gt;Mirko Viroli Alma Mater Studiorum - University of Bologna, Italy &lt;a class="moz-txt-link-freetext" href="http://mirkoviroli.apice.unibo.it"&gt;http://mirkoviroli.apice.unibo.it&lt;/a&gt; email: &lt;a class="moz-txt-link-abbreviated" href="mailto:mirko.viroli@unibo.it"&gt;mirko.viroli@unibo.it&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Francesco Tiezzi University of Camerino, Italy &lt;a class="moz-txt-link-freetext" href="http://tiezzi.unicam.it/"&gt;http://tiezzi.unicam.it/&lt;/a&gt; email: francesco.tiezzi@ unicam.it&lt;/p&gt;
+&lt;h3&gt;Program Committee Members&lt;/h3&gt;
 &lt;ul&gt;
     &lt;li&gt;Jacob Beal, BBN Technologies, USA&lt;/li&gt;
     &lt;li&gt;Olivier Boissier, Ecole des Mines de Saint-Etienne, France&lt;/li&gt;
@@ -150,22 +148,22 @@ Mirko Viroli Alma Mater Studiorum - University of Bologna, Italy &lt;a class="mo
     &lt;li&gt;Franco Zambonelli, University of Modena and Reggio Emilia, Italy&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Proceedings&lt;/h3&gt;
-Papers accepted for the Special Track on Collective Adaptive Systems will be published by ACM both in the SAC 2017 proceedings and in the Digital Library.
-&lt;p&gt;CAS Special Track organisers also plan to invite authors of selected papers for a Special Issue in a high impact journal, such as ACM Transactions on Autonomous and Adaptive Systems or Science of Computer Programming.
-&lt;/p&gt;&lt;h3&gt;Paper submission and format&lt;/h3&gt;
-All papers should represent original and previously unpublished works that currently are not under review in any conference or journal.
+&lt;p&gt;Papers accepted for the Special Track on Collective Adaptive Systems will be published by ACM both in the SAC 2017 proceedings and in the Digital Library.&lt;/p&gt;
+&lt;p&gt;CAS Special Track organisers also plan to invite authors of selected papers for a Special Issue in a high impact journal, such as ACM Transactions on Autonomous and Adaptive Systems or Science of Computer Programming.&lt;/p&gt;
+&lt;h3&gt;Paper submission and format&lt;/h3&gt;
+&lt;p&gt;All papers should represent original and previously unpublished works that currently are not under review in any conference or journal.&lt;/p&gt;
 &lt;p&gt;The author(s) name(s) and address(es) must NOT appear in the body of the paper, and self-reference should be in the third person. This is to facilitate blind review. Only the title should be shown at the first page without the authors' information.&lt;/p&gt;
 &lt;p&gt;Submitted papers must be in the ACM two-column page format (doc template, pdf template, latex template). The length of the papers is 6 pages (included in the registration) plus up to 2 extra pages (at extra charge), i.e. total 8 pages maximum.&lt;/p&gt;
 &lt;p&gt;Paper registration is required, allowing the inclusion of the paper/poster in the conference proceedings. An author or a proxy attending SAC MUST present the paper: This is a requirement for the paper/poster to be included in the ACM/IEEE digital library. No-show of scheduled papers and posters will result in excluding them from the ACM/IEEE digital library.&lt;/p&gt;
-&lt;p&gt;Submission is entirely automated via the STAR Submission System, which is available from:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;Submission is entirely automated via the STAR Submission System, which is available from:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;(for regular papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac2017/"&gt;https://www.softconf.com/h/sac2017/&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;(for SRC papers) &lt;a class="moz-txt-link-freetext" href="https://www.softconf.com/h/sac-src2017/"&gt;https://www.softconf.com/h/sac-src2017/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Poster Sessions&lt;/h3&gt;
-Papers that received high reviews (that is acceptable by reviewer standards) but were not accepted due to space limitation can be invited for the poster session. Poster should be not longer than 3 pages (included in the registration) plus 1 extra page (at extra charge), i.e. total 4 pages maximum. The poster session procedures and details will be posted on SAC 2017 website as soon as they become available.
+&lt;p&gt;Papers that received high reviews (that is acceptable by reviewer standards) but were not accepted due to space limitation can be invited for the poster session. Poster should be not longer than 3 pages (included in the registration) plus 1 extra page (at extra charge), i.e. total 4 pages maximum. The poster session procedures and details will be posted on SAC 2017 website as soon as they become available.&lt;/p&gt;
 &lt;h3&gt;Student research abstracts competition&lt;/h3&gt;
-Graduate students are invited to submit Student Research Competition (SRC) abstracts (maximum of 2 pages in ACM camera-ready format) following the instructions published at SAC 2017 website. Submission of the same abstract to multiple tracks is not allowed. All research abstract submissions will be reviewed by researchers and practitioners with expertise in the track focus area to which they are submitted. Authors of selected abstracts (up to 20 students) will have the opportunity to give poster and oral presentations of their work and compete for three top-winning places. The winners will receive medals, cash awards, and SIGAPP recognition certificates during the conference banquet. Invited students receive SRC travel support (US$500) and are eligible to apply to the SIGAPP Student Travel Award Program (STAP) for additional travel support.&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><category>conference</category><guid>https://simondobson.org/blog/2016/07/18/cfp-cas/</guid><pubDate>Mon, 18 Jul 2016 09:07:23 GMT</pubDate></item><item><title>Distinguished lecture on artificial life</title><link>https://simondobson.org/blog/2012/08/14/artificial-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Our most recent distinguished lecture was the best I've heard so far, and on a fascinating topic I'd like to know more about.&lt;/p&gt;
+&lt;p&gt;Graduate students are invited to submit Student Research Competition (SRC) abstracts (maximum of 2 pages in ACM camera-ready format) following the instructions published at SAC 2017 website. Submission of the same abstract to multiple tracks is not allowed. All research abstract submissions will be reviewed by researchers and practitioners with expertise in the track focus area to which they are submitted. Authors of selected abstracts (up to 20 students) will have the opportunity to give poster and oral presentations of their work and compete for three top-winning places. The winners will receive medals, cash awards, and SIGAPP recognition certificates during the conference banquet. Invited students receive SRC travel support (US$500) and are eligible to apply to the SIGAPP Student Travel Award Program (STAP) for additional travel support.&lt;/p&gt;&lt;/div&gt;</description><category>adaptive systems</category><category>Blog</category><category>cfp</category><category>conference</category><guid>https://simondobson.org/blog/2016/07/18/cfp-cas/</guid><pubDate>Mon, 18 Jul 2016 09:07:23 GMT</pubDate></item><item><title>Distinguished lecture on artificial life</title><link>https://simondobson.org/blog/2012/08/14/artificial-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Our most recent distinguished lecture was the best I've heard so far, and on a fascinating topic I'd like to know more about.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;We run two distinguished lectures each academic year, inviting an academic in to teach a four-hour course on some topic that often we don't really have expertise with in St Andrews. It exposes undergraduates, grad students and staff to new topics and ways of thinking about research. &lt;a href="http://www.cs.st-andrews.ac.uk/distinguished-lectures/archive" target="_blank"&gt;The series goes back to 1969&lt;/a&gt; and includes some of the best-known names in computer science.&lt;/p&gt;

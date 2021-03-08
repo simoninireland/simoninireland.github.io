@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2020/12/09/backporting-python-types/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../../goodreads/what-the-dormouse-said-how-the-sixties-counterculture-shaped-the-personal-computer-industry/" title="What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry" type="text/html">
 <link rel="next" href="../../../../goodreads/the-shanghai-free-taxi-journeys-with-the-hustlers-and-rebels-of-the-new-china/" title="The Shanghai Free Taxi: Journeys with the Hustlers and Rebels of the New China" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -184,7 +184,6 @@ can be attached to method declarations and object attributes:</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
 </code></pre>
 
-
 <p>Hopefully self-explanatory, and note that it doesn't need any special
 imports. If we were to extend things a little, for example to use
 lists or dicts, then we need some more machinery:</p>
@@ -206,7 +205,6 @@ lists or dicts, then we need some more machinery:</p>
         <span class="k">return</span> <span class="n">d</span>
 </code></pre>
 
-
 <p>Note that <code>List[]</code> and <code>Dict[]</code> are <em>type constructors</em> taking
 their element types in square brackets. A typechecker can now work out
 before execution that, for example <code>(b.asDict())[1]</code> is
@@ -219,7 +217,6 @@ The obvious approach is:</p>
         <span class="k">return</span> <span class="bp">self</span>
 </code></pre>
 
-
 <p>Surprisingly this will fail, as <code>C</code> isn't in scope in its own
 definition. This is such a natural thing, though, that it's going to
 be supported in future versions and, from Python 3.8, is available as
@@ -230,7 +227,6 @@ an import from the <code>__future__</code> module:</p>
     <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>    <span class="c1"># now typechecks</span>
         <span class="k">return</span> <span class="bp">self</span>
 </code></pre>
-
 
 <p>(Remember that <code>__future__</code> imports have to appear as the first code
 line of a source file.)</p>
@@ -253,7 +249,6 @@ discovered that there are three exceptions.</p>
     <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
 </code></pre>
 
-
 <p><code>Final[]</code> wasn't added to <code>typing</code> until Python 3.8, though, so
 running this code on Python 3.7 (for example) will fail. However,
 there's another module, <code>typing_extensions</code>, that backports many new
@@ -269,7 +264,6 @@ features which can be imported if needed:</p>
     <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
 </code></pre>
 
-
 <p>(The
 <a href="https://github.com/python/typing/blob/master/typing_extensions/README.rst">documentation</a>
 for <code>typing_extensions</code> specifies the types it provides. They're all
@@ -284,7 +278,6 @@ module. This requires using version annotations in those files. For
 versions for which it applied:</p>
 <pre class="code literal-block"><span></span><code><span class="n">typing_extensions</span><span class="p">;</span> <span class="n">python_version</span> <span class="o">&lt;=</span> <span class="s1">'3.7'</span>
 </code></pre>
-
 
 <p>For <code>setup.py</code> we similarly include it as an "extra" requirement,
 guarded by the version:</p>
@@ -302,7 +295,6 @@ guarded by the version:</p>
       <span class="n">extra_requires</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">':python_version &lt; 3.8'</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'typing_extensions'</span> <span class="p">]</span> <span class="p">},</span>
 <span class="p">)</span>
 </code></pre>
-
 
 <p>(All the <code>...</code>s are whatever you'd normally have in your setup
 script.)</p>
@@ -326,7 +318,6 @@ more general objects. So to annotate self types portably, replace the
         <span class="k">return</span> <span class="bp">self</span>
 </code></pre>
 
-
 <p>I find this very messy -- but again, if you want portability, it's a
 way round the problem that hopefully only appears in a few places
 within the code.</p>
@@ -337,7 +328,6 @@ fail with a syntax error when run on Python 3.5:</p>
 <pre class="code literal-block"><span></span><code><span class="k">class</span> <span class="nc">E</span><span class="p">:</span>
     <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my value'</span>
 </code></pre>
-
 
 <p>And as far as I can tell there's nothing to be done about this: the
 syntax simply isn't available. If you desperately need Python 3.5 then

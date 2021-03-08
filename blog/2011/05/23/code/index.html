@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2011/05/23/code/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../20/evolving/" title="Evolving programming languages" type="text/html">
 <link rel="next" href="../../27/smalltalk/" title="Mainstreaming Smalltalk" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -28,7 +28,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="og:url" content="https://simondobson.org/blog/2011/05/23/code/">
 <meta property="og:description" content="Coding is an under-rated skill, even for non-programmers.
 
-Computer science undergraduates spend a lot of time learning to program. While one can argue convincingly that computer science is about more">
+
+Computer science undergraduates spend a lot of time learning to program. While one can argue convincingly that computer science is about mor">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2011-05-23T08:00:59+01:00">
 <meta property="article:tag" content="Blog">
@@ -140,17 +141,17 @@ bg-dark
 <div id="heystaks_preview" style="width: 100%;height: 100%"></div>
 Coding is an under-rated skill, even for non-programmers.
 <!--more-->
+
 <p>Computer science undergraduates spend a lot of time learning to program. While one can argue convincingly that <a href="../../../../../2010/05/cs-book-worth-reading-twice/" target="_blank">computer science is about more than programming</a>, it's without doubt a central pillar of the craft: one can't reasonably claim to be a computer scientist without demonstrating a strong ability to work with code. (What this says about the many senior computer science academics who can no longer program effectively is another story.) The reason is that it helps one to think about process, and some of the best illustrations of that comes from teaching.</p>
 <p>Firstly, why is code important? One can argue that both programming languages and the discipline of code itself are two of the main contributions computer science has made to knowledge. (To this list I would add the fine structuring of big data and the improved understanding of human modes of interaction -- the former is about programming, the latter an area in which the programming structures are still very weak.) They're so important because they force an understanding of a process at its most basic level.</p>
 <p>When you write computer software you're effectively explaining a process to a computer in perfect detail. You often get a choice about the level of abstraction you choose. You can exploit the low-level details of the machine using assembler or C, or use the power of the machine to handle the low-level details and write in Haskell, Perl, or some other high-level language. But this doesn't alter the need to express precisely all that the machine needs to know to complete the task at hand.</p>
 <p>But that's not all. Most software is intended to be used by someone other than the programmer, and generally will be written or maintained in part by more than one person -- either directly as part of the programming team or indirectly through the use of third-party compilers and libraries. This implies that, as well as explaining a purpose to the computer, the code also has to explain a purpose to other programmers.</p>
-<p>So code, and programming languages more generally, are about <em>communication</em> -- from humans to machines, and to other humans. More importantly, code is the communication of process reduced to its  purest form: there is <em>no clearer way</em> to describe the way a process works than to read well-written, properly-abstracted code. I sometimes think (rather tenuously, I admit) this is an unexpected consequence of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Halting_problem" target="_blank">halting problem</a>, which essentially says that the simplest (and generally only) way to decide what a program does is to run it. The simplest way to understand a process is to express it as close to executable form as possible.
-</p>
+<p>So code, and programming languages more generally, are about <em>communication</em> -- from humans to machines, and to other humans. More importantly, code is the communication of process reduced to its  purest form: there is <em>no clearer way</em> to describe the way a process works than to read well-written, properly-abstracted code. I sometimes think (rather tenuously, I admit) this is an unexpected consequence of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Halting_problem" target="_blank">halting problem</a>, which essentially says that the simplest (and generally only) way to decide what a program does is to run it. The simplest way to understand a process is to express it as close to executable form as possible.</p>
 <blockquote>You think you know when you learn, are more sure when you can write,
 even more when you can teach, but certain only when you can program.
-<p>Alan Perlis</p>
-</blockquote>
-There are caveats here, of course, the most important of which is that the code be well-written and properly abstracted: it needs to separate-out the details so that there's a clear process description that calls into -- but is separate from -- the details of exactly what each stage of the process does. Code that doesn't do this, for whatever reason, obfuscates rather than explains. A good programming education will aim to impart this skill of separation of concerns, and moreover will do so in a way that's independent of the language being used.
+
+Alan Perlis</blockquote>
+<p>There are caveats here, of course, the most important of which is that the code be well-written and properly abstracted: it needs to separate-out the details so that there's a clear process description that calls into -- but is separate from -- the details of exactly what each stage of the process does. Code that doesn't do this, for whatever reason, obfuscates rather than explains. A good programming education will aim to impart this skill of separation of concerns, and moreover will do so in a way that's independent of the language being used.</p>
 <p>Once you adopt this perspective, certain things that are otherwise slightly confusing become clear. Why do programmers always find documentation so awful? Because the code is a clearer explanation of what's going on, because it's a fundamentally <em>better</em> description of process than natural language.</p>
 <p>This comes through clearly when marking student assessments and exams. When faced with a question of the form "explain this algorithm", some students try to explain it in words without reference to code, because they think explanation requires text. As indeed it does, but a better approach is to sketch the algorithm as code or pseudo-code and then explain with reference to that code -- because the code is the clearest description it's possible to have, and any explanation is just clearing up the details.</p>
 <p>Some of the other consequences of the discipline of programming are slightly more surprising. Every few years some computer science academic will look at the messy, unstructured, ill-defined rules that govern the processes of a university -- especially those around module choices and student assessment -- and decide that they will be immensely improved by being written in Haskell/Prolog/Perl/whatever. Often they'll actually go to the trouble of writing some or all of the rules in their code of choice, discover inconsistencies and ambiguities, and proclaim that the rules need to be re-written. It never works out, not least because the typical university administrator has not the slightest clue what's being proposed or why, but also because the process always highlights grey areas and boundary cases that can't be codified. This could be seen as a failure, but can also be regarded as a success: coding successfully distinguishes between those parts of an organisation that are structured and those parts that require human judgement, and by doing so makes clear the limits of individual intervention and authority in the processes.</p>

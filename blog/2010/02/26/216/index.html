@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2010/02/26/216/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="next" href="../../../03/05/things-that-wont-change/" title="Things that won't change" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
 <meta property="og:title" content="Programming with limited certainty">
@@ -138,7 +138,6 @@ bg-dark
 <p></p>
 <p>Sensor networks are all about uncertainty: if the sensor says it's 20°C  out there, then it might be 20°C plus-or-minus half a degree or so (limited precision); or it might be some different temperature, and the sensor's just reported a duff value for some reason (limited accuracy). By contrast, computers most definitely <em>aren't</em> about uncertainty, a fact enshrined in the famous maxim "garbage in, garbage out". What does this mean for our ability to build really large, robust and flexible sensor networks?</p>
 <!--more-->
-
 <p>All the really foundational models of computing -- λ calculus, Turing machines and the like -- pretty much reflect this notion that input is correct in some sense, and if it's wrong then that's an error to be corrected outside the computational system. That seems to mean that the computational system can't itself either tolerate or express the notions of limited certainty -- precision and accuracy -- that lie at the core of sensor networks (and a lot of other modern systems, or course). That suggests to me that there might be a problem at the heart of computer science as we currently formulate it: it isn't a realistic model of the world we're trying to compute over.</p>
 <p>In some ways this is nether surprising nor threatening. Any mathematical or computational model is only a simplified abstraction of the real world, for which we have to make often staggeringly bold simplifications if we're to get anywhere. We should however always be prepared to challenge the <em>validity</em> and <em>necessity</em> of these simplifications, and that's what I'd like to do here.</p>
 <p>As far as validity is concerned, the simplification is quite patently <em>invalid</em> when it comes to any system that operates with real-world data: some of it is <em>bound</em> to be "wrong" in some sense. This isn't the same as being tolerant of mistakes, such as when someone presses the delete key by mistake: that's a  action that certainly happened and to which the system responded correctly, albeit "wrongly" from the user's perspective. Interesting problem, but different: we're talking here about responding to inherently erroneous input -- the delete key seeming to press itself, if you like.</p>

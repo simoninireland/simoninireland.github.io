@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sensor networks)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sensor-networks.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Nov 2020 17:40:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Citizen sensing with Arduino</title><link>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Introducing some notes on low-power Arduino programming.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sensor networks)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sensor-networks.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Citizen sensing with Arduino</title><link>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Introducing some notes on low-power Arduino programming.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;In 2013 I did a summer project on using the &lt;a href="http://arduino.cc"&gt;Arduino&lt;/a&gt; as a platform for "citizen sensing". This rapidly became an exploration of how to create hardware and software that can do sensing while operating in a very low-power regime, such as one would need for an environmental sensor.&lt;/p&gt;
 &lt;p&gt;There were several results from this project -- one of which &lt;em&gt;wasn't&lt;/em&gt; an actual solution to the motivating problem I'd come up with. However, it did generate a lot of notes about low-power Arduino programming, both for hardware and software, and a software library that embodies some of them&lt;/p&gt;
 &lt;p&gt;I recently decommissioned the web site I was using to host this content, so I've ported it onto my main blog as a collection of &lt;a href="https://simondobson.org/development/citizen-sensing/"&gt;research and development notes&lt;/a&gt; in case it's still of interest to anyone.&lt;/p&gt;&lt;/div&gt;</description><category>arduino</category><category>hardware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2018/05/24/citizen-sensing-with-arduino/</guid><pubDate>Thu, 24 May 2018 12:26:34 GMT</pubDate></item><item><title>PhD position in proximal sensing available at UCD Dublin</title><link>https://simondobson.org/blog/2017/05/10/proximal-sensing-ucd/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;A PhD position is available at UCD, my old employer, int he area of location sensing.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h3&gt;Ph.D. Studentship Available&lt;/h3&gt;
 &lt;strong&gt;Proximal Sensing&lt;/strong&gt;
 &lt;strong&gt;University College Dublin, Ireland&lt;/strong&gt;
@@ -43,7 +42,9 @@ Email &lt;a class="moz-txt-link-abbreviated" href="mailto:chris.bleakley@ucd.ie"
     &lt;li&gt;Testing and simulation tools for sensor network middleware&lt;/li&gt;
     &lt;li&gt;Fault identification, diagnosis and repair&lt;/li&gt;
 &lt;/ul&gt;
-    &lt;li&gt;Middleware services:&lt;/li&gt;
+&lt;/ul&gt;&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Middleware services:&lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;ul&gt;
     &lt;li&gt;Location tracking, localization, and synchronization.&lt;/li&gt;
     &lt;li&gt;Support for real-time and safety-critical systems.&lt;/li&gt;
@@ -53,7 +54,9 @@ Email &lt;a class="moz-txt-link-abbreviated" href="mailto:chris.bleakley@ucd.ie"
     &lt;li&gt;Privacy and security services.&lt;/li&gt;
     &lt;li&gt;Virtualization, sharing and trading of resources.&lt;/li&gt;
 &lt;/ul&gt;
-    &lt;li&gt;Run-time Support:&lt;/li&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Run-time Support:&lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;ul&gt;
     &lt;li&gt;Overlay and topology creation, maintenance and management.&lt;/li&gt;
     &lt;li&gt;Resource/Service discovery and management.&lt;/li&gt;
@@ -61,7 +64,9 @@ Email &lt;a class="moz-txt-link-abbreviated" href="mailto:chris.bleakley@ucd.ie"
     &lt;li&gt;Effective naming and addressing schemes.&lt;/li&gt;
     &lt;li&gt;Support for modeling and enacting safe software reconfiguration.&lt;/li&gt;
 &lt;/ul&gt;
-    &lt;li&gt;Management and Experiences:&lt;/li&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;Management and Experiences:&lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;ul&gt;
     &lt;li&gt;Managing heterogeneity and network dynamism.&lt;/li&gt;
     &lt;li&gt;Integration of embedded systems with web services.&lt;/li&gt;
@@ -69,17 +74,18 @@ Email &lt;a class="moz-txt-link-abbreviated" href="mailto:chris.bleakley@ucd.ie"
     &lt;li&gt;Support for the unification of various embedded platforms.&lt;/li&gt;
     &lt;li&gt;Shared infrastructure embedded systems.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/ul&gt;
-Submitted papers must be original work in English without substantial overlap with papers that have been published or that are simultaneously submitted to a journal or conference with proceedings. Submissions must not exceed 6 pages, must strictly follow the ACM conference proceedings format, and must be submitted in PDF format.
-&lt;p&gt;All accepted papers will appear in the &lt;strong&gt;ACM Digital Library&lt;/strong&gt; and will be indexed in &lt;strong&gt; DBLP&lt;/strong&gt;.
-&lt;/p&gt;&lt;h3&gt;Important Dates:&lt;/h3&gt;
+&lt;p&gt;
+Submitted papers must be original work in English without substantial overlap with papers that have been published or that are simultaneously submitted to a journal or conference with proceedings. Submissions must not exceed 6 pages, must strictly follow the ACM conference proceedings format, and must be submitted in PDF format.&lt;/p&gt;
+&lt;p&gt;All accepted papers will appear in the &lt;strong&gt;ACM Digital Library&lt;/strong&gt; and will be indexed in &lt;strong&gt; DBLP&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3&gt;Important Dates:&lt;/h3&gt;
 &lt;ul&gt;
     &lt;li&gt;Paper Submission deadline: August 15, 2012&lt;/li&gt;
     &lt;li&gt;Acceptance notification: September 21, 2012&lt;/li&gt;
     &lt;li&gt;Author registration deadline: October 5, 2012&lt;/li&gt;
     &lt;li&gt;Camera-ready version due: October 5, 2012&lt;/li&gt;
     &lt;li&gt;Workshop: December 3-7, 2012&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>sensor networks</category><guid>https://simondobson.org/blog/2012/07/11/call-papers-midsens-2012/</guid><pubDate>Wed, 11 Jul 2012 12:00:26 GMT</pubDate></item><item><title>The middleware doughnut</title><link>https://simondobson.org/blog/2011/12/16/middleware-doughnut/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Where has the "middle" of middleware gone?&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>sensor networks</category><guid>https://simondobson.org/blog/2012/07/11/call-papers-midsens-2012/</guid><pubDate>Wed, 11 Jul 2012 12:00:26 GMT</pubDate></item><item><title>The middleware doughnut</title><link>https://simondobson.org/blog/2011/12/16/middleware-doughnut/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Where has the "middle" of middleware gone?&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;This week I attended a couple of the workshops at the &lt;a href="http://2011.middleware-conference.org/" target="_blank"&gt;Middleware conference&lt;/a&gt;, the main venue for the research community working on systems integration middleware. In particular I was an invited speaker at the &lt;a href="http://2011.middleware-conference.org/fome/fome2011" target="_blank"&gt;Future of Middleware (FoME) workshop&lt;/a&gt;, which attracted a great bunch of people with views on where the field is going.&lt;/p&gt;
@@ -138,7 +144,6 @@ By e-mail to Danny Hughes: danny.hughes  at  cs.kuleuven.be&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Start date&lt;/strong&gt;
 Between 2011-11-01 and 2012-31-04&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>jobs</category><category>sensor networks</category><guid>https://simondobson.org/blog/2011/11/07/phd-leuven/</guid><pubDate>Mon, 07 Nov 2011 11:39:02 GMT</pubDate></item><item><title>Research fellowship in sensor networks</title><link>https://simondobson.org/blog/2011/10/03/research-fellowship-sensor-networks/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We have a three-year postdoc available immediately to work on programming languages and platforms for sensor networks.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h3&gt;Research Fellow – CD1060&lt;/h3&gt;
 School of Computer Science,  £32,751 - £35,788 per annum. Start: As soon as possible, Fixed Term 3 years
 &lt;p&gt;We seek a  Research Fellow to design and implement an integrated software platform  based on mission specifications and evolution operators. The work will  be evaluated based on case study deployments in the context of  real-world large-scale WSANs.  You will specifically focus on generative programming techniques to  integrate the overall design, and will work with Professors Dearle and  Dobson.&lt;/p&gt;
@@ -162,13 +167,12 @@ School of Computer Science,  £32,751 - £35,788 per annum. Start: As soon as po
 &lt;p&gt;But I think a more pertinent observation is the holistic nature of this kind of pervasive computing system. You can't treat &lt;em&gt;any one element&lt;/em&gt; in isolation, as they all interact with each other. It's as though pervasive computing breaks the normal way we think of computing systems as being built from independent components. In pervasive computing the composition operators are non-linear: two independently-correct components or solutions do not always compose to form one that is also correct. This has major implications for design and analysis, as well as for engineering.&lt;/p&gt;
 &lt;p&gt;Thanks, mum!&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>pervasive systems</category><category>sensor networks</category><category>smart grid</category><guid>https://simondobson.org/blog/2011/09/09/smart-grids/</guid><pubDate>Fri, 09 Sep 2011 06:30:09 GMT</pubDate></item><item><title>Call for papers: MidSens'11</title><link>https://simondobson.org/blog/2011/06/06/cfp-midsens11/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Papers are invited on topics in middleware, tools and services  for sensor and other embedded systems.&lt;/p&gt;
 &lt;!--more--&gt;
-
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Sixth International Workshop on Middleware Tools, Services and  Run-time Support for Networked Embedded Systems (&lt;a href="http://www.midsens.org/index.html" target="_blank"&gt;MidSens’11&lt;/a&gt;)&lt;/h2&gt;
 &lt;h3&gt;Co-located with &lt;a href="http://2011.middleware-conference.org/"&gt;Middleware 2011&lt;/a&gt; (December 12th - December 16th, 2011), Lisbon, Portugal&lt;/h3&gt;
-The aim of MidSens’11 is to stimulate research in the  specific domain of middleware for networked embedded systems. This  year’s focus is on sensor networks and robotics control – a broader  focus than the previous editions – since we believe that the extended  scope will result in complementary and synergetic submissions from  researchers working in both niches. Along with the ‘core’ topic of  middleware architectures, services and tool support, MidSens’11 will  also seek quality papers describing novel programming languages,  run-time support and relevant experience reports. As with previous  editions of this workshop, MidSens’11 will investigate how middleware  support can relieve developers from low-level, platform specific  concerns, while enabling optimal exploitation of available resources. We  hope that you will be able to join us in Lisbon on December 12th 2011.
+&lt;p&gt;The aim of MidSens’11 is to stimulate research in the  specific domain of middleware for networked embedded systems. This  year’s focus is on sensor networks and robotics control – a broader  focus than the previous editions – since we believe that the extended  scope will result in complementary and synergetic submissions from  researchers working in both niches. Along with the ‘core’ topic of  middleware architectures, services and tool support, MidSens’11 will  also seek quality papers describing novel programming languages,  run-time support and relevant experience reports. As with previous  editions of this workshop, MidSens’11 will investigate how middleware  support can relieve developers from low-level, platform specific  concerns, while enabling optimal exploitation of available resources. We  hope that you will be able to join us in Lisbon on December 12th 2011.&lt;/p&gt;
 &lt;p&gt;Middleware for networked embedded systems such as sensor networks and  robotics is a critical research domain which addresses key challenges  that application developers are facing today. The five previous editions  of this workshop (&lt;a href="http://www.cs.kuleuven.ac.be/conference/MidSens2006/"&gt;MidSens'06&lt;/a&gt;, &lt;a href="http://www.cs.kuleuven.be/conference/MidSens2007/"&gt;MidSens'07&lt;/a&gt;, &lt;a href="http://www.comp.lancs.ac.uk/computing/midsens08/"&gt;MidSens'08&lt;/a&gt;, &lt;a href="http://distrinet.cs.kuleuven.be/events/midsens09/"&gt;MidSens'09&lt;/a&gt; and &lt;a href="http://www.midsens.org/2010/"&gt; MidSens'10&lt;/a&gt;)  attracted researchers from Europe, Asia, and the United States. The  MidSens workshop series has served to trigger and guide research efforts  to create an &lt;em&gt;integrated middleware vision&lt;/em&gt;, which is required to  handle the challenges inherent in developing, deploying and managing  complex networked embedded applications in an efficient way.&lt;/p&gt;
-&lt;p&gt;The workshop seeks papers in, but not limited to:
-&lt;/p&gt;&lt;ul&gt;
+&lt;p&gt;The workshop seeks papers in, but not limited to:&lt;/p&gt;
+&lt;ul&gt;
     &lt;li&gt;Middleware Tools and Architectures:
 &lt;ul&gt;
     &lt;li&gt; Architectures for networked embedded systems.&lt;/li&gt;
@@ -209,7 +213,7 @@ The aim of MidSens’11 is to stimulate research in the  specific domain of midd
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Submission&lt;/h3&gt;
-Submitted papers must be original work in English without substantial  overlap with papers that have been published or that are simultaneously  submitted to a journal or conference with proceedings. Submissions must  not exceed 6 pages, must strictly follow the ACM conference proceedings  format, and must be submitted in PDF format.  All workshop papers will  be uploaded to the ACM Digital Library. Full instructions can be found &lt;a href="http://www.midsens.org/2011/submission.html" target="_blank"&gt;here&lt;/a&gt;.
+&lt;p&gt;Submitted papers must be original work in English without substantial  overlap with papers that have been published or that are simultaneously  submitted to a journal or conference with proceedings. Submissions must  not exceed 6 pages, must strictly follow the ACM conference proceedings  format, and must be submitted in PDF format.  All workshop papers will  be uploaded to the ACM Digital Library. Full instructions can be found &lt;a href="http://www.midsens.org/2011/submission.html" target="_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Important dates&lt;/h3&gt;
 &lt;ul&gt;
     &lt;li&gt;Paper submission: 15 August 2011&lt;/li&gt;
@@ -238,4 +242,5 @@ Submitted papers must be original work in English without substantial  overlap w
     &lt;li&gt;Coen De Roover, Vrije Universiteit Brussel, Belgium&lt;/li&gt;
     &lt;li&gt;Romain Rouvoy, INRIA Lille, France&lt;/li&gt;
     &lt;li&gt;Jo Ueyama, Universidade de Sao Paulo, Brazil&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>middleware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2011/06/06/cfp-midsens11/</guid><pubDate>Mon, 06 Jun 2011 09:30:18 GMT</pubDate></item></channel></rss>
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Blog</category><category>cfp</category><category>conference</category><category>middleware</category><category>sensor networks</category><guid>https://simondobson.org/blog/2011/06/06/cfp-midsens11/</guid><pubDate>Mon, 06 Jun 2011 09:30:18 GMT</pubDate></item></channel></rss>

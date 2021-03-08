@@ -13,14 +13,14 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/2013/07/10/edge/">
-<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script><meta name="author" content="Simon Dobson">
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<meta name="author" content="Simon Dobson">
 <link rel="prev" href="../representing-samples/" title="Representing samples" type="text/html">
 <link rel="next" href="../../23/arduino-watchdog/" title="Understanding Arduino sleep modes: the watchdog timer" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
@@ -28,7 +28,8 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <meta property="og:url" content="https://simondobson.org/blog/2013/07/10/edge/">
 <meta property="og:description" content="Where does mathematics end and computer science begin?
 
-I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say,">
+
+I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-07-10T11:55:45+01:00">
 <meta property="article:tag" content="Blog">
@@ -140,6 +141,7 @@ bg-dark
 <p></p>
 <p style="text-align: left">Where does mathematics end and computer science begin?</p>
 <!--more-->
+
 <p>I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say, what separates it from maths? How do mathematicians and computer scientists see problems differently, and indeed select differently what constitutes an interesting problem?</p>
 <p>This has been on my mind recently because of some work I've been doing with my student <a href="http://saray.host.cs.st-andrews.ac.uk/" target="_blank">Saray</a> on adaptive complex networks. A complex network is one that has statistical regularity in the distribution of the wires, or links, between its nodes. The internet is a complex network where the links obey a power-law distribution: a small number of sites (Yahoo, Google, IBM, ...) have a huge number of links to them, while the majority (this site) have almost none. Complex networks are created naturally by lots of processes, and are useful for describing a whole range of phenomena. (An accessible introduction is Albert-László Barabási. <a href="http://www.amazon.co.uk/Linked-Everything-Connected-Business-Everyday/dp/0452284392" target="_blank">Linked: how everything is connected to everything else, and what it means for business and daily life</a>. 2003.) An <em>adaptive</em> complex network is one where the way the network is wired changes with time. A good example is a meeting-with-friends network where there is a link between you and those people you meet in a particular timeframe. You might change the people you meet if you discover that one of them is ill, for example, so the the friend-meeting network would be re-wired to remove links to your sick friends. If we were to model the spread of an illness through this network, there would be two processes at work: a spreading process that made people who met sick people ill themselves (with some probability); and a re-wiring process that tried to remove links to those friends known to be sick (again perhaps with some probability). Our paper (Saray Shai and Simon Dobson. <a href="http://dx.doi.org/10.1103/PhysRevE.87.042812" target="_blank">Complex adaptive coupled networks</a>. Physical Review E <strong>87</strong>(4). 2013.) shows how there are unsuspected subtleties in the way spreading processes work on such networks, where common simplifications can actually hide crucial features of the network's behaviour.</p>
 <p>The literature on network science is full of papers analysing such processes. Typically the analysis is both analytic and numerical. That is to say, a mathematical model is developed that describes the state of the network after lots of time has passed (its <em>equilibrium behaviour</em>); and numerical simulation is then performed by creating a large number of networks, running the spreading processes on them, and seeing whether the results obtained match the analytical model. (It was an unexpected mis-match between analytical and numerical results that led us to the main result reported in our paper.) Typically the community finds analytical results more interesting than numerical results, and with good reason: an analytic result provides both a final, closed-form solution that can be used to describe <em>any</em> network with particular statistical properties, without simulation; and it often also provides insight into <em>why</em> a given equilibrium behaviour occurs. These are the sorts of general statements that can lead to profound understanding of wide ranges of phenomena.</p>

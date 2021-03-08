@@ -15,14 +15,13 @@ og: http://ogp.me/ns# article: http://ogp.me/ns/article#
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://simondobson.org/blog/">
 <link rel="next" href="index-27.html" type="text/html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-10943215-1');
-</script>
+</script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -110,7 +109,75 @@ bg-dark
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2020/12/21/clustered-percolation/" class="u-url">Paper on clustered percolation accepted</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2021/02/23/ide-convergence/" class="u-url">IDE convergence</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="2021/02/23/ide-convergence/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-02-23T12:21:05Z" itemprop="datePublished" title="2021-02-23 12:21">2021-02-23 12:21</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I recently tried out a new development environment for my Python
+development, and noticed an unexpected convergence in the designs of
+the two tools.</p>
+<!-- TASTER_END -->
+
+<p>I've been a long-time <a href="https://emacs.org">Emacs</a> user. I periodically
+get a desire to try something new, something less old-school, just to
+see whether there are advantages. There always <em>are</em> advantages, of
+course -- but often significant disadvantages as well, which often
+keep me coming back to my comfort zone.</p>
+<p>My most recent excursion was to try Microsoft's <a href="https://code.visualstudio.com/">VS
+Code</a>.</p>
+<p><img alt="Microsoft VS Code" src="../images/posts/20210223-vscode.png"></p>
+<p>This is handily cross-platform, being built in Javascript on top of
+<a href="https://www.electronjs.org/">Electron</a>. It's got a lot of nice
+features: a tree view of the project in the left-hand pane, syntax
+colouring, code style linting, integrated debugging and unit test
+running, integrated connection to git, and so on. Looking a little
+closer there are all sorts of status markers around the code and in
+the ribbons at the bottom of panes and the window overall to show
+status that might be important.</p>
+<p>But it's so <em>slow</em>. That's a feature of VS Code, not of Electron (as I
+first suspected), because other Electron-based editors like
+<a href="https://atom.io/">Atom</a> aren't as slow. And my development box isn't
+the latest, but it also isn't <em>that</em> old.</p>
+<p>So I reverted to Emacs, but upgraded it a little to more modern
+standards. Specifically, I installed the
+<a href="https://elpy.readthedocs.io/en/latest/index.html">elpy</a> Python IDE,
+with assorted other packages suggested by various sites. The result is
+this:</p>
+<p><img alt="Emacs with elpy" src="../images/posts/20210223-emacs.png"></p>
+<p>Now for anyone who's used Emacs for a while, it's definitely still
+Emacs -- not least with the convoluted keystrokes and infinite
+customisation you either love or hate. But it's striking how similar
+the two IDEs now are, and striking how VS Code has inherited some
+ideas from Emacs: resizeable panes, modelines in the ribbon, markers
+in pane gutters, and so forth -- things that Emacs-based applications
+have had for years, which have now migrated into "the mainstream".
+Both the feature sets and the visuals of the two systems are very
+similar indeed. Both are entirely cross-platform and extensible. For
+VS Code you write extensions in Javascript; for Emacs you write them
+in Lisp; and that's about it. And Emacs is a <em>lot</em> faster on my
+set-up. There are some limitations -- I've yet to get the hang of
+using <code>pdb</code> as a debugger, for example, especially for modules
+and from within tests -- but the functionality is really quite comparable.</p>
+<p>I think it's safe to say there's been cross-fertilisation between VS
+Code (and other IDEs) and Emacs over the years. A lot of the
+developers of the former quite possibly used the latter. But I
+strongly suspect that most of the traffic has gone <em>from</em> Emacs <em>to</em>
+the other systems: the similarities are just too great to be
+accidental. It's interesting to think that a system that emerged at
+the dawn of the free-software movement has had -- and is still having
+-- such an influence on modern development tools. And I'm happily back
+in my comfort zone.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2020/12/21/clustered-percolation/" class="u-url">Paper on clustered percolation accepted</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
@@ -134,7 +201,9 @@ was accepted into <em>Physical Review E</em>.</p>
             </span></p>
             <p class="dateline">
             <a href="2020/12/19/ima-talk/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-12-19T09:10:00Z" itemprop="datePublished" title="2020-12-19 09:10">2020-12-19 09:10</time></a>
+            <time class="published dt-published" datetime="2020-12-19T09:10:00Z" itemprop="datePublished" title="2020-12-19 09:10">2020-12-19 09:10</time><span class="updated"> (updated
+                    <time class="dt-updated" datetime="2020-12-19T14:07:18Z" itemprop="dateUpdated" title="2020-12-19 14:07">2020-12-19 14:07</time>)</span>
+            </a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
@@ -308,38 +377,6 @@ in a more serious way than I've done in the past -- and promptly
 started getting horrendously lost in the process.</p>
 <p class="more"><a href="2020/11/27/where-am-i/">Read more…</a></p>
 </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-seventh-sense-power-fortune-and-survival-in-the-age-of-networks/" class="u-url">The Seventh Sense: Power, Fortune, and Survival in the Age of Networks</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/the-seventh-sense-power-fortune-and-survival-in-the-age-of-networks/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-11-23T00:00:00-08:00" itemprop="datePublished" title="2020-11-23 00:00">2020-11-23 00:00</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463563103l/26245038._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Joshua Cooper Ramo</h2>
-				   2016
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		It was all going so well. A book about how networks change the relationships between objects, processes, and people, to the extent that we have to regard a connected object as a fundamentally different beast to its unconnected counterpart. It's easy to see this for, for example, books, where an e-book has access to hyperlinks, can be networked with other readers, and so forth. It's also easy to see for connected houses or utilities, exposed to new security threats by virtue of being networked. And it's easy to see for companies, where network effects rapidly produce winner-takes-all situations simply because increased participation increases the benefits of further participation. The "seventh sense", although not really ever got to grips with, is the ability to perceive these effects and adapt strategy to them.<br><br>But then the argument falls apart. The solution to this networked issue: the US must create the best networks, attracting others to use them but not shrinking from pre-emptively attacking – both by cyber and physical means – any other country who disagrees with the premises established from the start (or changed over time) for use of those networks. Networks must have hard gates to keep out the undesirables. Disconnect from other networks to avoid being caught in a web to others' advantage. The owner makes the rules.<br><br>Does this sound like a familiar line of politics? – maybe it wouldn't have done in 2016, but now it's all too familiar. There's no real discussion about how networks emerge other than by the force of specific developments and goals, which clearly isn't the case for natural systems and isn't really so for a lot of human-centred ones. So this isn't a book that works for me: it doesn't get to the heart of what networked systems could do for society. But a useful addition nonetheless.
-		</p>
-<p>
-		   Finished on Mon, 23 Nov 2020 00:00:00 -0800.  
-		Rating 2*/5*.
-	</p>
-</div>
-   </div>
     </div>
     </article>
 </div>

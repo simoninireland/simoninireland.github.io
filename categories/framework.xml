@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about framework)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/framework.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Nov 2020 17:17:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Some improvements to SleepySketch</title><link>https://simondobson.org/blog/2013/07/26/improvements/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about framework)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/framework.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 08 Mar 2021 08:30:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Some improvements to SleepySketch</title><link>https://simondobson.org/blog/2013/07/26/improvements/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.&lt;/p&gt;
@@ -11,7 +11,7 @@ be re-scheduled after the first has run. We can do this within the
 definition of the actor, for example using the &lt;code&gt;post()&lt;/code&gt;
 action:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="nl"&gt;PeriodicActor&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+   &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;post&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
    &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;behaviour&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -22,13 +22,11 @@ action:&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-
 &lt;p&gt;(This also demonstrates the &lt;code&gt;expandTime()&lt;/code&gt; function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use &lt;code&gt;PeriodicActor&lt;/code&gt; on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for &lt;em&gt;every&lt;/em&gt; actor that wants to run repeatedly.&lt;/p&gt;
 &lt;p&gt;A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Actor&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;RepeatingActor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;The &lt;code&gt;RepeatingActor&lt;/code&gt; runs the behaviour of
 &lt;code&gt;SomeActor&lt;/code&gt; every 5 hours, and we initially schedule it to
@@ -36,7 +34,6 @@ run in 5 hours. We can actually encapsulate all of this by adding a
 method to &lt;code&gt;SleepySketch&lt;/code&gt; itself:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scheduleEvery&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;SomeActor&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;expandTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;to perform the wrapping and initial scheduling automatically.&lt;/p&gt;
 &lt;p&gt;Simple sleepy sketches can now be created at set-up, by scheduling
@@ -66,7 +63,6 @@ do the following:&lt;/p&gt;
    &lt;span class="n"&gt;Sleepy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-
 
 &lt;p&gt;The &lt;code&gt;setup()&lt;/code&gt; code initialises the serial port and the sleepy sketch using a &lt;code&gt;HeavySleeper&lt;/code&gt;, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If the &lt;code&gt;PingActor&lt;/code&gt; instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.&lt;/p&gt;
 &lt;p&gt;This is a first design, now just about working. It's still not as easy
