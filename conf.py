@@ -95,12 +95,14 @@ POSTS = (
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
     ("posts/*.ipynb", "blog", "post.tmpl"),
+    ("posts/*.org", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.org", "", "page.tmpl"),
 )
 
 # Galleries
@@ -120,13 +122,9 @@ TWITTER_CARD = {
 # Plugin bib
 BIBFILE = 'files/sd.bib'
 
-# Font Awsome icons (for social media links)
-EXTRA_HEAD_DATA += '''
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-'''
-
 # Google Analytics tracker
 EXTRA_HEAD_DATA += '''
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -135,6 +133,11 @@ EXTRA_HEAD_DATA += '''
 
   gtag('config', 'UA-10943215-1');
 </script>
+'''
+
+# Font Awsome icons (for social media links)
+EXTRA_HEAD_DATA += '''
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 '''
 
 # Licence in footer
@@ -274,6 +277,9 @@ COMPILERS = {
     # but is disabled by default as it would conflict
     # with many of the others.
     # "pandoc": ('.rst', '.md', '.txt'),
+
+    # org mode plugin
+    "orgmode": ('.org'),
 }
 
 # Enable reST directives that insert the contents of external files such
@@ -1150,7 +1156,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # <input type="text" name="q" class="form-control" placeholder="Search">
 # </div>
 # <button type="submit" class="btn btn-primary">
-# 	<span class="glyphicon glyphicon-search"></span>
+#       <span class="glyphicon glyphicon-search"></span>
 # </button>
 # <input type="hidden" name="sitesearch" value="%s">
 # </form>
@@ -1318,5 +1324,3 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
-
-

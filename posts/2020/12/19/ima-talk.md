@@ -2,7 +2,8 @@
 .. title: A talk on "Exploring epidemic spreading using network models"
 .. slug: ima-talk
 .. date: 2020-12-19 09:10:00 UTC
-.. tags: news, talk, complex networks
+.. updated: 2020-12-19 14:07:18 UTC
+.. tags: news, talk, complex networks, epidemic spreading, epydemic
 .. category: research
 .. previewimage: /images/posts/20201219-waterfall.png
 .. link: 
@@ -14,6 +15,9 @@ I gave a talk by Zoom to the [Institute of Mathematics and its Applications](htt
 arising from my epidemic modelling [book](/writing/em-book/).
 
 <!-- TEASER_END -->
+
+UPDATED 2020-12-29: You can now find a video of the talk on the
+[IMA's YouTube channel](https://www.youtube.com/watch?v=apR_qD2tOkU).
 
 It was a great opportunity to create a general-audience talk from the
 work I did during the first lockdown, including some of the maths of
