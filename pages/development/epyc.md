@@ -2,12 +2,17 @@
 .. title: epyc
 .. slug: epyc
 .. date: 2020-06-17 16:23:09 UTC+01:00
+.. updated: 2021-03-17 09:32:08 GMT
 .. tags: python, computational science
 .. category: development
 .. link: https://github.com/simoninireland/epyc
-.. description: 
+.. description:
 .. type: text
 -->
+
+[![PyPy project badge](https://badge.fury.io/py/epyc.svg)](https://pypi.org/project/epyc/)
+[![API documentation badge](https://readthedocs.org/projects/epyc/badge/?version=latest)](https://epyc.readthedocs.io/en/latest/index.html)
+![Test status badge](https://github.com/simoninireland/epyc/actions/workflows/ci.yaml/badge.svg)
 
 `epyc` is a library to manage large sets of computational experiments.
 
@@ -27,10 +32,9 @@ one.
 `epyc` is being used to manage experiments within my complex networks
 blog/book, but it can manage any kind of experiment written in Python,
 and can run experiments in parallel using an
-[IPython](https://ipython.org) cluster.
+[IPython](https://ipython.org) cluster, or locally taking advantage of
+a multicore workstation.
 
 [Repository on Github](https://github.com/simoninireland/epyc) <br>
 [Install from PyPi](https://pypi.python.org/project/epyc) <br>
 [Read the API documentation](https://epyc.readthedocs.io/en/latest/)
-
- 

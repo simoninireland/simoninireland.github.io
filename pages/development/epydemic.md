@@ -2,12 +2,17 @@
 .. title: epydemic
 .. slug: epydemic
 .. date: 2020-06-17 16:31:46 UTC+01:00
+.. updated: 2021-03-17 09:32:35 GMT
 .. tags: python, computation science, network science, epidemic spreading, simulation
 .. category: development
 .. link: https://github.com/simoninireland/epydemic
-.. description: 
+.. description:
 .. type: text
 -->
+
+[![PyPy project badge](https://badge.fury.io/py/epydemic.svg)](https://pypi.org/project/epydemic)
+[![API documentation badge](https://readthedocs.org/projects/pyepydemic/badge/?version=latest)](https://pyepydemic.readthedocs.io/en/latest/index.html)
+![Test status badge](https://github.com/simoninireland/epydemic/actions/workflows/ci.yaml/badge.svg)
 
 `epydemic` is a library for simulating epidemic processes over
 networks.

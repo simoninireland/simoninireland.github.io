@@ -31,7 +31,7 @@ env: $(VENV)
 
 $(VENV):
 	$(PYTHON) -m venv $(VENV)
-	$(ACTIVATE) && $(PIP) install wheel && $(PIP) install -r $(REQUIREMENTS)
+	$(ACTIVATE) && $(PIP) install -U pip wheel && $(PIP) install -r $(REQUIREMENTS)
 
 # Clean up the build, to force a complete re-build
 clean:
