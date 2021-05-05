@@ -8,6 +8,5 @@ PluginCategory = Shortcode
 [Documentation]
 author = Simon Dobson
 version = 0.1
-website = http://www.simondobson.org
+website = https://simondobson.org
 description = Shortcodes for BibTeX integration
-

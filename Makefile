@@ -10,6 +10,8 @@ VENV = venv3
 REQUIREMENTS = requirements.txt
 BUILD_DIR = output
 
+IMPORTED = imported.txt
+
 # New post
 post:
 	$(ACTIVATE) && $(NIKOLA) new_post -d -f markdown
@@ -18,13 +20,14 @@ post:
 live:
 	$(ACTIVATE) && $(NIKOLA) auto
 
-# Upload to github remote 
+# Upload to github remote
 upload:
 	$(ACTIVATE) && $(NIKOLA) github_deploy
 
 # Run the continuous import job to refresh from other sites
 import: env
 	$(ACTIVATE) && $(NIKOLA) continuous_import
+	echo `date` >$(IMPORTED)
 
 # Build the environment
 env: $(VENV)

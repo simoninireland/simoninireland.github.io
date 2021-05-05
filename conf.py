@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
+import os
 
 BLOG_AUTHOR = "Simon Dobson"  # (translatable)
 BLOG_TITLE = "Simon Dobson"  # (translatable)
@@ -95,14 +96,12 @@ POSTS = (
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
     ("posts/*.ipynb", "blog", "post.tmpl"),
-    ("posts/*.org", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
-    ("pages/*.org", "", "page.tmpl"),
 )
 
 # Galleries
@@ -183,22 +182,54 @@ MathJax.Hub.Config({
 """
 
 # Feeds for continuous import
+since = '1 Jan 1970'
+if os.path.isfile('imported.txt'):
+    # only import entries from last timestamp, if present
+    with open('imported.txt', 'r') as f:
+        since = f.read()
+
 FEEDS = {
     'goodreads': {
-        'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
+	'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
+        #'url': ['https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=1',
+        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=2',
+        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=3',
+        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=4',
+        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=5',
+        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=6',
+        #        ],
         'output_folder': 'posts/goodreads',
         'template': 'goodreads.tmpl',
         'format': 'html',
         'lang': 'en',
         'category': 'writing',
         'tags': 'books, reviews, goodreads',
+        'start_at': since,
         'metadata': {
             'title': 'title',
             'previewimage': 'book_medium_image_url',
-            'date': [ 'user_read_at', 'user_date_added', 'published' ]
+            'date': ['user_read_at', 'user_date_added', 'published'],
+            'tags': ['user_shelves'],
             }
         }
     }
+
+# Tag cloud
+RENDER_STATIC_TAG_CLOUDS = {
+    'tags': {
+        'name': 'tcs',
+        'filename': 'tagcloud.inc.html',
+        'taxonomy_type': 'tag',
+        'style_filename': 'assets/css/tagcloud.inc.css',
+        'max_number_of_levels': 10,
+        'max_tags': -1,
+        'colors': ((0.6,0.6,0.6), (1.0,1.0,1.0)),
+        'background_colors': ((0.1, 0.1, 0.1), ),
+        'border_colors': ((0.4, 0.4, 0.4), ),
+        'font_sizes': (8, 35),
+        'round_factor': 0.3,
+    }
+}
 
 # Below this point, everything is optional
 
@@ -277,9 +308,6 @@ COMPILERS = {
     # but is disabled by default as it would conflict
     # with many of the others.
     # "pandoc": ('.rst', '.md', '.txt'),
-
-    # org mode plugin
-    "orgmode": ('.org'),
 }
 
 # Enable reST directives that insert the contents of external files such

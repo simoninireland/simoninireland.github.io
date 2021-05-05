@@ -1,4 +1,5 @@
 {#  -*- coding: utf-8 -*- #}
+
 {% block content %}
    <div>
 	<div>
@@ -23,7 +24,7 @@
 		{% elif item.published %}
 		   Finished on {{ item.published|e }}. &nbsp;
 		{% endif %}
-		Rating {{ item.user_rating }}*/5*.
+		Rating {{ item.user_rating }}/5.
 	</div>
    </div>
 {% endblock %}

@@ -53,12 +53,17 @@ class CommandContinuousImport(Command):
         """Import and merge feeds into your blog."""
         for name, feed in self.site.config['FEEDS'].items():
             LOGGER.info('Processing {}'.format(name))
-            items = self.fetch(feed)['entries']
-            for item in items:
-                self.generate(item, feed)
+            urls = feed['url']
+            if isinstance(urls, str):
+                urls = [urls]
+            for url in urls:
+                print(url)
+                items = self.fetch(url)['entries']
+                for item in items:
+                    self.generate(item, feed)
 
-    def fetch(self, feed):
-        url = feed['url']
+    def fetch(self, url):
+        #url = feed['url']
         parsed = feedparser.parse(url)
         return parsed
 
@@ -95,6 +100,8 @@ class CommandContinuousImport(Command):
 
         if 'tags' not in metadata:
             metadata['tags'] = feed['tags']
+        else:
+            metadata['tags'] += ', ' + feed['tags']
 
         if dateutil.parser.parse(metadata['date'], ignoretz=True) < start_at:
             # skip old post
