@@ -110,183 +110,173 @@ bg-dark
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/good-strategybad-strategy-the-difference-and-why-it-matters/" class="u-url">Good Strategy/Bad Strategy: The difference and why it matters</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/21/parts-arrive/" class="u-url">The parts arrive</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
             </span></p>
             <p class="dateline">
-            <a href="goodreads/good-strategybad-strategy-the-difference-and-why-it-matters/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-10-12T05:57:35-07:00" itemprop="datePublished" title="2019-10-12 05:57">2019-10-12 05:57</time></a>
+            <a href="2013/06/21/parts-arrive/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-06-21T10:00:32+01:00" itemprop="datePublished" title="2013-06-21 10:00">2013-06-21 10:00</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p></p>
+<p>The parts have arrived for the ditch project.</p>
+<!--more-->
+
+<p>The first tranche of hardware came (in a small box) today:</p>
+<p><img alt="Enough parts for four sensors and a base station" src="../images/citizen-sensing//2013-06-19-14.14.06.jpg"></p>
+<p>There are parts here for four sensor packages and a base station. The sensor nodes have an Arduino, a 2mW XBee radio, and a digital temperature sensor. The base station has an XBee and a wired ethernet for connecting up to the internet. There are also some prototyping shields to simplify integration, a wall wart power supply for the base station, and some other goodies to support some other development.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/20/parts-list/" class="u-url">Sensor mote initial parts list</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="2013/06/20/parts-list/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-06-20T14:05:29+01:00" itemprop="datePublished" title="2013-06-20 14:05">2013-06-20 14:05</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p></p>
+<p>The initial design for a sensor mote puts three temperature sensors together with an Arduino and short-range radio module.</p>
+<!--more-->
+
+<p>The following is the parts list for a single sensor mote:
+</p>
+<ul>
+<li>Arduino Uno -- £18.50</li>
+    <li>Arduino XBee shield -- £12.10</li>
+    <li>Arduino Series 2 2mW XBee radio module -- £17.50</li>
+    <li>Arduino prototype shield -- £10.40</li>
+    <li>Mini-breadboard -- £2.00</li>
+    <li>3 x DS18B20 one-wire digital temperature sensor -- £11.70</li>
+    <li>Battery holder -- £1.20</li>
+    <li>Enclosure (waterproof, resealable food box) -- £3.50</li>
+</ul>
+A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistors.
+<p>[UPDATED 11Jul2013: added cost of enclosure]</p>
+<p></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/19/ditch-motivation/" class="u-url">The ditch project: a motivation</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="2013/06/19/ditch-motivation/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-06-19T21:02:20+01:00" itemprop="datePublished" title="2013-06-19 21:02">2013-06-19 21:02</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p></p>
+<p>Citizen Sensing's first project is to perform environmental monitoring on a small scale with minimally-specification hardware.</p>
+<!--more-->
+
+<p><img alt="Orchids, Co Sligo" src="../images/citizen-sensing/120720-0143-web.png"></p>
+<p>We have three sets of goals from this project. Firstly, we want a realistic scientific project that's simple enough to accomplish over a summer. Secondly, we want to gain some experience with technologies in the field, what works and what doesn't at this level of sophistication. Finally, we want to develop an initial software platform that can support further experimentation. To deal with these in order:</p>
+<p>The science will be very simple. Some areas have climates that vary over very short distances, and these variations can affect the flora and fauna that live there. In particular, areas like depressions and ditches often have different temperature profiles than the surrounding areas, with less variation in temperature, that may suit some species. While this is clear in general, the specifics often aren't well-understood, so it's a worthwhile scientific exercise to measure temperature variation around a small area. Specifically, we'll seek to measure temperature variation around a ditch we have access to, in County Sligo in the West of Ireland.</p>
+<p>The technology will be off-the-shelf hardware, using Arduinos for processing and XBee radios for communications. These are extremely cheap commodity items that haven't really been used for experimental environmental science, and it's by no means clear that they're appropriate for building a long-lived, robust sensor network.</p>
+<p>The main software challenges include working the hardware and -- more significantly -- managing the very limited power budget one gets with standard batteries and hardware. In building the software, we're aiming for a re-usable platform that can be packaged in a form so that the experiment can be reproduced or used as the basis or other experiments by other groups of scientists.</p>
+<p>Is this a worthwhile project? From a scientific point of view its clearly questionable, but that's not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and uncertain.</p>
+<p>The <a href="../tag/ditch/">blog</a> for the project will let you follow all the gory details.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/01/actor-systems/" class="u-url">Actor systems</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="2013/06/01/actor-systems/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-06-01T19:29:28+01:00" itemprop="datePublished" title="2013-06-01 19:29">2013-06-01 19:29</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p></p>
+<p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.</p>
+<p>The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.</p>
+<p>The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)</p>
+<p>The complexity of the system is clearly going to come from how the behaviours are selected an scheduled. The model says very little about scheduling, leaving the implementation to decide when to process messages (by running the behaviour of the associated actor). A single-threaded implementation might repeatedly select a mailbox at random, check whether it contained messages and, if so, process one. A multi-threaded implementation could have one thread per mailbox running behaviours as messages arrive. There are plenty of other possibilities in between: the point is that an actor program doesn't <em>control</em> the concurrency, it simply <em>induces</em> it by the way it creates actors and sends messages.</p>
+<p>A system without unbounded loops can't express general computation, but actor systems do allow unbounded computation: they simply force the programmer to create it using communicating actors. An actor wanting to loop forever could, for example, receive a message, perform some processing, send another message to itself (its own mailbox), and then nominate itself as its own replacement behaviour, which would then receive the self-sent message, and so forth.</p>
+<p>If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a></p>
+<p>It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.</p>
+<p></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/01/sample-post-title/" class="u-url">Sample post title</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="2013/06/01/sample-post-title/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-06-01T18:32:49+01:00" itemprop="datePublished" title="2013-06-01 18:32">2013-06-01 18:32</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p></p>
+<p>This is a sample post created by Thank Me Later.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/their-darkest-hour/" class="u-url">Their Darkest Hour</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Simon Dobson
+            </span></p>
+            <p class="dateline">
+            <a href="goodreads/their-darkest-hour/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-25T00:00:00-07:00" itemprop="datePublished" title="2013-05-25 00:00">2013-05-25 00:00</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
 	<div>
 		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511601013l/36658033._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Richard P. Rumelt</h2>
-				   2011
+			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1189634472l/1877654._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+				<h2>Laurence Rees</h2>
+				   2007
 				<p>
 				</p>
 <hr>
 </div>
 		</div>
 		<p>
-		Definitely a classic text on the subject, and coming from a slightly broader angle than many other approaches. In common with other authors, Rumelt bases his strategy around identifying the challenges being faced; in contrast, instead of then moving straight into the realm of actions, he considers the values at work so that any actions are consonant with them. But perhaps the most revealing facet of this book is the coverage it gives to <i>bad</i> strategy, the confusions that arise when one mistakes a mission statement (or indeed a set of values) for a strategy, where the former are not executable and not targeted at any particular challenge. Should be required reading for anyone in a leadership role.
+		It's hard to mark a book like this as four stars, since it's a harrowing rather than a purely enjoyable read. Nevertheless, it's a phenomenal work that really complements the author's other accompishments. It's a series of interviews with people involved in various aspects of World War 2, including both victims an victimisers, and tries to get them to open up about their experiences and motivations. Some of the people appear in Rees' other books, notably "Auschwitz, the Nazis, and the Final Solution," and one can read these extended interviews in the wider context of their experiences. Rees doesn't shirkthe dificult questions but also doesn't give in to facile equivalences either: ha asks whether the Allies' bombing of civilians and the Nazis' destruction of the Jews are in any way equivalent, and manages to nail the key differences without naively exculpating the Allied pilots. <br><br>The characters introduced include a SMERSH interrogator, a concentration camp guard, a man forced to work as a human minesweeper, a cannibal, an actress in propaganda films, and a woman nearly killed by her own mother in the aftermath of the Red Army's sweep through East Prussia. Taken together they offer a balanced portrait of people tested to the limit by their circumstances, bringing out the best and worst in themselves.
 		</p>
 <p>
-		   Finished on Sat, 12 Oct 2019 05:57:35 -0700.  
-		Rating 4*/5*.
+		   Finished on Sat, 25 May 2013 00:00:00 -0700.  
+		Rating 4/5.
 	</p>
 </div>
    </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/riddle-and-the-knight/" class="u-url">Riddle And The Knight</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/insanely-great-the-life-and-times-of-macintosh-the-computer-that-changed-everything/" class="u-url">Insanely Great: The Life and Times of Macintosh, the Computer that Changed Everything</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
             </span></p>
             <p class="dateline">
-            <a href="goodreads/riddle-and-the-knight/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-08-20T11:05:47-07:00" itemprop="datePublished" title="2019-08-20 11:05">2019-08-20 11:05</time></a>
+            <a href="goodreads/insanely-great-the-life-and-times-of-macintosh-the-computer-that-changed-everything/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-24T12:59:12-07:00" itemprop="datePublished" title="2013-05-24 12:59">2013-05-24 12:59</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
 	<div>
 		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1172522623l/184377.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Giles Milton</h2>
-				   1996
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		It's surprising to read a book that goes into the detailed history of a book that I haven't read, but not to worry...<br><br><i>The Travels of Sir John Mandeville</i> is a mediaeval travelogue unlike any other. It starts off well enough, as a guide-cum-memoir of a trip to the Holy Land in the mid 14th century. But then it continues, with the protagonist travelling to India, Java, China, and beyond, meeting and describing – in the same reasonable voice as previously – a range of people and creatures straight out of a mediaeval bestiary. The question has always been: what's going on? Is the whole thing a fraud? An elaborate satire? A prank? That these questions exist for what was, at one time, the single most-read book in the English language is a huge challenge.<br><br>Milton doesn't exactly nail the solution: that's probably impossible after all this time. But he does do some heroic research both in the archive and in the real world. In the former, he traces many of the original sources from which Mandeville (if indeed this is the author: even his identity is disputed and mysterious) derived some of his stories, and shows how he elaborated them far beyond what any mere copyist would do. In the latter he find confirmation for elements in the <i>Travels</i> that have been perplexing, including (for example) verifying that Mandeville's descriptions of certain statues in Constantinople, while now wrong, were correct for the dates he claimed to be there. Some of the most dramatic scenes occur in St Catherine's monastery in Sinai, difficult to reach even now, where Milton searches through Crusader graffiti looking for a Mandeville coat of arms, as well as viewing manuscripts that have remained untouched for over a thousand years.<br><br>Altogether this is literary history of the highest order. While it remains tantalisingly un-definitive, it adds extra layers to the reading of the <i>Travels</i>, which is at the top of my holiday reading list.
-		</p>
-<p>
-		   Finished on Tue, 20 Aug 2019 11:05:47 -0700.  
-		Rating 5*/5*.
-	</p>
-</div>
-   </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/prisoners-of-geography-ten-maps-that-tell-you-everything-you-need-to-know-about-global-politics/" class="u-url">Prisoners of Geography: Ten Maps That Tell You Everything You Need to Know About Global Politics</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/prisoners-of-geography-ten-maps-that-tell-you-everything-you-need-to-know-about-global-politics/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-08-05T08:34:00-07:00" itemprop="datePublished" title="2019-08-05 08:34">2019-08-05 08:34</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432827094l/25135194._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Tim Marshall</h2>
-				   2015
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		A concise discussion of geopolitics, by someone in a position to understand. Marshall brings years of political commentary to bear on how governments see, and respond, to geography – both their own and those of their potential rivals.<br><br>It's purely about the effects of geography on States' behaviours, which sometimes lends the book an almost nineteenth-century feel. There's no discussion of the possibly conflicting attitudes of large national and multinational companies, whose activities might be difficult for governments to steer. I suspect Marshall views States as still to dominant actors without actually saying such – and he may well be right, in the sense that the credible threat of force can trump other approaches. The arguments are quite compelling, and show how the forces that affect grand strategy haven't fundamentally changed since the days of the Great Game and earlier.
-		</p>
-<p>
-		   Finished on Mon, 05 Aug 2019 08:34:00 -0700.  
-		Rating 4*/5*.
-	</p>
-</div>
-   </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/lotharingia-a-personal-history-of-europes-lost-country/" class="u-url">Lotharingia: A Personal History of Europe's Lost Country</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/lotharingia-a-personal-history-of-europes-lost-country/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-26T05:04:28-07:00" itemprop="datePublished" title="2019-07-26 05:04">2019-07-26 05:04</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543938176l/43124523._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Simon Winder</h2>
-				   2019
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		Lotharingia, the part of Europe lying between what are now the agreed cores of France and Germany, the part of the continent that doesn't readily fit into the national character of either country. This is a very small-scale history, full of anecdotes and insights as to the connections between the various actors and events that have criss-crossed this area. I read it shortly after reading <a href="https://www.goodreads.com/book/show/34757960.The_Shortest_History_of_Germany" title="The Shortest History of Germany by James Hawes" rel="nofollow noopener">The Shortest History of Germany</a>, to which I think it makes a very agreeable companion and contrast while picking out a lot of the same themes, especially the difference between the eastern-oriented, Prussian and Hohenzollern Germany and the western-oriented Rhineland.<br><br>It's <i>personal</i> history, though, which means that the author's life breaks into the narrative quite intrusively. I've only given the book four stars because of this writing style, which detracted (for me) from the otherwise excellent research and observations.
-		</p>
-<p>
-		   Finished on Fri, 26 Jul 2019 05:04:28 -0700.  
-		Rating 4*/5*.
-	</p>
-</div>
-   </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/nervous-states-how-feeling-took-over-the-world/" class="u-url">Nervous States: How Feeling Took Over the World</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/nervous-states-how-feeling-took-over-the-world/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-05T06:16:34-07:00" itemprop="datePublished" title="2019-07-05 06:16">2019-07-05 06:16</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569072630l/43300051._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>William  Davies</h2>
-				   2018
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		How did we end up where we are, with a seemingly unstoppable rejection of reasoned argument in favour of blatantly false – if somewhat reassuring – fantasy positions served up by charlatans? Davies presents a very convincing case, and some prescriptions for the future, that should be read by anyone who considers themselves to live in the world of objective reality – and especially those tasked with explaining that reality.<br><br>The essence of Davies' position boils down to the idea that there's been a change in the nature and purpose of information: that it has gone from being used as a way of <i>understanding</i> a shared reality to instead <i>operating</i> on that reality, with the significance of this change being that the latter requires neither global agreement on a set of facts nor any real persistence in time. It's perfectly possible to discover, act upon, and profit from something that them disappears without a trace, and this changes both what it means to be a fact and how these (perhaps purported) facts are presented: it doesn't matter if something is later falsified, since the purpose was not to state a permanent position but to achieve a timely objective.<br><br>Davies backs this proposition up with a deep-dive into military history, philosophy, and the emergence of the commercial internet: this is definitely a book fore the widely-ranging mind. His prescriptions are troubling to those of us who work in science: that we need to shed our public scruples and engage politically, not giving up the search for the objective but making sure that we use it to act on the world. In that sense he's supportive of events like the "March for Science" that were opposed by many scientists as a corruption of objectivity – and I have toi say that that's not something I wanted to hear, but that I find rather compelling.
-		</p>
-<p>
-		   Finished on Fri, 05 Jul 2019 06:16:34 -0700.  
-		Rating 5*/5*.
-	</p>
-</div>
-   </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-rig/" class="u-url">The Rig</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/the-rig/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-05T06:07:01-07:00" itemprop="datePublished" title="2019-07-05 06:07">2019-07-05 06:07</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507828284l/36398794._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Roger Levy</h2>
-				   2018
+			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924623l/56825._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+				<h2>Steven Levy</h2>
+				   1993
 				<p>
 				</p>
 <hr>
@@ -296,136 +286,104 @@ bg-dark
 		
 		</p>
 <p>
-		   Finished on Fri, 05 Jul 2019 06:07:01 -0700.  
-		Rating 4*/5*.
+		   Finished on Fri, 24 May 2013 12:59:12 -0700.  
+		Rating 4/5.
 	</p>
 </div>
    </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/new-moon-luna-1/" class="u-url">New Moon (Luna #1)</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/basics-of-space-flight/" class="u-url">Basics of space flight</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
             </span></p>
             <p class="dateline">
-            <a href="goodreads/new-moon-luna-1/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-07-05T06:06:01-07:00" itemprop="datePublished" title="2019-07-05 06:06">2019-07-05 06:06</time></a>
+            <a href="goodreads/basics-of-space-flight/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-02T01:04:15-07:00" itemprop="datePublished" title="2013-05-02 01:04">2013-05-02 01:04</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
 	<div>
 		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437138235l/23848027._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Ian McDonald</h2>
-				   2015
+			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385965735l/17877732._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+				<h2>Dave Doody</h2>
+				   2011
 				<p>
 				</p>
 <hr>
 </div>
 		</div>
 		<p>
-		What would living on the moon be like? How would the inhabitants relate to those left on earth? What would be the economics? The sociology?<br><br>There's more than a touch of <a href="https://www.goodreads.com/author/show/19048107.Robert_Heinlein" title="Robert Heinlein" rel="nofollow noopener">Robert Heinlein</a>'s masterpiece <a href="https://www.goodreads.com/book/show/16690.The_Moon_is_a_Harsh_Mistress" title="The Moon is a Harsh Mistress by Robert A. Heinlein" rel="nofollow noopener">The Moon is a Harsh Mistress</a> here, updated for the twenty-first century. McDonald has the moon evolving an clan-based oligarchy that resembles fourteenth century Italy, but with some amazingly clever nods to the science and engineering needed to actually build a viable lunar civilisation, as well as for their social implications.
+		If you've ever wanted to understand the theory and practice of space flight, this is the place to start. It's an extremely friendly introduction that starts from the basics -- the solar system, the planets, comets, and other phenomena -- and works out from there to a full description of mission planning and execution.<br><br>The treatment of orbits and orbital mechanics is particularly strong: I have a lot of maths and physics in my background, and the explanation here is <i>way</i> simpler than you'll find in any textbook. IN fact it's the perfect introduction before diving into the maths if you want to, and there are pointers in the text to the appropriate web sites and other sources.<br><br>All in all a great introduction to a subject that still has the power to fascinate.
 		</p>
 <p>
-		   Finished on Fri, 05 Jul 2019 06:06:01 -0700.  
-		Rating 4*/5*.
+		   Finished on Thu, 02 May 2013 01:04:15 -0700.  
+		Rating 4/5.
 	</p>
 </div>
    </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-doomsday-machine-confessions-of-a-nuclear-war-planner/" class="u-url">The Doomsday Machine: Confessions of a Nuclear War Planner</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-twelve-caesars/" class="u-url">The Twelve Caesars</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
             </span></p>
             <p class="dateline">
-            <a href="goodreads/the-doomsday-machine-confessions-of-a-nuclear-war-planner/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-06-06T02:58:16-07:00" itemprop="datePublished" title="2019-06-06 02:58">2019-06-06 02:58</time></a>
+            <a href="goodreads/the-twelve-caesars/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-04-27T03:25:29-07:00" itemprop="datePublished" title="2013-04-27 03:25">2013-04-27 03:25</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
 	<div>
 		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503339552l/25663779._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Daniel Ellsberg</h2>
-				   2017
+			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1520852227l/29022._SY160_.jpg" style="float: left; margin-right: 10px"><div>
+				<h2>Suetonius</h2>
+				   121
 				<p>
 				</p>
 <hr>
 </div>
 		</div>
 		<p>
-		Definitely lives up to its billing, with massive amounts of detail and close reasoning – <i>too</i> much, in fact, and this weakens arguments that it's meant to strengthen. But still as powerful an argument for disarmament as you'll ever encounter.
+		
 		</p>
 <p>
-		   Finished on Thu, 06 Jun 2019 02:58:16 -0700.  
-		Rating 2*/5*.
+		   Finished on Sat, 27 Apr 2013 03:25:29 -0700.  
+		Rating 3/5.
 	</p>
 </div>
    </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/educated/" class="u-url">Educated</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/ghost-in-the-wires-my-adventures-as-the-worlds-most-wanted-hacker/" class="u-url">Ghost in the Wires: My Adventures as the World's Most Wanted Hacker</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Simon Dobson
             </span></p>
             <p class="dateline">
-            <a href="goodreads/educated/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-29T09:20:46-07:00" itemprop="datePublished" title="2019-05-29 09:20">2019-05-29 09:20</time></a>
+            <a href="goodreads/ghost-in-the-wires-my-adventures-as-the-worlds-most-wanted-hacker/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-04-27T03:20:36-07:00" itemprop="datePublished" title="2013-04-27 03:20">2013-04-27 03:20</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
 	<div>
 		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1534667345l/40060637._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Tara Westover</h2>
-				   2018
+			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344265017l/10256723._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+				<h2>Kevin D. Mitnick</h2>
+				   2011
 				<p>
 				</p>
 <hr>
 </div>
 		</div>
 		<p>
-		A study of the effects of education as both liberating and disconnecting.<br><br>The family that the author describes is both harrowingly dysfunctional and strangely close-knit, which goes a long way to explaining how hard she found to draw herself away from it. She followed a charmed academic trajectory that many academics would kill for – Brigham Young University, then a scholarship and PhD from Cambridge, then a fellowship at Harvard – and I think it's a fair question as to whether she'd've been able to break away had she had a <i>less</i> exceptional start.<br><br>The overriding themes are easy to see, revolving around a desire (indeed, a need) for male relatives to control female behaviour. There are plenty of echoes of works like <a href="https://www.goodreads.com/book/show/27161156.Hillbilly_Elegy_A_Memoir_of_a_Family_and_Culture_in_Crisis" title="Hillbilly Elegy A Memoir of a Family and Culture in Crisis by J.D. Vance" rel="nofollow noopener">Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</a><a href="https://www.goodreads.com/book/show/27161156.Hillbilly_Elegy_A_Memoir_of_a_Family_and_Culture_in_Crisis" title="Hillbilly Elegy A Memoir of a Family and Culture in Crisis by J.D. Vance" rel="nofollow noopener">Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</a>, but one thing that's distinctive about Westover's experience is that the fundamentalist position that her family adopts doesn't go far back: even her grandparents disagree with it, and it seems to be as much a product of her father's mental illness and mother's subservience as anything inherent in a strongly religious tradition. It's definitely one of the most challenging personal backgrounds I know of to have been successfully overcome.
+		
 		</p>
 <p>
-		   Finished on Wed, 29 May 2019 09:20:46 -0700.  
-		Rating 5*/5*.
-	</p>
-</div>
-   </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-three-body-problem-remembrance-of-earths-past-1/" class="u-url">The Three-Body Problem (Remembrance of Earth’s Past, #1)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Simon Dobson
-            </span></p>
-            <p class="dateline">
-            <a href="goodreads/the-three-body-problem-remembrance-of-earths-past-1/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-05-16T10:17:47-07:00" itemprop="datePublished" title="2019-05-16 10:17">2019-05-16 10:17</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-	<div>
-		<div>
-			<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545742427l/36262331._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-				<h2>Liu Cixin</h2>
-				   2006
-				<p>
-				</p>
-<hr>
-</div>
-		</div>
-		<p>
-		Quite an astonishing book, combining science fiction with social commentary and Chinese history in a seamless and rather stunning way.<br><br>This book has some really quite visionary passages, drawing deeply on cultural history and the farther reaches of mathematical physics. It also has some resonances from the SF classics, especially (and perhaps surprisingly) <a href="https://www.goodreads.com/book/show/21611.The_Forever_War__The_Forever_War___1_" title="The Forever War (The Forever War, #1) by Joe Haldeman" rel="nofollow noopener">The Forever War</a>, with its central problem of how to fight a war in the face of travel times long enough to render your weaponry obsolete? Liu's solution is brilliant: find a way to stall your enemy's scientific progress, using both scientific and social weapons, with the latter also having eerie resonances in modern social-media commentaries. An excellent and thought-provoking start to a trilogy.
-		</p>
-<p>
-		   Finished on Thu, 16 May 2019 10:17:47 -0700.  
-		Rating 4*/5*.
+		   Finished on Sat, 27 Apr 2013 03:20:36 -0700.  
+		Rating 5/5.
 	</p>
 </div>
    </div>

@@ -1,120 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 20 Mar 2021 16:38:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>IDE convergence</title><link>https://simondobson.org/blog/2021/02/23/ide-convergence/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently tried out a new development environment for my Python
-development, and noticed an unexpected convergence in the designs of
-the two tools.&lt;/p&gt;
-&lt;!-- TASTER_END --&gt;
-
-&lt;p&gt;I've been a long-time &lt;a href="https://emacs.org"&gt;Emacs&lt;/a&gt; user. I periodically
-get a desire to try something new, something less old-school, just to
-see whether there are advantages. There always &lt;em&gt;are&lt;/em&gt; advantages, of
-course -- but often significant disadvantages as well, which often
-keep me coming back to my comfort zone.&lt;/p&gt;
-&lt;p&gt;My most recent excursion was to try Microsoft's &lt;a href="https://code.visualstudio.com/"&gt;VS
-Code&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Microsoft VS Code" src="https://simondobson.org/images/posts/20210223-vscode.png"&gt;&lt;/p&gt;
-&lt;p&gt;This is handily cross-platform, being built in Javascript on top of
-&lt;a href="https://www.electronjs.org/"&gt;Electron&lt;/a&gt;. It's got a lot of nice
-features: a tree view of the project in the left-hand pane, syntax
-colouring, code style linting, integrated debugging and unit test
-running, integrated connection to git, and so on. Looking a little
-closer there are all sorts of status markers around the code and in
-the ribbons at the bottom of panes and the window overall to show
-status that might be important.&lt;/p&gt;
-&lt;p&gt;But it's so &lt;em&gt;slow&lt;/em&gt;. That's a feature of VS Code, not of Electron (as I
-first suspected), because other Electron-based editors like
-&lt;a href="https://atom.io/"&gt;Atom&lt;/a&gt; aren't as slow. And my development box isn't
-the latest, but it also isn't &lt;em&gt;that&lt;/em&gt; old.&lt;/p&gt;
-&lt;p&gt;So I reverted to Emacs, but upgraded it a little to more modern
-standards. Specifically, I installed the
-&lt;a href="https://elpy.readthedocs.io/en/latest/index.html"&gt;elpy&lt;/a&gt; Python IDE,
-with assorted other packages suggested by various sites. The result is
-this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Emacs with elpy" src="https://simondobson.org/images/posts/20210223-emacs.png"&gt;&lt;/p&gt;
-&lt;p&gt;Now for anyone who's used Emacs for a while, it's definitely still
-Emacs -- not least with the convoluted keystrokes and infinite
-customisation you either love or hate. But it's striking how similar
-the two IDEs now are, and striking how VS Code has inherited some
-ideas from Emacs: resizeable panes, modelines in the ribbon, markers
-in pane gutters, and so forth -- things that Emacs-based applications
-have had for years, which have now migrated into "the mainstream".
-Both the feature sets and the visuals of the two systems are very
-similar indeed. Both are entirely cross-platform and extensible. For
-VS Code you write extensions in Javascript; for Emacs you write them
-in Lisp; and that's about it. And Emacs is a &lt;em&gt;lot&lt;/em&gt; faster on my
-set-up. There are some limitations -- I've yet to get the hang of
-using &lt;code&gt;pdb&lt;/code&gt; as a debugger, for example, especially for modules
-and from within tests -- but the functionality is really quite comparable.&lt;/p&gt;
-&lt;p&gt;I think it's safe to say there's been cross-fertilisation between VS
-Code (and other IDEs) and Emacs over the years. A lot of the
-developers of the former quite possibly used the latter. But I
-strongly suspect that most of the traffic has gone &lt;em&gt;from&lt;/em&gt; Emacs &lt;em&gt;to&lt;/em&gt;
-the other systems: the similarities are just too great to be
-accidental. It's interesting to think that a system that emerged at
-the dawn of the free-software movement has had -- and is still having
--- such an influence on modern development tools. And I'm happily back
-in my comfort zone.&lt;/p&gt;&lt;/div&gt;</description><category>emacs</category><category>python</category><category>software engineering</category><category>vs code</category><guid>https://simondobson.org/blog/2021/02/23/ide-convergence/</guid><pubDate>Tue, 23 Feb 2021 12:21:05 GMT</pubDate></item><item><title>Paper on clustered percolation accepted</title><link>https://simondobson.org/blog/2020/12/21/clustered-percolation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20201221-clustering.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper "Percolation on random graphs with higher-order clustering"
-was accepted into &lt;em&gt;Physical Review E&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/21/clustered-percolation/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>clustering</category><category>complex networks</category><category>news</category><category>percolation</category><guid>https://simondobson.org/blog/2020/12/21/clustered-percolation/</guid><pubDate>Mon, 21 Dec 2020 15:55:42 GMT</pubDate></item><item><title>A talk on "Exploring epidemic spreading using network models"</title><link>https://simondobson.org/blog/2020/12/19/ima-talk/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20201219-waterfall.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;I gave a talk by Zoom to the &lt;a href="https://ima.org.uk"&gt;Institute of Mathematics and its Applications&lt;/a&gt;
-arising from my epidemic modelling &lt;a href="https://simondobson.org/writing/em-book/"&gt;book&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/19/ima-talk/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>epidemic spreading</category><category>epydemic</category><category>news</category><category>talk</category><guid>https://simondobson.org/blog/2020/12/19/ima-talk/</guid><pubDate>Sat, 19 Dec 2020 09:10:00 GMT</pubDate></item><item><title>Co-infection dynamics paper submitted</title><link>https://simondobson.org/blog/2020/12/18/coinfection-dynamics/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20201218-cycles.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;What happens when two diseases spread through a population?&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/18/coinfection-dynamics/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>news</category><category>paper</category><guid>https://simondobson.org/blog/2020/12/18/coinfection-dynamics/</guid><pubDate>Fri, 18 Dec 2020 18:26:10 GMT</pubDate></item><item><title>The Shanghai Free Taxi: Journeys with the Hustlers and Rebels of the New China</title><link>https://simondobson.org/blog/goodreads/the-shanghai-free-taxi-journeys-with-the-hustlers-and-rebels-of-the-new-china/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 05 May 2021 14:43:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Old Ways: A Journey on Foot</title><link>https://simondobson.org/blog/goodreads/the-old-ways-a-journey-on-foot/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
 	&lt;div&gt;
 		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580583448l/42283958._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328811154l/13369533._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 			&lt;div&gt;
-				&lt;h2&gt;Frank Langfitt&lt;/h2&gt;
+				&lt;h2&gt;Robert Macfarlane&lt;/h2&gt;
+				   2012
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		A beautiful and poignant volume that's hard to categorise: part travelogue, part biography of the poet Edward Thomas, part meditation, part exploration. Macfarlane traces old footpaths, from the South Downs to the Hebrides to Palestine, reading the landscape and the marks that people have left on it. He follows the diversions as he encounters them, musing about the "pathways" in the sea that are clear and long-lived despite being written in the water, formed from the ways in which current and wind interact to lay down the "natural" route to travel before powered craft. He spends night under the stars, including a rather unnerving and supernatural encounter while sleeping (ill-advisedly, as he puts it) in a neolithic ring. And he brings out literary gems, such as the relationship between Thomas (whose work I've now been inspired to read) and Robert Frost's poem The road not taken. Altogether a delight to read.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Tue, 04 May 2021 14:00:37 -0700.  
+		Rating 5/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-old-ways-a-journey-on-foot/</guid><pubDate>Tue, 04 May 2021 21:00:37 GMT</pubDate></item><item><title>The Occult Roots of Nazism: Secret Aryan Cults and Their Influence on Nazi Ideology</title><link>https://simondobson.org/blog/goodreads/the-occult-roots-of-nazism-secret-aryan-cults-and-their-influence-on-nazi-ideology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555588710l/44804072._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Nicholas Goodrick-Clarke&lt;/h2&gt;
+				   1982
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		A scholarly study of the occult ideas that emerged in Germany and (especially) Austria in the year leading up to and after the First World War. It raises many ideas, most of them disquieting – not least the similarities with modern-day tendencies to believe in hidden plots and secret societies controlling the world's destiny. Perhaps this is a common reaction to feelings of social and economic dislocation, but it's worrying nonetheless.&lt;br&gt;&lt;br&gt;Goodrick-Clarke is entirely honest about his inability to definitively establish a causal chain from the Thule Society and like-minded groups to the Nazis. He presents two hypotheses: that the members and hanger-on of the Thule did indeed have some influence, notably over Heinrich Himmler's view of the SS as a revenant mediaeval order of chivalry; and that the ideas were simply "in the air", a symptom of the times than were independently picked up and developed by the Nazis.&lt;br&gt;&lt;br&gt;It'd be easy for a book on this theme to become lost in fables, and indeed many other works have done so. (Goodrick-Clarke devotes an appendix to dismantling these "crypto-histories".) You never get the feeling, reading him, that he's in the slightest bit a believer, even as he recounts the (probably and putatively sincere) beliefs of his subjects. That many of these beliefs can be traced back definitively to works of late-nineteenth-century fiction (notably to the books of &lt;a href="https://www.goodreads.com/author/show/44512.Edward_Bulwer_Lytton" title="Edward Bulwer-Lytton" rel="nofollow noopener"&gt;Edward Bulwer-Lytton&lt;/a&gt;) makes their attraction all the more surprising, even given that the belief was always a niche one.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Mon, 03 May 2021 07:38:04 -0700.  
+		Rating 4/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-occult-roots-of-nazism-secret-aryan-cults-and-their-influence-on-nazi-ideology/</guid><pubDate>Mon, 03 May 2021 14:38:04 GMT</pubDate></item><item><title>The Great Book of Amber (The Chronicles of Amber, #1-10)</title><link>https://simondobson.org/blog/goodreads/the-great-book-of-amber-the-chronicles-of-amber-1-10/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1165519096l/5367._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Roger Zelazny&lt;/h2&gt;
+				   1999
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		The entire Amber series, all two series and ten books of it. That's a lot of material to hold together as a coherent narrative, something only a master could have accomplished.&lt;br&gt;&lt;br&gt;The first series builds on earlier swords-and-sorcery works and turns them on their head, as something happening contemporaneously with the modern world but in "shadows" being cast from Amber and Chaos, two poles of existence. The struggle between these two primal forces combines both the archetypal and the familial, with some siblings battling for the throne while others seek power by undermining the fabric of existence as embodied in the Pattern, that gives control over Shadow. The two struggles coalesce, with the Pattern being damaged and allowing Chaos to gain strength, and event that's reflected on all Shadows. It all comes down to a struggle to re-inscribe the Pattern and re-establish the balance.&lt;br&gt;&lt;br&gt;All this (five book's worth) is recounted by the protagonist, Corwin, to his son Merlin, sitting on a rock before the Courts of Chaos at the end of the Patternfall Wall. The second series covers Merlin's adventures as similar forces rear-up and try to disrupt existence. The second series (another five books' worth) is nowhere near as polished as the first: there are a lot of loose ends and material that's never really explored, and the final ending feels quite weak, as though the strands didn't quite pull together as tightly as Zelazny wanted. It's a small failing, and the stories can be enjoyed for their pace and style without necessarily needing to be resolved.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Fri, 23 Apr 2021 12:48:55 -0700.  
+		Rating 5/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-great-book-of-amber-the-chronicles-of-amber-1-10/</guid><pubDate>Fri, 23 Apr 2021 19:48:55 GMT</pubDate></item><item><title>The Book of Legendary Lands</title><link>https://simondobson.org/blog/goodreads/the-book-of-legendary-lands/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364250926l/17621050._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Umberto Eco&lt;/h2&gt;
+				   2013
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		Fable, folklore, and (to a far lesser extent) fictional lands, explored with the clarity one would expect of Eco. This book is a joy to read, with key excerpts from source works included after the discussion in each chapter, and it's full of wonderful images, of paintings especially, that show the parallel visual arts associated with each of the chosen lands.&lt;br&gt;&lt;br&gt;Again as one would expect from Eco, the last chapter is a philosophical discussion of the nature of truth when applied to legends: we "know" what happens in a legend, and so recognise any revisionist of alternative reading as "fictional" even th0ugh the original was fictional also. It's an interesting and worthwhile discussion that in many ways crystalises the points made in the concrete earlier chapters.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Mon, 19 Apr 2021 04:54:58 -0700.  
+		Rating 4/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-book-of-legendary-lands/</guid><pubDate>Mon, 19 Apr 2021 11:54:58 GMT</pubDate></item><item><title>It Gets Me Home, This Curving Track: Objects &amp; Essays 2012-2018</title><link>https://simondobson.org/blog/goodreads/it-gets-me-home-this-curving-track-objects-essays-2012-2018/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1550777290l/44083289._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Ian Penman&lt;/h2&gt;
 				   2019
 				&lt;p&gt;
 				&lt;/p&gt;&lt;hr&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 		&lt;p&gt;
-		The taxi, while an essential part of the plot, doesn't perhaps feature quite as much as one might expect in this exploration of China and the Chinese as they start to drive the 21st century. It's a view from part way inside: not a Chinese view &lt;i&gt;per se&lt;/i&gt;, but from a Western journalist with deep knowledge and strong sympathies for China, who manages to get a variety of people from the city and countryside to comment reasonably candidly about their experiences. It strikes me as a balanced and important contribution to understanding the nature of the emerging "Chinese century" (as it may, but will not necessarily, become), both its strengths and weaknesses.
+		Reports from music criticism. While it presents itself as a book of essays, it's actually an anthology of the author's book reviews over the past decades. That's not a criticism, although until you realise what's happening it's confusing to see repeated mentions of a particular book.&lt;br&gt;&lt;br&gt;The essays/reviews range over big names like Frank Sinatra, Elvis, Charlie Parker, and Steely Dan, and the lesser-known like John Fahey and entire scenes like the Mods. One name that's missing, but that strangely haunts the book by her absence, is Billie Holiday: I think it's all the jazz references, but you can feel that she &lt;i&gt;should&lt;/i&gt; be here in her own right – and then I read the introduction (having read the book), and read the author's explanation of why he didn't feel he could do her justice. Hopefully he'll write another book just for her.
 		&lt;/p&gt;&lt;p&gt;
-		   Finished on Thu, 17 Dec 2020 00:00:00 -0800.  
-		Rating 3*/5*.
+		   Finished on Fri, 09 Apr 2021 00:00:00 -0700.  
+		Rating 4/5.
 	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-shanghai-free-taxi-journeys-with-the-hustlers-and-rebels-of-the-new-china/</guid><pubDate>Thu, 17 Dec 2020 08:00:00 GMT</pubDate></item><item><title>Backporting Python type annotations</title><link>https://simondobson.org/blog/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
-&lt;a href="https://simondobson.org/development/epyc/"&gt;&lt;code&gt;epyc&lt;/code&gt;&lt;/a&gt; and
-&lt;a href="https://simondobson.org/development/epydemic/"&gt;&lt;code&gt;epydemic&lt;/code&gt;&lt;/a&gt; libraries. Making these work
-while not sacrificing interoperability a wide range of Python versions
-is quite delicate.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/09/backporting-python-types/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>epyc</category><category>epydemic</category><category>programming</category><category>python</category><guid>https://simondobson.org/blog/2020/12/09/backporting-python-types/</guid><pubDate>Wed, 09 Dec 2020 10:45:43 GMT</pubDate></item><item><title>What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry</title><link>https://simondobson.org/blog/goodreads/what-the-dormouse-said-how-the-sixties-counterculture-shaped-the-personal-computer-industry/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/it-gets-me-home-this-curving-track-objects-essays-2012-2018/</guid><pubDate>Fri, 09 Apr 2021 07:00:00 GMT</pubDate></item><item><title>Dancing with a Lenovo Duet</title><link>https://simondobson.org/blog/2021/04/08/dancing-with-a-lenovo-duet/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;A Chromebook that behaves like a proper tablet.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2021/04/08/dancing-with-a-lenovo-duet/"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>android</category><category>chromebook</category><category>hardware</category><category>review</category><category>tablet</category><guid>https://simondobson.org/blog/2021/04/08/dancing-with-a-lenovo-duet/</guid><pubDate>Thu, 08 Apr 2021 08:02:19 GMT</pubDate></item><item><title>The Tyranny of Merit: What’s Become of the Common Good?</title><link>https://simondobson.org/blog/goodreads/the-tyranny-of-merit-whats-become-of-the-common-good/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
 	&lt;div&gt;
 		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442903066l/725789._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594431563l/50364458._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 			&lt;div&gt;
-				&lt;h2&gt;John Markoff&lt;/h2&gt;
-				   2005
+				&lt;h2&gt;Michael J. Sandel&lt;/h2&gt;
+				   2020
 				&lt;p&gt;
 				&lt;/p&gt;&lt;hr&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 		&lt;p&gt;
-		Another history of the early days of computing. The goal is to link the rise of personal computing to the rise of the counterculture and (especially) to the psychedelics of the acid tests of the Merry Pranksters. There's some overlap in individuals, notably Stewart Brand (who makes a brief appearance in &lt;a href="https://www.goodreads.com/book/show/7442.The_Electric_Kool_Aid_Acid_Test" title="The Electric Kool-Aid Acid Test by Tom Wolfe" rel="nofollow noopener"&gt;The Electric Kool-Aid Acid Test&lt;/a&gt;). But overall it seems something of a stretch: the most influential players at the time (Doug Engelbart, Alan Kay) weren't especially counter-cultural. But the contrast between the corporate computing world and those of Engelbart and Kay – and for all their differences they share a lot of similarities – is profound, and it's sad that in many ways the corporate side won: modern software draws on the surface aspects of Kay's work on Smalltalk, for example, but at a deeper level is more heavily influenced by corporate needs, and that's become even more pronounced in the years since this book was written.
+		A political philosopher takes on the whole notion of meritocracy.&lt;br&gt;&lt;br&gt;The idea that we can – and should! – live in a meritocracy is taken as an almost as axiomatic in most societies. So it's refreshing, (if also terrifying) to read a take-down of the idea. And it's the idea itself that's the target, not simply the imperfact state of modern societies relative to an ideal.&lt;br&gt;&lt;br&gt;In the UK we have a parliament whose social backgrounds bear a striking resemblance to the aristocratic parliaments of the nineteenth century: the wealthy and the elite-educated serve in massive over-proportion to their presence in the general population. After a brief interlude in the early-to-mid twentieth century when the situation was more balanced, representation is back with to being a preserve the elite.&lt;br&gt;&lt;br&gt;However, the problem, as Sandel describes it, runs deeper. Meritocracy, &lt;i&gt;even if accomplished fairly&lt;/i&gt; (which is hasn't been), is destructive for those who lose out, and who are therefore simultaneously excluded from power and from social advancement. At the same time, education (and especially higher education) is left to do all the heavy lifting in terms of social mobility, but faces a problem whereby previous winners pass on advantages like private tuition and social contacts to their children. &lt;br&gt;&lt;br&gt;I think the problems raised here are true for many societies. They're perhaps more acute in the US, not least because top colleges often prioritise the children of alumni and so institutionalise the passing-on of advantage. But it's true that the UK has removed a lot of the props that allowed previous generations of working class kids – the "first chancers", the first in their families to go to university – to get ahead. This book provides a lot of intellectual muscle for a fight back, as well as some policy precriptions.
 		&lt;/p&gt;&lt;p&gt;
-		   Finished on Wed, 09 Dec 2020 00:00:00 -0800.  
-		Rating 4*/5*.
+		   Finished on Thu, 01 Apr 2021 00:00:00 -0700.  
+		Rating 4/5.
 	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/what-the-dormouse-said-how-the-sixties-counterculture-shaped-the-personal-computer-industry/</guid><pubDate>Wed, 09 Dec 2020 08:00:00 GMT</pubDate></item><item><title>Random graphs with arbitrary clustering and their applications</title><link>https://simondobson.org/blog/2020/12/03/random-graphs-clustering/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20201203-good-fit.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;Our paper on clustering was accepted into &lt;em&gt;Physical Review E&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/12/03/random-graphs-clustering/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>clustered networks</category><category>complex networks</category><category>news</category><category>paper</category><category>pre</category><guid>https://simondobson.org/blog/2020/12/03/random-graphs-clustering/</guid><pubDate>Thu, 03 Dec 2020 13:31:56 GMT</pubDate></item><item><title>Mythos:  The Greek Myths Retold</title><link>https://simondobson.org/blog/goodreads/mythos-the-greek-myths-retold/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-tyranny-of-merit-whats-become-of-the-common-good/</guid><pubDate>Thu, 01 Apr 2021 07:00:00 GMT</pubDate></item><item><title>A Libertarian Walks Into a Bear: The Utopian Plot to Liberate an American Town (And Some Bears)</title><link>https://simondobson.org/blog/goodreads/a-libertarian-walks-into-a-bear-the-utopian-plot-to-liberate-an-american-town-and-some-bears/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
 	&lt;div&gt;
 		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526867104l/38213085._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579655265l/50358538._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 			&lt;div&gt;
-				&lt;h2&gt;Stephen Fry&lt;/h2&gt;
-				   2017
+				&lt;h2&gt;Matthew Hongoltz-Hetling&lt;/h2&gt;
+				   2020
 				&lt;p&gt;
 				&lt;/p&gt;&lt;hr&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 		&lt;p&gt;
-		Billed as "Greek myths for the 21st century", which I think is an accurate description, both good and bad. This is clear, humorous, erudite take on the key stories without giving way to too much modernising, and with the thoughtful and witty asides one would expect from Stephen Fry.&lt;br&gt;&lt;br&gt;The style does occasionally drift too far into the casual for my tastes, I have to say, but that's a minor criticism: I certainly intend to read the other books in this series, dealing with heroic myths and the Trojan War.&lt;br&gt;
+		A group of libertarians decide that they need to form a free utopia, and move &lt;i&gt;en masse&lt;/i&gt; to a town in the forests of New Hampshire that just happens to be in the middle of a massive boom in the local bear population. Hilarity ensues.&lt;br&gt;&lt;br&gt;Well, not hilarity exactly, although this book is laugh-out-loud funny in places. But there are serious points being made too. The libertarians take apart the town's community activities and services, to some extent by freeloading off the services in neighbouring towns that have only fractionally higher taxes but have larger populations because they're ... ermm ... better places to live. The collective resources are depleted to the point that the bear become more than a metaphor, a problem for which the town can't summon a collective response. And the final humiliation is that, when a national libertarian movement in the same vein starts, and also picks New Hampshire as their target for their new society, they don't find the original enclave welcoming enough and start their own communities elsewhere.&lt;br&gt;&lt;br&gt;It's hard to know exactly what the moral of the story is, if there is one. Certainly it makes a point about the benefits of community very well. But it's also somewhat trapped within a rather American rubric of democracy simply meaning having more votes than the other groups, where the majority can impose their will without too many safeguards,
 		&lt;/p&gt;&lt;p&gt;
-		   Finished on Wed, 02 Dec 2020 00:00:00 -0800.  
-		Rating 4*/5*.
+		   Finished on Thu, 25 Mar 2021 00:00:00 -0700.  
+		Rating 5/5.
 	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/mythos-the-greek-myths-retold/</guid><pubDate>Wed, 02 Dec 2020 08:00:00 GMT</pubDate></item><item><title>Where am I (in git)?</title><link>https://simondobson.org/blog/2020/11/27/where-am-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently started using &lt;code&gt;git&lt;/code&gt; and &lt;a href="https://github.com/simoninireland/"&gt;Github&lt;/a&gt;
-in a more serious way than I've done in the past -- and promptly
-started getting horrendously lost in the process.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2020/11/27/where-am-i/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>bash</category><category>git</category><category>linux</category><guid>https://simondobson.org/blog/2020/11/27/where-am-i/</guid><pubDate>Fri, 27 Nov 2020 11:14:08 GMT</pubDate></item></channel></rss>
+   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/a-libertarian-walks-into-a-bear-the-utopian-plot-to-liberate-an-american-town-and-some-bears/</guid><pubDate>Thu, 25 Mar 2021 07:00:00 GMT</pubDate></item><item><title>Veritas: A Harvard Professor, a Con Man and the Gospel of Jesus's Wife</title><link>https://simondobson.org/blog/goodreads/veritas-a-harvard-professor-a-con-man-and-the-gospel-of-jesuss-wife/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1574742295l/53146675._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Ariel Sabar&lt;/h2&gt;
+				   2020
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		What happens when an academic is offered the physical support for their theories? This is the story of the "Gospel of Jesus' wife", a Coptic fragment purporting to contain and almost-contemporaneous quote of Jesus referring to Mary Magdalene in this way. If that sounds like &lt;a href="https://www.goodreads.com/book/show/30228538.The_Da_Vinci_Code__the_Young_Adult_Adaptation_" title="The Da Vinci Code (the Young Adult Adaptation) by Dan Brown" rel="nofollow noopener"&gt;The Da Vinci Code&lt;/a&gt;, well, yes it does – and one of the many ironies is that the academic receiving the fragment was a consultant on the film....&lt;br&gt;&lt;br&gt;The details of this simple-sounding con – and it &lt;i&gt;does&lt;/i&gt; sound like a con, even from such a short description – involve a deep-dive into the provenance of ancient documents, the international market in papyri, the intricacies of Coptic linguistics, and other high-culture sub-cultures. Very few people come out well.&lt;br&gt;&lt;br&gt;But there's no physical evidence to link the papyrus' creation to the specific individual, and while the circumstantial case is compelling, there's still something slight unsatisfactory about the investigation. Why did the forger – if indeed he &lt;i&gt;was&lt;/i&gt; the forger – do it? He seems to have had no motive. Even though he had the background, did he have the practical skills? And indeed, might he have been &lt;i&gt;more&lt;/i&gt; skilled than he turned out to be?
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Sat, 20 Mar 2021 00:00:00 -0700.  
+		Rating 4/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/veritas-a-harvard-professor-a-con-man-and-the-gospel-of-jesuss-wife/</guid><pubDate>Sat, 20 Mar 2021 07:00:00 GMT</pubDate></item><item><title>November 1918: The German Revolution</title><link>https://simondobson.org/blog/goodreads/november-1918-the-german-revolution/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569860890l/52050067._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Robert Gerwarth&lt;/h2&gt;
+				   2020
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		The Weimar Republic is a period often forgotten and often treated merely as a failed precursor that led to dictatorship. This book deals with its formative period. It's extremely focused, dealing with only the period between the Kaiser's abdication and the signing of the Treaty of Versailles, and the focus gives it momentum. The interpretation is balanced and not overly distorted by what the author (and reader) knows comes next.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Mon, 01 Mar 2021 00:00:00 -0800.  
+		Rating 4/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/november-1918-the-german-revolution/</guid><pubDate>Mon, 01 Mar 2021 08:00:00 GMT</pubDate></item></channel></rss>
