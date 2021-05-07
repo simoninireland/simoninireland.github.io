@@ -4,27 +4,25 @@
 .. date: 2020-06-17 16:56:48 UTC+01:00
 .. tags: book, complex networks, epidemic spreading
 .. category: writing
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
-*Complex networks, complex processes* is best described as "notes for
-a book" which will hopefully emerge over time.
+*Complex networks, complex processes: A network science miscellany* is
+best described as a book that's being written openly and non-linearly.
 
-I became interested in complex networks and their applications largely
-through working with my student Saray Shai. In getting to grips with
-complex networks, one has to grapple with the leading edges of both
-maths and computer science — something that few people (and definitely
-not me) have the background for. Largely to guide my own study, I
-started writing notes about the topics I encountered in a form that
-would serve as a practical introduction to someone wanting to start
-working in the area, and these notes are now morphing into an open
-textbook. As the name suggests, the aim of the book is to cover the
-construction, analysis, and simulation of networks and the processes
-that run over them, when applied to real-world problems.
+Network science requires that we can do two things well: develop
+mathematical descriptions of networks and the fascinating processes
+that run over them; and develop software to simulate these systems to
+verify the descriptions. Few people are equally skilled in both
+skill-sets. I've been exceptionally fortunate to work with several
+very able and mathematically gifted colleagues, but there's still
+often a major gap in understanding the relationships between the maths
+and the code, as well as in the quality of the tooling itself. The
+latter motivated the development of
+[`epydemic`](/development/epydemic/); the former motivated writing this
+book. It's very much an on-going work-in-progress.
 
+[Read online](https://simoninireland.github.io/cncp)<br>
 [Repository on Github](https://github.com/simoninireland/cncp)
-
-
-
