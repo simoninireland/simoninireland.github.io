@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2021-03-31T11:44:00Z</lastmod>
+  <lastmod>2021-05-05T14:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-05-07T16:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
@@ -768,6 +768,10 @@
  <url>
   <loc>https://simondobson.org/blog/2021/04/08/dancing-with-a-lenovo-duet/</loc>
   <lastmod>2021-04-08T08:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/</loc>
+  <lastmod>2021-05-07T16:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/goodreads/1776/</loc>
@@ -2471,7 +2475,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-55.html</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-05-07T16:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-6.html</loc>
@@ -2491,7 +2495,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2021-04-08T08:24:00Z</lastmod>
+  <lastmod>2021-05-07T16:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -2596,6 +2600,10 @@
  <url>
   <loc>https://simondobson.org/categories/clustering/</loc>
   <lastmod>2021-03-15T16:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cncp/</loc>
+  <lastmod>2021-05-07T16:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/competition/</loc>
@@ -3239,10 +3247,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/personal/contact/</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/projects/</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </url>
  <url>
