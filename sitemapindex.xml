@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://simondobson.org/categories/-.xml</loc>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/abstracts.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
@@ -71,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-07T16:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
@@ -110,10 +114,6 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/cncp.xml</loc>
-  <lastmod>2021-05-07T16:23:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/competition.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
@@ -123,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-networks.xml</loc>
-  <lastmod>2021-04-12T12:39:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-systems.xml</loc>
@@ -174,6 +174,10 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/development.xml</loc>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/ditch.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
@@ -195,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epidemic-spreading.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epyc.xml</loc>
@@ -203,7 +207,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epydemic.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/erasmus-mundus.xml</loc>
@@ -394,8 +398,12 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/new.xml</loc>
+  <lastmod>2021-05-14T08:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2021-05-07T16:23:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/onewire.xml</loc>
@@ -475,7 +483,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/python.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/rdf.xml</loc>
@@ -483,7 +491,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/research.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-07T16:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/review.xml</loc>
@@ -548,6 +556,10 @@
  <sitemap>
   <loc>https://simondobson.org/categories/sicsa.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/simulation.xml</loc>
+  <lastmod>2021-05-14T08:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/sleep.xml</loc>
@@ -671,7 +683,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/writing.xml</loc>
-  <lastmod>2021-05-07T16:23:00Z</lastmod>
+  <lastmod>2021-05-07T16:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/x-ctu.xml</loc>
@@ -719,10 +731,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2021-05-07T16:23:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2021-05-07T16:23:00Z</lastmod>
+  <lastmod>2021-05-14T08:43:00Z</lastmod>
  </sitemap>
 </sitemapindex>
