@@ -1,12 +1,12 @@
 <!--
-.. title: Sapere (2010--2013)
+.. title: Sapere
 .. slug: sapere
 .. date: 2020-06-17 11:34:36 UTC+01:00
-.. tags: self-* systems, autonomic computing, spatial computing, project, eu, live semantic annotations, lsa, ecolaws 
+.. tags: self-* systems, autonomic computing, spatial computing, project, eu, live semantic annotations, lsa, ecolaws
 .. category: research
 .. previewimage: /images/sapere-logo.png
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -54,4 +54,3 @@ Publications
 ------------
 
 {{% bibliography keywords='Sapere' %}}
-

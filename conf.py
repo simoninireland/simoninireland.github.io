@@ -72,16 +72,7 @@ NAVIGATION_LINKS = {
             ),
             "Current projects"
         ),
-        (
-            (
-                ("/development/citizen-sensing/", "Citizen sensing with Arduino (2013)"),
-                ("/development/sleepysketch/", "Arduino SleepySketch (2013--2014)"),
-                ("/research/sapere/", "Sapere (2010--2013)"),
-                ("/development/attila/", "Attila (2010--2013)"),
-                ("/development/vanilla/", "Vanilla (1997-1999)")
-            ),
-            "Older projects"
-        )
+        ("/old-projects/", "Older projects"),
     )
 }
 NAVIGATION_ALT_LINKS = {
@@ -190,7 +181,7 @@ if os.path.isfile('imported.txt'):
 
 FEEDS = {
     'goodreads': {
-	'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
+        'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
         #'url': ['https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=1',
         #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=2',
         #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=3',

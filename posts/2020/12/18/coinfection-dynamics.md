@@ -2,7 +2,7 @@
 .. title: Co-infection dynamics paper submitted
 .. slug: coinfection-dynamics
 .. date: 2020-12-18 18:26:10 UTC
-.. tags: news, paper, complex networks
+.. tags: news, paper, complex networks, epidemic spreading, co-infection
 .. category: research
 .. link:
 .. previewimage: /images/posts/20201218-cycles.png
