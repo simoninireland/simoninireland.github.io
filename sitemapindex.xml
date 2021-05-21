@@ -6,10 +6,6 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://simondobson.org/categories/-.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/abstracts.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
@@ -79,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-05-20T12:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
@@ -91,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_research.xml</loc>
-  <lastmod>2021-04-12T12:39:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cfp.xml</loc>
@@ -114,6 +110,10 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/co-infection.xml</loc>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/competition.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
@@ -123,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-networks.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/complex-systems.xml</loc>
@@ -175,7 +175,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/development.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-14T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/ditch.xml</loc>
@@ -199,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epidemic-spreading.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epyc.xml</loc>
@@ -207,7 +207,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epydemic.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-14T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/erasmus-mundus.xml</loc>
@@ -259,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/goodreads.xml</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-05-20T12:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/grays-laws.xml</loc>
@@ -398,12 +398,8 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/new.xml</loc>
-  <lastmod>2021-05-14T08:38:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/onewire.xml</loc>
@@ -423,7 +419,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/paper.xml</loc>
-  <lastmod>2021-04-12T12:39:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/parsing.xml</loc>
@@ -483,7 +479,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/python.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-14T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/rdf.xml</loc>
@@ -499,7 +495,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/reviews.xml</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-05-20T12:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
@@ -559,7 +555,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/simulation.xml</loc>
-  <lastmod>2021-05-14T08:41:00Z</lastmod>
+  <lastmod>2021-05-14T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/sleep.xml</loc>
@@ -703,38 +699,38 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/holga/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/pittenweem/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/sanday/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/tuscany-bologna/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/venice/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/galleries/westray/rss.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-05-14T12:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2021-05-14T08:43:00Z</lastmod>
+  <lastmod>2021-05-21T15:00:00Z</lastmod>
  </sitemap>
 </sitemapindex>
