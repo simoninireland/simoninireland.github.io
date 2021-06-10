@@ -59,11 +59,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2021-06-04T07:30:00Z</lastmod>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/</loc>
-  <lastmod>2021-05-05T14:43:00Z</lastmod>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/2010/02/26/216/</loc>
@@ -786,6 +786,10 @@
   <lastmod>2021-06-04T07:30:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/2021/06/10/generating-functions-for-epydemic/</loc>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/blog/goodreads/1776/</loc>
   <lastmod>2021-03-31T11:24:00Z</lastmod>
  </url>
@@ -1114,6 +1118,10 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/goodreads/everest-the-cruel-way/</loc>
+  <lastmod>2021-06-09T08:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/blog/goodreads/exactly-how-precision-engineers-created-the-modern-world/</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </url>
@@ -1328,6 +1336,10 @@
  <url>
   <loc>https://simondobson.org/blog/goodreads/kursk-the-greatest-battle/</loc>
   <lastmod>2021-03-31T11:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/goodreads/labours-of-love-the-crisis-of-care/</loc>
+  <lastmod>2021-06-09T08:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/goodreads/les-fleurs-du-mal/</loc>
@@ -1866,6 +1878,10 @@
   <lastmod>2021-04-16T08:51:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/goodreads/the-living-mountain/</loc>
+  <lastmod>2021-06-09T08:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/blog/goodreads/the-lonely-city-adventures-in-the-art-of-being-alone/</loc>
   <lastmod>2021-03-31T11:24:00Z</lastmod>
  </url>
@@ -2182,6 +2198,10 @@
   <lastmod>2021-03-15T16:30:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/blog/goodreads/tyrant-shakespeare-on-politics/</loc>
+  <lastmod>2021-06-09T08:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/blog/goodreads/underland-a-deep-time-journey/</loc>
   <lastmod>2021-03-20T17:19:00Z</lastmod>
  </url>
@@ -2491,7 +2511,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-55.html</loc>
-  <lastmod>2021-06-04T07:30:00Z</lastmod>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/blog/index-56.html</loc>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/blog/index-6.html</loc>
@@ -2511,7 +2535,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2021-05-21T14:57:00Z</lastmod>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -2760,6 +2784,10 @@
  <url>
   <loc>https://simondobson.org/categories/framework/</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/generating-functions/</loc>
+  <lastmod>2021-06-10T17:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/git/</loc>

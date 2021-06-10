@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 04 Jun 2021 07:34:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"Epidemic modelling" added to the executable books gallery</title><link>https://simondobson.org/blog/2021/06/04/epidemic-modelling-added-to-the-executable-books-gallery/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20210604-em-book-cover-small.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;&lt;a href="https://simondobson.org/introduction-to-epidemics/"&gt;"Epidemic modelling: Some notes, maths, and
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 10 Jun 2021 17:29:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Generating functions for epydemic</title><link>https://simondobson.org/blog/2021/06/10/generating-functions-for-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;The next version of &lt;code&gt;epydemic&lt;/code&gt; has just been released. It now
+includes a generating functions library.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2021/06/10/generating-functions-for-epydemic/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>development</category><category>epidemic spreading</category><category>epydemic</category><category>generating functions</category><category>news</category><category>python</category><category>simulation</category><guid>https://simondobson.org/blog/2021/06/10/generating-functions-for-epydemic/</guid><pubDate>Thu, 10 Jun 2021 17:22:16 GMT</pubDate></item><item><title>Tyrant: Shakespeare on Politics</title><link>https://simondobson.org/blog/goodreads/tyrant-shakespeare-on-politics/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549316807l/41817492._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Stephen Greenblatt&lt;/h2&gt;
+				   2018
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		An analysis of Shakespeare's treatment of tyranny in several plays: the Henry VI series, Richard III, Macbeth, King Lear, A Winter's Tale, and Coriolanus. All fascinating discussions as they stand, written by an individual who's clearly a deep Shakespeare scholar – but also cleverly addressing contemporary political themes and events. Make England Great Again!&lt;br&gt;&lt;br&gt;As with much such scholarship, it often begs the question of how much Shakespeare &lt;i&gt;really&lt;/i&gt; meant what is imputed to him: to what extent is his writing a mirror onto which we can project any theme of interest? Perhaps that's not such an interesting question in this case, though, as the reflections cast by the plays – histories and tragedies, including a couple considerably less well-read or -performed in modern times – are really illuminating of the timelessness of events that sometimes feel like they're uniquely modern, rather than be reiterations at some level of eternal themes. The power of this is shown by the fact that this book was published well before some of the events that it parallels, such as the 6 January 2021 storming of the US Capitol. That I think makes clear the depth of the historical context.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Tue, 08 Jun 2021 00:00:00 -0700.  
+		Rating 5/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/tyrant-shakespeare-on-politics/</guid><pubDate>Tue, 08 Jun 2021 07:00:00 GMT</pubDate></item><item><title>Everest the Cruel Way</title><link>https://simondobson.org/blog/goodreads/everest-the-cruel-way/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1481693672l/33377089._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Joe Tasker&lt;/h2&gt;
+				   1981
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		A classic of mountaineering, although not to the same extent as &lt;a href="https://www.goodreads.com/book/show/19294505.Savage_Arena" title="Savage Arena by Joe Tasker" rel="nofollow noopener"&gt;Savage Arena&lt;/a&gt;, Tasker's other (later) book.&lt;br&gt;&lt;br&gt;This is the story of an ill-fated expedition to climb Everest by an unusual route, in winter. The challenge was too great and the team had to turn back, plagued by illness and atrocious weather. But that in no way diminishes their achievement, and they laid the ground work for later winter expeditions to the Himalayas having exposed exactly how cruel the wind in particular made climbing in that season.&lt;br&gt;&lt;br&gt;Tasker is quite an acute observer of his partners, especially of their strengths as climbers and team-mates. He himself comes through less strongly, and this is a far less personally revealing account than is "Savage Arena". It's probably best read as an inspiring tale of what can be achieved even when short of ultimate success.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Mon, 07 Jun 2021 00:00:00 -0700.  
+		Rating 4/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/everest-the-cruel-way/</guid><pubDate>Mon, 07 Jun 2021 07:00:00 GMT</pubDate></item><item><title>Labours of Love: The Crisis of Care</title><link>https://simondobson.org/blog/goodreads/labours-of-love-the-crisis-of-care/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599726850l/55288837._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Madeleine Bunting&lt;/h2&gt;
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		Part policy exploration, part history, part memoir, and part anthropological study, this is a detailed and deeply worrying take on the state of modern British healthcare – the most loved and trusted part of the British State that has been under constant attack for decades. Why is that? – why would politicians seeking the approval of voters nevertheless fail to support and recognise the one thing that all voters admire? And do so with such fake affectations of care?&lt;br&gt;&lt;br&gt;The notion of "care" itself, both as a noun and as a verb. comes under scrutiny. It's a word that's replaced a rich vocabulary of terms, bring aspects of medical and social services that were all previously regarded as separate under a single rubric. And perhaps that's the root of the problem. By destroying the subtlety in search of management and measurement, it becomes easier to neglect the essence of what's being provided and turn social care (and mental health care in particular) into "Cinderella services" adrift from public attention.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Sat, 05 Jun 2021 04:33:32 -0700.  
+		Rating 3/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/labours-of-love-the-crisis-of-care/</guid><pubDate>Sat, 05 Jun 2021 11:33:32 GMT</pubDate></item><item><title>The Living Mountain</title><link>https://simondobson.org/blog/goodreads/the-living-mountain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	&lt;div&gt;
+		&lt;div&gt;
+			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1585798950l/25773742._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+			&lt;div&gt;
+				&lt;h2&gt;Nan Shepherd&lt;/h2&gt;
+				   1977
+				&lt;p&gt;
+				&lt;/p&gt;&lt;hr&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;p&gt;
+		&lt;i&gt;Here then may be a life of the senses so pure, so untouched by any&lt;br&gt;mode of apprehension but their own, that the body may be said to&lt;br&gt;think. Each sense heightened to its most exquisite awareness is in&lt;br&gt;itself total experience. This is the innocence we have lost, living in&lt;br&gt;one sense at a time to live all the way through. ... The many details&lt;br&gt;– a stroke here, a stroke there – come for a moment into perfect&lt;br&gt;focus, and one can read at last the word that has been from the&lt;br&gt;beginning.&lt;/i&gt;&lt;br&gt;&lt;br&gt;Jeanette Winterson, in her afterword to this edition, describes the book as a "geo-poetic exploration of the Cairngorms". That's a good description, though incomplete: this is a meditation on mountains and mountain-centred living in all its forms, often quite breathtaking in its imagery and always rather meditative and spiritual in its perception of the wholeness of the environment.&lt;br&gt;&lt;br&gt;The style of writing itself is fascinating, almost Victorian but without the heaviness. The grammar is flawless, which in itself is quite dated and dating, and every now and again there are some passages that jump off the page with their insight and lucidity. It's a book I want to take into the mountains to read in the situation of its conception.
+		&lt;/p&gt;&lt;p&gt;
+		   Finished on Sat, 05 Jun 2021 04:26:48 -0700.  
+		Rating 5/5.
+	&lt;/p&gt;&lt;/div&gt;
+   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-living-mountain/</guid><pubDate>Sat, 05 Jun 2021 11:26:48 GMT</pubDate></item><item><title>"Epidemic modelling" added to the executable books gallery</title><link>https://simondobson.org/blog/2021/06/04/epidemic-modelling-added-to-the-executable-books-gallery/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20210604-em-book-cover-small.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;&lt;a href="https://simondobson.org/introduction-to-epidemics/"&gt;"Epidemic modelling: Some notes, maths, and
 code"&lt;/a&gt;, my book
 about using network science to model epidemics, is now featured in the
 gallery of the Executable Books project.&lt;/p&gt;
@@ -25,89 +94,4 @@ for publication.&lt;/p&gt;
 	&lt;/p&gt;&lt;/div&gt;
    &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/to-be-a-machine-adventures-among-cyborgs-utopians-hackers-and-the-futurists-solving-the-modest-problem-of-death/</guid><pubDate>Sat, 15 May 2021 07:00:00 GMT</pubDate></item><item><title>New, faster, release of epydemic</title><link>https://simondobson.org/blog/2021/05/14/new-faster-release-of-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I just made a new release of &lt;code&gt;epydemic&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://simondobson.org/blog/2021/05/14/new-faster-release-of-epydemic/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>development</category><category>epidemic spreading</category><category>epydemic</category><category>news</category><category>python</category><category>simulation</category><guid>https://simondobson.org/blog/2021/05/14/new-faster-release-of-epydemic/</guid><pubDate>Fri, 14 May 2021 08:33:17 GMT</pubDate></item><item><title>Re-starting "Complex networks, complex processes"</title><link>https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Today I re-started work on my &lt;em&gt;other&lt;/em&gt; book.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>book</category><category>complex networks</category><category>news</category><category>research</category><guid>https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/</guid><pubDate>Fri, 07 May 2021 16:23:38 GMT</pubDate></item><item><title>The Old Ways: A Journey on Foot</title><link>https://simondobson.org/blog/goodreads/the-old-ways-a-journey-on-foot/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328811154l/13369533._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Robert Macfarlane&lt;/h2&gt;
-				   2012
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A beautiful and poignant volume that's hard to categorise: part travelogue, part biography of the poet Edward Thomas, part meditation, part exploration. Macfarlane traces old footpaths, from the South Downs to the Hebrides to Palestine, reading the landscape and the marks that people have left on it. He follows the diversions as he encounters them, musing about the "pathways" in the sea that are clear and long-lived despite being written in the water, formed from the ways in which current and wind interact to lay down the "natural" route to travel before powered craft. He spends night under the stars, including a rather unnerving and supernatural encounter while sleeping (ill-advisedly, as he puts it) in a neolithic ring. And he brings out literary gems, such as the relationship between Thomas (whose work I've now been inspired to read) and Robert Frost's poem The road not taken. Altogether a delight to read.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Tue, 04 May 2021 14:00:37 -0700.  
-		Rating 5/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-old-ways-a-journey-on-foot/</guid><pubDate>Tue, 04 May 2021 21:00:37 GMT</pubDate></item><item><title>The Occult Roots of Nazism: Secret Aryan Cults and Their Influence on Nazi Ideology</title><link>https://simondobson.org/blog/goodreads/the-occult-roots-of-nazism-secret-aryan-cults-and-their-influence-on-nazi-ideology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555588710l/44804072._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Nicholas Goodrick-Clarke&lt;/h2&gt;
-				   1982
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A scholarly study of the occult ideas that emerged in Germany and (especially) Austria in the year leading up to and after the First World War. It raises many ideas, most of them disquieting – not least the similarities with modern-day tendencies to believe in hidden plots and secret societies controlling the world's destiny. Perhaps this is a common reaction to feelings of social and economic dislocation, but it's worrying nonetheless.&lt;br&gt;&lt;br&gt;Goodrick-Clarke is entirely honest about his inability to definitively establish a causal chain from the Thule Society and like-minded groups to the Nazis. He presents two hypotheses: that the members and hanger-on of the Thule did indeed have some influence, notably over Heinrich Himmler's view of the SS as a revenant mediaeval order of chivalry; and that the ideas were simply "in the air", a symptom of the times than were independently picked up and developed by the Nazis.&lt;br&gt;&lt;br&gt;It'd be easy for a book on this theme to become lost in fables, and indeed many other works have done so. (Goodrick-Clarke devotes an appendix to dismantling these "crypto-histories".) You never get the feeling, reading him, that he's in the slightest bit a believer, even as he recounts the (probably and putatively sincere) beliefs of his subjects. That many of these beliefs can be traced back definitively to works of late-nineteenth-century fiction (notably to the books of &lt;a href="https://www.goodreads.com/author/show/44512.Edward_Bulwer_Lytton" title="Edward Bulwer-Lytton" rel="nofollow noopener"&gt;Edward Bulwer-Lytton&lt;/a&gt;) makes their attraction all the more surprising, even given that the belief was always a niche one.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Mon, 03 May 2021 07:38:04 -0700.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-occult-roots-of-nazism-secret-aryan-cults-and-their-influence-on-nazi-ideology/</guid><pubDate>Mon, 03 May 2021 14:38:04 GMT</pubDate></item><item><title>The Great Book of Amber (The Chronicles of Amber, #1-10)</title><link>https://simondobson.org/blog/goodreads/the-great-book-of-amber-the-chronicles-of-amber-1-10/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1165519096l/5367._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Roger Zelazny&lt;/h2&gt;
-				   1999
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		The entire Amber series, all two series and ten books of it. That's a lot of material to hold together as a coherent narrative, something only a master could have accomplished.&lt;br&gt;&lt;br&gt;The first series builds on earlier swords-and-sorcery works and turns them on their head, as something happening contemporaneously with the modern world but in "shadows" being cast from Amber and Chaos, two poles of existence. The struggle between these two primal forces combines both the archetypal and the familial, with some siblings battling for the throne while others seek power by undermining the fabric of existence as embodied in the Pattern, that gives control over Shadow. The two struggles coalesce, with the Pattern being damaged and allowing Chaos to gain strength, and event that's reflected on all Shadows. It all comes down to a struggle to re-inscribe the Pattern and re-establish the balance.&lt;br&gt;&lt;br&gt;All this (five book's worth) is recounted by the protagonist, Corwin, to his son Merlin, sitting on a rock before the Courts of Chaos at the end of the Patternfall Wall. The second series covers Merlin's adventures as similar forces rear-up and try to disrupt existence. The second series (another five books' worth) is nowhere near as polished as the first: there are a lot of loose ends and material that's never really explored, and the final ending feels quite weak, as though the strands didn't quite pull together as tightly as Zelazny wanted. It's a small failing, and the stories can be enjoyed for their pace and style without necessarily needing to be resolved.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Fri, 23 Apr 2021 12:48:55 -0700.  
-		Rating 5/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-great-book-of-amber-the-chronicles-of-amber-1-10/</guid><pubDate>Fri, 23 Apr 2021 19:48:55 GMT</pubDate></item><item><title>The Book of Legendary Lands</title><link>https://simondobson.org/blog/goodreads/the-book-of-legendary-lands/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364250926l/17621050._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Umberto Eco&lt;/h2&gt;
-				   2013
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		Fable, folklore, and (to a far lesser extent) fictional lands, explored with the clarity one would expect of Eco. This book is a joy to read, with key excerpts from source works included after the discussion in each chapter, and it's full of wonderful images, of paintings especially, that show the parallel visual arts associated with each of the chosen lands.&lt;br&gt;&lt;br&gt;Again as one would expect from Eco, the last chapter is a philosophical discussion of the nature of truth when applied to legends: we "know" what happens in a legend, and so recognise any revisionist of alternative reading as "fictional" even th0ugh the original was fictional also. It's an interesting and worthwhile discussion that in many ways crystalises the points made in the concrete earlier chapters.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Mon, 19 Apr 2021 04:54:58 -0700.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-book-of-legendary-lands/</guid><pubDate>Mon, 19 Apr 2021 11:54:58 GMT</pubDate></item><item><title>It Gets Me Home, This Curving Track: Objects &amp; Essays 2012-2018</title><link>https://simondobson.org/blog/goodreads/it-gets-me-home-this-curving-track-objects-essays-2012-2018/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1550777290l/44083289._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Ian Penman&lt;/h2&gt;
-				   2019
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		Reports from music criticism. While it presents itself as a book of essays, it's actually an anthology of the author's book reviews over the past decades. That's not a criticism, although until you realise what's happening it's confusing to see repeated mentions of a particular book.&lt;br&gt;&lt;br&gt;The essays/reviews range over big names like Frank Sinatra, Elvis, Charlie Parker, and Steely Dan, and the lesser-known like John Fahey and entire scenes like the Mods. One name that's missing, but that strangely haunts the book by her absence, is Billie Holiday: I think it's all the jazz references, but you can feel that she &lt;i&gt;should&lt;/i&gt; be here in her own right – and then I read the introduction (having read the book), and read the author's explanation of why he didn't feel he could do her justice. Hopefully he'll write another book just for her.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Fri, 09 Apr 2021 00:00:00 -0700.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/it-gets-me-home-this-curving-track-objects-essays-2012-2018/</guid><pubDate>Fri, 09 Apr 2021 07:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>book</category><category>complex networks</category><category>news</category><category>research</category><guid>https://simondobson.org/blog/2021/05/07/re-starting-complex-networks-complex-processes/</guid><pubDate>Fri, 07 May 2021 16:23:38 GMT</pubDate></item></channel></rss>
