@@ -4,21 +4,22 @@
 .. date: 2020-06-17 11:17:56 UTC+01:00
 .. tags: cv
 .. category: personal
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
-Simon Dobson is Professor of Computer Science and Head of School in
-the [School of Computer
-Science](https://www,st-andrews.ac.uk/computer-science/) at the
-[University of St Andrews](https://www.st-andrews.ac.uk). He works on
-complex and sensor systems, especially on sensor analytics and the
-modelling of complex processes. His research has generated over 150
-internationally peer-reviewed [publications](/research/publications/),
-driven by leadership roles in research grants worth over EUR30M --
-most recently as part of a £5M EPSRC-funded programme grant in the
-[Science of Sensor Systems
+Simon Dobson is Professor of Computer Science in the [School of
+Computer Science](https://www,st-andrews.ac.uk/computer-science/) at
+the [University of St Andrews](https://www.st-andrews.ac.uk). He was
+Head of School from 2007 -- 2021.
+
+Simon works on complex and sensor systems, especially on sensor
+analytics and the modelling of complex processes. His research has
+generated over 150 internationally peer-reviewed
+[publications](/research/publications/), driven by leadership roles in
+research grants worth over EUR30M -- most recently as part of a £5M
+EPSRC-funded programme grant in the [Science of Sensor Systems
 Software](http://www.dcs.gla.ac.uk/research/S4/) He has served,
 amongst other activities, on the steering committee of the ACSOS
 conference; as programme and general chairs for the IEEE International
@@ -45,4 +46,3 @@ was elected Fellow of the [Royal Society of
 Edinburgh](https://www.rse.org.uk), Scotland's national academy, in 2020.
 
 (See also my [2-page](/short-cv.pdf) and [complete](/medium-cv.pdf) CVs.)
-

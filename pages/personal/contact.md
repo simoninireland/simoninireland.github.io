@@ -2,16 +2,15 @@
 .. title: Contact details
 .. slug: contact
 .. date: 2020-06-17 17:00:38 UTC+01:00
-.. tags: 
+.. tags:
 .. category: personal
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
 **Professor Simon Dobson** FRSE CEng FBCS <br>
-Professor of Computer Science <br>
-Head of School for Computer Science <br>
+Professor of Computer Science
 
 s: [School of Computer Science](https://www.st-andrews.ac.uk/computer-science),
 [University of St Andrews](https://www.st-andrews.ac.uk),

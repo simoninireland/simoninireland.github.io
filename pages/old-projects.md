@@ -18,6 +18,7 @@ projects that contributed to them.
 - [Arduino SleepySketch (2013--2014)](/development/sleepysketch/)
 - [Sapere (2010--2013)](/research/sapere/)
 - [Attila (2010--2013)](/development/attila/)
+- [NEMBES (2008--2012)](/research/nembes/)
 - [GLOSS (2001--2003)](/research/gloss/)
 - Towards a semantics of pervasive computing (2005--2008)
 - [Vanilla (1997--1999)](/development/vanilla/)
