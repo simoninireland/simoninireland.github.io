@@ -20,4 +20,4 @@ Room 1.17, Jack Cole Building, North Haugh, St Andrews, Fife KY16 9SX, UK
 e: [simon.dobson@st-andrews.ac.uk](mailto:simon.dobson@st-andrews.ac.uk) <br>
 w: [https://simondobson.org](https://simondobson.org) <br>
 t: +44 1334 461626 <br>
-pgp: [public key](/identity.pub.txt)
+pgp: [public key](/publickey.asc)
