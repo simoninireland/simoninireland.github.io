@@ -4,7 +4,7 @@
 .. date: 2020-07-17 18:03:14 UTC+01:00
 .. tags: essay, self-publishing, experience
 .. status:
-.. category: 
+.. category:
 .. link:
 .. description: A journey into the practicalities of hacker self-publication
 .. previewimage: /images/posts/20200722-em-book.png
@@ -186,7 +186,7 @@ with their own advantages and disadvantages:
 - [Binder](https://mybinder.org/) will take a repo of notebooks and
   spin them up in a container. Very flexible and executable. Not a
   reader-focused experience.
-  
+
 Each of these tools meets a specific use case -- and does so very
 well. Unfortunately they weren't *my* use case: an online book,
 accessible to the non-technical reader and offering a good reading
@@ -311,7 +311,7 @@ There were a couple of problems. Firstly, LaTeX doesn't really like
 SVG figures. Jupyter has several options, so I changed the notebook
 header cell to select PNG instead.
 
-```{code
+```{code}
 import matplotlib
 %matplotlib inline
 %config InlineBackend.figure_format = 'png'
@@ -381,8 +381,8 @@ directive to include specific markup into the LaTeX version that's
 ignored in the HTML or other renderings.
 
 This whole process takes markdown and notebooks to LaTeX (and then to
-PDF, seamlessly. I did move some notes around to make them break better
-on the pages, and re-arranged some code fragments to avoid over-long lines. 
+PDF) seamlessly. I did move some notes around to make them break better
+on the pages, and re-arranged some code fragments to avoid over-long lines.
 
 
 ## Getting into print
@@ -390,7 +390,7 @@ on the pages, and re-arranged some code fragments to avoid over-long lines.
 Most people writing a book, at least when they get this stage, have a
 publisher in mind or even a contract. A publisher wants to convince
 themselves that a book will sell enough copies to make them money, and
-will put in the effort in marketing and publicity to make this happen. 
+will put in the effort in marketing and publicity to make this happen.
 
 But self-publishing has become a lot more possible these days, with
 print-on-demand services willing to take on essentially *any* book
@@ -582,7 +582,7 @@ easily grasped, and (hopefully) more memorable and better crafted are
 things I'll try to take forward into *all* my writing. There's no
 reason for scientific prose to be hard to digest, and in fact the
 easier concepts and explained the more likely they are to be picked up
-and used (and cited!). 
+and used (and cited!).
 
 But I still found it hard to let go! The hardest thing was pushing the
 button to "approve" the printed proof ahead of distribution. I must
@@ -622,7 +622,7 @@ writing straight into LaTeX would be an option, and then going from
 there to HTML. Personally I think I'd stick with markdown and Jupyter
 Book even if I didn't have notebooks: start with portable sources and
 then refine to presentations using the best tools for the particular
-media. 
+media.
 
 One final point needs making strongly. With the single exceptions of
 Photoshop for assembling the cover, Amazon for creating the cover
@@ -657,8 +657,3 @@ of the specific files referred to in the text are:
   `\backoftitlepage` command to put in the copyright and imprint
   information, and the `\forprint` command to set things up generating
   a print PDF by disabling hyperlinks
-  
-  
-  
-
-
