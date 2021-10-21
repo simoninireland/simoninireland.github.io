@@ -383,191 +383,157 @@ auxiliary bits and pieces.</p>
 <p>There were a couple of problems. Firstly, LaTeX doesn't really like
 SVG figures. Jupyter has several options, so I changed the notebook
 header cell to select PNG instead.</p>
-<p>```{code
-import matplotlib
-%matplotlib inline
-%config InlineBackend.figure_format = 'png'</p>
-<pre class="code literal-block"><span></span><code><span class="n">The</span> <span class="n">other</span> <span class="n">issue</span> <span class="n">concerned</span> <span class="n">getting</span> <span class="n">references</span> <span class="n">and</span> <span class="n">citations</span> <span class="n">to</span>
-<span class="n">work</span><span class="p">.</span> <span class="n">The</span> <span class="p">[</span><span class="n">Sphinx</span> <span class="n">plug</span><span class="o">-</span><span class="n">in</span> <span class="k">for</span>
-<span class="k">this</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//sphinxcontrib-bibtex.readthedocs.io/en/latest/) works</span>
-<span class="n">perfectly</span> <span class="k">for</span> <span class="n">online</span> <span class="n">use</span> <span class="n">but</span> <span class="n">not</span> <span class="n">so</span> <span class="n">well</span> <span class="k">for</span> <span class="n">print</span> <span class="n">usage</span><span class="p">,</span> <span class="n">especially</span>
-<span class="n">with</span> <span class="n">a</span> <span class="n">more</span> <span class="n">complicated</span> <span class="n">document</span> <span class="k">class</span> <span class="p">(</span><span class="n">see</span> <span class="n">below</span><span class="p">).</span>  <span class="n">The</span> <span class="n">citation</span> <span class="n">tags</span>
-<span class="n">that</span> <span class="n">it</span> <span class="n">generates</span> <span class="n">aren</span><span class="err">'</span><span class="n">t</span> <span class="n">quite</span> <span class="n">the</span> <span class="n">ones</span> <span class="n">in</span> <span class="n">the</span> <span class="n">underlying</span> <span class="n">BibTeX</span>
-<span class="n">file</span><span class="p">.</span> <span class="n">They</span><span class="err">'</span><span class="n">re</span> <span class="n">extended</span> <span class="n">with</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">that</span> <span class="n">imports</span> <span class="n">the</span>
-<span class="n">bibliography</span><span class="p">,</span> <span class="n">which</span> <span class="n">is</span> <span class="n">a</span> <span class="n">feature</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">multiple</span> <span class="n">bibliographies</span> <span class="n">to</span>
-<span class="n">co</span><span class="o">-</span><span class="n">exist</span><span class="p">.</span> <span class="n">That</span><span class="err">'</span><span class="n">s</span> <span class="n">non</span><span class="o">-</span><span class="n">standard</span> <span class="n">in</span> <span class="n">the</span> <span class="n">LaTeX</span> <span class="n">world</span><span class="p">,</span> <span class="n">so</span> <span class="n">I</span> <span class="n">piped</span> <span class="n">the</span>
-<span class="n">resulting</span> <span class="n">LaTeX</span> <span class="n">file</span> <span class="n">through</span> <span class="err">`</span><span class="n">sed</span><span class="err">`</span> <span class="n">to</span> <span class="n">remove</span> <span class="n">the</span> <span class="n">extras</span><span class="p">.</span>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
+</code></pre>
 
-<span class="n">Finally</span><span class="p">,</span> <span class="n">Sphinx</span> <span class="n">generates</span> <span class="kr">inline</span> <span class="err">`\</span><span class="n">bibitem</span><span class="err">`</span> <span class="n">calls</span><span class="p">,</span> <span class="n">which</span> <span class="n">again</span> <span class="n">isn</span><span class="err">'</span><span class="n">t</span>
-<span class="n">quite</span> <span class="n">standard</span> <span class="k">for</span> <span class="n">LaTeX</span> <span class="n">and</span> <span class="p">(</span><span class="n">it</span> <span class="n">turns</span> <span class="n">out</span><span class="p">)</span> <span class="n">confuses</span> <span class="n">some</span> <span class="n">of</span> <span class="n">the</span> <span class="n">more</span>
-<span class="n">complex</span> <span class="n">LaTeX</span> <span class="n">classes</span><span class="p">.</span> <span class="n">I</span> <span class="n">solved</span> <span class="k">this</span> <span class="n">by</span> <span class="n">letting</span> <span class="n">Sphinx</span> <span class="n">ingest</span> <span class="n">the</span>
-<span class="n">bibfile</span> <span class="n">but</span> <span class="n">not</span> <span class="k">using</span> <span class="n">the</span> <span class="n">Sphinx</span> <span class="err">`</span><span class="p">..</span> <span class="n">bibliography</span><span class="o">::</span><span class="err">`</span> <span class="n">directive</span> <span class="n">to</span> <span class="n">lay</span>
-<span class="n">it</span> <span class="n">out</span> <span class="n">in</span> <span class="n">the</span> <span class="n">document</span><span class="p">,</span> <span class="n">and</span> <span class="n">instead</span> <span class="n">adding</span> <span class="n">a</span> <span class="n">separate</span> <span class="n">file</span> <span class="n">to</span> <span class="n">include</span>
-<span class="n">the</span> <span class="n">usual</span> <span class="n">LaTeX</span> <span class="err">`\</span><span class="n">bibliographystyle</span><span class="err">`</span> <span class="n">and</span> <span class="err">`\</span><span class="n">bibliography</span><span class="err">`</span>
-<span class="n">commands</span><span class="p">.</span> <span class="n">This</span> <span class="n">meant</span> <span class="n">that</span> <span class="n">the</span> <span class="n">usual</span> <span class="n">LaTeX</span><span class="o">/</span><span class="n">BibTeX</span> <span class="n">square</span> <span class="n">dance</span> <span class="n">would</span>
-<span class="n">lay</span> <span class="n">the</span> <span class="n">references</span> <span class="n">out</span> <span class="n">correctly</span><span class="p">.</span>
-
-<span class="n">A</span> <span class="n">similar</span> <span class="n">problem</span> <span class="n">affects</span> <span class="n">index</span> <span class="n">generation</span><span class="p">.</span> <span class="n">This</span> <span class="n">time</span> <span class="n">it</span> <span class="n">arises</span>
-<span class="n">because</span> <span class="n">Sphinx</span> <span class="n">isn</span><span class="err">'</span><span class="n">t</span> <span class="n">careful</span> <span class="n">enough</span> <span class="n">about</span> <span class="n">injecting</span> <span class="n">spaces</span> <span class="n">into</span> <span class="n">the</span>
-<span class="n">generated</span> <span class="n">LaTeX</span> <span class="err">`\</span><span class="n">index</span><span class="err">`</span> <span class="n">commands</span><span class="p">,</span> <span class="n">which</span> <span class="n">causes</span> <span class="n">duplicate</span> <span class="n">index</span>
-<span class="n">entries</span> <span class="k">if</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">term</span> <span class="n">indexed</span> <span class="n">to</span> <span class="n">different</span> <span class="n">pages</span><span class="p">.</span> <span class="n">Another</span>
-<span class="n">piece</span> <span class="n">of</span> <span class="err">`</span><span class="n">sed</span><span class="err">`</span> <span class="n">fixed</span> <span class="k">this</span> <span class="n">too</span><span class="p">,</span> <span class="n">and</span> <span class="n">adding</span> <span class="err">`\</span><span class="n">printindex</span><span class="err">`</span> <span class="n">brought</span> <span class="n">the</span>
-<span class="n">index</span> <span class="n">into</span> <span class="n">the</span> <span class="n">document</span> <span class="n">in</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">place</span><span class="p">.</span> <span class="p">(</span><span class="n">Strangely</span> <span class="n">enough</span>
-<span class="n">Sphinx</span> <span class="n">emits</span> <span class="err">`\</span><span class="n">makeindex</span><span class="err">`</span> <span class="n">at</span> <span class="n">the</span> <span class="n">start</span> <span class="n">of</span> <span class="n">the</span> <span class="n">document</span> <span class="n">but</span> <span class="n">doesn</span><span class="err">'</span><span class="n">t</span>
-<span class="n">emit</span> <span class="err">`\</span><span class="n">printindex</span><span class="err">`</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="p">.</span>
-
-
-<span class="cp">## Better print styling</span>
-
-<span class="n">Sphinx</span> <span class="n">is</span> <span class="n">at</span> <span class="n">bottom</span> <span class="n">a</span> <span class="n">tool</span> <span class="k">for</span> <span class="n">code</span> <span class="n">documentation</span><span class="p">,</span> <span class="n">and</span> <span class="n">its</span> <span class="n">in</span><span class="o">-</span><span class="n">built</span>
-<span class="n">LaTeX</span> <span class="n">themes</span> <span class="n">are</span> <span class="n">understandably</span> <span class="k">restricted</span><span class="p">.</span> <span class="n">Having</span> <span class="n">followed</span> <span class="n">Tufte</span><span class="err">'</span><span class="n">s</span>
-<span class="n">style</span> <span class="k">for</span> <span class="n">the</span> <span class="n">online</span> <span class="n">version</span> <span class="n">I</span> <span class="n">wanted</span> <span class="n">to</span> <span class="k">do</span> <span class="n">the</span> <span class="n">same</span> <span class="k">for</span> <span class="n">a</span> <span class="n">print</span> <span class="n">copy</span>
-<span class="o">--</span> <span class="n">not</span> <span class="n">least</span> <span class="n">because</span> <span class="n">I</span><span class="err">'</span><span class="n">m</span> <span class="n">now</span> <span class="n">a</span> <span class="n">convert</span> <span class="n">to</span> <span class="k">this</span> <span class="n">style</span><span class="p">.</span>
-
-<span class="n">You</span> <span class="n">can</span> <span class="n">set</span> <span class="n">the</span> <span class="n">document</span> <span class="k">class</span> <span class="nc">for</span> <span class="n">the</span> <span class="k">final</span> <span class="n">document</span> <span class="n">and</span> <span class="n">instruct</span>
-<span class="n">Sphinx</span> <span class="n">to</span> <span class="n">include</span> <span class="n">a</span> <span class="s">"prelude"</span> <span class="n">of</span> <span class="n">your</span> <span class="n">choice</span><span class="p">.</span> <span class="n">There</span> <span class="n">are</span> <span class="p">[</span><span class="n">lots</span> <span class="n">of</span> <span class="n">book</span>
-<span class="n">templates</span> <span class="n">to</span> <span class="n">choose</span> <span class="n">from</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//www.latextemplates.com/), and</span>
-<span class="n">fortunately</span> <span class="n">there</span><span class="err">'</span><span class="n">s</span> <span class="n">a</span> <span class="p">[</span><span class="n">Tufte</span> <span class="n">book</span>
-<span class="k">class</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//tufte-latex.github.io/tufte-latex/) that's included in</span>
-<span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">LaTeX</span> <span class="n">distributions</span> <span class="n">as</span> <span class="n">standard</span><span class="p">.</span> <span class="n">I</span> <span class="n">did</span> <span class="n">a</span> <span class="n">small</span> <span class="n">amount</span> <span class="n">of</span>
-<span class="n">customisation</span> <span class="n">in</span> <span class="n">a</span> <span class="err">`</span><span class="n">style</span><span class="p">.</span><span class="n">tex</span><span class="err">`</span> <span class="n">preamble</span> <span class="n">file</span><span class="p">,</span> <span class="n">mainly</span> <span class="n">to</span> <span class="n">get</span> <span class="n">a</span>
-<span class="n">copyright</span> <span class="n">page</span> <span class="n">and</span> <span class="n">place</span> <span class="n">marginal</span> <span class="n">notes</span> <span class="n">into</span> <span class="n">the</span> <span class="n">margin</span> <span class="n">by</span> <span class="n">translating</span>
-<span class="n">the</span> <span class="n">Sphinx</span><span class="o">-</span><span class="n">generated</span> <span class="n">command</span> <span class="n">to</span> <span class="n">the</span> <span class="n">command</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Tufte</span>
-<span class="k">class</span><span class="p">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">also</span> <span class="n">set</span> <span class="n">document</span> <span class="k">class</span> <span class="nc">options</span> <span class="n">like</span> <span class="n">the</span> <span class="n">paper</span> <span class="n">size</span>
-<span class="p">(</span><span class="err">`</span><span class="n">b5paper</span><span class="err">`</span> <span class="n">in</span> <span class="n">my</span> <span class="k">case</span><span class="p">,</span> <span class="n">fairly</span> <span class="n">standard</span> <span class="k">for</span> <span class="n">scientific</span> <span class="n">books</span><span class="p">)</span> <span class="n">and</span>
-<span class="n">whether</span> <span class="n">you</span><span class="err">'</span><span class="n">re</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">a</span> <span class="n">PDF</span> <span class="n">suited</span> <span class="k">for</span> <span class="n">printing</span> <span class="p">(</span><span class="n">with</span> <span class="n">asymmetric</span>
-<span class="n">margins</span> <span class="n">to</span> <span class="n">allow</span> <span class="k">for</span> <span class="n">the</span> <span class="n">spine</span><span class="p">)</span> <span class="n">of</span> <span class="k">for</span> <span class="n">viewing</span> <span class="n">online</span> <span class="p">(</span><span class="n">symmetric</span>
-<span class="n">margins</span><span class="p">).</span> <span class="n">The</span> <span class="n">result</span> <span class="n">was</span> <span class="n">very</span> <span class="n">appealing</span><span class="p">.</span>
-
-<span class="o">!</span><span class="p">[</span><span class="n">Tufte</span> <span class="n">print</span> <span class="n">styling</span><span class="p">](</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="mi">20200722</span><span class="o">-</span><span class="n">em</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">print</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
-
-<span class="n">Those</span> <span class="n">wide</span> <span class="n">margins</span> <span class="n">are</span> <span class="n">also</span> <span class="n">great</span> <span class="k">for</span> <span class="n">figures</span> <span class="n">that</span> <span class="n">benefit</span> <span class="n">from</span> <span class="n">the</span>
-<span class="n">extra</span> <span class="n">width</span><span class="p">.</span>
-
-<span class="o">!</span><span class="p">[</span><span class="n">Wide</span> <span class="n">figure</span> <span class="n">extending</span> <span class="n">into</span> <span class="n">the</span> <span class="n">margin</span><span class="p">](</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="mi">20200722</span><span class="o">-</span><span class="n">em</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">print</span><span class="o">-</span><span class="n">wide</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
-
-<span class="n">I</span> <span class="n">got</span> <span class="k">this</span> <span class="n">directly</span> <span class="n">from</span> <span class="n">the</span> <span class="n">markdown</span> <span class="n">by</span> <span class="k">using</span> <span class="n">the</span> <span class="err">`</span><span class="p">..</span> <span class="n">raw</span><span class="o">::</span> <span class="n">latex</span><span class="err">`</span>
-<span class="n">directive</span> <span class="n">to</span> <span class="n">include</span> <span class="n">specific</span> <span class="n">markup</span> <span class="n">into</span> <span class="n">the</span> <span class="n">LaTeX</span> <span class="n">version</span> <span class="n">that</span><span class="err">'</span><span class="n">s</span>
-<span class="n">ignored</span> <span class="n">in</span> <span class="n">the</span> <span class="n">HTML</span> <span class="n">or</span> <span class="n">other</span> <span class="n">renderings</span><span class="p">.</span>
-
-<span class="n">This</span> <span class="n">whole</span> <span class="n">process</span> <span class="n">takes</span> <span class="n">markdown</span> <span class="n">and</span> <span class="n">notebooks</span> <span class="n">to</span> <span class="n">LaTeX</span> <span class="p">(</span><span class="n">and</span> <span class="n">then</span> <span class="n">to</span>
-<span class="n">PDF</span><span class="p">,</span> <span class="n">seamlessly</span><span class="p">.</span> <span class="n">I</span> <span class="n">did</span> <span class="n">move</span> <span class="n">some</span> <span class="n">notes</span> <span class="n">around</span> <span class="n">to</span> <span class="n">make</span> <span class="n">them</span> <span class="k">break</span> <span class="n">better</span>
-<span class="n">on</span> <span class="n">the</span> <span class="n">pages</span><span class="p">,</span> <span class="n">and</span> <span class="n">re</span><span class="o">-</span><span class="n">arranged</span> <span class="n">some</span> <span class="n">code</span> <span class="n">fragments</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">over</span><span class="o">-</span><span class="kt">long</span> <span class="n">lines</span><span class="p">.</span> 
-
-
-<span class="cp">## Getting into print</span>
-
-<span class="n">Most</span> <span class="n">people</span> <span class="n">writing</span> <span class="n">a</span> <span class="n">book</span><span class="p">,</span> <span class="n">at</span> <span class="n">least</span> <span class="n">when</span> <span class="n">they</span> <span class="n">get</span> <span class="k">this</span> <span class="n">stage</span><span class="p">,</span> <span class="n">have</span> <span class="n">a</span>
-<span class="n">publisher</span> <span class="n">in</span> <span class="n">mind</span> <span class="n">or</span> <span class="n">even</span> <span class="n">a</span> <span class="n">contract</span><span class="p">.</span> <span class="n">A</span> <span class="n">publisher</span> <span class="n">wants</span> <span class="n">to</span> <span class="n">convince</span>
-<span class="n">themselves</span> <span class="n">that</span> <span class="n">a</span> <span class="n">book</span> <span class="n">will</span> <span class="n">sell</span> <span class="n">enough</span> <span class="n">copies</span> <span class="n">to</span> <span class="n">make</span> <span class="n">them</span> <span class="n">money</span><span class="p">,</span> <span class="n">and</span>
-<span class="n">will</span> <span class="n">put</span> <span class="n">in</span> <span class="n">the</span> <span class="n">effort</span> <span class="n">in</span> <span class="n">marketing</span> <span class="n">and</span> <span class="n">publicity</span> <span class="n">to</span> <span class="n">make</span> <span class="k">this</span> <span class="n">happen</span><span class="p">.</span> 
-
-<span class="n">But</span> <span class="n">self</span><span class="o">-</span><span class="n">publishing</span> <span class="n">has</span> <span class="n">become</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">more</span> <span class="n">possible</span> <span class="n">these</span> <span class="n">days</span><span class="p">,</span> <span class="n">with</span>
-<span class="n">print</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">demand</span> <span class="n">services</span> <span class="n">willing</span> <span class="n">to</span> <span class="n">take</span> <span class="n">on</span> <span class="n">essentially</span> <span class="o">*</span><span class="n">any</span><span class="o">*</span> <span class="n">book</span>
-<span class="n">since</span> <span class="n">there</span><span class="err">'</span><span class="n">s</span> <span class="n">no</span> <span class="n">inventory</span> <span class="n">to</span> <span class="n">be</span> <span class="n">held</span><span class="p">.</span> <span class="n">Only</span> <span class="n">as</span> <span class="n">many</span> <span class="n">books</span> <span class="n">are</span> <span class="n">printed</span>
-<span class="n">as</span> <span class="n">are</span> <span class="n">bought</span><span class="p">,</span> <span class="n">but</span> <span class="n">the</span> <span class="n">individual</span> <span class="n">cost</span> <span class="n">may</span> <span class="n">be</span> <span class="n">higher</span> <span class="n">to</span> <span class="n">account</span> <span class="k">for</span> <span class="n">the</span>
-<span class="n">lack</span> <span class="n">of</span> <span class="n">economies</span> <span class="n">of</span> <span class="n">scale</span><span class="p">.</span> <span class="n">Since</span> <span class="n">I</span> <span class="n">harboured</span> <span class="n">no</span> <span class="n">delusions</span> <span class="n">as</span> <span class="n">to</span>
-<span class="n">having</span> <span class="n">a</span> <span class="n">best</span><span class="o">-</span><span class="n">seller</span> <span class="n">on</span> <span class="n">my</span> <span class="n">hands</span> <span class="o">--</span> <span class="n">not</span> <span class="n">least</span> <span class="n">because</span> <span class="n">the</span> <span class="n">whole</span>
-<span class="n">project</span> <span class="n">sits</span> <span class="n">publicly</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">read</span> <span class="n">freely</span> <span class="n">online</span> <span class="o">--</span>
-<span class="n">self</span><span class="o">-</span><span class="n">publishing</span> <span class="n">and</span> <span class="n">print</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">demand</span> <span class="n">were</span> <span class="n">attractive</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">biggest</span> <span class="n">print</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">demand</span> <span class="n">shop</span> <span class="n">is</span> <span class="n">also</span> <span class="n">the</span> <span class="n">biggest</span> <span class="n">shop</span> <span class="n">of</span> <span class="n">any</span> <span class="nl">kind</span><span class="p">:</span>
-<span class="n">Amazon</span><span class="p">.</span> <span class="p">[</span><span class="n">Kindle</span> <span class="n">Direct</span> <span class="n">Publishing</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//kdp.amazon.com/en_US)</span>
-<span class="n">handles</span> <span class="n">both</span> <span class="n">e</span><span class="o">-</span><span class="n">books</span> <span class="n">and</span> <span class="n">print</span> <span class="n">books</span><span class="p">.</span> <span class="n">An</span> <span class="n">account</span> <span class="n">is</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">set</span> <span class="n">up</span> <span class="n">and</span>
-<span class="n">gives</span> <span class="n">access</span> <span class="n">to</span> <span class="n">a</span> <span class="n">range</span> <span class="n">of</span> <span class="n">tools</span><span class="p">.</span>  <span class="n">A</span> <span class="n">book</span> <span class="n">needs</span> <span class="n">an</span> <span class="n">ISBN</span> <span class="n">number</span> <span class="o">--</span> <span class="n">a</span>
-<span class="n">different</span> <span class="n">one</span> <span class="k">for</span> <span class="n">each</span> <span class="n">format</span> <span class="n">and</span> <span class="n">edition</span><span class="p">,</span> <span class="n">in</span> <span class="n">fact</span> <span class="o">--</span> <span class="n">and</span> <span class="n">Amazon</span> <span class="n">will</span>
-<span class="n">allocate</span> <span class="n">one</span> <span class="k">for</span> <span class="n">you</span><span class="p">.</span>
-
-<span class="n">All</span> <span class="k">this</span> <span class="s">"free"</span> <span class="n">help</span> <span class="n">comes</span> <span class="n">at</span> <span class="n">a</span> <span class="n">cost</span><span class="p">,</span> <span class="n">though</span><span class="p">.</span> <span class="n">Using</span> <span class="n">an</span> <span class="n">Amazon</span> <span class="n">ISBN</span><span class="p">,</span> <span class="n">or</span>
-<span class="n">a</span> <span class="n">cover</span> <span class="n">with</span> <span class="n">Amazon</span> <span class="n">clip</span> <span class="n">art</span><span class="p">,</span> <span class="n">ties</span> <span class="n">you</span> <span class="n">strictly</span> <span class="n">to</span> <span class="n">Amazon</span> <span class="k">for</span>
-<span class="n">distribution</span><span class="p">.</span>
-
-<span class="n">Searching</span> <span class="n">online</span> <span class="n">turned</span> <span class="n">up</span>
-<span class="p">[</span><span class="n">IngramSpark</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//www.ingramspark.com/), who are a print-on-demand</span>
-<span class="n">and</span> <span class="n">e</span><span class="o">-</span><span class="n">book</span> <span class="n">distributor</span><span class="p">.</span> <span class="n">They</span> <span class="n">offer</span> <span class="n">a</span> <span class="n">broader</span> <span class="n">service</span> <span class="n">than</span> <span class="n">Amazon</span><span class="p">,</span> <span class="k">for</span>
-<span class="n">example</span> <span class="n">advertising</span> <span class="n">to</span> <span class="n">bookshops</span> <span class="n">and</span> <span class="n">providing</span> <span class="n">order</span> <span class="n">fulfilment</span><span class="p">.</span>
-
-<span class="n">The</span> <span class="n">prices</span> <span class="n">involved</span> <span class="n">are</span> <span class="n">pretty</span> <span class="n">similar</span><span class="p">.</span> <span class="n">Amazon</span> <span class="n">have</span> <span class="n">a</span> <span class="n">single</span> <span class="n">price</span>
-<span class="n">point</span> <span class="k">for</span> <span class="n">their</span> <span class="n">sites</span><span class="p">,</span> <span class="n">taking</span> <span class="n">into</span> <span class="n">account</span> <span class="n">printing</span> <span class="n">and</span> <span class="n">their</span> <span class="n">cut</span><span class="p">.</span> <span class="n">I</span><span class="err">'</span><span class="n">d</span>
-<span class="n">already</span> <span class="n">decided</span> <span class="n">to</span> <span class="n">aim</span> <span class="k">for</span> <span class="n">the</span> <span class="n">lowest</span> <span class="n">price</span> <span class="n">point</span> <span class="k">for</span> <span class="k">this</span> <span class="n">book</span> <span class="p">(</span><span class="n">not</span>
-<span class="n">least</span> <span class="n">because</span> <span class="n">it</span><span class="err">'</span><span class="n">s</span> <span class="n">available</span> <span class="k">for</span> <span class="n">free</span> <span class="n">online</span><span class="p">)</span> <span class="n">which</span>
-<span class="n">worked</span> <span class="n">out</span> <span class="n">at</span> <span class="err">£</span><span class="mf">16.99</span> <span class="k">for</span> <span class="n">a</span> <span class="n">royalty</span> <span class="n">of</span> <span class="err">£</span><span class="mf">1.12</span> <span class="n">per</span> <span class="n">sale</span><span class="p">.</span> <span class="n">IngramSpark</span>
-<span class="n">allow</span> <span class="n">different</span> <span class="n">prices</span> <span class="k">for</span> <span class="n">the</span> <span class="n">UK</span><span class="p">,</span> <span class="n">US</span><span class="p">,</span> <span class="n">Euro</span><span class="p">,</span> <span class="n">Australian</span><span class="p">,</span> <span class="n">and</span> <span class="n">world</span>
-<span class="n">markets</span><span class="p">,</span> <span class="n">and</span> <span class="n">I</span> <span class="n">chose</span> <span class="n">the</span> <span class="n">same</span> <span class="n">price</span> <span class="n">in</span> <span class="n">pounds</span><span class="p">.</span> <span class="p">(</span><span class="n">Their</span> <span class="n">royalty</span> <span class="n">is</span>
-<span class="err">£</span><span class="mf">1.23</span><span class="p">.)</span>
-
-<span class="n">As</span> <span class="n">far</span> <span class="n">as</span> <span class="n">ISBN</span><span class="err">'</span><span class="n">s</span> <span class="n">are</span> <span class="n">concerned</span><span class="p">,</span> <span class="n">there</span> <span class="n">are</span> <span class="n">national</span> <span class="n">agencies</span> <span class="n">that</span>
-<span class="n">allocate</span> <span class="n">them</span> <span class="o">--</span> <span class="n">at</span> <span class="n">a</span> <span class="n">price</span><span class="p">.</span> <span class="n">But</span> <span class="n">the</span> <span class="n">renaissance</span> <span class="n">in</span> <span class="n">self</span><span class="o">-</span><span class="n">publishing</span>
-<span class="n">has</span> <span class="n">meant</span> <span class="n">that</span> <span class="n">there</span> <span class="n">are</span> <span class="n">also</span> <span class="n">networks</span> <span class="n">of</span> <span class="n">people</span> <span class="n">working</span> <span class="n">to</span> <span class="n">help</span>
-<span class="n">aspiring</span> <span class="n">authors</span><span class="p">.</span> <span class="n">In</span> <span class="n">the</span> <span class="n">UK</span> <span class="n">I</span> <span class="n">discovered</span> <span class="n">the</span> <span class="p">[</span><span class="n">Independent</span> <span class="n">Publishing</span>
-<span class="n">Network</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//bookisbn.org.uk/) who provide such services,</span>
-<span class="n">dealing</span> <span class="n">with</span> <span class="n">generating</span> <span class="n">ISBNs</span> <span class="n">and</span> <span class="n">entering</span> <span class="n">the</span> <span class="n">book</span> <span class="n">details</span> <span class="n">into</span> <span class="n">the</span>
-<span class="n">relevant</span> <span class="n">catalogues</span><span class="p">.</span> <span class="n">They</span> <span class="n">also</span> <span class="n">provide</span> <span class="o">--</span> <span class="n">and</span> <span class="n">here</span><span class="err">'</span><span class="n">s</span> <span class="n">another</span> <span class="n">little</span>
-<span class="n">detail</span> <span class="n">it</span><span class="err">'</span><span class="n">s</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">forget</span> <span class="o">--</span> <span class="n">a</span> <span class="n">barcode</span> <span class="k">for</span> <span class="n">the</span> <span class="n">back</span> <span class="n">of</span> <span class="n">your</span> <span class="p">(</span><span class="n">print</span><span class="p">)</span>
-<span class="n">book</span> <span class="n">to</span> <span class="n">help</span> <span class="n">acquisition</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">and</span> <span class="n">stock</span> <span class="n">management</span> <span class="n">by</span> <span class="n">bookshops</span><span class="p">.</span>
-
-
-<span class="cp"># Trim and cover design</span>
-
-<span class="n">On</span><span class="o">-</span><span class="n">demand</span> <span class="n">print</span> <span class="n">services</span> <span class="n">are</span> <span class="n">quite</span> <span class="n">demanding</span> <span class="n">in</span> <span class="n">terms</span> <span class="n">of</span> <span class="n">their</span>
-<span class="n">requirements</span> <span class="n">on</span> <span class="n">PDF</span> <span class="n">files</span> <span class="k">for</span> <span class="n">cover</span> <span class="n">and</span> <span class="n">content</span><span class="p">.</span> <span class="n">The</span> <span class="n">exact</span>
-<span class="n">requirements</span> <span class="n">depend</span> <span class="n">on</span> <span class="n">the</span> <span class="n">size</span> <span class="p">(</span><span class="n">or</span> <span class="s">"trim"</span><span class="p">)</span> <span class="n">you</span> <span class="n">choose</span> <span class="k">for</span> <span class="n">the</span> <span class="n">book</span><span class="p">.</span> <span class="n">I</span>
-<span class="n">went</span> <span class="n">with</span> <span class="mi">7</span><span class="n">x10</span><span class="s">", which is ever so slightly larger than B5. The</span>
-<span class="n">services</span> <span class="n">will</span> <span class="n">provide</span> <span class="k">template</span> <span class="n">covers</span> <span class="n">once</span> <span class="n">they</span> <span class="n">know</span> <span class="n">the</span> <span class="n">trim</span> <span class="n">size</span> <span class="n">and</span>
-<span class="n">number</span> <span class="n">of</span> <span class="n">pages</span> <span class="p">(</span><span class="k">for</span> <span class="n">the</span> <span class="n">spine</span> <span class="n">width</span><span class="p">).</span>
-
-<span class="n">At</span> <span class="k">this</span> <span class="n">point</span> <span class="n">things</span> <span class="n">got</span> <span class="n">more</span> <span class="n">in</span> <span class="n">need</span> <span class="n">of</span> <span class="n">creativity</span><span class="p">.</span> <span class="n">I</span> <span class="n">read</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span>
-<span class="n">blog</span> <span class="n">posts</span> <span class="n">and</span> <span class="n">advertorials</span> <span class="n">on</span> <span class="n">the</span> <span class="n">subject</span> <span class="n">of</span> <span class="n">cover</span> <span class="n">design</span> <span class="p">(</span><span class="n">many</span> <span class="n">of</span>
-<span class="n">which</span> <span class="n">warned</span> <span class="n">that</span> <span class="n">it</span> <span class="n">was</span> <span class="n">strictly</span> <span class="n">a</span> <span class="n">job</span> <span class="k">for</span> <span class="n">professionals</span><span class="p">),</span> <span class="n">and</span> <span class="n">they</span>
-<span class="n">all</span> <span class="n">recommended</span> <span class="n">mining</span> <span class="n">the</span> <span class="n">genre</span> <span class="n">in</span> <span class="n">which</span> <span class="n">you</span><span class="err">'</span><span class="n">re</span> <span class="n">writing</span><span class="p">,</span> <span class="n">so</span> <span class="n">I</span> <span class="n">looked</span>
-<span class="n">on</span> <span class="n">my</span> <span class="n">bookshelf</span><span class="p">.</span>
-
-<span class="o">!</span><span class="p">[</span><span class="n">Book</span> <span class="n">cover</span> <span class="n">ideas</span><span class="p">](</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="mi">20200722</span><span class="o">-</span><span class="n">book</span><span class="o">-</span><span class="n">cover</span><span class="o">-</span><span class="n">ideas</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
-
-<span class="n">There</span><span class="err">'</span><span class="n">s</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">commonality</span> <span class="n">there</span><span class="p">,</span> <span class="n">with</span> <span class="n">an</span> <span class="n">obviously</span> <span class="n">network</span><span class="o">-</span><span class="n">y</span>
-<span class="p">(</span><span class="s">"starfish"</span><span class="p">)</span> <span class="n">central</span> <span class="n">image</span><span class="p">.</span> <span class="n">These</span> <span class="n">are</span> <span class="n">very</span> <span class="n">visually</span> <span class="n">appealing</span><span class="p">,</span> <span class="n">of</span>
-<span class="n">course</span><span class="p">,</span> <span class="n">but</span> <span class="n">unfortunately</span> <span class="n">they</span><span class="err">'</span><span class="n">re</span> <span class="n">almost</span> <span class="n">entirely</span> <span class="n">devoid</span> <span class="n">of</span>
-<span class="n">information</span><span class="p">.</span> <span class="n">When</span> <span class="n">we</span><span class="err">'</span><span class="n">re</span> <span class="n">actually</span> <span class="n">doing</span> <span class="n">research</span> <span class="n">we</span> <span class="n">almost</span> <span class="o">*</span><span class="n">never</span><span class="o">*</span> <span class="n">draw</span>
-<span class="n">these</span> <span class="n">sorts</span> <span class="n">of</span> <span class="n">diagrams</span> <span class="p">(</span><span class="n">other</span> <span class="n">than</span> <span class="k">for</span> <span class="n">their</span> <span class="n">fluff</span> <span class="n">value</span><span class="p">)</span><span class="o">:</span>
-<span class="n">traditional</span> <span class="n">graph</span><span class="o">-</span><span class="n">plots</span> <span class="n">and</span> <span class="n">heatmaps</span> <span class="n">are</span> <span class="n">much</span> <span class="n">more</span> <span class="n">useful</span><span class="p">.</span> <span class="n">On</span> <span class="n">the</span>
-<span class="n">other</span> <span class="n">hand</span> <span class="n">there</span><span class="err">'</span><span class="n">s</span> <span class="n">a</span> <span class="n">reason</span> <span class="n">why</span> <span class="n">people</span> <span class="n">go</span> <span class="k">for</span> <span class="n">eye</span><span class="o">-</span><span class="n">catching</span> <span class="n">front</span>
-<span class="n">covers</span><span class="p">....</span> <span class="n">This</span> <span class="n">left</span> <span class="n">me</span> <span class="n">in</span> <span class="n">a</span> <span class="n">bit</span> <span class="n">of</span> <span class="n">a</span> <span class="n">quandary</span><span class="p">.</span>
-
-<span class="n">After</span> <span class="n">several</span> <span class="nb">false</span> <span class="n">starts</span> <span class="n">I</span> <span class="n">realised</span> <span class="n">that</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">graphs</span> <span class="n">in</span> <span class="n">the</span>
-<span class="n">book</span> <span class="n">was</span> <span class="n">actually</span> <span class="n">quite</span> <span class="n">graphically</span> <span class="n">strong</span> <span class="n">and</span> <span class="n">could</span> <span class="n">be</span> <span class="n">used</span> <span class="n">almost</span> <span class="n">as</span>
-<span class="n">a</span> <span class="n">logo</span> <span class="n">once</span> <span class="n">the</span> <span class="n">axes</span> <span class="n">labels</span> <span class="n">and</span> <span class="n">title</span> <span class="n">were</span> <span class="n">removed</span><span class="p">.</span> <span class="n">And</span> <span class="n">I</span> <span class="n">also</span> <span class="n">had</span> <span class="n">a</span>
-<span class="s">"starfish"</span> <span class="n">network</span> <span class="n">diagram</span><span class="p">,</span> <span class="n">which</span> <span class="p">(</span><span class="n">unusually</span><span class="p">)</span> <span class="n">I</span><span class="err">'</span><span class="n">d</span> <span class="n">drawn</span> <span class="k">for</span> <span class="n">good</span>
-<span class="n">scientific</span> <span class="n">reasons</span><span class="p">.</span> <span class="n">An</span> <span class="n">hour</span> <span class="n">with</span> <span class="n">Photoshop</span> <span class="n">and</span> <span class="n">some</span> <span class="n">back</span><span class="o">-</span><span class="n">cover</span>
-<span class="n">blurb</span><span class="o">-</span><span class="n">writing</span> <span class="n">resulted</span> <span class="n">in</span> <span class="n">a</span> <span class="n">design</span><span class="p">.</span>
-
-<span class="o">!</span><span class="p">[</span><span class="n">Book</span> <span class="n">cover</span><span class="p">](</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="mi">20200722</span><span class="o">-</span><span class="n">cover</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
-
-<span class="n">There</span><span class="err">'</span><span class="n">s</span> <span class="n">absolutely</span> <span class="n">no</span> <span class="n">doubt</span> <span class="n">a</span> <span class="n">professional</span> <span class="n">would</span> <span class="k">do</span> <span class="n">better</span><span class="p">,</span> <span class="n">but</span> <span class="k">for</span> <span class="n">a</span>
-<span class="n">science</span> <span class="n">book</span> <span class="n">I</span> <span class="n">think</span> <span class="n">there</span><span class="err">'</span><span class="n">s</span> <span class="n">less</span> <span class="n">reason</span> <span class="n">to</span> <span class="n">be</span> <span class="n">precious</span> <span class="n">about</span> <span class="n">these</span>
-<span class="n">things</span><span class="p">.</span>
-
-
-<span class="cp">## Print niggles</span>
-
-<span class="n">So</span> <span class="n">far</span> <span class="n">so</span> <span class="n">good</span><span class="p">,</span> <span class="n">now</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">the</span> <span class="n">documents</span><span class="p">.</span> <span class="n">There</span><span class="err">'</span><span class="n">s</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">scope</span>
-<span class="k">for</span> <span class="n">error</span> <span class="n">in</span> <span class="n">measurements</span> <span class="n">and</span> <span class="n">the</span> <span class="n">like</span><span class="p">.</span> <span class="n">Fortunately</span> <span class="n">the</span>
-<span class="n">print</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">demand</span> <span class="n">services</span> <span class="n">also</span> <span class="n">run</span> <span class="n">an</span> <span class="n">automated</span> <span class="n">workflow</span><span class="p">,</span> <span class="n">which</span> <span class="n">means</span>
-<span class="n">that</span> <span class="n">the</span> <span class="n">files</span> <span class="n">are</span> <span class="n">checked</span> <span class="n">at</span> <span class="n">submission</span><span class="p">.</span>
-
-<span class="n">I</span> <span class="n">encountered</span> <span class="n">two</span> <span class="n">problems</span><span class="p">.</span> <span class="n">Firstly</span><span class="p">,</span> <span class="n">any</span> <span class="n">figures</span> <span class="n">are</span> <span class="n">embedded</span> <span class="n">into</span> <span class="n">the</span>
-<span class="n">PDF</span> <span class="n">with</span> <span class="n">a</span> <span class="n">given</span> <span class="n">resolution</span> <span class="n">and</span> <span class="n">colour</span> <span class="n">profile</span><span class="p">.</span> <span class="n">For</span> <span class="n">printing</span> <span class="n">they</span>
-<span class="n">really</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="mi">300</span><span class="n">dpi</span> <span class="n">at</span> <span class="n">least</span><span class="p">,</span> <span class="n">and</span> <span class="n">the</span> <span class="n">upload</span> <span class="n">flagged</span> <span class="n">them</span> <span class="n">as</span> <span class="n">not</span>
-<span class="n">meeting</span> <span class="k">this</span> <span class="n">standard</span><span class="p">.</span> <span class="n">It</span><span class="err">'</span><span class="n">s</span> <span class="n">of</span> <span class="n">course</span> <span class="n">not</span> <span class="n">obvious</span> <span class="n">from</span> <span class="n">a</span> <span class="n">previewer</span>
-<span class="n">where</span> <span class="n">the</span> <span class="n">problem</span> <span class="n">is</span><span class="p">,</span> <span class="n">but</span> <span class="n">executing</span> <span class="err">`</span><span class="n">pdfimages</span> <span class="o">-</span><span class="n">list</span><span class="err">`</span> <span class="n">on</span> <span class="n">the</span> <span class="n">PDF</span> <span class="n">shows</span>
-<span class="n">the</span> <span class="n">images</span> <span class="n">and</span> <span class="n">their</span> <span class="n">resolution</span><span class="p">.</span> <span class="n">Jupyter</span> <span class="n">uses</span> <span class="n">a</span> <span class="n">lower</span> <span class="n">resolution</span> <span class="n">by</span>
-<span class="k">default</span><span class="p">,</span> <span class="n">so</span> <span class="n">I</span> <span class="n">added</span> <span class="n">an</span> <span class="n">appropriate</span> <span class="n">line</span> <span class="n">to</span> <span class="n">the</span> <span class="n">cell</span> <span class="n">at</span> <span class="n">the</span> <span class="n">head</span> <span class="n">of</span>
-<span class="n">each</span> <span class="nl">chapter</span><span class="p">:</span>
-
-<span class="err">```</span><span class="p">{</span><span class="n">code</span><span class="p">}</span>
-<span class="k">import</span> <span class="n">matplotlib</span>
-<span class="nf">%matplotlib</span> <span class="kr">inline</span>
-<span class="nf">%config</span> <span class="n">InlineBackend</span><span class="p">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="err">'</span><span class="n">png</span><span class="err">'</span>
-<span class="n">matplotlib</span><span class="p">.</span><span class="n">rcParams</span><span class="p">[</span><span class="err">'</span><span class="n">figure</span><span class="p">.</span><span class="n">dpi</span><span class="err">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<p>The other issue concerned getting references and citations to
+work. The <a href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/">Sphinx plug-in for
+this</a> works
+perfectly for online use but not so well for print usage, especially
+with a more complicated document class (see below).  The citation tags
+that it generates aren't quite the ones in the underlying BibTeX
+file. They're extended with the name of the file that imports the
+bibliography, which is a feature to allow multiple bibliographies to
+co-exist. That's non-standard in the LaTeX world, so I piped the
+resulting LaTeX file through <code>sed</code> to remove the extras.</p>
+<p>Finally, Sphinx generates inline <code>\bibitem</code> calls, which again isn't
+quite standard for LaTeX and (it turns out) confuses some of the more
+complex LaTeX classes. I solved this by letting Sphinx ingest the
+bibfile but not using the Sphinx <code>.. bibliography::</code> directive to lay
+it out in the document, and instead adding a separate file to include
+the usual LaTeX <code>\bibliographystyle</code> and <code>\bibliography</code>
+commands. This meant that the usual LaTeX/BibTeX square dance would
+lay the references out correctly.</p>
+<p>A similar problem affects index generation. This time it arises
+because Sphinx isn't careful enough about injecting spaces into the
+generated LaTeX <code>\index</code> commands, which causes duplicate index
+entries if you have the same term indexed to different pages. Another
+piece of <code>sed</code> fixed this too, and adding <code>\printindex</code> brought the
+index into the document in the appropriate place. (Strangely enough
+Sphinx emits <code>\makeindex</code> at the start of the document but doesn't
+emit <code>\printindex</code> at the end.</p>
+<h3>Better print styling</h3>
+<p>Sphinx is at bottom a tool for code documentation, and its in-built
+LaTeX themes are understandably restricted. Having followed Tufte's
+style for the online version I wanted to do the same for a print copy
+-- not least because I'm now a convert to this style.</p>
+<p>You can set the document class for the final document and instruct
+Sphinx to include a "prelude" of your choice. There are <a href="http://www.latextemplates.com/">lots of book
+templates to choose from</a>, and
+fortunately there's a <a href="https://tufte-latex.github.io/tufte-latex/">Tufte book
+class</a> that's included in
+a lot of LaTeX distributions as standard. I did a small amount of
+customisation in a <code>style.tex</code> preamble file, mainly to get a
+copyright page and place marginal notes into the margin by translating
+the Sphinx-generated command to the command provided by the Tufte
+class. You can also set document class options like the paper size
+(<code>b5paper</code> in my case, fairly standard for scientific books) and
+whether you're looking for a PDF suited for printing (with asymmetric
+margins to allow for the spine) of for viewing online (symmetric
+margins). The result was very appealing.</p>
+<p><img alt="Tufte print styling" src="../../../../../images/posts/20200722-em-book-print.png"></p>
+<p>Those wide margins are also great for figures that benefit from the
+extra width.</p>
+<p><img alt="Wide figure extending into the margin" src="../../../../../images/posts/20200722-em-book-print-wide.png"></p>
+<p>I got this directly from the markdown by using the <code>.. raw:: latex</code>
+directive to include specific markup into the LaTeX version that's
+ignored in the HTML or other renderings.</p>
+<p>This whole process takes markdown and notebooks to LaTeX (and then to
+PDF) seamlessly. I did move some notes around to make them break better
+on the pages, and re-arranged some code fragments to avoid over-long lines.</p>
+<h3>Getting into print</h3>
+<p>Most people writing a book, at least when they get this stage, have a
+publisher in mind or even a contract. A publisher wants to convince
+themselves that a book will sell enough copies to make them money, and
+will put in the effort in marketing and publicity to make this happen.</p>
+<p>But self-publishing has become a lot more possible these days, with
+print-on-demand services willing to take on essentially <em>any</em> book
+since there's no inventory to be held. Only as many books are printed
+as are bought, but the individual cost may be higher to account for the
+lack of economies of scale. Since I harboured no delusions as to
+having a best-seller on my hands -- not least because the whole
+project sits publicly on GitHub and can be read freely online --
+self-publishing and print-on-demand were attractive.</p>
+<p>The biggest print-on-demand shop is also the biggest shop of any kind:
+Amazon. <a href="https://kdp.amazon.com/en_US">Kindle Direct Publishing</a>
+handles both e-books and print books. An account is easy to set up and
+gives access to a range of tools.  A book needs an ISBN number -- a
+different one for each format and edition, in fact -- and Amazon will
+allocate one for you.</p>
+<p>All this "free" help comes at a cost, though. Using an Amazon ISBN, or
+a cover with Amazon clip art, ties you strictly to Amazon for
+distribution.</p>
+<p>Searching online turned up
+<a href="https://www.ingramspark.com/">IngramSpark</a>, who are a print-on-demand
+and e-book distributor. They offer a broader service than Amazon, for
+example advertising to bookshops and providing order fulfilment.</p>
+<p>The prices involved are pretty similar. Amazon have a single price
+point for their sites, taking into account printing and their cut. I'd
+already decided to aim for the lowest price point for this book (not
+least because it's available for free online) which
+worked out at £16.99 for a royalty of £1.12 per sale. IngramSpark
+allow different prices for the UK, US, Euro, Australian, and world
+markets, and I chose the same price in pounds. (Their royalty is
+£1.23.)</p>
+<p>As far as ISBN's are concerned, there are national agencies that
+allocate them -- at a price. But the renaissance in self-publishing
+has meant that there are also networks of people working to help
+aspiring authors. In the UK I discovered the <a href="https://bookisbn.org.uk/">Independent Publishing
+Network</a> who provide such services,
+dealing with generating ISBNs and entering the book details into the
+relevant catalogues. They also provide -- and here's another little
+detail it's easy to forget -- a barcode for the back of your (print)
+book to help acquisition, sales, and stock management by bookshops.</p>
+<h2>Trim and cover design</h2>
+<p>On-demand print services are quite demanding in terms of their
+requirements on PDF files for cover and content. The exact
+requirements depend on the size (or "trim") you choose for the book. I
+went with 7x10", which is ever so slightly larger than B5. The
+services will provide template covers once they know the trim size and
+number of pages (for the spine width).</p>
+<p>At this point things got more in need of creativity. I read a lot of
+blog posts and advertorials on the subject of cover design (many of
+which warned that it was strictly a job for professionals), and they
+all recommended mining the genre in which you're writing, so I looked
+on my bookshelf.</p>
+<p><img alt="Book cover ideas" src="../../../../../images/posts/20200722-book-cover-ideas.jpg"></p>
+<p>There's a lot of commonality there, with an obviously network-y
+("starfish") central image. These are very visually appealing, of
+course, but unfortunately they're almost entirely devoid of
+information. When we're actually doing research we almost <em>never</em> draw
+these sorts of diagrams (other than for their fluff value):
+traditional graph-plots and heatmaps are much more useful. On the
+other hand there's a reason why people go for eye-catching front
+covers.... This left me in a bit of a quandary.</p>
+<p>After several false starts I realised that one of the graphs in the
+book was actually quite graphically strong and could be used almost as
+a logo once the axes labels and title were removed. And I also had a
+"starfish" network diagram, which (unusually) I'd drawn for good
+scientific reasons. An hour with Photoshop and some back-cover
+blurb-writing resulted in a design.</p>
+<p><img alt="Book cover" src="../../../../../images/posts/20200722-cover.png"></p>
+<p>There's absolutely no doubt a professional would do better, but for a
+science book I think there's less reason to be precious about these
+things.</p>
+<h3>Print niggles</h3>
+<p>So far so good, now to upload the documents. There's a lot of scope
+for error in measurements and the like. Fortunately the
+print-on-demand services also run an automated workflow, which means
+that the files are checked at submission.</p>
+<p>I encountered two problems. Firstly, any figures are embedded into the
+PDF with a given resolution and colour profile. For printing they
+really need to be 300dpi at least, and the upload flagged them as not
+meeting this standard. It's of course not obvious from a previewer
+where the problem is, but executing <code>pdfimages -list</code> on the PDF shows
+the images and their resolution. Jupyter uses a lower resolution by
+default, so I added an appropriate line to the cell at the head of
+each chapter:</p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.dpi'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
 </code></pre>
 
 <p>This then triggered <em>another</em> warning, this time that the images were
@@ -636,7 +602,7 @@ easily grasped, and (hopefully) more memorable and better crafted are
 things I'll try to take forward into <em>all</em> my writing. There's no
 reason for scientific prose to be hard to digest, and in fact the
 easier concepts and explained the more likely they are to be picked up
-and used (and cited!). </p>
+and used (and cited!).</p>
 <p>But I still found it hard to let go! The hardest thing was pushing the
 button to "approve" the printed proof ahead of distribution. I must
 have uploaded 20 versions, each with subtle differences in layout and
@@ -669,7 +635,7 @@ writing straight into LaTeX would be an option, and then going from
 there to HTML. Personally I think I'd stick with markdown and Jupyter
 Book even if I didn't have notebooks: start with portable sources and
 then refine to presentations using the best tools for the particular
-media. </p>
+media.</p>
 <p>One final point needs making strongly. With the single exceptions of
 Photoshop for assembling the cover, Amazon for creating the cover
 template, and some help with ISBNs and barcodes, all the tools I used
