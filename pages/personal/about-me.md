@@ -18,7 +18,7 @@ My main research interests these days are in complex systems, data science, sens
 and data interpretation.
 
 I work at the [University of St Andrews](https://www.st-andrews.ac.uk) and live in
-the [East Neuk of Fife](http://www.abouteastneuk.org.uk/).
+the [East Neuk of Fife](https://www.eastneuknow.com/).
 Originally I’m from [Runcorn](https://en.wikipedia.org/wiki/Runcorn), just
 outside Liverpool in the north-west of England. I came to St Andrews by way of
 Newcastle upon Tyne, York, Oxford, Dublin, and Co Sligo: good luck tracing my accent.
