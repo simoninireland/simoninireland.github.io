@@ -67,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/bonanza.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
@@ -207,7 +207,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epydemic.xml</loc>
-  <lastmod>2021-06-10T17:29:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/erasmus-mundus.xml</loc>
@@ -267,7 +267,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/goodreads.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/grays-laws.xml</loc>
@@ -407,7 +407,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/news.xml</loc>
-  <lastmod>2021-09-07T11:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/onewire.xml</loc>
@@ -487,7 +487,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/python.xml</loc>
-  <lastmod>2021-09-07T11:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/rdf.xml</loc>
@@ -503,7 +503,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/reviews.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
@@ -627,7 +627,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/talk.xml</loc>
-  <lastmod>2021-03-15T16:30:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/teaching.xml</loc>
@@ -648,6 +648,10 @@
  <sitemap>
   <loc>https://simondobson.org/categories/uncertainty.xml</loc>
   <lastmod>2021-03-15T16:30:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/unit-testing.xml</loc>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/university.xml</loc>
@@ -735,10 +739,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2021-11-10T12:04:00Z</lastmod>
+  <lastmod>2021-12-06T16:55:00Z</lastmod>
  </sitemap>
 </sitemapindex>
