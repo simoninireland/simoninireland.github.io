@@ -42,4 +42,4 @@ paradigms.
 Publications
 ------------
 
-{{% bibliography keywords='NEMBES' %}}
+{{% bibliography keywords='NEMBES' sort-by='-year' %}}

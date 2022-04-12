@@ -53,4 +53,4 @@ lot of our subsequent work.
 Publications
 ------------
 
-{{% bibliography keywords='Sapere' %}}
+{{% bibliography keywords='Sapere' sort-by='-year' %}}
