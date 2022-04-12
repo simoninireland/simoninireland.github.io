@@ -130,8 +130,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>As a pervasive systems research community we're doing quite well at  automatically identifying simple things happening in the world. What is  the state of the art, and what are the next steps?</p>
 <!--more-->
 
@@ -146,7 +145,6 @@ bg-dark
 <p>The second  challenge is that, even when captured, situations don't occur in  isolation. We might define a second situation to control what happens  when the person answers the phone: quiet the TV and stereo, maybe. But  this situation could be happening at the same time as the lunch-making  situation and will inter-penetrate with it. There are dozens of possible  interactions: one might pause lunch to deal with the phone call, or one  might continue making the sandwich while chatting, or some other  combination. Again, fine for a human observer. But a computer trying to  make sense of these happenings only has a limited sensor-driven view,  and has to try to associate events with interpretations <em>without knowing what it's seeing ahead of time</em>.  The fact that many things can happen simultaneously enormously  complicates the challenge of identifying what's going on robustly,  damaging what is often already quite a tenuous process. We therefore  need techniques for describing <em>situation compositions and interactions</em> on top of the basic descriptions of the processes themselves.</p>
 <p>The  third challenge is also one of interaction, but this time involving  multiple people. One person might be making lunch whilst another watches  television, then the phone rings and one of them answers, realises the  call is for the other, and passes it over. So as well as  interpenetration we now have multiple agents generating sensor events,  perhaps without being able to determine exactly which person caused  which event. (A motion sensor sees movement: it doesn't see who's  moving, and the individuals may not be tagged in such a way that they  can be identified or even differentiated between.) Real spaces involve  multiple people, and this may place limits on the behaviours we can  demonstrate. But at the very least we need to be able to <em>describe processes involving multiple agents</em> and to <em>support simultaneous situations in the same or different populations</em>.</p>
 <p>So for me the next challenges of situation recognition boil down to how we describe what we're expecting to observe in a way that reflects noise, complexity and concurrency of real-world conditions.  Once we have these we can explore and improve the techniques we use to  map from sensor data (itself <a href="../../../../../2010/02/216/">noisy and hard to program with</a>) to identified situations, and thence  to behaviour. In many ways this is a real-world version of the  concurrency theories and process algebras that were developed to  describe concurrent computing processes: process languages brought into  the real world, perhaps. This is the approach we're taking in a  European-funded research project, <a href="http://www.sapere-project.eu/">SAPERE</a>, in which we're hoping to understand how to engineer smart, context-aware systems on large and flexible scales.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>

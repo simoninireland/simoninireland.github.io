@@ -127,8 +127,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Sensor networks are all about uncertainty: if the sensor says it's 20°C  out there, then it might be 20°C plus-or-minus half a degree or so (limited precision); or it might be some different temperature, and the sensor's just reported a duff value for some reason (limited accuracy). By contrast, computers most definitely <em>aren't</em> about uncertainty, a fact enshrined in the famous maxim "garbage in, garbage out". What does this mean for our ability to build really large, robust and flexible sensor networks?</p>
 <!--more-->
 <p>All the really foundational models of computing -- λ calculus, Turing machines and the like -- pretty much reflect this notion that input is correct in some sense, and if it's wrong then that's an error to be corrected outside the computational system. That seems to mean that the computational system can't itself either tolerate or express the notions of limited certainty -- precision and accuracy -- that lie at the core of sensor networks (and a lot of other modern systems, or course). That suggests to me that there might be a problem at the heart of computer science as we currently formulate it: it isn't a realistic model of the world we're trying to compute over.</p>
@@ -139,7 +138,6 @@ bg-dark
 <p>Conversely, a large, accurate new observation will perturb the average only slowly, so large step-changes will be detected only slowly. It's hard to distinguish such a change when it first happens from an inaccurate reading. There are various ways of dealing with this, such as using a weighted sliding window with non-linear weighting.</p>
 <p>This is a rather topological idea. Rather than simply mapping points in an input space (such as temperature) to an output space (average temperature over the past few minutes), we're also requiring that the mapping take elements close in the input space to elements close in the result space: we require that it be a <em>contraction mapping</em>. Building systems from contraction mappings, perhaps combined with contraction-preserving operators, yields systems that are robust to small errors in precision from their sensors.</p>
 <p>Of course not all systems <em>are</em> actually like this, and in many cases we <em>want</em> rapid changes to be detected quickly and/or propagated. The point, perhaps, is that this is a <em>choice we should make</em> rather than a <em>consequence</em> of choosing a particular model of computation. There might actually be a model of computation lurking about here, in which we define functions coupled with a model of how their input and output errors should behave. At the very least, this yields systems in which we can predict the consequences of errors and imprecisions, which is a major challenge to deal with at present.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>

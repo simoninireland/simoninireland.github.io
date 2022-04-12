@@ -126,8 +126,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>If you try to do everything, you always end up doing nothing. Which is why <a href="http://www.simondobson.org/2010/03/both-ends-of-the-data-intensive-spectrum/">Gray's laws</a> suggest searching for the twenty "big questions" in a field and then focusing-in the first five as the ones that'll generate the biggest return on the effort invested. So what are the five biggest open issues in programming for sensorised systems?</p>
 <!--more-->
 <p>Of course we should start with a big fat disclaimer: these are <em>my</em> five biggest open issues, which probably don't relate well to anyone else's -- but that's what blogs are for, right? :-) So here goes: five questions, with an associated suggestion for a research programme.</p>
@@ -141,7 +140,6 @@ bg-dark
 <p>Sensor mark-up languages like <a href="http://www.opengeospatial.org/standards/sensorml">SensorML</a> are a first step, but <em>only</em> a first step. There's also the issue of the methodology by which the data was collected, and especially (returning to point 2) were the behaviours of the sensors consistent with gaining a valid view of the phenomena of interest? That means linking data to process descriptions, or to code, so that we can track-back through the provenance to ensure integrity. Then we can start applying reasoners to classify and derive information automatically from the data, secure in the knowledge that we have an audit trail for the science.</p>
 <p><strong>5. Making it easier to build domain-specific languages for real.</strong> A <a href="http://en.wikipedia.org/wiki/Domain-specific_language">lot has been said about DSLs</a>, much of it negative: if someone's learned C (or Java, or Fortran, or Matlab, or Perl, or...) they won't want to then learn something else just to work in a particular domain. This argument holds that it's therefore more appropriate to provide advanced functions as libraries accessed from a common host language (or a range of languages). The counter-argument is that libraries only work around the edges of a language and can't provide the strength of optimisation, type-checking and new constructs needed. I suspect that there's truth on both sides, and I also suspect that many power users would gladly learn a new language if it <em>really</em> matched their domain and <em>really</em> gave them leverage.</p>
 <p>Building DSLs is too complicated, though, especially for real-world systems that need to run with reasonable performance on low-grade hardware. A good starting-point might be a system that would allow libraries to be wrapped-up with language-like features -- like <a href="http://en.wikipedia.org/wiki/Tcl">Tcl</a> was intended for, but with more generality in terms of language constructs and types. A simpler language-design framework would facilitate work on new languages (as <em>per</em> point 1 above), and would allow us to search for modes of expression closer to the semantic constructs we think are needed (<em>per</em> points 2 and 3): starting from semantics and deriving a language rather than <em>vice versa</em>.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>

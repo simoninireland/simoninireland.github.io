@@ -127,8 +127,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>We usually think about formal language grammars in terms of the complexity of the <em>language</em>, but it's also possible -- and potentially more useful, for a compiler-writer or other user -- to think about them from the perspective of the <em>parser</em>, which is slightly different.</p>
 <!--more-->
 
@@ -144,7 +143,6 @@ bg-dark
 <p><strong>Structured.</strong> Part of the subtlety of defining grammars is avoid <em>ambiguity</em>, making sure that every program can be parsed in a well-defined and unique way. The simplest way to avoid ambiguity is to make everything structured and standard. Lisp and Scheme are the best illustrations of this. Every expression in the language takes the same form: an atom, or a list whose elements may be atoms or other lists. Lists are enclosed in brackets, so it's always possible to find the scope of any particular construction. It's extremely easy to write a parser for such a language, and the "grammar" fits onto about three lines of description.</p>
 <p>Interestingly, this sort of language is also highly extensible, as all constructs look the same. Adding a new control construct is straightforward <em>as long as it follows the model</em>, and again can be done extra-grammatically without defining new elements to the parser. One is more constrained than with the isolated or incremental models, but this constraint means that there's also more scope for controlled expansion. Scheme, for example, provides a macro facility that allows new syntactic forms, within the scope and style of the overall parser, that nevertheless behave differently to "normal" constructs: they can capture and manipulate fragments of program text and re-combine them into new structures using <a href="https://en.wikipedia.org/wiki/Quasi-quotation" target="_blank">quasi-quoting</a> and other mechanisms. One can provide these facilities quite uniformly without difficulty, and without explicit syntax. (This is even true for quasi-quoting, although there's usually some syntactic sugar to make it more usable.) The results will always "look like Lisp", even though they might behave rather differently: again, we limit the scope of what is dealt with grammatically and what is dealt with programmatically, and get results that are somewhat different to those we would get with the standard route to compiler construction.</p>
 <p>This isn't to say that we should give up on grammars and go back to more primitive definitions of languages, but just to observe that grammars evolved to suit a particular purpose that needs to be continually checked for relevance. Most programmers find Java (for example) easier to read than Scheme, despite the latter's more straightforward and regular syntax: simplicity is in the eye of the beholder, not the parser. But a formal grammar may not be the best solution in situations where we <em>want</em> variable, loose and extensible syntax for whatever reason, so it's as well to be aware of the alternative that make the problem one of programming rather than of parsing.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>

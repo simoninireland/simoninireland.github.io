@@ -128,8 +128,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.</p>
 <p>The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.</p>
 <p>The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)</p>
@@ -138,7 +137,6 @@ bg-dark
 <p>If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a></p>
 <p>It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.</p>
 <p></p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/actors/" rel="tag">actors</a></li>

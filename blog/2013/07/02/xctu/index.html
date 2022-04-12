@@ -134,8 +134,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.</p>
 <!--more-->
 
@@ -158,7 +157,6 @@ There's one more thing that X-CTU can be used for: it can set parameters to the 
 <p><img alt="X-CTU parameter setting" src="../../../../../images/citizen-sensing/xctu-parameter-setting.png"></p>
 <p>When you've read the firmware from a radio, the main part of the X-CTU window contains a hierarchy of folders and cryptic values, for example "(4) PL - Power level". These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using AT commands. The example we used sets the radio's power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 ("low") to save batteries. If you choose this and then write the firmware to the radio, the module will use this power setting.</p>
 <p>In the example shown on the left, we're changing the AP parameter ("API enable") to 2, which is needed for the <a href="../../03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator API function set selected as shown), the radio will be ready for use.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/arduino/" rel="tag">arduino</a></li>

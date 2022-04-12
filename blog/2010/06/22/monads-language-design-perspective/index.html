@@ -127,8 +127,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Monads are one of the hottest topics in functional programming, and arguably simplify the construction of a whole class of systems. Which makes it surprising that they're so opaque and hard to understand to people who's main experience is in imperative or object-oriented languages.</p>
 <!--more-->
 
@@ -194,7 +193,6 @@ concat (map (\x -&gt; concat (map (\y -&gt; return (x, y)) [20..30])) [1..10])
 <p>So to summarise, Haskell provides a do block syntax that expands to a nested sequence of monadic function calls. The actual functions used depend on the monadic type in the do block, so the programmer can define how the code fragments relate to one another. Common monads include some simple types, but also I/O operations and state bindings, allowing Haskell to perform operations that are typically regarded as imperative without losing its laziness. The Haskell tutorial <a href="http://www.haskell.org/tutorial/io.html">explains the I/O syntax</a>.</p>
 <p>What can we say about monads from the perspective of language design? Essentially they reify sequencing, in a functional style. They only work as seamlessly as they do because of Haskell's flexible type system (allowing the definition of new monads), and also because of the <tt>do</tt> syntax: without the syntactic sugar, most monadic code is incomprehensible. The real power is that they allow some very complex functionality to be abstracted into functions and re-used. Consider the <tt>Maybe</tt> code we used earlier: without the "escape" provided by the <tt>Maybe</tt> monad, we'd have to guard each statement with a conditional to make sure there wasn't a <tt>Nothing</tt> returned at any point. This quickly gets tiresome and error-prone: the monad encapsulates and enforces the desired behaviour. When you realise that one can also compose monads using monad transformers, layering monadic behaviours on top of each other (albeit with some contortions to keep the type system happy), it becomes clear that this is a very powerful capability.</p>
 <p>I think one can also easily identify a few drawbacks, though. One that immediately springs to mind is that monads reify <em>one</em> construction, of the many that one might choose. A more general meta-language, like the use of meta-objects protocols or aspects, or structured language and compiler extensions, would allow even more flexibility. A second -- perhaps with wider impact -- is that one has to be intimately familiar with the monad being used before one has the <em>slightest idea</em> what a piece of code will do. The list example above is not obviously a list comprehension, until one recognises the "idiom" of the list monad. Thirdly, the choice of monadic function definitions isn't often canonical, so there can be a certain arbitrariness to the behaviour. It'd be interesting to consider generalisations of monads and language constructs to address these issues, but for the meantime one can use them to abstract a whole range of functionality in an interesting way. Good luck!</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>

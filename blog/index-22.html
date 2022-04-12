@@ -114,8 +114,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.</p>
 <!--more-->
 
@@ -124,7 +123,6 @@ bg-dark
 <p>The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There's also a "parasitic" mode that takes power from the data bus, which I haven't got to work yet.) The communications line is the "one wire" that runs the communications protocol.</p>
 <p>Using OneWire devices, and DS18B20s in particular, is made very simple by the existence of two libraries, providing the <a href="http://www.pjrc.com/teensy/td_libs_OneWire.html" target="_blank">protocol driver</a> and <a href="http://milesburton.com/Dallas_Temperature_Control_Library" target="_blank">temperature conversion and packaging</a> respectively. Links and installation instructions can be found on the <a href="../download/tools-libraries/">3rd-part tools and libraries page</a>.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/06/api-communications/" class="u-url">API communications now working</a></h1>
         <div class="metadata">
@@ -137,8 +135,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>A small sensor network now working, with two edge devices talking to a base station.</p>
 <!--more-->
 
@@ -149,7 +146,6 @@ bg-dark
 <p><img alt="Meshing" src="../images/citizen-sensing/processing-xbee-api.png"></p>
 <p>The software is quite straightforward, and the <a href="2013/07/03/xbee-arduino/">xbee-arduino library</a> handles all the low-level communications -- although it's very low-level, fine for the experienced programmer but probably all but mystifying to anyone not used to this kind of software. The corresponding Java xbee-api library is slightly more friendly, but <em>only</em> slightly: they probably both need wrapping into a framework that hides the radio nastiness.</p>
 <p>I think the biggest hurdle for this sort of system is the data format -- or, more precisely, the need (or desire, at least) to to use C at one end and Processing/Java at the other, which means that the data on the wire is being described twice. A framework approach could use (for example) <a href="http://www.json.org/" target="_blank">JSON</a>, although there'd still be a need to make sure it was compactly encoded and transmitted.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/03/xbee-arduino/" class="u-url">The xbee-arduino library</a></h1>
         <div class="metadata">
@@ -162,15 +158,13 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>A library for using XBee radios with Arduinos.</p>
 <!--more-->
 
 <p>The XBee radio operates in <a href="2013/07/01/xbee/" target="_blank">two modes</a>: transparent or text-based, and API or binary-based. The latter (API mode) is generally considered more suitable for computer-to-computer interactions, as it's faster and simpler for computers to manipulate. However, using an XBee in this mode requires additional software.</p>
 <p>The <a href="https://code.google.com/p/xbee-arduino/" target="_blank">xbee-arduino library</a> provides Arduino functions to access the API mode functionality of the various XBee radio modules. The library is quite low-level, but does provide access to all the necessary functions like issuing AT commands to control the modem and sensing and receiving packets of data to other radios in the mesh network.</p>
 <p>To use the library you download the latest version from the web page and unpack it into the <tt>libraries/</tt> directory of your Arduino IDE. You also need to make sure that the radios you use have the <a href="2013/07/02/xctu/" target="_blank">API function set installed using X-CTU</a>, as the library only makes sense for radios in API mode. You also have to set the "AP" parameter to 2 when writing the firmware.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/02/xctu/" class="u-url">XBee firmware management with X-CTU</a></h1>
         <div class="metadata">
@@ -183,8 +177,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.</p>
 <!--more-->
 
@@ -207,7 +200,6 @@ There's one more thing that X-CTU can be used for: it can set parameters to the 
 <p><img alt="X-CTU parameter setting" src="../images/citizen-sensing/xctu-parameter-setting.png"></p>
 <p>When you've read the firmware from a radio, the main part of the X-CTU window contains a hierarchy of folders and cryptic values, for example "(4) PL - Power level". These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using AT commands. The example we used sets the radio's power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 ("low") to save batteries. If you choose this and then write the firmware to the radio, the module will use this power setting.</p>
 <p>In the example shown on the left, we're changing the AP parameter ("API enable") to 2, which is needed for the <a href="2013/07/03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator API function set selected as shown), the radio will be ready for use.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/02/mesh-network/" class="u-url">Mesh networking</a></h1>
         <div class="metadata">
@@ -220,15 +212,13 @@ There's one more thing that X-CTU can be used for: it can set parameters to the 
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.</p>
 <!--more-->
 
 <p>If you've used wifi, you've used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, ...) and connects them to the internet. The devices don't talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.</p>
 <p>Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone -- a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.</p>
 <p>By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes' traffic. There is no infrastructure -- the nodes are both the users <em>and</em> the providers of the network -- which means a mesh can be deployed in areas without any "official" network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can't deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular telephony.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/01/xbee/" class="u-url">XBee radios</a></h1>
         <div class="metadata">
@@ -241,8 +231,7 @@ There's one more thing that X-CTU can be used for: it can set parameters to the 
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.</p>
 <!--more-->
 
@@ -265,7 +254,6 @@ There are also variations of Arduinos that take XBee modules directly, as well a
 <p>XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the AT firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes AT commands, a standard way of controlling a modem (which is what an XBee technically is): we'll explore these commands in another post. This function set -- router and co-ordinator -- sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn't great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports API function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We'll deal with API communications in another post too.</p>
 <p>We'll deal with the details of using X-CTU <a href="2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/28/soldering/" class="u-url">First bit of soldering done</a></h1>
         <div class="metadata">
@@ -278,8 +266,7 @@ There are also variations of Arduinos that take XBee modules directly, as well a
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The first proto-shield has been assembled.</p>
 <!--more-->
 
@@ -287,7 +274,6 @@ There are also variations of Arduinos that take XBee modules directly, as well a
 <p><img alt="Arduino prototyping shield" src="../images/citizen-sensing/2013-06-28-18.31.43.jpg"></p>
 <p>The "bare" version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The "helping hands"  were invaluable.</p>
 <p>Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that's not being used for reset, and to bring the ICSP connectors through) which it would be useful to have.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/mein-kampf/" class="u-url">Mein Kampf</a></h1>
         <div class="metadata">

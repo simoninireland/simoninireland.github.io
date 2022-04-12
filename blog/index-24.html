@@ -146,8 +146,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>An interesting article on how to power sensors and other "Internet of Things" devices.</p>
 <!--more-->
 
@@ -155,7 +154,6 @@ bg-dark
 <p><a href="http://makezine.com/2013/08/14/ambient-backscatter/" target="_blank">Recycled Energy: Ambient Backscatter Allows Wireless Communications with no Batteries</a></p>
 <p>If it works reliably, this'll be a huge contribution to low-power environmental sensing as well as to the applications the authors are targeting.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/08/18/abstracts/" class="u-url">How to write an abstract</a></h1>
         <div class="metadata">
@@ -168,8 +166,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>An abstract is an advertisement, not an introduction.</p>
 <!--more-->
 
@@ -218,7 +215,6 @@ bg-dark
 <p>(From Fang and Dobson. <a href="http://www.simondobson.org/softcopy/iwsos-faults-energy.pdf">Unifying sensor fault detection with energy conservation</a>. In Proceedings of the 7th International Workshop on Self-Organising Systems (IWSOS'13). Palma de Mallorca, ES. May 2013.) In this case my student Lei messed with the sentence structure because we wanted to get across the idea that the main problem was the totality of the existing approach to the problem, which we wanted to address as a whole. The abstract still follows the basic structure, and I think is stronger for being shorter.</p>
 <p>No rule of writing is hard-and-fast, of course, and so you'll often find great abstracts that adopt a completely different approach. I don't think this matters so much as ensuring that the abstract is fit for purpose: an enticement to read further.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/who-got-einsteins-office-eccentricity-and-genius-at-the-institute-for-advanced-study/" class="u-url">Who Got Einstein's Office? Eccentricity and Genius at the Institute for Advanced Study</a></h1>
         <div class="metadata">
@@ -359,8 +355,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield slightly.</p>
+    <p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield slightly.</p>
 <!--more-->
 
 <p>Our <a href="2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.</p>
@@ -432,7 +427,6 @@ X-CTU</a>.</p>
 <p>The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the radio.</p>
 <p>Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range -- far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some work).</p>
 <p>Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more exploration.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/08/02/at-commands-2/" class="u-url">Issuing AT commands</a></h1>
         <div class="metadata">
@@ -445,8 +439,7 @@ X-CTU</a>.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Controlling the XBee requires issuing AT commands. The XBee library has the low-level machinery to do this.</p>
+    <p>Controlling the XBee requires issuing AT commands. The XBee library has the low-level machinery to do this.</p>
 <!--more-->
 
 <p>AT commands are the basis for controlling almost all modems, and the XBee is no different. In API mode, AT commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use form.</p>
@@ -483,7 +476,6 @@ but also hides the exact nature of any error.</p>
 </code></pre>
 
 <p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/31/power/" class="u-url">Basic power measurements</a></h1>
         <div class="metadata">
@@ -496,8 +488,7 @@ but also hides the exact nature of any error.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>Some initial measurements of power consumption.</p>
+    <p>Some initial measurements of power consumption.</p>
 <!--more-->
 
 <p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes is:
@@ -556,7 +547,6 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of using <code>delay()</code> is quite power-hungry. The bad news is that the "at rest" power consumption of an Arduino even in deep sleep  -- the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing -- is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there's some variation happening faster than the ammeter's sample time).</p>
 <p>The radio isn't put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the time.</p>
 <p>[UPDATE 1Aug2013: made the table layout a bit clearer.]</p>
-</div>
     </div>
     </article>
 </div>

@@ -114,8 +114,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>We're looking for expert panels to be run at the IFIP/IEEE International Symposium on Integrated Network Management in Dublin in May 2011.
 </p>
 <h2>
@@ -148,7 +147,6 @@ We are seeking proposals for expert discussion panels to stimulate and inform th
 <p>Submission of panel proposals: 20 October 2010
 Notifications of acceptance: mid-November 2010
 Conference dates: 23-27 May 2011</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/09/09/sapere-phd/" class="u-url">Funded PhD studentship in adaptive service ecosystems</a></h1>
         <div class="metadata">
@@ -161,8 +159,7 @@ Conference dates: 23-27 May 2011</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>We have an opening for someone interested in doing a PhD in adaptive services.<!--more--></p>
 <p>University of St Andrews
 School of Computer Science
@@ -178,7 +175,6 @@ School of Computer Science
 <p>Within the School, the Networks and Distributed Systems group is a world-class research centre, not only for software artefacts such as programming languages, object stores and operating systems but also in adaptive, pervasive and autonomic systems engineering and in the composition technologies used in such large-scale distributed systems such as peer-to-peer overlay mechanisms, distributed mediation, distributed termination and distributed garbage collection.</p>
 <p><strong>Application</strong></p>
 <p>To apply, please send a CV and statement of research interests by email to Prof Simon Dobson (<a href="mailto:sd@cs.st-andrews.ac.uk">sd@cs.st-andrews.ac.uk</a>), to whom informal inquiries can also be directed. The closing date for applications is 11 October 2010.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/06/29/getting-rid-of-the-laptop/" class="u-url">Getting rid of the laptop</a></h1>
         <div class="metadata">
@@ -191,8 +187,7 @@ School of Computer Science
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>I've been <del datetime="2010-06-28T10:49:02+00:00">playing with</del> evaluating two <del datetime="2010-06-28T10:49:02+00:00">new toys</del> important new pieces of technology: an iPad and a Pulse SmartPen. The combination <em>almost</em> makes we ready to ditch my netbook -- or at least got me thinking carefully about why I still have one.</p>
 <!--more-->
 
@@ -207,7 +202,6 @@ School of Computer Science
 <p>The whole experience reminds me very strongly of Disneyland: safe, beautiful, welcoming, friendly -- and utterly fake, and utterly anodyne. One can choose not to go to Disneyland, of course -- and certainly not to <a href="http://en.wikipedia.org/wiki/Celebration,_Florida">live there</a> -- but it's another thing to hand control of access to information and information technology off to a commercial third party. Anything can be disallowed on a whim, or for the greater commercial good -- and can of course be disallowed or edited retrospectively.</p>
 <p>Whether we like it or not, human culture includes material, that is distasteful for many people. <a href="../2010/06/smarter-internet/">That's why we have critical faculties</a>, and diversity, and laws on free speech. Commercial device providers and operators are not constrained by requirements to fairness in the way that newspapers and public broadcasters are, and could easily be persuaded to silence some forms of speech on the basis of commercial interest regardless of their wider legality.</p>
 <p>For the present I'll be keeping the netbook for internet access, but using the SmartPen for note-taking, and thinking a bit more about a dedicated ebook reader. It's a compromise between openness and convenience that I'm conscious of making, and not without some hesitation. Time will tell how the choices play out and evolve, and maybe I'll buy an Android tablet when they mature a little :-)</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/06/22/monads-language-design-perspective/" class="u-url">Monads: a language designer's perspective</a></h1>
         <div class="metadata">
@@ -220,8 +214,7 @@ School of Computer Science
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Monads are one of the hottest topics in functional programming, and arguably simplify the construction of a whole class of systems. Which makes it surprising that they're so opaque and hard to understand to people who's main experience is in imperative or object-oriented languages.</p>
 <!--more-->
 
@@ -287,7 +280,6 @@ concat (map (\x -&gt; concat (map (\y -&gt; return (x, y)) [20..30])) [1..10])
 <p>So to summarise, Haskell provides a do block syntax that expands to a nested sequence of monadic function calls. The actual functions used depend on the monadic type in the do block, so the programmer can define how the code fragments relate to one another. Common monads include some simple types, but also I/O operations and state bindings, allowing Haskell to perform operations that are typically regarded as imperative without losing its laziness. The Haskell tutorial <a href="http://www.haskell.org/tutorial/io.html">explains the I/O syntax</a>.</p>
 <p>What can we say about monads from the perspective of language design? Essentially they reify sequencing, in a functional style. They only work as seamlessly as they do because of Haskell's flexible type system (allowing the definition of new monads), and also because of the <tt>do</tt> syntax: without the syntactic sugar, most monadic code is incomprehensible. The real power is that they allow some very complex functionality to be abstracted into functions and re-used. Consider the <tt>Maybe</tt> code we used earlier: without the "escape" provided by the <tt>Maybe</tt> monad, we'd have to guard each statement with a conditional to make sure there wasn't a <tt>Nothing</tt> returned at any point. This quickly gets tiresome and error-prone: the monad encapsulates and enforces the desired behaviour. When you realise that one can also compose monads using monad transformers, layering monadic behaviours on top of each other (albeit with some contortions to keep the type system happy), it becomes clear that this is a very powerful capability.</p>
 <p>I think one can also easily identify a few drawbacks, though. One that immediately springs to mind is that monads reify <em>one</em> construction, of the many that one might choose. A more general meta-language, like the use of meta-objects protocols or aspects, or structured language and compiler extensions, would allow even more flexibility. A second -- perhaps with wider impact -- is that one has to be intimately familiar with the monad being used before one has the <em>slightest idea</em> what a piece of code will do. The list example above is not obviously a list comprehension, until one recognises the "idiom" of the list monad. Thirdly, the choice of monadic function definitions isn't often canonical, so there can be a certain arbitrariness to the behaviour. It'd be interesting to consider generalisations of monads and language constructs to address these issues, but for the meantime one can use them to abstract a whole range of functionality in an interesting way. Good luck!</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/06/18/contextual-processes/" class="u-url">Contextual processes</a></h1>
         <div class="metadata">
@@ -300,8 +292,7 @@ concat (map (\x -&gt; concat (map (\y -&gt; return (x, y)) [20..30])) [1..10])
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Context-aware systems are intended to follow and augment user-led, real-world processes. These differ somewhat from traditional workflow processes, but share some characteristics. Might the techniques used to implement business processes <em>via</em> web service orchestration fit into the context-aware landscape too?</p>
 <!--more-->
 <p>These ideas arose as a result of discussions at the <a href="http://www.pmmps.org">PMMPS</a> workshop at <a href="../2010/05/impressions-pervasive-2010/">PERVASIVE 2010 in Helsinki</a>. In particular, I was thinking about comments <a href="http://aquigley.blogspot.com/2010/04/april-2009-keynote-talk-ides-for.html">Aaron Quigley made in his keynote</a> about the need to build platforms and development environments if we're to avoid forever building just demos. The separation of function from process seems to be working in the web world: might it work in the pervasive world too?</p>
@@ -320,7 +311,6 @@ Most current pervasive systems have quite simple versions of all these component
 <p>Another way to look at things is to consider what "noise" means. In terms of the components we set out earlier, noise is the observation of events that don't relate to the process we're trying to observe. Suppose I'm trying to support a "going to work" process. If I'm walking to work and stop at a shop, for example, this doesn't interfere with my going to work -- it's "noise" in the sense of "something that happened that's non-contradictory of what we expected to see". On the other hand if, after leaving the shop, I go home again, that might be considered as "not noise", in the sense of "something that happened that contradicts the model we have of the process".<em></em> As well as events that support a process, we also have events that contradict it, and events that provide no information.</p>
 <p>Human-centred processes are therefore stochastic, and we need a stochastic process formalism. I'm not aware of any that really fit the bill: process algebras seem too rigid. Markov processes are probably the closest, but they're really designed to capture frequencies with which paths are taken rather than detours and the like. Moreover we need to enrich the event space so that observations support or refute hypotheses as to which process is being followed and where we are in it. This is rather richer than is normal, where events are purely confirmatory. In essence what we have is <em>process as hypothesis</em> in which we try to confirm that this process is indeed happening, and where we are in it, using the event stream.</p>
 <p>It's notable that we can describe a process separately from the probabilities that constrain how it's likely to evolve, though. That suggests to me that we might need an approach like <a href="http://en.wikipedia.org/wiki/Business_Process_Execution_Language">BPEL</a>, where we separate the description of the process from the actions we take as a result, and also form the ways in which we move the process forward. In other words, we have a description of <em>what it means</em> to go to work, expressed separately from <em>how</em> we confirm that this is what's being observed in terms of sensors and events, and separated further from <em>what happens</em> as a result of this process being followed. That sounds  a lot easier than it is, because some events are confirmatory and some aren't. Furthermore we may have several processes that can be supported  by observations up to a point and then diverge: going to work and going shopping are pretty similar until I go into a shop, and/or until I leave the shop and don't go to work. How do we handle this? We could enforce common-prefix behaviour, but that breaks the separation between process and action. We could insist on "undo" actions for "failed", no-longer-supported-by-the-observations processes, which severely complicates programming and might lead to interactions between different failed processes. Clearly there's something missing from our understanding of how to structure more complex, temporally elongated behaviours that'll need significant work to get right.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/06/11/power-comics/" class="u-url">The power of comics</a></h1>
         <div class="metadata">
@@ -333,8 +323,7 @@ Most current pervasive systems have quite simple versions of all these component
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>I've been fortunate enough to spend some of the past couple of days with a comic-writer who studies the academic experience, and who might well have a greater aggregate impact on science than almost anyone else I've ever met.</p>
 <!--more-->
 
@@ -350,7 +339,6 @@ Most current pervasive systems have quite simple versions of all these component
 <p>Does this help with the process of doing science? The completion rates for PhDs is high --over 99% for Scottish computer science, for example -- but the time taken, and stress endured, in that process varies widely. Anything that helps mitigate the strain, helping  students cement their self-confidence and deal with the challenges, is very much to be welcomed.</p>
 <p>This got me thinking. Robotics is an important  field, and it's impossible to say what we lost in terms of research and innovation when Jorge followed his passion. But it's almost certain that he's influenced more scientific activity, more widely, as a cartoonist than he <em>ever</em> would have done as a researcher or an academic. Not everyone can be a researcher, but even fewer can provide insight and entertainment as cartoonists, and even fewer can spot and take the opportunity to become the voice of graduate students worldwide.</p>
 <p>Following this logic a little further, I suspect that bringing Jorge over to SICSA may have been the single most effective "soft spend" in the whole programme to date. We don't have a problem with completion, but we <em>do</em>, like all universities, have issues with confidence and motivation, and anything we can do to improve those is money well spent. I wish I could think of a way to confirm that value empirically, but I can't: but that's not going to stop me recommending Jorge as a speaker to anyone wanting to improve their research environment.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/06/08/smarter-internet/" class="u-url">Made smarter by the internet?</a></h1>
         <div class="metadata">
@@ -363,8 +351,7 @@ Most current pervasive systems have quite simple versions of all these component
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Over the weekend there was a fascinating exchange of viewpoints in the <a href="http://europe.wsj.com/home-page">Wall Street Journal</a> taking opposing sides of the argument as to what effect the internet is having on us: is it making us smarter and better-informed, or more shallow and un-disciplined compared to our book-reading days? Perhaps more importantly. is there anything we can do to leverage the internet to promote smartness more effectively?</p>
 <!--more-->
 
@@ -378,7 +365,6 @@ Most current pervasive systems have quite simple versions of all these component
 <p>(As an historical aside, in the early days of the web a technology called <em>content selection</em> was developed, intended to label pages with a machine-readable tag of their content to enable parental control amongst other things. There was even a standard developed, <a href="http://www.w3.org/PICS/">PICS</a>, to attach labels to pages. The question then arose as to who should issue the labels. If memory serves me correctly, a consortium of southern-US Christian churches lobbied W3C to be nominated as the sole label-provider. It's fair to say this would have changed the internet forever....)</p>
 <p>But much of this discussion focuses on the relationship between the current internet and books. I suspect it's much more interesting to consider what post-book media will look like, and then to ask what might make such media more conducive to "smart study". There are shallow and simple changes one might make. Allowing hyperlinks that bring up definitions of terms in-line or in pop-ups (as allowed by <a href="http://www.hytime.org/">HyTime</a>, incidentally, a far older hypertext model than the web), would reduce de-contextualisation and attention fragmentation. I find tools like <a href="http://readitlaterlist.com/">Read It Later</a> to be invaluable, allowing me quickly to mark pages for later reading rather than having to rely on memory and the inevitable cognitive load, especially on mobile devices. Annotating pages client-side would be another addition, on the page rather than at a separate site. More broadly, multimedia and linking invite a whole new style of book. The iPad has seen several "concept" projects for radically hyperlinked multimedia works, and projects like <a href="http://www.sophieproject.org/">Sophie</a> are also looking at the readability of hypermedia. Unsurprisingly a lot of the best work is going on within the <a href="http://www.squeak.org">Squeak</a> community, which has been looking at these issues for years: it has a rich history in computer science, albeit somewhat outwith the mainstream.</p>
 <p>I doubt the internet can ever <em>make</em> someone smarter, any more than it can <em>make</em> someone careful. What it <em>can</em> do is facilitate new ways of thinking about how to collect, present, organise and interact with information in a dynamic and semantically directed fashion. This is definitely an agenda worth following, and its great to see discussions on new media taking place in the general wide-circulation press and newspapers</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/05/28/languages-extensible-vms/" class="u-url">Languages for extensible virtual machines</a></h1>
         <div class="metadata">
@@ -391,8 +377,7 @@ Most current pervasive systems have quite simple versions of all these component
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what's the appropriate  language for writing experimental languages?</p>
 <!--more-->
 
@@ -415,7 +400,6 @@ The most obvious approach is to use C, which is run-time-efficient and runs on a
 <h3>Smalltalk</h3>
 <p>Smalltalk -- and especially <a href="http://www.squeak.org">Squeak</a> -- isn't a popular choice within language research, but does have a portable virtual machine, VM generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It's also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework -- something that'd be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.</p>
 <p>Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It's unfortunate there isn't a clear winner; alternatively, it's positive that there's a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/05/21/impressions-pervasive-2010/" class="u-url">Impressions of Pervasive 2010</a></h1>
         <div class="metadata">
@@ -428,8 +412,7 @@ The most obvious approach is to use C, which is run-time-efficient and runs on a
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>I've spent this week at the <a href="http://www.pervasive2010.org">Pervasive 2010 conference</a> on pervasive computing, along with the <a href="http://www.pmmps.org">Programming Methods for Mobile and Pervasive Systems</a> workshop I co-arranged with <a href="http://www.dominicduggan.org/">Dominic Duggan</a>. Both events have been fascinating.</p>
 <!--more-->
 <p>The PMMPS workshop is something we've wanted to run for a while, bringing together the programming language and pervasive/mobile communities to see where languages  ought to go. We received a diverse set of submissions: keynotes from Roy Campbell and Aaron Quigley, talks covering topics including debugging, software processes, temporal aspects (me), context collectionvisual programming ang a lot more. Some threads emerge quite strongly, but I think they'll have to wait for a later post after I've collected my thoughts a bit more.</p>
@@ -443,7 +426,6 @@ The most obvious approach is to use C, which is run-time-efficient and runs on a
 <p><strong>Energy-aware data traffic management</strong>. I should add the disclaimer that is work by my colleague, Mirco Musolesi of the University of  St Andrews. Sensor nodes need to be careful about the energy they use to transmit data back to their base station. This work compares a range of strategies that trade-off the accuracy of returned data with the amount of traffic exchanged and so the impact on the nodoe's battery. This is //really// important for environmental sensing, and makes me think about further modifying the models to account for what's being sensed to trade-off information content as well.</p>
 <p><strong>Tutorials</strong> AJ Brush did a wonderful tutorial on how to do user surveys. This is something we've done ourselves, and it was great to see the issues nailed-down -- along with war stories of how to plan and conduct a survey for greatest validity and impact. Equally, John Krumm did a fantastic overview of signal processing, particle filters, hidden Markov models and the like that make the maths <em>far</em> more accessible than it normally is. Adrian Friday heroically took the graveyard slot with experiences and ideas about system support for pervasive systems.</p>
 <p>This is the first large conference I've attended for a while, for various reasons, and it's been a great week both scientifically and socially. The organisers at the University of Helsinki deserve an enormous vote of thanks for their efforts. Pervasive next year will be in San Francisco, an I'll definitely be there -- hopefully with a paper to present :-)</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2010/05/14/cs-book-worth-reading-twice/" class="u-url">The only computer science book worth reading twice?</a></h1>
         <div class="metadata">
@@ -456,8 +438,7 @@ The most obvious approach is to use C, which is run-time-efficient and runs on a
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>I was talking to one of my students earlier, and lent him a book to read over summer. It was only after he'd left that I realised  that -- for me at any rate -- the book I'd given him is probably the most seminal work in the whole of computer science, and certainly the book that's most influenced my career and research interests.</p>
 <!--more-->
 <p>So what's the book? <em>Structure and interpretation of computer programs</em> by Hal Abelson and Jerry Sussman <span> (MIT Press. 1984. ISBN 0-262-01077-1), also known as <em>SICP</em>. </span>The book's still in print, but -- even better -- is <a href="http://mitpress.mit.edu/sicp/">available online in its entirety</a>.</p>
@@ -486,7 +467,6 @@ The most obvious approach is to use C, which is run-time-efficient and runs on a
 <p>I've taken a view before about <a href="../2010/04/computer-microscope/">computers being the new microscopes</a>, opening-up new science on their own as well as facilitating existing approaches. The "how to" aspect of computer science re-appears everywhere in this: in describing the behaviours of sensor networks that can adapt while continuing the reflect the phenomena they've been deployed to sense; in the interpretation of large-scale data mined and mashed-up across the web; in capturing scientific methods and processes for automation; and so forth. The richness of these domains mitigates against packaged software and encourages integration through programming languages like <a href="http://www.r-project.org">R</a>, so that the interfaces and structures remain "soft" and open to experimentation.</p>
 <p><span>When I looked at my copy, the date I'd written on the inside was September 1988. So a book I bought nearly 22 years ago is still relevant. <em> </em>In fact, I'd go further and say that it's the only computer science book of that age that I'd happily and usefully read again without it being just for historical interest: the content has barely aged at all. That's not all that unusual for mathematics books, but it's almost unheard of in computer science, where the ideas move so quickly and where much of what's written about is ephemeral rather than foundational. It goes to show how well SICP nailed the core concepts. In this sense, it's certainly one of the very few  books on computer science that it's worth reading twice (or more). SICP is to computer science what Feynman's <em>Lectures on Physics</em> are to physics: an accessible distillation of the essence of the subject that's stood the test of time.
 </span></p>
-</div>
     </div>
     </article>
 </div>

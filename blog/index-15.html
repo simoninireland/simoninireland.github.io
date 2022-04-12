@@ -114,8 +114,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?</p>
 <!--more-->
 <p>Anyone who's built a large piece of software knows that much of the effort is in managing the complexity of the project: which other software a piece of code relies on, how to keep the various aspects separate, how to manage changes and upgrades, and so on. This isn't something that's got easier over time: it has for a given code size and style, as we've understood build processes and dependency management better; but the code sizes have relentlessly increased to compensate for our improved understanding; and modern practices don't make life any easier. Downloaded code, dynamic modules and classes, client-server and the like all generate their own intrinsic complexity.</p>
@@ -129,7 +128,6 @@ bg-dark
 <p>So it's not decomposition that's the issue, it's <em>decomposition manifested at run-time</em>. When we add new abstractions to systems, we typically add them in the form of components or libraries that can be called from other components. These components are often general, with lots of parameters and working with multiple clients -- sound familiar? This is all good for the component-writer, as it lets the same code be re-used: but it bloats each system that uses the component, adding complexity and interactions.</p>
 <p>So one thought for tackling complexity is to change where decomposition manifests itself. If instead of placing new functions in the run-time system, we placed it into the compiler used to build the run-time, we could use compilation techniques to optimise-out the unnecessary functionality so that what results is optimised for the configuration that it's actually being placed in, rather than being general enough to represent any configuration. There's substantial work on these ideas in the fields of staged compilation and partial evaluation (for example <a href="http://www.metaocaml.org/" target="_blank">MetaOCaml</a>, <a href="http://www.haskell.org/haskellwiki/Template_Haskell" target="_blank">Template Haskell</a>, Flask and the like): the flexibility is manifested at compile-time as compile-time abstractions, that in the course of compilation are removed and replaced with inflexible -- but more efficient and potentially more dependable -- specialised code. Think taking the source code for Linux, Apache and MySQL, accelerating them together at high speed, and getting out a single program that'd run on a bare machine, had nothing it didn't actually need, and had all the options for the various (conceptual) sub-systems set correctly to work together.</p>
 <p>Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and<a href="../2011/05/evolving/" target="_blank"> into the languages and compilers</a> might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like <a href="../2011/12/middleware-doughnut/" target="_blank">ever-more-specialised middleware</a> that remove bloat and overhead at the cost of generality. Keeping the former <em>and</em> the latter seems like a worthwhile goal.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/1776/" class="u-url">1776</a></h1>
         <div class="metadata">
@@ -174,10 +172,8 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>We have five more PhD scholarships tenable from September, for students interested in any of our areas of research. The details are available <a href="http://www.jobs.ac.uk/job/AEL878/funded-phd-research-studentship/" target="_blank">here</a>. Please note that I'm not taking on a PhD student this year, so don't bother applying to work with me.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2012/05/08/library-book/" class="u-url">When not to return a library book</a></h1>
         <div class="metadata">
@@ -190,8 +186,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Beware of books bearing illnesses.</p>
 <!--more-->
 
@@ -200,7 +195,6 @@ bg-dark
 <p><em>"A person shall not return any public library book which he knows to have been exposed to infection from a notifiable disease ... [including] smallpox, cholera, diphtheria, ..."</em></p>
 <p>And so on. The list of diseases includes things against which we are now routinely vaccinated (diphtheria, tuberculosis), those we haven't seen in the UK in my lifetime (typhus), and those most people would now brush-off with a course of antibiotics (flu, pneumonia). Except, of course, that at the time there was far less vaccination and no antibiotics at all, since <a href="https://en.wikipedia.org/wiki/Penicillin" target="_blank">mass production didn't start until the 1940's</a>.</p>
 <p>So as well as being an observation of a period in history from a point in time from which its significance was only poorly understood, this book is a time capsule from a period when diseases were a lot bigger and broader threat than they are now.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2012/05/04/postmodernism-programming/" class="u-url">The post-modernisation of programming languages</a></h1>
         <div class="metadata">
@@ -213,8 +207,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Do we now have some post-modern programming languages?</p>
 <!--more-->
 
@@ -233,7 +226,6 @@ bg-dark
 <p>Post-modernism isn't wrong, and <a href="../2011/12/middleware-doughnut/" target="_blank">appears in middleware too</a>. It's also important to realise the benefits: it makes it easier to put together larger systems, and increases <a href="../2011/06/computing-experience/" target="_blank">the ambition of projects one can undertake</a> compared to having to build so much from scratch, But it may be misguided. The people who spent the 1960's writing all the COBOL code that's still running today never thought it'd still be being maintained -- and the consequences of that lead to code that's now impossible to change. Simple solutions have a tendency to grow into more complex ones -- "just one more feature and we're done" -- which can push the costs of inappropriate choices out along the project lifecycle.</p>
 <p>More importantly, for researchers post-modernism is a seductive siren call that lets you step away from tackling some difficult choices. Instead of picking a small set of concepts, choose <em>any set</em> and then extend them, in <em>any way</em>, to build up your system. I think this obscures some insights one might otherwise gain from simplifying your set of concepts.</p>
 <p>I think it's also worth remembering that increasing the size and number of abstractions isn't without cost: not for the computer or the compiler, but for the programmer. The more programmers have to remember, and in particular the less well the things to be remembered fit together as a conceptual whole, the harder it is to use the system to its fullest advantage. People instead stay with small sub-sets of the language or -- worse -- settle for programs producing results that aren't those they want, just to stay within their language comfort zone. This sort of simplification is a step backwards, and we need to be careful of the consequences.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2012/04/26/brazil-science/" class="u-url">Brazilian "Science without Borders" studentships available</a></h1>
         <div class="metadata">
@@ -246,14 +238,12 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The School of Computer Science has a number of opportunities available for Brazilian students through this programme.</p>
 <!--more-->
 
 <p>The Brazilian government is funding studentships for Brazilian nationals with a range of international universities and disciplines. The studentships are "co-tutelle", being split between an international and a Brazilian host university, and aim to improve international collaboration as well as enhancing the student experience.</p>
 <p>A number of Schools at St Andrews  are <a href="http://www.st-andrews.ac.uk/scholarships/brazil/">part of this programme</a>, ranging across the physical and biological sciences in areas in which we have international-quality research. In Computer Science, we have <a href="http://www.st-andrews.ac.uk/scholarships/brazil/computerscience/">a wide range of project proposals on offer</a> covering all our main research activities. Interested students should contact the supervisors offering the proposed projects to check on suitability and availability. All students will be subject to the University's usual rules on quality and eligibility.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/the-great-terror-a-reassessment/" class="u-url">The Great Terror: A Reassessment</a></h1>
         <div class="metadata">

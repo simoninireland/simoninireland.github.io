@@ -114,8 +114,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The current focus on "big data" may be obscuring something more interesting: it's often not the pure size of a dataset that's important.</p>
 <!--more-->
 
@@ -136,7 +135,6 @@ There's a wealth of <a href="http://data.gov.uk/" target="_blank">UK government 
 <p>There's a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he's actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it's increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.</p>
 <p>Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people's actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/26/improvements/" class="u-url">Some improvements to SleepySketch</a></h1>
         <div class="metadata">
@@ -149,8 +147,7 @@ There's a wealth of <a href="http://data.gov.uk/" target="_blank">UK government 
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
+    <p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
 <!--more-->
 
 <p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
@@ -191,7 +188,6 @@ method to <code>SleepySketch</code> itself:</p>
 repeating actors, and we can define the various actors and re-use them
 in different scheduling situations without complicating their own
 code.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/26/radio-survey/" class="u-url">Radio survey</a></h1>
         <div class="metadata">
@@ -204,8 +200,7 @@ code.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p>A simple radio survey establishes the ranges that the radios can manage.</p>
+    <p>A simple radio survey establishes the ranges that the radios can manage.</p>
 <!--more-->
 
 <p>The 2mW XBee radios we've got have a nominal range of 100m -- but that's in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There's a reasonable chance that these obstacles will reduce the real range significantly.</p>
@@ -217,7 +212,6 @@ code.</p>
 <p>This is somewhat disappointing, but that's what this project is all about: the practicalities of sensor networking with cheap hardware.</p>
 <p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the enclosure.</p>
 <p>It's also worth noting that the radio segment is horrendously hard to debug with only a single LED for signalling. Adding more LEDs might help, but it's still a very poor debugging interface, even compared to printing status messages to the USB port.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/25/sleepy-sketches/" class="u-url">Sleepy sketches</a></h1>
         <div class="metadata">
@@ -230,8 +224,7 @@ code.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.</p>
 <!--more-->
 
@@ -261,7 +254,6 @@ do the following:</p>
 <p>This is a first design, now just about working. It's still not as easy
 as it could be, however, and needs some testing to make sure that the
 power savings do actually materialise.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/23/arduino-watchdog/" class="u-url">Understanding Arduino sleep modes: the watchdog timer</a></h1>
         <div class="metadata">
@@ -274,8 +266,7 @@ power savings do actually materialise.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.</p>
 <!--more-->
 
@@ -347,7 +338,6 @@ will then cause a system reset.</p>
 
 <p>The <code>WDT_vect</code> identifies the watchdog timer's interrupt vector.</p>
 <p>While this might seem like a waste of time, it's important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It's also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn't cause any problems.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/permutation-city-subjective-cosmology-2/" class="u-url">Permutation City (Subjective Cosmology #2)</a></h1>
         <div class="metadata">
@@ -392,8 +382,7 @@ will then cause a system reset.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p style="text-align: left">Where does mathematics end and computer science begin?</p>
 <!--more-->
 
@@ -408,7 +397,6 @@ will then cause a system reset.</p>
 <p>So a mathematician's (at least as represented in most of the complex systems literature) interest in a problem is lost at precisely the point that a computer scientist's interest kicks in: where the question is about behaviour of arbitrary computations. The question this leads to is, what model do real-world networks follow more closely? Are they composed of simple, well-behaved spreading processes? Or do they more resemble arbitrary functions hanging off a network of relationships, whose properties can only be discovered numerically? And what effect does the avoidance of arbitrary computation have on the choice of problems to which scientists apply themselves? Perhaps the way forward here is to try to find the boundary of the complexity of functions that remain analytic when used as part of a network dynamics, to get the best of both worlds: global statements about large categories of networks, without needing numerical simulation of individual cases.</p>
 <p>Such a classification would have useful consequences for general computer science as well. A lot of the problems in systems design come from the arbitrariness of code and its interactions, and from the fact that we're uncomfortable restricting that generality <em>a priori</em> because we don't know what the consequences will be for the re-usability and extensibility of the systems being designed. A more nuanced understanding of behavioural envelopes might help.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/mussolini/" class="u-url">Mussolini</a></h1>
         <div class="metadata">
@@ -453,8 +441,7 @@ will then cause a system reset.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?</p>
 <!--more-->
 
@@ -465,7 +452,6 @@ will then cause a system reset.</p>
 <p>There are some compromise positions, however. <a href="http://www.json.org" target="_blank">JSON</a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. JSON essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn't include code-valued fields, which is how JSON stays language-neutral: it can't encode computations, closures, or other programmatic features.)</p>
 <p>JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.</p>
 <p>This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/07/09/temperature-sensors-working/" class="u-url">Temperature sensors working</a></h1>
         <div class="metadata">
@@ -478,8 +464,7 @@ will then cause a system reset.</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Temperature sensing using digital temperature sensors is easy to get working.</p>
 <!--more-->
 
@@ -513,7 +498,6 @@ will then cause a system reset.</p>
 <p><img alt="Three DS18B30s on a prototyping shield" src="../images/citizen-sensing/ds18b20-prototype.jpg"></p>
 <p>One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we'll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.</p>
 <p>There's also an interesting point about parasite power mode, which is where the DS18B20 draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it's probably worth looking into parasite power a bit more.</p>
-</div>
     </div>
     </article>
 </div>

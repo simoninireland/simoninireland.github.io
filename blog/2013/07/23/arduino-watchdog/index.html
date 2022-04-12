@@ -132,8 +132,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.</p>
 <!--more-->
 
@@ -205,7 +204,6 @@ will then cause a system reset.</p>
 
 <p>The <code>WDT_vect</code> identifies the watchdog timer's interrupt vector.</p>
 <p>While this might seem like a waste of time, it's important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It's also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn't cause any problems.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/arduino/" rel="tag">arduino</a></li>

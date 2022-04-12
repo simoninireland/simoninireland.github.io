@@ -114,15 +114,13 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The parts have arrived for the ditch project.</p>
 <!--more-->
 
 <p>The first tranche of hardware came (in a small box) today:</p>
 <p><img alt="Enough parts for four sensors and a base station" src="../images/citizen-sensing//2013-06-19-14.14.06.jpg"></p>
 <p>There are parts here for four sensor packages and a base station. The sensor nodes have an Arduino, a 2mW XBee radio, and a digital temperature sensor. The base station has an XBee and a wired ethernet for connecting up to the internet. There are also some prototyping shields to simplify integration, a wall wart power supply for the base station, and some other goodies to support some other development.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/20/parts-list/" class="u-url">Sensor mote initial parts list</a></h1>
         <div class="metadata">
@@ -135,8 +133,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>The initial design for a sensor mote puts three temperature sensors together with an Arduino and short-range radio module.</p>
 <!--more-->
 
@@ -155,7 +152,6 @@ bg-dark
 A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistors.
 <p>[UPDATED 11Jul2013: added cost of enclosure]</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/19/ditch-motivation/" class="u-url">The ditch project: a motivation</a></h1>
         <div class="metadata">
@@ -168,8 +164,7 @@ A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistor
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>Citizen Sensing's first project is to perform environmental monitoring on a small scale with minimally-specification hardware.</p>
 <!--more-->
 
@@ -180,7 +175,6 @@ A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistor
 <p>The main software challenges include working the hardware and -- more significantly -- managing the very limited power budget one gets with standard batteries and hardware. In building the software, we're aiming for a re-usable platform that can be packaged in a form so that the experiment can be reproduced or used as the basis or other experiments by other groups of scientists.</p>
 <p>Is this a worthwhile project? From a scientific point of view its clearly questionable, but that's not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and uncertain.</p>
 <p>The <a href="../tag/ditch/">blog</a> for the project will let you follow all the gory details.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/01/actor-systems/" class="u-url">Actor systems</a></h1>
         <div class="metadata">
@@ -193,8 +187,7 @@ A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistor
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.</p>
 <p>The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.</p>
 <p>The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)</p>
@@ -203,7 +196,6 @@ A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistor
 <p>If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a></p>
 <p>It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.</p>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="2013/06/01/sample-post-title/" class="u-url">Sample post title</a></h1>
         <div class="metadata">
@@ -216,10 +208,8 @@ A total of £76.90 (+ VAT) per sensor, not including assorted wires and resistor
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<p></p>
+    <p></p>
 <p>This is a sample post created by Thank Me Later.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="goodreads/their-darkest-hour/" class="u-url">Their Darkest Hour</a></h1>
         <div class="metadata">

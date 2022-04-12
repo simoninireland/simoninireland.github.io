@@ -127,8 +127,7 @@ bg-dark
         </div>
         
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Most sensor systems are programmed using C: compact and well-known, but low-level and tricky to get right when things get compact and complex. There have been several proposals for alternative languages from across the programming language research spectrum. I haven't heard anyone mention Forth, though, and it's worth considering -- even if only as a target for other languages.</p>
 <!--more-->
 <p>Many people will never have encountered <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth</a>, a language that's enjoyed up-and-down popularity for over four decades without ever hitting the mainstream. Sometimes touted as an alternative to Basic, it even had an <a href="http://en.wikipedia.org/wiki/Jupiter_Ace">early-1980's home computer</a> that used it as the introductory language.</p>
@@ -150,7 +149,6 @@ So Forth programs don't look like other languages. There's no real phase distinc
 <p>Which is interesting enough, but what makes it more interesting for sensors is the structure of these compiler words. Typically they're what is known as <tt>IMMEDIATE</tt> words, which means they <em>execute</em> when encountered <em>compiling</em> a word. That may sound odd, but what it means is that the compiler word executes and generates code, rather than being compiled itself. And <em>that</em> means that, when used with a cross-compiler, the new language constructs don't add to the target system's footprint, because their action all happens at compile-time to generate code that's expressed in terms of lower-level words. In core Forth, constructs like <tt>IF</tt> and <tt>LOOP</tt> (conditional and counted loops respectively) do exactly this: they compile low-level jumps (the word <tt>(BRANCH)</tt> and <tt>(?BRANCH)</tt>, which do non-conditional and conditional branches respectively) implementing the higher-level structured-programming abstraction.</p>
 <p>A lot of modern languages use virtual machines as targets for their compilers, and a lot of those VMs are stack machines -- Forth, in other words. If we actually <em>use</em> Forth as the VM for a compiler, we have an <em>extensible</em> VM in which we can define new constructs, so we can evolve the VM better to fit the language that targets it. (There are also some very interesting, close parallels between Forth code and the abstract syntax trees used to represent code within compilers, but that's something I need to think about a bit more before I write about it.)</p>
 <p>All this is rather speculative, and doesn't really address the core problem of programming a network rather than a device, but it does provide a device-level platform that might be more amenable to language research. I've been experimenting with Forth for this purpose, and have a prototype system -- Attila, an abstract, re-targetable threaded interpreter that's fully cross-compilable -- in the works, but not quite ready to see the light of day. It's taught me a lot about the practicalities of threaded interpreters and cross-compilers. This is a strand of language design that's been almost forgotten, and I think it deserves more of a look.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../../categories/blog/" rel="tag">Blog</a></li>
