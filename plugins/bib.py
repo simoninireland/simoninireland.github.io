@@ -4,7 +4,7 @@ from pybtex.database.input.bibtex import Parser
 from pybtex.database import BibliographyData, PybtexError
 from pybtex.backends import html
 from pybtex.style.formatting import BaseStyle, plain
-        
+
 
 class Bibtex(ShortcodePlugin):
     '''Provides bibliography-related shortcodes:
@@ -12,11 +12,11 @@ class Bibtex(ShortcodePlugin):
       includes the reference given its key
     - {{%bibliography [sort=by=*[-]f*, *[-]f*,...] [group-by=*f*] [category=*c*]%}}
       includes a bibliography that can be sorted by a number of fields (in reverse order
-      if preceded by a -) and grouped by another field 
+      if preceded by a -) and grouped by another field
     '''
 
     # ---------- Registration ----------
-    
+
     def set_site(self, site):
         '''Set the Nikola site object, extracting any configuration.
 
@@ -43,7 +43,7 @@ class Bibtex(ShortcodePlugin):
 
 
     # ---------- Helper methods ----------
-    
+
     def _layout(self, key):
         '''Lay out a single reference given its key.
 
@@ -70,10 +70,10 @@ class Bibtex(ShortcodePlugin):
             if entry.fields.get(f, None) is None:
                 return False
         return True
-    
+
 
     # ---------- Shortcode handlers ----------
-    
+
     def bibitem(self, key, **kwds):
         '''Include the reference with the given key, laid-out in the current style.
 
@@ -114,7 +114,7 @@ class Bibtex(ShortcodePlugin):
                     if ks.issubset(eks):
                         es.append(e)
             entries = es
-                            
+
         # sort entries by fields (if specified)
         if 'sort-by' in kwds.keys():
             fields = kwds['sort-by'].split(',')
@@ -167,7 +167,5 @@ class Bibtex(ShortcodePlugin):
             doc = ''
             for entry in entries:
                 doc += '<p>' + self._layoutEntry(entry)
-        
-        return (doc, [ self._bibfile ])
-    
 
+        return (doc, [ self._bibfile ])
