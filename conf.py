@@ -82,11 +82,11 @@ NAVIGATION_ALT_LINKS = {
 
 # Post and page structure
 POSTS = (
-    ("posts/*.rst", "blog", "post.tmpl"),
-    ("posts/*.md", "blog", "post.tmpl"),
-    ("posts/*.txt", "blog", "post.tmpl"),
-    ("posts/*.html", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl"),
+    ("posts/*.rst", "", "post.tmpl"),
+    ("posts/*.md", "", "post.tmpl"),
+    ("posts/*.txt", "", "post.tmpl"),
+    ("posts/*.html", "", "post.tmpl"),
+    ("posts/*.ipynb", "", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
@@ -149,7 +149,7 @@ THEME_CONFIG = {
         # `featured_small` displays them only on desktop.
         'featured_large_image_on_mobile': True,
         # Strip HTML from featured post text.
-        'featured_strip_html': False,
+ls         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
         'sidebar': ''
     }
