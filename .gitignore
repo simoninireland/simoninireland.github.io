@@ -9,6 +9,8 @@ __pycache__/
 .doit.db
 output/
 cache/
+themes/
+plugins/
 
 # Backup files
 *~
