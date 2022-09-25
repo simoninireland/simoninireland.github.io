@@ -62,7 +62,7 @@ $(THEMES_DIR):
 
 $(PLUGINS_DIR):
 	$(MKDIR) $(PLUGINS_DIR)
-	$(foreach t, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $t)
+	$(foreach p, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $p)
 
 
 # Clean up the build, to force a complete re-build
