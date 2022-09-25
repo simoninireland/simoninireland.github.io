@@ -149,7 +149,7 @@ THEME_CONFIG = {
         # `featured_small` displays them only on desktop.
         'featured_large_image_on_mobile': True,
         # Strip HTML from featured post text.
-ls         'featured_strip_html': False,
+         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
         'sidebar': ''
     }
