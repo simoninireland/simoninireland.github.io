@@ -33,15 +33,15 @@ PLUGINS = \
 IMPORTED = imported.txt
 
 # New post
-post:
+post: env
 	$(ACTIVATE) && $(NIKOLA) new_post -d -f markdown
 
 # Run a live local server
-live:
+live: env
 	$(ACTIVATE) && $(NIKOLA) auto
 
-# Upload to github remote
-upload:
+# Upload to the Github remote
+upload: env
 	$(ACTIVATE) && $(NIKOLA) github_deploy
 
 # Run the continuous import job to refresh from other sites
