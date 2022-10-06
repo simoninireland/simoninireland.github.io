@@ -6,7 +6,7 @@ __pycache__/
 .DS_Store
 
 # Nikola support
-.doit.db.db
+.doit.db
 output/
 cache/
 themes/
