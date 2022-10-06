@@ -1,0 +1,618 @@
+# -*- org-attach-id-dir: "../../files/attachments"; -*-
+#+title: Publications by year
+#+CSL-STYLE: ~/programming/simoninireland.github.io/etc/complete-online.csl
+#+begin_comment
+.. title: Publications by year
+.. slug: publications-by-year
+.. date: 2020-06-17 11:34:36 UTC+01:00
+.. tags: research, publications
+.. category:
+.. previewimage:
+.. link:
+.. description:
+.. type: text
+#+end_comment
+
+* Publications by year
+
+#+begin: sd/bibliography-by-year
+** 2022
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2022a. “Epidemic Modelling Using Networks.” https://simondobson.org/softcopy/sisco-22.pdf.
+
+<<citeproc_bib_item_2>>———. 2022b. “epyc: Computational Experiment Management in Python.” /Journal of Open-Source Software/ 7 (72). doi:[[https://doi.org/10.21105/joss.03764][10.21105/joss.03764]].
+
+<<citeproc_bib_item_3>>———. 2022c. “Epydemic: Epidemic Simulation on Networks.” doi:[[https://doi.org/10.5281/zenodo.6912247][10.5281/zenodo.6912247]].
+
+<<citeproc_bib_item_4>>———. 2022d. “Sensor Interpretation Data Wrangling.” Cork, IE. https://simondobson.org/softcopy/sensor-placement-cork-22.pdf.
+
+<<citeproc_bib_item_5>>———. 2022e. “Sensor Tensors.” Leipzig, DE.
+
+<<citeproc_bib_item_6>>Mann, Peter, and Simon Dobson. 2022. “Belief Propagation on Networks with Cliques and Chordless Cycles.”
+
+<<citeproc_bib_item_7>>Mann, Peter, V. Anne Smith, John Mitchell, and Simon Dobson. 2022a. “A Population Model of Interacting SARS-CoV-2 Variants.” In /Proceedings of the BIFI International Conference on the Science of Covid-19: From Molecular Drug Design to Data-Driven Epidemiological Models/. Zaragoza, ES.
+
+<<citeproc_bib_item_8>>———. 2022b. “Degree Correlations in Graphs with Clique Clustering.” /Physical Review E/ 105 (4). doi:[[https://doi.org/10.1103/PhysRevE.105.044314][10.1103/PhysRevE.105.044314]].
+
+<<citeproc_bib_item_9>>———. 2022c. “N-Strain Epidemic Model Using Bond Percolation.” /Physical Review E/.
+
+** 2021
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2021. “Unit (and Other) Testing of Stochastic Code.” In /6th UK Systems Research Challenges Workshop/. Co Durham, UK. https://simondobson.org/softcopy/stochastic-testing-21.pdf.
+
+<<citeproc_bib_item_2>>Fang, Lei, Xiaoli Liu, Xiang Su, Juan Ye, Simon Dobson, Pan Hui, and Sasu Tarkoma. 2021. “Bayesian Inference Federated Learning for Heart Rate Prediction.” In /Mobihealth 2020: Wireless Mobile Communications and Healthcare/, 362:116–30. Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering. Springer. https://doi.org/10.1007/978-3-030-70569-5_8.
+
+<<citeproc_bib_item_3>>Mann, Peter, V. Anne Smith, John Mitchell, and Simon Dobson. 2021a. “Co-Operative Co-Infection Dynamics on Clustered Networks.” /Physical Review E/ 103 (4). https://doi.org/10.1103/PhysRevE.103.042307.
+
+<<citeproc_bib_item_4>>———. 2021b. “Percolation in Random Graphs with Higher-Order Clustering.” /Physical Review E/ 103 (1). doi:[[https://doi.org/10.1103/PhysRevE.103.012313][10.1103/PhysRevE.103.012313]].
+
+<<citeproc_bib_item_5>>———. 2021c. “Random Graphs with Arbitrary Clustering and Their Applications.” /Physical Review E/ 103 (1). https://doi.org/10.1103/PhysRevE.103.012309.
+
+<<citeproc_bib_item_6>>———. 2021d. “Symbiotic and Antagonistic Disease Dynamics on Clustered Networks Using Bond Percolation.” /Physical Review E/ 104 (2). https://doi.org/10.1103/PhysRevE.104.024303.
+
+<<citeproc_bib_item_7>>———. 2021e. “Two-Pathogen Model with Competition on Clustered Networks.” /Physical Review E/ 103 (6). https://doi.org/10.1103/PhysRevE.103.062308.
+
+<<citeproc_bib_item_8>>Mann, Peter, V. Anne Smith, John Mitchell, Christopher Jefferson, and Simon Dobson. 2021. “Exact Formula for Bond Percolation on Cliques.” /Physical Review E/ 104 (2). https:/doi.org/10.1103/PhysRevE.104.024304.
+
+<<citeproc_bib_item_9>>Sanabria, Andrea Rosales, Franco Zambonelli, Simon Dobson, and Juan Ye. 2021. “ContrasGAN: Unsupervised Domain Adaptation in Human Activity Recognition via Adversarial and Contrastive Learning.” /Pervasive and Mobile Computing/ 78. https://doi.org/10.1016/j.pmcj.2021.101477.
+
+** 2020
+
+<<citeproc_bib_item_1>>Bucchiarone, Antonio, Mirko D’Angelo, Danilo Pianini, Giacomo Cabri, Marina De Sanctis, Mirko Viroli, Roberto Casadei, and Simon Dobson. 2020. “On the Social Implications of Collective Adaptive Systems.” /IEEE Technology and Society Magazine/ 39 (3): 36–46. http://dx.doi.org/10.1109/MTS.2020.3012324.
+
+<<citeproc_bib_item_2>>Dobson, Simon. 2020a. “A Possible Smeared Phase Transition in Epidemic Track-and-Trace.” St Andrews, UK. https://simondobson.org/softcopy/smeared-phase-transition.pdf.
+
+<<citeproc_bib_item_3>>———. 2020b. /Epidemic Modelling – Some Notes, Maths, and Code/. Independent Publishing Network. https://simondobson.org/introduction-to-epidemics/.
+
+<<citeproc_bib_item_4>>———. 2020c. “Exploring Epidemic Spreading Using Network Models.” https://simondobson.org/softcopy/exploring-epidemic-spreading.pdf.
+
+<<citeproc_bib_item_5>>———. 2020d. “How Good Is My Dataset?” Darmstadt, DE. https://simondobson.org/softcopy/how-good-is-my-dataset.pdf.
+
+<<citeproc_bib_item_6>>Fang, Lei, Juan Ye, and Simon Dobson. 2020. “Discovery and Recognition of Emerging Human Activities Using a Hierarchical Mixture of Directional Statistical Models.” /IEEE Transactions on Knowledge and Data Engineering/ 32 (7): 1304–16. https://dx.doi.org//10.1109/TKDE.2019.2905207.
+
+<<citeproc_bib_item_7>>Pitcher, Michael, Ruth Bowness, Simon Dobson, Raluca Eftimie, and Stephen Gillespie. 2020. “Modelling the Effects of Environmental Heterogeneity within the Lung on the Tuberculosis Lifecycle.” /Journal of Theoretical Biology/ 506. https://dx.doi.org//10.1101/2019.12.12.871269 .
+
+<<citeproc_bib_item_8>>Pitcher, Michael, Simon Dobson, Tom Kelsey, Mark Chaplain, Derek Sloan, Stephen Gillespie, and Ruth Bowness. 2020. “How Mechanistic in Silico Modelling Can Improve Our Understanding of TB Disease and Treatment.” /International Journal of Tuberculosis and Lung Disease/ 24 (11). https://doi.org/10.5588/ijtld.20.0107.
+
+<<citeproc_bib_item_9>>Ye, Juan, and Simon Dobson. 2020. “Xlearn: Learning Activity Labels across Heterogeneous Datasets.” /IEEE Transactions on Intelligent Systems and Technology/ 11 (2): 1–28. https://dx.doi.org//10.1145/3368272.
+
+** 2019
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2019a. “Towards a Science of Sensor Systems Software.” In /5th UK Systems Research Challenges Workshop/. Co Durham, UK. https://simondobson.org/softcopy/s4-uk-systems-19.pdf.
+
+<<citeproc_bib_item_2>>———. 2019b. “Understanding Sensing from a More Formal Perspective.” Glasgow, UK. https://simondobson.org/softcopy/formal-perspective.pdf.
+
+<<citeproc_bib_item_3>>Dobson, Simon, David Hutchison, Andreas Mauthe, Alberto Schaefer-Filho, Paul Smith, and James PG Sterbenz. 2019. “Self-Organisation and Resilience for Networked Systems: Design Principles and Open Research Issues.” /Proceedings of the IEEE/ 107 (4): 819–34. https://dx.doi.org//10.1109/JPROC.2019.2894512.
+
+<<citeproc_bib_item_4>>Fang, Lei, Juan Ye, and Simon Dobson. 2019a. “Distributed Self-Monitoring Sensor Networks via Markov Switching Dynamic Linear Models.” In /Proceedings of the Thirteenth IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO’19)/. Umeå, SE. https://doi.org/10.1109/SASO.2019.00014.
+
+<<citeproc_bib_item_5>>———. 2019b. “Sensor-Based Human Activity Mining Using Dirichlet Process Mixtures of Directional Statistical Models.” In /Proceedings of the 6th IEEE International Conference on Data Science and Advanced Analytics (DSAA’19)/. Washington, DC. https://doi.org/10.1109/DSAA.2019.00030.
+
+<<citeproc_bib_item_6>>Sanabria, Andrea Rosales, Thomas Kelsey, Simon Dobson, and Juan Ye. 2019. “Representation Learning for Minority and Subtle Activities in a Smart Home Environment.” /Journal of Ambient Intelligence and Smart Environments/ 11 (6): 495–513. https://dx.doi.org//10.3233/AIS-190541.
+
+<<citeproc_bib_item_7>>Ye, Juan, Simon Dobson, and Franco Zambonelli. 2019. “Lifelong Learning in Sensor-Based Human Activity Recognition.” /IEEE Pervasive Computing/ 18 (3). https://dx.doi.org//10.1109/MPRV.2019.2913933.
+
+** 2018
+
+<<citeproc_bib_item_1>>Calder, Muffy, Simon Dobson, Michael Fisher, and Julie McCann. 2018. “Making Sense of the World: Framing Models for Trustworthy Sensor-Driven Systems.” /Computers/ 7. https://dx.doi.org//10.3390/computers7040062.
+
+<<citeproc_bib_item_2>>Dobson, Simon. 2018. “Making the Transition from Sensors to Sensor Systems.” Porto, PT. https://simondobson.org/softcopy/dasip-keynote.pdf.
+
+<<citeproc_bib_item_3>>Dobson, Simon, Matteo Golfarelli, Simone Graziani, and Stefano Rizzi. 2018. “A Reference Architecture and Model for Sensor Data Warehousing.” /IEEE Sensors Journal/ 18. https://dx.doi.org//10.1109/JSEN.2018.2861327.
+
+<<citeproc_bib_item_4>>Pitcher, Michael, Ruth Bowness, Simon Dobson, and Stephen Gillespie. 2018. “A Spatially Heterogeneous Network-Based Metapopulation Model Applied to the Simulation of a Pulmonary Tuberculosis Infection.” /Applied Network Science/ 3. https://dx.doi.org//10.1007/s41109-018-0091-2.
+
+** 2017
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2017. “Minimal Sensing: The Target Counting Problem.” St Andrews, UK. https://simondobson.org/softcopy/minimal-sensing-idir17.pdf.
+
+<<citeproc_bib_item_2>>Dobson, Simon, Juan Ye, and Lei Fang. 2017. “Making Sense of Sensing.” York, UK. https://simondobson.org/softcopy/making-sense-of-sensing.pdf.
+
+<<citeproc_bib_item_3>>Pianini, Danilo, Simon Dobson, and Mirki Viroli. 2017. “Self-Stabilising Target Counting in Wireless Sensor Networks Using Euler Integration.” In /Proceedings of the Eleventh IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO’17)/, 11–20. Tucson, AZ. https://dx.doi.org//10.1109/SASO.2017.10.
+
+<<citeproc_bib_item_4>>Pitcher, Michael, Ruth Bowness, Simon Dobson, and Stephen Gillespie. 2017. “A Network-Based Metapopulation Model to Simulate a Pulmonary Tuberculosis Infection.” Lyon, FR.
+
+** 2016
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2016a. “A Complex Cocktail of Networks and Reality.” St Andrews, UK. https://simondobson.org/softcopy/complex-cocktail.pdf.
+
+<<citeproc_bib_item_2>>———. 2016b. “Modelling Urban Networks: Some Results and Their Limitations.” Leeds, UK. https://simondobson.org/softcopy/urban-networks-16.pdf.
+
+<<citeproc_bib_item_3>>Dobson, Simon, Mirko Viroli, José Luis Fernandez-Marquez, Franco Zambonelli, Graeme Stevenson, Giovanna di Marzo Serugendo, Sara Montagna, et al. 2016. “Spatial Awareness in Pervasive Ecosystems.” /The Knowledge Engineering Review/ 31 (4): 343–66. https://dx.doi.org//10.1017/S0269888916000199.
+
+<<citeproc_bib_item_4>>Voogt, Lennert, Lisa Dow, and Simon Dobson. 2016. “Open Badges: A Best-Practice Framework.” In /Proceedings of the SAI Computing Conference/. London, UK. https://simondobson.org/softcopy/open-badges-best-practice-16.pdf.
+
+<<citeproc_bib_item_5>>Ye, Juan, Lei Fang, and Simon Dobson. 2016. “Discovery and Recognition of Unknown Activities.” In /Proceedings of the 2016 ACM International Joint Conference on Pervasive and Ubiquitous Computing (Ubicomp’16): Adjunct/, 783–92. Heidelberg, DE. https://dx.doi.org//10.1145/2968219.2968288.
+
+<<citeproc_bib_item_6>>Ye, Juan, Graeme Stevenson, and Simon Dobson. 2016. “Detecting Abnormal Events on Binary Sensors in Smart Home Environments.” /Pervasive and Mobile Computing/ 33: 32–49. https://dx.doi.org//10.1016/j.pmcj.2016.06.012.
+
+** 2015
+
+<<citeproc_bib_item_1>>Dobson, Simon, Saray Shai, Emanuele Strano, and Marc Barthélemy. 2015. “Multiplex Cities: Interacting Transport Networks in Metropolitan Areas.” Stirling, UK. https://simondobson.org/softcopy/urban-networks-sicsa.pdf.
+
+<<citeproc_bib_item_2>>Fang, Lei, and Simon Dobson. 2015. “Towards Data-Centric Control of Sensor Networks through Bayesian Dynamic Linear Modelling.” In /Proceedings of the Ninth IEEE International Conference on Self-Adaptive and Self-Organizing Systems (SASO’15)/. Boston, MA. https://dx.doi.org//10.1109/SASO.2015.14.
+
+<<citeproc_bib_item_3>>Sazonovs, Aleksejs, Simon Dobson, and Oscar Gaggiotti. 2015. “A Metapopulation Model for Predicting the Success of Genetic Control Measures for Malaria.” Edinburgh, UK. https://simondobson.org/softcopy/sazonovs-poster-15.pdf.
+
+<<citeproc_bib_item_4>>Schneider, Chris, Adam Barker, and Simon Dobson. 2015. “Evaluating Unsupervised Fault Detection in Self-Healing Systems Using Stochastic Primitives.” /EAI Endorsed Transactions on Self-Adaptive Systems/ 15 (1). https://dx.doi.org//10.4108/sas.1.1.e3.
+
+<<citeproc_bib_item_5>>Shai, Saray, and Simon Dobson. 2015. “Epidemic Spreading in Adaptive Multilayer Networks.” Snowbird, UT. https://simondobson.org/softcopy/siam-networks-abstract-15.pdf.
+
+<<citeproc_bib_item_6>>Shai, Saray, Dror Kenett, Yoed Kenett, Miriam Faust, Simon Dobson, and Shlomo Havlin. 2015a. “Attacks on Modular Networks.” Zaragoza, ES. https://simondobson.org/softcopy/modular-network-attacks-netsci-15.pdf.
+
+<<citeproc_bib_item_7>>———. 2015b. “Critical Tipping Point Distinguishing Two Types of Transitions in Modular Network Structures.” /Physical Review E/ 92. https://dx.doi.org//10.1103/PhysRevE.92.062805.
+
+<<citeproc_bib_item_8>>Strano, Emanuele, Saray Shai, Simon Dobson, and Marc Barthélemy. 2015. “Multiplex Networks in Metropolitan Areas: Generic Features and Local Effects.” /Journal of the Royal Society Interface/ 12 (111). https://dx.doi.org//10.1098/rsif.2015.0651.
+
+<<citeproc_bib_item_9>>Ye, Juan, Stamatia Dasiopoulou, Graeme Stevenson, Georgios Meditskos, Efstratios Kontopoulos, Ioannis Kompatsiaris, and Simon Dobson. 2015. “Semantic Web Technologies in Pervasive Computing: A Survey and Research Roadmap.” /Pervasive and Mobile Computing/ 23: 1–25. https://dx.doi.org//10.1016/j.pmcj.2014.12.009.
+
+<<citeproc_bib_item_10>>Ye, Juan, Graeme Stevenson, and Simon Dobson. 2015a. “Fault Detection for Binary Sensors in Smart Home Environments.” In /Proceedings of the IEEE International Conference on Pervasive Computing and Communications (Percom 2015)/. St Louis, MO. https://simondobson.org/softcopy/binarysensorfaults-15.pdf.
+
+<<citeproc_bib_item_11>>———. 2015b. “Using Temporal Correlation and Time Series to Detect Missing Activity-Driven Sensor Events.” In /Proceedings of the 11th Workshop on Context and Activity Modelling and Recognition (CoMoRea’15)/. St Louis, MO. https://simondobson.org/softcopy/comorea-15.pdf.
+
+<<citeproc_bib_item_12>>———. 2015c. “KCAR: A Knowledge-Driven Approach for Concurrent Activity Recognition.” /Pervasive and Mobile Computing/ 19 (May): 47–70. https://dx.doi.org//10.1016/j.pmcj.2014.02.003.
+
+<<citeproc_bib_item_13>>Zambonelli, Franco, Andrea Omicini, Bernhard Anzengruber, Gabriella Castelli, Francesco DeAngelis, Giovanna di Marzo Serugendo, Simon Dobson, et al. 2015. “Developing Pervasive Multiagent Systems with Nature-Inspired Co-Ordination.” /Pervasive and Mobile Computing/ 17: 236–52. https://dx.doi.org//10.1016/j.pmcj.2014.12.002.
+
+** 2014
+
+<<citeproc_bib_item_1>>Dobson, Simon, and Saray Shai. 2014. “Complex Networks and Complex Processes.” York, UK. https://simondobson.org/softcopy/complex-networks-complex-processes.pdf.
+
+<<citeproc_bib_item_2>>Fang, Lei, and Simon Dobson. 2014a. “Data Collection with in-Network Fault Detection Based on Spatial Correlation.” In /Proceedings of the International Conference on Cloud and Autonomic Computing (CAC 2014)/. London, UK. https://dx.doi.org//10.1109/ICCAC.2014.9.
+
+<<citeproc_bib_item_3>>———. 2014b. “When Things Get Noisy: Programming in the Face of Ubiquitous Uncertainty.” London, UK. https://simondobson.org/softcopy/when-things-get-noisy-14.pdf.
+
+<<citeproc_bib_item_4>>Fernandez-Marquez, José Luis, Giovanna di Marzo Serugendo, Graeme Stevenson, Juan Ye, Simon Dobson, and Franco Zambonelli. 2014. “Self-Management of Self-Organising Mobile Computing Applications: A Separation of Concerns Approach.” In /Proceedings of the 29th ACM Symposium on Applied Computing/. Gyeongju, KR. https://simondobson.org/softcopy/SAC-PSC2014.pdf.
+
+<<citeproc_bib_item_5>>Kamal, Abu Raihan M., Chris Bleakley, and Simon Dobson. 2014. “Failure Detection in Wireless Sensor Networks: A Sequence Based Dynamic Approach.” /ACM Transactions on Sensor Networks/ 10 (2). https://dx.doi.org//10.1145/2530526.
+
+<<citeproc_bib_item_6>>Konur, Savas, Michael Fisher, Simon Dobson, and Stephen Knox. 2014. “Formal Verification of a Pervasive Messaging System.” /Formal Aspects of Computing/ 26 (4): 677–94. https://dx.doi.org//10.1007/s00165-013-0277-4.
+
+<<citeproc_bib_item_7>>Razzaque, M.A., and Simon Dobson. 2014. “Energy Efficient Sensing in Wireless Sensor Networks Using Compressed Sensing.” /Sensors/ 14 (2): 2822–59. https://dx.doi.org//10.3390/s140202822.
+
+<<citeproc_bib_item_8>>Schneider, Chris, Adam Barker, and Simon Dobson. 2014a. “A Survey of Self-Healing Systems Frameworks.” /SOFTWARE: Practice and Experience/. https://dx.doi.org//10.1002/spe.2250.
+
+<<citeproc_bib_item_9>>———. 2014b. “Autonomous Fault Detection in Self-Healing Systems: Comparing Hidden Markov Models and Artificial Neural Networks.” In /Proceedings of the 4th International Workshop on Adaptive Self-Tuning Computing Systems (ADAPT-2014)/. Vienna, AT. https://simondobson.org/softcopy/adapt14.pdf.
+
+<<citeproc_bib_item_10>>———. 2014c. “Autonomous Fault Detection in Self-Healing Systems Using Restricted Boltzmann Machines.” In /Proceedings of the 11th IEEE International Conference and Workshops on Engineering of Autonomic and Autonomous Systems (EASe 2014)/. Laurel, MD. https://simondobson.org/softcopy/faults-ease-14.pdf.
+
+<<citeproc_bib_item_11>>Ye, Juan, Graeme Stevenson, and Simon Dobson. 2014. “USMART: An Unsupervised Semantic Mining Activity Recognition Technique.” /ACM Transactions on Intelligent Interaction Systems/ 4 (4). https://dx.doi.org///10.1145/2662870.
+
+** 2013
+
+<<citeproc_bib_item_1>>Dobson, Simon, Alan Dearle, and Barry Porter. 2013. “Minimising Virtual Machine Support for Concurrency.” In /Proceedings of 5th ETAPS Workshop on Programming Language Approaches to Concurrency and Communication-cEntric Software (PLACES’13)/. Rome, IT. https://simondobson.org/softcopy/places-2013-final.pdf.
+
+<<citeproc_bib_item_2>>Fang, Lei, and Simon Dobson. 2013. “Unifying Sensor Fault Detection with Energy Conservation.” In /Proceedings of the 7th International Workshop on Self-Organising Systems (IWSOS’13)/. Palma de Mallorca, ES. https://simondobson.org/softcopy/iwsos-faults-energy.pdf.
+
+<<citeproc_bib_item_3>>Fang, Lei, Simon Dobson, and Danny Hughes. 2013. “An Error-Free Data Collection Method Exploiting Hierarchical Physical Models of Wireless Sensor Networks.” In /Proceedings of the Tenth ACM International Symposium on Performance Evaluation of Wireless Ad Hoc, Sensor, and Ubiquitous Networks/. Barcelona, ES: ACM Press. https://simondobson.org/softcopy/pewasun13.pdf.
+
+<<citeproc_bib_item_4>>Kamal, Abu Raihan M., Chris Bleakley, and Simon Dobson. 2013. “Packet-Level Attestation (PLA): a Framework for in-Network Sensor-Data Reliability.” /ACM Transactions on Sensor Networks/ 9 (2). https://dx.doi.org//10.1145/2422966.2422976.
+
+<<citeproc_bib_item_5>>Razzaque, M.A., Chris Bleakley, and Simon Dobson. 2013. “Compression in Wireless Sensor Networks: A Survey and Comparative Evaluation.” /ACM Transactions on Sensor Networks/ 10 (1). https://dx.doi.org//10.1145/2528948.
+
+<<citeproc_bib_item_6>>Razzaque, MA, Simon Dobson, and Kieran Delaney. 2013. “Augmented Materials: Spatially Embedded Sensor Networks.” /International Journal of Networks and Distributed Systems/ 11 (4): 453–77. https://dx.doi.org//10.1504/IJCNDS.2013.057721.
+
+<<citeproc_bib_item_7>>Shai, Saray, and Simon Dobson. 2013a. “Bursty Activity in Coupled Networks.” Copenhagen, DK. https://simondobson.org/softcopy/burst-netsci13.pdf.
+
+<<citeproc_bib_item_8>>———. 2013b. “Coupled Adaptive Complex Networks.” /Physical Review E/ 87 (4). https://dx.doi.org//10.1103/PhysRevE.87.042812.
+
+<<citeproc_bib_item_9>>Stevenson, Graeme, Gabriella Castelli, Juan Ye, Alberto Rossi, , Simon Dobson, and Franco Zambonelli. 2013. “A Bio-Chemically Inspired Approach to Awareness in Pervasive Systems.” In /Proceedings of First International Workshop on Sensing and Big Data Mining (SenseMine 2013)/. Rome, IT. https://simondobson.org/softcopy/sensemine13.pdf.
+
+<<citeproc_bib_item_10>>Stevenson, Graeme, Juan Ye, Simon Dobson, Danilo Pianini, Sara Montagna, and Mirko Viroli. 2013. “Combining Self-Organisation, Context-Awareness and Semantic Reasoning: The Case of Resource Discovery in Opportunistic Networks.” In /Proceedings of the 28th ACM Symposium on Applied Computing/. Coimbra, PT. https://simondobson.org/softcopy/sac-2013.pdf.
+
+** 2012
+
+<<citeproc_bib_item_1>>Dearle, Alan, and Simon Dobson. 2012. “Mission-Oriented Middleware for Sensor-Driven Scientific Systems.” /Journal of Internet Services and Applications/ 3 (1): 133–39. https://dx.doi.org//10.1007/s13174-011-0052-9.
+
+<<citeproc_bib_item_2>>Dobson, Simon. 2012a. “From Forth to Tay: A Component-Based Extensible Virtual Machine for Compact Programs.” Canterbury, UK. https://simondobson.org/softcopy/forth-tay.pdf.
+
+<<citeproc_bib_item_3>>———. 2012b. “Mission Maybe Possible: Improving the Programming Model for Wireless Sensor Networks.” Aberdeen, UK. https://simondobson.org/softcopy/mission-maybe-possible.pdf.
+
+<<citeproc_bib_item_4>>Dobson, Simon, and Aaron Quigley. 2012. “Healthcare in a Pervasive World.” In /This Pervasive Day: The Potentials and Perils of Pervasive Computing/, edited by Jeremy Pitt, 99–111. Imperial College Press. http://www.amazon.co.uk/This-Pervasive-Day-Potential-Computing/dp/1848167482.
+
+<<citeproc_bib_item_5>>Fernandez-Marquez, Jose Luis, Graeme Stevenson, Akla-Esso Tchao, Juan Ye, Giovanna di Marzo Serugendo, and Simon Dobson. 2012. “Analysis of New Gradient Based Aggregation Algorithms for Data-Propagation in Distributed Networks.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/. Lyons, FR. https://simondobson.org/softcopy/asensis-12-gradients.pdf.
+
+<<citeproc_bib_item_6>>Kamal, Abu Raihan M., Chris Bleakley, and Simon Dobson. 2012. “Congestion Mitigation Using in-Network Sensor Data Summarization.” In /Proceedings of the Ninth ACM International Symposium on Performance Evaluation of Wireless Ad Hoc, Sensor, and Ubiquitous Networks/, 93–100. Paphos, CY. https://dx.doi.org//10.1145/2387027.2387043.
+
+<<citeproc_bib_item_7>>Loureiro, Emerson, Paddy Nixon, and Simon Dobson. 2012. “Decentralized and Optimal Control of Shared Resource Pools.” /ACM Transactions on Autonomous and Adaptive Systems/ 7. https://dx.doi.org//10.1145/2168260.2168274.
+
+<<citeproc_bib_item_8>>Porter, Barry, Alan Dearle, and Simon Dobson. 2012. “From Missions to Systems: Generating Transparently-Distributable Programs for Sensor-Oriented Systems.” In /Proceedings of the Seventh International Workshop on Middleware Tools, Services and Run-Time Support for Sensor Networks (MidSens’12)/, 1–6. Montreal CA. https://simondobson.org/softcopy/midsens12.pdf.
+
+<<citeproc_bib_item_9>>Saad, Mohamed, Chris Bleakley, Tarig Ballal, and Simon Dobson. 2012. “High-Accuracy Reference-Free Ultrasonic Location Estimation.” /IEEE Transactions on Instrumentation and Measurement/ 61 (6): 1561–70. https://dx.doi.org//10.1109/TIM.2011.2181911.
+
+<<citeproc_bib_item_10>>Shai, Saray, and Simon Dobson. 2012. “Effect of Resource Constraints on Intersimilar Coupled Networks.” /Physical Review E/ 86 (6). https://dx.doi.org//10.1103/PhysRevE.86.066120.
+
+<<citeproc_bib_item_11>>Stevenson, Graeme, Jose Luis Fernandez-Marquez, Sara Montagna, Alberto Rosi, Giovanna di Marzo Serugendo Juan Ye, Mirko Viroli, Simon Dobson, and Akla-Esso Tchao. 2012. “Towards Situated Awareness in Urban Networks: A Bio-Inspired Approach.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/, 53–58. Lyons, FR. https://simondobson.org/softcopy/asensis-12-urban.pdf.
+
+<<citeproc_bib_item_12>>Stevenson, Graeme, Mirko Viroli, Juan Ye, Sara Montagna, and Simon Dobson. 2012. “Self-Organising Semantic Resource Discovery for Pervasive Systems.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/, 47–52. Lyons, FR. https://simondobson.org/softcopy/asensis-12-discovery.pdf.
+
+<<citeproc_bib_item_13>>Thoelen, Klaas, Danny Hughes, Nelson Matthys, Lei Fang, Simon Dobson, Yizhou Qiang, Wei Bai, et al. 2012. “A Reconfigurable Component Model with Semantic Type System for Dynamic WSN Applications.” /Journal of Internet Services and Applications/ 3 (3): 277–90. https://dx.doi.org//10.1007/s13174-012-0064-0.
+
+<<citeproc_bib_item_14>>Viroli, Mirko, Franco Zambonelli, Graeme Stevenson, and Simon Dobson. 2012. “From SOA to Pervasive Service Ecosystems: An Approach Based on Semantic Web Technologies.” In /Adaptive Web Services for Modular and Reusable Software Development: Tactics and Solutions/, edited by Javier Cubo and Guadalupe Ortiz. IGI Global. https://simondobson.org/softcopy/sapere-soa-semantic-web-12.pdf.
+
+<<citeproc_bib_item_15>>Ye, Juan, and Simon Dobson. 2012. “Pervasive Computing Needs Better Situation-Awareness.” /Awareness Magazine/. http://www.awareness-mag.eu/view.php?article=003943-2012-01-05&category=Interactive+Robotics.
+
+<<citeproc_bib_item_16>>Ye, Juan, Simon Dobson, and Susan McKeever. 2012. “Situation Identification Techniques in Pervasive Computing: A Review.” /Pervasive and Mobile Computing/ 8 (1): 36–66. https://dx.doi.org//10.1016/j.pmcj.2011.01.004.
+
+<<citeproc_bib_item_17>>Ye, Juan, Graeme Stevenson, Simon Dobson, Michael O’Grady, and Gregory O’Hare. 2012. “Perceiving and Interpreting Smart Home Datasets with $PI$.” /Journal of Ambient Intelligence and Humanized Computing/ 4 (6): 717–29. https://dx.doi.org//10.1007/s12652-012-0148-5.
+
+** 2011
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2011. “The Computer Is the New Microscope.” St Andrews, UK. https://simondobson.org/softcopy/inaugural-lecture-sta-web-20111207.pdf.
+
+<<citeproc_bib_item_2>>Dobson, Simon, and Juan Ye. 2011. “Sensor and Sense-Ability: Building Systems in the Face of Uncertainty.” Edinburgh, UK. https://simondobson.org/softcopy/sensor-and-senseability-nontechnical.pdf.
+
+<<citeproc_bib_item_3>>Rosi, Alberto, Simon Dobson, Marco Mamei, Graeme Stevenson, Juan Ye, and Franco Zambonelli. 2011. “Social Sensors and Pervasive Services: Approaches and Perspectives.” In /Proceedings of the Second IEEE Workshop on Pervasive Collaboration and Social Networking (PerCol 2011)/, 252–530. Seattle, WA: IEEE Press. https://simondobson.org/softcopy/social-sensing-11.pdf.
+
+<<citeproc_bib_item_4>>Saad, Mohamed, Chris Bleakley, and Simon Dobson. 2011. “Robust High Accuracy Ultrasonic Range Measurement System.” /IEEE Transactions on Instrumentation and Measurement/ 60 (10): 3334–41. https://dx.doi.org//10.1109/TIM.2011.2128950.
+
+<<citeproc_bib_item_5>>Stevenson, Graeme, and Simon Dobson. 2011. “Sapphire: Generating Java Runtime Artefacts from OWL Ontologies.” In /Proceedings of the 3rd International Workshop on Ontology-Driven Information Systems Engineering (ODISE 2011)/, 425–236. London, UK. https://simondobson.org/softcopy/sapphire-odise11.pdf.
+
+<<citeproc_bib_item_6>>Vassev, Emil, Mike Hinchey, Dharini Balasubramaniam, and Simon Dobson. 2011. “An ASSL Approach to Handling Uncertainty in Self-Adaptive Systems.” In /Proceedings of the 34th IEEE Software Engineering Workshop/. Limerick, IE: IEEE Press. https://simondobson.org/softcopy/assl-sew11.pdf.
+
+<<citeproc_bib_item_7>>Ye, Juan, Graeme Stevenson, and Simon Dobson. 2011. “A Top-Level Ontology for Smart Environments.” /Pervasive and Mobile Computing/ 7 (3): 359–78. https://dx.doi.org//10.1016/j.pmcj.2011.02.002.
+
+<<citeproc_bib_item_8>>Ye, Juan, Graeme Stevenson, Simon Dobson, Michael O’Grady, and Gregory O’Hare. 2011. “$PI$: Perceiver and Interpreter of Smart Home Datasets.” In /Proceedings of the 5th International Conference on Pervasive Computing Technologies for Healthcare (PervasiveHealth 2011)/, 131–38. Dublin, IE. https://simondobson.org/softcopy/pi-11.pdf.
+
+<<citeproc_bib_item_9>>Zambonelli, Franco, Gabrialla Castelli, Laura Ferrari, Marco Mamei, Alberto Rosi, Giovanna di Marzo Serugendo, Matteo Risoldi, et al. 2011. “Self-Aware Pervasive Service Ecosystems.” /Procedia Computer Science/ 7. Elsevier: 197–99. https://dx.doi.org//10.1016/j.procs.2011.09.006.
+
+** 2010
+
+<<citeproc_bib_item_1>>Clear, Adrian K., Thomas Holland, Simon Dobson, Aaron Quigley, Ross Shannon, and Paddy Nixon. 2010. “Situvis: A Sensor Data Analysis and Abstraction Tool for Pervasive Computing Systems.” /Pervasive and Mobile Computing/ 6 (5): 575–89. https://dx.doi.org//10.1016/j.pmcj.2010.04.002.
+
+<<citeproc_bib_item_2>>Dobson, Simon. 2010. “Progamming for Adaptive Sensor Networks: Back to the Future.” St Andrews, UK. https://simondobson.org/softcopy/back-to-the-future-talk-gp10.pdf.
+
+<<citeproc_bib_item_3>>Dobson, Simon, Roy Sterritt, Paddy Nixon, and Mike Hinchey. 2010. “Fulfilling the Vision of Autonomic Computing.” /IEEE Computer/ 43 (1): 35–41. https://dx.doi.org///10.1109/MC.2010.14.
+
+<<citeproc_bib_item_4>>Knox, Stephen, Lorcan Coyle, and Simon Dobson. 2010. “Using Ontologies in Case-Based Activity Recognition.” In /Proceedings of the 23rd International Conference of the Florida Artificial Intelligence Research Society (FLAIRS-23)/. Daytona Beach, FL. https://simondobson.org/softcopy/2010flairs.pdf.
+
+<<citeproc_bib_item_5>>Loureiro, Emerson, Paddy Nixon, and Simon Dobson. 2010. “Adaptive Management of Shared Resource Pools with Decentralized Optimization and Epidemics.” In /Proceedings of the 18th Euromicro Conference on Parallel, Distributed and Network-Based Processing/, edited by Marco Danelutto, Julien Borgeois, and Tom Gross, 51–58. Pisa, IT: IEEE Computer Society Press. https://simondobson.org/softcopy/pdp-10.pdf.
+
+<<citeproc_bib_item_6>>McKeever, Susan, Juan Ye, Lorcan Coyle, Chris Bleakley, and Simon Dobson. 2010. “Activity Recognition Using Temporal Evidence Theory.” /Journal of Ambient Intelligence and Smart Environments/ 2 (3): 253–69. https://dx.doi.org//10.3233/AIS-2010-0071.
+
+<<citeproc_bib_item_7>>O’Grady, Michael, Juan Ye, G.M.P. O’Hare, Simon Dobson, Richard Tynan, and Connor Muldoon. 2010. “A Middleware for Implicit Interaction.” In /Proceedings of the International Workshop on Instinctive Computing/. Vol. 5897. Lecture Notes in Artificial Intelligence. Pittsburgh, PA: Springer Verlag. https://simondobson.org/softcopy/implicit-interaction-10.pdf.
+
+<<citeproc_bib_item_8>>Stevenson, Graeme, Juan Ye, and Simon Dobson. 2010. “On the Impact of the Temporal Features of Sensed Data on the Development of Pervasive Systems.” In /Proceedings of the International Workshop on Programming Methods for Mobile and Pervasive Systems at PERVASIVE 2010/. Helsinki, FI. https://simondobson.org/softcopy/temporal-features-pmmps10.pdf.
+
+<<citeproc_bib_item_9>>Ye, Juan, and Simon Dobson. 2010. “Exploring Semantics in Activity Recognition Using Context Lattices.” /Journal of Ambient Intelligence and Smart Environments/ 2 (4): 389–407. https://dx.doi.org//10.3233/AIS-2009-0082.
+
+<<citeproc_bib_item_10>>Ye, Juan, Lorcan Coyle, Susan McKeever, and Simon Dobson. 2010. “Dealing with Activities with Diffuse Boundaries.” In /Proceedings of the Workshop on How to Do Good Activity Recognition Research: Experimental Methodologies, Evaluation Metrics and Reproducility Issues at PERVASIVE 2010/. Helsinki, FI. https://simondobson.org/softcopy/diffuse-boundaries-2010.pdf.
+
+** 2009
+
+<<citeproc_bib_item_1>>Cellai, Davide, Graham Williamson, Simon Dobson, and Paddy Nixon. 2009. “Self-Management of Routing on Human Proximity Networks.” In /Self-Organising Systems/, edited by Thrasyvoulos Spyropoulos and Karin Anna Hummel, 5918:1–12. LNCS. Zurich, CH: Springer-Verlag. https://simondobson.org/softcopy/iwsos-09.pdf.
+
+<<citeproc_bib_item_2>>Clear, Adrian K., Ross Shannon, Thomas Holland, Aaron Quigley, Simon Dobson, and Paddy Nixon. 2009. “Situvis: A Visual Tool for Modeling a User’s Behaviour Patterns in a Pervasive Environment.” In /Proceedings of the 7th International Conference on Pervasive Computing/. Nara, JP. https://simondobson.org/softcopy/situvis-pervasive-09.pdf.
+
+<<citeproc_bib_item_3>>Collins, Michael, Simon Dobson, and Paddy Nixon. 2009a. “A Lightweight Secure Architecture for Wireless Sensor Networks.” /International Journal of Internet Technology and Secured Transactions/ 2 (1--2). https://simondobson.org/softcopy/ijitst-08.pdf.
+
+<<citeproc_bib_item_4>>———. 2009b. “Securing Wireless Sensor Networks: Introducing ASLAN – a Secure, Lightweight Architecture for WSNs.” /International Journal on Advances in Networks and Services/ 2 (1): 679–85. https://simondobson.org/softcopy/aslan-09.pdf.
+
+<<citeproc_bib_item_5>>Coyle, Lorcan, Juan Ye, Susan McKeever, Stephen Knox, Matthew Stabeler, Simon Dobson, and Paddy Nixon. 2009. “Gathering Datasets for Activity Identification.” In /Proceedings of the Workshop on Developing Shared Home Behaviour Datasets to Advance HCI and Ubiquitous Computing Research at CHI 2009/. Boston, MA. https://simondobson.org/softcopy/2008datasets-08.pdf.
+
+<<citeproc_bib_item_6>>Dobson, Simon. 2009a. “Controlling Sensors through Physics: Some Ideas for the Well-Founded Control of Mobile Sensor Networks.” Hoboken, NJ. https://simondobson.org/softcopy/well-founded-control-talk.pdf.
+
+<<citeproc_bib_item_7>>———. 2009b. “Integrating Sensor Networks into the Future Internet (Extended Abstract).” In /Proceedings of the 2nd Euro-NF Workshop on Future Internet Architectures/. Santander, ES. https://simondobson.org/softcopy/euro-nf-09.pdf.
+
+<<citeproc_bib_item_8>>———. 2009c. “Semantic Challenges of Adaptive Systems.” Liverpool, UK. https://simondobson.org/softcopy/adaptive-systems-semantics-liverpool-09.pdf.
+
+<<citeproc_bib_item_9>>———. 2009d. “Ubiquitous Autonomic Management.” Barcelona, ES. https://simondobson.org/softcopy/mucs-keynote.pdf.
+
+<<citeproc_bib_item_10>>———. 2009e. “What Is the Correct Semantic Basis for Adaptive Systems?” Trinity College Dublin, IE. https://simondobson.org/softcopy/adaptive-spaces-lero-talk-20090123.pdf.
+
+<<citeproc_bib_item_11>>Dobson, Simon, Lorcan Coyle, G.M.P. O’Hare, and Mike Hinchey. 2009. “From Physical Models to Well-Founded Control.” In /Proceedings of the 6th IEEE International Conference and Workshops on Engineering of Autonomic and Autonomous Systems/. San Francisco, CA: IEEE Press. https://simondobson.org/softcopy/well-founded-control.pdf.
+
+<<citeproc_bib_item_12>>Dobson, Simon, John Strassner, Manish Parashar, and Onn Shehory, eds. 2009. /Proceedings of the 6th International Conference on Autonomic Computing/. Barcelona, ES: ACM Press.
+
+<<citeproc_bib_item_13>>Loureiro, Emerson, Paddy Nixon, and Simon Dobson. 2009. “Decentralized Utility Maximization for Adaptive Management of Shared Resource Pools.” In /Proceedings of the International Conference on Intelligent Networking and Collaborative Systems (INCoS’09)/. Barcelona, ES: IEEE Computer Society. https://simondobson.org/softcopy/incos-09.pdf.
+
+<<citeproc_bib_item_14>>Martinez, Josu, and Simon Dobson. 2009. “Functionality Recomposition for Self-Healing.” In /Proceedings of the 4th International Conference on Software and Data Technologies/. Sofia, BG. https://simondobson.org/softcopy/fresh-icsoft09.pdf.
+
+<<citeproc_bib_item_15>>McKeever, Susan, Juan Ye, Lorcan Coyle, and Simon Dobson. 2009a. “A Context Quality Model to Support Transparent Reasoning with Uncertain Context.” In /Quality of Context/, edited by K. Rothermal, D. Fritsch, W. Blochinger, and F. Dürr. Vol. 5786. LNCS. Stuttgart, DE: Springer Verlag.
+
+<<citeproc_bib_item_16>>———. 2009b. “Using Dempster-Shafer Theory of Evidence for Situation Inference.” In /Proceedings of the 4th European Conference on Smart Sensing and Context (EuroSSC)/. Vol. 5741. LNCS. Guildford, UK: Springer-Verlag. https://simondobson.org/softcopy/ds-situation-inference-eurossc-09.pdf.
+
+<<citeproc_bib_item_17>>O’Neill, Eleanor, Kris McGlinn, Eoin Bailey, Simon Dobson, and Kevin McCarthy. 2009. “Application Development Using Modelling and Dynamical Systems Analysis.” In /Proceedings of the 1st International Workshop on Context-Aware Middleware and Services/, 18–23. Dublin, IE. https://simondobson.org/softcopy/iwcams-09.pdf.
+
+<<citeproc_bib_item_18>>Razzaque, M.A., and Simon Dobson. 2009. “Enhancement of Self-Organisation in Wireless Networking through a Cross-Layer Approach.” In /Proceedings of the 1st International Conference on Ad Hoc Networks/. Niagara Falls, CA. https://simondobson.org/softcopy/adhoc-09.pdf.
+
+<<citeproc_bib_item_19>>Stabeler, Matthew, Davide Cellai, Paddy Nixon, and Simon Dobson. 2009. “Delay Tolerant Networks and Spatially Detailed Human Mobility.” In /Proceedings of the Workshop on the Emergence of Delay- and Disruption-Tolerant Networks/. St Petersburg, RU. https://simondobson.org/softcopy/edtn-09.pdf.
+
+<<citeproc_bib_item_20>>Stabeler, Matthew, Graeme Stevenson, Simon Dobson, and Paddy Nixon. 2009. “Basadaeir: Harvesting User Profiles to Bootstrap Pervasive Applications.” In /Late-Breaking Results: Adjunct Proceedings of the 7th International Conference on Pervasive Computing (PERVASIVE 2009)/.
+
+<<citeproc_bib_item_21>>Stevenson, Graeme, Stephen Knox, Simon Dobson, and Paddy Nixon. 2009. “ONTONYM: A Collection of Upper Ontologies for Pervasive Application Development.” In /Proceedings of the Workshop on Context, Information and Ontologies Ontology (CIAO’09)/. Heraklion, GR. https://simondobson.org/softcopy/ontonym-ciao2009.pdf.
+
+<<citeproc_bib_item_22>>Strassner, John, Sven van der Meer, Declan O’Sullivan, and Simon Dobson. 2009. “The Use of Context-Aware Policies and Ontologies to Facilitate Business-Aware Network Management.” /Journal of Network and Systems Management/ 17 (3): 255–84. https://dx.doi.org//10.1007/s10922-009-9126-4.
+
+<<citeproc_bib_item_23>>Williamson, Graham, Davide Cellai, Simon Dobson, and Paddy Nixon. 2009. “Modelling Periodic Data Dissemination in Wireless Sensor Networks.” In /Proceedings of the 3rd UKSim European Symposium on Computer Modelling and Simulation/. IEEE Press. https://simondobson.org/softcopy/uksim-09.pdf.
+
+<<citeproc_bib_item_24>>Ye, Juan, and Simon Dobson. 2009. “Human-Behaviour Study with Situation Lattices.” In /Proceedings of the IEEE International Conference on Systems, Man and Cybernetics/. San Antonio, TX. https://simondobson.org/softcopy/SMC2009.pdf.
+
+<<citeproc_bib_item_25>>Ye, Juan, Adrian K. Clear, Lorcan Coyle, and Simon Dobson. 2009. “On Using Temporal Semantics to Create More Accurate Human-Activity Classifiers.” In /Artificial Intelligence and Cognitive Science/, edited by Lorcan Coyle and Jill Freyne. Vol. 6206. LNCS. Springer-Verlag. https://simondobson.org/softcopy/aics2009.pdf.
+
+<<citeproc_bib_item_26>>Ye, Juan, Lorcan Coyle, Simon Dobson, and Paddy Nixon. 2009. “Using Situation Lattices in Sensor Analysis.” In /Proceedings of the 7th IEEE International Conference on Pervasive Computing and Communications (Percom 2009)/, 1–11. Galveston, TX. https://simondobson.org/softcopy/percom2009.pdf.
+
+<<citeproc_bib_item_27>>Zhang, Hui, Paddy Nixon, and Simon Dobson. 2009. “Partial Coverage in Homological Sensor Networks.” In /Proceedings of the 5th IEEE International Conference on Wireless and Mobile Computing, Networking and Communications (WiMOB 2009)/, 42–47. Marrakech, MA: IEEE Press. https://simondobson.org/softcopy/wimob-09.pdf.
+
+** 2008
+
+<<citeproc_bib_item_1>>Clear, Adrian K., Ross Shannon, Thomas Holland, Simon Dobson, Aaron Quigley, and Paddy Nixon. 2008. “Situvis: Visualising Multivariate Context Information to Evaluate Situation Specifications.” In /Proceedings of the 2nd International Workshop on Ubiquitous Systems Evaluation (USE 2008)/. Seoul, KR. https://simondobson.org/softcopy/situvis.pdf.
+
+<<citeproc_bib_item_2>>Collins, Michael, Simon Dobson, and Paddy Nixon. 2008. “Identifying and Isolating Aberrant Nodes in Wireless Sensor Networks.” In /Proceedings of the 3rd International Conference for Internet Technologies and Secured Transactions/. Dublin, IE.
+
+<<citeproc_bib_item_3>>Collins, Michael, Paddy Nixon, and Simon Dobson. 2008. “A Secure Lightweight Architecture for Wireless Sensor Networks.” In /Proceedings of the Second International Conference on Mobile Ubiquitous Computing, Systems, Services and Technologies (UBICOMM’08)/. Valencia, ES. https://simondobson.org/softcopy/msecurity-ubicom08.pdf.
+
+<<citeproc_bib_item_4>>Delaney, Kieran, and Simon Dobson. 2008. “Augmenting Materials to Build Cooperating Objects.” In /Ambient Intelligence with Microsystems: Augmented Materials and Smart Objects/, edited by Kieran Delaney, 18:19–46. Microsystems. Springer Verlag.
+
+<<citeproc_bib_item_5>>Dobson, Simon. 2008a. “An Adaptive Systems Perspective on Network Calculus.” Piscataway, NJ. https://simondobson.org/softcopy/adaptive-network-calculus-rutgers-talk.pdf.
+
+<<citeproc_bib_item_6>>———. 2008b. “An Adaptive Systems Perspective on Network Calculus, with Applications to Autonomic Control.” /International Journal of Autonomous and Adaptive Communications Systems/ 1 (3): 332–41.
+
+<<citeproc_bib_item_7>>———. 2008c. “Co-Design for Context Awareness in Pervasive Systems.” In /Ambient Intelligence with Microsystems: Augmented Materials and Smart Objects/, edited by Kieran Delaney, 18:297–307. Microsystems. Springer Verlag.
+
+<<citeproc_bib_item_8>>———. 2008d. “Facilitating a Well-Founded Approach to Autonomic Systems.” In /Proceedings of the 5th IEEE Workshop on the Engineering of Autonomic and Autonomous Systems (EASe 2008)/. Belfast, UK: IEEE Press. https://simondobson.org/softcopy/semantics-wg-ease-08.pdf.
+
+<<citeproc_bib_item_9>>———. 2008e. “From Adaptive Systems to Adaptive Spaces.” In /Resilient and Survivable Networks, Infrastructure and Services/. Dagstuhl Seminar Proceedings Series. Schloß Dagstuhl.
+
+<<citeproc_bib_item_10>>Dobson, Simon, and Paddy Nixon. 2008. “Stable Autonomic Adaptation: A Grand Challenge.” In /Proceedings of the Third IEEE Workshop on Hot Topics for Autonomic Computing (HotAC’08)/. Chicago IL. https://simondobson.org/softcopy/hotac-08.pdf.
+
+<<citeproc_bib_item_11>>Dobson, Simon, Graeme Stevenson, Graham Williamson, Stephen Knox, Matthew Stabeler, Lorcan Coyle, Steve Neely, and Paddy Nixon. 2008. “Construct: Towards a Community Middleware for Pervasive Computing.” /PerAda Magazine/. http://www.perada-magazine.eu/pdf/1262/1262.pdf.
+
+<<citeproc_bib_item_12>>Knox, Stephen, Adrian K. Clear, Ross Shannon, Lorcan Coyle, Simon Dobson, Aaron Quigley, and Paddy Nixon. 2008. “Scatterbox: Mobile Message Management.” /Revue d’Intelligence Artificielle/ 22 (5): 549–68.
+
+<<citeproc_bib_item_13>>Loureiro, Emerson, Paddy Nixon, and Simon Dobson. 2008. “A Fine-Grained Model for Adaptive on-Demand Provisioning of CPU Shares in Data Centres.” In /Self-Organizing Systems/, edited by Karin Anna Hummel and James Sterbenz, 5343:97–108. LNCS. Vienna, AT: Springer Verlag. https://simondobson.org/softcopy/iwsos-08.pdf.
+
+<<citeproc_bib_item_14>>McKeever, Susan, Juan Ye, Lorcan Coyle, and Simon Dobson. 2008. “A Multilayered Uncertainty Approach for Context-Aware Systems.” In /Late-Breaking Results: Adjunct Proceedings of the 6th International Conference on Pervasive Computing (PERVASIVE 2008)/, 1–4. Sidney, AU. https://simondobson.org/softcopy/multilayered-uncertainty-08.pdf.
+
+<<citeproc_bib_item_15>>Murdoch, Olga, Lorcan Coyle, and Simon Dobson. 2008. “Ontology-Based Query Recommendation as a Support to Image Retrieval.” In /Proceedings of the 19th Irish Conference in Artificial Intelligence and Cognitive Science/. Cork, IE. https://simondobson.org/softcopy/Murdoch2008Ontology.pdf.
+
+<<citeproc_bib_item_16>>Neely, Steve, Graham Williamson, Hui Zhang, Graham Stevenson, and Simon Dobson. 2008. “Device Positioning Using Smart Zigbee Beacons.” Dublin, IE. https://simondobson.org/softcopy/nap-zigbee-open-day-20080124.pdf.
+
+<<citeproc_bib_item_17>>Razzaque, M.A., Simon Dobson, and Paddy Nixon. 2008a. “Cross-Layer Optimisations for Autonomic Networks.” In /Advanced Autonomic Networking and Communication/, edited by Monique Calisti, Sven van der Meer, and John Strassner, 127–48. Birkhäuser Whitestein Series. Springer Verlag.
+
+<<citeproc_bib_item_18>>———. 2008b. “Cross-Layer Self Routing: A Self-Managed Routing Approach for MANETs.” In /Proceedings of the 4th IEEE International Conference on Wireless and Mobile Computing, Networking and Communications/. Avignon, FR: IEEE Press. https://simondobson.org/softcopy/clsr-08.pdf.
+
+<<citeproc_bib_item_19>>Sheehan, Brendan, Aaron Quigley, Benoit Gaudin, and Simon Dobson. 2008. “A Relation Based Measure of Semantic Similarity for Gene Ontology Annotations.” /BMC Bioinformatics Journal/ 9 (468). http://www.biomedcentral.com/1471-2105/9/468/abstract.
+
+<<citeproc_bib_item_20>>Strassner, John, Simon Dobson, José Fortes, and Kumar Goswami, eds. 2008. /Proceedings of the 5th International Conference on Autonomic Computing/. Chicago, IL: IEEE Press.
+
+<<citeproc_bib_item_21>>Ye, Juan, Lorcan Coyle, Simon Dobson, and Paddy Nixon. 2008. “Representing and Manipulating Situation Hierarchies Using Situation Lattices.” /Revue d’Intelligence Artificielle/ 22 (5): 647–67. https://simondobson.org/softcopy/ria-08a.pdf.
+
+<<citeproc_bib_item_22>>Ye, Juan, Simon Dobson, and Paddy Nixon. 2008. “An Overview of Pervasive Computing Systems.” In /Ambient Intelligence with Microsystems: Augmented Materials and Smart Objects/, edited by Kieran Delaney, 18:3–17. Microsystems. Springer Verlag.
+
+<<citeproc_bib_item_23>>Ye, Juan, Susan McKeever, Lorcan Coyle, Steve Neely, and Simon Dobson. 2008. “Resolving Uncertainty in Context Integration and Abstraction.” In /Proceedings of the 5th International Conference on Pervasive Services/, edited by Domenico Cotroneo and Julie McCann, 131–40. Sorrento, IT: ACM Press. https://simondobson.org/softcopy/icps-08.pdf.
+
+<<citeproc_bib_item_24>>Zhang, Hui, Paddy Nixon, and Simon Dobson. 2008. “Multi-Criteria Adaptation Mechanisms in Homological Sensor Networks.” In /Proceedings of the 11th IEEE International Conference on Communciations Systems/. Guangzhou, CN: IEEE Press. https://simondobson.org/softcopy/iccs-08.pdf.
+
+** 2007
+
+<<citeproc_bib_item_1>>Bailey, Eoin, Simon Dobson, and Aaron Quigley. 2007. “Dynamical Systems Theory Applied to Autonomics.” Dublin, IE. https://simondobson.org/softcopy/LERO-CASCON07.pdf.
+
+<<citeproc_bib_item_2>>Clear, Adrian K., Simon Dobson, and Paddy Nixon. 2007. “An Approach to Dealing with Uncertainty in Context-Aware Pervasive Systems.” In /Proceedings of the UK/IE IEEE SMC Cybernetic Systems Conference 2007/. Dublin, IE: IEEE Press. https://simondobson.org/softcopy/smc-07.pdf.
+
+<<citeproc_bib_item_3>>Coyle, Lorcan, Steve Neely, Graeme Stevenson, Mark Sullivan, Simon Dobson, and Paddy Nixon. 2007. “Sensor Fusion-Based Middleware for Smart Homes.” /International Journal of Assistive Robotics and Mechatronics/ 8 (2): 53–60. https://simondobson.org/softcopy/smart-homes-ijarm-06.pdf.
+
+<<citeproc_bib_item_4>>Coyle, Lorcan, Juan Ye, Emerson Loureiro, Stephen Knox, Simon Dobson, and Paddy Nixon. 2007. “A Proposed Approach to Evaluate the Accuracy of Tag-Based Location Systems.” In /Proceedings of the First Workshop on Ubiquitous Systems Evaluation at Ubicomp’07/. https://simondobson.org/softcopy/use07.pdf.
+
+<<citeproc_bib_item_5>>Delaney, Kieran, Simon Dobson, and John Barton. 2007. “Collaborative Smart Objects and Augmented Materials.” In /Proceedings of the Sensors and Systems Symposium at the NSTI Nanotechnology Conference (Nanotech 2007)/. Santa Clara, CA.
+
+<<citeproc_bib_item_6>>Dobson, Simon. 2007a. “Achieving an Acceptable Design Model for Autonomic Systems.” In /Proceedings of the 4th IEEE International Workshop on Engineering Autonomic and Autonomous Systems/, 196–202. Tucson, AZ: IEEE Press. https://simondobson.org/softcopy/composition-tfaas-06.pdf.
+
+<<citeproc_bib_item_7>>———. 2007b. “From Adaptive Systems to Adaptive Spaces.” Schloß Dagstuhl, DE. https://simondobson.org/softcopy/resilient-networks-dagstuhl-talk-07.pdf.
+
+<<citeproc_bib_item_8>>———. 2007c. “Towards an Integrated Internet of Things.” Sophia Antipolis, FR. https://simondobson.org/softcopy/myfile:research/activities/ercim-directorate-06/ercim-etsi-20071129.pdf.
+
+<<citeproc_bib_item_9>>Dobson, Simon, and Paddy Nixon. 2007. “Whole-System Programming of Adaptive Ambient Intelligence.” In /Proceedings of HCI International 2007/, 4555:73–81. LNCS. Beijing, CN: Springer-Verlag. https://simondobson.org/softcopy/sesami-07.pdf.
+
+<<citeproc_bib_item_10>>Dobson, Simon, Eoin Bailey, Stephen Knox, Ross Shannon, and Aaron Quigley. 2007. “A First Approach to the Closed-Form Specification and Analysis of an Autonomic Control System.” In /Proceedings of the 12th IEEE International Conference on Engineering Complex Computer Systems/. Auckland, NZ. https://simondobson.org/softcopy/iceccs2007.pdf.
+
+<<citeproc_bib_item_11>>Dobson, Simon, Lorcan Coyle, and Paddy Nixon. 2007. “Hybridising Events and Knowledge as a Basis for Building Autonomic Systems.” /IEEE TCAAS Letters/. https://simondobson.org/softcopy/tcaas-hybrid-06.pdf.
+
+<<citeproc_bib_item_12>>Dobson, Simon, Paddy Nixon, Lorcan Coyle, Steve Neely, Graeme Stevenson, and Graham Williamson. 2007. “Construct: An Open Source Pervasive Systems Platform.” In /Proceedings of the 4th IEEE Consumer Communciations and Networking Conference/, 1203–4. Las Vegas, NV: IEEE Press. https://simondobson.org/softcopy/ccnc-07.pdf.
+
+<<citeproc_bib_item_13>>Knox, Stephen, Adrian K. Clear, Ross Shannon, Lorcan Coyle, Simon Dobson, Aaron Quigley, and Paddy Nixon. 2007. “Towards Scatterbox: A Context-Aware Message Forwarding Platform.” In /Proceedings of the Fourth International Workshop Modeling and Reasoning in Context (MRC 2007)/. Copenhagen, DK. https://simondobson.org/softcopy/mrc-scatterbox-07.pdf.
+
+<<citeproc_bib_item_14>>Neely, Steve, Graham Williamson, Hui Zhang, Graeme Stevenson, and Simon Dobson. 2007. “Location Detection with Smart Zigbee Sensors.” Dublin, IE.
+
+<<citeproc_bib_item_15>>Pfeifer, Tom, John Strassner, and Simon Dobson, eds. 2007. /Managing Ubiquitous Communications and Services: Proceedings of the Fourth International Workshop, MUCS 2007/. Munich, DE: Multicon Verlag.
+
+<<citeproc_bib_item_16>>Razzaque, M.A., Simon Dobson, and Paddy Nixon. 2007a. “Classification and Modeling of the Quality of Contextual Information.” /IEEE TCAAS Letters/. https://simondobson.org/softcopy/tcaas-qoc-06.pdf.
+
+<<citeproc_bib_item_17>>———. 2007b. “Context Awareness through Cross-Layer Network Architecture.” In /Proceedings of the First International Workshop on Wireless Mesh and Ad Hoc Networks/. Honolulu, HI. https://simondobson.org/softcopy/wiman-07.pdf.
+
+<<citeproc_bib_item_18>>———. 2007c. “Cross-Layer Architectures for Autonomic Communications.” /Journal of Network and Systems Management/ 15 (1): 13–27. https://simondobson.org/softcopy/jnsm-crosslayer-07.pdf.
+
+<<citeproc_bib_item_19>>Ye, Juan, Lorcan Coyle, Simon Dobson, and Paddy Nixon. 2007a. “A Unified Semantics Space Model.” In /Location- and Context-Awareness/, 4718:103–20. LNCS. https://simondobson.org/softcopy/loca-07.pdf.
+
+<<citeproc_bib_item_20>>———. 2007b. “Ontology-Based Models in Pervasive Computing Systems.” /The Knowledge Engineering Review/ 22 (4): 315–47. https://dx.doi.org//10.1017/S0269888907001208.
+
+<<citeproc_bib_item_21>>———. 2007c. “Using Situation Lattices to Model and Reason About Context.” In /Proceedings of the Fourth International Workshop Modeling and Reasoning in Context (MRC 2007)/. Copenhagen, DK. https://simondobson.org/softcopy/mrc-lattices-07.pdf.
+
+** 2006
+
+<<citeproc_bib_item_1>>Anawar, Syarulnaziah, Lorcan Coyle, Simon Dobson, and Paddy Nixon. 2006. “Context Delivery in Ad Hoc Networks Using Enhanced Gossiping Algorithms.” In /Proceedings of the 1st European Conference on Smart Sensing and Context/. Vol. 4272. LNCS. https://simondobson.org/softcopy/eurossc-delivery-06.pdf.
+
+<<citeproc_bib_item_2>>Bailey, Eoin, Simon Dobson, and Paddy Nixon. 2006. “Semantics of Autonomic Systems.”
+
+<<citeproc_bib_item_3>>Clear, Adrian K., Stephen Knox, Juan Ye, Lorcan Coyle, Simon Dobson, and Paddy Nixon. 2006. “Integrating Multiple Contexts and Ontologies in a Pervasive Computing Framework.” In /Contexts and Ontologies: Theory, Practice and Applications/. Riva del Garda, IT. https://simondobson.org/softcopy/co-2006.pdf.
+
+<<citeproc_bib_item_4>>Collins, Michael, Simon Dobson, and Paddy Nixon. 2006. “Security Issues with Pervasive Computing Frameworks.” In /Pervasive 2006 Workshop Proceedings/, edited by Thomas Strang, Vinny Cahill, and Aaron Quigley, 679–85. Dublin, IE: Springer Verlag. https://simondobson.org/softcopy/ptiiai-06.pdf.
+
+<<citeproc_bib_item_5>>Coyle, Lorcan, Evelyn Baife, Graeme Stevenson, Steve Neely, Simon Dobson, Paddy Nixon, and Barry Smyth. 2006. “Supplementing Case-Based Recommenders with Context Data.” In /Proceedings of the 1st International Workshop on Case-Based Reasoning and Context-Awareness at ECCBR’06/. Ölüdeniz, TK. https://simondobson.org/softcopy/eccbr-06.pdf.
+
+<<citeproc_bib_item_6>>Coyle, Lorcan, Steve Neely, Gaëtan Rey, Graeme Stevenson, Mark Sullivan, Simon Dobson, and Paddy Nixon. 2006. “Sensor Fusion-Based Middleware for Assisted Living.” In /Smart Homes and beyond/, edited by Chris Nugent and Juan Carlos Augusto, 281–88. Belfast, UK: IOS Press. https://simondobson.org/softcopy/ICOST-06.pdf.
+
+<<citeproc_bib_item_7>>Dobson, Simon. 2006. “Autonomic Networking: Achieving Stability in the Face of Pervasive Uncertainty.” Paris, FR. https://simondobson.org/softcopy/an-talk-06.pdf.
+
+<<citeproc_bib_item_8>>Dobson, Simon, and Kieran Delaney. 2006. “Materials with Intelligence.” /ERCIM News/ 67. http://www.ercim.org/publication/Ercim_News/EN67.pdf.
+
+<<citeproc_bib_item_9>>Dobson, Simon, and Juan Ye. 2006a. “A Simple Semantic Model for Adaptive Pervasive Systems.” https://simondobson.org/softcopy/simple-semantic-model-leicester-talk.pdf.
+
+<<citeproc_bib_item_10>>———. 2006b. “Using Fibrations for Situation Identification.” In /Pervasive 2006 Workshop Proceedings/, edited by Thomas Strang, Vinny Cahill, and Aaron Quigley, 645–51. Dublin, IE: Springer Verlag. https://simondobson.org/softcopy/tppc-06.pdf.
+
+<<citeproc_bib_item_11>>Dobson, Simon, Spyros Denazis, Antonio Fernández, Dominique Gaïti, Erol Gelenbe, Fabio Massacci, Paddy Nixon, Fabrice Saffre, Nikita Schmidt, and Franco Zambonelli. 2006. “A Survey of Autonomic Communications.” /ACM Transactions on Autonomous and Adaptive Systems/ 1 (2): 223–59. https://dx.doi.org//10.1145/1186778.1186782.
+
+<<citeproc_bib_item_12>>Dobson, Simon, Steve Neely, Graeme Stevenson, Lorcan Coyle, and Paddy Nixon. 2006. “Towards a Platform for Widespread Embedded Intelligence.” /ERCIM News/ 67. http://www.ercim.org/publication/Ercim_News/EN67.pdf.
+
+<<citeproc_bib_item_13>>Gaïti, Dominique, Guy Pujolle, Ehab Al-Shaer, Ken Calvert, Simon Dobson, Guy Leduc, and Olli Martikainen, eds. 2006. /Autonomic Networking/. Vol. 4195. LNCS. Springer-Verlag.
+
+<<citeproc_bib_item_14>>Neely, Steve, Simon Dobson, and Paddy Nixon. 2006. “Adaptive Middleware for Autonomic Systems.” /Annals of Telecommunications/ 61 (9--10): 1099–1118. https://simondobson.org/softcopy/aot-survey-06.pdf.
+
+<<citeproc_bib_item_15>>O’Neill, Eleanor, David Lewis, Kris McGlinn, and Simon Dobson. 2006. “Rapid User-Centred Evaluation for Context-Aware Systems.” In /Interactive Systems: Design, Specification, and Verification/, edited by Gavin Doherty and Ann Blandford. Vol. 4323. LNCS. Dublin, IE: Springer-Verlag. https://simondobson.org/softcopy/dsvis-06.pdf.
+
+<<citeproc_bib_item_16>>Razzaque, M.A., Simon Dobson, and Paddy Nixon. 2006. “A Cross-Layer Architecture for Autonomic Communications.” In /Autonomic Networking/, edited by Dominique Gaïti, Guy Pujolle, Ehab Al-Shaer, Ken Calvert, Simon Dobson, Guy Leduc, and Olli Martikainen, 4195:25–35. LNCS. Paris, FR: Springer-Verlag. https://simondobson.org/softcopy/WAC-06.pdf.
+
+<<citeproc_bib_item_17>>Razzaque, M.A., Paddy Nixon, and Simon Dobson. 2006. “Demonstrating the Feasibility of an Autonomic Communications-Targeted Cross-Layer Architecture.” In /Proceedings of the 14th International Conference on Advanced Computing and Communications/. Mangalore, IN. https://simondobson.org/softcopy/dictadcom-06.pdf.
+
+<<citeproc_bib_item_18>>Stevenson, Graeme, Paddy Nixon, and Simon Dobson. 2006. “Towards a Reliable Wide-Area Infrastructure for Context-Based Self-Management of Communications.” In /Autonomic Communication: 2nd International IFIP Workshop on Autonomic Communication/, edited by Ioannis Stavrakakis and Mikhail Smirnov, 3854:115–28. LNCS. Springer-Verlag. https://simondobson.org/softcopy/WAC-05.pdf.
+
+<<citeproc_bib_item_19>>Williamson, Graham, Graeme Stevenson, Steve Neely, Simon Dobson, and Paddy Nixon. 2006. “An Evaluation Framework for Disseminating Context Information with Gossiping.” In /Proceedings of the 1st European Conference on Smart Sensing and Context/. Vol. 4272. LNCS. https://simondobson.org/softcopy/eurossc-evaluation-06.pdf.
+
+** 2005
+
+<<citeproc_bib_item_1>>Baker, Seán, and Simon Dobson. 2005. “Comparing Service-Oriented and Distributed Object Architectures.” In /Proceedings of the International Symposium on Distributed Objects and Applications/, edited by Robert Meersman and Zahir Tari, 3760:631–45. LNCS. Springer Verlag. https://simondobson.org/softcopy/soa-doa-05.pdf.
+
+<<citeproc_bib_item_2>>Coutaz, Joëlle, James Crowley, Simon Dobson, and David Garlan. 2005. “Context Is Key.” /Communications of the ACM/ 48 (3): 49–53. https://dx.doi.org//10.1145/1047671.1047703.
+
+<<citeproc_bib_item_3>>Delaney, Kieran, Simon Dobson, Kafil Mahmood Razeeb, and John Barton. 2005. “Creating the Disappearing Computer – Using Augmented Materials to Build Collaborative Augmented Artefacts.” Cork, IE.
+
+<<citeproc_bib_item_4>>Dobson, Simon. 2005a. “Hybridising Events and Knowledge in an Infrastructure for Context-Adaptive Systems.” In /Proceedings of the IJCAI 2005 Workshop on AI and Autonomic Communications/, edited by Roy Sterrit, Simon Dobson, and Mikhail Smirnov. https://simondobson.org/softcopy/ijcai-aiac-05b.pdf.
+
+<<citeproc_bib_item_5>>———. 2005b. “Leveraging the Subtleties of Location.” In /sOc-EUSAI’05: Proceedings of the 2005 Joint Conference on Smart Objects and Ambient Intelligence/, edited by Gérard Bailly, James Crowley, and Gilles Privat, 175–79. Grenoble, FR: ACM Press.
+
+<<citeproc_bib_item_6>>———. 2005c. “Nirvana: Work-in-Progress.”
+
+<<citeproc_bib_item_7>>———. 2005d. “Putting Meaning into the Network: Some Semantic Issues for the Design of Autonomic Communications Systems.” In /Proceedings of the 1st IFIP Workshop on Autonomic Communications/, edited by Mikhail Smirnov, 3457:207–16. LNCS. Berlin, DE: Springer Verlag. https://simondobson.org/softcopy/WAC-04a.pdf.
+
+<<citeproc_bib_item_8>>———. 2005e. “The de Bruijn Principle and the Compositional Design of Programming Languages.” In /Proceedings of the 17th International Workshop on Implementation and Application of Functional Languages/. https://simondobson.org/softcopy/de-bruijn-iafl-05.pdf.
+
+<<citeproc_bib_item_9>>Dobson, Simon, Kieran Delaney, Kafil Mahmood Razeeb, and Sergey Tsvetkov. 2005. “A Co-Designed Hardware/Software Architecture for Augmented Materials.” In /Proceedings of the 2nd International Workshop on Mobility Aware Technologies and Applications/, edited by Thomas Magedanz, Ahmed Karmouch, Samuel Pierre, and Iakovos Venieris. Vol. 3744. LNCS. Montréal, CA. https://simondobson.org/softcopy/MATA-Augmented-05.pdf.
+
+<<citeproc_bib_item_10>>Nisbet, Andy, and Simon Dobson. 2005. “A Systems Architecture for Sensor Networks Based on Hardware/Software Co-Design.” In /Proceedings of the 1st IFIP Workshop on Autonomic Communications/, edited by Mikhail Smirnov. Vol. 3457. LNCS. Berlin, DE: Springer Verlag. https://simondobson.org/softcopy/WAC-04b.pdf.
+
+<<citeproc_bib_item_11>>Razzaque, M.A., Simon Dobson, and Paddy Nixon. 2005. “Categorisation and Modelling of Quality in Context Information.” In /Proceedings of the IJCAI 2005 Workshop on AI and Autonomic Communications/, edited by Roy Sterrit, Simon Dobson, and Mikhail Smirnov. https://simondobson.org/softcopy/ijcai-aiac-05a.pdf.
+
+<<citeproc_bib_item_12>>Stevenson, Graeme, Lorcan Coyle, Steve Neely, Simon Dobson, and Paddy Nixon. 2005. “Construct – a Decentralised Context Infrastructure for Computing Environments.” Cork, IE.
+
+** 2004
+
+<<citeproc_bib_item_1>>Baker, Seán, Simon Dobson, Pat Donnellan, Paul Kavanagh, Dan Maher, Tommy McCabe, Richard McQuillen, Paddy Holohan, Michael O’Connor, and Declan O’Mahony. 2004. /Successful Commercialisation of R&D/. Irish Business Employers’ Confederation/ICT Ireland.
+
+<<citeproc_bib_item_2>>Baker, Seán, Simon Dobson, Dan Flinter, Michael Grufferty, Paul Kavanagh, Dan Maher, Tommy McCabe, and Richard McQuillen. 2004. /Commercialisation of R&D in the ICT Sector/. Irish Business Employers’ Confederation/ICT Ireland.
+
+<<citeproc_bib_item_3>>Dobson, Simon. 2004a. “Creating Programming Languages for (and from) the Internet.” In /Workshop on Evolution and Reuse of Language Specifications for Domain-Specific Languages at ECOOP’04/. Oslo, NO. https://simondobson.org/softcopy/ERLS-04.pdf.
+
+<<citeproc_bib_item_4>>———. 2004b. “Report from the ECOOP 2004 Workshop on Component-Oriented Approaches to Context-Aware Computing.” In /ECOOP’04 Workshop Reader/, edited by Jacques Malenfant and Bjarte Østvold, 3344:84–93. LNCS. Springer Verlag. https://simondobson.org/softcopy/coacac-04.pdf.
+
+<<citeproc_bib_item_5>>———. 2004c. “Towards a Semantics of Pervasive Computing.” https://simondobson.org/softcopy/rational-reconstruction-talk.pdf.
+
+<<citeproc_bib_item_6>>———. 2004d. “Where’s Waldo? or, a Taxonomy for Thinking About Location in Pervasive Computing.” TCD-CS-2004-05. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-2004-05.pdf.
+
+<<citeproc_bib_item_7>>Dobson, Simon, and Paddy Nixon. 2004. “More Principled Design of Pervasive Computing Systems.” In /Human Computer Interaction and Interactive Systems/, edited by Rémi Bastide and Jörg Roth. Vol. 3425. LNCS. Springer Verlag. https://simondobson.org/softcopy/EHCI-04.pdf.
+
+<<citeproc_bib_item_8>>Kim, Howard, and Simon Dobson. 2004. “An Improved Approach to Geographically Locating Web Clients.” TCD-CS-2001-49. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-2001-49.pdf.
+
+** 2003
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2003a. “Applications Considered Harmful for Ambient Systems.” In /Proceedings of the ACM International Symposium on Information and Communications Technologies/, 171–76. Dublin, IE: ACM Press. https://simondobson.org/softcopy/ISICT-2003.pdf.
+
+<<citeproc_bib_item_2>>———. 2003b. “Putting Research to Work.” Dublin, IE.
+
+<<citeproc_bib_item_3>>Nixon, Paddy, Simon Dobson, Sotirios Terzis, and Feng Wang. 2003. “Architectural Implications for Context-Adaptive Smart Spaces.” In /Proceedings of the International Workshop on Networked Applicances/, 156–61. IEEE Press. https://simondobson.org/softcopy/IWNA-2003.pdf.
+
+** 2002
+
+<<citeproc_bib_item_1>>Nixon, Paddy, Feng Wang, Sotirios Terzis, and Simon Dobson. 2002. “Engineering Context-Aware Systems.” In /Proceedings of the International Workshop on Engineering Context-Aware Object-Oriented Systems and Environments/. Seattle, WA. https://simondobson.org/softcopy/ecoose-2003.pdf.
+
+** 2001
+
+<<citeproc_bib_item_1>>Terzis, Sotirios, Paddy Nixon, Vinny Wade, Simon Dobson, and John Fuller. 2001. “Building the next Generation of Groupware.” In /Enterprise Information Systems/, edited by Joaquim Filipe. Kluwer Academic Press.
+
+** 2000
+
+<<citeproc_bib_item_1>>Dobson, Simon. 2000a. “Building Programming Languages from Components.” Cambridge, UK. https://simondobson.org/softcopy/vanilla-microsoft-2000.ppt.
+
+<<citeproc_bib_item_2>>———. 2000b. “Space Is the Computer.” Oxford, UK.
+
+<<citeproc_bib_item_3>>———. 2000c. “What’s in an Ion?” Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/ions-tr-1999.pdf.
+
+<<citeproc_bib_item_4>>Farragher, Linda, and Simon Dobson. 2000. “Java Decaffeinated: Experiences Building a Programming Language from Components.” TCD-CS-2000-22. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-2000-22.pdf.
+
+<<citeproc_bib_item_5>>Nixon, Paddy, Gerard Lacey, and Simon Dobson, eds. 2000. /Managing Interactions in Smart Environments/. Springer Verlag.
+
+<<citeproc_bib_item_6>>Nixon, Paddy, Vinny Wade, Sotirios Terzis, Marcus O’Connell, and Simon Dobson. 2000. “The Virtues Architecture: A Software Infrastructure for Business-to-Business E-Commerce.” In /Proceedings of the 2nd International Conference on Enterprise Information Systems/. Stafford, UK. https://simondobson.org/softcopy/TCD-CS-2000-08.pdf.
+
+<<citeproc_bib_item_7>>Walsh, Tim, Paddy Nixon, and Simon Dobson. 2000a. “An Integrated System for Managing Intelligent Buildings.” In /Managing Interactions in Smart Environments/, edited by Paddy Nixon, Gerard Lacey, and Simon Dobson. Springer Verlag.
+
+<<citeproc_bib_item_8>>———. 2000b. “A Review of Mobility Systems.” TCD-CS-2000-13. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-2000-13.pdf.
+
+<<citeproc_bib_item_9>>———. 2000c. “As Strong as Possible Mobility: An Architecture for Stateful Object Migration on the Internet.” TCD-CS-2000-11. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-2000-11.pdf.
+
+<<citeproc_bib_item_10>>———. 2000d. “As Strong as Possible Mobility (Poster).” In /Proceedings of the 22nd Internatioal Conference on Software Engineering/, 779.
+
+** 1999
+
+<<citeproc_bib_item_1>>Dobson, Simon, Paddy Nixon, Vincent Wade, Sotirios Terzis, and John Fuller. 1999. “Vanilla: An Open Language Framework.” In /Generative and Component-Based Software Engineering/, edited by Krzysztof Czarnecki and Ulrich Eisenecker. Vol. 1799. LNCS. Springer-Verlag. https://simondobson.org/softcopy/vanilla-gcse-1999.ps.
+
+<<citeproc_bib_item_2>>Greenane, Richard, and Simon Dobson. 1999. “Integrating LONWorks into an Open Systems Control Environment.” Amsterdam, NL.
+
+<<citeproc_bib_item_3>>Nixon, Paddy, and Simon Dobson, eds. 1999. /Objects, Components and the Virtual Enterprise/. ACM Press.
+
+<<citeproc_bib_item_4>>Terzis, Sotirios, Paddy Nixon, Vinny Wade, Simon Dobson, and John Fuller. 1999. “The Future of Enterprise Groupware Applications.” In /Proceedings of the 1st International Conference on Enterprise Information Systems/, edited by Joaquim Filipe and José Cordeiro, 525–32. Setubal, PT. https://simondobson.org/softcopy/TCD-CS-1999-22.pdf.
+
+<<citeproc_bib_item_5>>Walsh, Tim, Paddy Nixon, and Simon Dobson. 1999. “A Managed Architecture for Mobile Distributed Systems.” TCD-CS-1999-03. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-1999-03.pdf.
+
+** 1998
+
+<<citeproc_bib_item_1>>Dobson, Simon. 1998a. “A First Taste of Vanilla.” TCD-CS-1998-20. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-1998-20.ps.
+
+<<citeproc_bib_item_2>>———. 1998b. “Fragmenting Languages.” Pasadena, CA. https://simondobson.org/softcopy/vanilla-caltech-1998.ppt.
+
+<<citeproc_bib_item_3>>———. 1998c. “Modular Parsers.” TCD-CS-1998-19. Department of Computer Science, Trinity College Dublin. https://simondobson.org/softcopy/TCD-CS-1998-19.ps.
+
+<<citeproc_bib_item_4>>———. 1998d. “The O2 Programming Language.” Department of Computer Science, Trinity College Dublin.
+
+<<citeproc_bib_item_5>>Dobson, Simon, and Paddy Nixon. 1998. “(Free) Radical Programming Languages.” In /Proceedings of the 5th CaberNet Radicals Workshop/. Oporto, PT.
+
+<<citeproc_bib_item_6>>Goodeve, Don, Simon Dobson, Jonathan Nash, John Davy, Peter Dew, Mourad Kara, and Chris Wadsworth. 1998. “Towards a Model for Shared Data Abstraction with Performance.” /Journal of Parallel and Distributed Computing/ 49 (1): 156–67. https://simondobson.org/softcopy/JPDC-98.pdf.
+
+<<citeproc_bib_item_7>>Nixon, Paddy, Vinny Wade, Simon Dobson, John Fuller, and Sotirios Terzis. 1998. “Designing Components for a Virtual Organisation: A Case Study.” In /Proceedings of Objects, Components and the Virtual Enterprise/. Vancouver, CA. https://simondobson.org/softcopy/virtues-ocve-1998.pdf.
+
+<<citeproc_bib_item_8>>Tofts, Chris, Don Goodeve, and Simon Dobson. 1998. “Abstraction and Implementation of a Lightweight Distributed Termination Protocol.” YCS-98-307. Department of Computer Science, University of York. https://simondobson.org/softcopy/YCS-98-307.pdf.
+
+** 1997
+
+<<citeproc_bib_item_1>>Dobson, Simon. 1997a. “A Common Object Model for Large Experimental Systems: A Proposal.” Rutherford Appleton Laboratory.
+
+<<citeproc_bib_item_2>>———. 1997b. “Correctly Formalising the Wrong Things.” Dublin, IE.
+
+<<citeproc_bib_item_3>>Dobson, Simon, and Don Goodeve. 1997. “Programming with Shared Data Abstractions.” In /Solving Irregularly Structured Problems in Parallel/, edited by Gianfranco Billardi, Afonso Ferreira, Reinhold Lüling, and José Rolim, 1253:93–102. LNCS. Springer Verlag. https://simondobson.org/softcopy/irregular-97.pdf.
+
+** 1996
+
+<<citeproc_bib_item_1>>Dobson, Simon. 1996. “Weak Coherence with Shared Abstract Data Types.” Manchester, UK.
+
+<<citeproc_bib_item_2>>Dobson, Simon, and Victoria Burrill. 1996. “Federated World Wide Webs.” Cardiff, UK.
+
+<<citeproc_bib_item_3>>Dobson, Simon, and Chris Wadsworth. 1996. “Towards a Theory of Shared Data in Distributed Systems.” In /Software Engineering for Parallel and Distributed Systems/, edited by Innes Jelly, Ian Gorton, and Peter Croll, 170–82. Chapman and Hall. https://simondobson.org/softcopy/pdse-96.pdf.
+
+<<citeproc_bib_item_4>>Dobson, Simon, Victoria Marshall, and Brian Ritchie. 1996. “STICKS and STONES: Architectures for Modular WWW Software.” Paris, FR. https://simondobson.org/softcopy/threads-www-94.pdf.
+
+** 1995
+
+<<citeproc_bib_item_1>>Dobson, Simon, and Victoria Burrill. 1995a. “Lightweight Databases.” /Computer Networks and ISDN Systems/ 27 (6): 1009–15. https://dx.doi.org//10.1016/0169-7552(95)00012-V.
+
+<<citeproc_bib_item_2>>———. 1995b. “Towards Improving Automation in the World Wide Web.” In /New Directions in Software Development/. British Computer Society. https://simondobson.org/softcopy/lightweight-databases-bcs-1995.pdf.
+
+** 1994
+
+<<citeproc_bib_item_1>>Dobson, Simon. 1994a. “An Introduction to the Theories of Bulk Data Types.” Rutherford Appleton Laboratory. https://simondobson.org/softcopy/bulk-data-types.pdf.
+
+<<citeproc_bib_item_2>>———. 1994b. “Data and Hypermodels Are Isomorphic: Manipulating Hyperdocuments at a Logical Level.” WWW/02/94. Rutherford Appleton Laboratory. https://simondobson.org/softcopy/hyper-94.pdf.
+
+<<citeproc_bib_item_3>>Dobson, Simon, and Victoria Burrill. 1994a. “Lightweight Data Mark-up.” WWW/04/94. Rutherford Appleton laboratory.
+
+<<citeproc_bib_item_4>>———. 1994b. “Preliminary Results from the Database Markup of Hyperdocuments.” WWW/03/94. Rutherford Appleton Laboratory. https://simondobson.org/softcopy/preliminary-markup-94.pdf.
+
+<<citeproc_bib_item_5>>Dobson, Simon, Victoria Burrill, and Julian Gallop. 1994. “Semantic Mark-up of Generalised Documents.” WWW/01/94. Rutherford Appleton Laboratory. https://simondobson.org/softcopy/semantic-markup-94.pdf.
+#+end:
