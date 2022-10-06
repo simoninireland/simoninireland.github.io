@@ -9,8 +9,9 @@ SITE_URL = "https://simondobson.org/"
 BLOG_EMAIL = "simon.dobson@computer.org"
 BLOG_DESCRIPTION = "Aut tace aut loquere meliora silentio"  # (translatable)
 
-INDEX_PATH = 'blog'
-INDEX_PAGES_MAIN = True
+INDEX_PATH = ''
+#INDEX_PAGES_MAIN = True
+INDEX_DISPLAY_POST_COUNT = 5
 INDEX_TEASERS = True
 
 SHOW_SOURCELINK = False
@@ -50,7 +51,7 @@ NAVIGATION_LINKS = {
                 ("/research/publications-by-year/", "Publications by year"),
                 ("/research/bibliometrics/", "Bibliometrics"),
             ),
-            "Academic"
+            "Research"
         ),
         (
             (
@@ -87,12 +88,14 @@ POSTS = (
     ("posts/*.txt", "", "post.tmpl"),
     ("posts/*.html", "", "post.tmpl"),
     ("posts/*.ipynb", "", "post.tmpl"),
+    ("posts/*.org", "", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.org", "", "post.tmpl"),
 )
 
 # Galleries
@@ -109,9 +112,6 @@ TWITTER_CARD = {
     'creator': '@simoninireland',
 }
 
-# Plugin bib
-BIBFILE = 'files/sd.bib'
-
 # Google Analytics tracker
 EXTRA_HEAD_DATA += '''
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -125,34 +125,42 @@ EXTRA_HEAD_DATA += '''
 </script>
 '''
 
-# Font Awsome icons (for social media links)
-EXTRA_HEAD_DATA += '''
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-'''
-
 # Licence in footer
 CONTENT_FOOTER = '''
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="/images/cc-by-nc-sa-4.0.png" /></a>
 '''
 
+# Font Awsome icons (for social media links)
+EXTRA_HEAD_DATA += '''
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+'''
+
 # Theming
-THEME = "bootstrap4-jinja"
-THEME_CONFIG = {
-    DEFAULT_LANG: {
-        # Show the latest featured post in a large box, with the previewimage as its background.
-        'featured_large': False,
-        # Show the first (remaining) two featured posts in small boxes.
-        'featured_small': False,
-        # Show featured posts on mobile.
-        'featured_on_mobile': True,
-        # Show image in `featured_large` on mobile.
-        # `featured_small` displays them only on desktop.
-        'featured_large_image_on_mobile': True,
-        # Strip HTML from featured post text.
-         'featured_strip_html': False,
-        # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
-    }
+# THEME = "bootstrap4-jinja"
+# THEME_CONFIG = {
+#     DEFAULT_LANG: {
+#         # Show the latest featured post in a large box, with the previewimage as its background.
+#         'featured_large': False,
+#         # Show the first (remaining) two featured posts in small boxes.
+#         'featured_small': False,
+#         # Show featured posts on mobile.
+#         'featured_on_mobile': True,
+#         # Show image in `featured_large` on mobile.
+#         # `featured_small` displays them only on desktop.
+#         'featured_large_image_on_mobile': True,
+#         # Strip HTML from featured post text.
+#          'featured_strip_html': False,
+#         # Contents of the sidebar, If empty, the sidebar is not displayed.
+#         'sidebar': ''
+#     }
+# }
+THEME = "canterville"
+LOGO_URL = '/images/180213-0001.jpg'
+GLOBAL_CONTEXT = {
+        'TWITTER_URL': 'https://twitter.com/simoninireland',
+        'GITHUB_URL': 'https://github.com/simoninireland',
+        'LINKEDIN_URL': "https://www.linkedin.com/in/simon-dobson-9006802/",
+        'BANNER_URL': '/assets/img/silk-road.jpg'
 }
 
 # Allow the old-style $...$ syntax fore inline maths
@@ -289,16 +297,17 @@ LOCALES = {'en': 'en_GB'}
 COMPILERS = {
     "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
-    "textile": ('.textile',),
-    "txt2tags": ('.t2t',),
-    "bbcode": ('.bb',),
-    "wiki": ('.wiki',),
+    #"textile": ('.textile',),
+    #"txt2tags": ('.t2t',),
+    #"bbcode": ('.bb',),
+    #"wiki": ('.wiki',),
     "ipynb": ('.ipynb',),
     "html": ('.html', '.htm'),
+    "orgmode": ('.org',),
     # PHP files are rendered the usual way (i.e. with the full templates).
     # The resulting files have .php extensions, making it possible to run
     # them without reconfiguring your server to recognize them.
-    "php": ('.php',),
+    # "php": ('.php',),
     # Pandoc detects the input from the source filename
     # but is disabled by default as it would conflict
     # with many of the others.
