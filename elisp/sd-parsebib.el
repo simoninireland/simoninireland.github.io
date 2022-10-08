@@ -222,7 +222,7 @@ The bibliography is formatted using BACKEND."
     (string-trim (buffer-string))))
 
 
-;; ---------- Dynamic block containing a bibliography ----------
+;; ---------- Dynamic blocks containing a bibliography ----------
 
 (defun org-dblock-write:sd/bibliography (params)
   "Update a dynamic block with a bibliography.
