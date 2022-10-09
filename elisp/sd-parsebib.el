@@ -180,46 +180,77 @@ FILE-OR-FILES may be a file or a list of files."
 ;; together with an appropriate bibliography: link, then let org-ref
 ;; process the file and cut-out the formatted bibliography.
 
+(defun sd/vars ()
+  (interactive)
+  (let ((csl-style (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE"))))
+    (princ csl-style)
+    (princ (assoc  "CSL-STYLE" csl-style))))
+
 (defun sd/parsebib--create-bibliography (backend keys file-or-files)
   "Return the bibliography consisting of the references KEYS from FILE-OR-FILES.
 
-The bibliography is formatted using BACKEND."
-  (with-temp-buffer
-    (let ((sep (format "----- %d -----\n" (random)))
-	  (inc (if (listp file-or-files)
-		   (s-join "," file-or-files)
-		 file-or-files)))
-      (mapcar #'(lambda (key)
-		  (insert (format "cite:%s\n" key)))
-	      keys)
-      (insert sep)
-      (insert (format "[[bibliography:%s]]\n" inc))
+The bibliography is formatted using BACKEND, and uses 'org-ref' to process
+the bibliography. The style of the bibliography can be changed using the
+'CSL-STYLE' and 'CSL-LOCLAE' variables, defined either globally or locally
+within the buffer that is current when this function is called. See
+`org-ref-process-buffer' for details."
+  (let ((csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE"))))
+    (with-temp-buffer
+      ;; insert the style and locale from the calling buffer, if present
+      (let ((csl-styles (assoc "CSL-STYLE" csl-style-locale)))
+	(if csl-styles
+	    (let* ((styles (car (cdr csl-styles)))
+		   (style (if (listp styles)
+			      (car styles)
+			    styles)))
+	      (insert (format "#+CSL-STYLE: %s\n" style)))))
+      (let ((csl-locales (assoc "CSL-LOCALE" csl-style-locale)))
+	(if csl-locales
+	    (let* ((locales (car (cdr csl-locales)))
+		   (locale (if (listp locales)
+			    (car locales)
+			  locales)))
+	      (insert (format "#+CSL-LOCALE: %s\n" locale)))))
+      (newline)
 
-      ;; process the buffer to create the bibliography
-      (org-ref-process-buffer backend)
+      ;; insert citations followed by a seperator
+      (let ((sep (format "----- %d -----\n" (random)))
+	    (inc (if (listp file-or-files)
+		     (s-join "," file-or-files)
+		   file-or-files)))
+	(mapcar #'(lambda (key)
+		    (insert (format "cite:%s\n" key)))
+		keys)
+	(insert sep)
 
-      ;; cut out the citations leaving only the bibliography
-      (search-backward sep)
-      (forward-line 1)
-      (let ((end (point)))
-	(goto-char (point-min))
-	(kill-region (point) end))
+	;; insert bibliography link
+	(insert (format "[[bibliography:%s]]\n" inc))
 
-      ;; return the bibliography as a string
-      (string-trim (buffer-string)))))
+	;; process the buffer to create the bibliography
+	(org-ref-process-buffer backend)
+
+	;; cut out the citations leaving only the bibliography
+	(search-backward sep)
+	(forward-line 1)
+	(let ((end (point)))
+	  (goto-char (point-min))
+	  (kill-region (point) end))
+
+	;; return the bibliography as a string
+	(string-trim (buffer-string))))))
 
 (defun sd/parsebib--create-bibliography-year (backend year file)
   "Create a bibliography of all entries for the given YEAR in FILE.
 
 The bibliography is formatted using BACKEND."
-  (with-temp-buffer
-    (let* ((entries (sd/parsebib--find-entries-by-year-in-files (int-to-string year) file))
-	   (keys (sd/parsebib--keys-from-entries entries))
-	   (bib (sd/parsebib--create-bibliography 'org keys file)))
-      (insert bib))
+    (with-temp-buffer
+      (let* ((entries (sd/parsebib--find-entries-by-year-in-files (int-to-string year) file))
+	     (keys (sd/parsebib--keys-from-entries entries))
+	     (bib (sd/parsebib--create-bibliography 'org keys file)))
+	(insert bib))
 
-    ;; return the bibliography as a string
-    (string-trim (buffer-string))))
+      ;; return the bibliography as a string
+      (string-trim (buffer-string))))
 
 
 ;; ---------- Dynamic blocks containing a bibliography ----------
