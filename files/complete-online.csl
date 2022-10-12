@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
-    <title>Complete online bibliography</title>
-    <title-short>Online</title-short>
+    <title>Complete online bibliography with hyperlinks</title>
+    <title-short>Online bibliography</title-short>
     <id>https://simondobson.org/complete-online.csl</id>
     <link href="https://simondobson.org/complete-online.csl" rel="self"/>
     <link href="http://www.zotero.org/styles/american-physics-society" rel="template"/>
@@ -14,7 +14,7 @@
     <category citation-format="numeric"/>
     <category field="personal"/>
     <summary>Online bibliography style for a scientist's personal web site.</summary>
-    <updated>2022-10-08</updated>
+    <updated>2022-10-12</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
@@ -30,190 +30,130 @@
   </macro>
   <macro name="editor">
     <names variable="editor">
-      <label form="verb" suffix=" "/>
-      <name delimiter=", " initialize-with=". " and="text"/>
+      <name and="text"/>
+      <label form="long" prefix=", "/>
     </names>
   </macro>
-  <macro name="year-date">
+  <macro name="published">
     <choose>
       <if variable="issued">
 	<date variable="issued">
-	  <date-part name="year"/>
-	</date>
-      </if>
-      <else>
-	<text term="no date" form="short"/>
-      </else>
-    </choose>
-  </macro>
-  <macro name="day-date">
-    <choose>
-      <if variable="issued">
-	<date variable="issued">
-	  <date-part name="day" suffix=" "/>
 	  <date-part name="month" form="long" suffix=" "/>
 	  <date-part name="year"/>
 	</date>
       </if>
-      <else>
-	<text term="" form="short"/>
-      </else>
     </choose>
   </macro>
   <macro name="publisher">
     <group delimiter=". ">
       <text variable="publisher"/>
       <text variable="publisher-place" text-case="title"/>
-      <text macro="year-date"/>
     </group>
   </macro>
-  <macro name="edition-volume">
-    <group delimiter=", ">
-      <choose>
-	<if is-numeric="edition">
-	  <group delimiter=" ">
-	    <number variable="edition" form="ordinal"/>
-	    <text term="edition" form="short"/>
-	  </group>
-	</if>
-	<else>
-	  <text variable="edition"/>
-	</else>
-      </choose>
-      <group delimiter=" ">
+  <macro name="volume">
+    <choose>
+      <if variable="volume">
 	<label variable="volume" form="short" text-case="capitalize-first"/>
 	<text variable="volume"/>
-	<text term="of"/>
-	<text varible="container-series"/>
-      </group>
-    </group>
+	<choose>
+	  <if variabler="container-title">
+	    <text prefix=" of " variablke="container-title"/>
+	  </if>
+	</choose>
+      </if>
+    </choose>
+  </macro>
+  <macro name="references">
+    <!-- We only include offline references here, as by omitting the
+	 online ones (URL and DOI) Emacs citeproc will hyperlink the
+	 title of the reference. This seems to be the only way to get
+	 the titles hyperlinked, as CSL doesn't include any hyperlink
+	 generation. It's a shame, because it'd be useful to be able
+	 to include the DOI as text as well. -->
+    <text prefix="ISBN " variable="ISBN"/>
   </macro>
 
-  <citation collapse="citation-number">
-    <sort>
-      <key variable="citation-number"/>
-    </sort>
-    <layout delimiter="," prefix="&#160;[" suffix="]">
-      <text variable="citation-number"/>
-    </layout>
-  </citation>
-
   <bibliography entry-spacing="0" second-field-align="flush">
+    <sort>
+      <!-- Reverse chronological order for a personal bibliography. -->
+      <key variable="issued" sort="descending"/>
+    </sort>
+
     <layout>
       <!-- Authors first for everything -->
-      <text macro="author" suffix=". "/>
+      <text macro="author" suffix="."/>
 
       <choose>
 	<!-- Books -->
 	<if type="book" match="any">
-	  <group delimiter=" ">
-	    <text variable="title" text-case="title" font-style="italic" suffix="."/>
-	    <text macro="edition-volume" suffix="."/>
-	    <text macro="publisher" suffix="."/>
-	    <text variable="isbn" suffix="."/>
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <text macro="volume"/>
+	    <text macro="publisher"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
 	  </group>
 	</if>
 
-	<!-- Conference and workshop papers -->
-	<else-if type="chapter paper-conference" match="any">
-	  <group delimiter=". ">
+	<!-- Journal articles -->
+	<else-if type="article article-journal article-magazine" match="any">
+	  <group delimiter=". " suffix=".">
 	    <text variable="title" text-case="title" font-style="italic"/>
 	    <group delimiter=" ">
-	      <text term="in"/>
-	      <group delimiter=". ">
-		<text variable="container-title" text-case="title" font-style="italic"/>
-		<text macro="editor"/>
-		<text macro="edition-volume"/>
-		<group delimiter=" ">
-		  <label variable="page" form="short"/>
-		  <text variable="page"/>
-		</group>
-	      </group>
-	      <group delimiter=". ">
-		<text macro="publisher"/>
+	      <text variable="container-title" form="short"
+		    text-case="title"/>
+	      <group delimiiter="">
+		<text variable="volume" font-weight="bold"/>
+		<text prefix="(" variable="number" suffix=")"/>
+		<text prefix=", pp." variable="page"/>
 	      </group>
 	    </group>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	  </group>
+	</else-if>
+
+	<!-- Conference and workshop papers -->
+	<else-if type="chapter paper-conference" match="any">
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <group delimiter=". ">
+	      <group delimiter="">
+		<text prefix="In " variable="container-title" text-case="title" font-style="italic"/>
+		<text prefix=", pp." variable="page"/>
+	      </group>
+	      <text macro="editor"/>
+	      <text macro="volume"/>
+	    </group>
+	    <text macro="publisher"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
 	  </group>
 	</else-if>
 
 	<!-- Theses -->
 	<else-if type="thesis report" match="any">
-	  <group delimiter=", ">
-	    <text variable="title" text-case="title"/>
-	    <group delimiter=" ">
-	      <text variable="genre"/>
-	      <group delimiter=" ">
-		<text term="issue" form="short" text-case="capitalize-first"/>
-		<text variable="number"/>
-	      </group>
-	    </group>
+	  <group delimiter=". "  suffix=".">
+	    <text variable="title" text-case="title"
+		  font-style="italic"/>
+	    <text prefix="Technical report " variable="number"/>
 	    <text variable="publisher"/>
-	    <text macro="year-date"/>
-	  </group>
-	</else-if>
-	<else-if type="article" match="any">
-	  <group delimiter=", ">
-	    <text variable="title" text-case="title" font-style="italic"/>
-	    <choose>
-	      <if variable="container-title">
-		<text variable="container-title"/>
-	      </if>
-	      <else>
-		<text variable="number"/>
-	      </else>
-	    </choose>
+	    <text macro="published"/>
+	    <text variable="note"/>
 	  </group>
 	</else-if>
 
-	<!-- Datasets -->
-	<else-if type="dataset interview manuscript pamphlet personal_communication post post-weblog speech webpage">
-	  <!-- unpublished materials; guidelines call for 'enough information to be retrievable' -->
-	  <!-- Based on arXiv format -->
-	  <group delimiter=", ">
-	    <text variable="title" text-case="title" font-style="italic"/>
-	    <choose>
-	      <if variable="DOI">
-		<text variable="DOI" prefix="https://doi.org/"/>
-	      </if>
-	      <else-if variable="URL">
-		<text variable="URL"/>
-	      </else-if>
-	      <else>
-		<text value="(unpublished)"/>
-	      </else>
-	    </choose>
-	  </group>
-	</else-if>
-
-	<!-- Journal articles -->
-	<else-if  type="article-journal article-magazine">
-	  <group delimiter=", ">
-	    <text variable="title" text-case="title" font-style="italic"/>
-	    <group delimiter=" ">
-	      <text variable="container-title" form="short" text-case="title"/>
-	      <group delimiter=", ">
-		<text variable="volume" font-weight="bold"/>
-		<group delimiter=" ">
-		  <choose>
-		    <if variable="number">
-		      <text variable="number"/>
-		    </if>
-		    <else>
-		      <text variable="page-first" form="short"/>
-		    </else>
-		  </choose>
-		  <text macro="year-date" prefix="(" suffix=")"/>
-		</group>
-	      </group>
-	    </group>
-	  </group>
-	</else-if>
-
-	<!-- Unpublished, and everything else -->
+	<!-- Unpublished and everything else, hopefully with enough
+	     to find it -->
 	<else>
-	  <group delimiter=" ">
-	    <text variable="title" text-case="title" font-style="italic" suffix="."/>
-	    <text variable="note" suffix="."/>
+	  <group delimiter=". "  suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
 	  </group>
 	</else>
       </choose>
