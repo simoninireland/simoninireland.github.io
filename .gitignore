@@ -1,6 +1,7 @@
 # Python bits
 venv3/
 __pycache__/
+flycheck_*
 
 # Mac bits
 .DS_Store
