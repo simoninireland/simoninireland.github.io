@@ -186,67 +186,68 @@ FILE-OR-FILES may be a file or a list of files."
     (princ csl-style)
     (princ (assoc  "CSL-STYLE" csl-style))))
 
-(defun sd/parsebib--create-bibliography (backend keys file-or-files)
+(defun sd/parsebib--create-bibliography (backend keys file-or-files csl-style-locale)
   "Return the bibliography consisting of the references KEYS from FILE-OR-FILES.
 
 The bibliography is formatted using BACKEND, and uses 'org-ref' to process
 the bibliography. The style of the bibliography can be changed using the
-'CSL-STYLE' and 'CSL-LOCLAE' variables, defined either globally or locally
-within the buffer that is current when this function is called. See
+'CSL-STYLE' and 'CSL-LOCALE' variables, which can be defined globally,locally
+within the buffer that is current when this function is called, or be passed
+in CSL-STYLE-LOCALE in a form extrcated by `org-collect-keywords'. See
 `org-ref-process-buffer' for details."
-  (let ((csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE"))))
-    (with-temp-buffer
-      ;; insert the style and locale from the calling buffer, if present
-      (let ((csl-styles (assoc "CSL-STYLE" csl-style-locale)))
-	(if csl-styles
-	    (let* ((styles (car (cdr csl-styles)))
-		   (style (if (listp styles)
-			      (car styles)
-			    styles)))
-	      (insert (format "#+CSL-STYLE: %s\n" style)))))
-      (let ((csl-locales (assoc "CSL-LOCALE" csl-style-locale)))
-	(if csl-locales
-	    (let* ((locales (car (cdr csl-locales)))
-		   (locale (if (listp locales)
-			    (car locales)
-			  locales)))
-	      (insert (format "#+CSL-LOCALE: %s\n" locale)))))
-      (newline)
+  (with-temp-buffer
+    ;; insert the style and locale from the calling buffer, if present
+    (let ((csl-styles (assoc "CSL-STYLE" csl-style-locale)))
+      (if csl-styles
+	  (let* ((styles (car (cdr csl-styles)))
+		 (style (if (listp styles)
+			    (car styles)
+			  styles)))
+	    (insert (format "#+CSL-STYLE: %s\n" style)))))
+    (let ((csl-locales (assoc "CSL-LOCALE" csl-style-locale)))
+      (if csl-locales
+	  (let* ((locales (car (cdr csl-locales)))
+		 (locale (if (listp locales)
+			     (car locales)
+			   locales)))
+	    (insert (format "#+CSL-LOCALE: %s\n" locale)))))
+    (newline)
 
-      ;; insert citations followed by a seperator
-      (let ((sep (format "----- %d -----\n" (random)))
-	    (inc (if (listp file-or-files)
-		     (s-join "," file-or-files)
-		   file-or-files)))
-	(mapcar #'(lambda (key)
-		    (insert (format "cite:%s\n" key)))
-		keys)
-	(insert sep)
+    ;; insert citations followed by a seperator
+    (let ((sep (format "----- %d -----\n" (random)))
+	  (inc (if (listp file-or-files)
+		   (s-join "," file-or-files)
+		 file-or-files)))
+      (mapcar #'(lambda (key)
+		  (insert (format "cite:%s\n" key)))
+	      keys)
+      (insert sep)
 
-	;; insert bibliography link
-	(insert (format "[[bibliography:%s]]\n" inc))
+      ;; insert bibliography link
+      (insert (format "[[bibliography:%s]]\n" inc))
 
-	;; process the buffer to create the bibliography
-	(org-ref-process-buffer backend)
+      ;; process the buffer to create the bibliography
+      (org-ref-process-buffer backend)
 
-	;; cut out the citations leaving only the bibliography
-	(search-backward sep)
-	(forward-line 1)
-	(let ((end (point)))
-	  (goto-char (point-min))
-	  (kill-region (point) end))
+      ;; cut out the citations leaving only the bibliography
+      (search-backward sep)
+      (forward-line 1)
+      (let ((end (point)))
+	(goto-char (point-min))
+	(kill-region (point) end))
 
-	;; return the bibliography as a string
-	(string-trim (buffer-string))))))
+      ;; return the bibliography as a string
+      (string-trim (buffer-string)))))
 
-(defun sd/parsebib--create-bibliography-year (backend year file)
+(defun sd/parsebib--create-bibliography-year (backend year file csl-style-locale)
   "Create a bibliography of all entries for the given YEAR in FILE.
 
-The bibliography is formatted using BACKEND."
+The bibliography is formatted using `sd/parsebib--create-bibliography' with
+BACKEND and the formatting variables in CSL-STYLE-LOCALE."
     (with-temp-buffer
       (let* ((entries (sd/parsebib--find-entries-by-year-in-files (int-to-string year) file))
 	     (keys (sd/parsebib--keys-from-entries entries))
-	     (bib (sd/parsebib--create-bibliography 'org keys file)))
+	     (bib (sd/parsebib--create-bibliography 'org keys file csl-style-locale)))
 	(insert bib))
 
       ;; return the bibliography as a string
@@ -270,10 +271,11 @@ that value in that key."
 		       (prin1-to-string (plist-get params :value)))
 		      (t
 		       (error "No :value specified"))))
+	 (csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE")))
 	 (entries (sd/parsebib--find-entries-by-key-value-in-files key value
 								   bibtex-completion-bibliography))
 	 (keys (sd/parsebib--keys-from-entries entries))
-	 (bib (sd/parsebib--create-bibliography 'org keys bibtex-completion-bibliography)))
+	 (bib (sd/parsebib--create-bibliography 'org keys bibtex-completion-bibliography csl-style-locale)))
     (insert bib)))
 
 (defun org-dblock-write:sd/bibliography-by-year (params)
@@ -282,12 +284,18 @@ that value in that key."
 PARAMS should contain a key ':file' pointing to a bibfile that will be presented."
 
   ;; we create a buffer to write each year into, working backwards from now
-  (let ((bib (with-temp-buffer
+  (let* ((bibfile (cond ((plist-member params :file)
+			 ;; remove any escapes within the string
+			 (replace-regexp-in-string (rx "\\" (group anything)) "\\1" (prin1-to-string (plist-get params :file))))
+			(t
+			 (error "No :file specified"))))
+	 (csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE")))
+	 (bib (with-temp-buffer
 	       ;; cycle back through the years
 	       ;; (needs to be made more automatic)
 	       ;; (also needs to be forward or backwards)
 	       (dolist (year (number-sequence 2022 1994 -1))
-		 (let ((bibyear (sd/parsebib--create-bibliography-year 'org year "~/personal/dict/sd.bib")))
+		 (let ((bibyear (sd/parsebib--create-bibliography-year 'org year bibfile csl-style-locale)))
 		   (insert (format "\n** %d\n" year))
 		   (newline)
 		   (insert bibyear)
