@@ -180,12 +180,6 @@ FILE-OR-FILES may be a file or a list of files."
 ;; together with an appropriate bibliography: link, then let org-ref
 ;; process the file and cut-out the formatted bibliography.
 
-(defun sd/vars ()
-  (interactive)
-  (let ((csl-style (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE"))))
-    (princ csl-style)
-    (princ (assoc  "CSL-STYLE" csl-style))))
-
 (defun sd/parsebib--create-bibliography (backend keys file-or-files csl-style-locale)
   "Return the bibliography consisting of the references KEYS from FILE-OR-FILES.
 
@@ -256,6 +250,10 @@ BACKEND and the formatting variables in CSL-STYLE-LOCALE."
 
 ;; ---------- Dynamic blocks containing a bibliography ----------
 
+(defun sd/string-dequote (s)
+  "Remove any quotes surrounding S."
+  (s-chop-prefix "\"" (s-chop-suffix "\"" s)))
+
 (defun org-dblock-write:sd/bibliography (params)
   "Update a dynamic block with a bibliography.
 
@@ -268,7 +266,7 @@ that value in that key."
 		    (t
 		     (error "No :key specified"))))
 	 (value (cond ((plist-member params :value)
-		       (prin1-to-string (plist-get params :value)))
+		       (sd/string-dequote (prin1-to-string (plist-get params :value))))
 		      (t
 		       (error "No :value specified"))))
 	 (csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE")))
