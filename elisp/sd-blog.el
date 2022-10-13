@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 
-;; This package contaisn the code needed to integrate Emacs publishing
+;; This package contains the code needed to integrate Emacs publishing
 ;; with the Nikola static site builder (https://getnikola.com) in a very
 ;; basic way. It makes use of Nikola's Org mode plugin
 ;; (https://plugins.getnikola.com/v8/orgmode/) for the basic functionality,
@@ -146,7 +146,7 @@ This reads the title and tags explicitly and passes them to `sd/blog-post'."
 
 ;; ---------- Capture templates ----------
 
-(setq org-capture-templates '())
+;;(setq org-capture-templates '())
 
 (add-to-list 'org-capture-templates
 	     '("b" "Blog at simondobson.org"))
