@@ -1,0 +1,18 @@
+# -*- org-attach-id-dir: "../files/attachments"; -*-
+#+title: Home page
+
+#+begin_export html
+<center>
+<img src= "/images/220317-0002-small.png"/>
+<p>
+I'm a computer scientist interested in complex systems, where chains
+of cause and effect can be difficult to establish.
+
+<p>
+I build the computational tools needed to study these systems at scale, which
+includes using simulators and cloud computing solutions;
+develop better ways to understand them using advanced analytical techniques;
+and work on integrating sensors into them to incorporate real-world,
+real-time data.
+</center>
+#+end_export

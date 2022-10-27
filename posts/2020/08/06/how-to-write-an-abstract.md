@@ -3,9 +3,9 @@
 .. slug: how-to-write-an-abstract
 .. date: 2020-08-06 11:25:21 UTC+01:00
 .. tags: writing, essay, abstracts
-.. category: research
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 -->
 

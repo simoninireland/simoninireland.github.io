@@ -3,7 +3,7 @@
 .. slug: ide-convergence
 .. date: 2021-02-23 12:21:05 UTC
 .. tags: emacs, vs code, python, software engineering
-.. category: development
+.. category:
 .. link:
 .. description:
 .. type: text

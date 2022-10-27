@@ -1,0 +1,88 @@
+# -*- org-attach-id-dir: "../../../files/attachments"; -*-
+
+* Sapere                                                             :ATTACH:
+  :PROPERTIES:
+  :ID:       739c6c87-cdc7-4dca-89e1-07dc0355a133
+  :END:
+
+  #+attr_org: :width 500
+  #+attr_html: :width 80%
+  [[attachment:sapere-logo.png]]
+
+  The [[https://sites.google.com/site/sapereprojecteu/][Sapere project]] was a project funded by the EU's Future and
+  Emerging Technologies strand of Framework 7. The goal was to explore
+  how to use nature-inspired computing techniques to implement
+  scalable services adapted to their location and context. It was a
+  consortium of five universities from across Europe:
+
+  - Universit\agrave di Modena \egrave Reggio Emilia IT (lead)
+  - Alma Mater Studiorum, Universit\agrave di Bologna IT
+  - University of Geneva CH
+  - Johannes Kepler Universit\auml{}t Linz AT
+  - University of St Andrews UK
+
+  The project developed a middleware that exposed the endpoints of
+  programs running in the system as packets of open data, called *Live
+  Semantic Annotations* or LSAs, which were
+  then operated on by a small set of declarative rules. This allowed a
+  very decentralised approach to distributed systems, both in space and
+  time: new components could join (or leave), with the system also
+  responding autonomously to mobility and local failures.
+
+  #+attr_org: :width 500
+  #+attr_html: :width 80%
+  [[attachment:sapere-middleware.jpg]]
+
+  We ran an instance of the middleware to host a user-facing
+  application for the 2013 Vienna City Marathon, which tried to manage
+  crowds of spectators wanting to watch the action and see their
+  favourite runners.
+
+  The St Andrews' work package within the project explored how to do
+  situation recognition in a distributed and scalable manner on top of
+  the middleware architecture. We implemented both known and novel
+  algorithms, driven by a changing pattern of sensors each represented
+  by an LSA. This was a far more dynamic approach than had been tried
+  before, and it led us to have to consider the impacts of partial
+  failures in the sensors, poor and uneven coverage, which informed a
+  lot of our subsequent work.
+
+** Publications
+
+   #+begin: sd/bibliography :key keywords :value Sapere
+   <<citeproc_bib_item_1>>Dobson, Simon, and Aaron Quigley. 2012. “Healthcare in a Pervasive World.” In /This Pervasive Day: The Potentials and Perils of Pervasive Computing/, edited by Jeremy Pitt, 99–111. Imperial College Press. http://www.amazon.co.uk/This-Pervasive-Day-Potential-Computing/dp/1848167482.
+
+   <<citeproc_bib_item_2>>Dobson, Simon, Mirko Viroli, José Luis Fernandez-Marquez, Franco Zambonelli, Graeme Stevenson, Giovanna di Marzo Serugendo, Sara Montagna, et al. 2016. “Spatial Awareness in Pervasive Ecosystems.” /The Knowledge Engineering Review/ 31 (4): 343–66. https://dx.doi.org//10.1017/S0269888916000199.
+
+   <<citeproc_bib_item_3>>Fernandez-Marquez, José Luis, Giovanna di Marzo Serugendo, Graeme Stevenson, Juan Ye, Simon Dobson, and Franco Zambonelli. 2014. “Self-Management of Self-Organising Mobile Computing Applications: A Separation of Concerns Approach.” In /Proceedings of the 29th ACM Symposium on Applied Computing/. Gyeongju, KR. https://simondobson.org/softcopy/SAC-PSC2014.pdf.
+
+   <<citeproc_bib_item_4>>Fernandez-Marquez, Jose Luis, Graeme Stevenson, Akla-Esso Tchao, Juan Ye, Giovanna di Marzo Serugendo, and Simon Dobson. 2012. “Analysis of New Gradient Based Aggregation Algorithms for Data-Propagation in Distributed Networks.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/. Lyons, FR. https://simondobson.org/softcopy/asensis-12-gradients.pdf.
+
+   <<citeproc_bib_item_5>>Rosi, Alberto, Simon Dobson, Marco Mamei, Graeme Stevenson, Juan Ye, and Franco Zambonelli. 2011. “Social Sensors and Pervasive Services: Approaches and Perspectives.” In /Proceedings of the Second IEEE Workshop on Pervasive Collaboration and Social Networking (PerCol 2011)/, 252–530. Seattle, WA: IEEE Press. https://simondobson.org/softcopy/social-sensing-11.pdf.
+
+   <<citeproc_bib_item_6>>Stevenson, Graeme, and Simon Dobson. 2011. “Sapphire: Generating Java Runtime Artefacts from OWL Ontologies.” In /Proceedings of the 3rd International Workshop on Ontology-Driven Information Systems Engineering (ODISE 2011)/, 425–236. London, UK. https://simondobson.org/softcopy/sapphire-odise11.pdf.
+
+   <<citeproc_bib_item_7>>Stevenson, Graeme, Gabriella Castelli, Juan Ye, Alberto Rossi, , Simon Dobson, and Franco Zambonelli. 2013. “A Bio-Chemically Inspired Approach to Awareness in Pervasive Systems.” In /Proceedings of First International Workshop on Sensing and Big Data Mining (SenseMine 2013)/. Rome, IT. https://simondobson.org/softcopy/sensemine13.pdf.
+
+   <<citeproc_bib_item_8>>Stevenson, Graeme, Jose Luis Fernandez-Marquez, Sara Montagna, Alberto Rosi, Giovanna di Marzo Serugendo Juan Ye, Mirko Viroli, Simon Dobson, and Akla-Esso Tchao. 2012. “Towards Situated Awareness in Urban Networks: A Bio-Inspired Approach.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/, 53–58. Lyons, FR. https://simondobson.org/softcopy/asensis-12-urban.pdf.
+
+   <<citeproc_bib_item_9>>Stevenson, Graeme, Mirko Viroli, Juan Ye, Sara Montagna, and Simon Dobson. 2012. “Self-Organising Semantic Resource Discovery for Pervasive Systems.” In /Proceedings of the First International Workshop on Adaptive Service Ecosystems: Nature and Socially Inspired Solutions (ASENSIS’12)/, 47–52. Lyons, FR. https://simondobson.org/softcopy/asensis-12-discovery.pdf.
+
+   <<citeproc_bib_item_10>>Stevenson, Graeme, Juan Ye, Simon Dobson, Danilo Pianini, Sara Montagna, and Mirko Viroli. 2013. “Combining Self-Organisation, Context-Awareness and Semantic Reasoning: The Case of Resource Discovery in Opportunistic Networks.” In /Proceedings of the 28th ACM Symposium on Applied Computing/. Coimbra, PT. https://simondobson.org/softcopy/sac-2013.pdf.
+
+   <<citeproc_bib_item_11>>Viroli, Mirko, Franco Zambonelli, Graeme Stevenson, and Simon Dobson. 2012. “From SOA to Pervasive Service Ecosystems: An Approach Based on Semantic Web Technologies.” In /Adaptive Web Services for Modular and Reusable Software Development: Tactics and Solutions/, edited by Javier Cubo and Guadalupe Ortiz. IGI Global. https://simondobson.org/softcopy/sapere-soa-semantic-web-12.pdf.
+
+   <<citeproc_bib_item_12>>Ye, Juan, and Simon Dobson. 2012. “Pervasive Computing Needs Better Situation-Awareness.” /Awareness Magazine/. http://www.awareness-mag.eu/view.php?article=003943-2012-01-05&category=Interactive+Robotics.
+
+   <<citeproc_bib_item_13>>Ye, Juan, Simon Dobson, and Susan McKeever. 2012. “Situation Identification Techniques in Pervasive Computing: A Review.” /Pervasive and Mobile Computing/ 8 (1): 36–66. https://dx.doi.org//10.1016/j.pmcj.2011.01.004.
+
+   <<citeproc_bib_item_14>>Ye, Juan, Graeme Stevenson, and Simon Dobson. 2011. “A Top-Level Ontology for Smart Environments.” /Pervasive and Mobile Computing/ 7 (3): 359–78. https://dx.doi.org//10.1016/j.pmcj.2011.02.002.
+
+   <<citeproc_bib_item_15>>———. 2014. “USMART: An Unsupervised Semantic Mining Activity Recognition Technique.” /ACM Transactions on Intelligent Interaction Systems/ 4 (4). https://dx.doi.org///10.1145/2662870.
+
+   <<citeproc_bib_item_16>>———. 2015. “KCAR: A Knowledge-Driven Approach for Concurrent Activity Recognition.” /Pervasive and Mobile Computing/ 19 (May): 47–70. https://dx.doi.org//10.1016/j.pmcj.2014.02.003.
+
+   <<citeproc_bib_item_17>>Zambonelli, Franco, Gabrialla Castelli, Laura Ferrari, Marco Mamei, Alberto Rosi, Giovanna di Marzo Serugendo, Matteo Risoldi, et al. 2011. “Self-Aware Pervasive Service Ecosystems.” /Procedia Computer Science/ 7. Elsevier: 197–99. https://dx.doi.org//10.1016/j.procs.2011.09.006.
+
+   <<citeproc_bib_item_18>>Zambonelli, Franco, Andrea Omicini, Bernhard Anzengruber, Gabriella Castelli, Francesco DeAngelis, Giovanna di Marzo Serugendo, Simon Dobson, et al. 2015. “Developing Pervasive Multiagent Systems with Nature-Inspired Co-Ordination.” /Pervasive and Mobile Computing/ 17: 236–52. https://dx.doi.org//10.1016/j.pmcj.2014.12.002.
+   #+end:

@@ -1,0 +1,68 @@
+* Research
+
+** Current interests
+
+   My current research interests are in complex systems, in particular
+   how to represent and analyse them mathematically, and how to
+   simulate them computationally.
+
+   The representations I'm currently interested in most use network
+   science to study how processes flow over complex networks. However,
+   many processes can't be represented efficiently like this, and I'm
+   really interested in exploring some other approaches such as
+   simplicial topology, discrete calculus, differential geometry, and
+   discrete sheaves.
+
+   But I'm mainly a computer scientist, which makes me mainly a
+   tool-builder, and so the challenge of these problems for me is how
+   to represent and manipulate them efficiently and at scale. This has
+   resulted in my creating and maintaining several [[link:/development/projects][software libraries]]
+   to explore simulation and analysis.
+
+   I've worked on lots of [[link:/research/old-research-interests/][other topics]] in then past, and several large
+   [[link:/research/projects/][projects]].
+
+** Publications
+
+   - [[link:/research/publications][Publications]]
+   - [[link:/research/publications-by-year][Publications by year]]
+
+   #+begin_export html
+   <p>
+     <div class="text-left">
+       <p>
+	 <a href="https://risweb.st-andrews.ac.uk/portal/en/persons/simon-andrew-dobson(5db65bdc-bac2-429e-b668-3083f6bc0fc5).html">
+	   <img src="https://risweb.st-andrews.ac.uk/portal/resources/style/gfx/logo-foundation.svg" width="20%">
+	   &nbsp; PURE research profile
+	 </a>
+       <p>
+	 <a href="https://scholar.google.com/citations?user=AbJrH_EAAAAJ">
+	   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Scholar_logo_2015.PNG" width="20%">
+	   &nbsp; Google Scholar profile
+	 </a>
+       <p>
+	 <a href="https://orcid.org/0000-0001-9633-2103">
+	   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/ORCID_logo_with_tagline.svg/1200px-ORCID_logo_with_tagline.svg.png" width="20%">
+	   &nbsp; ORCID profile
+	 </a>
+       <p>
+	 <a href="https://dblp.org/pid/d/SimonADobson">
+	   <img src="https://dblp.org/img/logo.320x120.png" width="20%">
+	   &nbsp; dblp profile
+	 </a>
+     </div>
+   #+end_export
+
+
+
+** Current collaborators
+
+*** Research students
+
+    - Xue Guo: complex networks for urban spaces
+
+*** Postdocs
+
+    - Dr Peter Mann: clustered networks and their processes
+
+   See also my [[link:/research/former][former students and collaborators]].

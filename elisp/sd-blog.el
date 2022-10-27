@@ -50,6 +50,9 @@ This can be nil if Nikola is installed into the base system.")
 (defvar sd/nikola-post-format "orgmode"
   "Preferred format for blog posts.")
 
+(defvar sd/nikola-extra-args ""
+  "Extra arguments to Nikola when creating posts and pages.")
+
 
 ;; ---------- Nikola interface ----------
 
@@ -72,10 +75,14 @@ Return the filename for the post within the blog project, or nil.
 The format of the post is determined by the
 `sd/nikola-post-format' variable. Posts are stored in a Nikola
 project pointed to by the `sd/nikola-project' variable. Any
-arguments in `sd/nikola-args' are passed to Nikola."
+arguments in `sd/nikola-extra-args' are passed to Nikola.
+
+The post is constructed using the 2-file, separate metadata approach,
+to make sure that metadata can be extracted even when there is material
+ahead of it at the front of the file (as is needed by org mode posts)."
   (with-temp-buffer
-    (let ((args (format "--date-path --title='%s' --tags='%s' --format=%s"
-			title tags sd/nikola-post-format)))
+    (let ((args (format "--date-path -2 --title='%s' --tags='%s' --format=%s %s"
+			title tags sd/nikola-post-format sd/nikola-extra-args)))
       (sd/run-nikola "new_post" args)
 
       ;; see whether we succeeded, and extract the blog post filename if so
@@ -84,6 +91,35 @@ arguments in `sd/nikola-args' are passed to Nikola."
 	(if match
 	    ;; yes, return the filename within the project
 	    (match-string 1))))))
+
+(defun sd/nikola-blog-page (title place)
+  "Create a new Nikola page with the given TITLE and PLACE within the page structure.
+
+Return the filename for the post within the blog project, or nil.
+The format of the post is determined by the
+`sd/nikola-post-format' variable. Posts are stored in a Nikola
+project pointed to by the `sd/nikola-project' variable. Any
+arguments in `sd/nikola-extra-args' are passed to Nikola.
+
+The post is constructed using the 2-file, separate metadata approach,
+to make sure that metadata can be extracted even when there is material
+ahead of it at the front of the file (as is needed by org mode posts)."
+  (with-temp-buffer
+    (let ((args (format "-2 --title='%s' --format=%s %s"
+			title sd/nikola-post-format sd/nikola-extra-args
+			(concat "pages/" place))))
+      (sd/run-nikola "new_page" args)
+
+      ;; see whether we succeeded, and extract the page filename if so
+      (goto-char (point-min))
+      (let ((match (re-search-forward "INFO: new_post: Your page's text is at: \\(.*\\)" nil t)))
+	(if match
+	    ;; yes, return the filename within the project
+	    (match-string 1))))))
+
+(defun sd/nikola-metadata-file (fn)
+  "Return the separate metadata file for page or post FN."
+  (concat (file-name-sans-extensikon fn) ".meta"))
 
 
 ;; ---------- Blogging functions ----------
@@ -97,7 +133,8 @@ TITLE contains the title of the post, TAGS any tags added to it."
     (if fn
 	;; create a buffer onto the file
 	(let* ((blogfn (concat sd/nikola-project "/" fn))
-	       (buf (org-capture-target-buffer blogfn)))
+	       (buf (org-capture-target-buffer blogfn))
+	       (metafn (sd/nikola-metadata-file blogfn)))
 	  (set-buffer buf)
 
 	  ;; make sure attachments get published
@@ -105,11 +142,14 @@ TITLE contains the title of the post, TAGS any tags added to it."
 	  (let ((rel "../../../../files/attachments"))
 	    ;; insert attachment link
 	    (insert (format "# -*- org-attach-id-dir: \"%s\"; -*-\n" rel))
-	    (newline)
 
 	    ;; set the attachments directory for the capture
 	    (make-local-variable 'org-attach-id-dir)
 	    (setq org-attach-id-dir rel))
+
+	  ;; insert link to the associated metadata file
+	  (insert (format "#+nikola-metadata: %s\n" metafn))
+	  (newline)
 
 	  ;; skip the leading comments (metadata) if present
 	  (let ((match (search-forward "#+END_COMMENT" nil t)))
@@ -134,6 +174,14 @@ TITLE contains the title of the post, TAGS any tags added to it."
 
       ;; uninformatively fail if we couldn't get the filename
       (error "Failed to create a new blog post"))))
+
+(defun sd/blog-page (title place)
+  (interactive "MTitle: \nMPlace: ")
+  (let ((fn (sd/nikola-blog-oage title place)))
+    (if fn
+	;; create buffrer onto page
+	(let* 9 (pagefn concat ))
+	)))
 
 (defun sd/blog-post-from-capture ()
   "Create a blog post from a capture template,

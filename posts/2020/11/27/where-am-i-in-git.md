@@ -3,9 +3,9 @@
 .. slug: where-am-i
 .. date: 2020-11-27 11:14:08 UTC
 .. tags: linux, git, bash
-.. category: development
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -41,19 +41,19 @@ configuration file:
 brname () {
     ingit=`git rev-parse --is-inside-work-tree 2>&1 2>/dev/null`
     if [ "$ingit" == "true" ]; then
-		gitdir=$(git rev-parse --show-toplevel)
-		prompt=$(basename $gitdir)
-		branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-		if [ "$branch" != "master" ]; then
-			prompt="$prompt:$branch"
-		fi
-		subdir=$(git rev-parse --show-prefix)
-		if [ -n "$subdir" ]; then
-			prompt="$prompt $subdir"
-		fi
-		echo "[$prompt]"
+        gitdir=$(git rev-parse --show-toplevel)
+        prompt=$(basename $gitdir)
+        branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+        if [ "$branch" != "master" ]; then
+            prompt="$prompt:$branch"
+        fi
+        subdir=$(git rev-parse --show-prefix)
+        if [ -n "$subdir" ]; then
+            prompt="$prompt $subdir"
+        fi
+        echo "[$prompt]"
     else
-		echo "simon"
+        echo "simon"
     fi
 }
 export PS1='$(brname)> '
@@ -62,6 +62,3 @@ export PS1='$(brname)> '
 Inside a repo this changes the ``bash`` prompt to show the project
 name, branch, and prefix path within the repo. Outside a repo, it
 just shows my name.
-
-
-

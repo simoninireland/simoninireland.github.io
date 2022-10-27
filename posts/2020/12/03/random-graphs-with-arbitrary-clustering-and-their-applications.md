@@ -3,10 +3,10 @@
 .. slug: random-graphs-clustering
 .. date: 2020-12-03 13:31:56 UTC
 .. tags: news, paper, pre, complex networks, clustered networks
-.. category: research
-.. link: 
+.. category:
+.. link:
 .. previewimage: /images/posts/20201203-good-fit.png
-.. description: 
+.. description:
 .. type: text
 -->
 
@@ -31,5 +31,3 @@ theoretical line, even as the system shows multiple phase transitions
 over its evolution, shows how good the model is.
 
 {{% bibitem ArbitraryClustering-PRE20 %}}
-
-

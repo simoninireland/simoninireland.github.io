@@ -4,10 +4,10 @@
 .. date: 2020-12-19 09:10:00 UTC
 .. updated: 2020-12-19 14:07:18 UTC
 .. tags: news, talk, complex networks, epidemic spreading, epydemic
-.. category: research
+.. category:
 .. previewimage: /images/posts/20201219-waterfall.png
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -29,12 +29,12 @@ that I found when looking at test-and-trace approaches.
 
 In retrospect I slightly regret including this in the book, as it's
 the one thing I'm not *sure* about: I still don't know if this is a
-"real" phenomenon or an artefact of simulation. 
+"real" phenomenon or an artefact of simulation.
 
 I got some nice questions, mainly focused on the covid-19 pandemic as
 you'd expect in the current times. Apparently there were about 75
 attendees form the UK, China, Germany, France, and Spain: the pandemic
 has been great for attendance at these virtual events! It's something
-that I hope persists as the pandemic subsides. 
+that I hope persists as the pandemic subsides.
 
 {{%bibitem ExploringEpidemics-20 %}}

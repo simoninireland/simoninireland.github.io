@@ -1,0 +1,51 @@
+* Contact me
+
+  #+begin_verse
+  **Professor Simon Dobson** FRSE CEng FBCS
+  Professor of Computer Science
+
+  [[https://www.st-andrews.ac.uk/computer-science][School of Computer Science]], [[https://www.st-andrews.ac.uk][University of St Andrews]]
+  Room 0.27, Jack Cole Building, North Haugh
+  St Andrews, Fife KY16 9SX, UK
+  ([[http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=St+Andrews,+Fife+KY16++9SX&sll=56.458032,-2.981972&sspn=0.491711,1.5065&ie=UTF8&hq=&hnear=Saint+Andrews,+Fife+KY16+9SX,+United+Kingdom&ll=56.341448,-2.804775&spn=0.007707,0.023539&t=h&z=16][map]])
+  #+end_verse
+
+  #+begin_export html
+  <br>
+  <div>
+    <span class="menuitemicon"><i class="fa fa-phone"/></span>
+    <span class="menuitemtext">+44 1334 461626</span>
+    <p>
+    <a href="mailto:simon.dobson@st-andrews.ac.uk">
+      <span class="menuitemicon"><i class="fa fa-envelope"/></span>
+      <span class="menuitemtext">Work email</span>
+    </a>
+    <p>
+    <a href="mailto:simoninireland@gmail.com">
+      <span class="menuitemicon"><i class="fa fa-envelope"/></span>
+      <span class="menuitemtext">Personal email</span>
+    </a>
+    <p>
+    <a href="https://github.com/simoninireland">
+      <span class="menuitemicon"><i class="fab fa-github"/></span>
+      <span class="menuitemtext">GitHub</span>
+    </a>
+    <p>
+    <a href="https://www.linkedin.com/in/simon-dobson-9006802/">
+      <span class="menuitemicon"><i class="fab fa-linkedin"/></span>
+      <span class="menuitemtext">LinkedIn</span>
+    </a>
+    <p>
+    <a href="https://facebook.com/simoninireland">
+      <span class="menuitemicon"><i class="fab fa-facebook"/></span>
+      <span class="menuitemtext">Facebook</span>
+    </a>
+
+    <p>
+    <br>
+    <a href="link:/publickey.asc">
+      <span class="menuitemicon"><i class="fa fa-key"/></span>
+      <span class="menuitemtext">GPG key</span>
+    </a>
+</div>
+  #+end_export

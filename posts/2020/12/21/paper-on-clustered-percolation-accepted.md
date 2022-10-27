@@ -3,10 +3,10 @@
 .. slug: clustered-percolation
 .. date: 2020-12-21 15:55:42 UTC
 .. tags: news, complex networks, percolation, clustering
-.. category: research
+.. category:
 .. previewimage: /images/posts/20201221-clustering.png
-.. link: 
-.. description: 
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -27,7 +27,7 @@ closely relate mathematically to how diseases spread. The main result
 is that clustering -- where there are triangles, squares and other
 cycles, as well as cliques and similar structures that "densify" the
 network locally -- have an effect on the threshold at which
-percolation happens or at which disease break out. 
+percolation happens or at which disease break out.
 
 ![Changing the percolation threshold](/images/posts/20201221-clustering.png)
 
@@ -42,6 +42,3 @@ Peter, my PhD student and the main author on both papers, for
 hanging-in when it seemed we might not make it into the venue we targeted.
 
 {{%bibitem PercolationHigherOrderClustering-PRE21 %}}
-
-
-

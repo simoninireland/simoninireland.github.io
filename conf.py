@@ -3,23 +3,29 @@
 import time
 import os
 
-BLOG_AUTHOR = "Simon Dobson"  # (translatable)
+# Basic information
 BLOG_TITLE = "Simon Dobson"  # (translatable)
+BLOG_AUTHOR = "Simon Dobson"  # (translatable)
+SHOW_BLOG_TITLE = False
 SITE_URL = "https://simondobson.org/"
-BLOG_EMAIL = "simon.dobson@computer.org"
+BLOG_EMAIL = "simoninireland@gmail.com"
 BLOG_DESCRIPTION = "Aut tace aut loquere meliora silentio"  # (translatable)
-
-INDEX_PATH = ''
-#INDEX_PAGES_MAIN = True
-INDEX_DISPLAY_POST_COUNT = 5
-INDEX_TEASERS = True
 
 SHOW_SOURCELINK = False
 COPY_SOURCES = False
 
+# Indices
+INDEX_PATH = 'indices'
+#INDEX_PAGES_MAIN = True
+INDEX_DISPLAY_POST_COUNT = 5
+INDEX_TEASERS = True
+
+# RSS feed
+FEED_TEASERS = True
 GENERATE_RSS = True
 GENERATE_ATOM = False
 
+# Extra data for the page headers
 EXTRA_HEAD_DATA = ''
 
 # Languages and translations
@@ -31,53 +37,17 @@ TRANSLATIONS = {
 }
 TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
-# Navigation menus
+# Theming
+THEME = 'adolf'
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/whats-happening/", "What's happening"),
-        (
-            (
-                ("/personal/about-me/", "Welcome"),
-                ("/personal/biography/", "Biography"),
-                ("/personal/contact/", "Contact"),
-            ),
-            "About"
-        ),
-        (
-            (
-                ("/research/research-interests/", "Current interests"),
-                ("/research/current-group/", "Current group"),
-                ("/research/publications/", "Publications"),
-                ("/research/publications-by-year/", "Publications by year"),
-                ("/research/bibliometrics/", "Bibliometrics"),
-            ),
-            "Research"
-        ),
-        (
-            (
-                ("/writing/essays/", "Essays"),
-                ("/writing/em-book/", "Epidemic modelling -- Some notes, maths, and code"),
-                ("/writing/cncp-book/", "Complex networks, complex processes"),
-                ("/writing/book-reviews", "Book reviews"),
-                ("/categories/", "Articles by topic"),
-                ("/archive.html", "Article by date"),
-            ),
-            "Writing"
-        ),
-        (
-            (
-                ("/development/epyc/", "epyc"),
-                ("/development/epydemic/", "epydemic"),
-                ("/development/simplicial/", "simplicial"),
-                ("/galleries/", "Photography"),
-            ),
-            "Current projects"
-        ),
-        ("/old-projects/", "Older projects"),
-    )
-}
-NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: (
+        ('/index.html', 'Home', 'fa fa-home'),
+        ('/personal/', 'About me', 'fa fa-user'),
+        ('/research/', 'Research', 'fa fa-lightbulb'),
+        ('/development/projects/', 'Software', 'fa fa-cogs'),
+        ('/writing/', 'Writing', 'fa fa-feather'),
+        ('/personal/contact/', 'Contact', 'fa fa-info-circle'),
+        ('/rss.xml', 'RSS', 'fa fa-rss'),
     )
 }
 
@@ -90,12 +60,13 @@ POSTS = (
     ("posts/*.ipynb", "", "post.tmpl"),
     ("posts/*.org", "", "post.tmpl"),
 )
+
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
-    ("pages/*.org", "", "post.tmpl"),
+    ("pages/*.org", "", "page.tmpl"),
 )
 
 # Galleries
@@ -125,45 +96,7 @@ EXTRA_HEAD_DATA += '''
 </script>
 '''
 
-# Licence in footer
-CONTENT_FOOTER = '''
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="/images/cc-by-nc-sa-4.0.png" /></a>
-'''
-
-# Font Awsome icons (for social media links)
-EXTRA_HEAD_DATA += '''
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-'''
-
-# Theming
-# THEME = "bootstrap4-jinja"
-# THEME_CONFIG = {
-#     DEFAULT_LANG: {
-#         # Show the latest featured post in a large box, with the previewimage as its background.
-#         'featured_large': False,
-#         # Show the first (remaining) two featured posts in small boxes.
-#         'featured_small': False,
-#         # Show featured posts on mobile.
-#         'featured_on_mobile': True,
-#         # Show image in `featured_large` on mobile.
-#         # `featured_small` displays them only on desktop.
-#         'featured_large_image_on_mobile': True,
-#         # Strip HTML from featured post text.
-#          'featured_strip_html': False,
-#         # Contents of the sidebar, If empty, the sidebar is not displayed.
-#         'sidebar': ''
-#     }
-# }
-THEME = "canterville"
-LOGO_URL = '/images/180213-0001.jpg'
-GLOBAL_CONTEXT = {
-        'TWITTER_URL': 'https://twitter.com/simoninireland',
-        'GITHUB_URL': 'https://github.com/simoninireland',
-        'LINKEDIN_URL': "https://www.linkedin.com/in/simon-dobson-9006802/",
-        'BANNER_URL': '/assets/img/silk-road.jpg'
-}
-
-# Allow the old-style $...$ syntax fore inline maths
+# Allow the old-style $...$ syntax for inline MathJax maths
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -180,43 +113,66 @@ MathJax.Hub.Config({
 </script>
 """
 
-# Feeds for continuous import
-since = '1 Jan 1970'
-if os.path.isfile('imported.txt'):
-    # only import entries from last timestamp, if present
-    with open('imported.txt', 'r') as f:
-        since = f.read()
+# Filters
+import datetime
+import dateparser
 
+def j2_dayonly_filter(d):
+    '''Fix timestamps to only include the day on which something
+    happened, and lose time and timezone information. This is needed
+    to make Goodreads timestamps sensible.
+
+    :param d: the timestamp, as a string
+    :returns: the timestamp string with only its day-month-year components'''
+    ts = dateparser.parse(d)
+    return ts.strftime("%d %B %Y")
+
+TEMPLATE_FILTERS= {
+    "dayonly":  j2_dayonly_filter
+}
+
+# Feeds for continuous import
+# Regular version: get the latest posts
 FEEDS = {
     'goodreads': {
         'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read',
-        #'url': ['https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=1',
-        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=2',
-        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=3',
-        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=4',
-        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=5',
-        #        'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page=6',
-        #        ],
         'output_folder': 'posts/goodreads',
         'template': 'goodreads.tmpl',
         'format': 'html',
         'lang': 'en',
-        'category': 'writing',
-        'tags': 'books, reviews, goodreads',
-        'start_at': since,
+        'category': 'book-reviews',
+        'tags': 'books, reviews',
         'metadata': {
             'title': 'title',
             'previewimage': 'book_medium_image_url',
             'date': ['user_read_at', 'user_date_added', 'published'],
-            'tags': ['user_shelves'],
+            'tags': 'user_shelves',
             }
         }
     }
 
+# Refill version: get all posts
+# FEEDS = {}
+# for p in range(1, 6):
+#     FEEDS['goodreads-{}'.format(p)] = {
+#         'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page={}'.format(p),
+#         'output_folder': 'posts/goodreads',
+#         'template': 'goodreads.tmpl',
+#         'format': 'html',
+#         'lang': 'en',
+#         'category': 'book-reviews',
+#         'tags': 'books',
+#         'metadata': {
+#             'title': 'title',
+#             'previewimage': 'book_medium_image_url',
+#             'date': ['user_read_at', 'user_date_added', 'published'],
+#             'tags': 'user_shelves',
+#             }
+#         }
+
 # Tag cloud
 RENDER_STATIC_TAG_CLOUDS = {
     'tags': {
-        'name': 'tcs',
         'filename': 'tagcloud.inc.html',
         'taxonomy_type': 'tag',
         'style_filename': 'assets/css/tagcloud.inc.css',

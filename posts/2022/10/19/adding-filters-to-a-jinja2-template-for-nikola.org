@@ -1,0 +1,62 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+
+* Adding filters to a Jinja2 template for Nikola
+
+  The [[https://jinja.palletsprojects.com/en/3.0.x/][Jinja2]] template engine defines a suite of [[https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters][filters]] that can be
+  used to transform text as it's rendered. You can define extra custom
+  filters, and also make them available within [[https://getnikola.com/][Nikola]] templates (as
+  long as the theme uses Jinja as its template engine, of course.)
+
+  {{{TEASER_END}}}
+
+  I needed this to fix the import of data from an RSS feed using the
+  [[https://plugins.getnikola.com/v7/continuous_import/][continuous import plugin]]. Specifically I'm getting book reviews from
+  [[https://goodreads.com][Goodreads]], where the timestamps of when I finished a book come down
+  in a too-detailed format -- for example including the time and
+  timezone of the Goodreads server, not of me. To change this I need
+  to take the timestamp from the RSS feed (as a string), turn it into
+  a Python ~datetime~ object, and then generate a new string with less
+  information.
+
+  There are two parts to this: defining the filter, and then
+  installing it into Nikola. The definition is straightforward, just a
+  Python function,and I included it directly into ~conf.py~:
+
+  #+begin_src python :export none
+# Filters
+import datetime
+import dateparser
+
+def j2_dayonly_filter(d):
+    '''Fix timestamps to only include the day on which something
+    happened, and lose time and timezone information. This is needed
+    to make Goodreads timestamps sensible.
+
+    :param d: the timestamp, as a string
+    :returns: the timestamp string with only its day-month-year components'''
+    ts = dateparser.parse(d)
+    return ts.strftime("%d %B %Y")
+  #+end_src
+
+  To make the filter available you *don't* use the Jinja2 environment
+  registration mechanism, but instead include it into Nikola's
+  ~TEMPLATE_FILTERS~ dict:
+
+  #+begin_src python :export none
+TEMPLATE_FILTERS= {
+    "dayonly":  j2_dayonly_filter
+}
+  #+end_src
+
+  The filter can then be used in a template, for example:
+
+  #+begin_src html
+{% if item.user_read_at %}
+   Finished {{ item.user_read_at|dayonly }}.
+{% endif %}
+  #+end_src
+
+  which pipes the ~item.user_read_at~ field of the Goodreads RSS feed
+  into the filter for display. If I define more filters I'll move them
+  into their own file and then ~import~ that into ~conf.py~, just for
+  a clean decomposition.

@@ -51,7 +51,7 @@
 ;; relative to the plugin
 (setq base-dir (let ((here (file-name-directory load-file-name)))
 		 (expand-file-name "../.." here)))
-(setq base-dir (expand-file-name "~/programming/simoninireland.github.io"))
+;;(setq base-dir (expand-file-name "~/programming/simoninireland.github.io"))
 (setq pub-dir (expand-file-name "./output" base-dir)
       attachments-base-dir (expand-file-name "./files/attachments" base-dir)
       attachments-pub-dir (expand-file-name "./attachments" pub-dir))
@@ -78,17 +78,25 @@ This is essentially where it'll end up in the output directory."
     (org-attach-publish--join-path (cdr almost-path))))
 
 
+(defun sd/blog--update-link-path (l rel)
+  "Update a link L to use path REL.
+
+This change the link to be the magic `img-url' type so
+it doesn't get re-written."
+  (org-element-put-property l :type "img-url")
+  (org-element-put-property l :path rel))
+
 (defun sd/blog--export-as-html (&optional async subtreep visible-only body-only ext-plist)
   "Export the current buffer to a new one containing its rendered HTML.
 
 This uses the 'ox-attach-publish' machinery to handle attachments in pages,
 re-directing attachment links to the correct published location.
 
-We make use of the fact that w#'re a Nikola plug-in to find the locations
+We make use of the fact that we're a Nikola plug-in to find the locations
 of the various Nikola content directories."
   (interactive)
   (let* ((old-hooks org-export-before-parsing-hook)
-	 (org-export-before-parsing-hook old-hooks))     ; dynamic re-binding
+	 (org-export-before-parsing-hook old-hooks))  ; dynamic re-binding
 
     ;; remove the default link-expansion function from the hook
     (remove-hook 'org-export-before-parsing-hook #'org-attach-expand-links)
@@ -112,3 +120,9 @@ of the various Nikola content directories."
 
 ;; Call this function instead of the standard one used within `nikola-html-export'
 (advice-add 'org-html-export-as-html :override #'sd/blog--export-as-html)
+
+
+;; Re-write image file links to use img-url: type
+(advice-add 'org-attach-publish--update-link-path :override #'sd/blog--update-link-path)
+
+(setq org-image-actual-width nil)

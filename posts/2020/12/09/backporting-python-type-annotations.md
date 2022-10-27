@@ -3,9 +3,9 @@
 .. slug: backporting-python-types
 .. date: 2020-12-09 10:45:43 UTC
 .. tags: python, programming, epyc, epydemic
-.. category: development
-.. link: 
-.. description: 
+.. category:
+.. link:
+.. description:
 .. type: text
 -->
 
@@ -50,13 +50,13 @@ can be attached to method declarations and object attributes:
 
 ```python
 class A:
-	name : str = 'my name'
-	
-	def __init__(self, v : str =None):
-		self.value = v
-		
-	def value(self) -> str:
-		return self.v
+    name : str = 'my name'
+
+    def __init__(self, v : str =None):
+        self.value = v
+
+    def value(self) -> str:
+        return self.v
 ```
 
 Hopefully self-explanatory, and note that it doesn't need any special
@@ -67,19 +67,19 @@ lists or dicts, then we need some more machinery:
 from typing import List, Dict, Any
 
 class B:
-	names : List[str] = []
-	values : List[Any] = []
-	
-	def addPair(self, n: str, v : Any) -> Any:
-		names.append(n)
-		values.append(v)
-		return v
-		
-	def asDict(self) -> Dict[str, Any]:
-		d = dict()
-		for i in range(len(names)):
-			d[names[i]] = values[i]
-		return d
+    names : List[str] = []
+    values : List[Any] = []
+
+    def addPair(self, n: str, v : Any) -> Any:
+        names.append(n)
+        values.append(v)
+        return v
+
+    def asDict(self) -> Dict[str, Any]:
+        d = dict()
+        for i in range(len(names)):
+            d[names[i]] = values[i]
+        return d
 ```
 
 Note that ``List[]`` and ``Dict[]`` are *type constructors* taking
@@ -95,8 +95,8 @@ The obvious approach is:
 
 ```python
 class C:
-	def meAgain(self) -> C:
-		return self
+    def meAgain(self) -> C:
+        return self
 ```
 
 Surprisingly this will fail, as ``C`` isn't in scope in its own
@@ -108,8 +108,8 @@ an import from the ``__future__`` module:
 from __future__ import annotations
 
 class C:
-	def meAgain(self) -> C:    # now typechecks
-		return self
+    def meAgain(self) -> C:    # now typechecks
+        return self
 ```
 
 (Remember that ``__future__`` imports have to appear as the first code
@@ -138,7 +138,7 @@ Suppose you have an attribute that you want to be constant. The
 from typing import List, Final
 
 class D
-	VERSION : Final[str] = '1.2.1'
+    VERSION : Final[str] = '1.2.1'
 ```
 
 ``Final[]`` wasn't added to ``typing`` until Python 3.8, though, so
@@ -149,13 +149,13 @@ features which can be imported if needed:
 ```python
 import sys
 if sys.version_info >= (3, 8):
-	from typing import List, Final
+    from typing import List, Final
 else:
-	from typing import List
-	from typing_extensions import Final
+    from typing import List
+    from typing_extensions import Final
 
 class D
-	VERSION : Final[str] = '1.2.1'
+    VERSION : Final[str] = '1.2.1'
 ```
 
 (The
@@ -218,8 +218,8 @@ more general objects. So to annotate self types portably, replace the
 #from __future__ import annotations
 
 class C:
-	def meAgain(self) -> 'C':
-		return self
+    def meAgain(self) -> 'C':
+        return self
 ```
 
 I find this very messy -- but again, if you want portability, it's a
@@ -235,7 +235,7 @@ fail with a syntax error when run on Python 3.5:
 
 ```python
 class E:
-	v : str = 'my value'
+    v : str = 'my value'
 ```
 
 And as far as I can tell there's nothing to be done about this: the
@@ -257,8 +257,3 @@ just for method signatures and attributes. The backporting isn't
 perfect but at least it's possible, and it extends the usefulness of
 codebases without overly complicating things. I find that quite
 a Pythonic idea.
-
-
-
-
-
