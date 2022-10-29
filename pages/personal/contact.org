@@ -26,9 +26,25 @@
       <span class="menuitemtext">Personal email</span>
     </a>
     <p>
+    <a href="link:/publickey.asc">
+      <span class="menuitemicon"><i class="fa fa-key"/></span>
+      <span class="menuitemtext">GPG key</span>
+    </a>
+    <p>
+    <br>
     <a href="https://github.com/simoninireland">
       <span class="menuitemicon"><i class="fab fa-github"/></span>
       <span class="menuitemtext">GitHub</span>
+    </a>
+    <p>
+    <a href="https://www.twitter.com/simoninireland">
+      <span class="menuitemicon"><i class="fab fa-twitter"/></span>
+      <span class="menuitemtext">Twitter</span>
+    </a>
+    <p>
+    <a href="https:/mastodon.scot/@simoninireland/">
+      <span class="menuitemicon"><i class="fab fa-mastodon"/></span>
+      <span class="menuitemtext">Mastodon</span>
     </a>
     <p>
     <a href="https://www.linkedin.com/in/simon-dobson-9006802/">
@@ -40,12 +56,12 @@
       <span class="menuitemicon"><i class="fab fa-facebook"/></span>
       <span class="menuitemtext">Facebook</span>
     </a>
-
+<!--
     <p>
-    <br>
-    <a href="link:/publickey.asc">
-      <span class="menuitemicon"><i class="fa fa-key"/></span>
-      <span class="menuitemtext">GPG key</span>
+    <a href="https://youtube.com/@simoninireland">
+      <span class="menuitemicon"><i class="fab fa-youtube"/></span>
+      <span class="menuitemtext">YouTube</span>
     </a>
+-->
 </div>
   #+end_export
