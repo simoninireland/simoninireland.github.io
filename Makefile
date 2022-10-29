@@ -36,9 +36,7 @@ BUILD_DIR = output
 THEMES_DIR = themes
 PLUGINS_DIR = plugins
 
-# Themes and plug-ins to download
-THEMES = \
-	bootstrap3-jinja
+# Plug-ins to download
 PLUGINS = \
 	orgmode \
 	static_tag_cloud \
@@ -77,25 +75,21 @@ update-dblocks:
 	$(foreach f, $(DB_REFRESH_FILES), --eval "(sd/update-dblocks-in-file (expand-file-name \"$f\"))")
 
 # Build the environment
-env: $(VENV) $(THEMES_DIR) $(PLUGINS_DIR) continuous_import_mod extras
+env: $(VENV) $(PLUGINS_DIR) $(PLUGINS_DIR)/continuous_import extras
 
 $(VENV):
 	$(PYTHON) -m venv $(VENV)
 	$(ACTIVATE) && $(PIP) install -U pip wheel && $(PIP) install -r $(REQUIREMENTS)
 
-$(THEMES_DIR):
-	$(MKDIR) $(THEMES_DIR)
-	$(foreach t, $(THEMES), $(ACTIVATE) && $(NIKOLA) theme -i $t)
-
 $(PLUGINS_DIR):
 	$(MKDIR) $(PLUGINS_DIR)
 	$(foreach p, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $p)
-	$(CP) elisp/orgmode-conf.py plugins/orgmode/conf.py
+	$(CP) elisp/orgmode-conf.el plugins/orgmode/conf.py
 
 # Checkout the modified continuous_import plugin from the forked repo,
 # until it gets merged with the main tree
 # see https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo
-continuous_import_mod:
+$(PLUGINS_DIR)/continuous_import:
 	$(CHDIR) $(PLUGINS_DIR) && $(SVN) checkout https://github.com/simoninireland/nikola-plugins/branches/categories-merged-tags/v7/continuous_import
 
 extras: plugins/orgmode/conf.el
@@ -111,4 +105,4 @@ clean:
 # Clean up the environment as well
 .PHONY: reallyclean
 reallyclean: clean
-	$(RM) $(VENV) $(THEMES_DIR) $(PLUGINS_DIR)
+	$(RM) $(VENV) $(PLUGINS_DIR)
