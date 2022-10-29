@@ -124,5 +124,3 @@ of the various Nikola content directories."
 
 ;; Re-write image file links to use img-url: type
 (advice-add 'org-attach-publish--update-link-path :override #'sd/blog--update-link-path)
-
-(setq org-image-actual-width nil)
