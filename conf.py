@@ -39,6 +39,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 # Theming
 THEME = 'adolf'
+USE_BUNDLES = False
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/index.html', 'Home', 'fa fa-home'),
