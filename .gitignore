@@ -10,7 +10,6 @@ flycheck_*
 .doit.db
 output/
 cache/
-themes/
 plugins/
 ltximg/
 
