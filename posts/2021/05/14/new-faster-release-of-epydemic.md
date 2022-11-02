@@ -18,7 +18,7 @@ It's a fairly incremental set of changes, but dominated by a roughly
 7x speed increase that came from replacing the implementation of event
 loci with a dedicated data structure rather than using Python's
 built-in `set` implementation -- and replacing one line of code
-without about 500 lines. This removed a constraint whose complexity
+with about 500 lines. This removed a constraint whose complexity
 was linear in the number of edges due to an accident of coding
 (*i.e.*, due to my stupidity), and replaced it with something that was
 both significantly faster and significantly more scalable.
