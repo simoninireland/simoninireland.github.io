@@ -292,7 +292,7 @@ PARAMS should contain a key ':file' pointing to a bibfile that will be presented
 	       ;; cycle back through the years
 	       ;; (needs to be made more automatic)
 	       ;; (also needs to be forward or backwards)
-	       (dolist (year (number-sequence 2022 1992 -1))
+	       (dolist (year (number-sequence 2022 1991 -1))
 		 (let ((bibyear (sd/parsebib--create-bibliography-year 'org year bibfile csl-style-locale)))
 		   (insert (format "\n** %d\n" year))
 		   (newline)
