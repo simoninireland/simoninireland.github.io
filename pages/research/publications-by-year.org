@@ -4,24 +4,34 @@
 
 * Publications by year
 
+** Submitted and under review
+
+#+begin: sd/bibliography :key category :value submitted
+<<citeproc_bib_item_1>>Peter Mann, Lei Fang, and Simon Dobson. /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
+
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson. /Belief Propagation on Networks with Cliques and Chordless Cycles/. Submitted to Physical Review E.
+#+end:
+
 #+begin: sd/bibliography-by-year :file /home/sd80/personal/dict/sd.bib
 ** 2022
 
-<<citeproc_bib_item_1>>Simon Dobson. /[[https://doi.org/10.5281/zenodo.6912247][Epydemic: Epidemic Simulation on Networks]]/. 2022. Python library.
+<<citeproc_bib_item_1>>Simon Dobson. /[[https://doi.org/10.5281/zenodo.7086246][Simplicial: Simplicial Topology in Python]]/. 2022. Python library.
 
-<<citeproc_bib_item_2>>Simon Dobson. /[[https://doi.org/10.21105/joss.03764][epyc: Computational Experiment Management in Python]]/. Journal of Open-Source Software *7*. 2022.
+<<citeproc_bib_item_2>>Simon Dobson. /[[https://doi.org/10.5281/zenodo.6912247][Epydemic: Epidemic Simulation on Networks]]/. 2022. Python library.
 
-<<citeproc_bib_item_3>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /A Population Model of Interacting SARS-CoV-2 Variants/. In /Proceedings of the BIFI International Conference on the Science of Covid-19: From Molecular Drug Design to Data-Driven Epidemiological Models/. Zaragoza, ES. 2022.
+<<citeproc_bib_item_3>>Simon Dobson. /[[https://doi.org/10.21105/joss.03764][epyc: Computational Experiment Management in Python]]/. Journal of Open-Source Software *7*. 2022.
 
-<<citeproc_bib_item_4>>Simon Dobson. /Sensor Tensors/. 2022. Invited talk for LEISYS’2022.
+<<citeproc_bib_item_4>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /A Population Model of Interacting SARS-CoV-2 Variants/. In /Proceedings of the BIFI International Conference on the Science of Covid-19: From Molecular Drug Design to Data-Driven Epidemiological Models/. Zaragoza, ES. 2022.
 
-<<citeproc_bib_item_5>>Simon Dobson. /[[https://simondobson.org/softcopy/sensor-placement-cork-22.pdf][Sensor Interpretation Data Wrangling]]/. 2022. Invited talk to the School of Computer Science and Information Technology, University College Cork.
+<<citeproc_bib_item_5>>Simon Dobson. /Sensor Tensors/. 2022. Invited talk for LEISYS’2022.
 
-<<citeproc_bib_item_6>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
+<<citeproc_bib_item_6>>Simon Dobson. /[[https://simondobson.org/softcopy/sensor-placement-cork-22.pdf][Sensor Interpretation Data Wrangling]]/. 2022. Invited talk to the School of Computer Science and Information Technology, University College Cork.
 
-<<citeproc_bib_item_7>>Simon Dobson. /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
+<<citeproc_bib_item_7>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
 
-<<citeproc_bib_item_8>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
+<<citeproc_bib_item_8>>Simon Dobson. /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
+
+<<citeproc_bib_item_9>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson. /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
 
 ** 2021
 
@@ -612,4 +622,8 @@
 ** 1992
 
 <<citeproc_bib_item_1>>Simon Dobson and Andy Wellings. /[[https://simondobson.org/softcopy/scalable-parallel-applications-92.pdf][A System for Building Scalable Parallel Applications]]/. In /Programming Environments for Parallel Computing/, pp.218–230. Nigel Topham, Roland Ibbett, and Thomas Bemmerl, editors. North Holland Elsevier. 1992.
+
+** 1991
+
+<<citeproc_bib_item_1>>Simon Dobson and Andy Wellings. /Programming Highly Parallel General-Purpose Applications/. In /Proceedings of the First BCS Workshop on Abstract Machine Models for Highly Parallel Computing/. University of Leeds. 1991.
 #+end:

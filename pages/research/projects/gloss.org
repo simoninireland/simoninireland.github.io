@@ -1,4 +1,5 @@
 # -*- org-attach-id-dir: "../../../files/attachments"; -*-
+#+CSL-STYLE: ../../../files/complete-online.csl
 
 * GLOSS                                                              :ATTACH:
   :PROPERTIES:
@@ -52,7 +53,7 @@
 ** Publications
 
    #+begin: sd/bibliography :key keywords :value GLOSS
-   <<citeproc_bib_item_1>>Coutaz, Joëlle, James Crowley, Simon Dobson, and David Garlan. 2005. “Context Is Key.” /Communications of the ACM/ 48 (3): 49–53. https://dx.doi.org//10.1145/1047671.1047703.
+   <<citeproc_bib_item_1>>Joëlle Coutaz, James Crowley, Simon Dobson, and David Garlan. /[[https://dx.doi.org//10.1145/1047671.1047703][Context Is Key]]/. Communications of the ACM *48*, pp.49–53. 2005.
 
-   <<citeproc_bib_item_2>>Dobson, Simon, and Paddy Nixon. 2004. “More Principled Design of Pervasive Computing Systems.” In /Human Computer Interaction and Interactive Systems/, edited by Rémi Bastide and Jörg Roth. Vol. 3425. LNCS. Springer Verlag. https://simondobson.org/softcopy/EHCI-04.pdf.
+   <<citeproc_bib_item_2>>Simon Dobson and Paddy Nixon. /[[https://simondobson.org/softcopy/EHCI-04.pdf][More Principled Design of Pervasive Computing Systems]]/. In /Human Computer Interaction and Interactive Systems/. Rémi Bastide and Jörg Roth, editors. Vol.3425. Springer Verlag. 2004.
    #+end:
