@@ -1,0 +1,7 @@
+[Theme]
+engine = jinja
+parent = base-jinja
+author = Simon Dobson
+author_url = https://simondobson.org
+based_on = zen-jinja <https://themes.getnikola.com/v8/zen-jinja/>, John Gruber's Daring Fireball <https://daringfireball.net>, Dave Winer's Scripting News <http://scripting.com>, and Martin McCallion's gruberwine <https://themes.getnikola.com/v8/gruberwine/>
+license: MIT

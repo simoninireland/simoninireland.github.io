@@ -1,0 +1,25 @@
+{#  -*- coding: utf-8 -*- #}
+
+{# Insert a bar of social media links to share article to #}
+{% macro social_posters(url) %}
+  <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u={{ url }}"
+	 title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"/></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url={{ url }}"
+       title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url={{ url }}"
+       title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text={{ url }}"
+       title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+{% endmacro %}
