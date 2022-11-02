@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adding filters to a Jinja2 template for Nikola | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../../goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/" title="We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News" type="text/html">
+<link rel="next" href="../../../../goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/" title="Atoms and Ashes: A Global History of Nuclear Disasters" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Adding filters to a Jinja2 template for Nikola">
+<meta property="og:url" content="https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/">
+<meta property="og:description" content="Adding filters to a Jinja2 template for Nikola
+
+
+The Jinja2 template engine defines a suite of filters that can be
+used to transform text as it's rendered. You can define extra custom
+filters, and als">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-10-19T12:08:59+01:00">
+<meta property="article:tag" content="jinja2">
+<meta property="article:tag" content="nikola">
+<meta property="article:tag" content="publishing">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Adding filters to a Jinja2 template for Nikola</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2022-10-19T12:08:59+01:00" itemprop="datePublished" title="2022-10-19 12:08">
+		2022-10-19 12:08
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2022/10/19/adding-filters-to-a-jinja2-template-for-nikola.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/jinja2/" rel="tag">jinja2</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/nikola/" rel="tag">nikola</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/publishing/" rel="tag">publishing</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/python/" rel="tag">python</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div id="outline-container-org547bc84" class="outline-2">
+<h2 id="org547bc84">Adding filters to a Jinja2 template for Nikola</h2>
+<div class="outline-text-2" id="text-org547bc84">
+<p>
+The <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja2</a> template engine defines a suite of <a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters">filters</a> that can be
+used to transform text as it's rendered. You can define extra custom
+filters, and also make them available within <a href="https://getnikola.com/">Nikola</a> templates (as
+long as the theme uses Jinja as its template engine, of course.)
+</p>
+
+<!-- TEASER_END -->
+
+<p>
+I needed this to fix the import of data from an RSS feed using the
+<a href="https://plugins.getnikola.com/v7/continuous_import/">continuous import plugin</a>. Specifically I'm getting book reviews from
+<a href="https://goodreads.com">Goodreads</a>, where the timestamps of when I finished a book come down
+in a too-detailed format – for example including the time and
+timezone of the Goodreads server, not of me. To change this I need
+to take the timestamp from the RSS feed (as a string), turn it into
+a Python <code>datetime</code> object, and then generate a new string with less
+information.
+</p>
+
+<p>
+There are two parts to this: defining the filter, and then
+installing it into Nikola. The definition is straightforward, just a
+Python function,and I included it directly into <code>conf.py</code>:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="c1"># Filters</span>
+  <span class="kn">import</span> <span class="nn">datetime</span>
+  <span class="kn">import</span> <span class="nn">dateparser</span>
+
+  <span class="k">def</span> <span class="nf">j2_dayonly_filter</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+      <span class="sd">'''Fix timestamps to only include the day on which something</span>
+<span class="sd">      happened, and lose time and timezone information. This is needed</span>
+<span class="sd">      to make Goodreads timestamps sensible.</span>
+
+<span class="sd">      :param d: the timestamp, as a string</span>
+<span class="sd">      :returns: the timestamp string with only its day-month-year components'''</span>
+      <span class="n">ts</span> <span class="o">=</span> <span class="n">dateparser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">ts</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> %B %Y"</span><span class="p">)</span>
+</pre></div>
+
+<p>
+To make the filter available you <b>don't</b> use the Jinja2 environment
+registration mechanism, but instead include it into Nikola's
+<code>TEMPLATE_FILTERS</code> dict:
+</p>
+
+<div class="highlight"><pre><span></span>  <span class="n">TEMPLATE_FILTERS</span><span class="o">=</span> <span class="p">{</span>
+      <span class="s2">"dayonly"</span><span class="p">:</span>  <span class="n">j2_dayonly_filter</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>
+The filter can then be used in a template, for example:
+</p>
+
+<div class="highlight"><pre><span></span>  {% if item.user_read_at %}
+     Finished {{ item.user_read_at|dayonly }}.
+  {% endif %}
+</pre></div>
+
+<p>
+which pipes the <code>item.user_read_at</code> field of the Goodreads RSS feed
+into the filter for display. If I define more filters I'll move them
+into their own file and then <code>import</code> that into <code>conf.py</code>, just for
+a clean decomposition.
+</p>
+</div>
+</div>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../../goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/" rel="prev" title="We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../../goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/" rel="next" title="Atoms and Ashes: A Global History of Nuclear Disasters">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/",
+        disqus_title="Adding filters to a Jinja2 template for Nikola",
+        disqus_identifier="cache/posts/2022/10/19/adding-filters-to-a-jinja2-template-for-nikola.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

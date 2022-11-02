@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layered abstractions and Russian dolls | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2012/06/14/russian-dolls/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../../goodreads/1776/" title="1776" type="text/html">
+<link rel="next" href="../../19/asensis/" title="Workshop on naturally-inspired service ecosystems" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Layered abstractions and Russian dolls">
+<meta property="og:url" content="https://simondobson.org/2012/06/14/russian-dolls/">
+<meta property="og:description" content="The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?
+
+Anyone who's built a large piece of software knows that">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-06-14T08:00:52+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="compilers">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="software engineering">
+<meta property="article:tag" content="virtualisation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Layered abstractions and Russian dolls</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2012-06-14T08:00:52+01:00" itemprop="datePublished" title="2012-06-14 08:00">
+		2012-06-14 08:00
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2012/06/14/russian-dolls.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/blog/" rel="tag">Blog</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/compilers/" rel="tag">compilers</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/programming/" rel="tag">programming</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/software-engineering/" rel="tag">software engineering</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/virtualisation/" rel="tag">virtualisation</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p></p>
+<p>The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?</p>
+<!--more-->
+<p>Anyone who's built a large piece of software knows that much of the effort is in managing the complexity of the project: which other software a piece of code relies on, how to keep the various aspects separate, how to manage changes and upgrades, and so on. This isn't something that's got easier over time: it has for a given code size and style, as we've understood build processes and dependency management better; but the code sizes have relentlessly increased to compensate for our improved understanding; and modern practices don't make life any easier. Downloaded code, dynamic modules and classes, client-server and the like all generate their own intrinsic complexity.</p>
+<p>One of the biggest sources of complexity is the use of multiple applications, especially in enterprise systems. A typical e-commerce system, for example, will make use of a web server to present pages (which themselves might contain embedded JavaScript for client-side processing), a database to track orders and inventory, a procurement system to fulfil orders, and possibly a supply-chain management system to order new inventory. That's the application. Then there'll be the operating system, a logging facility, a facilities management system, and a load of administrative tools and scripts. And the operating system may itself be virtualised and running as a guest within another, host operating system and hypervisor, which needs its own toolset. The interactions between these tools can be mind-boggling.</p>
+<p>Someone once asked: who knows how to work the <a href="http://httpd.apache.org/" target="_blank">Apache web server</a>? It sounds like a simple question -- any competent web manager? the main developers? -- but the sting in the tail is that Apache is very configurable: so configurable, in fact, that it's pretty much impossible to work out what a given combination of options will do (or, conversely, what combination of options to use to achieve a given effect). The interactions are just too complicated, and the web abounds with examples where interactions between (for example) the thread pool size, the operating system block size, and the Java virtual machine parameters conspire to crash a system that looks like it should be working fine. If you can't work one server properly -- one component of the system -- what hope is there to get a complete system humming along?</p>
+<p><a href="http://blogs.cs.st-andrews.ac.uk/al/" target="_blank">Al Dearle</a> and I have been talking about this for a while. The basic issue seems to be an interaction between decomposition and dependency. In other words, the complexity comes at the "seams" between the various sub-systems, and is magnified the more configurable the components on either side of the seam are. This is important, because systems are becoming more finely decomposed: the move to component software, software-as-a-service and the like all increase the number of seams. Al's image of this is that modern systems are like Russian dolls, where each supposedly independent component contains more components that influence the size and complexity of the component containing them. You can only simplify any individual piece so far, because it depends on so many other pieces.</p>
+<p>Actually a lot of the seams are now unnecessary anyway. Going back to the e-commerce example, the operating system goes to great pains to provide a process abstraction to keep the components separate -- to stop faults in the database affecting the web server, for example. Historically this made perfect sense and prevented a single faulty process in a time-sharing system affecting the processes of other users. Nowadays, however, it makes considerably less sense, for a number of reasons. Firstly, all the components are owned by a single nominal user (although there are still good reasons for separating the root user from the application user), so the security concerns are less pronounced. Secondly, all the components depend on each other, so a crash in the database will effectively terminate the web server anyway. (We're simplifying, but you get the idea.) Finally, there's a good chance that the web server, database and so on are each running in their own virtual machine, so there's only one "real" process per machine (plus all the supporting processes). The operating system is offering protection that isn't needed, because it's being provided (again) by the hypervisor running the virtual machines and perhaps (<em>again</em>) by the host operating system(s) involved.</p>
+<p>We also tend to build very flexible components (like Apache), which can deal with multiple simultaneous connections, keep users separate, allow modules to be loaded and unloaded dynamically -- behave like small operating systems, in other words, replicating the OS functionality again at application level. This is despite the fact that, in enterprise configurations, you'll probably know in advance the modules to be loaded and have a single user (or small user population) and fixed set of interactions: the flexibility makes the component more complex for no net gain during operation. Although it might simplify configuration and evolution slightly, there are often other mechanisms for this: in a cloud environment one can spin-up a replacement system in an evolved state and then swap the set of VMs over cleanly.</p>
+<p>It's easy to think that this makes no difference for modern machines, but that's probably not the case. All these layers still need to be resourced; more importantly, they still need to be managed, maintained and secured, which take time to do well -- with a result that they typically get done badly (if at all).</p>
+<p>Can we do anything about it? One thought is that the decomposition that makes thinking about systems and programming easier makes executing those systems more complex and fragile. In many cases, once the system is configured appropriately, flexibility becomes an enemy: it'll often be too complicated to re-configure or optimise in a live environment anyway. There may be a reason to have Russian dolls when <em>designing</em> a system, but once designed it's better to make each doll solid to remove the possibility of then opening-up and falling apart.</p>
+<p>So it's not decomposition that's the issue, it's <em>decomposition manifested at run-time</em>. When we add new abstractions to systems, we typically add them in the form of components or libraries that can be called from other components. These components are often general, with lots of parameters and working with multiple clients -- sound familiar? This is all good for the component-writer, as it lets the same code be re-used: but it bloats each system that uses the component, adding complexity and interactions.</p>
+<p>So one thought for tackling complexity is to change where decomposition manifests itself. If instead of placing new functions in the run-time system, we placed it into the compiler used to build the run-time, we could use compilation techniques to optimise-out the unnecessary functionality so that what results is optimised for the configuration that it's actually being placed in, rather than being general enough to represent any configuration. There's substantial work on these ideas in the fields of staged compilation and partial evaluation (for example <a href="http://www.metaocaml.org/" target="_blank">MetaOCaml</a>, <a href="http://www.haskell.org/haskellwiki/Template_Haskell" target="_blank">Template Haskell</a>, Flask and the like): the flexibility is manifested at compile-time as compile-time abstractions, that in the course of compilation are removed and replaced with inflexible -- but more efficient and potentially more dependable -- specialised code. Think taking the source code for Linux, Apache and MySQL, accelerating them together at high speed, and getting out a single program that'd run on a bare machine, had nothing it didn't actually need, and had all the options for the various (conceptual) sub-systems set correctly to work together.</p>
+<p>Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and<a href="../../../../2011/05/evolving/" target="_blank"> into the languages and compilers</a> might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like <a href="../../../../2011/12/middleware-doughnut/" target="_blank">ever-more-specialised middleware</a> that remove bloat and overhead at the cost of generality. Keeping the former <em>and</em> the latter seems like a worthwhile goal.</p>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2012/06/14/russian-dolls/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2012/06/14/russian-dolls/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2012/06/14/russian-dolls/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2012/06/14/russian-dolls/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../../goodreads/1776/" rel="prev" title="1776">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../19/asensis/" rel="next" title="Workshop on naturally-inspired service ecosystems">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2012/06/14/russian-dolls/",
+        disqus_title="Layered abstractions and Russian dolls",
+        disqus_identifier="cache/posts/2012/06/14/russian-dolls.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

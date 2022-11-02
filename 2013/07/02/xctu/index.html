@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XBee firmware management with X-CTU | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2013/07/02/xctu/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../mesh-network/" title="Mesh networking" type="text/html">
+<link rel="next" href="../../03/xbee-arduino/" title="The xbee-arduino library" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="XBee firmware management with X-CTU">
+<meta property="og:url" content="https://simondobson.org/2013/07/02/xctu/">
+<meta property="og:description" content="Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.
+
+
+This post is slightly depressing: not because it's on an unhappy to">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-07-02T09:00:34+01:00">
+<meta property="article:tag" content="arduino">
+<meta property="article:tag" content="ditch">
+<meta property="article:tag" content="firmware">
+<meta property="article:tag" content="making">
+<meta property="article:tag" content="software">
+<meta property="article:tag" content="wireless">
+<meta property="article:tag" content="x-ctu">
+<meta property="article:tag" content="xbee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">XBee firmware management with X-CTU</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2013-07-02T09:00:34+01:00" itemprop="datePublished" title="2013-07-02 09:00">
+		2013-07-02 09:00
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2013/07/02/xctu.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/arduino/" rel="tag">arduino</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/ditch/" rel="tag">ditch</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/firmware/" rel="tag">firmware</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/making/" rel="tag">making</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/software/" rel="tag">software</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/wireless/" rel="tag">wireless</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/x-ctu/" rel="tag">x-ctu</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/xbee/" rel="tag">xbee</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p></p>
+<p>Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.</p>
+<!--more-->
+
+<p>This post is slightly depressing: not because it's on an unhappy topic, but because the effort and software needed to manage XBee radios is so complex to set up. In many ways this is just a function of the good design of the XBee: it's so minimal in terms of footprint and power consumption at run-time that it offloads a lot of work to external tools (and the user) at system build-time. But it's still a lot of work to get such a small piece of kit running.</p>
+<p>X-CTU is intended to upload firmware to XBee radio modules. This is needed to change the firmware between router and co-ordinator of the Zigbee <a href="../../../../blog/2013/07/02/mesh-network/" target="_blank">mesh network</a>, and between the different protocol variants that the XBee radios can support.</p>
+<p><img alt="Xbee on USB" src="../../../../images/citizen-sensing/2013-06-29-13.35.45.jpg"></p>
+<p>One limitation of X-CTU is that it only works on Windows: if you're running Linux, X-CTU will run under <a href="http://www.winehq.org/" target="_blank">Wine</a>. You can download the latest X-CTU from <a href="http://www.digi.com/support/kbase/kbaseresultdetl?id=2125" target="_blank">Digi's X-CTU page</a>; alternatively, there's a version installed on the <a href="../../../../download/virtual-machine/" target="_blank">Citizen Sensing VM</a>.</p>
+<p>To use X-CTU you need to connect your XBee module to your computer. The easiest way to do this is using an XBee USB breakout board, which provides an XBee socket and a USB socket. Insert the radio into the board, plug in a USB cable, and plug the other end into a USB socket. The light on the breakout board will then come on (see photograph above).</p>
+<p><img alt="X-CTU in operation" src="../../../../images/citizen-sensing/xctu-connect.png"></p>
+<p>You next need to start up X-CTU and tell it where the XBee is. It hangs off a Windows COM port, and X-CTU will typically find it automatically. You should then be able to press the "Test/Query" button, and X-CTU will interrogate the XBee and display a small window showing some information about it, as shown in the screenshot on the right: the details don't matter, but this shows that the XBee is talking to the computer properly.</p>
+<p><img alt="X-CTU router firmware" src="../../../../images/citizen-sensing/xctu-firmware-router.png"></p>
+<p>Assuming everything is now working correctly, the next step is to decide what firmware to download to the radio. Click on the "Modem configuration" tab, and then click the "Read" button: this reads the firmware that's on the XBee at the moment, and puts the details into the window. Typically this results in a display like that shown on the left. The important things to notice are the two drop-down boxes labelled "Function Set" and "Version". The function set is the description of the firmware, in which case indicating that the XBee is running Zigbee router firmware that responds to AT commands (more on this below).</p>
+<p><img alt="X-CTU co-ordinator firmware" src="../../../../images/citizen-sensing/xctu-firmware-coordinator.png"></p>
+<p>To download a new firmware, we then select the function set and version we want to use. Suppose we want to make this XBee into the mesh co-ordinator. We change the function set to "Zigbee Coordinator AT" (keeping with Zigbee and the AT command set) in  "Function set" the drop-down, then select the most recent version of this function set from the "Version" drop-down. (Versions are identified by hex numbers: the most recent in the screenshot right is "20A7", that being the highest hex number. Unfortunately X-CTU orders the numbers alphabetically, not in hex-numeric order.) Pressing "Write" will update the radio's firmware, and the radio is then ready for use as a co-ordinator.</p>
+<p>If you look through the list of function sets, there will be quite a few options, including protocols other than Zigbee. These probably aren't worth too much exploration, but you'll also notice that there are Zigbee AT and API function sets corresponding to the <a href="../../../../blog/2013/07/01/xbee/" target="_blank">two modes (transparent and API)</a> that the XBee can support. Be sure to select the correct one for your application.</p>
+<p>That's it: the radio is now ready for use.
+</p>
+<h3>Advanced use: setting optional parameters</h3>
+There's one more thing that X-CTU can be used for: it can set parameters to the firmware function set, and this is sometimes important when using the radios.
+<p><img alt="X-CTU parameter setting" src="../../../../images/citizen-sensing/xctu-parameter-setting.png"></p>
+<p>When you've read the firmware from a radio, the main part of the X-CTU window contains a hierarchy of folders and cryptic values, for example "(4) PL - Power level". These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using AT commands. The example we used sets the radio's power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 ("low") to save batteries. If you choose this and then write the firmware to the radio, the module will use this power setting.</p>
+<p>In the example shown on the left, we're changing the AP parameter ("API enable") to 2, which is needed for the <a href="../../../../blog/2013/07/03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator API function set selected as shown), the radio will be ready for use.</p>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2013/07/02/xctu/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2013/07/02/xctu/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/07/02/xctu/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2013/07/02/xctu/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../mesh-network/" rel="prev" title="Mesh networking">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../03/xbee-arduino/" rel="next" title="The xbee-arduino library">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2013/07/02/xctu/",
+        disqus_title="XBee firmware management with X-CTU",
+        disqus_identifier="cache/posts/2013/07/02/xctu.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

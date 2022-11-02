@@ -1,171 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simon.dobson@computer.org"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 10 Jun 2022 12:41:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ikigai</title><link>https://simondobson.org/blog/goodreads/ikigai/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 02 Nov 2022 16:43:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Atoms and Ashes: A Global History of Nuclear Disasters</title><link>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;Atoms and Ashes: A Global History of Nuclear Disasters&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645247265l/59011975._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624040899l/58369037._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Hector Garcia and Francesc Miralles&lt;/h2&gt;
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A short and focused excursion into the Japanese notion of &lt;i&gt;ikigai&lt;/i&gt;, meaning something akin to "a sense of purpose".&lt;br&gt;&lt;br&gt;The authors' interest in the idea comes from studying the residents of an Okinawan village that's thought to be the home of more centenarians than anywhere else, even in such a traditionally long-lived country as Japan. Studying their habits, the authors don't fall into the common trap of identifying the "one secret thing" that can transform anyone's life – although frugality, physical movement, and community clearly all help. The most potentially transformative observation, however, is how the long-lived never retire in any real sense. They've found their &lt;i&gt;ikigai&lt;/i&gt;, and as such they keep practicing it as a part of what they &lt;i&gt;are&lt;/i&gt; rather than as something they simply &lt;i&gt;do&lt;/i&gt; (to get paid). This a commonality here with the lives of many scientists, writers, and academics, whose work and lives are so bound together that they never stop working as long as they live – and it's this that plays a large role in keeping them healthy and alert. It also chimes with a lot of modern advice to follow your passions, and is something that's eminently practical for everyone.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sat, 19 Mar 2022 09:20:37 -0700.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/ikigai/</guid><pubDate>Sat, 19 Mar 2022 16:20:37 GMT</pubDate></item><item><title>How to Lose the Information War: Russia, Fake News and the Future of Conflict</title><link>https://simondobson.org/blog/goodreads/how-to-lose-the-information-war-russia-fake-news-and-the-future-of-conflict/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Serhii Plokhy&lt;/h2&gt;
+	    2022
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	A history of nuclear energy in six disasters: five civilian and one military.&lt;br&gt;&lt;br&gt;Competition seems to lie at the heart of all the problems: a lack of willingness to share details of accidents and near-accidents, and an unwillingness to learn if this requires changes in procedure. Collaboration seems lacking even within organisations and with regulators, while governments treat these matters as merely part of larger strategic concerns (even when they threaten to overwhelm them). It's also clear that the commercial operation of nuclear power is impossible without state subsidy, and acquiring this opens-up possibilities from regulatory capture – weakening requirements to make them attainable within a fixed cost – to outright bribery.&lt;br&gt;&lt;br&gt;The science and engineering also seem lacking. The Castle Bravo (and other) nuclear tests massively under-estimate the weapons' yields, and this seems to be more the case the larger the bomb (culminating in the apocalyptic &lt;a href="https://en.wikipedia.org/wiki/Tsar_Bomba" rel="nofollow noopener"&gt;Tsar Bomba&lt;/a&gt;, which isn't covered in this book as it somewhat miraculously &lt;i&gt;wasn't&lt;/i&gt; actually an accident). But all the systems described make use of technology little changed since the 1930s: imagine if we were still driving cars from that era!&lt;br&gt;&lt;br&gt;I find Plokhy's conclusions nuanced but weak. He decides that nuclear and renewable energy sources are both risky approaches to tackling climate change, but with completely different risk profiles: the former perhaps being too slow to start up and with huge accident risks; the latter relying on technologies as yet untested at the necessary scale. But in coming to his conclusion backing renewables and the phasing-out of nuclear stations (with which I entirely agree) he devotes &lt;i&gt;exactly two sentences&lt;/i&gt; to the problem of nuclear waste and spent fuel, which should surely be one of the major deciding factors. It's a strange omission at the end of a book that revolves around radiation hazards.
+	&lt;/p&gt;&lt;p&gt;
+	  3/5.
+	    Finished 21 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4939077454?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</guid><pubDate>Fri, 21 Oct 2022 11:47:20 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org547bc84" class="outline-2"&gt;
+&lt;h2 id="org547bc84"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org547bc84"&gt;
+&lt;p&gt;
+The &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/"&gt;Jinja2&lt;/a&gt; template engine defines a suite of &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters"&gt;filters&lt;/a&gt; that can be
+used to transform text as it's rendered. You can define extra custom
+filters, and also make them available within &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; templates (as
+long as the theme uses Jinja as its template engine, of course.)
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jinja2</category><category>nikola</category><category>publishing</category><category>python</category><guid>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</guid><pubDate>Wed, 19 Oct 2022 11:08:59 GMT</pubDate></item><item><title>We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News</title><link>https://simondobson.org/goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596434293l/54680228._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1568296896l/52382865._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Nina Jankowicz&lt;/h2&gt;
-				   2020
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		Very topical (I'm writing this during the 2022 invasion of Ukraine), an exploration of how the information space has become a theatre of conflict, whether in a hot or a cold war. The author works in communications, and has a detailed grasp of the ways in which readers and viewers can be manipulated using media. Her central thesis is that the existing fractures in a society can be widened and exploited by a clever and resourceful aggressor, and used to shape belief and behaviour – but also, more importantly, to destroy individuals' trust in information itself, and to diminish their participation in their own society. This in turn opens-up the way for tiny fringe groups to achieve outsized influence, by suppressing the participation of the majority. It's a frustrating dynamic, not least because the remedies are elusive: one can't adopt the tactics of the disruptors without further contributing to collapsing trust, but approaches based on evidence seem doomed to fail when they can be attacked without limit.&lt;br&gt;&lt;br&gt;Jankowicz is especially revealing about the importance of locally-grown elements to propaganda managed from abroad, whether by knowing agents or (more effectively) by "useful idiots" who spread the disruptive talking points. Reading this book sharpens your sensitivity to these things, and I've seen it happening even with respected figures during the current conflict.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Fri, 11 Mar 2022 00:00:00 -0800.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/how-to-lose-the-information-war-russia-fake-news-and-the-future-of-conflict/</guid><pubDate>Fri, 11 Mar 2022 08:00:00 GMT</pubDate></item><item><title>The Eye of the World (The Wheel of Time, #1)</title><link>https://simondobson.org/blog/goodreads/the-eye-of-the-world-the-wheel-of-time-1/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Eliot Higgins&lt;/h2&gt;
+	    2021
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	The history of a still-evolving open-source intelligence collective.&lt;br&gt;&lt;br&gt;Intelligence collection and analysis used to be limited to governments and a handful of companies. Not any longer: the tools are available on the open internet. Eliot Higgins realises that he can use them to investigate news stories, including the shooting-down of MH-17 over Ukraine. It's this investigation, in which he and his volunteer analysts manage to argue convincingly that the culprits were Russian-backed separatists using Russian anti-aircraft missiles, that really demonstrates how much information can now be found and cross-corollated. The result is for formation of Bellingcat, an amorphous group of international investigators organised in a way that closely resembles that of an open-source software project, where all that matters is an individuals' ability and willingness to share findings, and to have them challenged and possibly refuted in the search for the best explanations.&lt;br&gt;&lt;br&gt;The book was written before the Russian attack on Ukraine, and so will demand a follow-up given Bellingcat's deep involvement in tracking the conflict and digging-into the details of individual incidents.
+	&lt;/p&gt;&lt;p&gt;
+	  5/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4688233164?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>bonanza</category><category>books</category><guid>https://simondobson.org/goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/</guid><pubDate>Sun, 16 Oct 2022 14:40:36 GMT</pubDate></item><item><title>Childhood's End</title><link>https://simondobson.org/goodreads/childhoods-end/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;Childhood's End&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320552628l/414999._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632748292l/59084667._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Robert Jordan&lt;/h2&gt;
-				   1990
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A book I wanted to like, but didn't. I found it slow and mired in stereotypes despite the protagonists including several very strong and powerful women and societies of women. It didn't work as well as it could have done.&lt;br&gt;&lt;br&gt;There's also a stylistic element that I found frustrating. The story, and the history of the world, are revealed as they're learned by the young-adult central characters, who are sufficiently rural and provincial to not have know much of it before. As a style it means that the reader shares their ignorance (and emerging knowledge) – but also means that events often only make sense in retrospect (or not at all). Perhaps this is a semi-realistic take on how the "quest" narrative would actually be experienced from the inside, but it doesn't enhance the storytelling.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Fri, 04 Mar 2022 00:00:00 -0800.  
-		Rating 2/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-eye-of-the-world-the-wheel-of-time-1/</guid><pubDate>Fri, 04 Mar 2022 08:00:00 GMT</pubDate></item><item><title>The Plantagenets: The Warrior Kings and Queens Who Made England</title><link>https://simondobson.org/blog/goodreads/the-plantagenets-the-warrior-kings-and-queens-who-made-england/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Arthur C. Clarke&lt;/h2&gt;
+	    1953
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	An entirely unexpected take on alien invasion. The aliens come, take over – and then allow humanity to proceed as its wants, without revealing themselves or really taking much control at all. Why? What are they hiding? And how is it that, when they &lt;i&gt;do&lt;/i&gt; reveal themselves, they look so familiar?&lt;br&gt;&lt;br&gt;The reasons are all thought out with the rigour and open-endedness you'd expect from Arthur C. Clarke. The very fact that he can build such a narrative is a testament to his abilities as a world-creator, with an ability to pose questions and then not answer them definitively without this spoiling the enjoyment of the story.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/2902185066?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/childhoods-end/</guid><pubDate>Sun, 16 Oct 2022 14:33:49 GMT</pubDate></item><item><title>Spike: The Virus vs. The People - the Inside Story</title><link>https://simondobson.org/goodreads/spike-the-virus-vs-the-people-the-inside-story/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;Spike: The Virus vs. The People - the Inside Story&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626896615l/57095247._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366387829l/15811559._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Dan Jones&lt;/h2&gt;
-				   2012
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A sweeping and entertaining history of the Plantagenet kings and their often equally impressive queens. There is a lot of ground to cover, and Jones does it in the same style as his previous books about similar periods, notably &lt;a href="https://www.goodreads.com/book/show/43899574.Crusaders_The_Epic_History_of_the_Wars_for_the_Holy_Lands" title="Crusaders The Epic History of the Wars for the Holy Lands by Dan Jones" rel="nofollow noopener"&gt;Crusaders: The Epic History of the Wars for the Holy Lands&lt;/a&gt; – and with several overlapping characters.&lt;br&gt;&lt;br&gt;A lot of the history of this period isn't widely known. That the boundaries of countries change is obvious, but perhaps less obvious is the idea that particular regions have clearly-identified "national" identities isn't a concept that translates well to the eleventh century, when Normandy and the Normans weren't in any way considered French and the relationships between barons and kings were far ore conditional and fluid than one might expect. Jones has a clear eye for where these expectations will trip-up a modern, non-expert reader, and that's part of the book's quality, along with his equally clear eye for fascinating characters and foibles.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sun, 27 Feb 2022 00:00:00 -0800.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-plantagenets-the-warrior-kings-and-queens-who-made-england/</guid><pubDate>Sun, 27 Feb 2022 08:00:00 GMT</pubDate></item><item><title>The Munros in Winter</title><link>https://simondobson.org/blog/goodreads/the-munros-in-winter/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Jeremy Farrar&lt;/h2&gt;
+	    2021
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	I wonder if this book was too early: were we sufficiently out of the coronavirus pandemic to assess it and our healthcare systems' abilities to deal with it? Perhaps. But this is a good look at the early days from the perspective of the Wellcome Trust, one of the world's biggest medical charities.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4145716114?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/spike-the-virus-vs-the-people-the-inside-story/</guid><pubDate>Sun, 16 Oct 2022 14:29:20 GMT</pubDate></item><item><title>Empire of Pain: The Secret History of the Sackler Dynasty</title><link>https://simondobson.org/goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;Empire of Pain: The Secret History of the Sackler Dynasty&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611952534l/43868109._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1181116396l/1114998.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Martin Moran&lt;/h2&gt;
-				   1986
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		This book tells part of the amazing story of an amazing man, who came back from serious injury to first climb all the Scottish Munros in a single winter season. It's a stunning accomplishment by any measure, and set Moran up for a future as a mountaineering guide before his tragic death.&lt;br&gt;&lt;br&gt;I'm sorry that it's not a better book. The prose is quite wooden, lacking all the flourish and power that one finds in, for example, &lt;a href="https://www.goodreads.com/book/show/19294505.Savage_Arena" title="Savage Arena by Joe Tasker" rel="nofollow noopener"&gt;Savage Arena&lt;/a&gt;. As just one example amongst many:&lt;br&gt;&lt;br&gt;&lt;i&gt;"Only with sadness did we leave the lovely Etive, thinking with regret of those roads and glens of Argyll that our journey would not traverse again."&lt;/i&gt;&lt;br&gt;&lt;br&gt;It's a shame that the writing doesn't live up either to the country being described or the challenge being successfully attempted.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Wed, 23 Feb 2022 00:00:00 -0800.  
-		Rating 2/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-munros-in-winter/</guid><pubDate>Wed, 23 Feb 2022 08:00:00 GMT</pubDate></item><item><title>A Book of Silence</title><link>https://simondobson.org/blog/goodreads/a-book-of-silence/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Patrick Radden Keefe&lt;/h2&gt;
+	    2021
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	If there was ever a story that demonstrated one rule for the rich and another for the poor, this is it.&lt;br&gt;&lt;br&gt;The Sackler dynasty has had a huge social prominence, with its name adorning university medical research institutes and wings of art galleries. The wealth all came from selling oxycontin, one of the most potent painkillers available and a boon to many with chronic pain. Their innovation was to own the company that developed a slow-release mechanism to allow a morphine derivative to be delivered orally. All this is a great service to humanity.&lt;br&gt;&lt;br&gt;But... In Keefe's telling, the way oxycontin was sold made no attempt to ensure that it wasn't being over-prescribed or abused, and indeed targeted doctor and pharmacists who were clearly off-loading more pills that their communities could possibly need. And it's hard to believe that the company didn't know this, given that they'd also been early investors in medical information collection and analysis that could spot such patterns. The rest of the story degenerates into legal wranglings designed to keep the Sackler name out of any court decisions and away from personal blame.&lt;br&gt;&lt;br&gt;It's a troubling history that taints what should have been a clear and welcome medical breakthrough by the search for enormous profits by any means.
+	&lt;/p&gt;&lt;p&gt;
+	  5/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4828997259?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty/</guid><pubDate>Sun, 16 Oct 2022 14:26:07 GMT</pubDate></item><item><title>I Am an Island</title><link>https://simondobson.org/goodreads/i-am-an-island/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;I Am an Island&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572615381l/49569074._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347568756l/6835190._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Sara Maitland&lt;/h2&gt;
-				   2008
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		An exploration of the power of silence, and a progressively ore extended periods in more remote locations. It's an attractive journey for any introvert to hear about. It's unfortunate that, in this telling, it gets wrapped-up on explorations of religion and linguistics.&lt;br&gt;&lt;br&gt;Is the modern world uniquely hostile to silence? It certainly favours extroversion, but it also allows people to undertake solitary existences without having to give up much of its conveniences (as we've all discovered over two years of pandemic semi-isolation).&lt;br&gt;&lt;br&gt;I'm unconvinced by some of the close-read arguments and religious ties. That fact that, in the Jewish-Christian tradition, God made the world with the Word doesn't convince me that there's an overwhelming and ancient bias against silence, as something that &lt;i&gt;has&lt;/i&gt; morally to be broken. I'm also unconvinced by the other religious, philosophical, and psychological speculations that to my mind get in the way of reporting the more interesting first-person experiences. Perhaps that sort of reportage is a book remaining to be written.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sat, 12 Feb 2022 00:00:00 -0800.  
-		Rating 3/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/a-book-of-silence/</guid><pubDate>Sat, 12 Feb 2022 08:00:00 GMT</pubDate></item><item><title>Fall: The Mystery of Robert Maxwell</title><link>https://simondobson.org/blog/goodreads/fall-the-mystery-of-robert-maxwell/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Tamsin Calidas&lt;/h2&gt;
+	    2020
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	Moving to an island is many people's dream (including mine). This is a cautionary tale of the challenges, both inflicted and self-inflicted.&lt;br&gt;&lt;br&gt;Calidas and her then-husband took the hardest possible route, leaving London to start crofting with sheep and horses. That's a challenge at any time, but when utterly separated and with no friends or relative nearby it becomes almost impossible. The hostility from the locals varies in intensity from indifference to outright abuse, running into assumptions of who is "allowed" on the island and under what circumstances – a situation that becomes worse when her marriage breaks down and she nevertheless stays and attempts to make things work, something that no-one (including the local women) expects, understands, or supports.&lt;br&gt;&lt;br&gt;Times change. The later parts of the book show her almost accepted and with a new influx of islanders who are less ... well, insular than the original inhabitants.&lt;br&gt;&lt;br&gt;It's hard to decide what to take from this book. For a start, it's unclear how much of the hostility was triggered by Calidas and her husband themselves, not understanding the local sensibilities (although of course it's also hard to know how they'd've learned them). A lot of the tension comes from their efforts at crofting: running a shop would have been easier and perhaps less threatening to others, who felt their life was being intruded-into. But it's also an indication that moving from anonymous city life to a tiny community means adapting to a way of life that normalises surveillance and comment, and makes it difficult to remain aloof.
+	&lt;/p&gt;&lt;p&gt;
+	  3/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4856066215?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/i-am-an-island/</guid><pubDate>Sun, 16 Oct 2022 14:16:16 GMT</pubDate></item><item><title>The Social Distance Between Us: How Remote Politics Wrecked Britain</title><link>https://simondobson.org/goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The Social Distance Between Us: How Remote Politics Wrecked Britain&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1643293353l/60224356._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577249624l/52240874._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;John  Preston&lt;/h2&gt;
-				   2021
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		As biographies of monsters go, this is one of the best. It sets out the whole sweep of Robert Maxwell's complex and in the end perplexing personality: someone who courageously fought the Nazis, but committed (and admitted to) war crimes, who made and lost fortunes but never escaped the need to aggrandise. He transformed academic publishing – something I, as an academic, was unaware of – but engaged in outlandish stunts and competitions in tabloid journalism. His death was as dramatic and inexplicable as many of the events of his life.&lt;br&gt;&lt;br&gt;It would be an easy story to sensationalise, and while there's some of that in this book, overall it reads as a balances account by someone without too much of a stake in the outcome. It's perhaps inevitable that the story has been overshadowed by the later tribulations of Ghislaine, Robert Maxwell's daughter, but these events are in many ways foreshadowed by her earlier history. They're certainly all of a piece with the story told here.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Thu, 10 Feb 2022 00:00:00 -0800.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/fall-the-mystery-of-robert-maxwell/</guid><pubDate>Thu, 10 Feb 2022 08:00:00 GMT</pubDate></item><item><title>Appeasing Hitler: Chamberlain, Churchill and the Road to War</title><link>https://simondobson.org/blog/goodreads/appeasing-hitler-chamberlain-churchill-and-the-road-to-war/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Darren McGarvey&lt;/h2&gt;
+	    2022
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	A troubling tale of disaffection between classes in Britain – it's resolute in its class-based analysis, despite how out of fashion that is, and after reading this book it's difficult to disagree. That makes it an uncomfortable read for any middle-class person, since it's the middle class who takes the brunt of Garvey's assignment of blame. By allowing the working class to be demonised, and by allowing the creation of a benefits and support environment at least as "hostile" as that facing immigrants, the stage has been set for a breach between people that allows everyone to be manipulated by those in power.&lt;br&gt;&lt;br&gt;All this came about (in Garvey's telling – and I have to agree to a large extent) because social mixing across class lines has collapsed, leaving groups in echo chambers that exclude views that might challenge their established beliefs. And indeed it's hard to think of counter-examples, beyond perhaps sporting and music events (and even they are now segregated by ticket price).&lt;br&gt;&lt;br&gt;There are some very uncomfortable ideas in this book, and for that reason it should be recommended for everyone in Britain wanting a challenging explanation of how we find ourselve in our current predicament.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4791092837?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/</guid><pubDate>Sun, 16 Oct 2022 13:57:08 GMT</pubDate></item><item><title>The Man from the Future: The Visionary Life of John von Neumann</title><link>https://simondobson.org/goodreads/the-man-from-the-future-the-visionary-life-of-john-von-neumann/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The Man from the Future: The Visionary Life of John von Neumann&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632417945l/56155133._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590337332l/49568828._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Tim Bouverie&lt;/h2&gt;
-				   2019
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		The history of the not-out-finest-hour that preceded our finest hour.&lt;br&gt;&lt;br&gt;This is a very balanced treatment of a period that it's difficult to treat fairly. It manages this by keeping a clear focus on what the protagonists know and believe at the time, without losing sight of whether those beliefs were reasonable: often they weren't, and in the final analysis the idea that appeasement could &lt;i&gt;ever&lt;/i&gt; have succeeded is well and truly exploded. &lt;br&gt;&lt;br&gt;The use of extensive quotes from private correspondence is extremely revealing of the inner motivations of many, not least Chamberlain. But it also reveals something that I'd not noticed before: the subtle change in the meaning of the word &lt;i&gt;appeasement&lt;/i&gt; over the course of the period. In the early years it comes across as simply a way of re-introducing equity into international relations, and only later acquires the sub-text of surrender and cowardice that it now has.&lt;br&gt;&lt;br&gt;My only minor criticism is that there are a few places where a little more clarity as to the deceptions going on could have been welcome. The "Polish provocations" used by the Nazis to ramp-up the tensions prior to the attack, for example, were almost entirely imagined propaganda, culminating in the staged "incidents" used as the final justification.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sun, 30 Jan 2022 06:34:01 -0800.  
-		Rating 5/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/appeasing-hitler-chamberlain-churchill-and-the-road-to-war/</guid><pubDate>Sun, 30 Jan 2022 14:34:01 GMT</pubDate></item><item><title>The Covent Garden Ladies</title><link>https://simondobson.org/blog/goodreads/the-covent-garden-ladies/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+	  &lt;h2&gt;Ananyo Bhattacharya&lt;/h2&gt;
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	Not so much a biography of the man (although there's plenty of that), but of his work and the major activities going on in maths and computing to which he contributed.&lt;br&gt;&lt;br&gt;It's almost impossible to comprehend how influential Von Neumann was to mid-twentieth-century science. He seemed to be able to see where the next set of major problems were going to appear, and then lay the groundwork for them – only to have shifted on to some new problem by the time others caught up. He was "first" into game theory and cellular automata, and early (though definitely &lt;i&gt;not&lt;/i&gt; first) into computing. He made enormous mathematical contributions to the Manhattan Project. He also seems to have been quite at home at Princeton's Institute for Advanced Study, which many others have described very negatively in terms of the new work accomplished there. Perhaps that was a feature of being an exile: he had to be self-contained and able to take his work anywhere with him.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4271186547?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/the-man-from-the-future-the-visionary-life-of-john-von-neumann/</guid><pubDate>Sun, 16 Oct 2022 13:01:53 GMT</pubDate></item><item><title>Time on Rock: A Climber's Route into the Mountains</title><link>https://simondobson.org/goodreads/time-on-rock-a-climbers-route-into-the-mountains/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;Time on Rock: A Climber's Route into the Mountains&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639233652l/58978033._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
 	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597761814l/54869220._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Hallie Rubenhold&lt;/h2&gt;
-				   2005
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		An entertaining dive into a part of 18th-century society that's too often only considered voyeuristically. The survival of "Harris' List" provides a starting point, but it's the detailed archival study and the willingness to dig into the histories of the three main protagonists that really sets this book apart. In doing so it also gets to uncover some of the grimier realities of living on (or close to) the streets in a period when money was all that really counted in terms of life chances.&lt;br&gt;&lt;br&gt;Rubenhold is very sympathetic to the Covent Garden ladies. "Prostitutes" (or "harlots" in the TV adaptation) is a too-harsh judgement: many adopted sex work only because society gave them no other options, or adopted it only periodically when forced to by poverty, or as a semi-acceptable companion to stage-work. She is also unforgiving of the male customers, who avoided most social sanctions or consequences.&lt;br&gt;&lt;br&gt;The fact that "Harris' List" ran for nearly four decades (and that we have examples of most of them) also makes it a revealing social document as the mores and morals of society change across the 18th century. The descriptions become less straightforward, more ornate and (one would imagine) less useful as time goes by and the publishers become more susceptible to legal action for obscenity (even as the underlying social conditions remain largely unaddressed).
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sat, 22 Jan 2022 00:00:00 -0800.  
-		Rating 4/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/the-covent-garden-ladies/</guid><pubDate>Sat, 22 Jan 2022 08:00:00 GMT</pubDate></item><item><title>Cosmogramma</title><link>https://simondobson.org/blog/goodreads/cosmogramma/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-	&lt;div&gt;
-		&lt;div&gt;
-			&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636392585l/59482526._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-			&lt;div&gt;
-				&lt;h2&gt;Courttia Newland&lt;/h2&gt;
-				   2017
-				&lt;p&gt;
-				&lt;/p&gt;&lt;hr&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;p&gt;
-		A great collection of new science fiction. Some new premises, and older ones deftly handled.
-		&lt;/p&gt;&lt;p&gt;
-		   Finished on Sat, 15 Jan 2022 00:00:00 -0800.  
-		Rating 3/5.
-	&lt;/p&gt;&lt;/div&gt;
-   &lt;/div&gt;</description><category>books</category><category>goodreads</category><category>reviews</category><guid>https://simondobson.org/blog/goodreads/cosmogramma/</guid><pubDate>Sat, 15 Jan 2022 08:00:00 GMT</pubDate></item></channel></rss>
+	  &lt;h2&gt;Anna   Fleming&lt;/h2&gt;
+	    2022
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	A modern rock-climbing autobiography. The thing that struck me most (as an ex-climber) is how little the culture and terminology have changed in the nearly thirty years since I was active. The ethos and approach have remained very communal and collaborative, with less of the competitiveness one sees elsewhere.&lt;br&gt;&lt;br&gt;There were &lt;i&gt;some&lt;/i&gt; changes, though, notably taking a climbing holiday on a Greek island, which is something I couldn't even have dreamed of, before the era of cheap flights and European holidays. It certainly made a change from the damp of gritstone and gabbro!
+	&lt;/p&gt;&lt;p&gt;
+	  3/5.
+	    Finished 16 October 2022.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4475002260?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><guid>https://simondobson.org/goodreads/time-on-rock-a-climbers-route-into-the-mountains/</guid><pubDate>Sun, 16 Oct 2022 12:50:32 GMT</pubDate></item></channel></rss>

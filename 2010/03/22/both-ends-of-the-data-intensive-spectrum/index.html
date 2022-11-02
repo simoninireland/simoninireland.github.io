@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Both ends of the data-intensive spectrum | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../12/forth-for-sensors/" title="Forth for sensors?" type="text/html">
+<link rel="next" href="../../26/five-big-questions/" title="Five big questions" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Both ends of the data-intensive spectrum">
+<meta property="og:url" content="https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/">
+<meta property="og:description" content='Data-intensive science (or "web science" as it is sometimes known) has received a major boost from the efforts of Googlle and others, with the availability of enormous data sets against which we can l'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-03-22T11:54:52Z">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="e-science">
+<meta property="article:tag" content="gray's laws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Both ends of the data-intensive spectrum</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2010-03-22T11:54:52Z" itemprop="datePublished" title="2010-03-22 11:54">
+		2010-03-22 11:54
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2010/03/22/both-ends-of-the-data-intensive-spectrum.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/blog/" rel="tag">Blog</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/e-science/" rel="tag">e-science</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/grays-laws/" rel="tag">gray's laws</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p></p>
+<p>Data-intensive science (or "web science" as it is sometimes known) has received a major boost from the efforts of Googlle and others, with the availability of enormous data sets against which we can learn. It's easy to see that such large-scale data affects experimental science, but there are lessons further down the scale too.</p>
+<!--more-->
+<p>I spent part of last week at a workshop on data-intensive computing hosted by the <a href="http://www.nesc.ac.uk">National e-Science Centre</a> in Edinburgh. It was a fscinating meeting, and I very grateful for having been invited. Most of the sessions focussed on the challenges of petabyte and exabyte data, but it struck me that many of the points were actually relative rather than absolute: problems that are data-intensive because they have large amounts of data relative to the processing power you can deploy against them. This got me thinking to what extent the characteristics of data-intensive systes can be applied to sensor systems too.</p>
+<p>One of the most interesting points was made early on, by <a href="http://www.sdss.jhu.edu/~szalay/">Alex Szalay</a> of the <a href="http://www.sdss.org/">Sloan Digital Sky Survey</a>, who set out some desiderata for data intensive computing first made by the late <a href="http://en.wikipedia.org/wiki/Jim_Gray_%28computer_scientist%29">Jim Gray</a> -- "Gray's laws":
+</p>
+<ol>
+<li> Scientific computing revolves around data — <em>not</em> computing</li>
+    <li> Build solutions that intrisically can scale-out  as required</li>
+    <li> Take the analysis to  the data — because the interesting data's almost certainly too big to move, even with  fast backbones</li>
+    <li> Start with asking for"20 queries" — the most important questions— and recognise that the first 5 will be  by far the most important</li>
+    <li> Go from "working to working" — assume that  the infrastructure will change every 2 — 5 years, and  design hardware and software accordingly</li>
+</ol>
+This is advice hard-won from practice, and it's easy to see how it affects the largest-scale systems. I think Gray's laws also work at the micro-scale of sensor networks, and at points in between.
+<p>Data-intensive science is perhaps better envisioned as data-<em>driven</em> science, in which the data drives the design and evolution computation. This view unifies large- and small-scales: a sensor network needs to respond to the observations it makes of the phenomane it's sensing, even though the scale of the data (for an individual node) is so small.</p>
+<p>By focusing on networking we can scale-out solutions, but we also need to consider that several different networks may be needed to take in the different aspects of systems being observed. It's a <a href="../../things-that-wont-change/">mistake</a> to think that we can grow the capabilities of individual nodes too much, since that starts to eat into power budgets. At a data centre level, scale-out tends to mean virtualisation and replication: proven parallel-processing design patterns. At a network level, though, I suspect it means composition and co-design, which we understand substantially less well.</p>
+<p>Taking the analysis to the data means pushing processing down into the network and reducing the amount of raw data that needs to be returned to a base station. This is a slightly contentious point: do I <em>want</em> to limit the raw data I collect, or should I grab it all in case something emerges later that I need to check against a raw stream? In other words, can I define the information I want to extract from the data stream sufficiently clearly to avoid storing it all? This same point was made by <a href="http://www.roe.ac.uk/~afh/">Alan Heavens</a> at the meeting, pointing out that one can do radical data discarding if one has a strong enough model of the pheonmenon against which to evaluate the raw data. Again, the point may be the scale if the data <em>relative to the platform on which it's being processed</em> rather than in any absolute sense: astonomical data is too, well, "astronomical" to retain even in a large data centre, while sensor data is large relative to node capabilities. It's an open question whether many systems have strong enough data models to support aggressive discarding, though.</p>
+<p>The "20 queries" goal is I think key to many things: identify the large questions and address them first. (Richard Hamming <a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">made a similar point</a> with regard to research as a whole.) Coupling sensing research to the science (and public policy formation) that needs it is the only way to do this, and strikes me as at least as important as theoretical advances in network sensing science. The engineering challenges of (for example) putting a sensor network into a field are at least as valuable -- and worthy of support -- as the basic underpinnings.</p>
+<p>The coupling of computer and physical science also speaks the the need for designing systems for upgrade. The techniques for doinjg this -- component design and so forth -- are well-explored by computer scientists and under-understood by many practitioners from other disciplines. Designing sensor <em>and</em> data systems for expansion and re-tasking should form a backbone of any research effort.</p>
+<p>So I think Jim Gray's pioneering insights into large-scale data may actually be broader than we think, and might also characterise the individually small-scale -- but collectively widespread -- instrumentation of the physical world. It also suggests that there are end-to-end issues that can usefully form part of the research agenda.</p>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../12/forth-for-sensors/" rel="prev" title="Forth for sensors?">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../26/five-big-questions/" rel="next" title="Five big questions">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2010/03/22/both-ends-of-the-data-intensive-spectrum/",
+        disqus_title="Both ends of the data-intensive spectrum",
+        disqus_identifier="cache/posts/2010/03/22/both-ends-of-the-data-intensive-spectrum.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

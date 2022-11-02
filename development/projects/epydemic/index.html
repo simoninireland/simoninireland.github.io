@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>epydemic | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/development/projects/epydemic/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="epydemic">
+<meta property="og:url" content="https://simondobson.org/development/projects/epydemic/">
+<meta property="og:description" content="epydemic
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+epydemic is a library for simulating epidemic (and other)
+processes over complex networks (and other combinatorial
+structures).
+
+
+
+Network science uses epidemic spreadi">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-11-02T16:41:17Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div id="outline-container-org24c5fb2" class="outline-2">
+<h2 id="org24c5fb2">epydemic</h2>
+<div class="outline-text-2" id="text-org24c5fb2">
+<a href="https://pypi.org/project/epydemic">
+  <img src="https://badge.fury.io/py/epydemic.svg"></a>
+<a href="https://pepy.tech/project/epydemic">
+  <img src="https://pepy.tech/badge/epydemic"></a>
+<a href="https://doi.org/10.5281/zenodo.6875267">
+  <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6875267.svg"></a>
+<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+  <img src="https://www.gnu.org/graphics/gplv3-88x31.png"></a>
+
+<p>
+<code>epydemic</code> is a library for simulating epidemic (and other)
+processes over complex networks (and other combinatorial
+structures).
+</p>
+
+<p>
+Network science uses epidemic spreading processes a lot, both for
+the obvious application of modelling diseases, but also for things
+that are mathematically similar such as computer viruses and
+rumour-spreading. Some simulations use discrete-time approaches
+where lots of events happen in a single timestep; others — and this
+is more common for research-grade software — use continuous-time
+stochastic or Gillespie simulation, which can be significantly
+faster and is statistically exact, but is also a lot harder to code
+up. There didn’t seem to be a reusable simulation library that would
+play well with <a href="https://networkx.github.io/">networkx</a>, so I wrote one in the course of writing my
+complex networks blog/book. `epydemic` releases this code from the
+book and allows it to be used stand-alone. For good measure I
+integrated it with <a href="/development/projects/epyc/">epyc</a> to allow for reproducible
+simulations at scale.
+</p>
+
+<p>
+<a href="https://github.com/simoninireland/epydemic">Github repo</a>
+</p>
+
+<p>
+<a href="https://pypi.python.org/project/epydemic">Install from PyPi</a>
+</p>
+
+<p>
+<a href="https://pyepydemic.readthedocs.io/en/latest/">Read the API documentation</a>
+</p>
+</div>
+</div>
+    </div>
+    
+</article>
+</div>
+  </section><script src="../../../assets/js/baguetteBox.min.js"></script><script src="../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

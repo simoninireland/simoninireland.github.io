@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XBee radios | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2013/07/01/xbee/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../06/28/soldering/" title="First bit of soldering done" type="text/html">
+<link rel="next" href="../../02/mesh-network/" title="Mesh networking" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="XBee radios">
+<meta property="og:url" content="https://simondobson.org/2013/07/01/xbee/">
+<meta property="og:description" content="The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.
+
+
+
+XBees are made by Digi. The range includes a number of options: you almost certainly want">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-07-01T18:23:15+01:00">
+<meta property="article:tag" content="ditch">
+<meta property="article:tag" content="hardware">
+<meta property="article:tag" content="making">
+<meta property="article:tag" content="wireless">
+<meta property="article:tag" content="xbee">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">XBee radios</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2013-07-01T18:23:15+01:00" itemprop="datePublished" title="2013-07-01 18:23">
+		2013-07-01 18:23
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2013/07/01/xbee.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/ditch/" rel="tag">ditch</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/hardware/" rel="tag">hardware</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/making/" rel="tag">making</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/wireless/" rel="tag">wireless</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/xbee/" rel="tag">xbee</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p></p>
+<p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.</p>
+<!--more-->
+
+<p><img alt="Xbees and an Arduino" src="../../../../images/citizen-sensing/2013-07-01-18.12.32.jpg"></p>
+<p>XBees are made by <a href="http://www.digi.com" target="_blank">Digi</a>. The range includes a number of <a href="http://digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/" target="_blank">options</a>: you almost certainly want some variant of the Zigbee range. The Series 2 (S2) modules seem to offer good performance, low power, and a useful range of functions. There are several different antenna types and two different radio powers (2mW and 50mW): larger power provides more range (1km nominal as opposed to 100m) at the cost of twenty-five times the power consumption: best avoided unless really needed. A collection of XBee modules co-operate to form a mesh network that's quite robust against partial failure, which makes them great for use in the field.</p>
+<p>To get XBees working with an Arduino you need several pieces of hardware and software:
+</p>
+<ul>
+<li>Two or more radios (obvious, but surprisingly easy to only buy one...)</li>
+    <li>One or more Arduinos</li>
+    <li>One Arduino XBee shield for each radio-equipped Arduino</li>
+    <li>One XBee USB breakout board</li>
+    <li>The X-CTU firmware management software</li>
+</ul>
+There are also variations of Arduinos that take XBee modules directly, as well as other sensor mote systems that can work with them: they're not completely Arduino-specific.
+<p>When buying radios, buy them all the same series: the different series aren't guaranteed to interwork (although they often do). In the photograph above there are two <em>different</em> XBees: one with a patch antenna and one with a whip antenna.</p>
+<p>The Xbee shield fits on top of the Arduino. They're sold without a radio module.</p>
+<p>The breakout board is used to connect an XBee to the USB port of a computer, allowing your network to be accessed from the desktop. This is useful for debugging and for data logging, unless you're also going to build a dedicated data logger.</p>
+<p>The X-CTU software manages the firmware on the radio module. Because the radios are small and low-power, they don't have room for a sophisticated software stack, and so aren't programmed in the normal way. Instead you download a firmware providing exactly the functions you need. Each network is given an identifier (a <em>personal area network id</em> or <em>PAN</em>) so that several networks can co-exist in the same area without interfering with each other. Each network has exactly one co-ordinator, with the others being routers, Co-ordinator and router use different firmware: you nominate one of your radios as co-ordinator (which will typically live on the base station, or on the data logger) and use X-CTU to load co-ordinator firmware to it; the other radios get router firmware and are placed onto the sensor motes.</p>
+<p>XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the AT firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes AT commands, a standard way of controlling a modem (which is what an XBee technically is): we'll explore these commands in another post. This function set -- router and co-ordinator -- sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn't great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports API function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We'll deal with API communications in another post too.</p>
+<p>We'll deal with the details of using X-CTU <a href="../../../../blog/2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.</p>
+<p></p>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2013/07/01/xbee/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2013/07/01/xbee/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/07/01/xbee/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2013/07/01/xbee/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../06/28/soldering/" rel="prev" title="First bit of soldering done">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../02/mesh-network/" rel="next" title="Mesh networking">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2013/07/01/xbee/",
+        disqus_title="XBee radios",
+        disqus_identifier="cache/posts/2013/07/01/xbee.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

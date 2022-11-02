@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Languages for extensible virtual machines | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2010/05/28/languages-extensible-vms/">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../21/impressions-pervasive-2010/" title="Impressions of Pervasive 2010" type="text/html">
+<link rel="next" href="../../../06/08/smarter-internet/" title="Made smarter by the internet?" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Languages for extensible virtual machines">
+<meta property="og:url" content="https://simondobson.org/2010/05/28/languages-extensible-vms/">
+<meta property="og:description" content="Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate c">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2010-05-28T06:00:30+01:00">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="forth">
+<meta property="article:tag" content="haskell">
+<meta property="article:tag" content="moore's law">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="smalltalk">
+<meta property="article:tag" content="virtual machine">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Languages for extensible virtual machines</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2010-05-28T06:00:30+01:00" itemprop="datePublished" title="2010-05-28 06:00">
+		2010-05-28 06:00
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2010/05/28/languages-extensible-vms.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/blog/" rel="tag">Blog</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/forth/" rel="tag">forth</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/haskell/" rel="tag">haskell</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/moores-law/" rel="tag">moore's law</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/programming/" rel="tag">programming</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/smalltalk/" rel="tag">smalltalk</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/virtual-machine/" rel="tag">virtual machine</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <p></p>
+<p>Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what's the appropriate  language for writing experimental languages?</p>
+<!--more-->
+
+<p>What I have in mind is slightly more than just VMs, and more a platform for experimenting with language design for novel environments such as sensor-driven systems. As well as a runtime, this requires the ability to parse, to represent and evaluate type and semantic rules, and to provide a general framework for computation that can then be exposed into a target language as constructs, types and so forth. What's the right language in which to do all this?</p>
+<p>This isn't a simple question. It's well-accepted that the correct choice of language is vital to the success of a coding project.  One could work purely at the language level, exploring constructs and type systems without any real constraint of the real world (such as being runnable on a sensor mote). This has to some extent been traditional in programming language research, justified by the Moore's law increases in performance of the target machines. It isn't justifiable for sensor networks, though, where <a href="../../../03/things-that-wont-change/">we won't see the same phenomenon</a>. If we want to prototype realistic language tools in the same framework, we need at least a run-time VM that was appropriate for these target devices; alternatively we could ignore this, focus on the language, and prototype only when we're happy with the structures, using a different framework. My gut ffeeling is that the former is preferable, if it's possible, for reasons of conceptual clarity, impact and simplicity. But even without making this decision we can consider the features of different candidate language-writing languages:
+</p>
+<h3>C</h3>
+The most obvious approach is to use C, which is run-time-efficient and runs on any potential platform. For advanced language research, though, it's less attractive because of its poor symbolic data handling. That makes it harder to write type-checking sub-systems and the like, which are essentially symbolic mathematics.
+<h3>Forth</h3>
+<p><a href="../../../03/forth-for-sensors/">I've wondered about Forth before</a>. At one level it combines the same drawbacks as C -- poor symbolic and dynamic data handling -- with the additional drawback of being unfamiliar to almost everyone.</p>
+<p>Forth <em>does</em> have some redeeming features, though. Firstly, threaded interpretation means that additional layers of abstraction are largely cost-free: they run at the same speed as the language itself. Moreover there's a sense in which threaded interpretation blurs the distinction between host language and meta-language: you don't write Forth applications, you extend it towards the problem, so the meta-language <em>becomes</em> the VM and language tool. This is something that needs some further exploration.</p>
+<h3>Scheme</h3>
+<p>Scheme's advantages are its simplicity, regularity, and pretty much unrivalled flexibility in handling symbolic data. There's <a href="../../cs-book-worth-reading-twice/">a long  tradition of Scheme-based language tooling</a>, and so a lot of experience and libraries to make use of. It's also easy to write purely functional code, which can aid re-use.</p>
+<p>Scheme is dynamically typed, which can be great when exploring approaches like partial evaluation (specialising an interpreter against a particular piece of code to get a compiled program, for example).</p>
+<h3>Haskell</h3>
+<p>In some ways, Haskell is the obvious language for a new language project. The strong typing, type classing and modules mean one can generate a typed meta-language. There are lots of libraries and plenty of activity in the research community. Moreover Haskell is in many ways the "mathematician's choice" of language, since one can often map mathematical concepts almost directly into code. Given thaat typing and semantics are just mathematical operations over symbols, this is a significant attraction.</p>
+<p>Where Haskell falls over, of course, is its runtime overheads -- mostly these days in terms of memory rather than performance. It essentially mandates a choice of target platform to be fairly meaty, which closes-off some opportunities. There are some "staged" Haskell strategies that might work around this, and one could potentially stage the code to another runtime virtual machine. Or play games like implement a Forth VM inside Haskell for experimentation, and then emit code for a <em>different</em> Forth implementation for runtime.</p>
+<h3>Java</h3>
+<p>Java remains the language <em>du jour</em> for most new projects. It has decent dynamic data handling, poor symbolic data handling, fairly large run-time overheads and a well-stocked library for re-use. (Actually I used Java for <a href="../../../../publications/#Vanilla-GCSE99">Vanilla</a>, an earlier project in a similar area.) Despite the attractions, Java feels wrong. It doesn't provide a good solution to <em>any</em> of the constraints, and would be awkward as a platform for manipulating rules-based descriptions.</p>
+<h3>Smalltalk</h3>
+<p>Smalltalk -- and especially <a href="http://www.squeak.org">Squeak</a> -- isn't a popular choice within language research, but does have a portable virtual machine, VM generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It's also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework -- something that'd be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.</p>
+<p>Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It's unfortunate there isn't a clear winner; alternatively, it's positive that there's a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.</p>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2010/05/28/languages-extensible-vms/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2010/05/28/languages-extensible-vms/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/05/28/languages-extensible-vms/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2010/05/28/languages-extensible-vms/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../21/impressions-pervasive-2010/" rel="prev" title="Impressions of Pervasive 2010">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../06/08/smarter-internet/" rel="next" title="Made smarter by the internet?">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2010/05/28/languages-extensible-vms/",
+        disqus_title="Languages for extensible virtual machines",
+        disqus_identifier="cache/posts/2010/05/28/languages-extensible-vms.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>
