@@ -5,6 +5,8 @@
 UPDATE_FILES = \
 	~/personal/cv/short-cv.pdf \
 	~/personal/cv/medium-cv.pdf
+UPDATE_DIRS = \
+	~/personal/dict/softcopy
 
 # Files needing a refresh of their dynamic blocks
 DB_REFRESH_FILES = \
@@ -25,6 +27,9 @@ CHDIR = cd
 GIT = git
 SVN = svn
 CP = cp
+RSYNC = rsync -rav
+ECHO = echo
+CURL = curl
 EMACS = emacs --batch -L elisp
 
 # Venv
@@ -33,8 +38,12 @@ REQUIREMENTS = requirements.txt
 
 # Constructed diretories
 BUILD_DIR = output
-THEMES_DIR = themes
 PLUGINS_DIR = plugins
+
+# Constructed files
+EXTRAS = \
+	plugins/orgmode/conf.el \
+	themes/adolf/assets/css/fonts.css
 
 # Plug-ins to download
 PLUGINS = \
@@ -43,6 +52,15 @@ PLUGINS = \
 	accordion \
 	category_prevnext \
 	similarity
+
+# Web fonts to include (from Google Fonts)
+WEBFONTS = \
+	"Libre+Baskerville" \
+	"EB+Garamond" \
+	"Varela+Round" \
+	"Questrial" \
+	"Alegreya"
+WEBFONTS_API = "https://fonts.googleapis.com/css2?family="
 
 # New post, using an org mode file
 post: env
@@ -63,16 +81,17 @@ upload: env
 # Update all files that need it
 update: update-files update-dblocks continuous-import
 
-continuous-import: env
-	$(ACTIVATE) && $(NIKOLA) continuous_import
-
 update-files:
-	$(foreach f, $(UPDATE_FILES), $(CP) $f files/)
+	$(foreach f, $(UPDATE_FILES), $(CP) $f files/;)
+	$(foreach d, $(UPDATE_DIRS), $(RSYNC) $d files/;)
 
-update-dblocks:
+update-dblocks: env
 	$(EMACS) -l "sd-update-dblocks.el" \
 	$(foreach b, $(BIBFILES), --eval "(add-to-list 'bibtex-completion-bibliography (expand-file-name \"$b\"))") \
 	$(foreach f, $(DB_REFRESH_FILES), --eval "(sd/update-dblocks-in-file (expand-file-name \"$f\"))")
+
+continuous-import: env
+	$(ACTIVATE) && $(NIKOLA) continuous_import
 
 # Build the environment
 env: $(VENV) $(PLUGINS_DIR) $(PLUGINS_DIR)/continuous_import extras
@@ -92,10 +111,14 @@ $(PLUGINS_DIR):
 $(PLUGINS_DIR)/continuous_import:
 	$(CHDIR) $(PLUGINS_DIR) && $(SVN) checkout https://github.com/simoninireland/nikola-plugins/branches/categories-merged-tags/v7/continuous_import
 
-extras: plugins/orgmode/conf.el
+extras: $(EXTRAS)
 
 plugins/orgmode/conf.el: elisp/orgmode-conf.el
 	$(CP) $< $@
+
+themes/adolf/assets/css/fonts.css:
+	$(ECHO) '' $@
+	$(foreach f, $(WEBFONTS), $(CURL) $(WEBFONTS_API)$f >> $@;)
 
 # Clean up the build, to force a complete re-build
 .PHONY: clean
@@ -105,4 +128,4 @@ clean:
 # Clean up the environment as well
 .PHONY: reallyclean
 reallyclean: clean
-	$(RM) $(VENV) $(PLUGINS_DIR)
+	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS)
