@@ -70,6 +70,10 @@ post: env
 live: env
 	$(ACTIVATE) && $(NIKOLA) auto
 
+# Build a static copy
+build:  env
+	$(ACTIVATE) && $(NIKOLA) build
+
 # Upload to the Github remote
 publish: upload
 
