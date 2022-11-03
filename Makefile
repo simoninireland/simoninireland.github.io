@@ -26,7 +26,6 @@ MKDIR = mkdir
 CHDIR = cd
 GIT = git
 SVN = svn
-CP = cp
 RSYNC = rsync -rav
 ECHO = echo
 CURL = curl
@@ -86,7 +85,7 @@ upload: env
 update: update-files update-dblocks continuous-import
 
 update-files:
-	$(foreach f, $(UPDATE_FILES), $(CP) $f files/;)
+	$(foreach f, $(UPDATE_FILES), $(RSYNC) $f files/;)
 	$(foreach d, $(UPDATE_DIRS), $(RSYNC) $d files/;)
 
 update-dblocks: env
@@ -107,7 +106,6 @@ $(VENV):
 $(PLUGINS_DIR):
 	$(MKDIR) $(PLUGINS_DIR)
 	$(foreach p, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $p)
-	$(CP) elisp/orgmode-conf.el plugins/orgmode/conf.py
 
 # Checkout the modified continuous_import plugin from the forked repo,
 # until it gets merged with the main tree
@@ -118,7 +116,7 @@ $(PLUGINS_DIR)/continuous_import:
 extras: $(EXTRAS)
 
 plugins/orgmode/conf.el: elisp/orgmode-conf.el
-	$(CP) $< $@
+	$(RSYNC) $< $@
 
 themes/adolf/assets/css/fonts.css:
 	$(ECHO) '' $@
