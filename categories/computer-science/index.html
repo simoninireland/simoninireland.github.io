@@ -96,22 +96,48 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-<article class="tagpage"><header><h1>Posts about computer science</h1>
+    <header><h1>Posts about computer science</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../computer-science.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
+            
         </div>
-        
-    </header><ul class="postlist">
-<li>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/10/edge/" class="u-url">The edge of computer science</a></h1>
 
-            	<time class="listdate" datetime="2013-07-10T11:55:45+01:00" title="2013-07-10 11:55">2013-07-10 11:55</time><a href="../../2013/07/10/edge/" class="listtitle"> The edge of computer science</a><a>
-            </a>
-</li>
-        </ul></article>
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/07/10/edge/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T11:55:45+01:00" title="2013-07-10 11:55">2013-07-10 11:55</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/10/edge/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/10/edge.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p style="text-align: left">Where does mathematics end and computer science begin?</p>
+<!--more-->
+
+<p>I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say, what separates it from maths? How do mathematicians and computer scientists see problems differently, and indeed select differently what constitutes an interesting problem?</p>
+<p>This has been on my mind recently because of some work I've been doing with my student <a href="http://saray.host.cs.st-andrews.ac.uk/" target="_blank">Saray</a> on adaptive complex networks. A complex network is one that has statistical regularity in the distribution of the wires, or links, between its nodes. The internet is a complex network where the links obey a power-law distribution: a small number of sites (Yahoo, Google, IBM, ...) have a huge number of links to them, while the majority (this site) have almost none. Complex networks are created naturally by lots of processes, and are useful for describing a whole range of phenomena. (An accessible introduction is Albert-László Barabási. <a href="http://www.amazon.co.uk/Linked-Everything-Connected-Business-Everyday/dp/0452284392" target="_blank">Linked: how everything is connected to everything else, and what it means for business and daily life</a>. 2003.) An <em>adaptive</em> complex network is one where the way the network is wired changes with time. A good example is a meeting-with-friends network where there is a link between you and those people you meet in a particular timeframe. You might change the people you meet if you discover that one of them is ill, for example, so the the friend-meeting network would be re-wired to remove links to your sick friends. If we were to model the spread of an illness through this network, there would be two processes at work: a spreading process that made people who met sick people ill themselves (with some probability); and a re-wiring process that tried to remove links to those friends known to be sick (again perhaps with some probability). Our paper (Saray Shai and Simon Dobson. <a href="http://dx.doi.org/10.1103/PhysRevE.87.042812" target="_blank">Complex adaptive coupled networks</a>. Physical Review E <strong>87</strong>(4). 2013.) shows how there are unsuspected subtleties in the way spreading processes work on such networks, where common simplifications can actually hide crucial features of the network's behaviour.</p>
+<p>The literature on network science is full of papers analysing such processes. Typically the analysis is both analytic and numerical. That is to say, a mathematical model is developed that describes the state of the network after lots of time has passed (its <em>equilibrium behaviour</em>); and numerical simulation is then performed by creating a large number of networks, running the spreading processes on them, and seeing whether the results obtained match the analytical model. (It was an unexpected mis-match between analytical and numerical results that led us to the main result reported in our paper.) Typically the community finds analytical results more interesting than numerical results, and with good reason: an analytic result provides both a final, closed-form solution that can be used to describe <em>any</em> network with particular statistical properties, without simulation; and it often also provides insight into <em>why</em> a given equilibrium behaviour occurs. These are the sorts of general statements that can lead to profound understanding of wide ranges of phenomena.</p>
+<p>There's a sting in the tail of analysis, however, which is this. In order to be able to form an analytic model, the process being run over the network has to be simple enough that the mathematics converges properly. A typical analysis might use a probabilistic re-wiring function, for example, where nodes are re-wired with a fixed probability, or one that varies only slowly. Anything more complex than this defeats analysis, and as a result one never encounters anything other than simple spreading processes in the literature.</p>
+<p>As a computer scientist rather than a mathematician I find that unsatisfying, and I think my dissatisfaction may actually define the boundary between computing and mathematics. The boundary is the halting problem -- or, more precisely, sustaining your interest in a problem once you've hit it.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Halting_problem" target="_blank">halting problem</a> is one of the definitive results in computer science, and essentially says that there are some problems for which it's impossible to predict ahead of time whether they'll complete with a solution or simply go on forever. Put another way, there are some problems where the only way to determine what the solution is is to run a piece of code that computes it, and that may or may not deliver a solution. Put yet another way, there are problems for which the code that computes the solution is the most concise description available.</p>
+<p>What this has to do with complex systems is the following. When a computer scientist sees a problem, they typically try to abstract it as far as possible. So on encountering a complex network, our first instinct is to build the network and then build the processes running on it <em>as separate descriptions that can be defined independently</em>. That is, we don't limit what kind of functions can hang off each node to define the spreading process: we just allow <em>any</em> function -- any piece of code -- and then run the dynamics of the network with that code defining what happens at each node at each timestep. The immediate consequence of this approach is that we can't say anything <em>a priori</em> about the macroscopic properties of the spreading process, because to do so would run into the fact that there isn't anything general one can say about an arbitrary piece of code. The generality we typically seek precludes our making global statements about behaviour.</p>
+<p>Mathematicians don't see networks this way, because they want to make precisely the global statements that the general approach precludes -- and so don't allow arbitrary functions into the mix. Instead they use functions that aggregate cleanly, like fixed-probability infection rates, about which one <em>can</em> make global statements. One way to look at this is that well-behaved functions allow one to make global statements about their aggregate behaviour without having to perform any computation <em>per se</em>: they remain within an envelope whose global properties are known. A mathematician who used an ill-behaved function would be unable to perform analysis, <em>and that's precisely what they're interested in doing</em>, even though by doing so they exclude a range of possible network behaviours.In fact, it's worse than that: the range of behaviours excluded is infinite, and contains a lot of networks that seem potentially very interesting, for example those whose behaviours depend on some transmitted value, or one computed from values spread by the process.</p>
+<p>So a mathematician's (at least as represented in most of the complex systems literature) interest in a problem is lost at precisely the point that a computer scientist's interest kicks in: where the question is about behaviour of arbitrary computations. The question this leads to is, what model do real-world networks follow more closely? Are they composed of simple, well-behaved spreading processes? Or do they more resemble arbitrary functions hanging off a network of relationships, whose properties can only be discovered numerically? And what effect does the avoidance of arbitrary computation have on the choice of problems to which scientists apply themselves? Perhaps the way forward here is to try to find the boundary of the complexity of functions that remain analytic when used as part of a network dynamics, to get the best of both worlds: global statements about large categories of networks, without needing numerical simulation of individual cases.</p>
+<p>Such a classification would have useful consequences for general computer science as well. A lot of the problems in systems design come from the arbitrariness of code and its interactions, and from the fact that we're uncomfortable restricting that generality <em>a priori</em> because we don't know what the consequences will be for the re-usability and extensibility of the systems being designed. A more nuanced understanding of behavioural envelopes might help.</p>
+<p></p>
+    </div>
+    </article>
+</div>
+
+           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

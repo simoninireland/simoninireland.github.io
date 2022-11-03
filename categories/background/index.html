@@ -96,27 +96,62 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-<article class="tagpage"><header><h1>Posts about background</h1>
+    <header><h1>Posts about background</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../background.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
+            
         </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/02/mesh-network/" class="u-url">Mesh networking</a></h1>
+
         
-    </header><ul class="postlist">
-<li>
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/07/02/mesh-network/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-02T08:00:45+01:00" title="2013-07-02 08:00">2013-07-02 08:00</time></a></p>
 
-            	<time class="listdate" datetime="2013-07-02T08:00:45+01:00" title="2013-07-02 08:00">2013-07-02 08:00</time><a href="../../2013/07/02/mesh-network/" class="listtitle"> Mesh networking</a><a>
-            </a>
-</li>
-            <li>
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/02/mesh-network/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/02/mesh-network.html">Comments</a>
 
-            	<time class="listdate" datetime="2013-06-01T19:29:28+01:00" title="2013-06-01 19:29">2013-06-01 19:29</time><a href="../../2013/06/01/actor-systems/" class="listtitle"> Actor systems</a><a>
-            </a>
-</li>
-        </ul></article>
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.</p>
+<!--more-->
+
+<p>If you've used wifi, you've used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, ...) and connects them to the internet. The devices don't talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.</p>
+<p>Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone -- a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.</p>
+<p>By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes' traffic. There is no infrastructure -- the nodes are both the users <em>and</em> the providers of the network -- which means a mesh can be deployed in areas without any "official" network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can't deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular telephony.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/06/01/actor-systems/" class="u-url">Actor systems</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/06/01/actor-systems/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-06-01T19:29:28+01:00" title="2013-06-01 19:29">2013-06-01 19:29</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/06/01/actor-systems/#disqus_thread" data-disqus-identifier="cache/posts/2013/06/01/actor-systems.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.</p>
+<p>The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.</p>
+<p>The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)</p>
+<p>The complexity of the system is clearly going to come from how the behaviours are selected an scheduled. The model says very little about scheduling, leaving the implementation to decide when to process messages (by running the behaviour of the associated actor). A single-threaded implementation might repeatedly select a mailbox at random, check whether it contained messages and, if so, process one. A multi-threaded implementation could have one thread per mailbox running behaviours as messages arrive. There are plenty of other possibilities in between: the point is that an actor program doesn't <em>control</em> the concurrency, it simply <em>induces</em> it by the way it creates actors and sends messages.</p>
+<p>A system without unbounded loops can't express general computation, but actor systems do allow unbounded computation: they simply force the programmer to create it using communicating actors. An actor wanting to loop forever could, for example, receive a message, perform some processing, send another message to itself (its own mailbox), and then nominate itself as its own replacement behaviour, which would then receive the self-sent message, and so forth.</p>
+<p>If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a></p>
+<p>It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.</p>
+<p></p>
+    </div>
+    </article>
+</div>
+
+           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

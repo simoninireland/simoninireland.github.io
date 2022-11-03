@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 02 Nov 2022 17:10:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Chessboard and the Web: Strategies of Connection in a Networked World</title><link>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 03 Nov 2022 16:07:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New publishing setup and theme for the web site</title><link>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6b60376" class="outline-2"&gt;
+&lt;h2 id="org6b60376"&gt;New publishing setup and theme for the web site&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6b60376"&gt;
+&lt;p&gt;
+I've moved to a slightly different set-up for publishing this
+site, as well as a new theme.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>publishing</category><guid>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</guid><pubDate>Thu, 03 Nov 2022 14:24:03 GMT</pubDate></item><item><title>The Chessboard and the Web: Strategies of Connection in a Networked World</title><link>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;h1&gt;The Chessboard and the Web: Strategies of Connection in a Networked World&lt;/h1&gt;
     &lt;div&gt;
       &lt;div&gt;
@@ -168,23 +176,4 @@ long as the theme uses Jinja as its template engine, of course.)
 	  &lt;/p&gt;&lt;p&gt;
 	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4791092837?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
     &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/</guid><pubDate>Sun, 16 Oct 2022 13:57:08 GMT</pubDate></item><item><title>The Man from the Future: The Visionary Life of John von Neumann</title><link>https://simondobson.org/goodreads/the-man-from-the-future-the-visionary-life-of-john-von-neumann/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;The Man from the Future: The Visionary Life of John von Neumann&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632417945l/56155133._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Ananyo Bhattacharya&lt;/h2&gt;
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	Not so much a biography of the man (although there's plenty of that), but of his work and the major activities going on in maths and computing to which he contributed.&lt;br&gt;&lt;br&gt;It's almost impossible to comprehend how influential Von Neumann was to mid-twentieth-century science. He seemed to be able to see where the next set of major problems were going to appear, and then lay the groundwork for them – only to have shifted on to some new problem by the time others caught up. He was "first" into game theory and cellular automata, and early (though definitely &lt;i&gt;not&lt;/i&gt; first) into computing. He made enormous mathematical contributions to the Manhattan Project. He also seems to have been quite at home at Princeton's Institute for Advanced Study, which many others have described very negatively in terms of the new work accomplished there. Perhaps that was a feature of being an exile: he had to be self-contained and able to take his work anywhere with him.
-	&lt;/p&gt;&lt;p&gt;
-	  4/5.
-	    Finished 16 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4271186547?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-man-from-the-future-the-visionary-life-of-john-von-neumann/</guid><pubDate>Sun, 16 Oct 2022 13:01:53 GMT</pubDate></item></channel></rss>
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/</guid><pubDate>Sun, 16 Oct 2022 13:57:08 GMT</pubDate></item></channel></rss>

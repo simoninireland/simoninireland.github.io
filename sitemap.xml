@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2022-11-02T17:14:00Z</lastmod>
+  <lastmod>2022-11-03T14:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -791,15 +791,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/2022/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</loc>
+  <lastmod>2022-11-03T14:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2022/11/03/new-publishing-technology-for-the-web-site/</loc>
+  <lastmod>2022-11-03T14:17:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
@@ -827,7 +835,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/arduino/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/arduino/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/arduino/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/artificial-intelligence/</loc>
@@ -859,7 +875,111 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/blog/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-10.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-11.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-12.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-13.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-14.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-15.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-16.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-17.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-18.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-19.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-20.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-21.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-22.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-23.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-24.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-25.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-26.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-5.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-6.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-7.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-8.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/blog/index-9.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/blogging/</loc>
@@ -867,15 +987,447 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-10.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-11.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-12.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-13.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-14.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-15.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-16.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-17.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-18.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-19.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-5.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-6.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-7.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-8.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-9.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/book/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/book/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/books/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-10.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-11.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-12.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-13.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-14.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-15.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-16.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-17.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-18.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-19.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-20.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-21.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-22.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-23.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-24.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-25.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-26.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-27.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-28.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-29.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-30.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-31.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-32.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-33.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-34.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-35.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-36.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-37.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-38.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-39.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-40.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-41.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-42.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-43.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-44.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-45.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-46.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-47.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-48.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-49.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-5.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-50.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-51.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-52.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-53.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-54.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-55.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-56.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-57.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-58.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-59.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-6.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-60.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-61.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-62.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-63.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-64.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-65.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-66.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-67.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-68.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-69.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-7.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-70.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-71.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-72.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-73.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-74.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-75.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-76.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-77.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-78.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-79.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-8.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-80.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-81.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-82.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-83.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-84.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-85.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-86.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-87.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-88.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-9.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cas/</loc>
@@ -883,15 +1435,387 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-10.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-11.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-12.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-13.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-14.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-15.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-16.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-17.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-18.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-19.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-20.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-21.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-22.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-23.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-24.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-25.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-26.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-27.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-28.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-29.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-30.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-31.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-32.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-33.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-34.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-35.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-36.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-37.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-38.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-39.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-40.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-41.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-42.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-43.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-44.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-45.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-46.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-47.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-48.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-49.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-5.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-50.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-51.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-52.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-53.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-54.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-55.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-56.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-57.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-58.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-59.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-6.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-60.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-61.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-62.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-63.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-64.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-65.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-66.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-67.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-68.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-69.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-7.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-70.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-71.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-72.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-73.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-74.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-75.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-76.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-77.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-78.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-79.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-8.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-80.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-81.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-82.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-83.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-84.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-85.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-86.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-87.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-88.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-9.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_citizen-sensing/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_citizen-sensing/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_citizen-sensing/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_citizen-sensing/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cfp/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cfp/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cfp/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/chromebook/</loc>
@@ -923,7 +1847,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/complex-networks/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/complex-networks/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/complex-networks/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/complex-systems/</loc>
@@ -935,7 +1867,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/conference/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/conference/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/conference/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/context/</loc>
@@ -979,7 +1919,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/ditch/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ditch/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ditch/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ditch/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ditch/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/doctoral-symposium/</loc>
@@ -999,7 +1955,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/epidemic-spreading/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/epyc/</loc>
@@ -1107,11 +2067,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/internet/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/internet/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/ireland/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ireland/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/ireland/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/javascript/</loc>
@@ -1123,7 +2095,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/jobs/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/jobs/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/jolicloud/</loc>
@@ -1163,7 +2139,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/making/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/making/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/making/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/making/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/making/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/mathematics/</loc>
@@ -1207,7 +2199,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/news/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/news/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/news/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/nikola/</loc>
@@ -1251,11 +2251,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/pervasive-systems/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/pervasive-systems/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/pervasive-systems/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/phd/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/phd/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/photography/</loc>
@@ -1263,7 +2275,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/power-management/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/power-management/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/pre/</loc>
@@ -1283,7 +2299,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/programming/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/programming/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/programming/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/programming/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/programming/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/publishing/</loc>
@@ -1291,7 +2323,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/python/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/python/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/rdf/</loc>
@@ -1299,7 +2335,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/research/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/research/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/review/</loc>
@@ -1307,7 +2347,83 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-10.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-11.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-12.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-13.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-14.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-15.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-16.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-17.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-18.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-19.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-5.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-6.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-7.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-8.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-9.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/risk/</loc>
@@ -1355,7 +2471,19 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/sensor-networks/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/sensor-networks/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/sensor-networks/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/sensor-networks/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/sensor/</loc>
@@ -1391,7 +2519,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/society/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/society/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/software-engineering/</loc>
@@ -1399,7 +2531,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/software/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/software/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/sparql/</loc>
@@ -1407,11 +2543,19 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/st-andrews/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/st-andrews/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/strategy/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/strategy/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/stu/</loc>
@@ -1419,7 +2563,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/studentships/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/studentships/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/studentships/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/system-administration/</loc>
@@ -1459,7 +2611,23 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/university/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/university/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/university/index-2.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/university/index-3.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/university/index-4.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/usb/</loc>
@@ -1495,7 +2663,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/writing/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/writing/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/x-ctu/</loc>
@@ -1503,7 +2675,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/xbee/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/xbee/index-1.html</loc>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/xhtml/</loc>
@@ -3347,503 +4523,503 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-1.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-10.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-100.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-101.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-102.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-103.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-104.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-105.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-106.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-107.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-108.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-109.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-11.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-110.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-111.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-112.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-113.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-114.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-115.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-116.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-117.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-118.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-119.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-12.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-120.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-121.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-122.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-123.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-124.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-125.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-13.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-14.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-15.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-16.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-17.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-18.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-19.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-2.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-20.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-21.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-22.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-23.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-24.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-25.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-26.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-27.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-28.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-29.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-3.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-30.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-31.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-32.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-33.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-34.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-35.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-36.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-37.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-38.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-39.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-4.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-40.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-41.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-42.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-43.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-44.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-45.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-46.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-47.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-48.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-49.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-5.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-50.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-51.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-52.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-53.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-54.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-55.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-56.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-57.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-58.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-59.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-6.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-60.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-61.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-62.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-63.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-64.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-65.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-66.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-67.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-68.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-69.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-7.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-70.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-71.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-72.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-73.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-74.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-75.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-76.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-77.html</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-78.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-79.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-8.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-80.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-81.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-82.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-83.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-84.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-85.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-86.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-87.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-88.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-89.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-9.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-90.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-91.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-92.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-93.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-94.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-95.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-96.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-97.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-98.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-99.html</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
+  <lastmod>2022-11-03T14:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/personal/</loc>

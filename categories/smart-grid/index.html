@@ -96,22 +96,50 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-<article class="tagpage"><header><h1>Posts about smart grid</h1>
+    <header><h1>Posts about smart grid</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../smart-grid.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
+            
         </div>
-        
-    </header><ul class="postlist">
-<li>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2011/09/09/smart-grids/" class="u-url">An issue for smart grids</a></h1>
 
-            	<time class="listdate" datetime="2011-09-09T07:30:09+01:00" title="2011-09-09 07:30">2011-09-09 07:30</time><a href="../../2011/09/09/smart-grids/" class="listtitle"> An issue for smart grids</a><a>
-            </a>
-</li>
-        </ul></article>
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2011/09/09/smart-grids/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2011-09-09T07:30:09+01:00" title="2011-09-09 07:30">2011-09-09 07:30</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2011/09/09/smart-grids/#disqus_thread" data-disqus-identifier="cache/posts/2011/09/09/smart-grids.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>Unbeknown to her -- until she reads this, anyway -- the other day my mother trashed an idea that's been a cornerstone of a lot of research on smart grids.</p>
+<!--more-->
+
+<p>In the UK the fire services often send people around to check people's smoke alarms and the like. Not usually firemen <em>per se</em>, but information providers who might reasonably be described as the propaganda department of the fire service, intent on giving advice on how not to burn to death. They also change batteries. Pretty useful public service, all told.</p>
+<p>Anyway, my mother lives in Cheshire, and recently had a visit from two such anti-fire propagandists.They did the usual useful things, but also got talking about the various risk factors one can avoid beyond the usual ones of having a smoke alarm and not searching for gas leaks with a cigarette lighter. The conversation turned to the subject of appliances, and they revealed that the most dangerous appliances from a fire-causing perspective are washing machines. In fact, they said, the Cheshire fire service gets called to more washing-machine fires than <em>any other kind</em> of domestic fire. (I don't know if that includes hoaxes, which are a major problem.) Since they have in common (a) lots of current and (b) water, I would guess that dishwashers are a similar problem.</p>
+<p>So their advice was never to run a washing machine or dishwasher overnight or when in bed, as the chances of a fire are relatively high. "Relatively high" probably still means low on any meaningful  scale, but it makes sense to minimise even small hazards when the costs are potentially to catastrophic.</p>
+<p>Mum related this to me to encourage me also not to run appliances at night. But of course this has research consequences as well.</p>
+<p>Smart grids are the application of information technology to the provision and management of electricity and (to a lesser extent) gas. The idea is that the application of data science can provide better models of how people use their power, and can allow the grid operators and power generators to schedule and provision their supplies more accurately. It usually involves more detailed monitoring of electricity usage, for example using an internet-connected smart meter to log and return the power usage profile instead of just aggregated power usage for billing.</p>
+<p>The idea is getting more and more common because of the rise in renewable energy. Most countries have feed-in tariffs for the grid that power generators have to pay. The scheme is usually some variant of the following: at every accounting period (say three hours), each generator  has to present an estimate of the power it will generate in the <em>next</em> several accounting periods (say three).  So using these numbers, every three hours an electricity generator has to say how much power it will inject into the grid in the next nine hours. There's a complementary tariff scheme for aggregate consumers (not individuals), and taken together these allow the grid operators to balance supply and demand. The important point is that this exercise has real and quantifiable financial costs: generators are charged if they over- or under-supply by more than an agreed margin of error.</p>
+<p>Now this is fine if you run a gas-, oil- or nuclear-powered power station. However, if you run a wind farm or a tidal barrage, it's rather more tricky, since you don't know with any accuracy how much power you'll generate: it depends on circumstances outwith your control. (I did some work for a company making control systems for wind farms, and one of their major issues was power prediction.) The tariffs can be a show-stopper, and can cause a lot of renewable-energy generators to run significantly below capacity just to hedge their tariff risk.</p>
+<p>The other side of smart grids is to manage demand. It's well-known that demand is spiky, for example leaping a half-time in a popular televised football match as everybody puts the kettle on. A major goal of smart grids is to smooth-out demand, and one of the ways to do this is to identify power loads than can be time-shifted: they are relatively insensitive to when they occur, and so can be moved so that they occur at times when the aggregate power demand is less. In a domestic setting, some kinds of storage heating work like this and can create and store heat during off-peak hours (overnight). Lights and television can't be time-shifted as they're needed at particular times. So what are the major power loads, other than storage heating, in domestic settings that can apparently be time-shifted?</p>
+<p>Washing machines and dishwashers.</p>
+<p>Except we now know that time-shifting them to overnight running runs exactly counter to fire service advice as it increases the dangers of domestic fires. So one of the major strategies for smart grid demand management would, if widely deployed, potentially cause significant losses, of property and even lives. Reducing energy bills will (in time) increase the insurance premiums for anyone allowing time-shifting of their main appliances. In other words, while these risks exist, its a non-starter.</p>
+<p>In some ways this is a good thing: good to learn about now, anyway, before too much investment. There are a lot of things that could be done to ameliorate the risks, for example designing machines explicitly designed for time-shifted operation.</p>
+<p>But I think a more pertinent observation is the holistic nature of this kind of pervasive computing system. You can't treat <em>any one element</em> in isolation, as they all interact with each other. It's as though pervasive computing breaks the normal way we think of computing systems as being built from independent components. In pervasive computing the composition operators are non-linear: two independently-correct components or solutions do not always compose to form one that is also correct. This has major implications for design and analysis, as well as for engineering.</p>
+<p>Thanks, mum!</p>
+    </div>
+    </article>
+</div>
+
+           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

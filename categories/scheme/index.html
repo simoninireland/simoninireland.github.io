@@ -96,22 +96,62 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-<article class="tagpage"><header><h1>Posts about scheme</h1>
+    <header><h1>Posts about scheme</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../scheme.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
+            
         </div>
-        
-    </header><ul class="postlist">
-<li>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2010/05/14/cs-book-worth-reading-twice/" class="u-url">The only computer science book worth reading twice?</a></h1>
 
-            	<time class="listdate" datetime="2010-05-14T06:00:35+01:00" title="2010-05-14 06:00">2010-05-14 06:00</time><a href="../../2010/05/14/cs-book-worth-reading-twice/" class="listtitle"> The only computer science book worth reading twice?</a><a>
-            </a>
-</li>
-        </ul></article>
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2010/05/14/cs-book-worth-reading-twice/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2010-05-14T06:00:35+01:00" title="2010-05-14 06:00">2010-05-14 06:00</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2010/05/14/cs-book-worth-reading-twice/#disqus_thread" data-disqus-identifier="cache/posts/2010/05/14/cs-book-worth-reading-twice.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>I was talking to one of my students earlier, and lent him a book to read over summer. It was only after he'd left that I realised  that -- for me at any rate -- the book I'd given him is probably the most seminal work in the whole of computer science, and certainly the book that's most influenced my career and research interests.</p>
+<!--more-->
+<p>So what's the book? <em>Structure and interpretation of computer programs</em> by Hal Abelson and Jerry Sussman <span> (MIT Press. 1984. ISBN 0-262-01077-1), also known as <em>SICP</em>. </span>The book's still in print, but -- even better -- is <a href="http://mitpress.mit.edu/sicp/">available online in its entirety</a>.</p>
+<p><span>OK, everyone has their favourite book: why's this one so special to me? The first reason is the time I first encountered it: in </span><a href="http://www.cs.newcastle.ac.uk/">Newcastle upon Tyne</a> in <span>the second year of my first degree. I was still finding my way in computer science, and this book was a recommended text after you'd finished the first programming courses. It's the book that introduced me to programming <em>as it could be</em> (rather than programming <em>as it was</em>, in Pascal at the time). What I mean by that is that SICP starts out by introducing the elements of programming -- values, names, binding, control and so on -- and then runs with them to explore a quite dazzling breadth of issues including:</span>
+</p>
+<ul>
+<li><span>lambda-abstraction and higher-order computation</span></li>
+    <li><span>complex data structures, including structures with embedded computational content</span></li>
+    <li><span>modularity and mutability</span></li>
+    <li><span>streams</span></li>
+    <li><span>lazy evaluation</span></li>
+    <li><span>interpreter and compiler construction</span></li>
+    <li><span>storage management, garbage collection and virtual memory
+</span></li>
+    <li><span>machine code
+</span></li>
+    <li><span>domain-specific languages</span></li>
+</ul>
+<span>...and so forth. The list of concepts is bewildering, and only stays coherent because the authors are skilled writers devoted to their craft. But it's also a remarkable achievement to handle all these concepts within a single language framework -- Scheme -- in such a way that each builds on what's gone before.
+</span>
+<p><span>The second reason is the way in which Hal and Jerry view everything as an exercise in language design:</span></p>
+<blockquote>We have also obtained a glimpse of another crucial idea about languages and program design. This is the approach of stratified design, the notion that a complex system should be structured as a sequence of levels that are described using a sequence of languages. Each level is constructed by combining parts that are regarded as primitive at that level, and the parts constructed at each level are used as primitives at the next level. The language used at each level of a stratified design has primitives, means of combination, and means of abstraction appropriate to that level of detail.</blockquote>
+<p>Layered abstraction of course is second nature to all computer scientists. What's novel in this view is that each level should be <em>programmable</em>: that the layers are all about computation and transformation, and not simply about hiding information. We don't see that in the mainstream of programming languages, because layering doesn't extend the language at all: Java is Java from top to bottom, with class and libraries but no new control structures. If a particular domain has concepts that would benefit from dedicated language constructs, that's just tough. Conversely (and this is something that very much interests me) if there are constructs it'd be desirable <em>not</em> to have in some domain, they can't be removed. (Within the language, anyway: Java-ME dumps some capabilities in the interests of running on small devices, but that's not something you can do without re-writing the compiler.)</p>
+<p>The third influential feature is the clear-sighted view of what computer science is actually about:</p>
+<blockquote>The computer revolution is a revolution in the way we think and in the way we express what we think.  The essence of this change is the emergence of what might best be called <em>procedural epistemology</em> -- the study of the structure of knowledge from an imperative point of view, as opposed to the more declarative point of view taken by classical mathematical subjects. Mathematics provides a framework for dealing precisely with notions of "what is."  Computation provides a framework for dealing precisely with notions of "how to."</blockquote>
+<p>I've taken a view before about <a href="../../2010/04/computer-microscope/">computers being the new microscopes</a>, opening-up new science on their own as well as facilitating existing approaches. The "how to" aspect of computer science re-appears everywhere in this: in describing the behaviours of sensor networks that can adapt while continuing the reflect the phenomena they've been deployed to sense; in the interpretation of large-scale data mined and mashed-up across the web; in capturing scientific methods and processes for automation; and so forth. The richness of these domains mitigates against packaged software and encourages integration through programming languages like <a href="http://www.r-project.org">R</a>, so that the interfaces and structures remain "soft" and open to experimentation.</p>
+<p><span>When I looked at my copy, the date I'd written on the inside was September 1988. So a book I bought nearly 22 years ago is still relevant. <em> </em>In fact, I'd go further and say that it's the only computer science book of that age that I'd happily and usefully read again without it being just for historical interest: the content has barely aged at all. That's not all that unusual for mathematics books, but it's almost unheard of in computer science, where the ideas move so quickly and where much of what's written about is ephemeral rather than foundational. It goes to show how well SICP nailed the core concepts. In this sense, it's certainly one of the very few  books on computer science that it's worth reading twice (or more). SICP is to computer science what Feynman's <em>Lectures on Physics</em> are to physics: an accessible distillation of the essence of the subject that's stood the test of time.
+</span></p>
+    </div>
+    </article>
+</div>
+
+           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

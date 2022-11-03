@@ -96,32 +96,141 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-<article class="tagpage"><header><h1>Posts about framework</h1>
+    <header><h1>Posts about framework</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../framework.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
+            
         </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/26/improvements/" class="u-url">Some improvements to SleepySketch</a></h1>
+
         
-    </header><ul class="postlist">
-<li>
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/07/26/improvements/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-26T16:20:38+01:00" title="2013-07-26 16:20">2013-07-26 16:20</time></a></p>
 
-            	<time class="listdate" datetime="2013-07-26T16:20:38+01:00" title="2013-07-26 16:20">2013-07-26 16:20</time><a href="../../2013/07/26/improvements/" class="listtitle"> Some improvements to SleepySketch</a><a>
-            </a>
-</li>
-            <li>
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/26/improvements/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/26/improvements.html">Comments</a>
 
-            	<time class="listdate" datetime="2013-07-25T13:00:01+01:00" title="2013-07-25 13:00">2013-07-25 13:00</time><a href="../../2013/07/25/sleepy-sketches/" class="listtitle"> Sleepy sketches</a><a>
-            </a>
-</li>
-            <li>
 
-            	<time class="listdate" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time><a href="../../2013/07/10/representing-samples/" class="listtitle"> Representing samples</a><a>
-            </a>
-</li>
-        </ul></article>
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
+<!--more-->
+
+<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
+<p>The second issue concerns scheduling -- or rather regular
+scheduling. Most sampling and communication tasks occur on predictable
+schedules, say every five hours. In an <a href="../../blog/2013/06/01/actor-systems/" target="_blank">actor
+framework</a>, that means the actor instance (or another one) has to
+be re-scheduled after the first has run. We can do this within the
+definition of the actor, for example using the <code>post()</code>
+action:</p>
+<div class="code"><pre class="code literal-block"><span class="n">class</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">post</span><span class="p">();</span><span class="w"></span>
+<span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">behaviour</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="p">...</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="o">::</span><span class="n">post</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+<p>(This also demonstrates the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for <em>every</em> actor that wants to run repeatedly.</p>
+<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)</p>
+<div class="code"><pre class="code literal-block"><span class="n">Actor</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">RepeatingActor</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
+<span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"></span>
+</pre></div>
+
+<p>The <code>RepeatingActor</code> runs the behaviour of
+<code>SomeActor</code> every 5 hours, and we initially schedule it to
+run in 5 hours. We can actually encapsulate all of this by adding a
+method to <code>SleepySketch</code> itself:</p>
+<div class="code"><pre class="code literal-block"><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleEvery</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+
+<p>to perform the wrapping and initial scheduling automatically.</p>
+<p>Simple sleepy sketches can now be created at set-up, by scheduling
+repeating actors, and we can define the various actors and re-use them
+in different scheduling situations without complicating their own
+code.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/25/sleepy-sketches/" class="u-url">Sleepy sketches</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/07/25/sleepy-sketches/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-25T13:00:01+01:00" title="2013-07-25 13:00">2013-07-25 13:00</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/25/sleepy-sketches/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/25/sleepy-sketches.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.</p>
+<!--more-->
+
+<p>The standard Arduino software model is, well, standard: programs ("sketches") are structured in terms of a <code>setup()</code> function that runs once when the system restarts and a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn't all that desirable: a sensor system typically tries to <a href="../../blog/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.</p>
+<p>There are at least two ways to do this. The simplest is a library that lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means that <code>loop()</code> encapsulates all the program's logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another</p>
+<p>If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="../../blog/2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.</p>
+<p>Turning this into code, we get the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.</p>
+<p><img alt="SleepySketch design" src="../../images/citizen-sensing/sleepysketch.png"></p>
+<p>There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance RAM usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways: a <code>BusySleeper</code> that uses the normal <code>delay()</code> function (a busy loop) with no power-saving functions, a <code>HeavySleeper</code> that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing the <code>Actor</code> class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.</p>
+<p>The standard library uses singleton classes quite a lot, so for example the <code>Serial</code> object represents the USB connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a singleton, <code>Sleepy</code></p>
+<p>The program structure then loops something like this. If we assume
+that we've defined an actor class <code>PingActor</code>, then we can
+do the following:</p>
+<div class="code"><pre class="code literal-block"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">HeavySleeper</span><span class="p">());</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">PingActor</span><span class="p">(</span><span class="s">"Ping!"</span><span class="p">),</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+<p>The <code>setup()</code> code initialises the serial port and the sleepy sketch using a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.</p>
+<p>This is a first design, now just about working. It's still not as easy
+as it could be, however, and needs some testing to make sure that the
+power savings do actually materialise.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/10/representing-samples/" class="u-url">Representing samples</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../../2013/07/10/representing-samples/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/10/representing-samples/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/10/representing-samples.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p></p>
+<p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?</p>
+<!--more-->
+
+<p>Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as XML for data-based approaches.</p>
+<p>Neither of these is ideal for a sensor network, for a number of reasons.</p>
+<p>A typical sensor network architecture will use different languages one the sensors and the base station, with the former prioritising efficiency and compactness and the latter emphasising connectivity to the internet and interfacing with standard tools. Typically we find C or C++ on the sensors and Java, JavaScript, Processing, or some other language on the base station. (Sometimes C or C++ too, although that's increasingly rare for new applications.) It's therefore tricky to use a language-based approach to defining data, as two <em>different</em> versions of the <em>same</em> structure would have to be defined and -- more importantly -- kept synchronised across changes.</p>
+<p>That suggests a data-based approach, but these tend to fall foul of the need for a compact and efficient encoding sensor-side. Storing, generating, and manipulating XML or RDF, for example, would typically be too complex and too memory-intensive for a sensor. These formats also aren't really suitable for in-memory processing -- unsurprisingly, as they were designed as transfer encodings, not primary data representations. Even though they might be attractive, not least for their friendliness to web interactions and the Semantic Web, they aren't really usable directly.</p>
+<p>There are some compromise positions, however. <a href="http://www.json.org" target="_blank">JSON</a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. JSON essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn't include code-valued fields, which is how JSON stays language-neutral: it can't encode computations, closures, or other programmatic features.)</p>
+<p>JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.</p>
+<p>This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
+    </div>
+    </article>
+</div>
+
+           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");
