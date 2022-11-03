@@ -53,6 +53,10 @@ NAVIGATION_LINKS = {
         ('/rss.xml', 'RSS', 'fa fa-rss'),
     )
 }
+FAVICONS = (
+    ("icon", "/images/favicon.png", "32x32"),
+)
+
 
 # Post and page structure
 POSTS = (
