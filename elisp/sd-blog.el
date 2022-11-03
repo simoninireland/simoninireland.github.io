@@ -119,7 +119,7 @@ ahead of it at the front of the file (as is needed by org mode posts)."
 
 (defun sd/nikola-metadata-file (fn)
   "Return the separate metadata file for page or post FN."
-  (concat (file-name-sans-extensikon fn) ".meta"))
+  (concat (file-name-sans-extension fn) ".meta"))
 
 
 ;; ---------- Blogging functions ----------
