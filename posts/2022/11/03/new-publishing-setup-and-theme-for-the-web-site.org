@@ -1,0 +1,36 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2022/11/03/new-publishing-setup-and-theme-for-the-web-site.meta
+
+* New publishing setup and theme for the web site
+
+  I've moved to a slightly different set-up for publishing this
+  site, as well as a new theme.
+
+  {{{TEASER_END}}}
+
+  Since I now do almost all my writing using [[https://orgmode.org][Emacs org mode]] it makes
+  sense to use it for online writing too. I was worried that this
+  change would erase all the blog-writing I've done already: even
+  though it's out of date and often of questionable correctness (with
+  hindsight), I still didn't want to lose all 400-odd posts -- and
+  definitely didn't want to have to reformat them all.
+
+  Fortunately the [[https://getnikola.com][Nikola site builder]] I've been using comes with a
+  plug-in to publish org mode pages alongside all the other formats
+  Nikola handles (plain text, markdown, reStructured text, Jupyter,
+  ...). So while new content will be written in org, all the old stuff
+  remains largely untouched. That's a great demonstration of the
+  advantages of modular software and text files for content!
+
+  At the same time I wanted to change the theme and the structure of
+  pages, which I've done by writing a variant of the [[https://themes.getnikola.com/v8/gruberwine/][gruberwine theme]]
+  with different fonts and navigation icons. (I also added my own
+  social-sharing bar to posts, which I should really turn into a
+  plug-in.) A lot of my recent writing has actually been book reviews
+  from [[https://goodreads.com][Goodreads]], and I re-templated those and added some tidied-up
+  [[link:/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/][date processing]]. I also modified the [[https://plugins.getnikola.com/v7/continuous_import/][continuous import plug-in]] to
+  tag and categorise the created files better: that will get fed back
+  to the main plug-ins repository as a pull request at some point.
+
+  There are still a few funnies, and also more to say about the use of
+  org in this context, which I'll be writing about in the future.
