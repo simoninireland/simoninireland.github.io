@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2022-11-03T14:43:00Z</lastmod>
+  <lastmod>2022-11-03T16:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -800,10 +800,6 @@
  <url>
   <loc>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</loc>
   <lastmod>2022-11-03T14:24:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/2022/11/03/new-publishing-technology-for-the-web-site/</loc>
-  <lastmod>2022-11-03T14:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/archive.html</loc>
@@ -5067,14 +5063,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/writing/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/writing/cncp-book/</loc>
-  <lastmod>2022-11-02T16:43:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/writing/em-book/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
 </urlset>
