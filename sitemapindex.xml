@@ -90,6 +90,10 @@
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/cat_til.xml</loc>
+  <lastmod>2022-11-10T15:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/cfp.xml</loc>
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
@@ -642,6 +646,10 @@
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/today-i-learned.xml</loc>
+  <lastmod>2022-11-10T15:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/topology.xml</loc>
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
@@ -743,10 +751,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2022-11-03T16:07:00Z</lastmod>
+  <lastmod>2022-11-10T15:19:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-10T15:19:00Z</lastmod>
  </sitemap>
 </sitemapindex>
