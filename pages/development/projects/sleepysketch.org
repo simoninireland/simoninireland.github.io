@@ -5,8 +5,9 @@
   communications capabilities, poor development and debugging
   environments, and highly restricted battery power. It’s the latter
   that’s a real killer, especially when deploying into the wild: how do
-  we keep the power consumption down? I did a summer project to explore
-  these ideas, and SleepySketch was one of the main results.
+  we keep the power consumption down? I did a [[link:/development/projects/citizen-sensing/][summer project]] to explore
+  these ideas, and SleepySketch was one of the main results. (There's
+  more of a justification in [[link:/2013/07/25/sleepy-sketches/][this post]].)
 
   The [[http://arduino.cc/][Arduino]] is a hobbyist hardware platform that’s peculiarly
   attractive for sensor systems, as it’s so cheap and surrounded by an

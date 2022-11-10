@@ -1,0 +1,23 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2022/11/10/til-stroke-order-of-chinese-surnames.meta
+
+* TIL: Stroke order of Chinese surnames
+
+  Sometimes we publish papers with authors in alphabetical order;
+  sometimes we use an order based on contribution, typically the main
+  author (often the most junior) first followed by the lesser
+  contributors and culminating in the most senior author, who might not
+  have made many concrete contributions to the writing. Personally I'm
+  a firm believer in the second style.
+
+  But I always wondered: how does one list authors in alphabetical
+  order for languages like Chinese that are non-alphabetic? I had the
+  opportunity to ask a couple of Chinese colleagues.
+
+  While Chinese doesn't have an /alphabetical/ order, it can use a
+  /stroke/ order: some surnames require more strokes than others,
+  often significantly more (four /versus/ eleven, in the case of the
+  two colleagues who explained this to me). So one can list authors in
+  order of the increasing numbers of strokes needed to write their
+  surnames.  That's really clever, and no more or less arbitrary in
+  terms of author appearance than the alphabetic approach.

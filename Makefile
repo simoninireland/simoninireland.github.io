@@ -61,6 +61,9 @@ WEBFONTS = \
 	"Alegreya"
 WEBFONTS_API = "https://fonts.googleapis.com/css2?family="
 
+# The git branch we're currently working on
+GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
+
 # New post, using an org mode file
 post: env
 	$(ACTIVATE) && $(NIKOLA) new_post -d -f org
@@ -76,10 +79,15 @@ build:  env
 # Upload to the Github remote
 publish: upload
 
-release: upload
+deploy: upload
 
-upload: env
+# Possibly auto-update as well before deployment?
+upload: env src-only
 	$(ACTIVATE) && $(NIKOLA) github_deploy
+
+# Check we're on the src branch before deploying
+src-only:
+	if [ "$(GIT_BRANCH)" != "src" ]; then echo "Can only deploy from src branch"; exit 1; fi
 
 # Update all files that need it
 update: update-files update-dblocks continuous-import
