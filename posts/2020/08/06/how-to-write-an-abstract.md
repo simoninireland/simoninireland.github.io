@@ -99,11 +99,15 @@ demonstrate how our approach enables situation inference with
 uncertain information using a case study based on a published smart
 home data set.</span>
 
-(From {{%bibitem SituationInference-EuroSSC09 %}}) The abstract goes
-from domain to challenge to approach to significance: having read it,
-the reader hopefully has a fairly good idea of what the paper
-contributes to which domain, and why this contribution is significant
-(in the authors' minds, at least).
+(From Susan McKeever, Juan Ye, Lorcan Coyle, and Simon Dobson. *[Using
+Dempster-Shafer Theory of Evidence for Situation
+Inference](https://simondobson.org/softcopy/ds-situation-inference-eurossc-09.pdf)*.
+In *Proceedings of the 4th European Conference on Smart Sensing and
+Context (EuroSSC)*. Vol. 5741 of LNCS. Springer-Verlag. Guildford, UK.
+2009.) The abstract goes from domain to challenge to approach to
+significance: having read it, the reader hopefully has a fairly good
+idea of what the paper contributes to which domain, and why this
+contribution is significant (in the authors' minds, at least).
 
 Shorter is often better, of course:
 
@@ -117,12 +121,16 @@ side-by-side, and propose a self-organising solution for model-based
 data collection</span> <span style="color: blue">that reduces errors and communications in a unified
 fashion.</span>
 
-(From {{%bibitem UnifyingFaultEnergy13 %}}) In this case my then-student
-Lei messed with the sentence structure because we wanted to get across
-the idea that the main problem was the totality of the existing
-approach to the problem, which we wanted to address as a whole. The
-abstract still follows the basic structure, and I think is stronger
-for being shorter.
+(From Lei Fang and Simon Dobson. *[Unifying Sensor Fault Detection
+with Energy
+Conservation](https://simondobson.org/softcopy/iwsos-faults-energy.pdf)*.
+In *Proceedings of the 7th International Workshop on Self-Organising
+Systems (IWSOS’13)*. Palma de Mallorca, ES. May 2013.) In this case my
+then-student Lei messed with the sentence structure because we wanted
+to get across the idea that the main problem was the totality of the
+existing approach to the problem, which we wanted to address as a
+whole. The abstract still follows the basic structure, and I think is
+stronger for being shorter.
 
 No rule of writing is hard-and-fast, of course, and so you'll often
 find great abstracts that adopt a completely different approach. I
