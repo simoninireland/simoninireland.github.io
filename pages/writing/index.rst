@@ -26,6 +26,6 @@ Recent blog posts
    :type: posts
    :stop: 5
 
-Older posts <link:/archive.html>`_
+`Older posts <link:/archive.html>`_
 
-Posts by tag <link:/categories/>`_
+`Posts by tag <link:/categories/>`_
