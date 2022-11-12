@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://simondobson.org/categories/abstracts.xml</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-12T11:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/actors.xml</loc>
@@ -91,7 +91,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_til.xml</loc>
-  <lastmod>2022-11-10T15:19:00Z</lastmod>
+  <lastmod>2022-11-10T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cfp.xml</loc>
@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/essay.xml</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-12T11:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/eu.xml</loc>
@@ -646,10 +646,6 @@
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/today-i-learned.xml</loc>
-  <lastmod>2022-11-10T15:14:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/topology.xml</loc>
   <lastmod>2022-11-03T14:42:00Z</lastmod>
  </sitemap>
@@ -703,7 +699,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/writing.xml</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-12T11:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/x-ctu.xml</loc>
@@ -751,10 +747,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2022-11-10T15:19:00Z</lastmod>
+  <lastmod>2022-11-12T11:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2022-11-10T15:19:00Z</lastmod>
+  <lastmod>2022-11-12T11:54:00Z</lastmod>
  </sitemap>
 </sitemapindex>
