@@ -6,7 +6,7 @@ The first issue is obvious: milliseconds are a really inconvenient way to think 
 
 The second issue concerns scheduling -- or rather regular
 scheduling. Most sampling and communication tasks occur on predictable
-schedules, say every five hours. In an <a href="/blog/2013/06/01/actor-systems/" target="_blank">actor
+schedules, say every five hours. In an <a href="/2013/06/01/actor-systems/" target="_blank">actor
 framework</a>, that means the actor instance (or another one) has to
 be re-scheduled after the first has run. We can do this within the
 definition of the actor, for example using the <code>post()</code>

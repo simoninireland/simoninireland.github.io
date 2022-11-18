@@ -12,6 +12,6 @@ Actually this is enough to perform a simple radio survey to check transmission d
 
 ![Meshing](/images/citizen-sensing/processing-xbee-api.png)
 
-The software is quite straightforward, and the <a href="/blog/2013/07/03/xbee-arduino/">xbee-arduino library</a> handles all the low-level communications -- although it's very low-level, fine for the experienced programmer but probably all but mystifying to anyone not used to this kind of software. The corresponding Java xbee-api library is slightly more friendly, but <em>only</em> slightly: they probably both need wrapping into a framework that hides the radio nastiness.
+The software is quite straightforward, and the <a href="/2013/07/03/xbee-arduino/">xbee-arduino library</a> handles all the low-level communications -- although it's very low-level, fine for the experienced programmer but probably all but mystifying to anyone not used to this kind of software. The corresponding Java xbee-api library is slightly more friendly, but <em>only</em> slightly: they probably both need wrapping into a framework that hides the radio nastiness.
 
 I think the biggest hurdle for this sort of system is the data format -- or, more precisely, the need (or desire, at least) to to use C at one end and Processing/Java at the other, which means that the data on the wire is being described twice. A framework approach could use (for example) <a href="http://www.json.org/" target="_blank">JSON</a>, although there'd still be a need to make sure it was compactly encoded and transmitted.

@@ -2,7 +2,7 @@
 
 <!--more-->
 
-The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="/blog/2013/07/08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.
+The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="/2013/07/08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.
 
 ![DS18B20](/images/citizen-sensing/three-ds18b20.png)
 

@@ -2,7 +2,7 @@ It turns out there there are quite a few versions of the "same" components out t
 
 <!--more-->
 
-The <a href="/blog/2013/08/27/arduino-breadboard/">Arduino-on-a-breadboard showed</a> that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it <em>via</em> the USB breakout board didn't work -- repeatedly.
+The <a href="/2013/08/27/arduino-breadboard/">Arduino-on-a-breadboard showed</a> that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it <em>via</em> the USB breakout board didn't work -- repeatedly.
 
 It turns out that the <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">breadboard tutorial on the Arduino web site</a> is actually flawed for the current versions of the components concerned. There are actually two problems: the microcontroller needs to be manually reset before uploading a sketch; and the USB breakout board needs slightly more supporting electronics to talk to the microcontroller.
 
@@ -31,4 +31,3 @@ For my particular breakout board shown above, this means connecting pin 7 to the
 Somewhat more complicated, but rather more functional.
 
 I think you have to maintain a sense of perspective about these issues, annoying as they are: in many ways it's good that the components change and evolve rather than staying exactly the same, as it means that they're being developed and refined over time. On the other hand, it means you have to be <em>very</em> circumspect about following blindly the tutorials and explanations on blog posts from even a relatively short time ago.
-

@@ -14,4 +14,4 @@ The main software challenges include working the hardware and -- more significan
 
 Is this a worthwhile project? From a scientific point of view its clearly questionable, but that's not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and uncertain.
 
-The <a href="/tag/ditch/">blog</a> for the project will let you follow all the gory details.</p></body></html>
+The <a href="/categories/ditch/">blog</a> for the project will let you follow all the gory details.</p></body></html>

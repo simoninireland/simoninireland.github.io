@@ -2,13 +2,13 @@ Clearly saving battery power means getting the XBee radio to sleep at the behest
 
 <!--more-->
 
-Our <a href="/blog/2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.
+Our <a href="/2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.
 
-Since XBees work as a <a href="/blog/2013/07/02/mesh-network/">mesh network</a>, it's clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.
+Since XBees work as a <a href="/2013/07/02/mesh-network/">mesh network</a>, it's clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.
 
 ![Pins relating to XBee sleep mode](/images/citizen-sensing/sleep-pin.jpg)
 
-The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="/blog/2013/07/23/arduino-watchdog/">Arduino's sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.
+The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="/2013/07/23/arduino-watchdog/">Arduino's sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.
 
 Also note I/O line 7, pin 12 (in green): we'll come back to this later.
 
@@ -30,7 +30,7 @@ connect the wiring.
 
 The XBee's sleep mode is controlled by a single AT command called (unsurprisingly) SM. The default (SM 0) is for the radio to be on all the time; SM 1 selects the pin-sleep mode described above, and is the one we'll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio's timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in control.)
 
-Setting the sleep mode is simply a matter of <a href="/blog/2013/08/02/at-commands-2">issuing the appropriate AT command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly first.
+Setting the sleep mode is simply a matter of <a href="/2013/08/02/at-commands-2">issuing the appropriate AT command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly first.
 
 The first issue concerns the setting of the XBee's sleep pin. If we
 select pin-sleep mode with the pin high, the XBee will sleep

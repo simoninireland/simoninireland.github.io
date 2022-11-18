@@ -38,4 +38,4 @@ int atCommand( char *command, uint8_t param ) {
 }
 ```
 
-This function can be used to issue the different control codes for the radio. Some parameters can be <a href="/blog/2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.
+This function can be used to issue the different control codes for the radio. Some parameters can be <a href="/2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.

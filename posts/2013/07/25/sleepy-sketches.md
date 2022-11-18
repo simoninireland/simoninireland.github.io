@@ -2,11 +2,11 @@
 
 <!--more-->
 
-The standard Arduino software model is, well, standard: programs ("sketches") are structured in terms of a <code>setup()</code> function that runs once when the system restarts and a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn't all that desirable: a sensor system typically tries to <a href="/blog/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
+The standard Arduino software model is, well, standard: programs ("sketches") are structured in terms of a <code>setup()</code> function that runs once when the system restarts and a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn't all that desirable: a sensor system typically tries to <a href="2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
 
 There are at least two ways to do this. The simplest is a library that lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means that <code>loop()</code> encapsulates all the program's logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another
 
-If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="/blog/2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.
+If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="/2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.
 
 Turning this into code, we get the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.
 
@@ -38,4 +38,3 @@ The <code>setup()</code> code initialises the serial port and the sleepy sketch 
 This is a first design, now just about working. It's still not as easy
 as it could be, however, and needs some testing to make sure that the
 power savings do actually materialise.
-

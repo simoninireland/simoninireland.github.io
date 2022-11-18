@@ -16,7 +16,7 @@ that matter): the abstract.
 
 <!-- TEASER_END -->
 
-What is the abstract of a report or paper? What it isn't is an
+What is the abstract of a report or paper? What it *isn't* is an
 introduction or guide to the rest of the document: that,
 unsurprisingly, is what the introduction is for. The goal of an
 abstract is much simpler: it's intended to persuade the reader to read
@@ -36,15 +36,14 @@ reading style:
 - Read the abstract
 - If still interested, read the conclusion
 - If *still* interested, read the introduction
-- If it's *really* interesting, read the rest of the paper
+- Only if it's still *really* interesting, read the rest of the paper
 
-(There are several variants, a couple of which are described here and
-here.) The point here is that we can filter out papers of lesser
-interest to reserve time and head space for the most interesting. Only
-if the results grab your attention do you need to spend time
-discovering the detail of how they were obtained -- rather than doing
-that work only discover that you don't care about the results being
-reported.
+(There are several variants you may find described in other places.)
+The point is that we can filter out papers of lesser interest to
+reserve time and head space for the most interesting. Only if the
+results grab your attention do you need to spend time discovering the
+detail of how they were obtained -- rather than doing that work only
+discover that you don't care about the results being reported.
 
 The abstract is the key: without a decent description of what the
 paper is about, the discerning reader will not proceed even to the
