@@ -145,10 +145,10 @@
 <!--more-->
 
 <p>One of the most exciting things about the Arduino is that it's open-source, so you can build them yourself -- and potentially vary the way they're put together for specific projects, which is very useful as a starting point for people (like me!) who aren't hardware engineers.</p>
-<p>The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the <a href="../../blog/2013/07/31/power/">quiescent current of the power regulator</a>.</p>
+<p>The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the <a href="../../2013/07/31/power/">quiescent current of the power regulator</a>.</p>
 <p>As a starting point, I used an <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">on-line guide </a>to build an Arduino on a breadboard:</p>
 <p><img alt="An Arduino build from components" src="../../images/citizen-sensing/breadboard-arduino.jpg"></p>
-<p>Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../blog/2013/07/31/power/">earlier</a>.</p>
+<p>Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../2013/07/31/power/">earlier</a>.</p>
 <p>Measuring power for a simple "blink" program gives the following result:</p>
 <table style="border: 1"><tbody>
 <tr>
@@ -213,10 +213,10 @@ default.</p>
     <p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield slightly.</p>
 <!--more-->
 
-<p>Our <a href="../../blog/2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.</p>
-<p>Since XBees work as a <a href="../../blog/2013/07/02/mesh-network/">mesh network</a>, it's clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.</p>
+<p>Our <a href="../../2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.</p>
+<p>Since XBees work as a <a href="../../2013/07/02/mesh-network/">mesh network</a>, it's clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.</p>
 <p><img alt="Pins relating to XBee sleep mode" src="../../images/citizen-sensing/sleep-pin.jpg"></p>
-<p>The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="../../blog/2013/07/23/arduino-watchdog/">Arduino's sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.</p>
+<p>The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="../../2013/07/23/arduino-watchdog/">Arduino's sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.</p>
 <p>Also note I/O line 7, pin 12 (in green): we'll come back to this later.</p>
 <p>We'll deal with the hardware part first, and then the software.</p>
 <h3>Getting access to the sleep pin</h3>
@@ -232,7 +232,7 @@ connect the wiring.</p>
 <h3>Setting the sleep mode</h3>
 
 <p>The XBee's sleep mode is controlled by a single AT command called (unsurprisingly) SM. The default (SM 0) is for the radio to be on all the time; SM 1 selects the pin-sleep mode described above, and is the one we'll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio's timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in control.)</p>
-<p>Setting the sleep mode is simply a matter of <a href="../../blog/2013/08/02/at-commands-2">issuing the appropriate AT command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly first.</p>
+<p>Setting the sleep mode is simply a matter of <a href="../../2013/08/02/at-commands-2">issuing the appropriate AT command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly first.</p>
 <p>The first issue concerns the setting of the XBee's sleep pin. If we
 select pin-sleep mode with the pin high, the XBee will sleep
 immediately, which might not be what we intended. So if we've

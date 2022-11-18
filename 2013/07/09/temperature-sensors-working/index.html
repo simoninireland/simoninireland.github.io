@@ -30,7 +30,7 @@
   gtag('config', 'UA-10943215-1');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../08/ds18b20/" title="DS18B20 digital thermometer" type="text/html">
-<link rel="next" href="../../23/arduino-watchdog/" title="Understanding Arduino sleep modes: the watchdog timer" type="text/html">
+<link rel="next" href="../../10/representing-samples/" title="Representing samples" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
 <meta property="og:title" content="Temperature sensors working">
 <meta property="og:url" content="https://simondobson.org/2013/07/09/temperature-sensors-working/">
@@ -156,7 +156,7 @@ The temperature sensing part of the project requires three sensors for ambient, 
 <p>Temperature sensing using digital temperature sensors is easy to get working.</p>
 <!--more-->
 
-<p>The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../../../blog/2013/07/08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.</p>
+<p>The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.</p>
 <p><img alt="DS18B20" src="../../../../images/citizen-sensing/three-ds18b20.png"></p>
 <p>Three DS18B20 temperature sensors sharing a OneWire bus, standard (rail) power mode</p>
 <p>Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin -- which isn't important for hardware reasons in this project, but also saves some microcontroller RAM, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The DQ line is attached to one of the Arduino's digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to "real" temperature values.</p>
@@ -211,7 +211,7 @@ The temperature sensing part of the project requires three sensors for ambient, 
                 <a href="../../08/ds18b20/" rel="prev" title="DS18B20 digital thermometer">Previous post</a>
             </li>
             <li class="next">
-                <a href="../../23/arduino-watchdog/" rel="next" title="Understanding Arduino sleep modes: the watchdog timer">Next post</a>
+                <a href="../../10/representing-samples/" rel="next" title="Representing samples">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
 	            <div id="disqus_thread"></div>

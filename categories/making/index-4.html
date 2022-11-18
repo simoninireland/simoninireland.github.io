@@ -157,7 +157,7 @@ but also hides the exact nature of any error.</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 
-<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../blog/2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.</p>
+<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.</p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/31/power/" class="u-url">Basic power measurements</a></h1>
 
@@ -249,7 +249,7 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
 <p>The second issue concerns scheduling -- or rather regular
 scheduling. Most sampling and communication tasks occur on predictable
-schedules, say every five hours. In an <a href="../../blog/2013/06/01/actor-systems/" target="_blank">actor
+schedules, say every five hours. In an <a href="../../2013/06/01/actor-systems/" target="_blank">actor
 framework</a>, that means the actor instance (or another one) has to
 be re-scheduled after the first has run. We can do this within the
 definition of the actor, for example using the <code>post()</code>
@@ -304,7 +304,7 @@ code.</p>
 <p><img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="../../images/citizen-sensing/sensor-enclosure.jpg"></p>
 <p>A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station -- something as simple as possible, like sending a single packet with a count every ten seconds -- and keep careful track of the return values coming back from the radio library. We then use the only output device we have -- an LED -- to indicate the success or failure of each operation, preferably with an indication of <em>why</em> it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we've reached the edge of the effective range.</p>
 <p>With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect <em>via</em> the first, automatically. That's the theory, anyway...</p>
-<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an ATJV1 command issued to it. The easiest way to do this is at set-up, <a href="../../blog/2013/07/02/xctu/" target="_blank">through the advanced settings in X-CTU</a>.)</p>
+<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an ATJV1 command issued to it. The easiest way to do this is at set-up, <a href="../../2013/07/02/xctu/" target="_blank">through the advanced settings in X-CTU</a>.)</p>
 <p>The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30--40m -- somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10--20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no effort.</p>
 <p>This is somewhat disappointing, but that's what this project is all about: the practicalities of sensor networking with cheap hardware.</p>
 <p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the enclosure.</p>

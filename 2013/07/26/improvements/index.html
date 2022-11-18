@@ -162,7 +162,7 @@ The first issue is obvious: milliseconds are a ">
 <p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
 <p>The second issue concerns scheduling -- or rather regular
 scheduling. Most sampling and communication tasks occur on predictable
-schedules, say every five hours. In an <a href="../../../../blog/2013/06/01/actor-systems/" target="_blank">actor
+schedules, say every five hours. In an <a href="../../../06/01/actor-systems/" target="_blank">actor
 framework</a>, that means the actor instance (or another one) has to
 be re-scheduled after the first has run. We can do this within the
 definition of the actor, for example using the <code>post()</code>
