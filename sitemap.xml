@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2022-11-03T16:18:00Z</lastmod>
+  <lastmod>2022-11-30T08:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -806,12 +806,16 @@
   <lastmod>2022-11-10T15:14:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2022/11/28/me-and-my-research/</loc>
+  <lastmod>2022-11-28T20:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2022-11-10T15:14:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2022-11-10T15:28:00Z</lastmod>
+  <lastmod>2022-11-28T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -987,7 +991,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/index-1.html</loc>
@@ -1031,11 +1035,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/index-19.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/index-2.html</loc>
   <lastmod>2022-11-03T17:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/bonanza/index-20.html</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/bonanza/index-3.html</loc>
@@ -1075,7 +1083,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/books/</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/books/index-1.html</loc>
@@ -1423,7 +1431,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/books/index-88.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/books/index-89.html</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/books/index-9.html</loc>
@@ -1435,7 +1447,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/index-1.html</loc>
@@ -1783,7 +1795,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/index-88.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_book-reviews/index-89.html</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/index-9.html</loc>
@@ -1808,6 +1824,10 @@
  <url>
   <loc>https://simondobson.org/categories/cat_citizen-sensing/index-4.html</loc>
   <lastmod>2022-11-18T18:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/cat_complex-systems/</loc>
+  <lastmod>2022-11-28T20:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_til/</loc>
@@ -2347,7 +2367,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/research/index-1.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-28T20:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/review/</loc>
@@ -2355,7 +2375,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/index-1.html</loc>
@@ -2399,11 +2419,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/index-19.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/index-2.html</loc>
   <lastmod>2022-11-03T17:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/reviews/index-20.html</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/reviews/index-3.html</loc>
@@ -2559,11 +2583,15 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/strategy/</loc>
-  <lastmod>2022-11-03T14:42:00Z</lastmod>
+  <lastmod>2022-11-28T20:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/strategy/index-1.html</loc>
-  <lastmod>2022-11-03T17:13:00Z</lastmod>
+  <lastmod>2022-11-28T20:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/strategy/index-2.html</loc>
+  <lastmod>2022-11-28T20:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/stu/</loc>
@@ -3262,6 +3290,10 @@
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/goodreads/herding-hemingways-cats-understanding-how-our-genes-work/</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/goodreads/hillbilly-elegy-a-memoir-of-a-family-and-culture-in-crisis/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
@@ -3678,6 +3710,10 @@
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/goodreads/secret-war-the-story-of-soe/</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/goodreads/selfish-whining-monkeys-how-we-ended-up-greedy-narcissistic-and-unhappy/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
@@ -3796,6 +3832,10 @@
  <url>
   <loc>https://simondobson.org/goodreads/straw-dogs-thoughts-on-humans-and-other-animals/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/goodreads/suez-the-double-war/</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/goodreads/surely-youre-joking-mr-feynman-adventures-of-a-curious-character/</loc>
@@ -4128,6 +4168,10 @@
  <url>
   <loc>https://simondobson.org/goodreads/the-outsider/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/goodreads/the-painful-truth-the-new-science-of-our-aches-agonies-and-afflictions/</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/goodreads/the-past-through-tomorrow-future-history-1-21/</loc>
@@ -4478,6 +4522,10 @@
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/goodreads/what-if-2-additional-serious-scientific-answers-to-absurd-hypothetical-questions-what-if-2/</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/goodreads/what-if-serious-scientific-answers-to-absurd-hypothetical-questions-what-if-1/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
@@ -4527,7 +4575,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/</loc>
-  <lastmod>2022-11-02T17:10:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-1.html</loc>
@@ -4647,7 +4695,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-125.html</loc>
-  <lastmod>2022-11-10T15:14:00Z</lastmod>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/indices/index-126.html</loc>
+  <lastmod>2022-11-30T09:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-13.html</loc>

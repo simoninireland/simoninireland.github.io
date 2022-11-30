@@ -53,13 +53,9 @@
   <macro name="volume">
     <choose>
       <if variable="volume">
-	<label variable="volume" form="short" text-case="capitalize-first"/>
-	<text variable="volume"/>
-	<choose>
-	  <if variabler="container-title">
-	    <text prefix=" of " variablke="container-title"/>
-	  </if>
-	</choose>
+	<label variable="volume" form="long" text-case="capitalize-first"/>
+	<text prefix=" " variable="volume"/>
+	<text prefix=" of " variable="collection-title"/>
       </if>
     </choose>
   </macro>
@@ -81,7 +77,7 @@
 
     <layout>
       <!-- Authors first for everything -->
-      <text macro="author" suffix="."/>
+      <text macro="author" suffix=". "/>
 
       <choose>
 	<!-- Books -->
@@ -137,8 +133,7 @@
 	<!-- Theses -->
 	<else-if type="thesis report" match="any">
 	  <group delimiter=". "  suffix=".">
-	    <text variable="title" text-case="title"
-		  font-style="italic"/>
+	    <text variable="title" text-case="title" font-style="italic"/>
 	    <text prefix="Technical report " variable="number"/>
 	    <text variable="publisher"/>
 	    <text macro="published"/>

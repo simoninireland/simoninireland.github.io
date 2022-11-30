@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
+  <info>
+    <title>Online citations with hyperlinks</title>
+    <title-short>Online citations</title-short>
+    <id>https://simondobson.org/online-citations.csl</id>
+    <link href="https://simondobson.org/online-citations.csl" rel="self"/>
+    <link href="https://simondobson.org/complete-online.csl" rel="template"/>
+    <link href="http://www.zotero.org/styles/american-physics-society" rel="template"/>
+    <author>
+      <name>Simon Dobson</name>
+      <email>simoninireland@gmail.com</email>
+      <uri>https://simondobson.org</uri>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="personal"/>
+    <summary>Citations for within a blog.</summary>
+    <updated>2022-11-29</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text"/>
+      <label form="long" prefix=", " suffix=" "/>
+      <substitute>
+	<names variable="editor"/>
+	<names variable="translator"/>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name and="text"/>
+      <label form="long" prefix=", "/>
+    </names>
+  </macro>
+  <macro name="published">
+    <choose>
+      <if variable="issued">
+	<date variable="issued">
+	  <date-part name="month" form="long" suffix=" "/>
+	  <date-part name="year"/>
+	</date>
+      </if>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <group delimiter=". ">
+      <text variable="publisher"/>
+      <text variable="publisher-place" text-case="title"/>
+    </group>
+  </macro>
+  <macro name="volume">
+    <choose>
+      <if variable="volume">
+	<label variable="volume" form="long" text-case="capitalize-first"/>
+	<text prefix=" " variable="volume"/>
+	<text prefix=" of " variable="collection-title"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="references">
+    <!-- We only include offline references here, as by omitting the
+	 online ones (URL and DOI) Emacs citeproc will hyperlink the
+	 title of the reference. This seems to be the only way to get
+	 the titles hyperlinked, as CSL doesn't include any hyperlink
+	 generation. It's a shame, because it'd be useful to be able
+	 to include the DOI as text as well. -->
+    <text prefix="ISBN " variable="ISBN"/>
+  </macro>
+
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout>
+      <!-- Citation number -->
+      <text prefix="[" variable="citation-number" suffix="] "/>
+
+      <!-- Authors first for everything -->
+      <text macro="author" suffix=". "/>
+
+      <choose>
+	<!-- Books -->
+	<if type="book" match="any">
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <text macro="volume"/>
+	    <text macro="publisher"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	  </group>
+	</if>
+
+	<!-- Journal articles -->
+	<else-if type="article article-journal article-magazine" match="any">
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <group delimiter=" ">
+	      <text variable="container-title" form="short"
+		    text-case="title"/>
+	      <group delimiiter="">
+		<text variable="volume" font-weight="bold"/>
+		<text prefix="(" variable="number" suffix=")"/>
+		<text prefix=", pp." variable="page"/>
+	      </group>
+	    </group>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	  </group>
+	</else-if>
+
+	<!-- Conference and workshop papers -->
+	<else-if type="chapter paper-conference" match="any">
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <group delimiter=". ">
+	      <group delimiter="">
+		<text prefix="In " variable="container-title" text-case="title" font-style="italic"/>
+		<text prefix=", pp." variable="page"/>
+	      </group>
+	      <text macro="editor"/>
+	      <text macro="volume"/>
+	    </group>
+	    <text macro="publisher"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	  </group>
+	</else-if>
+
+	<!-- Theses -->
+	<else-if type="thesis report" match="any">
+	  <group delimiter=". "  suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <text prefix="Technical report " variable="number"/>
+	    <text variable="publisher"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	  </group>
+	</else-if>
+
+	<!-- Unpublished and everything else, hopefully with enough
+	     to find it -->
+	<else>
+	  <group delimiter=". " suffix=".">
+	    <text variable="title" text-case="title" font-style="italic"/>
+	    <text macro="references"/>
+	    <text macro="published"/>
+	    <text variable="note"/>
+	    <text variable="URL"/>
+	  </group>
+	</else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
