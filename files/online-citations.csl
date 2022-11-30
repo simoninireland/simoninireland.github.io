@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
-    <title>Complete online bibliography with hyperlinks</title>
-    <title-short>Online bibliography</title-short>
-    <id>https://simondobson.org/complete-online.csl</id>
-    <link href="https://simondobson.org/complete-online.csl" rel="self"/>
+    <title>Online citations with hyperlinks</title>
+    <title-short>Online citations</title-short>
+    <id>https://simondobson.org/online-citations.csl</id>
+    <link href="https://simondobson.org/online-citations.csl" rel="self"/>
+    <link href="https://simondobson.org/complete-online.csl" rel="template"/>
     <link href="http://www.zotero.org/styles/american-physics-society" rel="template"/>
     <author>
       <name>Simon Dobson</name>
@@ -13,8 +14,8 @@
     </author>
     <category citation-format="numeric"/>
     <category field="personal"/>
-    <summary>Online bibliography style for a scientist's personal web site.</summary>
-    <updated>2022-10-12</updated>
+    <summary>Citations for within a blog.</summary>
+    <updated>2022-11-29</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
@@ -69,13 +70,20 @@
     <text prefix="ISBN " variable="ISBN"/>
   </macro>
 
-  <bibliography entry-spacing="0" second-field-align="flush">
+  <citation collapse="citation-number">
     <sort>
-      <!-- Reverse chronological order for a personal bibliography. -->
-      <key variable="issued" sort="descending"/>
+      <key variable="citation-number"/>
     </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
 
+  <bibliography entry-spacing="0" second-field-align="flush">
     <layout>
+      <!-- Citation number -->
+      <text prefix="[" variable="citation-number" suffix="] "/>
+
       <!-- Authors first for everything -->
       <text macro="author" suffix=". "/>
 
@@ -144,11 +152,12 @@
 	<!-- Unpublished and everything else, hopefully with enough
 	     to find it -->
 	<else>
-	  <group delimiter=". "  suffix=".">
+	  <group delimiter=". " suffix=".">
 	    <text variable="title" text-case="title" font-style="italic"/>
 	    <text macro="references"/>
 	    <text macro="published"/>
 	    <text variable="note"/>
+	    <text variable="URL"/>
 	  </group>
 	</else>
       </choose>

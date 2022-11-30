@@ -1,0 +1,98 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2022/11/28/me-and-my-research.meta
+
+* Me and my research                                                 :ATTACH:
+  :PROPERTIES:
+  :ID:       18f8730c-01c7-45d6-8ef6-ee123f380177
+  :END:
+
+  I've recently been thinking about my research directions, making use
+  of some advice I came across years ago.
+
+  {{{TEASER_END}}}
+
+  My research interests seem to fluctuate over time, more than is the
+  case for others who stay in one field. I started out as a
+  high-performance computing guy, then worked on compilers,
+  distributed and web systems pervasive computing, sensor networks,
+  and data analytics -- and, most recently, complex networks and
+  complex systems in general. This last work also seems to be
+  involving a lot of high-performance computing, so I sometimes feel
+  I'm coming full circle.
+
+  One issue with evolving research interests is deciding /what/ to
+  work on exactly. Interestingly, this is a question that fascinated
+  [[https://en.wikipedia.org/wiki/Richard_Hamming][Richard Hamming]], one of the founding fathers of information and
+  coding theory, who in 1968 won the third-ever [[https://en.wikipedia.org/wiki/Turing_Award][Turing award]] for his
+  work on error-correcting codes.
+
+  #+attr_org: :width 100
+  #+attr_html: :width 3cm
+  [[attachment:Richard_Hamming.jpg]]
+
+  (Image from [[https://en.wikipedia.org/wiki/Richard_Hamming#/media/File:Richard_Hamming.jpg][Wikipedia]].) Even with this achievement, he remained
+  fascinated by the mechanisms of deciding what to research to achieve
+  the greatest possible impact. In a 1986 lecture "You and your
+  research" cite:YouAndYourResearch he suggests that anyone thinking
+  about what they want to work on should ask themselves two questions.
+
+  The first is innocuous:
+
+  - What is the most potentially transformative question in your
+    field?
+
+  But it's the second one that's the killer:
+
+  - Is that what you work on?
+
+  I think there are good reasons why the answers to these two
+  questions might be different: you might not work somewhere that has
+  access to the data you need, or the scale of resources, or funding.
+  I suspect Hamming would disagree with me, and say that just means
+  you need to find a new job.
+
+  I first came across these questions about ten years ago, and they've
+  stuck with me ever since: I often pass the lecture on to new
+  researchers or academics. And I think it's a useful exercise to pose
+  them to yourself periodically. So what are my answers now?
+
+  You first need to identify your field. At the moment mine is complex
+  systems, especially the computational and mathematical tooling
+  needed to explore them.
+
+  In network science there's a focus on the ways in which processes
+  /finish/: their end states. A good example is the final size of an
+  epidemic outbreak, which can (sometimes) be predicted from a few
+  parameters and some information about the contact network's
+  topology. But the current techniques say little or nothing about the
+  /path the process takes/ to that end state, even though that's often
+  of immense practical significance. Moreover they're often driven by
+  only a coarse-grained understanding of the network, for example its
+  mean degree, and ignore the fine structure on the assumption
+  that this won't have much effect on the end state. That turns out
+  to be wrong in a number of cases cite:ClusteredTwoPathogen-PRE21.
+
+  So, what is the most potentially transformative question? For me I
+  think it's this: *how does network local fine structure affect the
+  paths of processes*? That is to say, if I introduce some structure
+  that affects a part of a network -- a local decrease in edge
+  density, for example, or a local increase in clustering -- what
+  happens? There's a catalogue of such structures that appears in the
+  literature such as clustering, layering, modularity, and so on: how
+  can we understand their effects, /individually and together/, on the
+  ways in which processes evolve?
+
+  Why is this question potentially transformative? Because such
+  structures, where there are local heterogeneities in network
+  structure, are the /norm/ for real-world networks. Understanding how
+  these variations affect processes therefore lets us analyse and
+  simulate the processes in more realistic detail. But it also
+  opens-up the possibility of leveraging such structures to affect
+  how a process behaves, or even engineering them to obtain some
+  desired effect.
+
+  And this is what I intend to work on for the coming few years.
+
+** References
+
+   bibliography:/home/sd80/personal/dict/refs.bib,/home/sd80/personal/dict/sd.bib

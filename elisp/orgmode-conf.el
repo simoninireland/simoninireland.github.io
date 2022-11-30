@@ -32,13 +32,23 @@
 
 ;;; Code:
 
-;;; ---------- Dependencies ----------
+;; Assume all the necessary pockages are available:
+;; - org
+;; - org-ref
 
-;; Load the dependencies
-(setq package-load-list '((s t)
-			  (f t)
-			  (dash t)))
+(setq package-load-list '(all))
 (package-initialize)
+
+;;; ---------- Citation and attachment handling ----------
+
+;; Use org-ref for expanding citation and bibliography links
+(require 'org-ref)
+(setenv "BIBINPUTS" "~/personal/dict")
+(setq bibtex-completion-bibliography (list (expand-file-name "~/personal/dict/refs.bib")
+					   (expand-file-name "~/personal/dict/sd.bib")))
+(setq org-ref-csl-default-locale "en-GB"
+      org-ref-csl-default-style (expand-file-name "~/programming/simoninireland.github.io/files/online-citations.csl"))
+(add-hook 'org-export-before-parsing-hook #'org-ref-process-buffer)
 
 ;; Use the development version of ox-attach-publish
 (add-to-list 'load-path (concat (expand-file-name "~/programming/ox-attach-publish")))
@@ -76,7 +86,6 @@ This is essentially where it'll end up in the output directory."
     ;; drop the first element (pages/ or posts/)
     ;; (should we have an error check?)
     (org-attach-publish--join-path (cdr almost-path))))
-
 
 (defun sd/blog--update-link-path (l rel)
   "Update a link L to use path REL.
