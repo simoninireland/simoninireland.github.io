@@ -97,81 +97,27 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about moore's law</h1>
+<article class="tagpage"><header><h1>Posts about moore's law</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../moores-law.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2010/05/28/languages-extensible-vms/" class="u-url">Languages for extensible virtual machines</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2010/05/28/languages-extensible-vms/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2010-05-28T06:00:30+01:00" title="2010-05-28 06:00">2010-05-28 06:00</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2010/05/28/languages-extensible-vms/#disqus_thread" data-disqus-identifier="cache/posts/2010/05/28/languages-extensible-vms.html">Comments</a>
+            	<time class="listdate" datetime="2010-05-28T06:00:30+01:00" title="2010-05-28 06:00">2010-05-28 06:00</time><a href="../../2010/05/28/languages-extensible-vms/" class="listtitle"> Languages for extensible virtual machines</a><a>
+            </a>
+</li>
+            <li>
 
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what's the appropriate  language for writing experimental languages?</p>
-<!--more-->
-
-<p>What I have in mind is slightly more than just VMs, and more a platform for experimenting with language design for novel environments such as sensor-driven systems. As well as a runtime, this requires the ability to parse, to represent and evaluate type and semantic rules, and to provide a general framework for computation that can then be exposed into a target language as constructs, types and so forth. What's the right language in which to do all this?</p>
-<p>This isn't a simple question. It's well-accepted that the correct choice of language is vital to the success of a coding project.  One could work purely at the language level, exploring constructs and type systems without any real constraint of the real world (such as being runnable on a sensor mote). This has to some extent been traditional in programming language research, justified by the Moore's law increases in performance of the target machines. It isn't justifiable for sensor networks, though, where <a href="../../2010/03/things-that-wont-change/">we won't see the same phenomenon</a>. If we want to prototype realistic language tools in the same framework, we need at least a run-time VM that was appropriate for these target devices; alternatively we could ignore this, focus on the language, and prototype only when we're happy with the structures, using a different framework. My gut ffeeling is that the former is preferable, if it's possible, for reasons of conceptual clarity, impact and simplicity. But even without making this decision we can consider the features of different candidate language-writing languages:
-</p>
-<h3>C</h3>
-The most obvious approach is to use C, which is run-time-efficient and runs on any potential platform. For advanced language research, though, it's less attractive because of its poor symbolic data handling. That makes it harder to write type-checking sub-systems and the like, which are essentially symbolic mathematics.
-<h3>Forth</h3>
-<p><a href="../../2010/03/forth-for-sensors/">I've wondered about Forth before</a>. At one level it combines the same drawbacks as C -- poor symbolic and dynamic data handling -- with the additional drawback of being unfamiliar to almost everyone.</p>
-<p>Forth <em>does</em> have some redeeming features, though. Firstly, threaded interpretation means that additional layers of abstraction are largely cost-free: they run at the same speed as the language itself. Moreover there's a sense in which threaded interpretation blurs the distinction between host language and meta-language: you don't write Forth applications, you extend it towards the problem, so the meta-language <em>becomes</em> the VM and language tool. This is something that needs some further exploration.</p>
-<h3>Scheme</h3>
-<p>Scheme's advantages are its simplicity, regularity, and pretty much unrivalled flexibility in handling symbolic data. There's <a href="../../2010/05/cs-book-worth-reading-twice/">a long  tradition of Scheme-based language tooling</a>, and so a lot of experience and libraries to make use of. It's also easy to write purely functional code, which can aid re-use.</p>
-<p>Scheme is dynamically typed, which can be great when exploring approaches like partial evaluation (specialising an interpreter against a particular piece of code to get a compiled program, for example).</p>
-<h3>Haskell</h3>
-<p>In some ways, Haskell is the obvious language for a new language project. The strong typing, type classing and modules mean one can generate a typed meta-language. There are lots of libraries and plenty of activity in the research community. Moreover Haskell is in many ways the "mathematician's choice" of language, since one can often map mathematical concepts almost directly into code. Given thaat typing and semantics are just mathematical operations over symbols, this is a significant attraction.</p>
-<p>Where Haskell falls over, of course, is its runtime overheads -- mostly these days in terms of memory rather than performance. It essentially mandates a choice of target platform to be fairly meaty, which closes-off some opportunities. There are some "staged" Haskell strategies that might work around this, and one could potentially stage the code to another runtime virtual machine. Or play games like implement a Forth VM inside Haskell for experimentation, and then emit code for a <em>different</em> Forth implementation for runtime.</p>
-<h3>Java</h3>
-<p>Java remains the language <em>du jour</em> for most new projects. It has decent dynamic data handling, poor symbolic data handling, fairly large run-time overheads and a well-stocked library for re-use. (Actually I used Java for <a href="../../publications/#Vanilla-GCSE99">Vanilla</a>, an earlier project in a similar area.) Despite the attractions, Java feels wrong. It doesn't provide a good solution to <em>any</em> of the constraints, and would be awkward as a platform for manipulating rules-based descriptions.</p>
-<h3>Smalltalk</h3>
-<p>Smalltalk -- and especially <a href="http://www.squeak.org">Squeak</a> -- isn't a popular choice within language research, but does have a portable virtual machine, VM generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It's also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework -- something that'd be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.</p>
-<p>Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It's unfortunate there isn't a clear winner; alternatively, it's positive that there's a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2010/03/05/things-that-wont-change/" class="u-url">Things that won't change</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2010/03/05/things-that-wont-change/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2010-03-05T06:30:44Z" title="2010-03-05 06:30">2010-03-05 06:30</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2010/03/05/things-that-wont-change/#disqus_thread" data-disqus-identifier="cache/posts/2010/03/05/things-that-wont-change.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Technology always advances, and in most areas the rate of change is also increasing all the time. But there are some areas where technological changes either happen only slowly, or even go into reverse. Not something we're used to in computer science, but it's a feature of sensor network programming: what are the challenges that technology <em>won't</em> solve for us?</p>
-<!--more-->
-<p>Moore's law has been a defining feature of computers for the past decades. By and large computing power has doubled every 18 months at constant price; alternatively, the cost of a unit of computing power has halved in the same period. The effects of this on user experience have been plain to see.</p>
-<p>Within computer science, Moore's law has had an effect on research directions too. In starting on a PhD a student can work on a problem that'd at the edge of the performance envelope of whatever class of machine she is targeting -- cellphone, laptop, desktop or server -- secure in the knowledge that, but the time she's coming to an end, the power available to that machine class will have quadrupled. This doesn't open-up <em>every</em> problem, of course -- a four-times speed-up on an NP-hard search problem might still leave it largely intractable -- but in fields such as middleware, software tools, language design and the like, it's enough to overcome many issues.</p>
-<p>It's therefore something of a shock to come to sensor networks and similar systems, because I suspect these systems aren't subject to Moore's law in the usual way.</p>
-<p>In some ways, the situation on such small systems is actually <em>better</em> than in desktops and enterprise computing. At the higher end, we're already hitting at least the suspicion that the performance increases in individual cores will soon start to flatten out. Multicore processors allow us to keep increasing performance, but at the cost of vastly complicating the sorts of programming needed in order to keep all those cores occupied. Sensor motes are still single-core and typically aren't using state-of-the-art processes at that, so there's still plenty of room for manoeuvre.</p>
-<p>But it's easy to forget that while the cash cost of a unit of processing power has decreased, the <em>power</em> cost of that unit hasn't decreased by nearly as much (and may actually have increased). Those twice-as-powerful chips eighteen months on typically burn significantly more power than their predecessors. You only have to look at the size of heatsinks on chips to realise that there's a <em>lot</em> of heat being dissipated.</p>
-<p>So for a sensor network, which is using a battery or scavenging for power,  increasing the processor power will almost certainly decrease lifetime, and that's not a trade-off designers will accept. Battery, scavenging and renewable power sources like solar cells aren't subject to Moore's law: their growth curves are those of physics and traditional engineering, not those of IT systems. Ten years ago my cellphone went for three days without a charge; my new HTC Hero lasts no more than two days, even if I turn off the data services and wifi. The extra compute cost has a severe power cost.</p>
-<p>In many sensor applications, the trade-off will actually be in reverse. Given the choice, a designer might opt for two older, less capable but less power-hungry processors over one more powerful but more hungry. Two motes can provide more coverage, or more robustness, or both.</p>
-<p>But this exposes a real programming challenge, since it implies that we're going to have to get used to building modern, open, adaptive software on machines whose capabilities are similar to those of a mid-1980's vintage home computer -- and which might in fact even <em>decrease</em> over time, since the driving forces are pushing for coverage, lifetime and redundant replication. The performance of a network in aggregate might still increase, of course, but that still means that we have to extract extra performance from co-ordinating distributed processors rather than from improving individual nodes. The history of distributed parallel processing should warn us not to be sanguine about <em>that</em> prospect.</p>
-<p>Actually, though, the challenge will do us good. Modern machines encourage sloppy over-engineering and over-generalisation -- building frameworks for situations that we anticipate but which might never occur. Targeting small machines will change this, and instead encourage us to build software that's fit for immediate purpose, <em>and</em> that's build to be evolved and extended over time alongside changing requirements and constraints. This building evolution into the core of the system will make for better engineering in the long run.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2010-03-05T06:30:44Z" title="2010-03-05 06:30">2010-03-05 06:30</time><a href="../../2010/03/05/things-that-wont-change/" class="listtitle"> Things that won't change</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

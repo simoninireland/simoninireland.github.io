@@ -22,7 +22,6 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/categories/cat_citizen-sensing/">
 <link rel="icon" href="../../images/favicon.png" sizes="32x32">
-<link rel="next" href="index-4.html" type="text/html">
 <!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -98,309 +97,122 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about citizen-sensing</h1>
+<article class="tagpage"><header><h1>Posts about citizen-sensing</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../cat_citizen-sensing.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/08/28/uploading-sketches/" class="u-url">Uploading sketches to a breadboard Arduino</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/08/28/uploading-sketches/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-08-28T21:50:04+01:00" title="2013-08-28 21:50">2013-08-28 21:50</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/08/28/uploading-sketches/#disqus_thread" data-disqus-identifier="cache/posts/2013/08/28/uploading-sketches.html">Comments</a>
+            	<time class="listdate" datetime="2013-08-28T21:50:04+01:00" title="2013-08-28 21:50">2013-08-28 21:50</time><a href="../../2013/08/28/uploading-sketches/" class="listtitle"> Uploading sketches to a breadboard Arduino</a><a>
+            </a>
+</li>
+            <li>
 
+            	<time class="listdate" datetime="2013-08-27T11:47:45+01:00" title="2013-08-27 11:47">2013-08-27 11:47</time><a href="../../2013/08/27/arduino-breadboard/" class="listtitle"> Low-power Arduino-on-a-breadboard</a><a>
+            </a>
+</li>
+            <li>
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>It turns out there there are quite a few versions of the "same" components out there. Uploading sketches to an Arduino-on-a-breadboard is trickier than it first appears.</p>
-<!--more-->
+            	<time class="listdate" datetime="2013-08-02T15:41:30+01:00" title="2013-08-02 15:41">2013-08-02 15:41</time><a href="../../2013/08/02/xbee-sleeping/" class="listtitle"> XBee sleeping</a><a>
+            </a>
+</li>
+            <li>
 
-<p>The <a href="../../2013/08/27/arduino-breadboard/">Arduino-on-a-breadboard showed</a> that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it <em>via</em> the USB breakout board didn't work -- repeatedly.</p>
-<p>It turns out that the <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">breadboard tutorial on the Arduino web site</a> is actually flawed for the current versions of the components concerned. There are actually two problems: the microcontroller needs to be manually reset before uploading a sketch; and the USB breakout board needs slightly more supporting electronics to talk to the microcontroller.</p>
-<p>The first problem stems from the microcontroller needing to be reset before code can be uploaded to it. Essentially the reset makes the bootloader wait for code for a few seconds, and start the existing program if none arrives. On older Arduino models you have to physically reset the board using the reset switch just before uploading a sketch; on newer models, this reset happens automatically. Setting up the breakout board to reset the microcontroller immediately before it tries to talk to it will solve this.</p>
-<p>The second problem is more subtle. The USB breakout board is actually a USB to serial converter. The <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">tutorial</a> suggests that it is enough to connect the transmit and receive (Tx and Rx) lines to the microcontroller, but this turns out not to be the case: one also needs to connect some handshaking lines to make the system synchronise and communicate correctly. I eventually found a <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> that explains this: however, <em>that post is flawed too</em>, because it relies on a particular pin-out for the USB breakout board that's different tothe one I have. So here's a debugged explanation of what needs to happen.</p>
-<p><img alt="FT232r breakout board" src="../../images/citizen-sensing/ft232r-breakout.jpg"></p>
-<p>We need to connect the basic TxD, RxD, Vcc and Gnd lines on the breakout board as you'd expect. The picture to the right shows the the underside of my breakout board, with the pins named. If we number the pins counter-clockwise from the top left (so DCD is pin 1, TXD is 9, TXLED is 11, and VCC is 13), we connect pins 3 and 10 to ground, pin 13 to power, pin 9 to pin 2 of the ATMega microcontroller, and pin 5 to ATMega pin 3.</p>
-<p>What now also need to happen is that we need to connect the CTS and DTR lines to something. DTR (Data Transfer Ready) is sent low when the USB has data ready: we want this to trigger a reset of at ATMega. We then need to send CTS (Clear To Send) low so that the board starts sending data. This is basic serial-port handshaking. The timing can be accomplished using an RC circuit consisting of a 100ohm resistor and a 100nF capacitor attached appropriately. Putting this circuit onto the breadboard sorts out the handshaking, and the Arduino IDE happily uploads sketches just as it would to a "real" Arduino.</p>
-<p>The net result of this is to add some more wiring to the USB end of the Arduino breadboard:</p>
-<p><img alt="USB end" src="../../images/citizen-sensing/usb-end.jpg"></p>
-<p>Note the resistor and capacitor. (The red wire crossing the breakout board is a Gnd connection, needed because my breadboard only had single power rails top and bottom.) The circuit involved is as follows:</p>
-<p><img alt="Handshaking circuit" src="../../images/citizen-sensing/breadboard-handshake.png"></p>
-<p>For my particular breakout board shown above, this means connecting pin 7 to the capacitor and pin 15 to the following resistor. (It's this last step that the <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> gets wrong -- or at least uses a different pin for CTS.) The net result is an Arduino-on-a-breadboard that looks like this:</p>
-<p><img alt="Second Arduino-on-a-breadboard" src="../../images/citizen-sensing/breadboard-arduino-2.jpg"></p>
-<p>Somewhat more complicated, but rather more functional.</p>
-<p>I think you have to maintain a sense of perspective about these issues, annoying as they are: in many ways it's good that the components change and evolve rather than staying exactly the same, as it means that they're being developed and refined over time. On the other hand, it means you have to be <em>very</em> circumspect about following blindly the tutorials and explanations on blog posts from even a relatively short time ago.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/08/27/arduino-breadboard/" class="u-url">Low-power Arduino-on-a-breadboard</a></h1>
+            	<time class="listdate" datetime="2013-08-02T12:03:54+01:00" title="2013-08-02 12:03">2013-08-02 12:03</time><a href="../../2013/08/02/at-commands-2/" class="listtitle"> Issuing AT commands</a><a>
+            </a>
+</li>
+            <li>
 
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/08/27/arduino-breadboard/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-08-27T11:47:45+01:00" title="2013-08-27 11:47">2013-08-27 11:47</time></a></p>
+            	<time class="listdate" datetime="2013-07-31T18:12:55+01:00" title="2013-07-31 18:12">2013-07-31 18:12</time><a href="../../2013/07/31/power/" class="listtitle"> Basic power measurements</a><a>
+            </a>
+</li>
+            <li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/08/27/arduino-breadboard/#disqus_thread" data-disqus-identifier="cache/posts/2013/08/27/arduino-breadboard.html">Comments</a>
+            	<time class="listdate" datetime="2013-07-26T16:20:38+01:00" title="2013-07-26 16:20">2013-07-26 16:20</time><a href="../../2013/07/26/improvements/" class="listtitle"> Some improvements to SleepySketch</a><a>
+            </a>
+</li>
+            <li>
 
+            	<time class="listdate" datetime="2013-07-26T12:11:52+01:00" title="2013-07-26 12:11">2013-07-26 12:11</time><a href="../../2013/07/26/radio-survey/" class="listtitle"> Radio survey</a><a>
+            </a>
+</li>
+            <li>
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Putting an Arduino together from scratch lets us look at where the power consumption might be reduced -- and is just an interesting thing to do anyway.</p>
-<!--more-->
+            	<time class="listdate" datetime="2013-07-25T13:00:01+01:00" title="2013-07-25 13:00">2013-07-25 13:00</time><a href="../../2013/07/25/sleepy-sketches/" class="listtitle"> Sleepy sketches</a><a>
+            </a>
+</li>
+            <li>
 
-<p>One of the most exciting things about the Arduino is that it's open-source, so you can build them yourself -- and potentially vary the way they're put together for specific projects, which is very useful as a starting point for people (like me!) who aren't hardware engineers.</p>
-<p>The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the <a href="../../2013/07/31/power/">quiescent current of the power regulator</a>.</p>
-<p>As a starting point, I used an <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">on-line guide </a>to build an Arduino on a breadboard:</p>
-<p><img alt="An Arduino build from components" src="../../images/citizen-sensing/breadboard-arduino.jpg"></p>
-<p>Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../2013/07/31/power/">earlier</a>.</p>
-<p>Measuring power for a simple "blink" program gives the following result:</p>
-<table style="border: 1"><tbody>
-<tr>
-<td>Activity</td>
-<td>Power mode</td>
-<td>Current</td>
-</tr>
-<tr>
-<td>Nothing</td>
-<td>Deep sleep</td>
-<td>4.5mA</td>
-</tr>
-<tr>
-<td>Flashing LED</td>
-<td>Awake</td>
-<td>17mA</td>
-</tr>
-</tbody></table>
-<p>So in deep sleep mode the system draws about a seventh the power as a
-"real" Arduino. This is all down to the choice of voltage regulator:
-an L7805 with a design maximum quiescent current of 6mA. To put this
-into perspective, a system that could last a week on a standard
-Arduino board would last the best part of two months in this
-configuration. Put another way, we can build a sensor mote with an
-Arduino architecture and dramatically increased lifetime by changing a
-core component and using SleepySketch to keep the system asleep by
-default.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/08/02/xbee-sleeping/" class="u-url">XBee sleeping</a></h1>
+            	<time class="listdate" datetime="2013-07-23T15:21:27+01:00" title="2013-07-23 15:21">2013-07-23 15:21</time><a href="../../2013/07/23/arduino-watchdog/" class="listtitle"> Understanding Arduino sleep modes: the watchdog timer</a><a>
+            </a>
+</li>
+            <li>
 
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/08/02/xbee-sleeping/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-08-02T15:41:30+01:00" title="2013-08-02 15:41">2013-08-02 15:41</time></a></p>
+            	<time class="listdate" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time><a href="../../2013/07/10/representing-samples/" class="listtitle"> Representing samples</a><a>
+            </a>
+</li>
+            <li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/08/02/xbee-sleeping/#disqus_thread" data-disqus-identifier="cache/posts/2013/08/02/xbee-sleeping.html">Comments</a>
+            	<time class="listdate" datetime="2013-07-09T19:00:20+01:00" title="2013-07-09 19:00">2013-07-09 19:00</time><a href="../../2013/07/09/temperature-sensors-working/" class="listtitle"> Temperature sensors working</a><a>
+            </a>
+</li>
+            <li>
 
+            	<time class="listdate" datetime="2013-07-08T20:22:02+01:00" title="2013-07-08 20:22">2013-07-08 20:22</time><a href="../../2013/07/08/ds18b20/" class="listtitle"> DS18B20 digital thermometer</a><a>
+            </a>
+</li>
+            <li>
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield slightly.</p>
-<!--more-->
+            	<time class="listdate" datetime="2013-07-06T12:12:05+01:00" title="2013-07-06 12:12">2013-07-06 12:12</time><a href="../../2013/07/06/api-communications/" class="listtitle"> API communications now working</a><a>
+            </a>
+</li>
+            <li>
 
-<p>Our <a href="../../2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current -- something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in use.</p>
-<p>Since XBees work as a <a href="../../2013/07/02/mesh-network/">mesh network</a>, it's clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long -- since when asleep the radio can't route packets, and so the network starts to break down. But that's a higher-level concern: for the moment, we'll focus on the mechanics of getting the XBee to sleep.</p>
-<p><img alt="Pins relating to XBee sleep mode" src="../../images/citizen-sensing/sleep-pin.jpg"></p>
-<p>The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V ("high" or "asserted") causes the radio to sleep; setting it to 0V ("low" or "deasserted") wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="../../2013/07/23/arduino-watchdog/">Arduino's sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the Arduino.</p>
-<p>Also note I/O line 7, pin 12 (in green): we'll come back to this later.</p>
-<p>We'll deal with the hardware part first, and then the software.</p>
-<h3>Getting access to the sleep pin</h3>
+            	<time class="listdate" datetime="2013-07-03T08:30:22+01:00" title="2013-07-03 08:30">2013-07-03 08:30</time><a href="../../2013/07/03/xbee-arduino/" class="listtitle"> The xbee-arduino library</a><a>
+            </a>
+</li>
+            <li>
 
-<p>The XBee shield doesn't connect the sleep pin to anything by default, so to control it we have to connect it. There are several ways we could do this, with the simplest being to solder a wire from the pan on pin 9 to an appropriate header on the shield, which is then connected to a digital pin on the Arduino. For simplicity we'll start with a wire that's long enough to reach <em>any</em> header: we'll actually plug it into the header for the Arduino's D7 pin.</p>
-<p>There's a slight concern about voltage levels in this approach, as the
-Arduino operates at 5V while the XBee uses 3.3V. Experimentally this
-doesn't seem to make a difference; for a production system we'd
-probably want to create a resistor network to drop the voltage to that
-needed by the radio, to avoid any risk of damage. We'd also probably
-want to solder a header to XBee pin 9's pad to make it easier to
-connect the wiring.</p>
-<h3>Setting the sleep mode</h3>
+            	<time class="listdate" datetime="2013-07-02T09:00:34+01:00" title="2013-07-02 09:00">2013-07-02 09:00</time><a href="../../2013/07/02/xctu/" class="listtitle"> XBee firmware management with X-CTU</a><a>
+            </a>
+</li>
+            <li>
 
-<p>The XBee's sleep mode is controlled by a single AT command called (unsurprisingly) SM. The default (SM 0) is for the radio to be on all the time; SM 1 selects the pin-sleep mode described above, and is the one we'll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio's timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in control.)</p>
-<p>Setting the sleep mode is simply a matter of <a href="../../2013/08/02/at-commands-2">issuing the appropriate AT command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly first.</p>
-<p>The first issue concerns the setting of the XBee's sleep pin. If we
-select pin-sleep mode with the pin high, the XBee will sleep
-immediately, which might not be what we intended. So if we've
-connected the sleep pin to D7, we need to set things up so that the
-pin is low to keep the radio awake, and then select its sleep mode:</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// Xbee sleep pin on D7</span>
+            	<time class="listdate" datetime="2013-07-02T08:00:45+01:00" title="2013-07-02 08:00">2013-07-02 08:00</time><a href="../../2013/07/02/mesh-network/" class="listtitle"> Mesh networking</a><a>
+            </a>
+</li>
+            <li>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="p">...</span><span class="w"></span>
-<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
-<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
-<span class="w">   </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
+            	<time class="listdate" datetime="2013-07-01T18:23:15+01:00" title="2013-07-01 18:23">2013-07-01 18:23</time><a href="../../2013/07/01/xbee/" class="listtitle"> XBee radios</a><a>
+            </a>
+</li>
+            <li>
 
-<p>(Some early mistakes showed that -- contrary to what might be expected -- the sleep pin defaults to high (send radio to sleep) rather than low. So this step is important.)</p>
-<p>The next issue concerns the rather intricate behaviour of the XBee's other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it's asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield's designers have connected this pin to the Arduino's reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. <a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank">Some posts suggest</a> that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn't: we simply need to disable the output of this pin, using another AT command:</p>
-<div class="code"><pre class="code literal-block"><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-</pre></div>
+            	<time class="listdate" datetime="2013-06-28T17:44:57+01:00" title="2013-06-28 17:44">2013-06-28 17:44</time><a href="../../2013/06/28/soldering/" class="listtitle"> First bit of soldering done</a><a>
+            </a>
+</li>
+            <li>
 
-<p>This disables the XBee's D7 line (not to be confused with the Arduino's D7 line, which we've attached to the XBee's sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this <em>did</em> take quite a while to work out, since you ask...)</p>
-<p>We can now put all this together to place the XBee into SM 1  and let the Arduino sleep it at will:</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#define LED 13</span>
-<span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// XBee sleep pin on D7</span>
+            	<time class="listdate" datetime="2013-06-21T10:00:32+01:00" title="2013-06-21 10:00">2013-06-21 10:00</time><a href="../../2013/06/21/parts-arrive/" class="listtitle"> The parts arrive</a><a>
+            </a>
+</li>
+            <li>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">            </span><span class="c1">// LED signal</span>
-<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
-<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
-<span class="w">   </span><span class="n">radio</span><span class="p">.</span><span class="n">setSerial</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span><span class="w"></span>
+            	<time class="listdate" datetime="2013-06-20T14:05:29+01:00" title="2013-06-20 14:05">2013-06-20 14:05</time><a href="../../2013/06/20/parts-list/" class="listtitle"> Sensor mote initial parts list</a><a>
+            </a>
+</li>
+            <li>
 
-<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
-<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">atCommand</span><span class="p">(</span><span class="s">"SM"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="c1">// AT commands failed, flash frantically</span>
-<span class="w">      </span><span class="p">...</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="w">   </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-<p>Note that we've used local AT commands to set the radio's mode. It's
-also possible to do this <a href="../../2013/07/xctu/">statically using
-X-CTU</a>.</p>
-<h3>Results</h3>
-
-<p><img alt="XBee with sleep control" src="../../images/citizen-sensing/xbee-sleep.jpg"></p>
-<p>The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the radio.</p>
-<p>Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range -- far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some work).</p>
-<p>Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more exploration.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/08/02/at-commands-2/" class="u-url">Issuing AT commands</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/08/02/at-commands-2/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-08-02T12:03:54+01:00" title="2013-08-02 12:03">2013-08-02 12:03</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/08/02/at-commands-2/#disqus_thread" data-disqus-identifier="cache/posts/2013/08/02/at-commands-2.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Controlling the XBee requires issuing AT commands. The XBee library has the low-level machinery to do this.</p>
-<!--more-->
-
-<p>AT commands are the basis for controlling almost all modems, and the XBee is no different. In API mode, AT commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use form.</p>
-<p>The basic approach is to send an AT command request packet and then
-read a returned packet acknowledging the command. For the moment we'll
-stick to "setting" commands, where the AT command takes an integer
-parameter: the other are needed less frequently. We construct the
-request packet, send it, read the response, and check that all went
-well. This isolates the rest of the program from the message exchange,
-but also hides the exact nature of any error.</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span><span class="cp"></span>
-
-<span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">atCommand</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// send local AT command</span>
-<span class="w">  </span><span class="n">AtCommandRequest</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandRequest</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">));</span><span class="w"></span>
-<span class="w">  </span><span class="n">radio</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// receive response frame</span>
-<span class="w">  </span><span class="n">AtCommandResponse</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandResponse</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">readPacket</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// read packet from radio</span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getApiId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AT_RESPONSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// right type?</span>
-<span class="w">       </span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getAtCommandResponse</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">isOk</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span><span class="c1">// not an error?</span>
-<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">       </span><span class="p">}</span><span class="w"></span>
-<span class="w">     </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// if we get here, return a failure</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../2013/07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/31/power/" class="u-url">Basic power measurements</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/07/31/power/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-31T18:12:55+01:00" title="2013-07-31 18:12">2013-07-31 18:12</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/31/power/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/31/power.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Some initial measurements of power consumption.</p>
-<!--more-->
-
-<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes is:
-</p>
-<ul>
-<li>Normal <code>delay()</code> loop</li>
-    <li>Deep sleep for a period (deep sleep)</li>
-    <li>Flash the LED (awake)</li>
-    <li>Flash the LED differently while sending out radio messages (awake and transmitting)</li>
-</ul>
-We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
-<p>The results are as follows:</p>
-<table style="border: 1"><tbody>
-<tr>
-<td>Activity</td>
-<td>Power mode</td>
-<td>Current</td>
-</tr>
-<tr>
-<td>Nothing</td>
-<td>
-<code>delay()</code> loop</td>
-<td>43mA</td>
-</tr>
-<tr>
-<td>Nothing</td>
-<td>Deep sleep</td>
-<td>33mA</td>
-</tr>
-<tr>
-<td>Steady LED</td>
-<td>Deep sleep</td>
-<td>34mA</td>
-</tr>
-<tr>
-<td>Flashing LED</td>
-<td>Awake</td>
-<td>45mA</td>
-</tr>
-<tr>
-<td>Xbee (quiet)</td>
-<td>Deep sleep</td>
-<td>72mA</td>
-</tr>
-<tr>
-<td>Xbee (quiet)</td>
-<td>Awake</td>
-<td>85mA</td>
-</tr>
-<tr>
-<td>Xbee (transmitting)</td>
-<td>Awake</td>
-<td>87mA</td>
-</tr>
-</tbody></table>
-<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of using <code>delay()</code> is quite power-hungry. The bad news is that the "at rest" power consumption of an Arduino even in deep sleep  -- the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing -- is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there's some variation happening faster than the ammeter's sample time).</p>
-<p>The radio isn't put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the time.</p>
-<p>[UPDATE 1Aug2013: made the table layout a bit clearer.]</p>
-    </div>
-    </article>
-</div>
-        <nav class="postindexpager"><ul class="pager">
-<li class="previous">
-                <a href="index-4.html" rel="prev">Older posts</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2013-06-19T21:02:20+01:00" title="2013-06-19 21:02">2013-06-19 21:02</time><a href="../../2013/06/19/ditch-motivation/" class="listtitle"> The ditch project: a motivation</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

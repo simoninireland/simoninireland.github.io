@@ -97,114 +97,27 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about software engineering</h1>
+<article class="tagpage"><header><h1>Posts about software engineering</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../software-engineering.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2021/02/23/ide-convergence/" class="u-url">IDE convergence</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2021/02/23/ide-convergence/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2021-02-23T12:21:05Z" title="2021-02-23 12:21">2021-02-23 12:21</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2021/02/23/ide-convergence/#disqus_thread" data-disqus-identifier="cache/posts/2021/02/23/ide-convergence.html">Comments</a>
+            	<time class="listdate" datetime="2021-02-23T12:21:05Z" title="2021-02-23 12:21">2021-02-23 12:21</time><a href="../../2021/02/23/ide-convergence/" class="listtitle"> IDE convergence</a><a>
+            </a>
+</li>
+            <li>
 
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>I recently tried out a new development environment for my Python
-development, and noticed an unexpected convergence in the designs of
-the two tools.</p>
-<!-- TASTER_END -->
-
-<p>I've been a long-time <a href="https://emacs.org">Emacs</a> user. I periodically
-get a desire to try something new, something less old-school, just to
-see whether there are advantages. There always <em>are</em> advantages, of
-course -- but often significant disadvantages as well, which often
-keep me coming back to my comfort zone.</p>
-<p>My most recent excursion was to try Microsoft's <a href="https://code.visualstudio.com/">VS
-Code</a>.</p>
-<p><img alt="Microsoft VS Code" src="../../images/posts/20210223-vscode.png"></p>
-<p>This is handily cross-platform, being built in Javascript on top of
-<a href="https://www.electronjs.org/">Electron</a>. It's got a lot of nice
-features: a tree view of the project in the left-hand pane, syntax
-colouring, code style linting, integrated debugging and unit test
-running, integrated connection to git, and so on. Looking a little
-closer there are all sorts of status markers around the code and in
-the ribbons at the bottom of panes and the window overall to show
-status that might be important.</p>
-<p>But it's so <em>slow</em>. That's a feature of VS Code, not of Electron (as I
-first suspected), because other Electron-based editors like
-<a href="https://atom.io/">Atom</a> aren't as slow. And my development box isn't
-the latest, but it also isn't <em>that</em> old.</p>
-<p>So I reverted to Emacs, but upgraded it a little to more modern
-standards. Specifically, I installed the
-<a href="https://elpy.readthedocs.io/en/latest/index.html">elpy</a> Python IDE,
-with assorted other packages suggested by various sites. The result is
-this:</p>
-<p><img alt="Emacs with elpy" src="../../images/posts/20210223-emacs.png"></p>
-<p>Now for anyone who's used Emacs for a while, it's definitely still
-Emacs -- not least with the convoluted keystrokes and infinite
-customisation you either love or hate. But it's striking how similar
-the two IDEs now are, and striking how VS Code has inherited some
-ideas from Emacs: resizeable panes, modelines in the ribbon, markers
-in pane gutters, and so forth -- things that Emacs-based applications
-have had for years, which have now migrated into "the mainstream".
-Both the feature sets and the visuals of the two systems are very
-similar indeed. Both are entirely cross-platform and extensible. For
-VS Code you write extensions in Javascript; for Emacs you write them
-in Lisp; and that's about it. And Emacs is a <em>lot</em> faster on my
-set-up. There are some limitations -- I've yet to get the hang of
-using <code>pdb</code> as a debugger, for example, especially for modules
-and from within tests -- but the functionality is really quite comparable.</p>
-<p>I think it's safe to say there's been cross-fertilisation between VS
-Code (and other IDEs) and Emacs over the years. A lot of the
-developers of the former quite possibly used the latter. But I
-strongly suspect that most of the traffic has gone <em>from</em> Emacs <em>to</em>
-the other systems: the similarities are just too great to be
-accidental. It's interesting to think that a system that emerged at
-the dawn of the free-software movement has had -- and is still having
--- such an influence on modern development tools. And I'm happily back
-in my comfort zone.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2012/06/14/russian-dolls/" class="u-url">Layered abstractions and Russian dolls</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2012/06/14/russian-dolls/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2012-06-14T08:00:52+01:00" title="2012-06-14 08:00">2012-06-14 08:00</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2012/06/14/russian-dolls/#disqus_thread" data-disqus-identifier="cache/posts/2012/06/14/russian-dolls.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?</p>
-<!--more-->
-<p>Anyone who's built a large piece of software knows that much of the effort is in managing the complexity of the project: which other software a piece of code relies on, how to keep the various aspects separate, how to manage changes and upgrades, and so on. This isn't something that's got easier over time: it has for a given code size and style, as we've understood build processes and dependency management better; but the code sizes have relentlessly increased to compensate for our improved understanding; and modern practices don't make life any easier. Downloaded code, dynamic modules and classes, client-server and the like all generate their own intrinsic complexity.</p>
-<p>One of the biggest sources of complexity is the use of multiple applications, especially in enterprise systems. A typical e-commerce system, for example, will make use of a web server to present pages (which themselves might contain embedded JavaScript for client-side processing), a database to track orders and inventory, a procurement system to fulfil orders, and possibly a supply-chain management system to order new inventory. That's the application. Then there'll be the operating system, a logging facility, a facilities management system, and a load of administrative tools and scripts. And the operating system may itself be virtualised and running as a guest within another, host operating system and hypervisor, which needs its own toolset. The interactions between these tools can be mind-boggling.</p>
-<p>Someone once asked: who knows how to work the <a href="http://httpd.apache.org/" target="_blank">Apache web server</a>? It sounds like a simple question -- any competent web manager? the main developers? -- but the sting in the tail is that Apache is very configurable: so configurable, in fact, that it's pretty much impossible to work out what a given combination of options will do (or, conversely, what combination of options to use to achieve a given effect). The interactions are just too complicated, and the web abounds with examples where interactions between (for example) the thread pool size, the operating system block size, and the Java virtual machine parameters conspire to crash a system that looks like it should be working fine. If you can't work one server properly -- one component of the system -- what hope is there to get a complete system humming along?</p>
-<p><a href="http://blogs.cs.st-andrews.ac.uk/al/" target="_blank">Al Dearle</a> and I have been talking about this for a while. The basic issue seems to be an interaction between decomposition and dependency. In other words, the complexity comes at the "seams" between the various sub-systems, and is magnified the more configurable the components on either side of the seam are. This is important, because systems are becoming more finely decomposed: the move to component software, software-as-a-service and the like all increase the number of seams. Al's image of this is that modern systems are like Russian dolls, where each supposedly independent component contains more components that influence the size and complexity of the component containing them. You can only simplify any individual piece so far, because it depends on so many other pieces.</p>
-<p>Actually a lot of the seams are now unnecessary anyway. Going back to the e-commerce example, the operating system goes to great pains to provide a process abstraction to keep the components separate -- to stop faults in the database affecting the web server, for example. Historically this made perfect sense and prevented a single faulty process in a time-sharing system affecting the processes of other users. Nowadays, however, it makes considerably less sense, for a number of reasons. Firstly, all the components are owned by a single nominal user (although there are still good reasons for separating the root user from the application user), so the security concerns are less pronounced. Secondly, all the components depend on each other, so a crash in the database will effectively terminate the web server anyway. (We're simplifying, but you get the idea.) Finally, there's a good chance that the web server, database and so on are each running in their own virtual machine, so there's only one "real" process per machine (plus all the supporting processes). The operating system is offering protection that isn't needed, because it's being provided (again) by the hypervisor running the virtual machines and perhaps (<em>again</em>) by the host operating system(s) involved.</p>
-<p>We also tend to build very flexible components (like Apache), which can deal with multiple simultaneous connections, keep users separate, allow modules to be loaded and unloaded dynamically -- behave like small operating systems, in other words, replicating the OS functionality again at application level. This is despite the fact that, in enterprise configurations, you'll probably know in advance the modules to be loaded and have a single user (or small user population) and fixed set of interactions: the flexibility makes the component more complex for no net gain during operation. Although it might simplify configuration and evolution slightly, there are often other mechanisms for this: in a cloud environment one can spin-up a replacement system in an evolved state and then swap the set of VMs over cleanly.</p>
-<p>It's easy to think that this makes no difference for modern machines, but that's probably not the case. All these layers still need to be resourced; more importantly, they still need to be managed, maintained and secured, which take time to do well -- with a result that they typically get done badly (if at all).</p>
-<p>Can we do anything about it? One thought is that the decomposition that makes thinking about systems and programming easier makes executing those systems more complex and fragile. In many cases, once the system is configured appropriately, flexibility becomes an enemy: it'll often be too complicated to re-configure or optimise in a live environment anyway. There may be a reason to have Russian dolls when <em>designing</em> a system, but once designed it's better to make each doll solid to remove the possibility of then opening-up and falling apart.</p>
-<p>So it's not decomposition that's the issue, it's <em>decomposition manifested at run-time</em>. When we add new abstractions to systems, we typically add them in the form of components or libraries that can be called from other components. These components are often general, with lots of parameters and working with multiple clients -- sound familiar? This is all good for the component-writer, as it lets the same code be re-used: but it bloats each system that uses the component, adding complexity and interactions.</p>
-<p>So one thought for tackling complexity is to change where decomposition manifests itself. If instead of placing new functions in the run-time system, we placed it into the compiler used to build the run-time, we could use compilation techniques to optimise-out the unnecessary functionality so that what results is optimised for the configuration that it's actually being placed in, rather than being general enough to represent any configuration. There's substantial work on these ideas in the fields of staged compilation and partial evaluation (for example <a href="http://www.metaocaml.org/" target="_blank">MetaOCaml</a>, <a href="http://www.haskell.org/haskellwiki/Template_Haskell" target="_blank">Template Haskell</a>, Flask and the like): the flexibility is manifested at compile-time as compile-time abstractions, that in the course of compilation are removed and replaced with inflexible -- but more efficient and potentially more dependable -- specialised code. Think taking the source code for Linux, Apache and MySQL, accelerating them together at high speed, and getting out a single program that'd run on a bare machine, had nothing it didn't actually need, and had all the options for the various (conceptual) sub-systems set correctly to work together.</p>
-<p>Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and<a href="../../2011/05/evolving/" target="_blank"> into the languages and compilers</a> might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like <a href="../../2011/12/middleware-doughnut/" target="_blank">ever-more-specialised middleware</a> that remove bloat and overhead at the cost of generality. Keeping the former <em>and</em> the latter seems like a worthwhile goal.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2012-06-14T08:00:52+01:00" title="2012-06-14 08:00">2012-06-14 08:00</time><a href="../../2012/06/14/russian-dolls/" class="listtitle"> Layered abstractions and Russian dolls</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

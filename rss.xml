@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 30 Nov 2022 09:13:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Me and my research</title><link>https://simondobson.org/2022/11/28/me-and-my-research/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1859f2b" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Dec 2022 17:42:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6138f82" class="outline-2"&gt;
+&lt;h2 id="org6138f82"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6138f82"&gt;
+&lt;p&gt;
+I've been thinking about running &lt;a href="https://jupyter.org"&gt;Jupyter notebooks&lt;/a&gt; in the cloud for
+some fairly compute-intensive simulation. Specifically I want to do
+epidemic and other simulations over complex networks. These are
+CPU-intensive and don't make use of GPU acceleration (yet, anyway).
+Using the cloud would make things easier to scale-out, especially
+for those without access to a local compute cluster.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cloud computing</category><category>computational science</category><category>epydemic</category><category>jupyter</category><category>python</category><guid>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</guid><pubDate>Fri, 02 Dec 2022 16:36:55 GMT</pubDate></item><item><title>Me and my research</title><link>https://simondobson.org/2022/11/28/me-and-my-research/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1859f2b" class="outline-2"&gt;
 &lt;h2 id="org1859f2b"&gt;Me and my research&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org1859f2b"&gt;
 &lt;p&gt;
@@ -162,24 +174,4 @@ site, as well as a new theme.
 	  &lt;/p&gt;&lt;p&gt;
 	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4611651217?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
     &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</guid><pubDate>Thu, 27 Oct 2022 18:51:59 GMT</pubDate></item><item><title>Atoms and Ashes: A Global History of Nuclear Disasters</title><link>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;Atoms and Ashes: A Global History of Nuclear Disasters&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645247265l/59011975._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Serhii Plokhy&lt;/h2&gt;
-	    2022
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	A history of nuclear energy in six disasters: five civilian and one military.&lt;br&gt;&lt;br&gt;Competition seems to lie at the heart of all the problems: a lack of willingness to share details of accidents and near-accidents, and an unwillingness to learn if this requires changes in procedure. Collaboration seems lacking even within organisations and with regulators, while governments treat these matters as merely part of larger strategic concerns (even when they threaten to overwhelm them). It's also clear that the commercial operation of nuclear power is impossible without state subsidy, and acquiring this opens-up possibilities from regulatory capture – weakening requirements to make them attainable within a fixed cost – to outright bribery.&lt;br&gt;&lt;br&gt;The science and engineering also seem lacking. The Castle Bravo (and other) nuclear tests massively under-estimate the weapons' yields, and this seems to be more the case the larger the bomb (culminating in the apocalyptic &lt;a href="https://en.wikipedia.org/wiki/Tsar_Bomba" rel="nofollow noopener"&gt;Tsar Bomba&lt;/a&gt;, which isn't covered in this book as it somewhat miraculously &lt;i&gt;wasn't&lt;/i&gt; actually an accident). But all the systems described make use of technology little changed since the 1930s: imagine if we were still driving cars from that era!&lt;br&gt;&lt;br&gt;I find Plokhy's conclusions nuanced but weak. He decides that nuclear and renewable energy sources are both risky approaches to tackling climate change, but with completely different risk profiles: the former perhaps being too slow to start up and with huge accident risks; the latter relying on technologies as yet untested at the necessary scale. But in coming to his conclusion backing renewables and the phasing-out of nuclear stations (with which I entirely agree) he devotes &lt;i&gt;exactly two sentences&lt;/i&gt; to the problem of nuclear waste and spent fuel, which should surely be one of the major deciding factors. It's a strange omission at the end of a book that revolves around radiation hazards.
-	&lt;/p&gt;&lt;p&gt;
-	  3/5.
-	    Finished 21 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4939077454?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</guid><pubDate>Fri, 21 Oct 2022 11:47:20 GMT</pubDate></item></channel></rss>
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</guid><pubDate>Thu, 27 Oct 2022 18:51:59 GMT</pubDate></item></channel></rss>

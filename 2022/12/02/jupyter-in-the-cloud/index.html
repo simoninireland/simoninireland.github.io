@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes on using Jupyter in the cloud | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/">
+<link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../11/28/me-and-my-research/" title="Me and my research" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="Notes on using Jupyter in the cloud">
+<meta property="og:url" content="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/">
+<meta property="og:description" content="Notes on using Jupyter in the cloud
+
+
+I've been thinking about running Jupyter notebooks in the cloud for
+some fairly compute-intensive simulation. Specifically I want to do
+epidemic and other simulat">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-12-02T16:36:55Z">
+<meta property="article:tag" content="cloud computing">
+<meta property="article:tag" content="computational science">
+<meta property="article:tag" content="epydemic">
+<meta property="article:tag" content="jupyter">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Notes on using Jupyter in the cloud</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2022-12-02T16:36:55Z" itemprop="datePublished" title="2022-12-02 16:36">
+		2022-12-02 16:36
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2022/12/02/jupyter-in-the-cloud.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/cloud-computing/" rel="tag">cloud computing</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/computational-science/" rel="tag">computational science</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/epydemic/" rel="tag">epydemic</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/jupyter/" rel="tag">jupyter</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/python/" rel="tag">python</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div id="outline-container-org6138f82" class="outline-2">
+<h2 id="org6138f82">Notes on using Jupyter in the cloud</h2>
+<div class="outline-text-2" id="text-org6138f82">
+<p>
+I've been thinking about running <a href="https://jupyter.org">Jupyter notebooks</a> in the cloud for
+some fairly compute-intensive simulation. Specifically I want to do
+epidemic and other simulations over complex networks. These are
+CPU-intensive and don't make use of GPU acceleration (yet, anyway).
+Using the cloud would make things easier to scale-out, especially
+for those without access to a local compute cluster.
+</p>
+
+<!-- TEASER_END -->
+
+<p>
+I decided to do some experiments by writing <a href="../../../../attachments/3d/e9ecd3-991b-49e9-8419-a22be50c6b21/epydemicbasics.ipynb">a small Jupyter notebook</a>
+that would exercise a cloud service by running some simulations
+using <a href="https://github.com/simoninireland/epydemic">epydemic</a>, our network process simulation framework. The idea
+was to see how performant the cloud services on offer are, starting
+with <a href="https://colab.research.google.com/">Google Colab</a> as the most accessible.
+</p>
+</div>
+
+<div id="outline-container-orgdaeb9c7" class="outline-3">
+<h3 id="orgdaeb9c7">Reference execution</h3>
+<div class="outline-text-3" id="text-orgdaeb9c7">
+<p>
+As a reference, I firsat ran a small experiment with an SIR
+epidemic on an ER network of \(10^4\) nodes, \(\langle k \rangle =
+   10\)) experiment with 10 repetitions. The first experiment runs 10
+repetitions sequentially on a single core; the second runs 10
+repetitions for every core we run on. <a href="https://github.com/simoninireland/epyc">epyc</a>, our process management
+library, schedules worker processes in individual processes which
+can then be scheduled independently by the operating system, and
+which don't therefore run into synchronisation problems due to the
+Python Global Interpreter Lock.
+</p>
+
+<p>
+Running this on my desktop machine (Intel Core i7@3.8GHz) on 8
+cores and taking averages gives:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-right">Cores</th>
+<th scope="col" class="org-right">Elapsed time (s)</th>
+<th scope="col" class="org-right">Mean/rep (s)</th>
+<th scope="col" class="org-right">Variance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">38</td>
+<td class="org-right">3.86</td>
+<td class="org-right">0.06</td>
+</tr>
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">43</td>
+<td class="org-right">4.27</td>
+<td class="org-right">0.09</td>
+</tr>
+</tbody>
+</table>
+<p>
+There's some overhead from the collection of the experimental
+results from the worker processes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc590c8" class="outline-3">
+<h3 id="orgbc590c8">Running epydemic on a default runtime</h3>
+<div class="outline-text-3" id="text-orgbc590c8">
+<p>
+I then tried the same experiments on the default Colab set-up.
+</p>
+
+<p>
+The notebook can import libraries no problem. It can also create
+HDF5 notebooks, meaning it has the underlying libraries installed
+already. The GUI reports 12GB of RAM and 100GB of disc
+(approximately).
+</p>
+
+<p>
+We run on all the available cores, as reported by the
+<code>epyc.ParallelLab.numberOfCores()</code> method. Running the same
+experiments as above gives:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-right">vCPUs</th>
+<th scope="col" class="org-right">Elapsed time (s)</th>
+<th scope="col" class="org-right">Mean/rep (s)</th>
+<th scope="col" class="org-right">Variance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">81</td>
+<td class="org-right">8.17</td>
+<td class="org-right">0.90</td>
+</tr>
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">100</td>
+<td class="org-right">10.87</td>
+<td class="org-right">0.34</td>
+</tr>
+</tbody>
+</table>
+<p>
+which is a little unusual: there's definitely some overlapped
+computation happening, but with large overheads and large variance.
+I'm assuming that the number of <i>cores</i> reported is actually the
+number of <i>hyperthreads</i>, and that they're interfering because
+they're CPU-bound: <code>epyc</code> simply uses the standard Python <code>joblib</code>.
+Or it might be that the underlying VM isn't really allocating cores
+exclusively. There's really not enough information to decide.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgde6c9c3" class="outline-3">
+<h3 id="orgde6c9c3">Using specific VM instances</h3>
+<div class="outline-text-3" id="text-orgde6c9c3">
+<p>
+I signed up for Google Cloud's free trial, 90 days and $300 (£281)
+of credit. Then set up a specific project in which to run the
+experiments, and explored the different VM instance types
+available.
+</p>
+
+<p>
+E2 and N2 are the general-purpose instances, available in
+standard or high-CPU configurations. The E2 is cheaper than the
+N2 but less performant – although this only cuts in at higher
+loads according to <a href="https://www.bigbitbus.com/2021/06/10/Google-Cloud-E2-N2-VMs/">this comparison</a>. Compute-optimised VMs (C2 and
+C2D) are Intel Xeon or AMD EPYC Milan processors. The C2D has a
+larger last-level cache and so gets recommended for HPC
+workloads.
+</p>
+
+<p>
+The <a href="https://cloud.google.com/compute/vm-instance-pricing">VM instance pricing</a> model charges for a single minute, and
+then after the first minute charges per-second.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-left">
+<col class="org-right">
+<col class="org-right">
+<col class="org-left">
+<col class="org-left">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-left">Instance</th>
+<th scope="col" class="org-right">vCPUs</th>
+<th scope="col" class="org-right">Memory (GB)</th>
+<th scope="col" class="org-left">On-demand price/hour</th>
+<th scope="col" class="org-left">Spot price/hour</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-left">e2-highcpu-16</td>
+<td class="org-right">16</td>
+<td class="org-right">16</td>
+<td class="org-left">$0.395744</td>
+<td class="org-left">$0.11872</td>
+</tr>
+<tr>
+<td class="org-left">e2-highcpu-32</td>
+<td class="org-right">32</td>
+<td class="org-right">32</td>
+<td class="org-left">$0.791488</td>
+<td class="org-left">$0.23744</td>
+</tr>
+<tr>
+<td class="org-left">n2-highcpu-64</td>
+<td class="org-right">64</td>
+<td class="org-right">64</td>
+<td class="org-left">$2.294272</td>
+<td class="org-left">$0.55552</td>
+</tr>
+<tr>
+<td class="org-left">n2-highcpu-96</td>
+<td class="org-right">96</td>
+<td class="org-right">96</td>
+<td class="org-left">$3.441408</td>
+<td class="org-left">$0.83328</td>
+</tr>
+<tr>
+<td class="org-left">c2-standard-60</td>
+<td class="org-right">60</td>
+<td class="org-right">240</td>
+<td class="org-left">$3.1321</td>
+<td class="org-left">$0.28428</td>
+</tr>
+<tr>
+<td class="org-left">c2d-standard-112</td>
+<td class="org-right">112</td>
+<td class="org-right">448</td>
+<td class="org-left">$5.0844</td>
+<td class="org-left">$1.077776</td>
+</tr>
+</tbody>
+</table>
+<p>
+That's quite a range of possible costs.
+</p>
+
+<p>
+The <a href="https://cloud.google.com/compute/docs/instances/spot">Spot VMs</a> are cheaper, but make use of spare capacity and so
+might be pre-empted (or terminated) by higher-priority jobs.
+They're recommended for fault-tolerant workloads, which we could
+possibly get if we extended <code>epyc</code> with some extra back-end
+functions. You also can't buy them with the free tier's credits.
+</p>
+
+<p>
+There is apparently a limit of 8 vCPUs when using the free tier
+for some instance types in some zones. It's not abundantly clear
+what the restrictions actually are.
+</p>
+
+<p>
+The process to create the custom runtime is to create a Colab VM
+instance from the Marketplace and associate it with an instance
+type of choice, possibly choosing a zone as well. This can then
+be connected to by providing the project, zone, and instance name
+to the Jupyter notebook. (The project name has to be in URL form,
+so lower case with dashes for spaces.) This is awkward and
+requires manual copying, but once done you can acquire a
+connection URL to go straight to the notebook running on that VM.
+The Jupyter UI shows RAM and disc as well as the actual VM
+instance it's connected to, but not the number of cores that
+instance reports, which is a bit annoying.
+</p>
+
+<p>
+There's also an issue in that, when you ask the machine for the
+number of cores it has, it by default replies with the number of
+vCPUs – which I think means hyperthreads. A 96-vCPU machine (an instance
+ending in "-96") only has 48 cores, because by default 2 vCPUs
+are mapped to each physical core. You can set the ratio of vCPUs
+to cores (1 or 2), and the numnber of visible cores the machine
+reports. So I set a ratio of 1 vCPU/core and reporting the number
+of actual cores, which is the sensible choice for a compute-bound
+application. Unfortunately you can't do this without stopping the
+newly-created Colab VM and re-setting it's configuration: you
+can't do this step at instance creation from the Marketplace. I
+don't know why. (It might be possible to do it in one step from
+the command line. Or create template instances with the right
+configuration.) On the other hand, once it's done, it's
+persistent and can be connected to using the connection URL, as
+the notebook remembers the VM it's connected to.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org316587a" class="outline-3">
+<h3 id="org316587a">Experiments on specific instances</h3>
+<div class="outline-text-3" id="text-org316587a">
+<p>
+Running the same experiments as above on different instances gives:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-left">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-left">Instance</th>
+<th scope="col" class="org-right">Cores</th>
+<th scope="col" class="org-right">Elapsed time (s)</th>
+<th scope="col" class="org-right">Mean/rep (s)</th>
+<th scope="col" class="org-right">Variance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-left">e2-highcpu-16</td>
+<td class="org-right">1</td>
+<td class="org-right">98</td>
+<td class="org-right">9.81</td>
+<td class="org-right">0.09</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">8</td>
+<td class="org-right">96</td>
+<td class="org-right">9.49</td>
+<td class="org-right">0.10</td>
+</tr>
+<tr>
+<td class="org-left">n2-standard-8</td>
+<td class="org-right">1</td>
+<td class="org-right">74</td>
+<td class="org-right">7.44</td>
+<td class="org-right">0.23</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">4</td>
+<td class="org-right">69</td>
+<td class="org-right">6.83</td>
+<td class="org-right">0.08</td>
+</tr>
+<tr>
+<td class="org-left">c2-standard-8</td>
+<td class="org-right">1</td>
+<td class="org-right">70</td>
+<td class="org-right">7.05</td>
+<td class="org-right">0.05</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">4</td>
+<td class="org-right">66</td>
+<td class="org-right">6.55</td>
+<td class="org-right">0.07</td>
+</tr>
+</tbody>
+</table>
+<p>
+(These are real cores, 1 vCPU/core.)
+</p>
+
+<p>
+There's around a 30% speed difference between the E2 and N2
+silicon, but not much at all between the N2 and C2 – despite the
+latter being branded for compute-intensive workloads. Might be
+that the C2's cache isn't being exploited?
+</p>
+
+<p>
+We do however get the speed-up we expect from parallelism:
+actually slightly more than we'd expect, since the individual
+runs seem to go faster too. There's definitely some overhead
+incurred in running <code>epyc</code> in parallel, so we shouldn't see
+super-linear speed-up "in reality".
+</p>
+</div>
+</div>
+
+<div id="outline-container-org12abeb7" class="outline-3">
+<h3 id="org12abeb7">Running larger problems</h3>
+<div class="outline-text-3" id="text-org12abeb7">
+<p>
+For more of a soak test, we can run the same SIR experiment but
+using a larger ER network (\(10^5\) nodes, \(\langle k \rangle =
+   10\)):
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-left">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-left">Instance</th>
+<th scope="col" class="org-right">Cores</th>
+<th scope="col" class="org-right">Elapsed time (s)</th>
+<th scope="col" class="org-right">Mean/rep (s)</th>
+<th scope="col" class="org-right">Variance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-left">e2-highcpu-16</td>
+<td class="org-right">1</td>
+<td class="org-right">1235</td>
+<td class="org-right">123.56</td>
+<td class="org-right">1.21</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">8</td>
+<td class="org-right">1216</td>
+<td class="org-right">120.30</td>
+<td class="org-right">0.86</td>
+</tr>
+<tr>
+<td class="org-left">n2-standard-8</td>
+<td class="org-right">1</td>
+<td class="org-right">930</td>
+<td class="org-right">93.09</td>
+<td class="org-right">0.56</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">4</td>
+<td class="org-right">869</td>
+<td class="org-right">86.51</td>
+<td class="org-right">1.06</td>
+</tr>
+<tr>
+<td class="org-left">c2-standard-8</td>
+<td class="org-right">1</td>
+<td class="org-right">911</td>
+<td class="org-right">91.18</td>
+<td class="org-right">0.72</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-right">4</td>
+<td class="org-right">849</td>
+<td class="org-right">84.53</td>
+<td class="org-right">0.41</td>
+</tr>
+</tbody>
+</table>
+<p>
+There's that super-linear speed-up between sequential and parallel
+versions again.
+</p>
+
+<p>
+The performance on the standard runtime for comparison is:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+<col class="org-right">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-right">vCPUs</th>
+<th scope="col" class="org-right">Elapsed time (s)</th>
+<th scope="col" class="org-right">Mean/rep (s)</th>
+<th scope="col" class="org-right">Variance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1070</td>
+<td class="org-right">107.60</td>
+<td class="org-right">3.84</td>
+</tr>
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1402</td>
+<td class="org-right">140.22</td>
+<td class="org-right">1.50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org6344260" class="outline-3">
+<h3 id="org6344260">Costs</h3>
+<div class="outline-text-3" id="text-org6344260">
+<p>
+Doing all the above experiments used rather less than £10 of the
+budget for my free trial – although I was very careful not to
+leave instances running when I wasn't actually using them. This
+is an unusual thing to be considering, not part of my "normal"
+work routine, and would possibly be awkward for longer-running
+computations. You'd be reluctant to run something overnight if
+you weren't sure it needed <i>all</i> night, for example. This might
+be addressed by using the command-line tools to spin-up, execute,
+and then tear-down the infrastructure using a script.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb766671" class="outline-3">
+<h3 id="orgb766671">Experiences: Good and not-so-good</h3>
+<div class="outline-text-3" id="text-orgb766671">
+<p>
+Good:
+</p>
+
+<ul class="org-ul">
+<li>Everything controlled from a web console</li>
+<li>Easy to run <code>pip</code> to install dependencies</li>
+<li>Once installed, the dependencies persist even if the VM is shut down</li>
+<li>The GUI shows how long cells take to execute, as well as the
+memory and disc of the underlying machine and its instance name</li>
+<li>There's a set of command-line tools</li>
+<li>Persistent links to notebooks</li>
+<li>Notebook remembers its connection to the underlying VM instance</li>
+</ul>
+<p>
+Problematic:
+</p>
+
+<ul class="org-ul">
+<li>All the available instances are considerably slower than a
+reasonably modern desktop workstation</li>
+<li>If an application needs more than just <code>pip</code> dependencies,
+that'd have to be done at the VM level using <code>ssh</code> etc</li>
+<li>Fiddly sequence to get vCPU and core reporting appropriate for
+HPC</li>
+<li>Need to manage spin-up and tear-down of instances, and incur
+costs if you forget</li>
+<li>The GUI doesn't show how many cores the underlying instance has</li>
+<li>The management console requires a fairly decent knowledge of
+cloud computing concepts, which need to be learned somehow. I'm
+not convinced the tutorials on the web site are good enough for
+someone without plenty of background</li>
+<li>The notebook doesn't seem to deal cleanly with disconnections,
+which is a problem if you have a flaky connection</li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2022/12/02/jupyter-in-the-cloud/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2022/12/02/jupyter-in-the-cloud/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2022/12/02/jupyter-in-the-cloud/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2022/12/02/jupyter-in-the-cloud/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../11/28/me-and-my-research/" rel="prev" title="Me and my research">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/",
+        disqus_title="Notes on using Jupyter in the cloud",
+        disqus_identifier="cache/posts/2022/12/02/jupyter-in-the-cloud.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

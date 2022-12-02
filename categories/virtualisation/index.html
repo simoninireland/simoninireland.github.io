@@ -97,94 +97,32 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about virtualisation</h1>
+<article class="tagpage"><header><h1>Posts about virtualisation</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../virtualisation.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2020/10/30/on-going-virtual/" class="u-url">On going virtual</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2020/10/30/on-going-virtual/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2020-10-30T09:28:21Z" title="2020-10-30 09:28">2020-10-30 09:28</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2020/10/30/on-going-virtual/#disqus_thread" data-disqus-identifier="cache/posts/2020/10/30/on-going-virtual.html">Comments</a>
+            	<time class="listdate" datetime="2020-10-30T09:28:21Z" title="2020-10-30 09:28">2020-10-30 09:28</time><a href="../../2020/10/30/on-going-virtual/" class="listtitle"> On going virtual</a><a>
+            </a>
+</li>
+            <li>
 
+            	<time class="listdate" datetime="2012-06-14T08:00:52+01:00" title="2012-06-14 08:00">2012-06-14 08:00</time><a href="../../2012/06/14/russian-dolls/" class="listtitle"> Layered abstractions and Russian dolls</a><a>
+            </a>
+</li>
+            <li>
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Virtual machines are now commonplace in industry and academia. They
-offer huge flexibility in managing large and/or complicated
-installations. But what about for individual use, as a power user and
-developer? Would that work? Would it be worth it? In the interests of
-science, I decided to find out.</p>
-<p class="more"><a href="../../2020/10/30/on-going-virtual/">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2012/06/14/russian-dolls/" class="u-url">Layered abstractions and Russian dolls</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2012/06/14/russian-dolls/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2012-06-14T08:00:52+01:00" title="2012-06-14 08:00">2012-06-14 08:00</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2012/06/14/russian-dolls/#disqus_thread" data-disqus-identifier="cache/posts/2012/06/14/russian-dolls.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>The layering of abstractions has served us well, but it's now generating the sorts of complexity it was designed to solve. Time for a re-think?</p>
-<!--more-->
-<p>Anyone who's built a large piece of software knows that much of the effort is in managing the complexity of the project: which other software a piece of code relies on, how to keep the various aspects separate, how to manage changes and upgrades, and so on. This isn't something that's got easier over time: it has for a given code size and style, as we've understood build processes and dependency management better; but the code sizes have relentlessly increased to compensate for our improved understanding; and modern practices don't make life any easier. Downloaded code, dynamic modules and classes, client-server and the like all generate their own intrinsic complexity.</p>
-<p>One of the biggest sources of complexity is the use of multiple applications, especially in enterprise systems. A typical e-commerce system, for example, will make use of a web server to present pages (which themselves might contain embedded JavaScript for client-side processing), a database to track orders and inventory, a procurement system to fulfil orders, and possibly a supply-chain management system to order new inventory. That's the application. Then there'll be the operating system, a logging facility, a facilities management system, and a load of administrative tools and scripts. And the operating system may itself be virtualised and running as a guest within another, host operating system and hypervisor, which needs its own toolset. The interactions between these tools can be mind-boggling.</p>
-<p>Someone once asked: who knows how to work the <a href="http://httpd.apache.org/" target="_blank">Apache web server</a>? It sounds like a simple question -- any competent web manager? the main developers? -- but the sting in the tail is that Apache is very configurable: so configurable, in fact, that it's pretty much impossible to work out what a given combination of options will do (or, conversely, what combination of options to use to achieve a given effect). The interactions are just too complicated, and the web abounds with examples where interactions between (for example) the thread pool size, the operating system block size, and the Java virtual machine parameters conspire to crash a system that looks like it should be working fine. If you can't work one server properly -- one component of the system -- what hope is there to get a complete system humming along?</p>
-<p><a href="http://blogs.cs.st-andrews.ac.uk/al/" target="_blank">Al Dearle</a> and I have been talking about this for a while. The basic issue seems to be an interaction between decomposition and dependency. In other words, the complexity comes at the "seams" between the various sub-systems, and is magnified the more configurable the components on either side of the seam are. This is important, because systems are becoming more finely decomposed: the move to component software, software-as-a-service and the like all increase the number of seams. Al's image of this is that modern systems are like Russian dolls, where each supposedly independent component contains more components that influence the size and complexity of the component containing them. You can only simplify any individual piece so far, because it depends on so many other pieces.</p>
-<p>Actually a lot of the seams are now unnecessary anyway. Going back to the e-commerce example, the operating system goes to great pains to provide a process abstraction to keep the components separate -- to stop faults in the database affecting the web server, for example. Historically this made perfect sense and prevented a single faulty process in a time-sharing system affecting the processes of other users. Nowadays, however, it makes considerably less sense, for a number of reasons. Firstly, all the components are owned by a single nominal user (although there are still good reasons for separating the root user from the application user), so the security concerns are less pronounced. Secondly, all the components depend on each other, so a crash in the database will effectively terminate the web server anyway. (We're simplifying, but you get the idea.) Finally, there's a good chance that the web server, database and so on are each running in their own virtual machine, so there's only one "real" process per machine (plus all the supporting processes). The operating system is offering protection that isn't needed, because it's being provided (again) by the hypervisor running the virtual machines and perhaps (<em>again</em>) by the host operating system(s) involved.</p>
-<p>We also tend to build very flexible components (like Apache), which can deal with multiple simultaneous connections, keep users separate, allow modules to be loaded and unloaded dynamically -- behave like small operating systems, in other words, replicating the OS functionality again at application level. This is despite the fact that, in enterprise configurations, you'll probably know in advance the modules to be loaded and have a single user (or small user population) and fixed set of interactions: the flexibility makes the component more complex for no net gain during operation. Although it might simplify configuration and evolution slightly, there are often other mechanisms for this: in a cloud environment one can spin-up a replacement system in an evolved state and then swap the set of VMs over cleanly.</p>
-<p>It's easy to think that this makes no difference for modern machines, but that's probably not the case. All these layers still need to be resourced; more importantly, they still need to be managed, maintained and secured, which take time to do well -- with a result that they typically get done badly (if at all).</p>
-<p>Can we do anything about it? One thought is that the decomposition that makes thinking about systems and programming easier makes executing those systems more complex and fragile. In many cases, once the system is configured appropriately, flexibility becomes an enemy: it'll often be too complicated to re-configure or optimise in a live environment anyway. There may be a reason to have Russian dolls when <em>designing</em> a system, but once designed it's better to make each doll solid to remove the possibility of then opening-up and falling apart.</p>
-<p>So it's not decomposition that's the issue, it's <em>decomposition manifested at run-time</em>. When we add new abstractions to systems, we typically add them in the form of components or libraries that can be called from other components. These components are often general, with lots of parameters and working with multiple clients -- sound familiar? This is all good for the component-writer, as it lets the same code be re-used: but it bloats each system that uses the component, adding complexity and interactions.</p>
-<p>So one thought for tackling complexity is to change where decomposition manifests itself. If instead of placing new functions in the run-time system, we placed it into the compiler used to build the run-time, we could use compilation techniques to optimise-out the unnecessary functionality so that what results is optimised for the configuration that it's actually being placed in, rather than being general enough to represent any configuration. There's substantial work on these ideas in the fields of staged compilation and partial evaluation (for example <a href="http://www.metaocaml.org/" target="_blank">MetaOCaml</a>, <a href="http://www.haskell.org/haskellwiki/Template_Haskell" target="_blank">Template Haskell</a>, Flask and the like): the flexibility is manifested at compile-time as compile-time abstractions, that in the course of compilation are removed and replaced with inflexible -- but more efficient and potentially more dependable -- specialised code. Think taking the source code for Linux, Apache and MySQL, accelerating them together at high speed, and getting out a single program that'd run on a bare machine, had nothing it didn't actually need, and had all the options for the various (conceptual) sub-systems set correctly to work together.</p>
-<p>Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and<a href="../../2011/05/evolving/" target="_blank"> into the languages and compilers</a> might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like <a href="../../2011/12/middleware-doughnut/" target="_blank">ever-more-specialised middleware</a> that remove bloat and overhead at the cost of generality. Keeping the former <em>and</em> the latter seems like a worthwhile goal.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2011/04/11/spectrum/" class="u-url">Adventures at either end of the performance spectrum</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2011/04/11/spectrum/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2011-04-11T19:00:43+01:00" title="2011-04-11 19:00">2011-04-11 19:00</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2011/04/11/spectrum/#disqus_thread" data-disqus-identifier="cache/posts/2011/04/11/spectrum.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.</p>
-<!--more-->
-
-<p>Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that's actually somewhat <em>less</em> capable than many of the nodes we work with. They're basically a hobbyist platform and are often looked down upon by professionals as being toys.</p>
-<p>I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren't needed in many applications. Secondly, unlike a lot of sensor network hardware, they're <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function -- co-ordination -- and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.</p>
-<p>In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I'm reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That's an interesting story for another time.)</p>
-<p>One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi's range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that's great for sensor systems, and I'm looking forward to understanding them better,</p>
-<p>However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-CTU)  only runs on Windows. As might not be a complete surprise, I don't have any Windows machines.</p>
-<p>I doubt I'm unusual in this: if you're the sort of person who's likely to play around with hobbyist hardware, there's a reasonable chance that you run Linux and/or Mac OS X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.</p>
-<p>By a strange quirk I also don't have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-CTU under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone PC on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-CTU -- all to change the firmware on a radio with significantly less computational power than a central heating thermostat.</p>
-<p>It's things like this that make one realise how ludicrously, insanely overpowered modern computers are.</p>
-<p>The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it's a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap -- so cheap that it's not worth worrying about it, and we haven't come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain -- and <a href="../../2010/03/things-that-wont-change/">I think it is</a> -- it's something we need to consider in the ways we teach computer science.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2011-04-11T19:00:43+01:00" title="2011-04-11 19:00">2011-04-11 19:00</time><a href="../../2011/04/11/spectrum/" class="listtitle"> Adventures at either end of the performance spectrum</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

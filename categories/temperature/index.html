@@ -97,89 +97,27 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about temperature</h1>
+<article class="tagpage"><header><h1>Posts about temperature</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../temperature.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/09/temperature-sensors-working/" class="u-url">Temperature sensors working</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/07/09/temperature-sensors-working/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-09T19:00:20+01:00" title="2013-07-09 19:00">2013-07-09 19:00</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/09/temperature-sensors-working/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/09/temperature-sensors-working.html">Comments</a>
+            	<time class="listdate" datetime="2013-07-09T19:00:20+01:00" title="2013-07-09 19:00">2013-07-09 19:00</time><a href="../../2013/07/09/temperature-sensors-working/" class="listtitle"> Temperature sensors working</a><a>
+            </a>
+</li>
+            <li>
 
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Temperature sensing using digital temperature sensors is easy to get working.</p>
-<!--more-->
-
-<p>The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../2013/07/08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.</p>
-<p><img alt="DS18B20" src="../../images/citizen-sensing/three-ds18b20.png"></p>
-<p>Three DS18B20 temperature sensors sharing a OneWire bus, standard (rail) power mode</p>
-<p>Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin -- which isn't important for hardware reasons in this project, but also saves some microcontroller RAM, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The DQ line is attached to one of the Arduino's digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to "real" temperature values.</p>
-<p>The resulting code is almost comically simple:</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;DallasTemperature.h&gt;</span><span class="cp"></span>
-
-<span class="n">OneWire</span><span class="w"> </span><span class="nf">onewire</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">                  </span><span class="c1">// OneWire bus on pin 8</span>
-<span class="n">DallasTemperature</span><span class="w"> </span><span class="nf">sensors</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onewire</span><span class="p">);</span><span class="w"></span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">sensors</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">sensors</span><span class="p">.</span><span class="n">requestTemperatures</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sensors</span><span class="p">.</span><span class="n">getTempCByIndex</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Sensor "</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" = "</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-
-<p>That's it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).</p>
-<p><img alt="Three DS18B30s on a prototyping shield" src="../../images/citizen-sensing/ds18b20-prototype.jpg"></p>
-<p>One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we'll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.</p>
-<p>There's also an interesting point about parasite power mode, which is where the DS18B20 draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it's probably worth looking into parasite power a bit more.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/08/ds18b20/" class="u-url">DS18B20 digital thermometer</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/07/08/ds18b20/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-08T20:22:02+01:00" title="2013-07-08 20:22">2013-07-08 20:22</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/08/ds18b20/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/08/ds18b20.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.</p>
-<!--more-->
-
-<p>The <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2812" target="_blank">DS18B20</a> is extremely popular as a temperature sensor, for obvious reasons: they're digital, and require no calibration, in contrast to using a thermistor or similar analogue device which would need to be characterised against reference temperatures. They're not as cheap as analogue components, but their simplicity of use and accuracy probably make up for that in scientific applications.</p>
-<p>The devices are also notable as using the OneWire protocol developed by Dallas Semiconductor (now Maxim) and used in (amongst other devices) their <a href="http://www.maximintegrated.com/products/ibutton/" target="_blank">iButton</a> devices. Essentially <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">OneWire</a> is an embedded systems equivalent of USB that allows a set of devices to be chained together and addressed using only one pin on a microcontroller. This means that there's no real limit on the number of sensors that even a small chip can make use of. The <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank">datasheet</a> is available if needed, but they're so easy to use and have such good software support (see below) that there's no real need to refer to it.</p>
-<p>The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There's also a "parasitic" mode that takes power from the data bus, which I haven't got to work yet.) The communications line is the "one wire" that runs the communications protocol.</p>
-<p>Using OneWire devices, and DS18B20s in particular, is made very simple by the existence of two libraries, providing the <a href="http://www.pjrc.com/teensy/td_libs_OneWire.html" target="_blank">protocol driver</a> and <a href="http://milesburton.com/Dallas_Temperature_Control_Library" target="_blank">temperature conversion and packaging</a> respectively. Links and installation instructions can be found on the <a href="../../download/tools-libraries/">3rd-part tools and libraries page</a>.</p>
-<p></p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2013-07-08T20:22:02+01:00" title="2013-07-08 20:22">2013-07-08 20:22</time><a href="../../2013/07/08/ds18b20/" class="listtitle"> DS18B20 digital thermometer</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

@@ -97,56 +97,22 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about virtual machine</h1>
+<article class="tagpage"><header><h1>Posts about virtual machine</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../virtual-machine.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2010/05/28/languages-extensible-vms/" class="u-url">Languages for extensible virtual machines</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2010/05/28/languages-extensible-vms/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2010-05-28T06:00:30+01:00" title="2010-05-28 06:00">2010-05-28 06:00</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2010/05/28/languages-extensible-vms/#disqus_thread" data-disqus-identifier="cache/posts/2010/05/28/languages-extensible-vms.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what's the appropriate  language for writing experimental languages?</p>
-<!--more-->
-
-<p>What I have in mind is slightly more than just VMs, and more a platform for experimenting with language design for novel environments such as sensor-driven systems. As well as a runtime, this requires the ability to parse, to represent and evaluate type and semantic rules, and to provide a general framework for computation that can then be exposed into a target language as constructs, types and so forth. What's the right language in which to do all this?</p>
-<p>This isn't a simple question. It's well-accepted that the correct choice of language is vital to the success of a coding project.  One could work purely at the language level, exploring constructs and type systems without any real constraint of the real world (such as being runnable on a sensor mote). This has to some extent been traditional in programming language research, justified by the Moore's law increases in performance of the target machines. It isn't justifiable for sensor networks, though, where <a href="../../2010/03/things-that-wont-change/">we won't see the same phenomenon</a>. If we want to prototype realistic language tools in the same framework, we need at least a run-time VM that was appropriate for these target devices; alternatively we could ignore this, focus on the language, and prototype only when we're happy with the structures, using a different framework. My gut ffeeling is that the former is preferable, if it's possible, for reasons of conceptual clarity, impact and simplicity. But even without making this decision we can consider the features of different candidate language-writing languages:
-</p>
-<h3>C</h3>
-The most obvious approach is to use C, which is run-time-efficient and runs on any potential platform. For advanced language research, though, it's less attractive because of its poor symbolic data handling. That makes it harder to write type-checking sub-systems and the like, which are essentially symbolic mathematics.
-<h3>Forth</h3>
-<p><a href="../../2010/03/forth-for-sensors/">I've wondered about Forth before</a>. At one level it combines the same drawbacks as C -- poor symbolic and dynamic data handling -- with the additional drawback of being unfamiliar to almost everyone.</p>
-<p>Forth <em>does</em> have some redeeming features, though. Firstly, threaded interpretation means that additional layers of abstraction are largely cost-free: they run at the same speed as the language itself. Moreover there's a sense in which threaded interpretation blurs the distinction between host language and meta-language: you don't write Forth applications, you extend it towards the problem, so the meta-language <em>becomes</em> the VM and language tool. This is something that needs some further exploration.</p>
-<h3>Scheme</h3>
-<p>Scheme's advantages are its simplicity, regularity, and pretty much unrivalled flexibility in handling symbolic data. There's <a href="../../2010/05/cs-book-worth-reading-twice/">a long  tradition of Scheme-based language tooling</a>, and so a lot of experience and libraries to make use of. It's also easy to write purely functional code, which can aid re-use.</p>
-<p>Scheme is dynamically typed, which can be great when exploring approaches like partial evaluation (specialising an interpreter against a particular piece of code to get a compiled program, for example).</p>
-<h3>Haskell</h3>
-<p>In some ways, Haskell is the obvious language for a new language project. The strong typing, type classing and modules mean one can generate a typed meta-language. There are lots of libraries and plenty of activity in the research community. Moreover Haskell is in many ways the "mathematician's choice" of language, since one can often map mathematical concepts almost directly into code. Given thaat typing and semantics are just mathematical operations over symbols, this is a significant attraction.</p>
-<p>Where Haskell falls over, of course, is its runtime overheads -- mostly these days in terms of memory rather than performance. It essentially mandates a choice of target platform to be fairly meaty, which closes-off some opportunities. There are some "staged" Haskell strategies that might work around this, and one could potentially stage the code to another runtime virtual machine. Or play games like implement a Forth VM inside Haskell for experimentation, and then emit code for a <em>different</em> Forth implementation for runtime.</p>
-<h3>Java</h3>
-<p>Java remains the language <em>du jour</em> for most new projects. It has decent dynamic data handling, poor symbolic data handling, fairly large run-time overheads and a well-stocked library for re-use. (Actually I used Java for <a href="../../publications/#Vanilla-GCSE99">Vanilla</a>, an earlier project in a similar area.) Despite the attractions, Java feels wrong. It doesn't provide a good solution to <em>any</em> of the constraints, and would be awkward as a platform for manipulating rules-based descriptions.</p>
-<h3>Smalltalk</h3>
-<p>Smalltalk -- and especially <a href="http://www.squeak.org">Squeak</a> -- isn't a popular choice within language research, but does have a portable virtual machine, VM generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It's also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework -- something that'd be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.</p>
-<p>Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It's unfortunate there isn't a clear winner; alternatively, it's positive that there's a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2010-05-28T06:00:30+01:00" title="2010-05-28 06:00">2010-05-28 06:00</time><a href="../../2010/05/28/languages-extensible-vms/" class="listtitle"> Languages for extensible virtual machines</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

@@ -97,44 +97,22 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about topology</h1>
+<article class="tagpage"><header><h1>Posts about topology</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../topology.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2010/02/26/216/" class="u-url">Programming with limited certainty</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2010/02/26/216/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2010-02-26T09:00:18Z" title="2010-02-26 09:00">2010-02-26 09:00</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2010/02/26/216/#disqus_thread" data-disqus-identifier="cache/posts/2010/02/26/216.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Sensor networks are all about uncertainty: if the sensor says it's 20°C  out there, then it might be 20°C plus-or-minus half a degree or so (limited precision); or it might be some different temperature, and the sensor's just reported a duff value for some reason (limited accuracy). By contrast, computers most definitely <em>aren't</em> about uncertainty, a fact enshrined in the famous maxim "garbage in, garbage out". What does this mean for our ability to build really large, robust and flexible sensor networks?</p>
-<!--more-->
-<p>All the really foundational models of computing -- λ calculus, Turing machines and the like -- pretty much reflect this notion that input is correct in some sense, and if it's wrong then that's an error to be corrected outside the computational system. That seems to mean that the computational system can't itself either tolerate or express the notions of limited certainty -- precision and accuracy -- that lie at the core of sensor networks (and a lot of other modern systems, or course). That suggests to me that there might be a problem at the heart of computer science as we currently formulate it: it isn't a realistic model of the world we're trying to compute over.</p>
-<p>In some ways this is nether surprising nor threatening. Any mathematical or computational model is only a simplified abstraction of the real world, for which we have to make often staggeringly bold simplifications if we're to get anywhere. We should however always be prepared to challenge the <em>validity</em> and <em>necessity</em> of these simplifications, and that's what I'd like to do here.</p>
-<p>As far as validity is concerned, the simplification is quite patently <em>invalid</em> when it comes to any system that operates with real-world data: some of it is <em>bound</em> to be "wrong" in some sense. This isn't the same as being tolerant of mistakes, such as when someone presses the delete key by mistake: that's a  action that certainly happened and to which the system responded correctly, albeit "wrongly" from the user's perspective. Interesting problem, but different: we're talking here about responding to inherently erroneous input -- the delete key seeming to press itself, if you like.</p>
-<p>Necessity, then: is it necessary to handle computation in this way? Clearly not: we can easily conjecture a computational model that's more tolerant of input with limited certainty.</p>
-<p>Consider precision first. If the input is only known to a limited precision, then we don't want that error margin to cause enormous errors. If we have a function $latex f$, then we want $latex f$ to exhibit a tolerance of imprecision such that $latex \delta x &lt; tol_x \Rightarrow \left | f(x + \delta x) - f(x) \right | &lt; s \left | \delta x \right|$ for some scaling factor $latex s &lt; 1$. $latex f$ doesn't cause errors to blow-up in unpredictable ways. A lot of functions behave in exactly this way: for example, in a sliding-window average function $latex f_w(\overline{x}, x) = \frac{x + \overline{x}(w - 1)}{w}$ for an average $latex \overline{x}$ computed from $latex w$ recent observations, we have that $latex s = \frac{1}{w}$. Small errors therefore perturb the result significantly less than the input is perturbed. If the errors are uniformly distributed, the function should converge on the "true" value.</p>
-<p>Conversely, a large, accurate new observation will perturb the average only slowly, so large step-changes will be detected only slowly. It's hard to distinguish such a change when it first happens from an inaccurate reading. There are various ways of dealing with this, such as using a weighted sliding window with non-linear weighting.</p>
-<p>This is a rather topological idea. Rather than simply mapping points in an input space (such as temperature) to an output space (average temperature over the past few minutes), we're also requiring that the mapping take elements close in the input space to elements close in the result space: we require that it be a <em>contraction mapping</em>. Building systems from contraction mappings, perhaps combined with contraction-preserving operators, yields systems that are robust to small errors in precision from their sensors.</p>
-<p>Of course not all systems <em>are</em> actually like this, and in many cases we <em>want</em> rapid changes to be detected quickly and/or propagated. The point, perhaps, is that this is a <em>choice we should make</em> rather than a <em>consequence</em> of choosing a particular model of computation. There might actually be a model of computation lurking about here, in which we define functions coupled with a model of how their input and output errors should behave. At the very least, this yields systems in which we can predict the consequences of errors and imprecisions, which is a major challenge to deal with at present.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2010-02-26T09:00:18Z" title="2010-02-26 09:00">2010-02-26 09:00</time><a href="../../2010/02/26/216/" class="listtitle"> Programming with limited certainty</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

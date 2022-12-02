@@ -97,84 +97,27 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about rdf</h1>
+<article class="tagpage"><header><h1>Posts about rdf</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../rdf.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2013/07/10/representing-samples/" class="u-url">Representing samples</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2013/07/10/representing-samples/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2013/07/10/representing-samples/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/10/representing-samples.html">Comments</a>
+            	<time class="listdate" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time><a href="../../2013/07/10/representing-samples/" class="listtitle"> Representing samples</a><a>
+            </a>
+</li>
+            <li>
 
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?</p>
-<!--more-->
-
-<p>Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as XML for data-based approaches.</p>
-<p>Neither of these is ideal for a sensor network, for a number of reasons.</p>
-<p>A typical sensor network architecture will use different languages one the sensors and the base station, with the former prioritising efficiency and compactness and the latter emphasising connectivity to the internet and interfacing with standard tools. Typically we find C or C++ on the sensors and Java, JavaScript, Processing, or some other language on the base station. (Sometimes C or C++ too, although that's increasingly rare for new applications.) It's therefore tricky to use a language-based approach to defining data, as two <em>different</em> versions of the <em>same</em> structure would have to be defined and -- more importantly -- kept synchronised across changes.</p>
-<p>That suggests a data-based approach, but these tend to fall foul of the need for a compact and efficient encoding sensor-side. Storing, generating, and manipulating XML or RDF, for example, would typically be too complex and too memory-intensive for a sensor. These formats also aren't really suitable for in-memory processing -- unsurprisingly, as they were designed as transfer encodings, not primary data representations. Even though they might be attractive, not least for their friendliness to web interactions and the Semantic Web, they aren't really usable directly.</p>
-<p>There are some compromise positions, however. <a href="http://www.json.org" target="_blank">JSON</a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. JSON essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn't include code-valued fields, which is how JSON stays language-neutral: it can't encode computations, closures, or other programmatic features.)</p>
-<p>JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.</p>
-<p>This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2012/02/02/semantic-web/" class="u-url">The semantic web: good ideas poorly supported?</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../../2012/02/02/semantic-web/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2012-02-02T08:00:06Z" title="2012-02-02 08:00">2012-02-02 08:00</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2012/02/02/semantic-web/#disqus_thread" data-disqus-identifier="cache/posts/2012/02/02/semantic-web.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>The semantic web and open linked data open-up the vision of scientific data published in machine-readable form. But their adoption faces some challenges, many self-inflicted.</p>
-<!--more-->
-
-<p>Last week I taught <a href="../../teaching/ovronnaz/" target="_blank">a short course on programming context-aware systems</a> as a Swiss doctoral winter school. The idea was to follow the development process from the ideas of context, through modelling and representation, to reasoning and maintenance.</p>
-<p>Context has a some properties that make it challenging for software development. The data available tends to be heterogeneous, dynamic and richly linked. All these properties can impede the use of normal approaches like object-oriented design, which tend to favour systems that can be specified in a static object model up-front. Rather than use an approach that's highly structured from its inception, am alternative approach is to use an open, unstructured representation and then add structure later using auxiliary data.This leads naturally into the areas of <a href="http://linkeddata.org" target="_blank">linked open data</a> and the semantic web.</p>
-<p>The <a href="https://en.wikipedia.org/wiki/Semantic_Web" target="_blank">semantic web</a> is a term coined by Tim Berners-Lee as a natural follow-on from his original web design. Web pages are great for browsing but don't typically lend themselves to automated processing. You may be able to extract my phone number from <a href="../../contact-details/" target="_blank">my contact details page</a>, for example, but that's because you understand typography and abbreviation: there's nothing that explicitly marks the number out from the other characters on the page. Just as the web makes information readily accessible to people, the semantic web aims to make information equally accessible to machines. It does this by allowing web pages to be marked-up using a format that's more semantically rich than the usual HTML. This uses two additional technologies: the <a href="http://www.w3.org/TR/2004/REC-rdf-primer-20040210/" target="_blank">Resource Description  Framework (RDF)</a> to assert facts about objects, <a href="http://www.w3.org/TR/rdf-sparql-query/" target="_blank">SPARQL</a> to access to model using queries, and the <a href="http://www.w3.org/TR/owl-guide/" target="_blank">Web Ontology  Language (OWL)</a> to describe the structure of a particular domain of  discourse. Using the example above, RDF would mark-up the phone number, email address <em>etc</em> explicitly, using terminology described in OWL to let a computer understand the relationships between, for example, a name, an email address, an employing institution and so on. Effectively the page, as well as conveying content for human consumption, can carry content marked-up semantically for machines to use autonomously. And of course you can also create pages that are <em>purely</em> for machine-to-machine interaction, essentially treating the web as a storage and transfer mechanism with RDF and OWL as semantically enriched transport formats.</p>
-<p>So far so good. But RDF, SPARQL and OWL are far from universally accepted "in the trade", for a number of quite good reasons.</p>
-<p>The first is verbosity. RDF uses XML as an encoding, which is quite a verbose, textual format. Second is complexity: RDF makes extensive use of XML namespaces, which add structure and prevent misinterpretation but make pages harder to create and parse. Third is the exchange overhead, whereby data has to be converted from in-memory form that programs work with into RDF for exchange and then back again at the other end, each step adding <em>more</em> complexity and risks of error. Fourth is the unfamiliarity of many of the concepts, such as the dynamic non-orthogonal classification used in OWL rather than the static class hierarchies of common object-oriented approaches. Fifth is the disconnect between program data and model, with SPARQL sitting off to one side like SQL. Finally there is the need for all these technologies <em>en masse</em> (in addition to understanding HTTP, XML and XML Schemata) to perform even quite simple tasks, leading to a steep learning curve and a high degree of commitment in a project ahead of any obvious returns.</p>
-<p>So the decision to use the semantic web isn't without pain, and one needs to place sufficient value on its advantages -- open, standards-based representation, easy exchange and integration -- to make it worthwhile. It's undoubtedly attractive to be able to define a structure for knowledge that exactly matches a chosen sub-domain, to describe the richness of this structure, and to have it compose more or less cleanly with <em>other</em> such descriptions of complementary sub-domains defined independently -- and to be able to exchange all this knowledge with anyone on the web. But this flexibility comes with a cost and (often) no obvious immediate, high-value benefits.</p>
-<p>Having taught this stuff, I think the essential problem is one of tooling and integration, not core behaviour. The semantic web does include some really valuable concepts, but their realisation is currently poor and this poses a hazard to their adoption.</p>
-<p>In many ways the use of XML is a red herring: no sane person holds data to be used programmatically as XML. It is -- and was always intended to be -- an exchange format, not a data structure. So the focus needs to be on the data model underlying RDF (subject-predicate-object triples with subjects and predicates represented using URIs) rather than on the use of XML.</p>
-<p>While there are standard libraries and tools for use with the semantic web -- in Java these include <a href="http://incubator.apache.org/jena/" target="_blank">Jena</a> for representing models, <a href="http://clarkparsia.com/pellet/" target="_blank">Pellet</a> and other reasoners providing ontological reasoning, and <a href="http://protege.stanford.edu/" target="_blank">Protégé</a> for ontology development -- their level of abstraction and integration with the rest of the language remain quite shallow. It is hard to ensure the validity of an RDF graph against an ontology, for example, and even harder to validate updates. The type systems also don't match, either statically or dynamically: OWL performs classification based on attributes rather than by defining hard classes, and the classification may change unpredictably as attributes are changed. (This isn't just a problem for statically-typed programming languages, incidentally: having the objects you're working with re-classified can invalidate the operations you're performing at a semantic level, regardless of whether the type system complains.) The separation of querying and reasoning from representation is awkward, rather like the use of SQL embedded into programs: the query doesn't fit naturally into the host language, which typically has no syntactic support for constructing queries.</p>
-<p>Perhaps the solution is to step back and ask: what problem does the semantic web solve? In essence it addresses the open and scalable mark-up of data across the web according to semantically meaningful schemata. <em>But programming languages don't do this</em>: they're about nailing-down data structures, performing local operations efficiently, and letting developers share code and functionality. So there's a mis-match between the goals  of the two system components, and their strengths don't complement each other in the way one might like.</p>
-<p>This suggests that we re-visit the integration of RDF, OWL and SPARQL into programming languages; or, alternatively, that we look at for what features would provide the best computational capabilities alongside these technologies. A few characteristics spring to mind:
-</p>
-<ul>
-<li>Use classification throughout, a more dynamic type structure than classical type systems</li>
-    <li>Access RDF data "native", using binding alongside querying</li>
-    <li>Adopt the XML Schemata types "native" as well</li>
-    <li>Make code polymorphic in the manner of OWL ontologies, so that code can be exchanged and re-used. This implies basing typing on reasoning rather than being purely structural</li>
-    <li>Hiding namespaces, URIs and the other elements of RDF and OWL behind more familiar (and less intrusive) syntax (while keeping the semantics)</li>
-    <li>Allow programmatic data structures, suited to local use in a program, to be layered onto the data graph without forcing the graph itself into convoluted structures</li>
-    <li>Thinking about the global, non-local data structuring issues</li>
-    <li>Make access to web data intrinsic, not something that's done outside the normal flow of control and syntax</li>
-</ul>
-The challenges here are quite profound, not least from relatively pedestrian matters like concurrency control, but at least we would then be able to leverage the investment in data mark-up and exchange to obtain some of the benefits the semantic web clearly offers.
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2012-02-02T08:00:06Z" title="2012-02-02 08:00">2012-02-02 08:00</time><a href="../../2012/02/02/semantic-web/" class="listtitle"> The semantic web: good ideas poorly supported?</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");

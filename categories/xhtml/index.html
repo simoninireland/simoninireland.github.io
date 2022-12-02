@@ -97,52 +97,22 @@
       </a>
     </div>
   </section><section class="page-content"><div class="content" rel="main">
-    <header><h1>Posts about xhtml</h1>
+<article class="tagpage"><header><h1>Posts about xhtml</h1>
         <div class="metadata">
                             <p class="feedlink">
                                     <a href="../xhtml.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
-            
         </div>
-    </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../2012/05/04/postmodernism-programming/" class="u-url">The post-modernisation of programming languages</a></h1>
-
         
-        <div class="metadata">
-            <p class="dateline"><a href="../../2012/05/04/postmodernism-programming/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2012-05-04T13:17:13+01:00" title="2012-05-04 13:17">2012-05-04 13:17</time></a></p>
+    </header><ul class="postlist">
+<li>
 
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../../2012/05/04/postmodernism-programming/#disqus_thread" data-disqus-identifier="cache/posts/2012/05/04/postmodernism-programming.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p></p>
-<p>Do we now have some post-modern programming languages?</p>
-<!--more-->
-
-<p>Programming languages change all the time. It's never been the case that one could learn just one and then use it: programming is too rich and complicated for that to be a solution for the majority of programmers. However, we seem to be seeing a change in what we think of as programming languages and how they're used to build larger software systems.</p>
-<p>At the risk of gross over-simplification (and ridicule), let's divide languages into various "eras". In the beginning, the <em>early</em> languages were built around some explicit notion of the machine on which they were running. Assemblers were devoted to a single machine code. Higher-level languages like Forth abstracted away from the machine code but still exposed the guts of the machine, and in particular its data bus width and memory access mechanisms.</p>
-<p>The next step in abstraction -- to <em>pre-modernism</em> -- was to provide a machine that was still recognisably a Von Neumann system but that hid the details of the underlying machine code and architecture. C and Pascal fall into this category: their operations and abstractions are still largely those of the physical machine, but at a sufficient remove to achieve portability and a usable programming model. But we still have a view of the machine's underlying limitations. <em>Modern</em> languages like Perl, Java and Haskell offer a model of computation, and especially a model of memory, that's considerably removed from the underlying machine and enormously simplifies the programmer's task, at least for "suitable" programs.</p>
-<p>(Interestingly enough languages don't fall into eras in the sequence of their design or popularity. Lisp considerably pre-dates C but is definitely modern using the terminology above.)</p>
-<p>What's perhaps not obvious is that all these languages share a common design philosophy. They are all based on a small set of primitive notions combined with some ways of combining those notions, to get compound abstractions that resemble their primitive underpinnings. In C we get a small number of base types, some compound structs and unions, and pointers, and most interesting compound structures one builds will contain pointers all over the place. In Java we can build classes that create and combine objects; in Haskell we get lists and higher-order functions as the basic building blocks. The point is that the basic concepts are <em>general</em>, as are the composition operators, and the larger capabilities are in some sense a <em>consequence</em> of these initial choices and characterise the programs it's easy (or hard) to write.</p>
-<p>This philosophy makes perfect sense, of course, which explains why it's so widespread. Programmers have to get to grips with a small set of basic concepts and composition methods. Everything else flows from this, and the extensions to the language -- libraries and the like -- will be the same as code one could write oneself: they're time-savers, but not fundamentally different from your own code. As a consequence the basic concepts have to be well-chosen to support the range of programs people will want to write. Some will be easier to write than others -- that's what makes the choice of language more than simply a matter of fashion -- but there's an acceptance that pretty much anything is writeable.<em></em></p>
-<p>However, we're now seeing languages emerge that aren't like this. Instead they're very much targeted at specific domains and problem sets. We've always had domain-specific languages (DSLs), of course, but the current crop seem to me to be rather different. They've abandoned the design philosophy of a small, basic set of abstractions and powerful composition, in favour of large basic abstractions and limited composition and extension. This significantly changes development, and the balance of power between the language designer and the programmer.</p>
-<p>XSLT is the language that's brought this most to mind, and especially the transition from XSLT 1.0 to XSLT 2.0.</p>
-<p>First we have to defend the notion that XSLT is a programming language. I first thought of it as just a transformation system for documents, and so it is: but it's targeted at such a general set of applications that it takes on the flavour of a DSL. It's essentially a functional language with pattern-matching and recursion, whose main data structure is the XML document. It lets one write programs that are driven by these documents: another way to look at it is that it gives executable semantics to a set of XML tags, allowing them to perform computation.</p>
-<p>XSLT's design doesn't start with a small set of primitives. Instead it provides a collection of tags that can be used to perform the common document operations. If you want to number a list, for example, XSLT contains tags that support the common numbering formats: numbers, letters with brackets, and so forth. What?, you wanted something else? Well, you can <em>probably</em> do it, but it'll be indescribably hard because you'll be writing a program in a language for which full computation is an afterthought. Instead, XSLT 2.0 adds <em>new</em> numbering formats that you can select using a helpful set of tags, and this is done <em>within</em> the XSLT processor, not <em>using</em> the XSLT processor. Meaningful extension requires the intervention of the language designer.</p>
-<p>This is a major philosophical change, a <em>post-modern</em> approach to language design. Don't focus on getting the core abstractions right: instead, build a system -- <em>any</em> system -- that demonstrates initial functionality, and then extend it with new features to meet new demands regardless of how they fit. There's no overarching conceptual scheme to the system. Instead it's judged purely on the functions it provides, regardless of how they fit together. (<a href="http://www.wall.org/~larry/pm.html" target="_blank">Larry Wall described Perl as post-modern</a>, but I don't think he meant quite what I'm getting at here -- although there are similarities.)</p>
-<p>Post-modernism  works for three reasons. Firstly, no-one is expecting to write very large amounts of code in these systems. They're intended for <em>sub-</em>systems, not for systems themselves, and so the need for generality is limited. Secondly, there's a premium on speed of development rather than on maintenance, which in turn puts a premium on getting some result out quickly rather than on ensuring that, in the future, we can get any result out we need. The sub-systems are intended to change on a short timescale, so maintenance and extensibility is perceived to be less of an issue than agility. Thirdly, a lot of these languages target people who aren't programmers -- or at least don't think of themselves as programmers -- who are focused on something other than the code.</p>
-<p>Post-modernism isn't wrong, and <a href="../../2011/12/middleware-doughnut/" target="_blank">appears in middleware too</a>. It's also important to realise the benefits: it makes it easier to put together larger systems, and increases <a href="../../2011/06/computing-experience/" target="_blank">the ambition of projects one can undertake</a> compared to having to build so much from scratch, But it may be misguided. The people who spent the 1960's writing all the COBOL code that's still running today never thought it'd still be being maintained -- and the consequences of that lead to code that's now impossible to change. Simple solutions have a tendency to grow into more complex ones -- "just one more feature and we're done" -- which can push the costs of inappropriate choices out along the project lifecycle.</p>
-<p>More importantly, for researchers post-modernism is a seductive siren call that lets you step away from tackling some difficult choices. Instead of picking a small set of concepts, choose <em>any set</em> and then extend them, in <em>any way</em>, to build up your system. I think this obscures some insights one might otherwise gain from simplifying your set of concepts.</p>
-<p>I think it's also worth remembering that increasing the size and number of abstractions isn't without cost: not for the computer or the compiler, but for the programmer. The more programmers have to remember, and in particular the less well the things to be remembered fit together as a conceptual whole, the harder it is to use the system to its fullest advantage. People instead stay with small sub-sets of the language or -- worse -- settle for programs producing results that aren't those they want, just to stay within their language comfort zone. This sort of simplification is a step backwards, and we need to be careful of the consequences.</p>
-    </div>
-    </article>
-</div>
-
-           <script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+            	<time class="listdate" datetime="2012-05-04T13:17:13+01:00" title="2012-05-04 13:17">2012-05-04 13:17</time><a href="../../2012/05/04/postmodernism-programming/" class="listtitle"> The post-modernisation of programming languages</a><a>
+            </a>
+</li>
+        </ul></article>
 </div>
   </section><script src="../../assets/js/baguetteBox.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
     moment.locale("en");
