@@ -1,0 +1,233 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2022/12/02/jupyter-in-the-cloud.meta
+
+* Notes on using Jupyter in the cloud                                :ATTACH:
+  :PROPERTIES:
+  :ID:       3de9ecd3-991b-49e9-8419-a22be50c6b21
+  :END:
+
+  I've been thinking about running [[https://jupyter.org][Jupyter notebooks]] in the cloud for
+  some fairly compute-intensive simulation. Specifically I want to do
+  epidemic and other simulations over complex networks. These are
+  CPU-intensive and don't make use of GPU acceleration (yet, anyway).
+  Using the cloud would make things easier to scale-out, especially
+  for those without access to a local compute cluster.
+
+  {{{TEASER_END}}}
+
+  I decided to do some experiments by writing [[link:../../../../attachments/3d/e9ecd3-991b-49e9-8419-a22be50c6b21/epydemicbasics.ipynb][a small Jupyter notebook]]
+  that would exercise a cloud service by running some simulations
+  using [[https://github.com/simoninireland/epydemic][epydemic]], our network process simulation framework. The idea
+  was to see how performant the cloud services on offer are, starting
+  with [[https://colab.research.google.com/][Google Colab]] as the most accessible.
+
+** Reference execution
+
+   As a reference, I firsat ran a small experiment with an SIR
+   epidemic on an ER network of $10^4$ nodes, $\langle k \rangle =
+   10$) experiment with 10 repetitions. The first experiment runs 10
+   repetitions sequentially on a single core; the second runs 10
+   repetitions for every core we run on. [[https://github.com/simoninireland/epyc][epyc]], our process management
+   library, schedules worker processes in individual processes which
+   can then be scheduled independently by the operating system, and
+   which don't therefore run into synchronisation problems due to the
+   Python Global Interpreter Lock.
+
+   Running this on my desktop machine (Intel Core i7@3.8GHz) on 8
+   cores and taking averages gives:
+
+   | Cores | Elapsed time (s) | Mean/rep (s) | Variance |
+   |-------+------------------+--------------+----------|
+   |     1 |               38 |         3.86 |     0.06 |
+   |     8 |               43 |         4.27 |     0.09 |
+
+   There's some overhead from the collection of the experimental
+   results from the worker processes.
+
+** Running epydemic on a default runtime
+
+   I then tried the same experiments on the default Colab set-up.
+
+   The notebook can import libraries no problem. It can also create
+   HDF5 notebooks, meaning it has the underlying libraries installed
+   already. The GUI reports 12GB of RAM and 100GB of disc
+   (approximately).
+
+   We run on all the available cores, as reported by the
+   ~epyc.ParallelLab.numberOfCores()~ method. Running the same
+   experiments as above gives:
+
+   | vCPUs | Elapsed time (s) | Mean/rep (s) | Variance |
+   |-------+------------------+--------------+----------|
+   |     1 |               81 |         8.17 |     0.90 |
+   |     2 |              100 |        10.87 |     0.34 |
+
+   which is a little unusual: there's definitely some overlapped
+   computation happening, but with large overheads and large variance.
+   I'm assuming that the number of /cores/ reported is actually the
+   number of /hyperthreads/, and that they're interfering because
+   they're CPU-bound: ~epyc~ simply uses the standard Python ~joblib~.
+   Or it might be that the underlying VM isn't really allocating cores
+   exclusively. There's really not enough information to decide.
+
+** Using specific VM instances
+
+   I signed up for Google Cloud's free trial, 90 days and $300 (£281)
+   of credit. Then set up a specific project in which to run the
+   experiments, and explored the different VM instance types
+   available.
+
+   E2 and N2 are the general-purpose instances, available in
+   standard or high-CPU configurations. The E2 is cheaper than the
+   N2 but less performant -- although this only cuts in at higher
+   loads according to [[https://www.bigbitbus.com/2021/06/10/Google-Cloud-E2-N2-VMs/][this comparison]]. Compute-optimised VMs (C2 and
+   C2D) are Intel Xeon or AMD EPYC Milan processors. The C2D has a
+   larger last-level cache and so gets recommended for HPC
+   workloads.
+
+   The [[https://cloud.google.com/compute/vm-instance-pricing][VM instance pricing]] model charges for a single minute, and
+   then after the first minute charges per-second.
+
+   | Instance         | vCPUs | Memory (GB) | On-demand price/hour | Spot price/hour |
+   |------------------+-------+-------------+----------------------+-----------------|
+   | e2-highcpu-16    |    16 |          16 | $0.395744            | $0.11872        |
+   | e2-highcpu-32    |    32 |          32 | $0.791488            | $0.23744        |
+   | n2-highcpu-64    |    64 |          64 | $2.294272            | $0.55552        |
+   | n2-highcpu-96    |    96 |          96 | $3.441408            | $0.83328        |
+   | c2-standard-60   |    60 |         240 | $3.1321              | $0.28428        |
+   | c2d-standard-112 |   112 |         448 | $5.0844              | $1.077776       |
+
+   That's quite a range of possible costs.
+
+   The [[https://cloud.google.com/compute/docs/instances/spot][Spot VMs]] are cheaper, but make use of spare capacity and so
+   might be pre-empted (or terminated) by higher-priority jobs.
+   They're recommended for fault-tolerant workloads, which we could
+   possibly get if we extended ~epyc~ with some extra back-end
+   functions. You also can't buy them with the free tier's credits.
+
+   There is apparently a limit of 8 vCPUs when using the free tier
+   for some instance types in some zones. It's not abundantly clear
+   what the restrictions actually are.
+
+   The process to create the custom runtime is to create a Colab VM
+   instance from the Marketplace and associate it with an instance
+   type of choice, possibly choosing a zone as well. This can then
+   be connected to by providing the project, zone, and instance name
+   to the Jupyter notebook. (The project name has to be in URL form,
+   so lower case with dashes for spaces.) This is awkward and
+   requires manual copying, but once done you can acquire a
+   connection URL to go straight to the notebook running on that VM.
+   The Jupyter UI shows RAM and disc as well as the actual VM
+   instance it's connected to, but not the number of cores that
+   instance reports, which is a bit annoying.
+
+   There's also an issue in that, when you ask the machine for the
+   number of cores it has, it by default replies with the number of
+   vCPUs -- which I think means hyperthreads. A 96-vCPU machine (an instance
+   ending in "-96") only has 48 cores, because by default 2 vCPUs
+   are mapped to each physical core. You can set the ratio of vCPUs
+   to cores (1 or 2), and the numnber of visible cores the machine
+   reports. So I set a ratio of 1 vCPU/core and reporting the number
+   of actual cores, which is the sensible choice for a compute-bound
+   application. Unfortunately you can't do this without stopping the
+   newly-created Colab VM and re-setting it's configuration: you
+   can't do this step at instance creation from the Marketplace. I
+   don't know why. (It might be possible to do it in one step from
+   the command line. Or create template instances with the right
+   configuration.) On the other hand, once it's done, it's
+   persistent and can be connected to using the connection URL, as
+   the notebook remembers the VM it's connected to.
+
+** Experiments on specific instances
+
+   Running the same experiments as above on different instances gives:
+
+   | Instance      | Cores | Elapsed time (s) | Mean/rep (s) | Variance |
+   |---------------+-------+------------------+--------------+----------|
+   | e2-highcpu-16 |     1 |               98 |         9.81 |     0.09 |
+   |               |     8 |               96 |         9.49 |     0.10 |
+   | n2-standard-8 |     1 |               74 |         7.44 |     0.23 |
+   |               |     4 |               69 |         6.83 |     0.08 |
+   | c2-standard-8 |     1 |               70 |         7.05 |     0.05 |
+   |               |     4 |               66 |         6.55 |     0.07 |
+
+   (These are real cores, 1 vCPU/core.)
+
+   There's around a 30% speed difference between the E2 and N2
+   silicon, but not much at all between the N2 and C2 -- despite the
+   latter being branded for compute-intensive workloads. Might be
+   that the C2's cache isn't being exploited?
+
+   We do however get the speed-up we expect from parallelism:
+   actually slightly more than we'd expect, since the individual
+   runs seem to go faster too. There's definitely some overhead
+   incurred in running ~epyc~ in parallel, so we shouldn't see
+   super-linear speed-up "in reality".
+
+** Running larger problems
+
+   For more of a soak test, we can run the same SIR experiment but
+   using a larger ER network ($10^5$ nodes, $\langle k \rangle =
+   10$):
+
+   | Instance      | Cores | Elapsed time (s) | Mean/rep (s) | Variance |
+   |---------------+-------+------------------+--------------+----------|
+   | e2-highcpu-16 |     1 |             1235 |       123.56 |     1.21 |
+   |               |     8 |             1216 |       120.30 |     0.86 |
+   | n2-standard-8 |     1 |              930 |        93.09 |     0.56 |
+   |               |     4 |              869 |        86.51 |     1.06 |
+   | c2-standard-8 |     1 |              911 |        91.18 |     0.72 |
+   |               |     4 |              849 |        84.53 |     0.41 |
+
+   There's that super-linear speed-up between sequential and parallel
+   versions again.
+
+   The performance on the standard runtime for comparison is:
+
+   | vCPUs | Elapsed time (s) | Mean/rep (s) | Variance |
+   |-------+------------------+--------------+----------|
+   |     1 |             1070 |       107.60 |     3.84 |
+   |     2 |             1402 |       140.22 |     1.50 |
+
+** Costs
+
+   Doing all the above experiments used rather less than £10 of the
+   budget for my free trial -- although I was very careful not to
+   leave instances running when I wasn't actually using them. This
+   is an unusual thing to be considering, not part of my "normal"
+   work routine, and would possibly be awkward for longer-running
+   computations. You'd be reluctant to run something overnight if
+   you weren't sure it needed /all/ night, for example. This might
+   be addressed by using the command-line tools to spin-up, execute,
+   and then tear-down the infrastructure using a script.
+
+** Experiences: Good and not-so-good
+
+   Good:
+
+   - Everything controlled from a web console
+   - Easy to run ~pip~ to install dependencies
+   - Once installed, the dependencies persist even if the VM is shut down
+   - The GUI shows how long cells take to execute, as well as the
+     memory and disc of the underlying machine and its instance name
+   - There's a set of command-line tools
+   - Persistent links to notebooks
+   - Notebook remembers its connection to the underlying VM instance
+
+   Problematic:
+
+   - All the available instances are considerably slower than a
+     reasonably modern desktop workstation
+   - If an application needs more than just ~pip~ dependencies,
+     that'd have to be done at the VM level using ~ssh~ etc
+   - Fiddly sequence to get vCPU and core reporting appropriate for
+     HPC
+   - Need to manage spin-up and tear-down of instances, and incur
+     costs if you forget
+   - The GUI doesn't show how many cores the underlying instance has
+   - The management console requires a fairly decent knowledge of
+     cloud computing concepts, which need to be learned somehow. I'm
+     not convinced the tutorials on the web site are good enough for
+     someone without plenty of background
+   - The notebook doesn't seem to deal cleanly with disconnections,
+     which is a problem if you have a flaky connection
