@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Dec 2022 17:42:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6138f82" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 16 Dec 2022 12:23:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Regenerative braking in the cold</title><link>https://simondobson.org/2022/12/16/til-regenerative-braking-in-the-cold/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3ddbbf8" class="outline-2"&gt;
+&lt;h2 id="org3ddbbf8"&gt;TIL: Regenerative braking in the cold&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3ddbbf8"&gt;
+&lt;p&gt;
+Today I learned that regenerative braking in an electric car doesn't
+work at all well in the cold.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/12/16/til-regenerative-braking-in-the-cold/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>electric-cars</category><guid>https://simondobson.org/2022/12/16/til-regenerative-braking-in-the-cold/</guid><pubDate>Fri, 16 Dec 2022 11:58:44 GMT</pubDate></item><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6138f82" class="outline-2"&gt;
 &lt;h2 id="org6138f82"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org6138f82"&gt;
 &lt;p&gt;
@@ -155,23 +163,4 @@ I've moved to a slightly different set-up for publishing this
 site, as well as a new theme.
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>publishing</category><guid>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</guid><pubDate>Thu, 03 Nov 2022 14:24:03 GMT</pubDate></item><item><title>The Chessboard and the Web: Strategies of Connection in a Networked World</title><link>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;The Chessboard and the Web: Strategies of Connection in a Networked World&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1488446839l/34446808._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Anne-Marie Slaughter&lt;/h2&gt;
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	A book on grand strategy and its application to less-grand challenges in a world dominated by networks.&lt;br&gt;&lt;br&gt;The central thesis of this book is that the world of hierarchies and direct state-to-state diplomacy – the chessboard – is giving way to a much more nuanced world in which state and non-state actors interact and co-operate in far ore complex ways – the web. The network effects change everything, from the nature of power and how it's used to the nature of leadership and how one can actually get things done.&lt;br&gt;&lt;br&gt;It's interesting to see the concepts of network science being applied to social and political science in a way that doesn't trivialise them. The applications range from analysis of interaction patterns to trying to engineer particular interactions such as improving information sharing.&lt;br&gt;&lt;br&gt;There's an obvious comparison to &lt;a href="https://www.goodreads.com/book/show/26245038.The_Seventh_Sense_Power__Fortune__and_Survival_in_the_Age_of_Networks" title="The Seventh Sense Power, Fortune, and Survival in the Age of Networks by Joshua Cooper Ramo" rel="nofollow noopener"&gt;The Seventh Sense: Power, Fortune, and Survival in the Age of Networks&lt;/a&gt;, with which Slaughter contrasts her work, she being a "Wilsonian" humanist &lt;i&gt;versus&lt;/i&gt; Joshua Ramo's "Kissingerian" realist. Slaughter's view is that there is a need for more understanding of how small-scale interactions can happen – contrasting with Ramo's desire for aggressive "gatekeeping" of a US-led networked order. I can't help thinking that her view is more realistic and democratic.
-	&lt;/p&gt;&lt;p&gt;
-	  4/5.
-	    Finished 27 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4611651217?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-chessboard-and-the-web-strategies-of-connection-in-a-networked-world/</guid><pubDate>Thu, 27 Oct 2022 18:51:59 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>publishing</category><guid>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</guid><pubDate>Thu, 03 Nov 2022 14:24:03 GMT</pubDate></item></channel></rss>
