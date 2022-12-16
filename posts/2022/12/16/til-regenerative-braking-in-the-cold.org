@@ -1,0 +1,49 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2022/12/16/til-regenerative-braking-in-the-cold.meta
+
+* TIL: Regenerative braking in the cold
+
+  Today I learned that regenerative braking in an electric car doesn't
+  work at all well in the cold.
+
+  {{{TEASER_END}}}
+
+  (And by "cold" I mean -1 -- -5 \deg C -- cold in Scotland, in other
+  words.)
+
+  I discovered this when an unfamiliar warning light came on, that I
+  had the look up the meaning of: "Regenerative braking efficiency may
+  be degraded". This turned out to be an understatement.
+
+  Electric cars can have several driving that control how the
+  accelerator works. Many drivers, including me, use what's sometimes
+  called the "one pedal" mode. When you press the accelerator, you
+  accelerate; when you reduce pressure, you brake, and the energy is
+  used to regenerate the charge in the battery (hence the term). You
+  don't get a huge amount of power back from this, but it's actually a
+  comfortable driving mode anyway: it feels like the "engine braking"
+  you get in an internal-combustion car with manual transmission, but
+  is somewhat stronger and doesn't require gear changes.
+
+  So I took my foot off when driving along and ... nothing happened.
+  We kept cruising along at exactly the same speed, with no braking at
+  all. The normal brake still works, of course, but it was a weird
+  change of handling and one that requires quite a lot of care once
+  you're used to one-pedal driving. I think I used the brake
+  explicitly more in going 10km than I'd used it in the entire
+  previous year! After about 15km the handling came back, the warning
+  light went out, and everything went back to normal. That's good,
+  because regenerative braking is so gentle that it's ideal for
+  driving on snow and ice -- far better than normal braking, which
+  triggers the traction control if done too harshly.
+
+  I have a basic, theoretical knowledge of how regenerative braking
+  works, and I was familiar with it not working well when the
+  battery's full ("because it's harder to push the electrons in" --
+  one of those mental models that's pretty much entirely wrong but
+  still gets you the right answers). It seems this is also the case
+  for cold weather, as cold batteries don't accept charge easily (see
+  [[https://teslamotorsclub.com/tmc/threads/why-does-regenerative-braking-not-work-well-in-the-cold.142729/][here]]). So the battery has to "warm up", literally. This is a good
+  thing, I think, because it means that the car will eventually
+  perform regardless of the ambient temperature, even if you leave it
+  standing for half an hour.
