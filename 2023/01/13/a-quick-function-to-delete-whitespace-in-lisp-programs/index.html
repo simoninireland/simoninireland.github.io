@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html prefix="
+	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+    " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A quick function to delete whitespace in Lisp programs | Simon Dobson</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/">
+<link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10943215-1');
+</script><meta name="author" content="Simon Dobson">
+<link rel="prev" href="../../../../goodreads/unix-a-history-and-a-memoir/" title="UNIX: A History and a Memoir" type="text/html">
+<meta property="og:site_name" content="Simon Dobson">
+<meta property="og:title" content="A quick function to delete whitespace in Lisp programs">
+<meta property="og:url" content="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/">
+<meta property="og:description" content="A quick function to delete whitespace in Lisp programs
+
+
+I've recently found myself constantly introducing – and then deleting –
+whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
+
+
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-01-13T15:32:37Z">
+<meta property="article:tag" content="emacs">
+<meta property="article:tag" content="lisp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simoninireland">
+<meta name="twitter:creator" content="@simoninireland">
+</head>
+<body>
+  <a href="#page-content" class="sr-only sr-only-focusable">
+    Skip to main content
+  </a>
+
+  
+
+  <section id="header"><a href="../../../../">
+      <div class="logo">
+	  <div id="nologoimage">
+	    Simon Dobson
+	  </div>
+      </div>
+    </a>
+  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
+<!--
+      <a href="/">
+	<div id="titleauth">
+	    by Simon Dobson
+	</div>
+      </a>
+-->
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="navmenuitems">
+	      <a href="../../../../index.html" title="Home">
+	<span class="menuitemtext">Home</span>
+	<span class="menuitemicon"><i class="fa fa-home"></i></span>
+      </a>
+      <a href="../../../../personal/" title="About me">
+	<span class="menuitemtext">About me</span>
+	<span class="menuitemicon"><i class="fa fa-user"></i></span>
+      </a>
+      <a href="../../../../research/" title="Research">
+	<span class="menuitemtext">Research</span>
+	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
+      </a>
+      <a href="../../../../development/projects/" title="Software">
+	<span class="menuitemtext">Software</span>
+	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
+      </a>
+      <a href="../../../../writing/" title="Writing">
+	<span class="menuitemtext">Writing</span>
+	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
+      </a>
+      <a href="../../../../personal/contact/" title="Contact">
+	<span class="menuitemtext">Contact</span>
+	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
+      </a>
+      <a href="../../../../rss.xml" title="RSS">
+	<span class="menuitemtext">RSS</span>
+	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
+      </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
+  
+  
+
+      </div>
+
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
+	<i class="fa fa-bars">
+	</i>
+      </a>
+    </div>
+  </section><section class="page-content"><div class="content" rel="main">
+  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">A quick function to delete whitespace in Lisp programs</a></h1>
+
+    <div class="metadata">
+      <p class="dateline">
+	<a href="." rel="bookmark">
+	  <i class="fa fa-clock"></i>
+	  <time class="published dt-published" datetime="2023-01-13T15:32:37Z" itemprop="datePublished" title="2023-01-13 15:32">
+		2023-01-13 15:32
+	  </time></a>
+      </p>
+
+	<p class="commentline">
+	  <i class="far fa-comment"></i>
+	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs.html">Comments</a>
+
+
+
+	  
+
+	</p>
+
+      
+          <div class="tags">
+<h3 class="metadata-title">
+<i class="fa fa-tags"></i> Tags:</h3>
+      <ul itemprop="keywords" class="tags-ul">
+<li><a class="tag p-category" href="../../../../categories/emacs/" rel="tag">emacs</a></li>
+	    <li><a class="tag p-category" href="../../../../categories/lisp/" rel="tag">lisp</a></li>
+      </ul>
+</div>
+
+    </div>
+  </header><div class="e-content entry-content" itemprop="articleBody text">
+      <div id="outline-container-org2457298" class="outline-2">
+<h2 id="org2457298">A quick function to delete whitespace in Lisp programs</h2>
+<div class="outline-text-2" id="text-org2457298">
+<p>
+I've recently found myself constantly introducing – and then deleting –
+whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
+</p>
+
+<!-- TEASER_END -->
+
+<p>
+I've started using <a href="http://paredit.org/">paredit</a> as a structure editor for Lisp programs.
+Once I got used to the movement commands it's greatly speeded-up my
+editing. However, when I'm editing functions, I find that I
+introduce a lot of extraneous whitespace when I'm moving forms
+around. Mostly this comes when I leave <i>myself</i> space at the end of
+a function to add something later, or when I delete or move code
+around.
+</p>
+
+<p>
+Now deleting whitespace is hardly the most time-consuming of tasks,
+especially as paredit won't let you accidentally remove a bracket in
+the process. But in keeping with the Emacs philosophy of always
+automating everything that even <i>slightly</i> annoys you, I started
+wondering: can I delete whitespace more effectively? Specifically,
+can I delete all the whitespace from a closing bracket back to the
+code that it closes, in one command?
+</p>
+
+<p>
+paredit has a function that sort of does what I had in mind:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">paredit-delete-leading-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="c1">;; This assumes that we're on the closing delimiter already.</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="nf">backward-char</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">))</span><span class="w">     </span><span class="c1">; whitespace syntax</span><span class="w"></span>
+<span class="w">		    </span><span class="c1">;; The above line is a perfect example of why the</span><span class="w"></span>
+<span class="w">		    </span><span class="c1">;; following test is necessary.</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+</pre></div>
+
+<p>
+There are a couple of problems, though. The first is that it
+isn't interactive, so it can't be bound to a key. It also won't
+cross a line boundary, whereas a lot of my code seems to end up with
+blank lines in it. (Maybe I should just get tidier….)
+</p>
+
+<p>
+My first attempt corrected these two shortcomings:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">line-beginning-position</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)))</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+</pre></div>
+
+<p>
+The <code>syn</code> variable gets the syntactic character class of the
+character before point. Space and dash characters denote whitespace,
+interchangeably. The third test checks whether we're at the start of
+a line, and the fourth checks that we're not in the middle of a
+character specification.
+</p>
+
+<p>
+Of course, solving the original problem was never going to be
+enough. I immediately realised that it'd be better to delete
+whitespace <i>both</i> forwards <i>and</i> backwards, so that placing the
+cursor anywhere in a block of whitespace would remove it all.
+</p>
+
+<p>
+As I did this I started wondering about those tests for being at the
+beginning or end of a line. This seems like a thing one would
+naturally want to do, but it requires an explicit comparison. Or
+does it? – no, of course it doesn't, obviously there are functions for
+that, <code>bolp</code> and <code>eolp</code> respectively. The end result was:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">)))</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)))</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+</pre></div>
+
+<p>
+The structure is the same, and the function will traverse over lines
+the other direction too. Binding it to a key made it operational:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">define-key</span><span class="w"> </span><span class="nv">paredit-mode-map</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-M-&lt;backspace&gt;"</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="ss">'sd/paredit-delete-whitespace</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>
+In code like this, with point at the <code>|</code>:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+
+<span class="w">     </span><span class="nv">|</span><span class="w"></span>
+
+<span class="w">	</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>
+pressing <code>C-M-&lt;backspace&gt;</code> deletes all that annoying whitespace:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>
+Success! And I was happy for about five minutes, until I tested against this:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+
+
+<span class="w">     </span><span class="nv">|</span><span class="w"></span>
+
+<span class="w">	</span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>
+and ended up with:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>
+Disaster! Well, not exactly, but annoying: if the whitespace happens
+<i>not</i> to be closed by a bracket, there's a danger of combining
+characters together and changing the code's behaviour. Not part of
+the original problem specification, of course, but definitely
+undesirable.
+</p>
+
+<p>
+Fortunately there's a solution: teach the function some more Lisp.
+Specifically, if after we've deleted the whitespace we're not looking at
+a closing bracket, we need to insert a space to avoid clashing
+symbols together. (That's how <i>little</i> Lisp we need the function to
+know: or, to put it another way, how much Lisp's lack of complicated
+syntax simplifies manipulating its code.) We can check for brackets the
+same way we checked for whitespace, using a character's syntax
+class. Adding this logic, plus some documentation and comments, gave:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="s">"Delete all whitespace around point.</span>
+
+<span class="s">  Whitespace from point to the next non-whitespace symbol, and from point</span>
+<span class="s">  back to the first non-whitespace symbol, is deleted. If doing so would</span>
+<span class="s">  accidentally merge values then a single space is inserted. It is safe</span>
+<span class="s">  to use this function within strings.</span>
+
+<span class="s">  The implementation is based on `paredit-delete-leading-whitespace' but</span>
+<span class="s">  is interactive, will cross line boundaries, and understands enough Lisp</span>
+<span class="s">  to avoid accidents (hopefully)."</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
+<span class="w">      </span><span class="c1">;; move forward to the next non-whitespace symbol</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c1">;; whitespace syntax classes</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">))</span><span class="w">        </span><span class="c1">;; line end</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1">;; delete whitespace back from current position</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)</span><span class="w">         </span><span class="c1">;; line start</span><span class="w"></span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">      </span><span class="c1">;; if the current character isn't a closing bracket, and</span><span class="w"></span>
+<span class="w">      </span><span class="c1">;; we're not in a string, add a space so we don't accidentally</span><span class="w"></span>
+<span class="w">      </span><span class="c1">;; combine two numbers, symbols, strings, or whatever</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="p">))</span><span class="w"></span>
+<span class="w">		   </span><span class="p">(</span><span class="nf">paredit-in-string-p</span><span class="p">)))</span><span class="w"></span>
+<span class="w">	  </span><span class="p">(</span><span class="nf">insert</span><span class="w"> </span><span class="s">" "</span><span class="p">))))</span><span class="w"></span>
+</pre></div>
+
+<p>
+And finally I was happy. I won't be surprised if I now discover that
+this functionality is built-in to paredit, or somewhere else in
+Emacs – but I won't be upset either. It's been a good learning
+experience.
+</p>
+</div>
+</div>
+    </div>
+
+      <div class="socialsharing">
+    <h1>Share this post to: </h1>
+
+    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/" title="Share to Facebook">
+       <span class="social"><i class="fab fa-facebook"></i></span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/" title="Share to Twitter">
+       <span class="social"><i class="fab fa-twitter"></i></span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/" title="Share to LinkedIn">
+       <span class="social"><i class="fab fa-linkedin"></i></span>
+    </a>
+    <a href="whatsapp://send?text=https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/" title="Share to WhatsApp">
+       <span class="social"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
+
+
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../../../../goodreads/unix-a-history-and-a-memoir/" rel="prev" title="UNIX: A History and a Memoir">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+	            <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="simoninireland",
+            disqus_url="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/",
+        disqus_title="A quick function to delete whitespace in Lisp programs",
+        disqus_identifier="cache/posts/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+</div>
+  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+  </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+    ignoreClass: 'islink',
+    captions: function(element) {
+    return element.getElementsByTagName('img')[0].alt;
+    }});
+  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+</body>
+</html>

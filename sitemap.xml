@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2022-11-30T09:15:00Z</lastmod>
+  <lastmod>2023-01-13T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -818,12 +818,20 @@
   <lastmod>2022-12-16T12:11:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2023/</loc>
+  <lastmod>2023-01-13T15:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</loc>
+  <lastmod>2023-01-13T15:55:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2023-01-13T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1196,6 +1204,10 @@
  <url>
   <loc>https://simondobson.org/categories/linux/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/lisp/</loc>
+  <lastmod>2023-01-13T15:55:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/machine-learning/</loc>
@@ -2834,6 +2846,10 @@
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/goodreads/the-first-world-war-a-complete-history/</loc>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/goodreads/the-forever-war-the-forever-war-1/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
@@ -3142,6 +3158,10 @@
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/goodreads/the-storm-is-upon-us-how-qanon-became-a-movement-cult-and-conspiracy-theory-of-everything/</loc>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/goodreads/the-story-of-art/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
  </url>
@@ -3288,6 +3308,10 @@
  <url>
   <loc>https://simondobson.org/goodreads/underland-a-deep-time-journey/</loc>
   <lastmod>2022-11-02T16:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/goodreads/unix-a-history-and-a-memoir/</loc>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/goodreads/upstream-selected-essays/</loc>
@@ -3519,7 +3543,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-124.html</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-125.html</loc>
@@ -3531,7 +3555,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-127.html</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-13.html</loc>

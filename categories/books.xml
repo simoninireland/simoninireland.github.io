@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about books)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/books.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Dec 2022 17:41:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Herding Hemingway's Cats: Understanding how our genes work</title><link>https://simondobson.org/goodreads/herding-hemingways-cats-understanding-how-our-genes-work/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about books)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/books.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 13 Jan 2023 16:24:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>UNIX: A History and a Memoir</title><link>https://simondobson.org/goodreads/unix-a-history-and-a-memoir/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;UNIX: A History and a Memoir&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1571699686l/53011383._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Brian W. Kernighan&lt;/h2&gt;
+	    2019
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	You probably have to be a hard-core Unix head to get anywhere with this book – but it's a gem if you are. Kernighan was there throughout what is possoibly the most formative period of computer history, when Unix was developed and many of the paradigms of operating systems and software tools were developed.&lt;br&gt;&lt;br&gt;There are other books that handle many of the stories in greater detail, but this book is great for the "sweep" of Unix through Bell Labs and out into the world. The memoir parts are perhaps the most interesting, as they illuminate how the various tools came into being and why. There are cameos by people like Richard Hamming, whose own scientific contributions are matched by his insistence that you can only do important work if you first find the important problems, and by both an expected and unexpected cast of pioneers. I'd like to find a similar book on the early years of Lisp showing how decisions that now seem to be inevitable came to be made, and what alternatives there might have been.&lt;br&gt;&lt;br&gt;The most hard-core part of the book? It was written using groff, the GNU successor to the roff text formatter than Kernighan himself wrote.
+	&lt;/p&gt;&lt;p&gt;
+	  5/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4414445582?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/unix-a-history-and-a-memoir/</guid><pubDate>Wed, 04 Jan 2023 15:35:19 GMT</pubDate></item><item><title>The First World War: A Complete History</title><link>https://simondobson.org/goodreads/the-first-world-war-a-complete-history/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The First World War: A Complete History&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1426809743l/191413._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Martin  Gilbert&lt;/h2&gt;
+	    1994
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	A thoroughly readable narrative history of the First World War and its aftermath. I think the strongest parts are the beginning and end: there's an unavoidable tedium in the middle that reflects the statis of trench warfare.&lt;br&gt;&lt;br&gt;Churchill comes out well, perhaps unsurprisingly in a book by one of his biographers. Later authors place more of the blame for Gallipoli at his door. The American army also comes out well; Pershing, its commender, somewhat less so, as his insistence on having a solely American field army delayed their deployment and in many ways invited disaster in 1918. The Kaiser cuts a sorry figure throughout, belligerent and indecisive and blind to reality right up until the end.&lt;br&gt;&lt;br&gt;Gilbert is also very strong on the often-overlooked mior allies of both sides. The complexities of Polish and Finnish independence movements, allied to the Central Powers largely in order to defeat Russia, get a lot of exploration, as does the eventual breakup of the Habsburg Empire. The Middle East and the Ottoman Empire are less well-covered. In each case there are clear lines drawn to the peace treaties and the grievances that later gave rise to the Second World War.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5135648149?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-first-world-war-a-complete-history/</guid><pubDate>Wed, 04 Jan 2023 15:27:40 GMT</pubDate></item><item><title>The Storm is Upon Us: How QAnon Became a Movement, Cult, and Conspiracy Theory of Everything</title><link>https://simondobson.org/goodreads/the-storm-is-upon-us-how-qanon-became-a-movement-cult-and-conspiracy-theory-of-everything/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The Storm is Upon Us: How QAnon Became a Movement, Cult, and Conspiracy Theory of Everything&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628894240l/56747831._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Mike Rothschild&lt;/h2&gt;
+	    2021
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	Does a fantastic job of explaining an essentially inexplicable movement.&lt;br&gt;&lt;br&gt;QAnon is a conspiracy theory like no other, one that subsumes other conspiracies and morphs into new shapes as its existing tropes and predictions fail to come to pass. It's hard to see it as anything other than a rejection of reason and modernity and the embrace of ... well, nonsense. Rothschild sees it as far more than that, and manages to dive into the abyss without ever becoming lost or tempted to become a believer. He traces the theory's development, from before the first Q "drops" until after Q's disappearence, and draws some historical parallels with previous movements whose failed predictions did little to damage their popularity.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5107497896?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-storm-is-upon-us-how-qanon-became-a-movement-cult-and-conspiracy-theory-of-everything/</guid><pubDate>Wed, 04 Jan 2023 15:18:54 GMT</pubDate></item><item><title>Herding Hemingway's Cats: Understanding how our genes work</title><link>https://simondobson.org/goodreads/herding-hemingways-cats-understanding-how-our-genes-work/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;h1&gt;Herding Hemingway's Cats: Understanding how our genes work&lt;/h1&gt;
     &lt;div&gt;
       &lt;div&gt;
@@ -138,64 +198,4 @@
 	  &lt;/p&gt;&lt;p&gt;
 	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4939077454?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
     &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</guid><pubDate>Fri, 21 Oct 2022 11:47:20 GMT</pubDate></item><item><title>We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News</title><link>https://simondobson.org/goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596434293l/54680228._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Eliot Higgins&lt;/h2&gt;
-	    2021
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	The history of a still-evolving open-source intelligence collective.&lt;br&gt;&lt;br&gt;Intelligence collection and analysis used to be limited to governments and a handful of companies. Not any longer: the tools are available on the open internet. Eliot Higgins realises that he can use them to investigate news stories, including the shooting-down of MH-17 over Ukraine. It's this investigation, in which he and his volunteer analysts manage to argue convincingly that the culprits were Russian-backed separatists using Russian anti-aircraft missiles, that really demonstrates how much information can now be found and cross-corollated. The result is for formation of Bellingcat, an amorphous group of international investigators organised in a way that closely resembles that of an open-source software project, where all that matters is an individuals' ability and willingness to share findings, and to have them challenged and possibly refuted in the search for the best explanations.&lt;br&gt;&lt;br&gt;The book was written before the Russian attack on Ukraine, and so will demand a follow-up given Bellingcat's deep involvement in tracking the conflict and digging-into the details of individual incidents.
-	&lt;/p&gt;&lt;p&gt;
-	  5/5.
-	    Finished 16 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4688233164?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/</guid><pubDate>Sun, 16 Oct 2022 14:40:36 GMT</pubDate></item><item><title>Childhood's End</title><link>https://simondobson.org/goodreads/childhoods-end/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;Childhood's End&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320552628l/414999._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Arthur C. Clarke&lt;/h2&gt;
-	    1953
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	An entirely unexpected take on alien invasion. The aliens come, take over – and then allow humanity to proceed as its wants, without revealing themselves or really taking much control at all. Why? What are they hiding? And how is it that, when they &lt;i&gt;do&lt;/i&gt; reveal themselves, they look so familiar?&lt;br&gt;&lt;br&gt;The reasons are all thought out with the rigour and open-endedness you'd expect from Arthur C. Clarke. The very fact that he can build such a narrative is a testament to his abilities as a world-creator, with an ability to pose questions and then not answer them definitively without this spoiling the enjoyment of the story.
-	&lt;/p&gt;&lt;p&gt;
-	  4/5.
-	    Finished 16 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/2902185066?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/childhoods-end/</guid><pubDate>Sun, 16 Oct 2022 14:33:49 GMT</pubDate></item><item><title>Spike: The Virus vs. The People - the Inside Story</title><link>https://simondobson.org/goodreads/spike-the-virus-vs-the-people-the-inside-story/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;Spike: The Virus vs. The People - the Inside Story&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626896615l/57095247._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Jeremy Farrar&lt;/h2&gt;
-	    2021
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	I wonder if this book was too early: were we sufficiently out of the coronavirus pandemic to assess it and our healthcare systems' abilities to deal with it? Perhaps. But this is a good look at the early days from the perspective of the Wellcome Trust, one of the world's biggest medical charities.
-	&lt;/p&gt;&lt;p&gt;
-	  4/5.
-	    Finished 16 October 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4145716114?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/spike-the-virus-vs-the-people-the-inside-story/</guid><pubDate>Sun, 16 Oct 2022 14:29:20 GMT</pubDate></item></channel></rss>
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/</guid><pubDate>Fri, 21 Oct 2022 11:47:20 GMT</pubDate></item></channel></rss>

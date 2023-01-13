@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 16 Dec 2022 12:23:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Regenerative braking in the cold</title><link>https://simondobson.org/2022/12/16/til-regenerative-braking-in-the-cold/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3ddbbf8" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 13 Jan 2023 16:24:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2457298" class="outline-2"&gt;
+&lt;h2 id="org2457298"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2457298"&gt;
+&lt;p&gt;
+I've recently found myself constantly introducing – and then deleting –
+whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/"&gt;Read more…&lt;/a&gt; (4 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</guid><pubDate>Fri, 13 Jan 2023 15:32:37 GMT</pubDate></item><item><title>UNIX: A History and a Memoir</title><link>https://simondobson.org/goodreads/unix-a-history-and-a-memoir/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;UNIX: A History and a Memoir&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1571699686l/53011383._SX98_SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Brian W. Kernighan&lt;/h2&gt;
+	    2019
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	You probably have to be a hard-core Unix head to get anywhere with this book – but it's a gem if you are. Kernighan was there throughout what is possoibly the most formative period of computer history, when Unix was developed and many of the paradigms of operating systems and software tools were developed.&lt;br&gt;&lt;br&gt;There are other books that handle many of the stories in greater detail, but this book is great for the "sweep" of Unix through Bell Labs and out into the world. The memoir parts are perhaps the most interesting, as they illuminate how the various tools came into being and why. There are cameos by people like Richard Hamming, whose own scientific contributions are matched by his insistence that you can only do important work if you first find the important problems, and by both an expected and unexpected cast of pioneers. I'd like to find a similar book on the early years of Lisp showing how decisions that now seem to be inevitable came to be made, and what alternatives there might have been.&lt;br&gt;&lt;br&gt;The most hard-core part of the book? It was written using groff, the GNU successor to the roff text formatter than Kernighan himself wrote.
+	&lt;/p&gt;&lt;p&gt;
+	  5/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4414445582?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/unix-a-history-and-a-memoir/</guid><pubDate>Wed, 04 Jan 2023 15:35:19 GMT</pubDate></item><item><title>The First World War: A Complete History</title><link>https://simondobson.org/goodreads/the-first-world-war-a-complete-history/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The First World War: A Complete History&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1426809743l/191413._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Martin  Gilbert&lt;/h2&gt;
+	    1994
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	A thoroughly readable narrative history of the First World War and its aftermath. I think the strongest parts are the beginning and end: there's an unavoidable tedium in the middle that reflects the statis of trench warfare.&lt;br&gt;&lt;br&gt;Churchill comes out well, perhaps unsurprisingly in a book by one of his biographers. Later authors place more of the blame for Gallipoli at his door. The American army also comes out well; Pershing, its commender, somewhat less so, as his insistence on having a solely American field army delayed their deployment and in many ways invited disaster in 1918. The Kaiser cuts a sorry figure throughout, belligerent and indecisive and blind to reality right up until the end.&lt;br&gt;&lt;br&gt;Gilbert is also very strong on the often-overlooked mior allies of both sides. The complexities of Polish and Finnish independence movements, allied to the Central Powers largely in order to defeat Russia, get a lot of exploration, as does the eventual breakup of the Habsburg Empire. The Middle East and the Ottoman Empire are less well-covered. In each case there are clear lines drawn to the peace treaties and the grievances that later gave rise to the Second World War.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5135648149?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-first-world-war-a-complete-history/</guid><pubDate>Wed, 04 Jan 2023 15:27:40 GMT</pubDate></item><item><title>The Storm is Upon Us: How QAnon Became a Movement, Cult, and Conspiracy Theory of Everything</title><link>https://simondobson.org/goodreads/the-storm-is-upon-us-how-qanon-became-a-movement-cult-and-conspiracy-theory-of-everything/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;h1&gt;The Storm is Upon Us: How QAnon Became a Movement, Cult, and Conspiracy Theory of Everything&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628894240l/56747831._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+	&lt;div&gt;
+	  &lt;h2&gt;Mike Rothschild&lt;/h2&gt;
+	    2021
+	  &lt;p&gt;
+	    &lt;/p&gt;&lt;hr&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt;
+	Does a fantastic job of explaining an essentially inexplicable movement.&lt;br&gt;&lt;br&gt;QAnon is a conspiracy theory like no other, one that subsumes other conspiracies and morphs into new shapes as its existing tropes and predictions fail to come to pass. It's hard to see it as anything other than a rejection of reason and modernity and the embrace of ... well, nonsense. Rothschild sees it as far more than that, and manages to dive into the abyss without ever becoming lost or tempted to become a believer. He traces the theory's development, from before the first Q "drops" until after Q's disappearence, and draws some historical parallels with previous movements whose failed predictions did little to damage their popularity.
+	&lt;/p&gt;&lt;p&gt;
+	  4/5.
+	    Finished 04 January 2023.
+	  &lt;/p&gt;&lt;p&gt;
+	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5107497896?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+    &lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-storm-is-upon-us-how-qanon-became-a-movement-cult-and-conspiracy-theory-of-everything/</guid><pubDate>Wed, 04 Jan 2023 15:18:54 GMT</pubDate></item><item><title>TIL: Regenerative braking in the cold</title><link>https://simondobson.org/2022/12/16/til-regenerative-braking-in-the-cold/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3ddbbf8" class="outline-2"&gt;
 &lt;h2 id="org3ddbbf8"&gt;TIL: Regenerative braking in the cold&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3ddbbf8"&gt;
 &lt;p&gt;
@@ -87,80 +155,4 @@ of some advice I came across years ago.
 	  &lt;/p&gt;&lt;p&gt;
 	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/4988400587?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
     &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/what-if-2-additional-serious-scientific-answers-to-absurd-hypothetical-questions-what-if-2/</guid><pubDate>Mon, 14 Nov 2022 21:36:17 GMT</pubDate></item><item><title>Secret War: The Story of SOE</title><link>https://simondobson.org/goodreads/secret-war-the-story-of-soe/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;Secret War: The Story of SOE&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435116256l/1772013._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Nigel West&lt;/h2&gt;
-	    1993
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	The sub-title is more accurate than the title. This isn't an official history – but it reads like one, being much ore concerned with who ran which sections, the committees and organograms of SOE than with the actual secret war it prosecuted so well.&lt;br&gt;&lt;br&gt;Some of the in-fighting described is inevitable, such as the tensions between SOE and MI6. An intelligence service needs quiet; a sabotage service is devoted to exactly the opposite, and so tends to disrupt intelligence-gathering by attracting the attentions of counter-intelligence services. This explains, but doesn't excuse, the hostility and machinations of MI6, which created a bureaucratic war weakening the abilities of both services to fight the &lt;i&gt;actual&lt;/i&gt; war. It's an interesting case study in how hard it is to create organisations, even when involved in an existential fight.
-	&lt;/p&gt;&lt;p&gt;
-	  2/5.
-	    Finished 14 November 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5083494406?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/secret-war-the-story-of-soe/</guid><pubDate>Mon, 14 Nov 2022 21:32:07 GMT</pubDate></item><item><title>TIL: Stroke order of Chinese surnames</title><link>https://simondobson.org/2022/11/10/til-stroke-order-of-chinese-surnames/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdd2a433" class="outline-2"&gt;
-&lt;h2 id="orgdd2a433"&gt;TIL: Stroke order of Chinese surnames&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdd2a433"&gt;
-&lt;p&gt;
-Sometimes we publish papers with authors in alphabetical order;
-sometimes we use an order based on contribution, typically the main
-author (often the most junior) first followed by the lesser
-contributors and culminating in the most senior author, who might not
-have made many concrete contributions to the writing. Personally I'm
-a firm believer in the second style.
-&lt;/p&gt;
-
-&lt;p&gt;
-But I always wondered: how does one list authors in alphabetical
-order for languages like Chinese that are non-alphabetic? I had the
-opportunity to ask a couple of Chinese colleagues.
-&lt;/p&gt;
-
-&lt;p&gt;
-While Chinese doesn't have an &lt;i&gt;alphabetical&lt;/i&gt; order, it can use a
-&lt;i&gt;stroke&lt;/i&gt; order: some surnames require more strokes than others,
-often significantly more (four &lt;i&gt;versus&lt;/i&gt; eleven, in the case of the
-two colleagues who explained this to me). So one can list authors in
-order of the increasing numbers of strokes needed to write their
-surnames.  That's really clever, and no more or less arbitrary in
-terms of author appearance than the alphabetic approach.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://simondobson.org/2022/11/10/til-stroke-order-of-chinese-surnames/</guid><pubDate>Thu, 10 Nov 2022 15:14:04 GMT</pubDate></item><item><title>The Painful Truth: The New Science of Our Aches, Agonies and Afflictions</title><link>https://simondobson.org/goodreads/the-painful-truth-the-new-science-of-our-aches-agonies-and-afflictions/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;h1&gt;The Painful Truth: The New Science of Our Aches, Agonies and Afflictions&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;div&gt;
-	&lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628874970l/55539729._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-	&lt;div&gt;
-	  &lt;h2&gt;Monty Lyman&lt;/h2&gt;
-	    2021
-	  &lt;p&gt;
-	    &lt;/p&gt;&lt;hr&gt;
-	&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;p&gt;
-	A book about pain, and why it isn't what we think.&lt;br&gt;&lt;br&gt;The conventional wisdom is that pain is caused by damage, but it's more subtle than that. Pain is a &lt;i&gt;signal&lt;/i&gt; that can be triggered by damage, but can also be caused in response to less physical causes such as fear and a memory of past damage – and can be suppressed by activity or positive thinking, at least to a degree. This is awkward ground, as Lyman recognises: it's close to saying that "it's all in the mind", which is both literally true and deeply offensive to those suffering persistent pain. But it also offers hope that enormously dangerous pharmaceuticals can – sometimes – be replaced or complemented with cognitive therapies that might be effective.&lt;br&gt;&lt;br&gt;Everyone has had the experience of being deeply engaged in some activity, incurring damage, and not noticing until afterwards. Soldiers frequently report it: they also sometimes feel significantly less pain from their injuries than civilians, because an injury that takes you off the battlefield makes you &lt;i&gt;safer than you were&lt;/i&gt;. The signals get mixed, and the pain felt changes accordingly. &lt;br&gt;&lt;br&gt;There's much to like in this book, not least a very thorough treatment of placebos. It does sometimes get lost in reporting yet another clinical trial, or yet another insight into neurochemistry. It sometimes feels a little too long and too well-referenced for a popular science take on the issues.
-	&lt;/p&gt;&lt;p&gt;
-	  3/5.
-	    Finished 03 November 2022.
-	  &lt;/p&gt;&lt;p&gt;
-	    (Originally published on &lt;a href="https://www.goodreads.com/review/show/5012548665?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-    &lt;/p&gt;&lt;/div&gt;
-  &lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-painful-truth-the-new-science-of-our-aches-agonies-and-afflictions/</guid><pubDate>Thu, 03 Nov 2022 22:44:24 GMT</pubDate></item><item><title>New publishing setup and theme for the web site</title><link>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6b60376" class="outline-2"&gt;
-&lt;h2 id="org6b60376"&gt;New publishing setup and theme for the web site&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6b60376"&gt;
-&lt;p&gt;
-I've moved to a slightly different set-up for publishing this
-site, as well as a new theme.
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>publishing</category><guid>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</guid><pubDate>Thu, 03 Nov 2022 14:24:03 GMT</pubDate></item></channel></rss>
+  &lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/what-if-2-additional-serious-scientific-answers-to-absurd-hypothetical-questions-what-if-2/</guid><pubDate>Mon, 14 Nov 2022 21:36:17 GMT</pubDate></item></channel></rss>

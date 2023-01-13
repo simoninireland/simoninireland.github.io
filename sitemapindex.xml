@@ -67,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/bonanza.xml</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cas.xml</loc>
@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_book-reviews.xml</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_citizen-sensing.xml</loc>
@@ -95,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cat_til.xml</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2022-12-16T12:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/cfp.xml</loc>
@@ -207,11 +207,11 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/electric-cars.xml</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2022-12-16T12:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/emacs.xml</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/epidemic-spreading.xml</loc>
@@ -378,6 +378,10 @@
   <lastmod>2022-12-02T17:41:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/lisp.xml</loc>
+  <lastmod>2023-01-13T16:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/machine-learning.xml</loc>
   <lastmod>2022-12-02T17:41:00Z</lastmod>
  </sitemap>
@@ -527,7 +531,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/reviews.xml</loc>
-  <lastmod>2022-12-02T17:41:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
@@ -763,10 +767,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2022-12-16T12:11:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2022-12-16T12:12:00Z</lastmod>
+  <lastmod>2023-01-13T16:24:00Z</lastmod>
  </sitemap>
 </sitemapindex>
