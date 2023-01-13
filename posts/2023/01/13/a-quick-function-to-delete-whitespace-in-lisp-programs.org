@@ -1,0 +1,194 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+nikola-metadata: /home/sd80/programming/simoninireland.github.io/posts/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs.meta
+
+* A quick function to delete whitespace in Lisp programs
+
+  I've recently found myself constantly introducing -- and then deleting --
+  whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
+
+  {{{TEASER_END}}}
+
+  I've started using [[http://paredit.org/][paredit]] as a structure editor for Lisp programs.
+  Once I got used to the movement commands it's greatly speeded-up my
+  editing. However, when I'm editing functions, I find that I
+  introduce a lot of extraneous whitespace when I'm moving forms
+  around. Mostly this comes when I leave /myself/ space at the end of
+  a function to add something later, or when I delete or move code
+  around.
+
+  Now deleting whitespace is hardly the most time-consuming of tasks,
+  especially as paredit won't let you accidentally remove a bracket in
+  the process. But in keeping with the Emacs philosophy of always
+  automating everything that even /slightly/ annoys you, I started
+  wondering: can I delete whitespace more effectively? Specifically,
+  can I delete all the whitespace from a closing bracket back to the
+  code that it closes, in one command?
+
+  paredit has a function that sort of does what I had in mind:
+
+  #+begin_src emacs-lisp
+(defun paredit-delete-leading-whitespace ()
+  ;; This assumes that we're on the closing delimiter already.
+  (save-excursion
+    (backward-char)
+    (while (let ((syn (char-syntax (char-before))))
+	     (and (or (eq syn ?\ ) (eq syn ?-))     ; whitespace syntax
+		  ;; The above line is a perfect example of why the
+		  ;; following test is necessary.
+		  (not (paredit-in-char-p (1- (point))))))
+      (delete-char -1))))
+  #+end_src
+
+  There are a couple of problems, though. The first is that it
+  isn't interactive, so it can't be bound to a key. It also won't
+  cross a line boundary, whereas a lot of my code seems to end up with
+  blank lines in it. (Maybe I should just get tidier....)
+
+  My first attempt corrected these two shortcomings:
+
+  #+begin_src emacs-lisp
+(defun sd/paredit-delete-whitespace ()
+  (interactive)
+  (save-excursion
+    (while (let ((syn (char-syntax (char-before))))
+	     (and (or (eq syn ?\ )
+		      (eq syn ?-)
+		      (eq (line-beginning-position) (point)))
+		  (not (paredit-in-char-p (1- (point))))))
+      (delete-char -1))))
+  #+end_src
+
+  The ~syn~ variable gets the syntactic character class of the
+  character before point. Space and dash characters denote whitespace,
+  interchangeably. The third test checks whether we're at the start of
+  a line, and the fourth checks that we're not in the middle of a
+  character specification.
+
+  Of course, solving the original problem was never going to be
+  enough. I immediately realised that it'd be better to delete
+  whitespace /both/ forwards /and/ backwards, so that placing the
+  cursor anywhere in a block of whitespace would remove it all.
+
+  As I did this I started wondering about those tests for being at the
+  beginning or end of a line. This seems like a thing one would
+  naturally want to do, but it requires an explicit comparison. Or
+  does it? -- no, of course it doesn't, obviously there are functions for
+  that, ~bolp~ and ~eolp~ respectively. The end result was:
+
+  #+begin_src emacs-lisp
+(defun sd/paredit-delete-whitespace ()
+  (interactive)
+  (save-excursion
+    (while (let ((syn (char-syntax (char-after))))
+	     (and (or (eq syn ?\ )
+		      (eq syn ?-)
+		      (eolp)))
+		  (not (paredit-in-char-p (1+ (point))))))
+      (forward-char))
+
+    (while (let ((syn (char-syntax (char-before))))
+	     (and (or (eq syn ?\ )
+		      (eq syn ?-)
+		      (bolp)))
+		  (not (paredit-in-char-p (1- (point))))))
+      (delete-char -1))))
+  #+end_src
+
+  The structure is the same, and the function will traverse over lines
+  the other direction too. Binding it to a key made it operational:
+
+  #+begin_src emacs-lisp
+(define-key paredit-mode-map
+  (kbd "C-M-<backspace>") #'sd/paredit-delete-whitespace)
+  #+end_src
+
+  In code like this, with point at the ~|~:
+
+  #+begin_src emacs-lisp
+(list 1 2
+
+   |
+
+      )
+  #+end_src
+
+  pressing ~C-M-<backspace>~ deletes all that annoying whitespace:
+
+  #+begin_src emacs-lisp
+(list 1 2)
+  #+end_src
+
+  Success! And I was happy for about five minutes, until I tested against this:
+
+  #+begin_src emacs-lisp
+(list 1 2 3
+
+
+   |
+
+      4 5)
+  #+end_src
+
+  and ended up with:
+
+  #+begin_src emacs-lisp
+(list 1 2 34 5)
+  #+end_src
+
+  Disaster! Well, not exactly, but annoying: if the whitespace happens
+  /not/ to be closed by a bracket, there's a danger of combining
+  characters together and changing the code's behaviour. Not part of
+  the original problem specification, of course, but definitely
+  undesirable.
+
+  Fortunately there's a solution: teach the function some more Lisp.
+  Specifically, if after we've deleted the whitespace we're not looking at
+  a closing bracket, we need to insert a space to avoid clashing
+  symbols together. (That's how /little/ Lisp we need the function to
+  know: or, to put it another way, how much Lisp's lack of complicated
+  syntax simplifies manipulating its code.) We can check for brackets the
+  same way we checked for whitespace, using a character's syntax
+  class. Adding this logic, plus some documentation and comments, gave:
+
+  #+begin_src emacs-lisp
+(defun sd/paredit-delete-whitespace ()
+  "Delete all whitespace around point.
+
+Whitespace from point to the next non-whitespace symbol, and from point
+back to the first non-whitespace symbol, is deleted. If doing so would
+accidentally merge values then a single space is inserted. It is safe
+to use this function within strings.
+
+The implementation is based on `paredit-delete-leading-whitespace' but
+is interactive, will cross line boundaries, and understands enough Lisp
+to avoid accidents (hopefully)."
+  (interactive)
+  (save-excursion
+    ;; move forward to the next non-whitespace symbol
+    (while (let ((syn (char-syntax (char-after))))
+	     (and (or (eq syn ?\ )   ;; whitespace syntax classes
+		      (eq syn ?-)
+		      (eolp))        ;; line end
+		  (not (paredit-in-char-p (1+ (point))))))
+      (forward-char))
+
+    ;; delete whitespace back from current position
+    (while (let ((syn (char-syntax (char-before))))
+	     (and (or (eq syn ?\ )
+		      (eq syn ?-)
+		      (bolp)         ;; line start
+		  (not (paredit-in-char-p (1- (point))))))
+      (delete-char -1))
+
+    ;; if the current character isn't a closing bracket, and
+    ;; we're not in a string, add a space so we don't accidentally
+    ;; combine two numbers, symbols, strings, or whatever
+    (if (not (or (eq (char-syntax (char-after)) ?\))
+		 (paredit-in-string-p)))
+	(insert " "))))
+  #+end_src
+
+  And finally I was happy. I won't be surprised if I now discover that
+  this functionality is built-in to paredit, or somewhere else in
+  Emacs -- but I won't be upset either. It's been a good learning
+  experience.

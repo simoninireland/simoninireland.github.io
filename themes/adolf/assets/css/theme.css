@@ -538,6 +538,11 @@ pre
 	border-radius: 3px;
 }
 
+div.highlight pre
+{
+    font-size: 15px;
+}
+
 code,
 tt
 {

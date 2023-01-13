@@ -4,7 +4,8 @@
 # Files needing copying on an import
 UPDATE_FILES = \
 	~/personal/cv/short-cv.pdf \
-	~/personal/cv/medium-cv.pdf
+	~/personal/cv/medium-cv.pdf \
+	~/.gnupg/publickey.gpg
 UPDATE_DIRS = \
 	~/personal/dict/softcopy
 
@@ -93,7 +94,7 @@ src-only:
 update: update-files update-dblocks continuous-import
 
 update-files:
-	$(foreach f, $(UPDATE_FILES), $(RSYNC) $f files/;)
+	$(foreach f, $(UPDATE_FILES), $(RSYNC) $f files/$(shell basename $(f:.gpg=.asc));)
 	$(foreach d, $(UPDATE_DIRS), $(RSYNC) $d files/;)
 
 update-dblocks: env
