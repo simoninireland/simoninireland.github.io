@@ -25,12 +25,12 @@
 <link rel="icon" href="../images/favicon.png" sizes="32x32">
 <link rel="prev" href="index-126.html" type="text/html">
 <link rel="next" href="index-124.html" type="text/html">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script>
 </head>
 <body>
@@ -103,107 +103,7 @@
     
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/" class="u-url">Atoms and Ashes: A Global History of Nuclear Disasters</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-21T04:47:20-07:00" title="2022-10-21 04:47">2022-10-21 04:47</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/atoms-and-ashes-a-global-history-of-nuclear-disasters.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-    <h1>Atoms and Ashes: A Global History of Nuclear Disasters</h1>
-    <div>
-      <div>
-	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645247265l/59011975._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-	  <h2>Serhii Plokhy</h2>
-	    2022
-	  <p>
-	    </p>
-<hr>
-</div>
-      </div>
-      <p>
-	A history of nuclear energy in six disasters: five civilian and one military.<br><br>Competition seems to lie at the heart of all the problems: a lack of willingness to share details of accidents and near-accidents, and an unwillingness to learn if this requires changes in procedure. Collaboration seems lacking even within organisations and with regulators, while governments treat these matters as merely part of larger strategic concerns (even when they threaten to overwhelm them). It's also clear that the commercial operation of nuclear power is impossible without state subsidy, and acquiring this opens-up possibilities from regulatory capture – weakening requirements to make them attainable within a fixed cost – to outright bribery.<br><br>The science and engineering also seem lacking. The Castle Bravo (and other) nuclear tests massively under-estimate the weapons' yields, and this seems to be more the case the larger the bomb (culminating in the apocalyptic <a href="https://en.wikipedia.org/wiki/Tsar_Bomba" rel="nofollow noopener">Tsar Bomba</a>, which isn't covered in this book as it somewhat miraculously <i>wasn't</i> actually an accident). But all the systems described make use of technology little changed since the 1930s: imagine if we were still driving cars from that era!<br><br>I find Plokhy's conclusions nuanced but weak. He decides that nuclear and renewable energy sources are both risky approaches to tackling climate change, but with completely different risk profiles: the former perhaps being too slow to start up and with huge accident risks; the latter relying on technologies as yet untested at the necessary scale. But in coming to his conclusion backing renewables and the phasing-out of nuclear stations (with which I entirely agree) he devotes <i>exactly two sentences</i> to the problem of nuclear waste and spent fuel, which should surely be one of the major deciding factors. It's a strange omission at the end of a book that revolves around radiation hazards.
-	</p>
-<p>
-	  3/5.
-	    Finished 21 October 2022.
-	  </p>
-<p>
-	    (Originally published on <a href="https://www.goodreads.com/review/show/4939077454?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-    </p>
-</div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" class="u-url">Adding filters to a Jinja2 template for Nikola</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-19T12:08:59+01:00" title="2022-10-19 12:08">2022-10-19 12:08</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/#disqus_thread" data-disqus-identifier="cache/posts/2022/10/19/adding-filters-to-a-jinja2-template-for-nikola.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div id="outline-container-org547bc84" class="outline-2">
-<h2 id="org547bc84">Adding filters to a Jinja2 template for Nikola</h2>
-<div class="outline-text-2" id="text-org547bc84">
-<p>
-The <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja2</a> template engine defines a suite of <a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters">filters</a> that can be
-used to transform text as it's rendered. You can define extra custom
-filters, and also make them available within <a href="https://getnikola.com/">Nikola</a> templates (as
-long as the theme uses Jinja as its template engine, of course.)
-</p>
-
-<p class="more"><a href="../2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/">Read more…</a></p>
-</div>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/" class="u-url">We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-16T07:40:36-07:00" title="2022-10-16 07:40">2022-10-16 07:40</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/we-are-bellingcat-global-crime-online-sleuths-and-the-bold-future-of-news.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-    <h1>We Are Bellingcat: Global Crime, Online Sleuths, and the Bold Future of News</h1>
-    <div>
-      <div>
-	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596434293l/54680228._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-	  <h2>Eliot Higgins</h2>
-	    2021
-	  <p>
-	    </p>
-<hr>
-</div>
-      </div>
-      <p>
-	The history of a still-evolving open-source intelligence collective.<br><br>Intelligence collection and analysis used to be limited to governments and a handful of companies. Not any longer: the tools are available on the open internet. Eliot Higgins realises that he can use them to investigate news stories, including the shooting-down of MH-17 over Ukraine. It's this investigation, in which he and his volunteer analysts manage to argue convincingly that the culprits were Russian-backed separatists using Russian anti-aircraft missiles, that really demonstrates how much information can now be found and cross-corollated. The result is for formation of Bellingcat, an amorphous group of international investigators organised in a way that closely resembles that of an open-source software project, where all that matters is an individuals' ability and willingness to share findings, and to have them challenged and possibly refuted in the search for the best explanations.<br><br>The book was written before the Russian attack on Ukraine, and so will demand a follow-up given Bellingcat's deep involvement in tracking the conflict and digging-into the details of individual incidents.
-	</p>
-<p>
-	  5/5.
-	    Finished 16 October 2022.
-	  </p>
-<p>
-	    (Originally published on <a href="https://www.goodreads.com/review/show/4688233164?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-    </p>
-</div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/childhoods-end/" class="u-url">Childhood's End</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/childhoods-end/" class="u-url">Childhood's End</a></h1>
 
         
         <div class="metadata">
@@ -273,6 +173,117 @@ long as the theme uses Jinja as its template engine, of course.)
 	  </p>
 <p>
 	    (Originally published on <a href="https://www.goodreads.com/review/show/4145716114?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+    </p>
+</div>
+  </div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty/" class="u-url">Empire of Pain: The Secret History of the Sackler Dynasty</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-16T07:26:07-07:00" title="2022-10-16 07:26">2022-10-16 07:26</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/empire-of-pain-the-secret-history-of-the-sackler-dynasty.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+    <h1>Empire of Pain: The Secret History of the Sackler Dynasty</h1>
+    <div>
+      <div>
+	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611952534l/43868109._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+	  <h2>Patrick Radden Keefe</h2>
+	    2021
+	  <p>
+	    </p>
+<hr>
+</div>
+      </div>
+      <p>
+	If there was ever a story that demonstrated one rule for the rich and another for the poor, this is it.<br><br>The Sackler dynasty has had a huge social prominence, with its name adorning university medical research institutes and wings of art galleries. The wealth all came from selling oxycontin, one of the most potent painkillers available and a boon to many with chronic pain. Their innovation was to own the company that developed a slow-release mechanism to allow a morphine derivative to be delivered orally. All this is a great service to humanity.<br><br>But... In Keefe's telling, the way oxycontin was sold made no attempt to ensure that it wasn't being over-prescribed or abused, and indeed targeted doctor and pharmacists who were clearly off-loading more pills that their communities could possibly need. And it's hard to believe that the company didn't know this, given that they'd also been early investors in medical information collection and analysis that could spot such patterns. The rest of the story degenerates into legal wranglings designed to keep the Sackler name out of any court decisions and away from personal blame.<br><br>It's a troubling history that taints what should have been a clear and welcome medical breakthrough by the search for enormous profits by any means.
+	</p>
+<p>
+	  5/5.
+	    Finished 16 October 2022.
+	  </p>
+<p>
+	    (Originally published on <a href="https://www.goodreads.com/review/show/4828997259?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+    </p>
+</div>
+  </div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/i-am-an-island/" class="u-url">I Am an Island</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../goodreads/i-am-an-island/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-16T07:16:16-07:00" title="2022-10-16 07:16">2022-10-16 07:16</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/i-am-an-island/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/i-am-an-island.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+    <h1>I Am an Island</h1>
+    <div>
+      <div>
+	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572615381l/49569074._SX98_SY160_.jpg" style="float: left; margin-right: 10px"><div>
+	  <h2>Tamsin Calidas</h2>
+	    2020
+	  <p>
+	    </p>
+<hr>
+</div>
+      </div>
+      <p>
+	Moving to an island is many people's dream (including mine). This is a cautionary tale of the challenges, both inflicted and self-inflicted.<br><br>Calidas and her then-husband took the hardest possible route, leaving London to start crofting with sheep and horses. That's a challenge at any time, but when utterly separated and with no friends or relative nearby it becomes almost impossible. The hostility from the locals varies in intensity from indifference to outright abuse, running into assumptions of who is "allowed" on the island and under what circumstances – a situation that becomes worse when her marriage breaks down and she nevertheless stays and attempts to make things work, something that no-one (including the local women) expects, understands, or supports.<br><br>Times change. The later parts of the book show her almost accepted and with a new influx of islanders who are less ... well, insular than the original inhabitants.<br><br>It's hard to decide what to take from this book. For a start, it's unclear how much of the hostility was triggered by Calidas and her husband themselves, not understanding the local sensibilities (although of course it's also hard to know how they'd've learned them). A lot of the tension comes from their efforts at crofting: running a shop would have been easier and perhaps less threatening to others, who felt their life was being intruded-into. But it's also an indication that moving from anonymous city life to a tiny community means adapting to a way of life that normalises surveillance and comment, and makes it difficult to remain aloof.
+	</p>
+<p>
+	  3/5.
+	    Finished 16 October 2022.
+	  </p>
+<p>
+	    (Originally published on <a href="https://www.goodreads.com/review/show/4856066215?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+    </p>
+</div>
+  </div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/" class="u-url">The Social Distance Between Us: How Remote Politics Wrecked Britain</a></h1>
+
+        
+        <div class="metadata">
+            <p class="dateline"><a href="../goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2022-10-16T06:57:08-07:00" title="2022-10-16 06:57">2022-10-16 06:57</time></a></p>
+
+                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/the-social-distance-between-us-how-remote-politics-wrecked-britain.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+    <h1>The Social Distance Between Us: How Remote Politics Wrecked Britain</h1>
+    <div>
+      <div>
+	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1643293353l/60224356._SX98_.jpg" style="float: left; margin-right: 10px"><div>
+	  <h2>Darren McGarvey</h2>
+	    2022
+	  <p>
+	    </p>
+<hr>
+</div>
+      </div>
+      <p>
+	A troubling tale of disaffection between classes in Britain – it's resolute in its class-based analysis, despite how out of fashion that is, and after reading this book it's difficult to disagree. That makes it an uncomfortable read for any middle-class person, since it's the middle class who takes the brunt of Garvey's assignment of blame. By allowing the working class to be demonised, and by allowing the creation of a benefits and support environment at least as "hostile" as that facing immigrants, the stage has been set for a breach between people that allows everyone to be manipulated by those in power.<br><br>All this came about (in Garvey's telling – and I have to agree to a large extent) because social mixing across class lines has collapsed, leaving groups in echo chambers that exclude views that might challenge their established beliefs. And indeed it's hard to think of counter-examples, beyond perhaps sporting and music events (and even they are now segregated by ticket price).<br><br>There are some very uncomfortable ideas in this book, and for that reason it should be recommended for everyone in Britain wanting a challenging explanation of how we find ourselve in our current predicament.
+	</p>
+<p>
+	  4/5.
+	    Finished 16 October 2022.
+	  </p>
+<p>
+	    (Originally published on <a href="https://www.goodreads.com/review/show/4791092837?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
     </p>
 </div>
   </div>

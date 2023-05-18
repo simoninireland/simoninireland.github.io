@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2013/07/10/representing-samples/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../09/temperature-sensors-working/" title="Temperature sensors working" type="text/html">
 <link rel="next" href="../../23/arduino-watchdog/" title="Understanding Arduino sleep modes: the watchdog timer" type="text/html">
@@ -37,7 +37,8 @@
 <meta property="og:description" content="Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
 
 
-Re-usable software has to take an extensible view of how to represent data, since the e">
+
+Re-usable software has to take an extensible view of how to represent data, since the ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-07-10T08:03:31+01:00">
 <meta property="article:tag" content="data">
@@ -160,17 +161,23 @@ Re-usable software has to take an extensible view of how to represent data, sinc
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?</p>
+      <p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
+
 <!--more-->
 
-<p>Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as XML for data-based approaches.</p>
-<p>Neither of these is ideal for a sensor network, for a number of reasons.</p>
-<p>A typical sensor network architecture will use different languages one the sensors and the base station, with the former prioritising efficiency and compactness and the latter emphasising connectivity to the internet and interfacing with standard tools. Typically we find C or C++ on the sensors and Java, JavaScript, Processing, or some other language on the base station. (Sometimes C or C++ too, although that's increasingly rare for new applications.) It's therefore tricky to use a language-based approach to defining data, as two <em>different</em> versions of the <em>same</em> structure would have to be defined and -- more importantly -- kept synchronised across changes.</p>
-<p>That suggests a data-based approach, but these tend to fall foul of the need for a compact and efficient encoding sensor-side. Storing, generating, and manipulating XML or RDF, for example, would typically be too complex and too memory-intensive for a sensor. These formats also aren't really suitable for in-memory processing -- unsurprisingly, as they were designed as transfer encodings, not primary data representations. Even though they might be attractive, not least for their friendliness to web interactions and the Semantic Web, they aren't really usable directly.</p>
-<p>There are some compromise positions, however. <a href="http://www.json.org" target="_blank">JSON</a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. JSON essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn't include code-valued fields, which is how JSON stays language-neutral: it can't encode computations, closures, or other programmatic features.)</p>
-<p>JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.</p>
-<p>This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
+Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as XML for data-based approaches.
+
+Neither of these is ideal for a sensor network, for a number of reasons.
+
+A typical sensor network architecture will use different languages one the sensors and the base station, with the former prioritising efficiency and compactness and the latter emphasising connectivity to the internet and interfacing with standard tools. Typically we find C or C++ on the sensors and Java, JavaScript, Processing, or some other language on the base station. (Sometimes C or C++ too, although that's increasingly rare for new applications.) It's therefore tricky to use a language-based approach to defining data, as two <em>different</em> versions of the <em>same</em> structure would have to be defined and -- more importantly -- kept synchronised across changes.
+
+That suggests a data-based approach, but these tend to fall foul of the need for a compact and efficient encoding sensor-side. Storing, generating, and manipulating XML or RDF, for example, would typically be too complex and too memory-intensive for a sensor. These formats also aren't really suitable for in-memory processing -- unsurprisingly, as they were designed as transfer encodings, not primary data representations. Even though they might be attractive, not least for their friendliness to web interactions and the Semantic Web, they aren't really usable directly.
+
+There are some compromise positions, however. <a href="http://www.json.org" target="_blank">JSON</a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. JSON essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn't include code-valued fields, which is how JSON stays language-neutral: it can't encode computations, closures, or other programmatic features.)
+
+JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.
+
+This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
     </div>
 
       <div class="socialsharing">

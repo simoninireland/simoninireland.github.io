@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2013/07/02/mesh-network/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../01/xbee/" title="XBee radios" type="text/html">
 <link rel="next" href="../xctu/" title="XBee firmware management with X-CTU" type="text/html">
@@ -37,7 +37,8 @@
 <meta property="og:description" content="A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.
 
 
-If you've">
+
+If you'v">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-07-02T08:00:45+01:00">
 <meta property="article:tag" content="background">
@@ -150,13 +151,15 @@ If you've">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.</p>
+      <p>A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.
+
 <!--more-->
 
-<p>If you've used wifi, you've used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, ...) and connects them to the internet. The devices don't talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.</p>
-<p>Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone -- a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.</p>
-<p>By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes' traffic. There is no infrastructure -- the nodes are both the users <em>and</em> the providers of the network -- which means a mesh can be deployed in areas without any "official" network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can't deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular telephony.</p>
+If you've used wifi, you've used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, ...) and connects them to the internet. The devices don't talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.
+
+Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone -- a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.
+
+By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes' traffic. There is no infrastructure -- the nodes are both the users <em>and</em> the providers of the network -- which means a mesh can be deployed in areas without any "official" network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can't deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular telephony.</p>
     </div>
 
       <div class="socialsharing">

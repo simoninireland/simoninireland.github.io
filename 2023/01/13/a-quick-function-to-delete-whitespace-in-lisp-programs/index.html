@@ -22,14 +22,15 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../../goodreads/unix-a-history-and-a-memoir/" title="UNIX: A History and a Memoir" type="text/html">
+<link rel="next" href="../../../../goodreads/the-dawn-of-everything/" title="The Dawn of Everything" type="text/html">
 <meta property="og:site_name" content="Simon Dobson">
 <meta property="og:title" content="A quick function to delete whitespace in Lisp programs">
 <meta property="og:url" content="https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/">
@@ -149,9 +150,9 @@ whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <div id="outline-container-org2457298" class="outline-2">
-<h2 id="org2457298">A quick function to delete whitespace in Lisp programs</h2>
-<div class="outline-text-2" id="text-org2457298">
+      <div id="outline-container-org74202a8" class="outline-2">
+<h2 id="org74202a8">A quick function to delete whitespace in Lisp programs</h2>
+<div class="outline-text-2" id="text-org74202a8">
 <p>
 I've recently found myself constantly introducing – and then deleting –
 whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
@@ -183,16 +184,16 @@ code that it closes, in one command?
 paredit has a function that sort of does what I had in mind:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">paredit-delete-leading-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="c1">;; This assumes that we're on the closing delimiter already.</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="nf">backward-char</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">))</span><span class="w">     </span><span class="c1">; whitespace syntax</span><span class="w"></span>
-<span class="w">		    </span><span class="c1">;; The above line is a perfect example of why the</span><span class="w"></span>
-<span class="w">		    </span><span class="c1">;; following test is necessary.</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">paredit-delete-leading-whitespace</span><span class="w"> </span><span class="p">()</span>
+<span class="w">    </span><span class="c1">;; This assumes that we're on the closing delimiter already.</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">backward-char</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">))</span><span class="w">     </span><span class="c1">; whitespace syntax</span>
+<span class="w">		    </span><span class="c1">;; The above line is a perfect example of why the</span>
+<span class="w">		    </span><span class="c1">;; following test is necessary.</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span>
 </pre></div>
 
 <p>
@@ -206,15 +207,15 @@ blank lines in it. (Maybe I should just get tidier….)
 My first attempt corrected these two shortcomings:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">line-beginning-position</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)))</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">line-beginning-position</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)))</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span>
 </pre></div>
 
 <p>
@@ -240,22 +241,22 @@ does it? – no, of course it doesn't, obviously there are functions for
 that, <code>bolp</code> and <code>eolp</code> respectively. The end result was:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">)))</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">)))</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span>
 
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)))</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span><span class="w"></span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)))</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))))</span>
 </pre></div>
 
 <p>
@@ -263,45 +264,45 @@ The structure is the same, and the function will traverse over lines
 the other direction too. Binding it to a key made it operational:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">define-key</span><span class="w"> </span><span class="nv">paredit-mode-map</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-M-&lt;backspace&gt;"</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="ss">'sd/paredit-delete-whitespace</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">define-key</span><span class="w"> </span><span class="nv">paredit-mode-map</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">"C-M-&lt;backspace&gt;"</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="ss">'sd/paredit-delete-whitespace</span><span class="p">)</span>
 </pre></div>
 
 <p>
 In code like this, with point at the <code>|</code>:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span>
 
-<span class="w">     </span><span class="nv">|</span><span class="w"></span>
+<span class="w">     </span><span class="nv">|</span>
 
-<span class="w">	</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="p">)</span>
 </pre></div>
 
 <p>
 pressing <code>C-M-&lt;backspace&gt;</code> deletes all that annoying whitespace:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 <p>
 Success! And I was happy for about five minutes, until I tested against this:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span>
 
 
-<span class="w">     </span><span class="nv">|</span><span class="w"></span>
+<span class="w">     </span><span class="nv">|</span>
 
-<span class="w">	</span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 <p>
 and ended up with:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 <p>
@@ -323,7 +324,7 @@ same way we checked for whitespace, using a character's syntax
 class. Adding this logic, plus some documentation and comments, gave:
 </p>
 
-<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">sd/paredit-delete-whitespace</span><span class="w"> </span><span class="p">()</span>
 <span class="w">    </span><span class="s">"Delete all whitespace around point.</span>
 
 <span class="s">  Whitespace from point to the next non-whitespace symbol, and from point</span>
@@ -333,31 +334,31 @@ class. Adding this logic, plus some documentation and comments, gave:
 
 <span class="s">  The implementation is based on `paredit-delete-leading-whitespace' but</span>
 <span class="s">  is interactive, will cross line boundaries, and understands enough Lisp</span>
-<span class="s">  to avoid accidents (hopefully)."</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span><span class="w"></span>
-<span class="w">      </span><span class="c1">;; move forward to the next non-whitespace symbol</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c1">;; whitespace syntax classes</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">))</span><span class="w">        </span><span class="c1">;; line end</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span><span class="w"></span>
+<span class="s">  to avoid accidents (hopefully)."</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">save-excursion</span>
+<span class="w">      </span><span class="c1">;; move forward to the next non-whitespace symbol</span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c1">;; whitespace syntax classes</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eolp</span><span class="p">))</span><span class="w">        </span><span class="c1">;; line end</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1+</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">forward-char</span><span class="p">))</span>
 
-<span class="w">      </span><span class="c1">;; delete whitespace back from current position</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span><span class="w"></span>
-<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span><span class="w"></span>
-<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)</span><span class="w">         </span><span class="c1">;; line start</span><span class="w"></span>
-<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span><span class="w"></span>
-<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))</span><span class="w"></span>
+<span class="w">      </span><span class="c1">;; delete whitespace back from current position</span>
+<span class="w">      </span><span class="p">(</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">syn</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-before</span><span class="p">))))</span>
+<span class="w">	       </span><span class="p">(</span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="w"> </span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="nv">syn</span><span class="w"> </span><span class="nv">?-</span><span class="p">)</span>
+<span class="w">			</span><span class="p">(</span><span class="nf">bolp</span><span class="p">)</span><span class="w">         </span><span class="c1">;; line start</span>
+<span class="w">		    </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nf">paredit-in-char-p</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">))))))</span>
+<span class="w">	</span><span class="p">(</span><span class="nf">delete-char</span><span class="w"> </span><span class="mi">-1</span><span class="p">))</span>
 
-<span class="w">      </span><span class="c1">;; if the current character isn't a closing bracket, and</span><span class="w"></span>
-<span class="w">      </span><span class="c1">;; we're not in a string, add a space so we don't accidentally</span><span class="w"></span>
-<span class="w">      </span><span class="c1">;; combine two numbers, symbols, strings, or whatever</span><span class="w"></span>
-<span class="w">      </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="p">))</span><span class="w"></span>
-<span class="w">		   </span><span class="p">(</span><span class="nf">paredit-in-string-p</span><span class="p">)))</span><span class="w"></span>
-<span class="w">	  </span><span class="p">(</span><span class="nf">insert</span><span class="w"> </span><span class="s">" "</span><span class="p">))))</span><span class="w"></span>
+<span class="w">      </span><span class="c1">;; if the current character isn't a closing bracket, and</span>
+<span class="w">      </span><span class="c1">;; we're not in a string, add a space so we don't accidentally</span>
+<span class="w">      </span><span class="c1">;; combine two numbers, symbols, strings, or whatever</span>
+<span class="w">      </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="k">or</span><span class="w"> </span><span class="p">(</span><span class="nf">eq</span><span class="w"> </span><span class="p">(</span><span class="nf">char-syntax</span><span class="w"> </span><span class="p">(</span><span class="nf">char-after</span><span class="p">))</span><span class="w"> </span><span class="nv">?</span><span class="err">\</span><span class="p">))</span>
+<span class="w">		   </span><span class="p">(</span><span class="nf">paredit-in-string-p</span><span class="p">)))</span>
+<span class="w">	  </span><span class="p">(</span><span class="nf">insert</span><span class="w"> </span><span class="s">" "</span><span class="p">))))</span>
 </pre></div>
 
 <p>
@@ -391,6 +392,9 @@ experience.
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="../../../../goodreads/unix-a-history-and-a-memoir/" rel="prev" title="UNIX: A History and a Memoir">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../../goodreads/the-dawn-of-everything/" rel="next" title="The Dawn of Everything">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
 	            <div id="disqus_thread"></div>

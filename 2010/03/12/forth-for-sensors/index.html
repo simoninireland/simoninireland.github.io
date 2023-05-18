@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2010/03/12/forth-for-sensors/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../05/things-that-wont-change/" title="Things that won't change" type="text/html">
 <link rel="next" href="../../22/both-ends-of-the-data-intensive-spectrum/" title="Both ends of the data-intensive spectrum" type="text/html">
@@ -147,11 +147,11 @@
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>Most sensor systems are programmed using C: compact and well-known, but low-level and tricky to get right when things get compact and complex. There have been several proposals for alternative languages from across the programming language research spectrum. I haven't heard anyone mention Forth, though, and it's worth considering -- even if only as a target for other languages.</p>
-<!--more-->
-<p>Many people will never have encountered <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth</a>, a language that's enjoyed up-and-down popularity for over four decades without ever hitting the mainstream. Sometimes touted as an alternative to Basic, it even had an <a href="http://en.wikipedia.org/wiki/Jupiter_Ace">early-1980's home computer</a> that used it as the introductory language.</p>
-<p>Forth has a number of characteristics that are completely different to the vast majority of modern languages:
+      <p>Most sensor systems are programmed using C: compact and well-known, but low-level and tricky to get right when things get compact and complex. There have been several proposals for alternative languages from across the programming language research spectrum. I haven't heard anyone mention Forth, though, and it's worth considering -- even if only as a target for other languages.
+
+<!--more-->Many people will never have encountered <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth</a>, a language that's enjoyed up-and-down popularity for over four decades without ever hitting the mainstream. Sometimes touted as an alternative to Basic, it even had an <a href="http://en.wikipedia.org/wiki/Jupiter_Ace">early-1980's home computer</a> that used it as the introductory language.
+
+Forth has a number of characteristics that are completely different to the vast majority of modern languages:
 </p>
 <ul>
 <li>It uses and explicit data stack and <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse-Polish notation</a> uniformly throughout the language</li>
@@ -163,12 +163,18 @@
     <li>If you're careful, you can build a cross-compiler that will generate code for a different target system: just port the kernel and the compiler <em>should</em> be re-usable to generate code that'll run on it. (It's not that simple, of course, as I'm finding myself...)</li>
 </ul>
 So Forth programs don't look like other languages. There's no real phase distinction between compilation and run-time, since everything's mixed-in together, but that has the advantage that you can write new "compiler" words to make it easier to write your "application" words, all within the same framework and set of capabilities. You don't  write applications so much as extend the language itself towards your problem. That in turn means you can view Forth either as low-level -- a glorified assembler -- or very high-level in terms of its ability to define new syntax and semantics.
-<p>That probably sounds like a nightmare, but suspend judgment for a while.....</p>
-<p>One of the problems that concerns a lot of sensor networks people is the programming level at which we have to deal with systems. Typically we're forced to write C on a per-node basis: program the individual nodes, and try to set it up so that the network behaves, as a whole, in an intended way. This is clearly possible in many cases, and clearly gets way more difficult as things get bigger and more complex, and especially when we want the network to adapt to the phenomena it's sensing, which often requires decisions to be made on a non-local basis.</p>
-<p>Writing a new language is a big undertaking, but a substantially smaller undertaking with Forth. It's possible to conceive of new language structures (for example a construct that generates <a href="http://www.simondobson.org/2010/02/216/">moving averages</a>) and implement it quickly and simply. This might just be syntactic sugar, or might be something rather more ambitious in terms of control flow. Essentially you can extend the syntax <em>and</em> the semantics of Forth so that it "understands", at the same level as the rest of the compiler, the new construct you want to use.</p>
-<p>Which is interesting enough, but what makes it more interesting for sensors is the structure of these compiler words. Typically they're what is known as <tt>IMMEDIATE</tt> words, which means they <em>execute</em> when encountered <em>compiling</em> a word. That may sound odd, but what it means is that the compiler word executes and generates code, rather than being compiled itself. And <em>that</em> means that, when used with a cross-compiler, the new language constructs don't add to the target system's footprint, because their action all happens at compile-time to generate code that's expressed in terms of lower-level words. In core Forth, constructs like <tt>IF</tt> and <tt>LOOP</tt> (conditional and counted loops respectively) do exactly this: they compile low-level jumps (the word <tt>(BRANCH)</tt> and <tt>(?BRANCH)</tt>, which do non-conditional and conditional branches respectively) implementing the higher-level structured-programming abstraction.</p>
-<p>A lot of modern languages use virtual machines as targets for their compilers, and a lot of those VMs are stack machines -- Forth, in other words. If we actually <em>use</em> Forth as the VM for a compiler, we have an <em>extensible</em> VM in which we can define new constructs, so we can evolve the VM better to fit the language that targets it. (There are also some very interesting, close parallels between Forth code and the abstract syntax trees used to represent code within compilers, but that's something I need to think about a bit more before I write about it.)</p>
-<p>All this is rather speculative, and doesn't really address the core problem of programming a network rather than a device, but it does provide a device-level platform that might be more amenable to language research. I've been experimenting with Forth for this purpose, and have a prototype system -- Attila, an abstract, re-targetable threaded interpreter that's fully cross-compilable -- in the works, but not quite ready to see the light of day. It's taught me a lot about the practicalities of threaded interpreters and cross-compilers. This is a strand of language design that's been almost forgotten, and I think it deserves more of a look.</p>
+
+That probably sounds like a nightmare, but suspend judgment for a while.....
+
+One of the problems that concerns a lot of sensor networks people is the programming level at which we have to deal with systems. Typically we're forced to write C on a per-node basis: program the individual nodes, and try to set it up so that the network behaves, as a whole, in an intended way. This is clearly possible in many cases, and clearly gets way more difficult as things get bigger and more complex, and especially when we want the network to adapt to the phenomena it's sensing, which often requires decisions to be made on a non-local basis.
+
+Writing a new language is a big undertaking, but a substantially smaller undertaking with Forth. It's possible to conceive of new language structures (for example a construct that generates <a href="http://www.simondobson.org/2010/02/216/">moving averages</a>) and implement it quickly and simply. This might just be syntactic sugar, or might be something rather more ambitious in terms of control flow. Essentially you can extend the syntax <em>and</em> the semantics of Forth so that it "understands", at the same level as the rest of the compiler, the new construct you want to use.
+
+Which is interesting enough, but what makes it more interesting for sensors is the structure of these compiler words. Typically they're what is known as <tt>IMMEDIATE</tt> words, which means they <em>execute</em> when encountered <em>compiling</em> a word. That may sound odd, but what it means is that the compiler word executes and generates code, rather than being compiled itself. And <em>that</em> means that, when used with a cross-compiler, the new language constructs don't add to the target system's footprint, because their action all happens at compile-time to generate code that's expressed in terms of lower-level words. In core Forth, constructs like <tt>IF</tt> and <tt>LOOP</tt> (conditional and counted loops respectively) do exactly this: they compile low-level jumps (the word <tt>(BRANCH)</tt> and <tt>(?BRANCH)</tt>, which do non-conditional and conditional branches respectively) implementing the higher-level structured-programming abstraction.
+
+A lot of modern languages use virtual machines as targets for their compilers, and a lot of those VMs are stack machines -- Forth, in other words. If we actually <em>use</em> Forth as the VM for a compiler, we have an <em>extensible</em> VM in which we can define new constructs, so we can evolve the VM better to fit the language that targets it. (There are also some very interesting, close parallels between Forth code and the abstract syntax trees used to represent code within compilers, but that's something I need to think about a bit more before I write about it.)
+
+All this is rather speculative, and doesn't really address the core problem of programming a network rather than a device, but it does provide a device-level platform that might be more amenable to language research. I've been experimenting with Forth for this purpose, and have a prototype system -- Attila, an abstract, re-targetable threaded interpreter that's fully cross-compilable -- in the works, but not quite ready to see the light of day. It's taught me a lot about the practicalities of threaded interpreters and cross-compilers. This is a strand of language design that's been almost forgotten, and I think it deserves more of a look.
     </div>
 
       <div class="socialsharing">

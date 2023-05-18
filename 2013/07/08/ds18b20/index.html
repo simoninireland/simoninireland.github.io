@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2013/07/08/ds18b20/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../06/api-communications/" title="API communications now working" type="text/html">
 <link rel="next" href="../../09/temperature-sensors-working/" title="Temperature sensors working" type="text/html">
@@ -37,7 +37,8 @@
 <meta property="og:description" content="The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.
 
 
-The DS18B20 is extremely popular as a temperature sensor, for obvious reaso">
+
+The DS18B20 is extremely popular as a temperature sensor, for obvious reas">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-07-08T20:22:02+01:00">
 <meta property="article:tag" content="ditch">
@@ -154,15 +155,19 @@ The DS18B20 is extremely popular as a temperature sensor, for obvious reaso">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.</p>
+      <p>The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.
+
 <!--more-->
 
-<p>The <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2812" target="_blank">DS18B20</a> is extremely popular as a temperature sensor, for obvious reasons: they're digital, and require no calibration, in contrast to using a thermistor or similar analogue device which would need to be characterised against reference temperatures. They're not as cheap as analogue components, but their simplicity of use and accuracy probably make up for that in scientific applications.</p>
-<p>The devices are also notable as using the OneWire protocol developed by Dallas Semiconductor (now Maxim) and used in (amongst other devices) their <a href="http://www.maximintegrated.com/products/ibutton/" target="_blank">iButton</a> devices. Essentially <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">OneWire</a> is an embedded systems equivalent of USB that allows a set of devices to be chained together and addressed using only one pin on a microcontroller. This means that there's no real limit on the number of sensors that even a small chip can make use of. The <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank">datasheet</a> is available if needed, but they're so easy to use and have such good software support (see below) that there's no real need to refer to it.</p>
-<p>The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There's also a "parasitic" mode that takes power from the data bus, which I haven't got to work yet.) The communications line is the "one wire" that runs the communications protocol.</p>
-<p>Using OneWire devices, and DS18B20s in particular, is made very simple by the existence of two libraries, providing the <a href="http://www.pjrc.com/teensy/td_libs_OneWire.html" target="_blank">protocol driver</a> and <a href="http://milesburton.com/Dallas_Temperature_Control_Library" target="_blank">temperature conversion and packaging</a> respectively. Links and installation instructions can be found on the <a href="../../../../download/tools-libraries/">3rd-part tools and libraries page</a>.</p>
-<p></p>
+The <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2812" target="_blank">DS18B20</a> is extremely popular as a temperature sensor, for obvious reasons: they're digital, and require no calibration, in contrast to using a thermistor or similar analogue device which would need to be characterised against reference temperatures. They're not as cheap as analogue components, but their simplicity of use and accuracy probably make up for that in scientific applications.
+
+The devices are also notable as using the OneWire protocol developed by Dallas Semiconductor (now Maxim) and used in (amongst other devices) their <a href="http://www.maximintegrated.com/products/ibutton/" target="_blank">iButton</a> devices. Essentially <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">OneWire</a> is an embedded systems equivalent of USB that allows a set of devices to be chained together and addressed using only one pin on a microcontroller. This means that there's no real limit on the number of sensors that even a small chip can make use of. The <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank">datasheet</a> is available if needed, but they're so easy to use and have such good software support (see below) that there's no real need to refer to it.
+
+The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There's also a "parasitic" mode that takes power from the data bus, which I haven't got to work yet.) The communications line is the "one wire" that runs the communications protocol.
+
+Using OneWire devices, and DS18B20s in particular, is made very simple by the existence of two libraries, providing the <a href="http://www.pjrc.com/teensy/td_libs_OneWire.html" target="_blank">protocol driver</a> and <a href="http://milesburton.com/Dallas_Temperature_Control_Library" target="_blank">temperature conversion and packaging</a> respectively. Links and installation instructions can be found on the <a href="../../../../download/tools-libraries/">3rd-part tools and libraries page</a>.
+
+ </p>
     </div>
 
       <div class="socialsharing">

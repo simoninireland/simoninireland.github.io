@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about bcs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/bcs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Dec 2022 17:41:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2015 CPHC/BCS Distinguished Dissertations competition</title><link>https://simondobson.org/2015/01/21/disdis15/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;The 2015 CPHC/BCS Distinguished Dissertations competition is now open for submissions &lt;em&gt;via &lt;/em&gt;the &lt;a href="http://www.easychair.org/conferences/?conf=disdis15" target="_blank"&gt;submissions&lt;/a&gt; site. Closing date Wednesday 1 April 2015. Further details can be found below and on the &lt;a href="http://academy.bcs.org/content/distinguished-dissertations" target="_blank"&gt;competition web page&lt;/a&gt;.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about bcs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/bcs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 18 May 2023 07:29:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2015 CPHC/BCS Distinguished Dissertations competition</title><link>https://simondobson.org/2015/01/21/disdis15/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;The 2015 CPHC/BCS Distinguished Dissertations competition is now open for submissions &lt;em&gt;via &lt;/em&gt;the &lt;a href="http://www.easychair.org/conferences/?conf=disdis15" target="_blank"&gt;submissions&lt;/a&gt; site. Closing date Wednesday 1 April 2015. Further details can be found below and on the &lt;a href="http://academy.bcs.org/content/distinguished-dissertations" target="_blank"&gt;competition web page&lt;/a&gt;.
+
 &lt;!--more--&gt;
 
-&lt;p&gt;The Council of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.&lt;/p&gt;
-&lt;p&gt;The scheme aims to make more visible the significant contribution made by the UK - in particular by post-graduate students - to computer science. Publication also serves to provide a model for future students. The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years.&lt;/p&gt;
-&lt;p&gt;Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.)  However, there is a limit of THREE dissertations per year per university, and one per research group within any university.&lt;/p&gt;
-&lt;p&gt;To be considered, a dissertation should:
+The Council of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.
+
+The scheme aims to make more visible the significant contribution made by the UK - in particular by post-graduate students - to computer science. Publication also serves to provide a model for future students. The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years.
+
+Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.)  However, there is a limit of THREE dissertations per year per university, and one per research group within any university.
+
+To be considered, a dissertation should:
 &lt;/p&gt;&lt;ul&gt;
     &lt;li&gt;make a noteworthy contribution to the subject;&lt;/li&gt;
     &lt;li&gt;reach a high standard of exposition;&lt;/li&gt;
@@ -13,8 +17,10 @@
     &lt;li&gt;enable a computer scientist with significantly different interests to grasp its essentials.&lt;/li&gt;
 &lt;/ul&gt;
 It is reasonable to submit a thesis to the scheme if it has all of the above qualities in good measure, and if it is comparable in standard with the top 10% of dissertations in the subject. Long dissertations are not encouraged; if the main text is more than 80,000 words, there should be good justification.
-&lt;p&gt;The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for the 2015 competition is for theses accepted from 1 January 2014 until the closing date of 1 April 2015. A dissertation cannot be submitted to the competition more than once.&lt;/p&gt;
-&lt;p&gt;The dissertation should be accompanied by a written nomination comprising the following information:&lt;/p&gt;
+
+The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for the 2015 competition is for theses accepted from 1 January 2014 until the closing date of 1 April 2015. A dissertation cannot be submitted to the competition more than once.
+
+The dissertation should be accompanied by a written nomination comprising the following information:
 &lt;ul&gt;
     &lt;li&gt;a justification, of about 300 words, by one of the examiners -- preferably the external -- explaining the dissertation's claim to  distinction (against the criteria listed above);&lt;/li&gt;
     &lt;li&gt;the name of the primary supervisor and the research group within the university to which the student was primarily affiliated;&lt;/li&gt;
@@ -22,19 +28,29 @@ It is reasonable to submit a thesis to the scheme if it has all of the above qua
     &lt;li&gt;the names and contact details of three suggested reviewers who are not in the same Department as the nominated thesis and who are independent of the supervision and examining of the thesis; and&lt;/li&gt;
     &lt;li&gt;an indication should be given if the dissertation is being considered for publication elsewhere.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The nominated reviewers must have confirmed that they are willing to provide a review. In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to &lt;a href="mailto:disdis15@easychair.org" target="_blank"&gt;disdis15@easychair.org&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Submissions should be made on-line &lt;em&gt;via&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.easychair.org/conferences/?conf=disdis15" target="_blank"&gt;http://www.easychair.org/conferences/?conf=disdis15&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.&lt;/p&gt;
-&lt;p&gt;If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis15@easychair.org" target="_blank"&gt;disdis15@easychair.org&lt;/a&gt; for assistance.&lt;/p&gt;
-&lt;p&gt;The deadline for submission is 1 April 2015.&lt;/p&gt;</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2015/01/21/disdis15/</guid><pubDate>Wed, 21 Jan 2015 12:14:35 GMT</pubDate></item><item><title>CPHC/BCS Distinguished Dissertations competition 2013/14: call for submissions</title><link>https://simondobson.org/2013/12/02/disdis-2014/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;The 2013/14 CPHC/BCS Distinguished Dissertations competition is now open for submissions.&lt;/p&gt;
+The nominated reviewers must have confirmed that they are willing to provide a review. In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to &lt;a href="mailto:disdis15@easychair.org" target="_blank"&gt;disdis15@easychair.org&lt;/a&gt;.
+
+Submissions should be made on-line &lt;em&gt;via&lt;/em&gt;
+
+&lt;a href="http://www.easychair.org/conferences/?conf=disdis15" target="_blank"&gt;http://www.easychair.org/conferences/?conf=disdis15&lt;/a&gt;
+
+The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.
+
+If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis15@easychair.org" target="_blank"&gt;disdis15@easychair.org&lt;/a&gt; for assistance.
+
+The deadline for submission is 1 April 2015.</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2015/01/21/disdis15/</guid><pubDate>Wed, 21 Jan 2015 12:14:35 GMT</pubDate></item><item><title>CPHC/BCS Distinguished Dissertations competition 2013/14: call for submissions</title><link>https://simondobson.org/2013/12/02/disdis-2014/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;The 2013/14 CPHC/BCS Distinguished Dissertations competition is now open for submissions.
+
 &lt;!--more--&gt;
 
-&lt;p&gt;Closing date Tuesday 1 April 2014. Further details can be found below and on the web at &lt;a href="http://academy.bcs.org/content/distinguished-dissertations"&gt;http://academy.bcs.org/content/distinguished-dissertations&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The Council of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.&lt;/p&gt;
-&lt;p&gt;The scheme aims to make more visible the significant contribution made by Britain - in particular by post-graduate students - to computer science. Publication also serves to provide a model for future students.&lt;/p&gt;
-&lt;p&gt;The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years. The panel members for this year are: Russell Beale (Birmingham), Simon Dobson (St Andrews, chair), Michael Fisher (Liverpool), Joemon Jose (Glasgow), Steve Pettifer (Manchester), Iain Phillips (Loughborough), and Perdita Stevens (Edinburgh).&lt;/p&gt;
-&lt;p&gt;Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.) However, there is a limit of THREE dissertations per year per university, and one per research group within any university. To be considered, a dissertation should:
+Closing date Tuesday 1 April 2014. Further details can be found below and on the web at &lt;a href="http://academy.bcs.org/content/distinguished-dissertations"&gt;http://academy.bcs.org/content/distinguished-dissertations&lt;/a&gt;
+
+The Council of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.
+
+The scheme aims to make more visible the significant contribution made by Britain - in particular by post-graduate students - to computer science. Publication also serves to provide a model for future students.
+
+The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years. The panel members for this year are: Russell Beale (Birmingham), Simon Dobson (St Andrews, chair), Michael Fisher (Liverpool), Joemon Jose (Glasgow), Steve Pettifer (Manchester), Iain Phillips (Loughborough), and Perdita Stevens (Edinburgh).
+
+Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.) However, there is a limit of THREE dissertations per year per university, and one per research group within any university. To be considered, a dissertation should:
 &lt;/p&gt;&lt;ul&gt;
     &lt;li&gt;make a noteworthy contribution to the subject;&lt;/li&gt;
     &lt;li&gt;reach a high standard of exposition;&lt;/li&gt;
@@ -42,8 +58,10 @@ It is reasonable to submit a thesis to the scheme if it has all of the above qua
     &lt;li&gt;enable a computer scientist with significantly different interests to grasp its essentials.&lt;/li&gt;
 &lt;/ul&gt;
 It is reasonable to submit a thesis to the scheme if it has all of the above qualities in good measure, and if it is comparable in standard with the top 10% of dissertations in the subject. Long dissertations are not encouraged; if the main text is more than 80,000 words, there should be good justification.
-&lt;p&gt;The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for the 2014 competition is for theses accepted from 1 January 2013 until the closing date of 1 April 2014. A dissertation cannot be submitted to the competition more than once.&lt;/p&gt;
-&lt;p&gt;The dissertation should be accompanied by a written nomination comprising the following information:&lt;/p&gt;
+
+The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for the 2014 competition is for theses accepted from 1 January 2013 until the closing date of 1 April 2014. A dissertation cannot be submitted to the competition more than once.
+
+The dissertation should be accompanied by a written nomination comprising the following information:
 &lt;ul&gt;
     &lt;li&gt;a justification, of about 300 words, by one of the examiners - preferably the external - explaining the dissertation's claim to distinction (against the criteria listed above);&lt;/li&gt;
     &lt;li&gt;the name of the primary supervisor and the research group within the university to which the student was primarily affiliated;&lt;/li&gt;
@@ -51,30 +69,48 @@ It is reasonable to submit a thesis to the scheme if it has all of the above qua
     &lt;li&gt;the names and contact details of three suggested reviewers who are not in the same Department as the nominated thesis and who are independent of the supervision and examining of the thesis; and&lt;/li&gt;
     &lt;li&gt;an indication should be given if the dissertation is being considered for publication elsewhere.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The nominated reviewers must have confirmed that they are willing to provide a review. In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to &lt;a href="mailto:disdis14@easychair.org"&gt;disdis14@easychair.org&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Submissions should be made on-line via &lt;a href="http://www.easychair.org/conferences/?conf=disdis14"&gt;http://www.easychair.org/conferences/?conf=disdis14&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.&lt;/p&gt;
-&lt;p&gt;If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis14@easychair.org"&gt;disdis14@easychair.org&lt;/a&gt; for assistance.&lt;/p&gt;
-&lt;p&gt;The deadline for submission is 1 April 2014.&lt;/p&gt;</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2013/12/02/disdis-2014/</guid><pubDate>Mon, 02 Dec 2013 14:55:05 GMT</pubDate></item><item><title>Distinguished Dissertations competition 2013</title><link>https://simondobson.org/2012/12/22/bcs-disdis/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;The &lt;a href="http://www.bcs.org/" target="_blank"&gt;British Computer Society&lt;/a&gt;'s distinguished PhD dissertations competition is now accepting nominations for 2013.&lt;/p&gt;
+The nominated reviewers must have confirmed that they are willing to provide a review. In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to &lt;a href="mailto:disdis14@easychair.org"&gt;disdis14@easychair.org&lt;/a&gt;.
+
+Submissions should be made on-line via &lt;a href="http://www.easychair.org/conferences/?conf=disdis14"&gt;http://www.easychair.org/conferences/?conf=disdis14&lt;/a&gt;
+
+The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.
+
+If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis14@easychair.org"&gt;disdis14@easychair.org&lt;/a&gt; for assistance.
+
+The deadline for submission is 1 April 2014.</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2013/12/02/disdis-2014/</guid><pubDate>Mon, 02 Dec 2013 14:55:05 GMT</pubDate></item><item><title>Distinguished Dissertations competition 2013</title><link>https://simondobson.org/2012/12/22/bcs-disdis/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;The &lt;a href="http://www.bcs.org/" target="_blank"&gt;British Computer Society&lt;/a&gt;'s distinguished PhD dissertations competition is now accepting nominations for 2013.
+
 &lt;!--more--&gt;
 
-&lt;p&gt;The Conference of Professors and Heads of Computing (CPHC), in conjunction with BCS and the BCS Academy of Computing, annually selects for publication the best British PhD/DPhil dissertations in computer science and publishes the winning dissertation and runner up submission on the BCS website.&lt;/p&gt;
-&lt;p&gt;Whenever possible, the prize winner receives his/her award at the prestigious BCS Roger Needham Lecture, which takes place annually at the Royal Society in the autumn.&lt;/p&gt;
-&lt;p&gt;After a rigorous review process involving international experts, the judging panel selects a small number of dissertations that are regarded as exemplary, and one overall winner from the submissions.&lt;/p&gt;
-&lt;p&gt;Over forty theses have been selected for publication since the scheme began in 1990.&lt;/p&gt;
-&lt;p&gt;More details, including links to some past winners, can be found on the &lt;a href="http://academy.bcs.org/content/distinguished-dissertations" target="_blank"&gt;competition web site&lt;/a&gt;. The closing date for nominations is &lt;strong&gt;1 April 2o13&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2012/12/22/bcs-disdis/</guid><pubDate>Sat, 22 Dec 2012 12:05:43 GMT</pubDate></item><item><title>British Computer Society Distinguished Dissertations competition</title><link>https://simondobson.org/2011/12/19/bsc-disdis/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;Submissions are now open for the BCS Distinguished Dissertations competition for recently-submitted PhDs in the UK.&lt;/p&gt;
+The Conference of Professors and Heads of Computing (CPHC), in conjunction with BCS and the BCS Academy of Computing, annually selects for publication the best British PhD/DPhil dissertations in computer science and publishes the winning dissertation and runner up submission on the BCS website.
+
+Whenever possible, the prize winner receives his/her award at the prestigious BCS Roger Needham Lecture, which takes place annually at the Royal Society in the autumn.
+
+After a rigorous review process involving international experts, the judging panel selects a small number of dissertations that are regarded as exemplary, and one overall winner from the submissions.
+
+Over forty theses have been selected for publication since the scheme began in 1990.
+
+More details, including links to some past winners, can be found on the &lt;a href="http://academy.bcs.org/content/distinguished-dissertations" target="_blank"&gt;competition web site&lt;/a&gt;. The closing date for nominations is &lt;strong&gt;1 April 2o13&lt;/strong&gt;.
+
+ &lt;/p&gt;</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2012/12/22/bcs-disdis/</guid><pubDate>Sat, 22 Dec 2012 12:05:43 GMT</pubDate></item><item><title>British Computer Society Distinguished Dissertations competition</title><link>https://simondobson.org/2011/12/19/bsc-disdis/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Submissions are now open for the BCS Distinguished Dissertations competition for recently-submitted PhDs in the UK.
 &lt;!--more--&gt;
 
-&lt;p&gt;The 2011 / 2012 CPHC/BCS Distinguished Dissertations competition is now open for submissions via the web site&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.easychair.org/conferences/?conf=disdis12"&gt;http://www.easychair.org/conferences/?conf=disdis12&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Closing date Monday 2nd April 2012. Further details can be found below and on the webpage&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.bcs.org/server.php?show=nav.5820"&gt;http://www.bcs.org/server.php?show=nav.5820&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The Conference of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.&lt;/p&gt;
-&lt;p&gt;The scheme aims to make more visible the significant contribution made by Britain -- in particular by post-graduate students -- to computer science. Publication also serves to provide a model for future students.&lt;/p&gt;
-&lt;p&gt;The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years. The 2012 panel members are: Simon Thompson (Kent, Chair), Teresa Attwood (Manchester), Russell Beale (Birmingham), Simon Dobson (St Andrews), Zoubin Ghahramani (Cambridge), Joemon Jose (Glasgow), Daniel Kroening (Oxford), Ralph Martin (Cardiff), Alexander Romanovsky (Newcastle) and Jon Whittle (Lancaster).&lt;/p&gt;
-&lt;p&gt;Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.)  However, there is a limit of THREE dissertations per year per university, and one per research group within any university.&lt;/p&gt;
-&lt;p&gt;To be considered, a dissertation should:
+The 2011 / 2012 CPHC/BCS Distinguished Dissertations competition is now open for submissions via the web site
+
+&lt;a href="http://www.easychair.org/conferences/?conf=disdis12"&gt;http://www.easychair.org/conferences/?conf=disdis12&lt;/a&gt;
+
+Closing date Monday 2nd April 2012. Further details can be found below and on the webpage
+
+&lt;a href="http://www.bcs.org/server.php?show=nav.5820"&gt;http://www.bcs.org/server.php?show=nav.5820&lt;/a&gt;
+
+The Conference of Professors and Heads of Computing (CPHC), in conjunction with BCS, The Chartered Institute for IT, annually selects for publication the best British PhD/DPhil dissertations in computer science.
+
+The scheme aims to make more visible the significant contribution made by Britain -- in particular by post-graduate students -- to computer science. Publication also serves to provide a model for future students.
+
+The selection panel on behalf of BCS/CPHC consists of experienced computer scientists, not more than one from any institution, each normally serving on the panel for three years. The 2012 panel members are: Simon Thompson (Kent, Chair), Teresa Attwood (Manchester), Russell Beale (Birmingham), Simon Dobson (St Andrews), Zoubin Ghahramani (Cambridge), Joemon Jose (Glasgow), Daniel Kroening (Oxford), Ralph Martin (Cardiff), Alexander Romanovsky (Newcastle) and Jon Whittle (Lancaster).
+
+Any dissertation is eligible which is submitted for a doctorate in the British Isles in what is commonly understood as Computer Science. (Theses which are basically in some other discipline but which make use, even very extensive use, of computing will not be regarded as eligible.)  However, there is a limit of THREE dissertations per year per university, and one per research group within any university.
+
+To be considered, a dissertation should:
 &lt;/p&gt;&lt;ul&gt;
     &lt;li&gt;make a noteworthy contribution to the subject;&lt;/li&gt;
     &lt;li&gt;reach a high standard of exposition;&lt;/li&gt;
@@ -82,14 +118,18 @@ It is reasonable to submit a thesis to the scheme if it has all of the above qua
     &lt;li&gt;enable a computer scientist with significantly different interests to grasp its essentials.&lt;/li&gt;
 &lt;/ul&gt;
 It is reasonable to submit a thesis to the scheme if it has all of the above qualities in good measure, and if it is comparable in standard with the top 10% of dissertations in the subject. Long dissertations are not encouraged; if the main text is more than 80,000 words, there should be good justification.
-&lt;p&gt;The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for 2012 is for theses accepted from 1st January 2011 until the closing date of 2nd April 2012. A dissertation cannot be submitted to the competition more than once.&lt;/p&gt;
-&lt;p&gt;The dissertation should be accompanied by a written nomination comprising the following information:&lt;/p&gt;
+
+The dissertation should be submitted electronically (as a PDF file) by the author's examiners, or by the Head of Department with the examiner's advice. The submitted version of the dissertation must be the final version after any required corrections have been made. The competition period for 2012 is for theses accepted from 1st January 2011 until the closing date of 2nd April 2012. A dissertation cannot be submitted to the competition more than once.
+
+The dissertation should be accompanied by a written nomination comprising the following information:
 &lt;ul&gt;
     &lt;li&gt;a justification, of about 300 words, by one of the examiners -- preferably the external -- explaining the dissertation's claim to distinction (against the criteria listed above);&lt;/li&gt;
     &lt;li&gt;the name of the primary supervisor and the research group within the university to which the student was primarily affiliated;&lt;/li&gt;
     &lt;li&gt;an assurance that within the competition period the examiners have recommended to the author's institution that the doctorate should be awarded; and&lt;/li&gt;
     &lt;li&gt;the names and contact details of three suggested reviewers who are not in the same Department as the nominated thesis and who are independent of the supervision and examining of the thesis. The nominated reviewers must have confirmed that they are willing to provide a review.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;An indication should be given if the dissertation is being considered for publication elsewhere.  In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to  &lt;a href="mailto:disdis12@easychair.org"&gt;disdis12@easychair.org&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Submissions should be made on-line via     &lt;a href="http://www.easychair.org/conferences/?conf=disdis12"&gt;http://www.easychair.org/conferences/?conf=disdis12&lt;/a&gt;.  The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.  If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis12@easychair.org"&gt;disdis12@easychair.org&lt;/a&gt; for assistance.&lt;/p&gt;
-&lt;p&gt;The deadline for submission is 2nd April 2012.&lt;/p&gt;</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2011/12/19/bsc-disdis/</guid><pubDate>Mon, 19 Dec 2011 08:00:27 GMT</pubDate></item></channel></rss>
+An indication should be given if the dissertation is being considered for publication elsewhere.  In addition the author's written agreement that their thesis may be considered for the Distinguished Dissertation competition should be emailed by the author to  &lt;a href="mailto:disdis12@easychair.org"&gt;disdis12@easychair.org&lt;/a&gt;.
+
+Submissions should be made on-line via     &lt;a href="http://www.easychair.org/conferences/?conf=disdis12"&gt;http://www.easychair.org/conferences/?conf=disdis12&lt;/a&gt;.  The first author name submitted should be that of the thesis author; the individual submitting the nomination should list themselves as the second author. The title and abstract should be those of the thesis being nominated. The first file uploaded should be the 300 word nomination; the thesis document should be uploaded as an attachment.  If any problems are experienced, or you have any questions, please email &lt;a href="mailto:disdis12@easychair.org"&gt;disdis12@easychair.org&lt;/a&gt; for assistance.
+
+The deadline for submission is 2nd April 2012.</description><category>bcs</category><category>Blog</category><category>competition</category><guid>https://simondobson.org/2011/12/19/bsc-disdis/</guid><pubDate>Mon, 19 Dec 2011 08:00:27 GMT</pubDate></item></channel></rss>

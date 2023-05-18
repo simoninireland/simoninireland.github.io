@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../11/28/me-and-my-research/" title="Me and my research" type="text/html">
 <link rel="next" href="../../16/til-regenerative-braking-in-the-cold/" title="TIL: Regenerative braking in the cold" type="text/html">
@@ -154,9 +154,9 @@ epidemic and other simulat">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <div id="outline-container-org6138f82" class="outline-2">
-<h2 id="org6138f82">Notes on using Jupyter in the cloud</h2>
-<div class="outline-text-2" id="text-org6138f82">
+      <div id="outline-container-org1a587f5" class="outline-2">
+<h2 id="org1a587f5">Notes on using Jupyter in the cloud</h2>
+<div class="outline-text-2" id="text-org1a587f5">
 <p>
 I've been thinking about running <a href="https://jupyter.org">Jupyter notebooks</a> in the cloud for
 some fairly compute-intensive simulation. Specifically I want to do
@@ -177,9 +177,9 @@ with <a href="https://colab.research.google.com/">Google Colab</a> as the most a
 </p>
 </div>
 
-<div id="outline-container-orgdaeb9c7" class="outline-3">
-<h3 id="orgdaeb9c7">Reference execution</h3>
-<div class="outline-text-3" id="text-orgdaeb9c7">
+<div id="outline-container-orgf77771e" class="outline-3">
+<h3 id="orgf77771e">Reference execution</h3>
+<div class="outline-text-3" id="text-orgf77771e">
 <p>
 As a reference, I firsat ran a small experiment with an SIR
 epidemic on an ER network of \(10^4\) nodes, \(\langle k \rangle =
@@ -232,9 +232,9 @@ results from the worker processes.
 </div>
 </div>
 
-<div id="outline-container-orgbc590c8" class="outline-3">
-<h3 id="orgbc590c8">Running epydemic on a default runtime</h3>
-<div class="outline-text-3" id="text-orgbc590c8">
+<div id="outline-container-org771aa72" class="outline-3">
+<h3 id="org771aa72">Running epydemic on a default runtime</h3>
+<div class="outline-text-3" id="text-org771aa72">
 <p>
 I then tried the same experiments on the default Colab set-up.
 </p>
@@ -292,9 +292,9 @@ exclusively. There's really not enough information to decide.
 </div>
 </div>
 
-<div id="outline-container-orgde6c9c3" class="outline-3">
-<h3 id="orgde6c9c3">Using specific VM instances</h3>
-<div class="outline-text-3" id="text-orgde6c9c3">
+<div id="outline-container-org63db551" class="outline-3">
+<h3 id="org63db551">Using specific VM instances</h3>
+<div class="outline-text-3" id="text-org63db551">
 <p>
 I signed up for Google Cloud's free trial, 90 days and $300 (£281)
 of credit. Then set up a specific project in which to run the
@@ -430,9 +430,9 @@ the notebook remembers the VM it's connected to.
 </div>
 </div>
 
-<div id="outline-container-org316587a" class="outline-3">
-<h3 id="org316587a">Experiments on specific instances</h3>
-<div class="outline-text-3" id="text-org316587a">
+<div id="outline-container-org2e80d68" class="outline-3">
+<h3 id="org2e80d68">Experiments on specific instances</h3>
+<div class="outline-text-3" id="text-org2e80d68">
 <p>
 Running the same experiments as above on different instances gives:
 </p>
@@ -518,9 +518,9 @@ super-linear speed-up "in reality".
 </div>
 </div>
 
-<div id="outline-container-org12abeb7" class="outline-3">
-<h3 id="org12abeb7">Running larger problems</h3>
-<div class="outline-text-3" id="text-org12abeb7">
+<div id="outline-container-org565f7fb" class="outline-3">
+<h3 id="org565f7fb">Running larger problems</h3>
+<div class="outline-text-3" id="text-org565f7fb">
 <p>
 For more of a soak test, we can run the same SIR experiment but
 using a larger ER network (\(10^5\) nodes, \(\langle k \rangle =
@@ -627,9 +627,9 @@ The performance on the standard runtime for comparison is:
 </div>
 </div>
 
-<div id="outline-container-org6344260" class="outline-3">
-<h3 id="org6344260">Costs</h3>
-<div class="outline-text-3" id="text-org6344260">
+<div id="outline-container-orgac85598" class="outline-3">
+<h3 id="orgac85598">Costs</h3>
+<div class="outline-text-3" id="text-orgac85598">
 <p>
 Doing all the above experiments used rather less than £10 of the
 budget for my free trial – although I was very careful not to
@@ -644,9 +644,9 @@ and then tear-down the infrastructure using a script.
 </div>
 </div>
 
-<div id="outline-container-orgb766671" class="outline-3">
-<h3 id="orgb766671">Experiences: Good and not-so-good</h3>
-<div class="outline-text-3" id="text-orgb766671">
+<div id="outline-container-orgec745f4" class="outline-3">
+<h3 id="orgec745f4">Experiences: Good and not-so-good</h3>
+<div class="outline-text-3" id="text-orgec745f4">
 <p>
 Good:
 </p>

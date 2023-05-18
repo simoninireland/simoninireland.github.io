@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about python)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Dec 2022 17:42:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6138f82" class="outline-2"&gt;
-&lt;h2 id="org6138f82"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6138f82"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about python)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 18 May 2023 08:05:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1a587f5" class="outline-2"&gt;
+&lt;h2 id="org1a587f5"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a587f5"&gt;
 &lt;p&gt;
 I've been thinking about running &lt;a href="https://jupyter.org"&gt;Jupyter notebooks&lt;/a&gt; in the cloud for
 some fairly compute-intensive simulation. Specifically I want to do
@@ -11,9 +11,9 @@ Using the cloud would make things easier to scale-out, especially
 for those without access to a local compute cluster.
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cloud computing</category><category>computational science</category><category>epydemic</category><category>jupyter</category><category>python</category><guid>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</guid><pubDate>Fri, 02 Dec 2022 16:36:55 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org547bc84" class="outline-2"&gt;
-&lt;h2 id="org547bc84"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org547bc84"&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cloud computing</category><category>computational science</category><category>epydemic</category><category>jupyter</category><category>python</category><guid>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</guid><pubDate>Fri, 02 Dec 2022 16:36:55 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07b29d6" class="outline-2"&gt;
+&lt;h2 id="org07b29d6"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07b29d6"&gt;
 &lt;p&gt;
 The &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/"&gt;Jinja2&lt;/a&gt; template engine defines a suite of &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters"&gt;filters&lt;/a&gt; that can be
 used to transform text as it's rendered. You can define extra custom

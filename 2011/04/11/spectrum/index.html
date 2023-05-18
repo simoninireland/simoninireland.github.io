@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2011/04/11/spectrum/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../../03/23/situations/" title="The next challenges for situation recognition" type="text/html">
 <link rel="next" href="../../27/valuable/" title="Some data is just too valuable" type="text/html">
@@ -37,7 +37,8 @@
 <meta property="og:description" content="Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.
 
 
-Most of my work">
+
+Most of my wor">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2011-04-11T19:00:43+01:00">
 <meta property="article:tag" content="arduino">
@@ -152,19 +153,27 @@ Most of my work">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.</p>
+      <p>Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.
+
 <!--more-->
 
-<p>Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that's actually somewhat <em>less</em> capable than many of the nodes we work with. They're basically a hobbyist platform and are often looked down upon by professionals as being toys.</p>
-<p>I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren't needed in many applications. Secondly, unlike a lot of sensor network hardware, they're <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function -- co-ordination -- and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.</p>
-<p>In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I'm reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That's an interesting story for another time.)</p>
-<p>One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi's range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that's great for sensor systems, and I'm looking forward to understanding them better,</p>
-<p>However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-CTU)  only runs on Windows. As might not be a complete surprise, I don't have any Windows machines.</p>
-<p>I doubt I'm unusual in this: if you're the sort of person who's likely to play around with hobbyist hardware, there's a reasonable chance that you run Linux and/or Mac OS X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.</p>
-<p>By a strange quirk I also don't have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-CTU under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone PC on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-CTU -- all to change the firmware on a radio with significantly less computational power than a central heating thermostat.</p>
-<p>It's things like this that make one realise how ludicrously, insanely overpowered modern computers are.</p>
-<p>The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it's a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap -- so cheap that it's not worth worrying about it, and we haven't come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain -- and <a href="../../../../2010/03/things-that-wont-change/">I think it is</a> -- it's something we need to consider in the ways we teach computer science.</p>
+Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that's actually somewhat <em>less</em> capable than many of the nodes we work with. They're basically a hobbyist platform and are often looked down upon by professionals as being toys.
+
+I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren't needed in many applications. Secondly, unlike a lot of sensor network hardware, they're <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function -- co-ordination -- and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.
+
+In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I'm reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That's an interesting story for another time.)
+
+One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi's range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that's great for sensor systems, and I'm looking forward to understanding them better,
+
+However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-CTU)  only runs on Windows. As might not be a complete surprise, I don't have any Windows machines.
+
+I doubt I'm unusual in this: if you're the sort of person who's likely to play around with hobbyist hardware, there's a reasonable chance that you run Linux and/or Mac OS X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.
+
+By a strange quirk I also don't have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-CTU under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone PC on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-CTU -- all to change the firmware on a radio with significantly less computational power than a central heating thermostat.
+
+It's things like this that make one realise how ludicrously, insanely overpowered modern computers are.
+
+The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it's a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap -- so cheap that it's not worth worrying about it, and we haven't come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain -- and <a href="../../../../2010/03/things-that-wont-change/">I think it is</a> -- it's something we need to consider in the ways we teach computer science.</p>
     </div>
 
       <div class="socialsharing">

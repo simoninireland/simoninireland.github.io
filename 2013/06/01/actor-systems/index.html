@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2013/06/01/actor-systems/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../sample-post-title/" title="Sample post title" type="text/html">
 <link rel="next" href="../../19/ditch-motivation/" title="The ditch project: a motivation" type="text/html">
@@ -35,7 +35,8 @@
 <meta property="og:title" content="Actor systems">
 <meta property="og:url" content="https://simondobson.org/2013/06/01/actor-systems/">
 <meta property="og:description" content="In computer science, an actor system is a way of building programs that are very concurrent and very amenable to scheduling and management.
-The idea of an actor system goes back to the PhD work of Gul">
+
+The idea of an actor system goes back to the PhD work of Gu">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-06-01T19:29:28+01:00">
 <meta property="article:tag" content="actors">
@@ -148,15 +149,21 @@ The idea of an actor system goes back to the PhD work of Gul">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.</p>
-<p>The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.</p>
-<p>The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)</p>
-<p>The complexity of the system is clearly going to come from how the behaviours are selected an scheduled. The model says very little about scheduling, leaving the implementation to decide when to process messages (by running the behaviour of the associated actor). A single-threaded implementation might repeatedly select a mailbox at random, check whether it contained messages and, if so, process one. A multi-threaded implementation could have one thread per mailbox running behaviours as messages arrive. There are plenty of other possibilities in between: the point is that an actor program doesn't <em>control</em> the concurrency, it simply <em>induces</em> it by the way it creates actors and sends messages.</p>
-<p>A system without unbounded loops can't express general computation, but actor systems do allow unbounded computation: they simply force the programmer to create it using communicating actors. An actor wanting to loop forever could, for example, receive a message, perform some processing, send another message to itself (its own mailbox), and then nominate itself as its own replacement behaviour, which would then receive the self-sent message, and so forth.</p>
-<p>If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a></p>
-<p>It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.</p>
-<p></p>
+      <p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.
+
+The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.
+
+The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message's contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor's last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)
+
+The complexity of the system is clearly going to come from how the behaviours are selected an scheduled. The model says very little about scheduling, leaving the implementation to decide when to process messages (by running the behaviour of the associated actor). A single-threaded implementation might repeatedly select a mailbox at random, check whether it contained messages and, if so, process one. A multi-threaded implementation could have one thread per mailbox running behaviours as messages arrive. There are plenty of other possibilities in between: the point is that an actor program doesn't <em>control</em> the concurrency, it simply <em>induces</em> it by the way it creates actors and sends messages.
+
+A system without unbounded loops can't express general computation, but actor systems do allow unbounded computation: they simply force the programmer to create it using communicating actors. An actor wanting to loop forever could, for example, receive a message, perform some processing, send another message to itself (its own mailbox), and then nominate itself as its own replacement behaviour, which would then receive the self-sent message, and so forth.
+
+If the actor model sounds restrictive, that's because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn't preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a>
+
+It's easy to build something that looks roughly like an actor system in a general-purpose programming language -- and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can't guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs on.
+
+ </p>
     </div>
 
       <div class="socialsharing">

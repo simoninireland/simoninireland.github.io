@@ -22,12 +22,12 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
 <link rel="canonical" href="https://simondobson.org/2013/07/31/big-rich/">
 <link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script><script>
+<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script><meta name="author" content="Simon Dobson">
 <link rel="prev" href="../../26/improvements/" title="Some improvements to SleepySketch" type="text/html">
 <link rel="next" href="../power/" title="Basic power measurements" type="text/html">
@@ -37,7 +37,8 @@
 <meta property="og:description" content="The current focus on &quot;big data&quot; may be obscuring something more interesting: it's often not the pure size of a dataset that's important.
 
 
-The idea of extracting insight from large bodies of data prom">
+
+The idea of extracting insight from large bodies of data pro">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2013-07-31T14:58:49+01:00">
 <meta property="article:tag" content="big data">
@@ -150,11 +151,11 @@ The idea of extracting insight from large bodies of data prom">
 
     </div>
   </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p></p>
-<p>The current focus on "big data" may be obscuring something more interesting: it's often not the pure size of a dataset that's important.</p>
+      <p>The current focus on "big data" may be obscuring something more interesting: it's often not the pure size of a dataset that's important.
+
 <!--more-->
 
-<p>The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, "big data" techniques cover a number of possible approaches:
+The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, "big data" techniques cover a number of possible approaches:
 </p>
 <ul>
 <li>Look through the data for recurring patterns (data mining)</li>
@@ -162,15 +163,22 @@ The idea of extracting insight from large bodies of data prom">
     <li>(Less commonly) Identify automatically from the dataset what's happening in the real world (situation recognition)</li>
 </ul>
 There's a wealth of <a href="http://data.gov.uk/" target="_blank">UK government data available</a>, for example. Making it machine-readable means it can be presented in different ways, for example <a href="http://www.telegraph.co.uk/news/uknews/crime/8294450/Crime-maps-are-just-the-beginning.html" target="_blank">geographically</a>. The real opportunities seem to come from cross-overs between datasets, though, where they can be mined and manipulated to find relationships that might otherwise remain hidden, for example the effects of crime on house prices.
-<p>Although the size and availability of datasets clearly makes a difference here -- big open data -- we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.</p>
-<p><em>Big data</em> is a strange name to start with: when is data "big"? The only meaningful definition I can think of is "a dataset that's large relative to the current computing and storage capacity being deployed against it" -- which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less "big" if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can't readily name a science that <em>isn't</em> based on data. (This isn't just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren't, covered by big data/data science research.)</p>
-<p>It's worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there's an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won't reliably help you to distinguish between these options without further, non-data-driven insight.</p>
-<p>Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you're trying to relate data to the the real world, it's essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it's the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).</p>
-<p>Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset -- because they look indistinguishably alike -- the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don't</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.</p>
-<p>I've been struggling to think of an example of this idea, and this is the best I've come up with (and it's not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.</p>
-<p>There's a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he's actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it's increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.</p>
-<p>Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people's actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.</p>
-<p></p>
+
+Although the size and availability of datasets clearly makes a difference here -- big open data -- we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.
+
+<em>Big data</em> is a strange name to start with: when is data "big"? The only meaningful definition I can think of is "a dataset that's large relative to the current computing and storage capacity being deployed against it" -- which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less "big" if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can't readily name a science that <em>isn't</em> based on data. (This isn't just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren't, covered by big data/data science research.)
+
+It's worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there's an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won't reliably help you to distinguish between these options without further, non-data-driven insight.
+
+Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you're trying to relate data to the the real world, it's essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it's the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).
+
+Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset -- because they look indistinguishably alike -- the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don't</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.
+
+I've been struggling to think of an example of this idea, and this is the best I've come up with (and it's not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.
+
+There's a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he's actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it's increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.
+
+Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people's actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.
     </div>
 
       <div class="socialsharing">
