@@ -288,19 +288,20 @@ PARAMS should contain a key ':file' pointing to a bibfile that will be presented
 			(t
 			 (error "No :file specified"))))
 	 (csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE")))
+	 (this-year (nth 5 (decode-time)))
 	 (bib (with-temp-buffer
-	       ;; cycle back through the years
-	       ;; (needs to be made more automatic)
-	       ;; (also needs to be forward or backwards)
-	       (dolist (year (number-sequence 2022 1991 -1))
-		 (let ((bibyear (sd/parsebib--create-bibliography-year 'org year bibfile csl-style-locale)))
-		   (insert (format "\n** %d\n" year))
-		   (newline)
-		   (insert bibyear)
-		   (newline)))
+		;; cycle back through the years
+		;; (needs to be made more automatic)
+		;; (also needs to be forward or backwards)
+		(dolist (year (number-sequence this-year 1991 -1))
+		  (let ((bibyear (sd/parsebib--create-bibliography-year 'org year bibfile csl-style-locale)))
+		    (insert (format "\n** %d\n" year))
+		    (newline)
+		    (insert bibyear)
+		    (newline)))
 
-	       ;; return the bibliography as a string
-	       (string-trim (buffer-string)))))
+		;; return the bibliography as a string
+		(string-trim (buffer-string)))))
     (insert bib)))
 
 

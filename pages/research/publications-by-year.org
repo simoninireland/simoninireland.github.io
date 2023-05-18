@@ -9,10 +9,16 @@
 #+begin: sd/bibliography :key category :value submitted
 <<citeproc_bib_item_1>>Peter Mann, Lei Fang, and Simon Dobson.  /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
 
-<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Belief Propagation on Networks with Cliques and Chordless Cycles/. Submitted to Physical Review E.
+<<citeproc_bib_item_2>>Özgür Äkgün, Peter Mann, Christopher Jefferson, Ian Miguel, and Simon Dobson.  /Motif Covers for Message Passing on Graphs/. Submitted to the 29th Conference on Principles and Practice of Constraint Programming (CP 2023).
 #+end:
 
 #+begin: sd/bibliography-by-year :file /home/sd80/personal/dict/sd.bib
+** 2023
+
+<<citeproc_bib_item_1>>Simon Dobson and Peter Mann.  /[[https://simondobson.org/softcopy.uk-systems-23.pdf][Moving a Scientific Computing System to the Cloud]]/. In /7th UK System Research Challenges Workshop/. Co Durham, UK. 2023.
+
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.107.054303][Belief Propagation on Networks with Cliques and Chordless Cycles]]/. Physical Review E *107*. 2023.
+
 ** 2022
 
 <<citeproc_bib_item_1>>Simon Dobson.  /[[https://doi.org/10.5281/zenodo.7086246][Simplicial: Simplicial Topology in Python]]/. 2022. Python library.
@@ -367,7 +373,7 @@
 
 <<citeproc_bib_item_17>>Adrian K. Clear, Ross Shannon, Thomas Holland, Simon Dobson, Aaron Quigley, and Paddy Nixon.  /[[https://simondobson.org/softcopy/situvis.pdf][Situvis: Visualising Multivariate Context Information to Evaluate Situation Specifications]]/. In /Proceedings of the 2nd International Workshop on Ubiquitous Systems Evaluation (USE 2008)/. Seoul, KR. 2008.
 
-<<citeproc_bib_item_18>>Simon Dobson, Graeme Stevenson, Graham Williamson, Stephen Knox, Matthew Stabeler, Lorcan Coyle, Steve Neely, and Paddy Nixon.  /[[http://www.perada-magazine.eu/pdf/1262/1262.pdf][Construct: Towards a Community Middleware for Pervasive Computing]]/. PerAda Magazine. 2008.
+<<citeproc_bib_item_18>>Simon Dobson, Graeme Stevenson, Graham Williamson, Stephen Knox, Matthew Stabeler, Lorcan Coyle, Steve Neely, and Paddy Nixon.  /[[http://www.perada-magazine.eu/pdf/1262/1262.pdf][An Open-Source Infrastructure for Pervasive Computing]]/. PerAda Magazine. 2008.
 
 <<citeproc_bib_item_19>>Kieran Delaney and Simon Dobson.  /Augmenting Materials to Build Cooperating Objects/. In /Ambient Intelligence with Microsystems: Augmented Materials and Smart Objects/, pp.19–46. Kieran Delaney, editor. Volume 18 of Microsystems. Springer Verlag. ISBN 978-0-387-46293-9. 2008.
 

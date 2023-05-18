@@ -38,6 +38,7 @@ REQUIREMENTS = requirements.txt
 
 # Constructed diretories
 BUILD_DIR = output
+CACHE_DIOR = cache
 PLUGINS_DIR = plugins
 
 # Constructed files
@@ -139,4 +140,4 @@ clean:
 # Clean up the environment as well
 .PHONY: reallyclean
 reallyclean: clean
-	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS)
+	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS) $(CACHE_DIR)

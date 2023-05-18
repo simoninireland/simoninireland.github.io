@@ -92,14 +92,14 @@ TWITTER_CARD = {
 
 # Google Analytics tracker
 EXTRA_HEAD_DATA += '''
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10943215-1"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-10943215-1');
+  gtag('config', 'G-SKZTGFK4RJ');
 </script>
 '''
 
