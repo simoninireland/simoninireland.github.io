@@ -40,22 +40,34 @@ TRANSLATIONS = {
 TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 # Theming
-THEME = 'adolf'
-USE_BUNDLES = False
+#THEME = 'adolf'
+#USE_BUNDLES = False
+# NAVIGATION_LINKS = {
+#     DEFAULT_LANG: (
+#         ('/index.html', 'Home', 'fa fa-home'),
+#         ('/personal/', 'About me', 'fa fa-user'),
+#         ('/research/', 'Research', 'fa fa-lightbulb'),
+#         ('/development/projects/', 'Software', 'fa fa-cogs'),
+#         ('/writing/', 'Writing', 'fa fa-feather'),
+#         ('/personal/contact/', 'Contact', 'fa fa-info-circle'),
+#         ('/rss.xml', 'RSS', 'fa fa-rss'),
+#     )
+# }
+# FAVICONS = (
+#     ("icon", "/images/favicon.png", "32x32"),
+# )
+THEME = "libretto-sd"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'fa fa-home'),
-        ('/personal/', 'About me', 'fa fa-user'),
-        ('/research/', 'Research', 'fa fa-lightbulb'),
-        ('/development/projects/', 'Software', 'fa fa-cogs'),
-        ('/writing/', 'Writing', 'fa fa-feather'),
-        ('/personal/contact/', 'Contact', 'fa fa-info-circle'),
-        ('/rss.xml', 'RSS', 'fa fa-rss'),
+        ('/index.html', 'Home'),
+        ('/personal/', 'About me'),
+        ('/research/', 'Research'),
+        ('/development/projects/', 'Software'),
+        ('/writing/', 'Writing'),
+        ('/personal/contact/', 'Contact'),
+        ('/rss.xml', 'RSS'),
     )
 }
-FAVICONS = (
-    ("icon", "/images/favicon.png", "32x32"),
-)
 
 
 # Post and page structure
@@ -77,31 +89,11 @@ PAGES = (
 )
 
 # Galleries
+GALLERIES_USE_THUMBNAIL = True
 GALLERY_SORT_BY_DATE = True
 PRESEVRE_EXIF_DATA = False
 EXIF_WHITELIST = {}
 PRESERVE_ICC_PROFILES = True
-
-# Twitter Cards
-TWITTER_CARD = {
-    'use_twitter_cards': True,
-    'card': 'summary',
-    'site': '@simoninireland',
-    'creator': '@simoninireland',
-}
-
-# Google Analytics tracker
-EXTRA_HEAD_DATA += '''
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
-'''
 
 # Allow the old-style $...$ syntax for inline MathJax maths
 MATHJAX_CONFIG = """
@@ -123,6 +115,7 @@ MathJax.Hub.Config({
 # Filters
 import datetime
 import dateparser
+from babel.dates import format_date
 
 def j2_dayonly_filter(d):
     '''Fix timestamps to only include the day on which something
@@ -132,7 +125,8 @@ def j2_dayonly_filter(d):
     :param d: the timestamp, as a string
     :returns: the timestamp string with only its day-month-year components'''
     ts = dateparser.parse(d)
-    return ts.strftime("%d %B %Y")
+    #return ts.strftime("%d %B %Y")
+    return format_date(ts, 'EEEE d MMMM, yyyy')
 
 TEMPLATE_FILTERS= {
     "dayonly":  j2_dayonly_filter
@@ -159,23 +153,23 @@ FEEDS = {
     }
 
 # Refill version: get all posts
-# FEEDS = {}
-# for p in range(1, 6):
-#     FEEDS['goodreads-{}'.format(p)] = {
-#         'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page={}'.format(p),
-#         'output_folder': 'posts/goodreads',
-#         'template': 'goodreads.tmpl',
-#         'format': 'html',
-#         'lang': 'en',
-#         'category': 'book-reviews',
-#         'tags': 'books',
-#         'metadata': {
-#             'title': 'title',
-#             'previewimage': 'book_medium_image_url',
-#             'date': ['user_read_at', 'user_date_added', 'published'],
-#             'tags': 'user_shelves',
-#             }
-#         }
+FEEDS = {}
+for p in range(1, 8):
+    FEEDS['goodreads-{}'.format(p)] = {
+        'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page={}'.format(p),
+        'output_folder': 'posts/goodreads',
+        'template': 'goodreads.tmpl',
+        'format': 'html',
+        'lang': 'en',
+        'category': 'book-reviews',
+        'tags': 'books',
+        'metadata': {
+            'title': 'title',
+            'previewimage': 'book_medium_image_url',
+            'date': ['user_read_at', 'user_date_added', 'published'],
+            'tags': 'user_shelves',
+            }
+        }
 
 # Tag cloud
 RENDER_STATIC_TAG_CLOUDS = {
@@ -192,10 +186,6 @@ RENDER_STATIC_TAG_CLOUDS = {
         'round_factor': 0.3,
     }
 }
-
-# Comments
-COMMENT_SYSTEM = 'disqus'
-COMMENT_SYSTEM_ID = "simoninireland"
 
 # Below this point, everything is optional
 
@@ -216,7 +206,8 @@ TIMEZONE = "Europe/London"
 # Date format used to display post dates. (translatable)
 # Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-DATE_FORMAT = 'yyyy-MM-dd HH:mm'
+#DATE_FORMAT = 'yyyy-MM-dd HH:mm'
+DATE_FORMAT = 'EEEE d MMMM, yyyy'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by moment.js: https://momentjs.com/docs/#/displaying/format/
@@ -229,8 +220,7 @@ DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 # 2 = using a string like “2 days ago”
 #
 # Your theme must support it, Bootstrap already does.
-# DATE_FANCINESS = 0
-DATE_FANCINESS = 2
+DATE_FANCINESS = 0
 
 # Customize the locale/region used for a language.
 # For example, to use British instead of US English: LOCALES = {'en': 'en_GB'}

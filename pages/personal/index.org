@@ -1,12 +1,9 @@
 # -*- org-attach-id-dir: "../../files/attachments"; -*-
-#+title: About me
 
-* About me                                                           :ATTACH:
+* Biography                                                          :ATTACH:
   :PROPERTIES:
   :ID:       7daa1dc8-9fa5-4fac-a23c-289f697e67e9
   :END:
-
-** Biography
 
   Simon Dobson is Professor of Computer Science in the [[https://www.st-andrews.ac.uk/computer-science/][School of
   Computer Science]] at the [[https://www.st-andrews.ac.uk][University of St Andrews]], and was Head of
@@ -16,7 +13,7 @@
   Simon works on complex and sensor systems, especially on sensor
   analytics and the modelling of complex processes. His research has
   generated over 150 internationally peer-reviewed [[link:/research/publications/][publications]],
-  driven by leadership roles in research grants worth over EUR30M --
+  driven by leadership roles in research grants worth over €30M --
   most recently as part of a £5M EPSRC-funded programme grant in the
   [[http://www.dcs.gla.ac.uk/research/S4/][Science of Sensor Systems Software]] He has served, amongst other
   activities, on the steering committee of the ACSOS conference; as
@@ -43,6 +40,6 @@
 
   [[link:/personal/contact/][Contact details]]
 
-** Other personal stuff
+* Other personal stuff
 
-   Some of my [[link:/galleries/][photography]] appears here occasionally.
+  Some of my [[link:/galleries/][photography]] appears here occasionally.

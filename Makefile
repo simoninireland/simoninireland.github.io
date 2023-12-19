@@ -1,5 +1,5 @@
 # Personal web site Makefile
-# Copyright (c) 2022 Simon Dobson <simoninireland@gmail.com>
+# Copyright (c) 2023 Simon Dobson <simoninireland@gmail.com>
 
 # Files needing copying on an import
 UPDATE_FILES = \

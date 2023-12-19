@@ -139,9 +139,14 @@ lang="{{ lang }}">
     {% endif %}
   {% endfor %}
   <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0"
-	  style="border-width:0" src="/images/cc-by-nc-sa-4.0.png"/>
+     <img alt="Creative Commons License CC-BY-NC-SA-4.0" width="100"
+	  style="border-width:0; padding-bottom: 0" src="/images/cc-by-nc-sa-4.0.png"/>
   </a>
+  <a href="http://emacs.org">
+     <img alt="Made with Emacs" width="100"
+	  style="border-width:0; padding-bottom: 0" src="/images/made-with-emacs.png"/>
+  </a>
+
   {{ template_hooks['menu']() }}
   {{ template_hooks['menu_alt']() }}
 {% endmacro %}

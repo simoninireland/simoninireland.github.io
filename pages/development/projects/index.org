@@ -1,17 +1,15 @@
-* Software development
+* Currently maintained projects
 
-** Currently maintained projects
+  - [[link:/development/projects/epydemic][epydemic]]: epidemic (and other) processes on networks (and other structures)
+  - [[link:/development/projects/simplicial][simplicial]]: representing simplicial complexes
+  - [[link:/development/projects/epyc][epyc]]: management and design for computational experiments
 
-   - [[link:/development/projects/epydemic][epydemic]]: epidemic (and other) processes on networks (and other structures)
-   - [[link:/development/projects/simplicial][simplicial]]: representing simplicial complexes
-   - [[link:/development/projects/epyc][epyc]]: management and design for computational experiments
+* Older un-maintained projects
 
-** Older un-maintained projects
-
-   - [[link:/development/projects/attila][Attila]]: a portable threaded-interpreted language in the spirit of
-     Forth
-   - [[link:/development/projects/citizen-sensing/][Citizen sensing]]: research and development notes from an
-     experiment in rural sensing using Arduinos
-   - [[link:/development/projects/sleepysketch][SleepySketch]]: an Arduino library for power-saving sketches
-   - [[link:/development/projects/vanilla][Vanilla]]: an experiment in compositional language design and
-     implementation
+  - [[link:/development/projects/attila][Attila]]: a portable threaded-interpreted language in the spirit of
+    Forth
+  - [[link:/development/projects/citizen-sensing/][Citizen sensing]]: research and development notes from an
+    experiment in rural sensing using Arduinos
+  - [[link:/development/projects/sleepysketch][SleepySketch]]: an Arduino library for power-saving sketches
+  - [[link:/development/projects/vanilla][Vanilla]]: an experiment in compositional language design and
+    implementation

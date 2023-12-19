@@ -26,29 +26,10 @@
 
 ;;; Commentary:
 
-;; A script to update all ther dblocks in a set of files.
+;; A script to update all the dblocks in a set of files.
 
 ;;; Code:
 
-;; Load the dependencies
-(setq package-load-list '((s t)
-			  (f t)
-			  (dash t)
-			  (parsebib t)
-			  (org t)
-			  (htmlize t)
-			  (hydra t)
-			  (lv t)
-			  (avy t)
-			  (bibtex-completion t)
-			  (biblio-core t)
-			  (biblio t)
-			  (queue t)
-			  (string-inflection t)
-			  (ht t)
-			  (ox-pandoc t)
-			  (citeproc t)
-			  (org-ref t)))
 (package-initialize)
 
 (require 'org)

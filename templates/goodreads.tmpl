@@ -1,32 +1,27 @@
 {#  -*- coding: utf-8 -*- #}
 {% block content %}
   <div>
-    <h1>{{ item.title }}</h1>
     <div>
-      <div>
-	<img src='{{ item.book_medium_image_url }}' style='float: left; margin-right: 10px'>
-	<div>
-	  <h2>{{ item.author_name}}</h2>
-	  {% if item.book_published %}
-	    {{ item.book_published }}
-	  {% endif %}
-	  <p>
-	    <hr>
-	</div>
-      </div>
-      <p>
-	{{ item.user_review }}
-	<p>
-	  {{ item.user_rating }}/5.
-	  {% if item.user_read_at %}
-	    Finished {{ item.user_read_at|dayonly }}.
-	  {% elif item.user_date_added %}
-	    Finished {{ item.user_date_added|dayonly }}.
-	  {% elif item.published %}
-	    Finished {{ item.published|dayonly }}.
-	  {% endif %}
-	  <p>
-	    (Originally published on <a href="{{ item.link }}">Goodreads</a>.)
+      <img src='{{ item.book_medium_image_url }}' style='float: left; margin-right: 10px'>
+      <h2>
+	{{ item.author_name}}
+	{% if item.book_published %}
+	  ({{ item.book_published }})
+	{% endif %}
+      </h2>
     </div>
+    <p>
+      {{ item.user_review }}
+      <p>
+	{{ item.user_rating }}/5.
+	{% if item.user_read_at %}
+	  Finished {{ item.user_read_at|dayonly }}.
+	{% elif item.user_date_added %}
+	  Finished {{ item.user_date_added|dayonly }}.
+	{% elif item.published %}
+	  Finished {{ item.published|dayonly }}.
+	{% endif %}
+	<p>
+	  (Originally published on <a href="{{ item.link }}">Goodreads</a>.)
   </div>
 {% endblock %}
