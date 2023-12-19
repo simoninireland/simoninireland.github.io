@@ -8,6 +8,7 @@
     {% else %}
 	<title>{{ title|e }} | {{ blog_title|e }}</title>
     {% endif %}
+
     <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -20,6 +21,13 @@
 	    font-style: normal;
 	}
     </style>
+
+    {% if favicons %}
+	{% for name, file, size in favicons %}
+	    <link rel="{{ name }}" href="{{ file }}" sizes="{{ size }}"/>
+	{% endfor %}
+    {% endif %}
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display">
     <link rel="stylesheet" href="/assets/css/libretto_styles.css">
     <link rel="stylesheet" href="/assets/css/baguetteBox.min.css">
@@ -27,7 +35,7 @@
     <link rel="stylesheet" href="/assets/css/nikola_rst.css">
     <link rel="stylesheet" href="/assets/css/nikola_ipython.css">
 
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     {% block early_js %}{% endblock %}
 </head>

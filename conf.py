@@ -27,6 +27,11 @@ FEED_TEASERS = True
 GENERATE_RSS = True
 GENERATE_ATOM = False
 
+# Page icon
+FAVICONS = (
+    ("icon", "/images/favicon.png", "16x16"),
+)
+
 # Extra data for the page headers
 EXTRA_HEAD_DATA = ''
 
