@@ -1,576 +1,273 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2018 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2018/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2018</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2018</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="../goodreads/rosewater-the-wormwood-trilogy-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-12-29T04:36:25-08:00" title="2018-12-29 04:36">2018-12-29 04:36</time> 
-        
-	        Rosewater (The Wormwood Trilogy, #1)</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/noumenon-noumenon-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-12-29T04:33:17-08:00" title="2018-12-29 04:33">2018-12-29 04:33</time> 
-        
-	        Noumenon (Noumenon #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/his-bloody-project-documents-relating-to-the-case-of-roderick-macrae/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-12-02T08:57:20-08:00" title="2018-12-02 08:57">2018-12-02 08:57</time> 
-        
-	        His Bloody Project: Documents Relating to the Case of Roderick Macrae</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/poverty-safari/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:59:02-08:00" title="2018-11-17 06:59">2018-11-17 06:59</time> 
-        
-	        Poverty Safari</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/why-im-no-longer-talking-to-white-people-about-race/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:58:36-08:00" title="2018-11-17 06:58">2018-11-17 06:58</time> 
-        
-	        Why I'm No Longer Talking to White People About Race</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/debt-the-first-5000-years/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:54:20-08:00" title="2018-11-17 06:54">2018-11-17 06:54</time> 
-        
-	        Debt: The First 5,000 Years</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-path-between-the-seas-the-creation-of-the-panama-canal-1870-1914/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:53:21-08:00" title="2018-11-17 06:53">2018-11-17 06:53</time> 
-        
-	        The Path Between the Seas: The Creation of the Panama Canal, 1870-1914</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/mars-rover-curiosity-an-inside-account-from-curiositys-chief-engineer/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:50:32-08:00" title="2018-11-17 06:50">2018-11-17 06:50</time> 
-        
-	        Mars Rover Curiosity: An Inside Account from Curiosity's Chief Engineer</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/seven-brief-lessons-on-physics/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:47:48-08:00" title="2018-11-17 06:47">2018-11-17 06:47</time> 
-        
-	        Seven Brief Lessons on Physics</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/command-and-control/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:45:49-08:00" title="2018-11-17 06:45">2018-11-17 06:45</time> 
-        
-	        Command and Control</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-daily-stoic-366-meditations-on-wisdom-perseverance-and-the-art-of-living/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:43:37-08:00" title="2018-11-17 06:43">2018-11-17 06:43</time> 
-        
-	        The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-forever-war-the-forever-war-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:42:55-08:00" title="2018-11-17 06:42">2018-11-17 06:42</time> 
-        
-	        The Forever War (The Forever War, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/four-fields/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:40:15-08:00" title="2018-11-17 06:40">2018-11-17 06:40</time> 
-        
-	        Four Fields</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/orientalism/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:39:20-08:00" title="2018-11-17 06:39">2018-11-17 06:39</time> 
-        
-	        Orientalism</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-naked-god-nights-dawn-3/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:31:10-08:00" title="2018-11-17 06:31">2018-11-17 06:31</time> 
-        
-	        The Naked God (Night's Dawn, #3)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-neutronium-alchemist-nights-dawn-2/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-11-17T06:27:10-08:00" title="2018-11-17 06:27">2018-11-17 06:27</time> 
-        
-	        The Neutronium Alchemist (Night's Dawn, #2)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/musicophilia-tales-of-music-and-the-brain/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-10-05T05:42:15-07:00" title="2018-10-05 05:42">2018-10-05 05:42</time> 
-        
-	        Musicophilia: Tales of Music and the Brain</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/mistakes-were-made-but-not-by-me-why-we-justify-foolish-beliefs-bad-decisions-and-hurtful-acts/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-07-29T05:02:06-07:00" title="2018-07-29 05:02">2018-07-29 05:02</time> 
-        
-	        Mistakes Were Made (but Not by Me): Why We Justify Foolish Beliefs, Bad Decisions and Hurtful Acts</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-reality-dysfunction-nights-dawn-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-07-29T04:55:31-07:00" title="2018-07-29 04:55">2018-07-29 04:55</time> 
-        
-	        The Reality Dysfunction (Night's Dawn, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/utopia-for-realists-and-how-we-can-get-there/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-07-29T04:50:23-07:00" title="2018-07-29 04:50">2018-07-29 04:50</time> 
-        
-	        Utopia for Realists: And How We Can Get There</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/all-the-presidents-men/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-07-29T04:43:07-07:00" title="2018-07-29 04:43">2018-07-29 04:43</time> 
-        
-	        All the President's Men</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/killers-of-the-flower-moon-oil-money-murder-and-the-birth-of-the-fbi/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-26T12:58:42-07:00" title="2018-05-26 12:58">2018-05-26 12:58</time> 
-        
-	        Killers of the Flower Moon: Oil, Money, Murder and the Birth of the FBI</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/ada-lovelace-the-making-of-a-computer-scientist/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-26T06:19:22-07:00" title="2018-05-26 06:19">2018-05-26 06:19</time> 
-        
-	        Ada Lovelace: The Making of a Computer Scientist</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-house-of-belonging/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-26T01:57:03-07:00" title="2018-05-26 01:57">2018-05-26 01:57</time> 
-        
-	        The House of Belonging</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/24/citizen-sensing-with-arduino/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-24T13:26:34+01:00" title="2018-05-24 13:26">2018-05-24 13:26</time> 
-        
-	        Citizen sensing with Arduino</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/carpe-diem-seizing-the-day-in-a-distracted-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-10T13:59:58-07:00" title="2018-05-10 13:59">2018-05-10 13:59</time> 
-        
-	        Carpe Diem: Seizing the Day in a Distracted World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-looming-tower-al-qaedas-road-to-911/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-10T13:55:34-07:00" title="2018-05-10 13:55">2018-05-10 13:55</time> 
-        
-	        The Looming Tower: Al-Qaeda's Road to 9/11</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-aquatic-ape-hypothesis/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-10T13:49:03-07:00" title="2018-05-10 13:49">2018-05-10 13:49</time> 
-        
-	        The Aquatic Ape Hypothesis</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/abandoned-places-60-stories-of-places-where-time-stopped/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-10T13:38:58-07:00" title="2018-05-10 13:38">2018-05-10 13:38</time> 
-        
-	        Abandoned Places: 60 stories of places where time stopped</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/03/ecas-cfp/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-05-03T18:27:42+01:00" title="2018-05-03 18:27">2018-05-03 18:27</time> 
-        
-	        Call for papers: 3rd Workshop on Engineering Collective Adaptive Systems (eCAS 2018)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/40-sonnets/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-04-13T05:57:40-07:00" title="2018-04-13 05:57">2018-04-13 05:57</time> 
-        
-	        40 Sonnets</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/love-found-50-classic-poems-of-desire-longing-and-devotion/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-04-13T05:57:28-07:00" title="2018-04-13 05:57">2018-04-13 05:57</time> 
-        
-	        Love Found: 50 Classic Poems of Desire, Longing, and Devotion</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/norse-mythology/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-28T10:21:26-07:00" title="2018-03-28 10:21">2018-03-28 10:21</time> 
-        
-	        Norse Mythology</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-templars-the-rise-and-fall-of-gods-holy-warriors/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-25T08:15:32-07:00" title="2018-03-25 08:15">2018-03-25 08:15</time> 
-        
-	        The Templars: The Rise and Fall of God's Holy Warriors</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/16/s4-glasgow/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-16T12:29:26Z" title="2018-03-16 12:29">2018-03-16 12:29</time> 
-        
-	        Research fellow in verifiable sensor systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/09/cfp-saso2018/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-09T15:46:24Z" title="2018-03-09 15:46">2018-03-09 15:46</time> 
-        
-	        CfP: SASO 2018</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/venice-a-literary-guide-for-travellers/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-03T12:19:13-08:00" title="2018-03-03 12:19">2018-03-03 12:19</time> 
-        
-	        Venice: A Literary Guide for Travellers</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/fire-and-fury-inside-the-trump-white-house/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-03T12:16:09-08:00" title="2018-03-03 12:16">2018-03-03 12:16</time> 
-        
-	        Fire and Fury: Inside the Trump White House</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-book-of-iona-an-anthology/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-03-03T12:05:30-08:00" title="2018-03-03 12:05">2018-03-03 12:05</time> 
-        
-	        The Book of Iona: An Anthology</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/slow-professor-challenging-the-culture-of-speed-in-the-academy/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T07:13:25-08:00" title="2018-02-24 07:13">2018-02-24 07:13</time> 
-        
-	        Slow Professor: Challenging the Culture of Speed in the Academy</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-zoomable-universe-a-step-by-step-tour-through-cosmic-scale-from-the-infinite-to-the-infinitesimal/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T07:04:24-08:00" title="2018-02-24 07:04">2018-02-24 07:04</time> 
-        
-	        The Zoomable Universe: A Step-by-Step Tour Through Cosmic Scale, from the Infinite to the Infinitesimal</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-ancient-greeks-ten-ways-they-shaped-the-modern-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T06:59:19-08:00" title="2018-02-24 06:59">2018-02-24 06:59</time> 
-        
-	        The Ancient Greeks: Ten Ways They Shaped the Modern World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/culloden-scotlands-last-battle-and-the-forging-of-the-british-empire/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T06:54:57-08:00" title="2018-02-24 06:54">2018-02-24 06:54</time> 
-        
-	        Culloden: Scotland's Last Battle and the Forging of the British Empire</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-lonely-city-adventures-in-the-art-of-being-alone/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T06:48:11-08:00" title="2018-02-24 06:48">2018-02-24 06:48</time> 
-        
-	        The Lonely City: Adventures in the Art of Being Alone</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/verdun-the-longest-battle-of-the-great-war/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T06:41:24-08:00" title="2018-02-24 06:41">2018-02-24 06:41</time> 
-        
-	        Verdun: The Longest Battle of the Great War</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/homo-deus-a-history-of-tomorrow/" class="listtitle">
-        
-                <time class="listdate" datetime="2018-02-24T06:37:20-08:00" title="2018-02-24 06:37">2018-02-24 06:37</time> 
-        
-	        Homo Deus: A History of Tomorrow</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="../goodreads/rosewater-the-wormwood-trilogy-1/">Saturday 29 December, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/rosewater-the-wormwood-trilogy-1/">Rosewater (The Wormwood Trilogy, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/noumenon-noumenon-1/">Friday 21 December, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/noumenon-noumenon-1/">Noumenon (Noumenon, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/his-bloody-project-documents-relating-to-the-case-of-roderick-macrae/">Saturday 24 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/his-bloody-project-documents-relating-to-the-case-of-roderick-macrae/">His Bloody Project: Documents Relating to the Case of Roderick Macrae</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/poverty-safari/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/poverty-safari/">Poverty Safari</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/debt-the-first-5000-years/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/debt-the-first-5000-years/">Debt: The First 5000 Years</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/mars-rover-curiosity-an-inside-account-from-curiositys-chief-engineer/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/mars-rover-curiosity-an-inside-account-from-curiositys-chief-engineer/">Mars Rover Curiosity: An Inside Account from Curiosity's Chief Engineer</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/seven-brief-lessons-on-physics/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/seven-brief-lessons-on-physics/">Seven Brief Lessons on Physics</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/command-and-control/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/command-and-control/">Command and Control</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-daily-stoic-366-meditations-on-wisdom-perseverance-and-the-art-of-living/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-daily-stoic-366-meditations-on-wisdom-perseverance-and-the-art-of-living/">The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-forever-war-the-forever-war-1/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-forever-war-the-forever-war-1/">The Forever War (The Forever War, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/four-fields/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/four-fields/">Four Fields</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/orientalism/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/orientalism/">Orientalism</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-naked-god-nights-dawn-3/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-naked-god-nights-dawn-3/">The Naked God (Night's Dawn, #3)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-neutronium-alchemist-nights-dawn-2/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-neutronium-alchemist-nights-dawn-2/">The Neutronium Alchemist (Night's Dawn, #2)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/why-im-no-longer-talking-to-white-people-about-race/">Saturday 17 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/why-im-no-longer-talking-to-white-people-about-race/">Why I'm No Longer Talking to White People About Race</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-path-between-the-seas-the-creation-of-the-panama-canal-1870-1914/">Thursday 15 November, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-path-between-the-seas-the-creation-of-the-panama-canal-1870-1914/">The Path Between the Seas: The Creation of the Panama Canal, 1870-1914</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/musicophilia-tales-of-music-and-the-brain/">Friday 5 October, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/musicophilia-tales-of-music-and-the-brain/">Musicophilia: Tales of Music and the Brain</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-reality-dysfunction-nights-dawn-1/">Sunday 29 July, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-reality-dysfunction-nights-dawn-1/">The Reality Dysfunction (Night's Dawn, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/utopia-for-realists/">Sunday 29 July, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/utopia-for-realists/">Utopia For Realists</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/mistakes-were-made-but-not-by-me/">Saturday 28 July, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/mistakes-were-made-but-not-by-me/">Mistakes Were Made (But Not By Me)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/all-the-presidents-men/">Monday 11 June, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/all-the-presidents-men/">All the President's Men</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-house-of-belonging/">Saturday 26 May, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-house-of-belonging/">The House of Belonging</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/ada-lovelace-the-making-of-a-computer-scientist/">Saturday 26 May, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/ada-lovelace-the-making-of-a-computer-scientist/">Ada Lovelace: The Making of a Computer Scientist</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/24/citizen-sensing-with-arduino/">Thursday 24 May, 2018</a></td>
+				<td style="text-align:center"><a href="05/24/citizen-sensing-with-arduino/">Citizen sensing with Arduino</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/killers-of-the-flower-moon-oil-money-murder-and-the-birth-of-the-fbi/">Thursday 24 May, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/killers-of-the-flower-moon-oil-money-murder-and-the-birth-of-the-fbi/">Killers of the Flower Moon: Oil, Money, Murder and the Birth of the FBI</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/abandoned-places-60-stories-of-places-where-time-stopped/">Thursday 10 May, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/abandoned-places-60-stories-of-places-where-time-stopped/">Abandoned Places: 60 Stories of Places Where Time Stopped</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-aquatic-ape-hypothesis/">Thursday 10 May, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-aquatic-ape-hypothesis/">The Aquatic Ape Hypothesis</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/03/ecas-cfp/">Thursday 3 May, 2018</a></td>
+				<td style="text-align:center"><a href="05/03/ecas-cfp/">Call for papers: 3rd Workshop on Engineering Collective Adaptive Systems (eCAS 2018)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/carpe-diem-seizing-the-day-in-a-distracted-world/">Wednesday 25 April, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/carpe-diem-seizing-the-day-in-a-distracted-world/">Carpe Diem: Seizing the Day in a Distracted World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/40-sonnets/">Friday 13 April, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/40-sonnets/">40 Sonnets</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/love-found-50-classic-poems-of-desire-longing-and-devotion/">Friday 13 April, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/love-found-50-classic-poems-of-desire-longing-and-devotion/">Love Found: 50 Classic Poems of Desire, Longing, and Devotion</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-looming-tower-al-qaedas-road-to-911/">Wednesday 11 April, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-looming-tower-al-qaedas-road-to-911/">The Looming Tower: Al-Qaeda's Road to 9/11</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/norse-mythology/">Tuesday 27 March, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/norse-mythology/">Norse Mythology</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-templars-the-rise-and-fall-of-gods-holy-warriors/">Saturday 24 March, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-templars-the-rise-and-fall-of-gods-holy-warriors/">The Templars: The Rise and Fall of God's Holy Warriors</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/16/s4-glasgow/">Friday 16 March, 2018</a></td>
+				<td style="text-align:center"><a href="03/16/s4-glasgow/">Research fellow in verifiable sensor systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/09/cfp-saso2018/">Friday 9 March, 2018</a></td>
+				<td style="text-align:center"><a href="03/09/cfp-saso2018/">CfP: SASO 2018</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/venice-a-literary-guide-for-travellers-the-ibtauris-literary-guides-for-travellers/">Saturday 3 March, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/venice-a-literary-guide-for-travellers-the-ibtauris-literary-guides-for-travellers/">Venice: A Literary Guide for Travellers (The I.B.Tauris Literary Guides for Travellers)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/fire-and-fury-inside-the-trump-white-house/">Friday 2 March, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/fire-and-fury-inside-the-trump-white-house/">Fire and Fury: Inside the Trump White House</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-book-of-iona-an-anthology/">Tuesday 27 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-book-of-iona-an-anthology/">The Book of Iona: An Anthology</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-lonely-city-adventures-in-the-art-of-being-alone/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-lonely-city-adventures-in-the-art-of-being-alone/">The Lonely City: Adventures in the Art of Being Alone</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/verdun-the-longest-battle-of-the-great-war/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/verdun-the-longest-battle-of-the-great-war/">Verdun: The Longest Battle of the Great War</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/culloden-scotlands-last-battle-and-the-forging-of-the-british-empire/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/culloden-scotlands-last-battle-and-the-forging-of-the-british-empire/">Culloden: Scotland's Last Battle and the Forging of the British Empire</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/homo-deus-a-history-of-tomorrow/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/homo-deus-a-history-of-tomorrow/">Homo Deus: A History of Tomorrow</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/slow-professor-challenging-the-culture-of-speed-in-the-academy/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/slow-professor-challenging-the-culture-of-speed-in-the-academy/">Slow Professor: Challenging the Culture of Speed in the Academy</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-ancient-greeks-ten-ways-they-shaped-the-modern-world/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-ancient-greeks-ten-ways-they-shaped-the-modern-world/">The Ancient Greeks: Ten Ways They Shaped the Modern World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-zoomable-universe-a-step-by-step-tour-through-cosmic-scale-from-the-infinite-to-the-infinitesimal/">Saturday 24 February, 2018</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-zoomable-universe-a-step-by-step-tour-through-cosmic-scale-from-the-infinite-to-the-infinitesimal/">The Zoomable Universe: A Step-by-Step Tour Through Cosmic Scale, from the Infinite to the Infinitesimal</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

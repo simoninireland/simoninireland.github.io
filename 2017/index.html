@@ -1,406 +1,209 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2017 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2017/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2017</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2017</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="../goodreads/the-spider-network-the-wild-story-of-a-math-genius-a-gang-of-backstabbing-bankers-and-one-of-the-greatest-scams-in-financial-history/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T04:25:34-08:00" title="2017-11-11 04:25">2017-11-11 04:25</time> 
-        
-	        The Spider Network: The Wild Story of a Math Genius, a Gang of Backstabbing Bankers, and One of the Greatest Scams in Financial History</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/hillbilly-elegy-a-memoir-of-a-family-and-culture-in-crisis/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T04:18:34-08:00" title="2017-11-11 04:18">2017-11-11 04:18</time> 
-        
-	        Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/i-contain-multitudes-the-microbes-within-us-and-a-grander-view-of-life/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T04:11:13-08:00" title="2017-11-11 04:11">2017-11-11 04:11</time> 
-        
-	        I Contain Multitudes: The Microbes Within Us and a Grander View of Life</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-collapsing-empire-the-interdependency-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T04:07:27-08:00" title="2017-11-11 04:07">2017-11-11 04:07</time> 
-        
-	        The Collapsing Empire (The Interdependency, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/plutopia-nuclear-families-atomic-cities-and-the-great-soviet-and-american-plutonium-disasters/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T04:05:38-08:00" title="2017-11-11 04:05">2017-11-11 04:05</time> 
-        
-	        Plutopia: Nuclear Families, Atomic Cities, and the Great Soviet and American Plutonium Disasters</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/on-tyranny-twenty-lessons-from-the-twentieth-century/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T03:42:32-08:00" title="2017-11-11 03:42">2017-11-11 03:42</time> 
-        
-	        On Tyranny: Twenty Lessons from the Twentieth Century</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/we-know-all-about-you-the-story-of-surveillance-in-britain-and-america/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-11-11T03:42:15-08:00" title="2017-11-11 03:42">2017-11-11 03:42</time> 
-        
-	        We Know All About You: The Story of Surveillance in Britain and America</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/adults-in-the-room-my-battle-with-europes-deep-establishment/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-08-24T10:21:00-07:00" title="2017-08-24 10:21">2017-08-24 10:21</time> 
-        
-	        Adults in the Room: My Battle with Europe's Deep Establishment</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/sapiens-a-brief-history-of-humankind/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-08-20T06:32:34-07:00" title="2017-08-20 06:32">2017-08-20 06:32</time> 
-        
-	        Sapiens: A Brief History of Humankind</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-stars-are-legion/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-07-17T00:00:00-07:00" title="2017-07-17 00:00">2017-07-17 00:00</time> 
-        
-	        The Stars Are Legion</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/reality-is-not-what-it-seems-the-journey-to-quantum-gravity/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-07-12T00:00:00-07:00" title="2017-07-12 00:00">2017-07-12 00:00</time> 
-        
-	        Reality is Not What it Seems: The Journey to Quantum Gravity</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/phishing-for-phools-the-economics-of-manipulation-and-deception/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-07-03T13:16:26-07:00" title="2017-07-03 13:16">2017-07-03 13:16</time> 
-        
-	        Phishing for Phools: The Economics of Manipulation and Deception</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/how-to-live-a-life-of-montaigne-in-one-question-and-twenty-attempts-at-an-answer/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-06-29T13:22:09-07:00" title="2017-06-29 13:22">2017-06-29 13:22</time> 
-        
-	        How to Live: A Life of Montaigne in One Question and Twenty Attempts at an Answer</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/station-eleven/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-30T00:00:00-07:00" title="2017-05-30 00:00">2017-05-30 00:00</time> 
-        
-	        Station Eleven</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/28/academic-positions/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-28T16:17:36+01:00" title="2017-05-28 16:17">2017-05-28 16:17</time> 
-        
-	        2 Lecturer/Senior Lecturer positions at St Andrews</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/strangers-drowning-voyages-to-the-brink-of-moral-extremity/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-26T00:00:00-07:00" title="2017-05-26 00:00">2017-05-26 00:00</time> 
-        
-	        Strangers Drowning: Voyages to the Brink of Moral Extremity</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/10/proximal-sensing-ucd/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-10T09:01:25+01:00" title="2017-05-10 09:01">2017-05-10 09:01</time> 
-        
-	        PhD position in proximal sensing available at UCD Dublin</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/09/s4-postdoc/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-09T14:33:14+01:00" title="2017-05-09 14:33">2017-05-09 14:33</time> 
-        
-	        3-year postdoctoral researcher post available</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-man-who-mistook-his-wife-for-a-hat/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-05-02T00:00:00-07:00" title="2017-05-02 00:00">2017-05-02 00:00</time> 
-        
-	        The Man Who Mistook His Wife for a Hat</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/wavewatchers-companion/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-04-14T11:25:54-07:00" title="2017-04-14 11:25">2017-04-14 11:25</time> 
-        
-	        Wavewatcher's Companion</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-scottish-islands-a-comprehensive-guide-to-every-scottish-island/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-04-05T12:14:29-07:00" title="2017-04-05 12:14">2017-04-05 12:14</time> 
-        
-	        The Scottish Islands: A Comprehensive Guide to Every Scottish Island</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/amusing-ourselves-to-death-public-discourse-in-the-age-of-show-business/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-03-28T00:00:00-07:00" title="2017-03-28 00:00">2017-03-28 00:00</time> 
-        
-	        Amusing Ourselves to Death: Public Discourse in the Age of Show Business</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/spirit-of-place/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-03-26T00:00:00-07:00" title="2017-03-26 00:00">2017-03-26 00:00</time> 
-        
-	        Spirit of Place</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-world-until-yesterday/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-03-16T00:00:00-07:00" title="2017-03-16 00:00">2017-03-16 00:00</time> 
-        
-	        The World Until Yesterday</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-better-angels-of-our-nature-a-history-of-violence-and-humanity/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-03-04T00:00:00-08:00" title="2017-03-04 00:00">2017-03-04 00:00</time> 
-        
-	        The Better Angels of Our Nature: A History of Violence and Humanity</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-03-01T18:33:45Z" title="2017-03-01 18:33">2017-03-01 18:33</time> 
-        
-	        Call for papers: 11th IEEE International Conference on Self-Adaptive and Self-Organizing Systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/27/fas-2017-call-for-workshops/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-02-27T14:24:08Z" title="2017-02-27 14:24">2017-02-27 14:24</time> 
-        
-	        FAS* 2017 Call for Workshops</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-secret-war-spies-codes-and-guerrillas-1939-1945/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-01-31T00:00:00-08:00" title="2017-01-31 00:00">2017-01-31 00:00</time> 
-        
-	        The Secret War: Spies, Codes and Guerrillas 1939–1945</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-dispossessed/" class="listtitle">
-        
-                <time class="listdate" datetime="2017-01-27T00:00:00-08:00" title="2017-01-27 00:00">2017-01-27 00:00</time> 
-        
-	        The Dispossessed</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-spider-network-the-wild-story-of-a-math-genius-a-gang-of-backstabbing-bankers-and-one-of-the-greatest-scams-in-financial-history/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-spider-network-the-wild-story-of-a-math-genius-a-gang-of-backstabbing-bankers-and-one-of-the-greatest-scams-in-financial-history/">The Spider Network: The Wild Story of a Math Genius, a Gang of Backstabbing Bankers, and One of the Greatest Scams in Financial History</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/hillbilly-elegy-a-memoir-of-a-family-and-culture-in-crisis/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/hillbilly-elegy-a-memoir-of-a-family-and-culture-in-crisis/">Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/i-contain-multitudes-the-microbes-within-us-and-a-grander-view-of-life/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/i-contain-multitudes-the-microbes-within-us-and-a-grander-view-of-life/">I Contain Multitudes: The Microbes Within Us and a Grander View of Life</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/on-tyranny-twenty-lessons-from-the-twentieth-century/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/on-tyranny-twenty-lessons-from-the-twentieth-century/">On Tyranny: Twenty Lessons from the Twentieth Century</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/plutopia-nuclear-families-atomic-cities-and-the-great-soviet-and-american-plutonium-disasters/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/plutopia-nuclear-families-atomic-cities-and-the-great-soviet-and-american-plutonium-disasters/">Plutopia: Nuclear Families, Atomic Cities, and the Great Soviet and American Plutonium Disasters</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-collapsing-empire-the-interdependency-1/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-collapsing-empire-the-interdependency-1/">The Collapsing Empire (The Interdependency, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/we-know-all-about-you-the-story-of-surveillance-in-britain-and-america/">Saturday 11 November, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/we-know-all-about-you-the-story-of-surveillance-in-britain-and-america/">We Know All About You: The Story of Surveillance in Britain and America</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/adults-in-the-room-my-battle-with-europes-deep-establishment/">Thursday 24 August, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/adults-in-the-room-my-battle-with-europes-deep-establishment/">Adults in the Room: My Battle with Europe's Deep Establishment</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/sapiens-a-brief-history-of-humankind/">Sunday 20 August, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/sapiens-a-brief-history-of-humankind/">Sapiens: A Brief History of Humankind</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-stars-are-legion/">Monday 17 July, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-stars-are-legion/">The Stars Are Legion</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/reality-is-not-what-it-seems-the-journey-to-quantum-gravity/">Wednesday 12 July, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/reality-is-not-what-it-seems-the-journey-to-quantum-gravity/">Reality is Not What it Seems: The Journey to Quantum Gravity</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/phishing-for-phools-the-economics-of-manipulation-and-deception/">Monday 3 July, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/phishing-for-phools-the-economics-of-manipulation-and-deception/">Phishing for Phools: The Economics of Manipulation and Deception</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/how-to-live-a-life-of-montaigne-in-one-question-and-twenty-attempts-at-an-answer/">Thursday 29 June, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/how-to-live-a-life-of-montaigne-in-one-question-and-twenty-attempts-at-an-answer/">How to Live: A Life of Montaigne in One Question and Twenty Attempts at an Answer</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/strangers-drowning/">Sunday 4 June, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/strangers-drowning/">Strangers Drowning</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/station-eleven/">Tuesday 30 May, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/station-eleven/">Station Eleven</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/28/academic-positions/">Sunday 28 May, 2017</a></td>
+				<td style="text-align:center"><a href="05/28/academic-positions/">2 Lecturer/Senior Lecturer positions at St Andrews</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/10/proximal-sensing-ucd/">Wednesday 10 May, 2017</a></td>
+				<td style="text-align:center"><a href="05/10/proximal-sensing-ucd/">PhD position in proximal sensing available at UCD Dublin</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/09/s4-postdoc/">Tuesday 9 May, 2017</a></td>
+				<td style="text-align:center"><a href="05/09/s4-postdoc/">3-year postdoctoral researcher post available</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-man-who-mistook-his-wife-for-a-hat/">Tuesday 2 May, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-man-who-mistook-his-wife-for-a-hat/">The Man Who Mistook His Wife for a Hat</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-scottish-islands-the-bestselling-guide-to-every-scottish-island/">Friday 14 April, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-scottish-islands-the-bestselling-guide-to-every-scottish-island/">The Scottish Islands: The Bestselling Guide to Every Scottish Island</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/wavewatchers-companion/">Thursday 13 April, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/wavewatchers-companion/">Wavewatcher's Companion</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-scottish-islands-a-comprehensive-guide-to-every-scottish-island/">Wednesday 5 April, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-scottish-islands-a-comprehensive-guide-to-every-scottish-island/">The Scottish Islands: A Comprehensive Guide to Every Scottish Island</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/amusing-ourselves-to-death-public-discourse-in-the-age-of-show-business/">Tuesday 28 March, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/amusing-ourselves-to-death-public-discourse-in-the-age-of-show-business/">Amusing Ourselves to Death: Public Discourse in the Age of Show Business</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/spirit-of-place/">Sunday 26 March, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/spirit-of-place/">Spirit of Place</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-world-until-yesterday/">Thursday 16 March, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-world-until-yesterday/">The World Until Yesterday</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-better-angels-of-our-nature-a-history-of-violence-and-humanity/">Saturday 4 March, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-better-angels-of-our-nature-a-history-of-violence-and-humanity/">The Better Angels of Our Nature: A History of Violence and Humanity</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/">Wednesday 1 March, 2017</a></td>
+				<td style="text-align:center"><a href="03/01/call-for-papers-11th-ieee-international-conference-on-self-adaptive-and-self-organizing-systems/">Call for papers: 11th IEEE International Conference on Self-Adaptive and Self-Organizing Systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/27/fas-2017-call-for-workshops/">Monday 27 February, 2017</a></td>
+				<td style="text-align:center"><a href="02/27/fas-2017-call-for-workshops/">FAS* 2017 Call for Workshops</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-secret-war-spies-codes-and-guerrillas-1939-1945/">Tuesday 31 January, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-secret-war-spies-codes-and-guerrillas-1939-1945/">The Secret War : Spies, Codes and Guerrillas 1939-1945</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-dispossessed/">Friday 27 January, 2017</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-dispossessed/">The Dispossessed</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

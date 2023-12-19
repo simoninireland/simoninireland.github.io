@@ -1,406 +1,205 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2010 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2010/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2010</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2010</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="12/16/inauguration/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-12-16T08:00:04Z" title="2010-12-16 08:00">2010-12-16 08:00</time> 
-        
-	        Inauguration</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="12/02/3dpas-cfp/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-12-02T08:00:03Z" title="2010-12-02 08:00">2010-12-02 08:00</time> 
-        
-	        Call for papers: Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/19/seams-cfp/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-11-19T17:07:48Z" title="2010-11-19 17:07">2010-11-19 17:07</time> 
-        
-	        Call for papers:Software Engineering for Adaptive and Self-Managing Systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/14/man-middle-earth/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-11-14T21:36:34Z" title="2010-11-14 21:36">2010-11-14 21:36</time> 
-        
-	        It's hard being a man in Middle Earth</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/08/internet-15-years-ago/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-11-08T14:00:54Z" title="2010-11-08 14:00">2010-11-08 14:00</time> 
-        
-	        The view of the internet, 15 years ago</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/29/academic-stereotypes/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-10-29T08:00:09+01:00" title="2010-10-29 08:00">2010-10-29 08:00</time> 
-        
-	        The three academic stereotypes</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/25/manfed-cf/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-10-25T13:03:16+01:00" title="2010-10-25 13:03">2010-10-25 13:03</time> 
-        
-	        Call for papers on managing federated networks</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/25/cs-university-principals/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-10-25T08:00:46+01:00" title="2010-10-25 08:00">2010-10-25 08:00</time> 
-        
-	        Computer scientists as university principals</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/22/first-year/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-10-22T09:15:17+01:00" title="2010-10-22 09:15">2010-10-22 09:15</time> 
-        
-	        The first year</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/24/im11-panels/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-09-24T10:32:59+01:00" title="2010-09-24 10:32">2010-09-24 10:32</time> 
-        
-	        Call for panels in integrated network management</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/09/sapere-phd/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-09-09T15:09:41+01:00" title="2010-09-09 15:09">2010-09-09 15:09</time> 
-        
-	        Funded PhD studentship in adaptive service ecosystems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/29/getting-rid-of-the-laptop/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-06-29T06:00:02+01:00" title="2010-06-29 06:00">2010-06-29 06:00</time> 
-        
-	        Getting rid of the laptop</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/22/monads-language-design-perspective/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-06-22T13:20:08+01:00" title="2010-06-22 13:20">2010-06-22 13:20</time> 
-        
-	        Monads: a language designer's perspective</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/18/contextual-processes/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-06-18T06:00:53+01:00" title="2010-06-18 06:00">2010-06-18 06:00</time> 
-        
-	        Contextual processes</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/11/power-comics/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-06-11T17:00:06+01:00" title="2010-06-11 17:00">2010-06-11 17:00</time> 
-        
-	        The power of comics</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/08/smarter-internet/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-06-08T06:00:22+01:00" title="2010-06-08 06:00">2010-06-08 06:00</time> 
-        
-	        Made smarter by the internet?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/28/languages-extensible-vms/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-05-28T06:00:30+01:00" title="2010-05-28 06:00">2010-05-28 06:00</time> 
-        
-	        Languages for extensible virtual machines</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/21/impressions-pervasive-2010/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-05-21T06:00:02+01:00" title="2010-05-21 06:00">2010-05-21 06:00</time> 
-        
-	        Impressions of Pervasive 2010</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/14/cs-book-worth-reading-twice/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-05-14T06:00:35+01:00" title="2010-05-14 06:00">2010-05-14 06:00</time> 
-        
-	        The only computer science book worth reading twice?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/08/grey-philistines/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-05-08T18:28:59+01:00" title="2010-05-08 18:28">2010-05-08 18:28</time> 
-        
-	        Are the grey philistines really in charge?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/27/sensing-financial-problems/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-04-27T13:32:57+01:00" title="2010-04-27 13:32">2010-04-27 13:32</time> 
-        
-	        Sensing financial problems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/16/computer-science-learn-finance/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-04-16T06:00:58+01:00" title="2010-04-16 06:00">2010-04-16 06:00</time> 
-        
-	        What computer science can learn from finance</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/09/computer-science-financial-crisis/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-04-09T19:55:11+01:00" title="2010-04-09 19:55">2010-04-09 19:55</time> 
-        
-	        Computer science and the financial crisis</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/01/computer-microscope/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-04-01T16:49:46+01:00" title="2010-04-01 16:49">2010-04-01 16:49</time> 
-        
-	        The computer is the new microscope</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/26/five-big-questions/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-03-26T06:00:40Z" title="2010-03-26 06:00">2010-03-26 06:00</time> 
-        
-	        Five big questions</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/22/both-ends-of-the-data-intensive-spectrum/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-03-22T11:54:52Z" title="2010-03-22 11:54">2010-03-22 11:54</time> 
-        
-	        Both ends of the data-intensive spectrum</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/12/forth-for-sensors/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-03-12T06:00:10Z" title="2010-03-12 06:00">2010-03-12 06:00</time> 
-        
-	        Forth for sensors?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/05/things-that-wont-change/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-03-05T06:30:44Z" title="2010-03-05 06:30">2010-03-05 06:30</time> 
-        
-	        Things that won't change</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/26/216/" class="listtitle">
-        
-                <time class="listdate" datetime="2010-02-26T09:00:18Z" title="2010-02-26 09:00">2010-02-26 09:00</time> 
-        
-	        Programming with limited certainty</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="12/16/inauguration/">Thursday 16 December, 2010</a></td>
+				<td style="text-align:center"><a href="12/16/inauguration/">Inauguration</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="12/02/3dpas-cfp/">Thursday 2 December, 2010</a></td>
+				<td style="text-align:center"><a href="12/02/3dpas-cfp/">Call for papers: Dynamic Distributed Data-Intensive Applications, Programming Abstractions, and Systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/19/seams-cfp/">Friday 19 November, 2010</a></td>
+				<td style="text-align:center"><a href="11/19/seams-cfp/">Call for papers:Software Engineering for Adaptive and Self-Managing Systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/14/man-middle-earth/">Sunday 14 November, 2010</a></td>
+				<td style="text-align:center"><a href="11/14/man-middle-earth/">It's hard being a man in Middle Earth</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/08/internet-15-years-ago/">Monday 8 November, 2010</a></td>
+				<td style="text-align:center"><a href="11/08/internet-15-years-ago/">The view of the internet, 15 years ago</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/29/academic-stereotypes/">Friday 29 October, 2010</a></td>
+				<td style="text-align:center"><a href="10/29/academic-stereotypes/">The three academic stereotypes</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/25/manfed-cf/">Monday 25 October, 2010</a></td>
+				<td style="text-align:center"><a href="10/25/manfed-cf/">Call for papers on managing federated networks</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/25/cs-university-principals/">Monday 25 October, 2010</a></td>
+				<td style="text-align:center"><a href="10/25/cs-university-principals/">Computer scientists as university principals</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/22/first-year/">Friday 22 October, 2010</a></td>
+				<td style="text-align:center"><a href="10/22/first-year/">The first year</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/24/im11-panels/">Friday 24 September, 2010</a></td>
+				<td style="text-align:center"><a href="09/24/im11-panels/">Call for panels in integrated network management</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/09/sapere-phd/">Thursday 9 September, 2010</a></td>
+				<td style="text-align:center"><a href="09/09/sapere-phd/">Funded PhD studentship in adaptive service ecosystems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/29/getting-rid-of-the-laptop/">Tuesday 29 June, 2010</a></td>
+				<td style="text-align:center"><a href="06/29/getting-rid-of-the-laptop/">Getting rid of the laptop</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/22/monads-language-design-perspective/">Tuesday 22 June, 2010</a></td>
+				<td style="text-align:center"><a href="06/22/monads-language-design-perspective/">Monads: a language designer's perspective</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/18/contextual-processes/">Friday 18 June, 2010</a></td>
+				<td style="text-align:center"><a href="06/18/contextual-processes/">Contextual processes</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/11/power-comics/">Friday 11 June, 2010</a></td>
+				<td style="text-align:center"><a href="06/11/power-comics/">The power of comics</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/08/smarter-internet/">Tuesday 8 June, 2010</a></td>
+				<td style="text-align:center"><a href="06/08/smarter-internet/">Made smarter by the internet?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/28/languages-extensible-vms/">Friday 28 May, 2010</a></td>
+				<td style="text-align:center"><a href="05/28/languages-extensible-vms/">Languages for extensible virtual machines</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/21/impressions-pervasive-2010/">Friday 21 May, 2010</a></td>
+				<td style="text-align:center"><a href="05/21/impressions-pervasive-2010/">Impressions of Pervasive 2010</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/14/cs-book-worth-reading-twice/">Friday 14 May, 2010</a></td>
+				<td style="text-align:center"><a href="05/14/cs-book-worth-reading-twice/">The only computer science book worth reading twice?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/08/grey-philistines/">Saturday 8 May, 2010</a></td>
+				<td style="text-align:center"><a href="05/08/grey-philistines/">Are the grey philistines really in charge?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/27/sensing-financial-problems/">Tuesday 27 April, 2010</a></td>
+				<td style="text-align:center"><a href="04/27/sensing-financial-problems/">Sensing financial problems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/16/computer-science-learn-finance/">Friday 16 April, 2010</a></td>
+				<td style="text-align:center"><a href="04/16/computer-science-learn-finance/">What computer science can learn from finance</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/09/computer-science-financial-crisis/">Friday 9 April, 2010</a></td>
+				<td style="text-align:center"><a href="04/09/computer-science-financial-crisis/">Computer science and the financial crisis</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/01/computer-microscope/">Thursday 1 April, 2010</a></td>
+				<td style="text-align:center"><a href="04/01/computer-microscope/">The computer is the new microscope</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/26/five-big-questions/">Friday 26 March, 2010</a></td>
+				<td style="text-align:center"><a href="03/26/five-big-questions/">Five big questions</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/22/both-ends-of-the-data-intensive-spectrum/">Monday 22 March, 2010</a></td>
+				<td style="text-align:center"><a href="03/22/both-ends-of-the-data-intensive-spectrum/">Both ends of the data-intensive spectrum</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/12/forth-for-sensors/">Friday 12 March, 2010</a></td>
+				<td style="text-align:center"><a href="03/12/forth-for-sensors/">Forth for sensors?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/05/things-that-wont-change/">Friday 5 March, 2010</a></td>
+				<td style="text-align:center"><a href="03/05/things-that-wont-change/">Things that won't change</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/26/216/">Friday 26 February, 2010</a></td>
+				<td style="text-align:center"><a href="02/26/216/">Programming with limited certainty</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

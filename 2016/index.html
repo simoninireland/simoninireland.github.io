@@ -1,376 +1,193 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2016 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2016/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2016</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2016</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="../goodreads/the-rivals-of-sherlock-holmes-early-detective-stories/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-12-29T04:23:02-08:00" title="2016-12-29 04:23">2016-12-29 04:23</time> 
-        
-	        The Rivals Of Sherlock Holmes: Early Detective Stories</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/bloodlands-europe-between-hitler-and-stalin/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-12-29T03:49:53-08:00" title="2016-12-29 03:49">2016-12-29 03:49</time> 
-        
-	        Bloodlands: Europe Between Hitler and Stalin</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/inside-the-fourth-reich/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-12-27T00:00:00-08:00" title="2016-12-27 00:00">2016-12-27 00:00</time> 
-        
-	        Inside the Fourth Reich</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/at-the-existentialist-cafe-freedom-being-and-apricot-cocktails/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-12-26T00:00:00-08:00" title="2016-12-26 00:00">2016-12-26 00:00</time> 
-        
-	        At the Existentialist Café: Freedom, Being, and Apricot Cocktails</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-outrun/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-12-21T00:00:00-08:00" title="2016-12-21 00:00">2016-12-21 00:00</time> 
-        
-	        The Outrun</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/abel-the-true-story-of-the-spy-they-traded-for-gary-powers/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-10-28T00:00:00-07:00" title="2016-10-28 00:00">2016-10-28 00:00</time> 
-        
-	        Abel: The True Story of the Spy They Traded for Gary Powers</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-fall-of-the-ottomans-the-great-war-in-the-middle-east/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-10-12T00:00:00-07:00" title="2016-10-12 00:00">2016-10-12 00:00</time> 
-        
-	        The Fall of the Ottomans: The Great War in the Middle East</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/in-the-heart-of-the-sea-the-tragedy-of-the-whaleship-essex/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-09-04T00:00:00-07:00" title="2016-09-04 00:00">2016-09-04 00:00</time> 
-        
-	        In the Heart of the Sea: The Tragedy of the Whaleship Essex</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/and-the-band-played-on-politics-people-and-the-aids-epidemic/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-08-04T00:00:00-07:00" title="2016-08-04 00:00">2016-08-04 00:00</time> 
-        
-	        And the Band Played On: Politics, People, and the AIDS Epidemic</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/do-no-harm-stories-of-life-death-and-brain-surgery/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-07-23T00:00:00-07:00" title="2016-07-23 00:00">2016-07-23 00:00</time> 
-        
-	        Do No Harm: Stories of Life, Death and Brain Surgery</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/darkness-at-noon/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-07-20T00:00:00-07:00" title="2016-07-20 00:00">2016-07-20 00:00</time> 
-        
-	        Darkness at Noon</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/spqr-a-history-of-ancient-rome/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-07-19T00:00:00-07:00" title="2016-07-19 00:00">2016-07-19 00:00</time> 
-        
-	        SPQR: A History of Ancient Rome</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/18/cfp-cas/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-07-18T10:07:23+01:00" title="2016-07-18 10:07">2016-07-18 10:07</time> 
-        
-	        CfP: Collective adaptive systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/who-owns-the-future/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-06-18T00:00:00-07:00" title="2016-06-18 00:00">2016-06-18 00:00</time> 
-        
-	        Who Owns the Future?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/between-the-world-and-me/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-06-16T00:00:00-07:00" title="2016-06-16 00:00">2016-06-16 00:00</time> 
-        
-	        Between the World and Me</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/peacemaking-1919/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-06-04T00:00:00-07:00" title="2016-06-04 00:00">2016-06-04 00:00</time> 
-        
-	        Peacemaking, 1919</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/02/fasw/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-06-02T16:56:55+01:00" title="2016-06-02 16:56">2016-06-02 16:56</time> 
-        
-	        Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/so-sad-today-personal-essays/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-04-27T00:00:00-07:00" title="2016-04-27 00:00">2016-04-27 00:00</time> 
-        
-	        So Sad Today: Personal Essays</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/small-is-beautiful-a-study-of-economics-as-if-people-mattered/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-04-04T13:39:29-07:00" title="2016-04-04 13:39">2016-04-04 13:39</time> 
-        
-	        Small Is Beautiful: A Study of Economics as if People Mattered</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/wastelands-stories-of-the-apocalypse-wastelands-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-02-29T13:17:21-08:00" title="2016-02-29 13:17">2016-02-29 13:17</time> 
-        
-	        Wastelands: Stories of the Apocalypse (Wastelands #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/thing-explainer-complicated-stuff-in-simple-words/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-02-28T10:16:56-08:00" title="2016-02-28 10:16">2016-02-28 10:16</time> 
-        
-	        Thing Explainer: Complicated Stuff in Simple Words</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/essays-in-idleness-and-hojoki/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-02-27T10:42:15-08:00" title="2016-02-27 10:42">2016-02-27 10:42</time> 
-        
-	        Essays in Idleness and Hōjōki</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/21/fas-doctoral-symposium/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-02-21T17:42:13Z" title="2016-02-21 17:42">2016-02-21 17:42</time> 
-        
-	        Doctoral Symposium on Foundations and Applications of Self-* Systems 2016</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/travels-with-epicurus/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-02-11T14:01:49-08:00" title="2016-02-11 14:01">2016-02-11 14:01</time> 
-        
-	        Travels With Epicurus</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-year-of-living-danishly-uncovering-the-secrets-of-the-worlds-happiest-country/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-01-30T07:11:22-08:00" title="2016-01-30 07:11">2016-01-30 07:11</time> 
-        
-	        The Year of Living Danishly: Uncovering the Secrets of the World's Happiest Country</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/carrying-the-fire-an-astronauts-journeys/" class="listtitle">
-        
-                <time class="listdate" datetime="2016-01-08T07:23:05-08:00" title="2016-01-08 07:23">2016-01-08 07:23</time> 
-        
-	        Carrying the Fire: An Astronaut's Journeys</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="../goodreads/bloodlands-europe-between-hitler-and-stalin/">Thursday 29 December, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/bloodlands-europe-between-hitler-and-stalin/">Bloodlands: Europe Between Hitler and Stalin</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-rivals-of-sherlock-holmes-early-detective-stories/">Thursday 29 December, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-rivals-of-sherlock-holmes-early-detective-stories/">The rivals of Sherlock Holmes: early detective stories;</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/inside-the-fourth-reich/">Tuesday 27 December, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/inside-the-fourth-reich/">Inside the Fourth Reich</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/at-the-existentialist-cafe-freedom-being-and-apricot-cocktails/">Monday 26 December, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/at-the-existentialist-cafe-freedom-being-and-apricot-cocktails/">At the Existentialist Café: Freedom, Being, and Apricot Cocktails</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-outrun/">Wednesday 21 December, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-outrun/">The Outrun</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/abel-the-true-story-of-the-spy-they-traded-for-gary-powers-dialogue-espionage-classics/">Friday 28 October, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/abel-the-true-story-of-the-spy-they-traded-for-gary-powers-dialogue-espionage-classics/">Abel: The True Story of the Spy They Traded for Gary Powers (Dialogue Espionage Classics)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-fall-of-the-ottomans-the-great-war-in-the-middle-east/">Wednesday 12 October, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-fall-of-the-ottomans-the-great-war-in-the-middle-east/">The Fall of the Ottomans: The Great War in the Middle East</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/in-the-heart-of-the-sea-the-tragedy-of-the-whaleship-essex/">Sunday 4 September, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/in-the-heart-of-the-sea-the-tragedy-of-the-whaleship-essex/">In the Heart of the Sea: The Tragedy of the Whaleship Essex</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/and-the-band-played-on-politics-people-and-the-aids-epidemic/">Thursday 4 August, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/and-the-band-played-on-politics-people-and-the-aids-epidemic/">And the Band Played on: Politics, People, and the AIDS Epidemic</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/do-no-harm-stories-of-life-death-and-brain-surgery/">Saturday 23 July, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/do-no-harm-stories-of-life-death-and-brain-surgery/">Do No Harm: Stories of Life, Death and Brain Surgery</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/darkness-at-noon/">Wednesday 20 July, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/darkness-at-noon/">Darkness at Noon</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/spqr-a-history-of-ancient-rome/">Tuesday 19 July, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/spqr-a-history-of-ancient-rome/">SPQR: A History of Ancient Rome</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/18/cfp-cas/">Monday 18 July, 2016</a></td>
+				<td style="text-align:center"><a href="07/18/cfp-cas/">CfP: Collective adaptive systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/who-owns-the-future/">Saturday 18 June, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/who-owns-the-future/">Who Owns the Future?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/between-the-world-and-me/">Thursday 16 June, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/between-the-world-and-me/">Between the World and Me</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/peacemaking-1919/">Saturday 4 June, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/peacemaking-1919/">Peacemaking, 1919</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/02/fasw/">Thursday 2 June, 2016</a></td>
+				<td style="text-align:center"><a href="06/02/fasw/">Doctoral Symposium on Foundations and Applications of Self-* Systems (FAS*W)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/so-sad-today-personal-essays/">Wednesday 27 April, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/so-sad-today-personal-essays/">So Sad Today: Personal Essays</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/small-is-beautiful/">Monday 4 April, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/small-is-beautiful/">Small Is Beautiful</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/wastelands-stories-of-the-apocalypse-wastelands-1/">Monday 29 February, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/wastelands-stories-of-the-apocalypse-wastelands-1/">Wastelands: Stories of the Apocalypse (Wastelands #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/thing-explainer-complicated-stuff-in-simple-words/">Sunday 28 February, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/thing-explainer-complicated-stuff-in-simple-words/">Thing Explainer: Complicated Stuff in Simple Words</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/essays-in-idleness-and-hojoki/">Saturday 27 February, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/essays-in-idleness-and-hojoki/">Essays in Idleness and Hōjōki</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/21/fas-doctoral-symposium/">Sunday 21 February, 2016</a></td>
+				<td style="text-align:center"><a href="02/21/fas-doctoral-symposium/">Doctoral Symposium on Foundations and Applications of Self-* Systems 2016</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/travels-with-epicurus-meditations-from-a-greek-island-on-the-pleasures-of-old-age/">Thursday 11 February, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/travels-with-epicurus-meditations-from-a-greek-island-on-the-pleasures-of-old-age/">Travels With Epicurus: Meditations from a Greek Island on the Pleasures of Old Age</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-year-of-living-danishly-uncovering-the-secrets-of-the-worlds-happiest-country/">Saturday 30 January, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-year-of-living-danishly-uncovering-the-secrets-of-the-worlds-happiest-country/">The Year of Living Danishly: Uncovering the Secrets of the World's Happiest Country</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/carrying-the-fire-an-astronauts-journeys/">Friday 8 January, 2016</a></td>
+				<td style="text-align:center"><a href="../goodreads/carrying-the-fire-an-astronauts-journeys/">Carrying the Fire: An Astronaut's Journeys</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

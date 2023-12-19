@@ -1,163 +1,60 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The middleware doughnut | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2011/12/16/middleware-doughnut/">
-<link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script><meta name="author" content="Simon Dobson">
-<link rel="prev" href="../../../11/25/inaugural/" title="Inaugural lecture" type="text/html">
-<link rel="next" href="../../19/bsc-disdis/" title="British Computer Society Distinguished Dissertations competition" type="text/html">
-<meta property="og:site_name" content="Simon Dobson">
-<meta property="og:title" content="The middleware doughnut">
-<meta property="og:url" content="https://simondobson.org/2011/12/16/middleware-doughnut/">
-<meta property="og:description" content='Where has the "middle" of middleware gone?
-
-
-
-This week I attended a couple of the workshops at the Middleware conference, the main venue for the research community working on systems integration midd'>
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2011-12-16T11:09:49Z">
-<meta property="article:tag" content="Blog">
-<meta property="article:tag" content="conference">
-<meta property="article:tag" content="corba">
-<meta property="article:tag" content="fome">
-<meta property="article:tag" content="middleware">
-<meta property="article:tag" content="sensor networks">
-<meta property="article:tag" content="web services">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@simoninireland">
-<meta name="twitter:creator" content="@simoninireland">
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../../../../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../../../../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../../../../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../../../../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../../../../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../../../../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../../../../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../../../../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		    <li><a href="../../../../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 16 December, 2011</a>
+	    </span>
+	</div>
+	<h1>The middleware doughnut</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">The middleware doughnut</a></h1>
 
-    <div class="metadata">
-      <p class="dateline">
-	<a href="." rel="bookmark">
-	  <i class="fa fa-clock"></i>
-	  <time class="published dt-published" datetime="2011-12-16T11:09:49Z" itemprop="datePublished" title="2011-12-16 11:09">
-		2011-12-16 11:09
-	  </time></a>
-      </p>
-
-	<p class="commentline">
-	  <i class="far fa-comment"></i>
-	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2011/12/16/middleware-doughnut.html">Comments</a>
-
-
-
-	  
-
-	</p>
-
-      
-          <div class="tags">
-<h3 class="metadata-title">
-<i class="fa fa-tags"></i> Tags:</h3>
-      <ul itemprop="keywords" class="tags-ul">
-<li><a class="tag p-category" href="../../../../categories/blog/" rel="tag">Blog</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/conference/" rel="tag">conference</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/corba/" rel="tag">corba</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/fome/" rel="tag">fome</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/middleware/" rel="tag">middleware</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/sensor-networks/" rel="tag">sensor networks</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/web-services/" rel="tag">web services</a></li>
-      </ul>
-</div>
-
-    </div>
-  </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p>Where has the "middle" of middleware gone?
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Where has the "middle" of middleware gone?
 
 <!--more-->
 
@@ -180,64 +77,62 @@ The causes of, and justifications for, these compromises aren't hard to find: wh
 And it's this generality that seemed to be missing from discussions of the future of middleware: no-one <em>intends</em> to support this range any more. Instead we're seeing a division of the design space in which different application communities focus on one or two design dimensions that are undoubtedly the most important -- and largely forget the rest. For Twitter, for example, the main design goal is lightweight interaction at clients so that Twitter clients are easy to writ. They have no concern whatever with typing or reliability: if tweets are lost, who cares? For the web services community -- perhaps closest to the "spirit of the middle" -- the issues are extensibility and use of standards, with no concern for protocols, performance or end-point complexity. It's fairly easy to see that these design issues are simply too diverse to be spanned by a single middleware platform.
 
 I don't think this necessarily spells the death of integrating middleware -- and that's just as well, given that we still have to integrate these systems <em>despite</em> their increasing heterogeneity. What it does do, though, is change the locus of innovation away from ever-larger, more complex and more general platforms towards more specialised platforms that can integrate as far as needed -- and no further, so as not to over-burden applications or developers. Several speakers talked about using component-based approaches to build platforms as well as applications. In our talk we discussed similar ideas, removing the <em>a priori</em> assumptions underlying middleware platforms and focusing instead on how to optimise what hits the metal. (Dearle and Dobson. <a href="../../../../research/publications#FOME-11" target="_blank">Mission-oriented middleware for sensor-driven scientific systems</a>. Journal of Internet Services and Applications. 2011.) This will give rise to a whole range of further challenges -- how do we guarantee the right features are available? How do we add (and remove) features on the fly? How do we find the features we need? --  that are radically different from those encountered for CORBA and similar systems. But the result will (hopefully) be to improve our ability to create, manage and evolve ever more sophisticated combinations of applications and  services, and make it easier to roll-out and scale-out the next generation of applications and scientific experiments.</p>
+	    </div>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/blog/">Blog</a>
+		    <span>  </span>
+		<a href="../../../../categories/conference/">conference</a>
+		    <span>  </span>
+		<a href="../../../../categories/corba/">corba</a>
+		    <span>  </span>
+		<a href="../../../../categories/fome/">fome</a>
+		    <span>  </span>
+		<a href="../../../../categories/middleware/">middleware</a>
+		    <span>  </span>
+		<a href="../../../../categories/sensor-networks/">sensor networks</a>
+		    <span>  </span>
+		<a href="../../../../categories/web-services/">web services</a>
+	</div>
     </div>
 
-      <div class="socialsharing">
-    <h1>Share this post to: </h1>
-
-    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2011/12/16/middleware-doughnut/" title="Share to Facebook">
-       <span class="social"><i class="fab fa-facebook"></i></span>
-    </a>
-    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2011/12/16/middleware-doughnut/" title="Share to Twitter">
-       <span class="social"><i class="fab fa-twitter"></i></span>
-    </a>
-    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2011/12/16/middleware-doughnut/" title="Share to LinkedIn">
-       <span class="social"><i class="fab fa-linkedin"></i></span>
-    </a>
-    <a href="whatsapp://send?text=https://simondobson.org/2011/12/16/middleware-doughnut/" title="Share to WhatsApp">
-       <span class="social"><i class="fab fa-whatsapp"></i></span>
-    </a>
-  </div>
-
-
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../../../11/25/inaugural/" rel="prev" title="Inaugural lecture">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../../19/bsc-disdis/" rel="next" title="British Computer Society Distinguished Dissertations competition">Next post</a>
-            </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-	            <div id="disqus_thread"></div>
-        <script>
-        var disqus_shortname ="simoninireland",
-            disqus_url="https://simondobson.org/2011/12/16/middleware-doughnut/",
-        disqus_title="The middleware doughnut",
-        disqus_identifier="cache/posts/2011/12/16/middleware-doughnut.html",
-        disqus_config = function () {
-            this.language = "en";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.async = true;
-            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
-    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../11/25/inaugural/" rel="prev">
+		<span class="meta-nav">Older Post</span>Inaugural lecture
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../19/bsc-disdis/" rel="next">
+		<span class="meta-nav">Newer Post</span>British Computer Society Distinguished Dissertations competition
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
 </div>
-  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

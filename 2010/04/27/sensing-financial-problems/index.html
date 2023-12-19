@@ -1,157 +1,60 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sensing financial problems | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2010/04/27/sensing-financial-problems/">
-<link rel="icon" href="../../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script><meta name="author" content="Simon Dobson">
-<link rel="prev" href="../../16/computer-science-learn-finance/" title="What computer science can learn from finance" type="text/html">
-<link rel="next" href="../../../05/08/grey-philistines/" title="Are the grey philistines really in charge?" type="text/html">
-<meta property="og:site_name" content="Simon Dobson">
-<meta property="og:title" content="Sensing financial problems">
-<meta property="og:url" content="https://simondobson.org/2010/04/27/sensing-financial-problems/">
-<meta property="og:description" content="Just as we can think of large-scale, detailed financial modeling as an exercise in simulation and linked data, we can perhaps also see the detection of hazards as an exercise in sensor fusion and perv">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2010-04-27T13:32:57+01:00">
-<meta property="article:tag" content="Blog">
-<meta property="article:tag" content="context">
-<meta property="article:tag" content="finance">
-<meta property="article:tag" content="ireland">
-<meta property="article:tag" content="linked data">
-<meta property="article:tag" content="risk">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@simoninireland">
-<meta name="twitter:creator" content="@simoninireland">
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../../../../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../../../../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../../../../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../../../../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../../../../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../../../../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../../../../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../../../../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		    <li><a href="../../../../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Tuesday 27 April, 2010</a>
+	    </span>
+	</div>
+	<h1>Sensing financial problems</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-  <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Sensing financial problems</a></h1>
 
-    <div class="metadata">
-      <p class="dateline">
-	<a href="." rel="bookmark">
-	  <i class="fa fa-clock"></i>
-	  <time class="published dt-published" datetime="2010-04-27T13:32:57+01:00" itemprop="datePublished" title="2010-04-27 13:32">
-		2010-04-27 13:32
-	  </time></a>
-      </p>
-
-	<p class="commentline">
-	  <i class="far fa-comment"></i>
-	          <a href="#disqus_thread" data-disqus-identifier="cache/posts/2010/04/27/sensing-financial-problems.html">Comments</a>
-
-
-
-	  
-
-	</p>
-
-      
-          <div class="tags">
-<h3 class="metadata-title">
-<i class="fa fa-tags"></i> Tags:</h3>
-      <ul itemprop="keywords" class="tags-ul">
-<li><a class="tag p-category" href="../../../../categories/blog/" rel="tag">Blog</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/context/" rel="tag">context</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/finance/" rel="tag">finance</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/ireland/" rel="tag">ireland</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/linked-data/" rel="tag">linked data</a></li>
-	    <li><a class="tag p-category" href="../../../../categories/risk/" rel="tag">risk</a></li>
-      </ul>
-</div>
-
-    </div>
-  </header><div class="e-content entry-content" itemprop="articleBody text">
-      <p>Just as we can think of large-scale, detailed financial modeling as <a href="../../computer-science-financial-crisis/">an exercise in simulation and linked data</a>, we can perhaps also see the detection of hazards as an exercise in sensor fusion and pervasive computing, turning a multitude of sensor data into derived values for risk and/or situations requiring attention. There's a wealth of research in these areas that might be applicable.
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Just as we can think of large-scale, detailed financial modeling as <a href="../../computer-science-financial-crisis/">an exercise in simulation and linked data</a>, we can perhaps also see the detection of hazards as an exercise in sensor fusion and pervasive computing, turning a multitude of sensor data into derived values for risk and/or situations requiring attention. There's a wealth of research in these areas that might be applicable.
 
 <!--more-->
 
@@ -170,64 +73,60 @@ Linked data opens-up richer opportunities for collecting context, and so for the
 Of course there are massive privacy implications here, not least in the use of machine classifiers to evaluate -- and of course inevitably <em>mis</em>-evaluate -- individuals' circumstances. It's important to realise that this is going on anyway and isn't going to go away: the rational response is therefore to make sure we use the best approaches available, and that we enforce audit trails and transparency to interested parties. Credit scoring systems are notoriously opaque at present -- I've had experience of this myself recently, since credit history doesn't move easily across borders -- so there's a screaming need for systems that can explain and justify their decisions.
 
 I suspect that the real value of a sensor perspective comes not from considering an individual institution but rather an entire marketplace. To use an example I'm familiar with from Ireland, one bank at one stage pumped its share price by having another bank make a large deposit -- but then loaned this second bank the money to fund the deposit. Contextualised analysis might have picked this up, for example by trying to classify what instruments or assets each transaction referred to. Or perhaps not: no system is going to be fully robust against the actions of ingenious insiders. The point is not to suggest that there's a foolproof solution, but rather to increase the amount and intelligence of surveillance in order to raise the bar. Given the costs involved in unwinding failures when detected late, it might be an investment worth making.</p>
+	    </div>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/blog/">Blog</a>
+		    <span>  </span>
+		<a href="../../../../categories/context/">context</a>
+		    <span>  </span>
+		<a href="../../../../categories/finance/">finance</a>
+		    <span>  </span>
+		<a href="../../../../categories/ireland/">ireland</a>
+		    <span>  </span>
+		<a href="../../../../categories/linked-data/">linked data</a>
+		    <span>  </span>
+		<a href="../../../../categories/risk/">risk</a>
+	</div>
     </div>
 
-      <div class="socialsharing">
-    <h1>Share this post to: </h1>
-
-    <a href="https://www.facebook.com/sharer.php?u=https://simondobson.org/2010/04/27/sensing-financial-problems/" title="Share to Facebook">
-       <span class="social"><i class="fab fa-facebook"></i></span>
-    </a>
-    <a href="https://twitter.com/intent/tweet?url=https://simondobson.org/2010/04/27/sensing-financial-problems/" title="Share to Twitter">
-       <span class="social"><i class="fab fa-twitter"></i></span>
-    </a>
-    <a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/04/27/sensing-financial-problems/" title="Share to LinkedIn">
-       <span class="social"><i class="fab fa-linkedin"></i></span>
-    </a>
-    <a href="whatsapp://send?text=https://simondobson.org/2010/04/27/sensing-financial-problems/" title="Share to WhatsApp">
-       <span class="social"><i class="fab fa-whatsapp"></i></span>
-    </a>
-  </div>
-
-
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../../16/computer-science-learn-finance/" rel="prev" title="What computer science can learn from finance">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../../../05/08/grey-philistines/" rel="next" title="Are the grey philistines really in charge?">Next post</a>
-            </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-	            <div id="disqus_thread"></div>
-        <script>
-        var disqus_shortname ="simoninireland",
-            disqus_url="https://simondobson.org/2010/04/27/sensing-financial-problems/",
-        disqus_title="Sensing financial problems",
-        disqus_identifier="cache/posts/2010/04/27/sensing-financial-problems.html",
-        disqus_config = function () {
-            this.language = "en";
-        };
-        (function() {
-            var dsq = document.createElement('script'); dsq.async = true;
-            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-</noscript>
-    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-      </section><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script></article>
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../16/computer-science-learn-finance/" rel="prev">
+		<span class="meta-nav">Older Post</span>What computer science can learn from finance
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../05/08/grey-philistines/" rel="next">
+		<span class="meta-nav">Newer Post</span>Are the grey philistines really in charge?
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
 </div>
-  </section><script src="../../../../assets/js/baguetteBox.min.js"></script><script src="../../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../../../../assets/js/ToggleNav.js"></script>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

@@ -1,1176 +1,509 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2012 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2012/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2012</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2012</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="../goodreads/spies-and-commissars-the-early-years-of-the-russian-revolution/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-28T12:24:45-08:00" title="2012-12-28 12:24">2012-12-28 12:24</time> 
-        
-	        Spies and Commissars: The Early Years of the Russian Revolution</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="12/22/bcs-disdis/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-22T12:05:43Z" title="2012-12-22 12:05">2012-12-22 12:05</time> 
-        
-	        Distinguished Dissertations competition 2013</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="12/20/600th-scholarships/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-20T19:22:22Z" title="2012-12-20 19:22">2012-12-20 19:22</time> 
-        
-	        Six 600th anniversary PhD scholarships</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/capital-of-the-mind-how-edinburgh-changed-the-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-20T04:09:54-08:00" title="2012-12-20 04:09">2012-12-20 04:09</time> 
-        
-	        Capital of the Mind: How Edinburgh Changed the World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-end-of-history-and-the-last-man/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-01T08:09:32-08:00" title="2012-12-01 08:09">2012-12-01 08:09</time> 
-        
-	        The End of History and the Last Man</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/vanished-kingdoms-the-history-of-half-forgotten-europe/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-01T08:08:57-08:00" title="2012-12-01 08:08">2012-12-01 08:08</time> 
-        
-	        Vanished Kingdoms: The History of Half-Forgotten Europe</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/vanished-kingdoms-the-rise-and-fall-of-states-and-nations/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-12-01T08:00:16-08:00" title="2012-12-01 08:00">2012-12-01 08:00</time> 
-        
-	        Vanished Kingdoms: The Rise and Fall of States and Nations</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-hydrogen-sonata-culture-10/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-24T02:50:48-08:00" title="2012-11-24 02:50">2012-11-24 02:50</time> 
-        
-	        The Hydrogen Sonata (Culture #10)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/17/csa/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-17T08:00:25Z" title="2012-11-17 08:00">2012-11-17 08:00</time> 
-        
-	        Chief scientific advisor for Ireland</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/thinking-fast-and-slow/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-14T12:33:45-08:00" title="2012-11-14 12:33">2012-11-14 12:33</time> 
-        
-	        Thinking, Fast and Slow</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/godel-escher-bach-an-eternal-golden-braid/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-11T01:56:31-08:00" title="2012-11-11 01:56">2012-11-11 01:56</time> 
-        
-	        Gödel, Escher, Bach: An Eternal Golden Braid</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/empire-how-britain-made-the-modern-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-11T01:43:45-08:00" title="2012-11-11 01:43">2012-11-11 01:43</time> 
-        
-	        Empire: How Britain Made the Modern World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/shibumi/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-10T09:25:23-08:00" title="2012-11-10 09:25">2012-11-10 09:25</time> 
-        
-	        Shibumi</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/excession-culture-5/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-10T07:05:03-08:00" title="2012-11-10 07:05">2012-11-10 07:05</time> 
-        
-	        Excession (Culture, #5)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/red-plenty/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-10T06:30:17-08:00" title="2012-11-10 06:30">2012-11-10 06:30</time> 
-        
-	        Red Plenty</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/deception-spies-lies-and-how-russia-dupes-the-west/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-11-10T06:17:31-08:00" title="2012-11-10 06:17">2012-11-10 06:17</time> 
-        
-	        Deception: Spies, Lies and How Russia Dupes the West</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/broken-harbour-dublin-murder-squad-4/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-10-31T00:00:00-07:00" title="2012-10-31 00:00">2012-10-31 00:00</time> 
-        
-	        Broken Harbour (Dublin Murder Squad, #4)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/09/parsers/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-10-09T10:00:13+01:00" title="2012-10-09 10:00">2012-10-09 10:00</time> 
-        
-	        Parser-centric grammar complexity</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/05/typewheel/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-10-05T08:00:23+01:00" title="2012-10-05 08:00">2012-10-05 08:00</time> 
-        
-	        The type wheel turns again</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/27/awareness/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-09-27T08:00:41+01:00" title="2012-09-27 08:00">2012-09-27 08:00</time> 
-        
-	        What's new for awareness researchers?: an interview</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/26/sfi-consultation/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-09-26T08:00:04+01:00" title="2012-09-26 08:00">2012-09-26 08:00</time> 
-        
-	        Response to Science Foundation Ireland's consultation on its strategic plan</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="08/14/artificial-life/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-08-14T08:00:04+01:00" title="2012-08-14 08:00">2012-08-14 08:00</time> 
-        
-	        Distinguished lecture on artificial life</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="08/08/forth-32-years/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-08-08T17:39:51+01:00" title="2012-08-08 17:39">2012-08-08 17:39</time> 
-        
-	        Forth, 2^5 years ago</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="08/03/mscphd-wireless-location/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-08-03T11:56:19+01:00" title="2012-08-03 11:56">2012-08-03 11:56</time> 
-        
-	        MSc/PhD positions available in wireless location systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/blackout-all-clear-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-08-01T00:00:00-07:00" title="2012-08-01 00:00">2012-08-01 00:00</time> 
-        
-	        Blackout (All Clear, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/26/scholarships/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-07-26T09:57:06+01:00" title="2012-07-26 09:57">2012-07-26 09:57</time> 
-        
-	        Scholar positions for Erasmus Mundus MSc in Dependable Software Systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/11/call-papers-midsens-2012/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-07-11T13:00:26+01:00" title="2012-07-11 13:00">2012-07-11 13:00</time> 
-        
-	        Call for papers: Midsens 2012</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/19/asensis/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-06-19T12:10:59+01:00" title="2012-06-19 12:10">2012-06-19 12:10</time> 
-        
-	        Workshop on naturally-inspired service ecosystems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/14/russian-dolls/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-06-14T08:00:52+01:00" title="2012-06-14 08:00">2012-06-14 08:00</time> 
-        
-	        Layered abstractions and Russian dolls</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/1776/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-05-23T03:33:43-07:00" title="2012-05-23 03:33">2012-05-23 03:33</time> 
-        
-	        1776</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/17/5-studentships/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-05-17T11:42:57+01:00" title="2012-05-17 11:42">2012-05-17 11:42</time> 
-        
-	        5 studentships in Computer Science and St Andrews</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/08/library-book/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-05-08T08:00:55+01:00" title="2012-05-08 08:00">2012-05-08 08:00</time> 
-        
-	        When not to return a library book</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/04/postmodernism-programming/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-05-04T13:17:13+01:00" title="2012-05-04 13:17">2012-05-04 13:17</time> 
-        
-	        The post-modernisation of programming languages</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/26/brazil-science/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-04-26T13:46:18+01:00" title="2012-04-26 13:46">2012-04-26 13:46</time> 
-        
-	        Brazilian "Science without Borders" studentships available</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-great-terror-a-reassessment/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:08:48-07:00" title="2012-03-30 13:08">2012-03-30 13:08</time> 
-        
-	        The Great Terror: A Reassessment</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/world-war-ii-behind-closed-doors-stalin-the-nazis-and-the-west/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:08:28-07:00" title="2012-03-30 13:08">2012-03-30 13:08</time> 
-        
-	        World War II: Behind Closed Doors; Stalin, the Nazis, and the West</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/hitler-and-stalin-parallel-lives/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:07:57-07:00" title="2012-03-30 13:07">2012-03-30 13:07</time> 
-        
-	        Hitler and Stalin: Parallel Lives</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-sandman-the-dream-hunters/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:42-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        The Sandman: The Dream Hunters</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/a-game-of-you-the-sandman-5/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:35-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        A Game of You (The Sandman, #5)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-wake-the-sandman-10/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:31-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        The Wake (The Sandman, #10)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/worlds-end-the-sandman-8/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:27-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        Worlds' End (The Sandman, #8)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-kindly-ones-the-sandman-9/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:21-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        The Kindly Ones (The Sandman, #9)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/fables-reflections-the-sandman-6/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:05:14-07:00" title="2012-03-30 13:05">2012-03-30 13:05</time> 
-        
-	        Fables &amp; Reflections (The Sandman, #6)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-sandman-endless-nights/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:04:58-07:00" title="2012-03-30 13:04">2012-03-30 13:04</time> 
-        
-	        The Sandman: Endless Nights</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/season-of-mists-the-sandman-4/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:04:51-07:00" title="2012-03-30 13:04">2012-03-30 13:04</time> 
-        
-	        Season of Mists (The Sandman, #4)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/dream-country-the-sandman-3/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:04:45-07:00" title="2012-03-30 13:04">2012-03-30 13:04</time> 
-        
-	        Dream Country (The Sandman, #3)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-dolls-house-the-sandman-2/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:04:43-07:00" title="2012-03-30 13:04">2012-03-30 13:04</time> 
-        
-	        The Doll's House (The Sandman, #2)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/preludes-nocturnes-the-sandman-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:04:38-07:00" title="2012-03-30 13:04">2012-03-30 13:04</time> 
-        
-	        Preludes &amp; Nocturnes (The Sandman, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/how-ireland-really-went-bust-by-matt-cooper/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:01:36-07:00" title="2012-03-30 13:01">2012-03-30 13:01</time> 
-        
-	        How Ireland Really Went Bust. by Matt Cooper</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/breakfast-with-anglo/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:01:20-07:00" title="2012-03-30 13:01">2012-03-30 13:01</time> 
-        
-	        Breakfast With Anglo</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-ascent-of-money-a-financial-history-of-the-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:00:43-07:00" title="2012-03-30 13:00">2012-03-30 13:00</time> 
-        
-	        The Ascent of Money: A Financial History of the World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-artist-the-philosopher-and-the-warrior-the-intersecting-lives-of-da-vinci-machiavelli-and-borgia-and-the-world-they-shaped/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T13:00:25-07:00" title="2012-03-30 13:00">2012-03-30 13:00</time> 
-        
-	        The Artist, the Philosopher, and the Warrior: The Intersecting Lives of Da Vinci, Machiavelli, and Borgia and the World They Shaped</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/neuromancer-sprawl-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:58:15-07:00" title="2012-03-30 12:58">2012-03-30 12:58</time> 
-        
-	        Neuromancer (Sprawl, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/animal-farm-1984/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:58:12-07:00" title="2012-03-30 12:58">2012-03-30 12:58</time> 
-        
-	        Animal Farm / 1984</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/ringworld-ringworld-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:57:57-07:00" title="2012-03-30 12:57">2012-03-30 12:57</time> 
-        
-	        Ringworld (Ringworld, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-weapon-shops-of-isher/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:57:52-07:00" title="2012-03-30 12:57">2012-03-30 12:57</time> 
-        
-	        The Weapon Shops of Isher</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/rendezvous-with-rama-rama-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:57:45-07:00" title="2012-03-30 12:57">2012-03-30 12:57</time> 
-        
-	        Rendezvous with Rama (Rama, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/do-androids-dream-of-electric-sheep/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:57:38-07:00" title="2012-03-30 12:57">2012-03-30 12:57</time> 
-        
-	        Do Androids Dream of Electric Sheep?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/dune-dune-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:56:13-07:00" title="2012-03-30 12:56">2012-03-30 12:56</time> 
-        
-	        Dune (Dune #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/consider-phlebas-culture-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:56:11-07:00" title="2012-03-30 12:56">2012-03-30 12:56</time> 
-        
-	        Consider Phlebas (Culture, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-color-of-magic-discworld-1-rincewind-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:56:05-07:00" title="2012-03-30 12:56">2012-03-30 12:56</time> 
-        
-	        The Color of Magic (Discworld, #1; Rincewind, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/angels-demons-robert-langdon-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:55:13-07:00" title="2012-03-30 12:55">2012-03-30 12:55</time> 
-        
-	        Angels &amp; Demons (Robert Langdon, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-art-book/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:55-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        The Art Book</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-shock-of-the-new/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:47-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        The Shock of the New</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-story-of-art/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:39-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        The Story of Art</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-moon-is-a-harsh-mistress/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:20-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        The Moon Is a Harsh Mistress</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/use-of-weapons-culture-3/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:11-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        Use of Weapons (Culture, #3)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/hyperion-hyperion-cantos-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:54:06-07:00" title="2012-03-30 12:54">2012-03-30 12:54</time> 
-        
-	        Hyperion (Hyperion Cantos, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-puppet-masters/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:50-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        The Puppet Masters</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-martian-chronicles/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:45-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        The Martian Chronicles</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/starship-troopers/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:26-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        Starship Troopers</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/accelerando/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:12-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        Accelerando</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/jurassic-park-jurassic-park-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:07-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        Jurassic Park (Jurassic Park, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/snow-crash/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:53:03-07:00" title="2012-03-30 12:53">2012-03-30 12:53</time> 
-        
-	        Snow Crash</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-mote-in-gods-eye-moties-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:52:55-07:00" title="2012-03-30 12:52">2012-03-30 12:52</time> 
-        
-	        The Mote in God's Eye (Moties, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/stranger-in-a-strange-land/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:52:49-07:00" title="2012-03-30 12:52">2012-03-30 12:52</time> 
-        
-	        Stranger in a Strange Land</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-trial/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:52:21-07:00" title="2012-03-30 12:52">2012-03-30 12:52</time> 
-        
-	        The Trial</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/catch-22/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:52:14-07:00" title="2012-03-30 12:52">2012-03-30 12:52</time> 
-        
-	        Catch-22</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/1984/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:52:07-07:00" title="2012-03-30 12:52">2012-03-30 12:52</time> 
-        
-	        1984</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/brave-new-world/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:51:58-07:00" title="2012-03-30 12:51">2012-03-30 12:51</time> 
-        
-	        Brave New World</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/foundation-foundation-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:51:55-07:00" title="2012-03-30 12:51">2012-03-30 12:51</time> 
-        
-	        Foundation (Foundation, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-past-through-tomorrow-future-history-1-21/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:51:35-07:00" title="2012-03-30 12:51">2012-03-30 12:51</time> 
-        
-	        The Past Through Tomorrow (Future History, #1-21)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-player-of-games-culture-2/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:51:18-07:00" title="2012-03-30 12:51">2012-03-30 12:51</time> 
-        
-	        The Player of Games (Culture, #2)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/foundation-and-empire-foundation-2/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:51:15-07:00" title="2012-03-30 12:51">2012-03-30 12:51</time> 
-        
-	        Foundation and Empire (Foundation, #2)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/fahrenheit-451/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:53-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        Fahrenheit 451</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-hitchhikers-guide-to-the-galaxy-hitchhikers-guide-to-the-galaxy-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:46-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/enders-game-enders-saga-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:44-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        Ender's Game (Ender's Saga, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/too-big-to-fail-the-inside-story-of-how-wall-street-and-washington-fought-to-save-the-financial-system-from-crisis-and-themselves/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:18-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        Too Big to Fail: The Inside Story of How Wall Street and Washington Fought to Save the Financial System from Crisis — and Themselves</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-big-short-inside-the-doomsday-machine/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:11-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        The Big Short: Inside the Doomsday Machine</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/freakonomics-a-rogue-economist-explores-the-hidden-side-of-everything/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:50:05-07:00" title="2012-03-30 12:50">2012-03-30 12:50</time> 
-        
-	        Freakonomics: A Rogue Economist Explores the Hidden Side of Everything</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/bad-science/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:49:54-07:00" title="2012-03-30 12:49">2012-03-30 12:49</time> 
-        
-	        Bad Science</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/chaos-making-a-new-science/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:49:48-07:00" title="2012-03-30 12:49">2012-03-30 12:49</time> 
-        
-	        Chaos: Making a New Science</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/surely-youre-joking-mr-feynman-adventures-of-a-curious-character/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:49:25-07:00" title="2012-03-30 12:49">2012-03-30 12:49</time> 
-        
-	        Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-greatest-show-on-earth-the-evidence-for-evolution/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:49:21-07:00" title="2012-03-30 12:49">2012-03-30 12:49</time> 
-        
-	        The Greatest Show on Earth: The Evidence for Evolution</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/parallel-worlds-a-journey-through-creation-higher-dimensions-and-the-future-of-the-cosmos/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:49:08-07:00" title="2012-03-30 12:49">2012-03-30 12:49</time> 
-        
-	        Parallel Worlds: A Journey through Creation, Higher Dimensions, and the Future of the Cosmos</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/six-easy-pieces-essentials-of-physics-by-its-most-brilliant-teacher/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:48:58-07:00" title="2012-03-30 12:48">2012-03-30 12:48</time> 
-        
-	        Six Easy Pieces: Essentials of Physics By Its Most Brilliant Teacher</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-selfish-gene/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:48:43-07:00" title="2012-03-30 12:48">2012-03-30 12:48</time> 
-        
-	        The Selfish Gene</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-elegant-universe-superstrings-hidden-dimensions-and-the-quest-for-the-ultimate-theory/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:48:33-07:00" title="2012-03-30 12:48">2012-03-30 12:48</time> 
-        
-	        The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/a-brief-history-of-time/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:48:30-07:00" title="2012-03-30 12:48">2012-03-30 12:48</time> 
-        
-	        A Brief History of Time</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/armageddon-the-battle-for-germany-1944-1945/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:47:35-07:00" title="2012-03-30 12:47">2012-03-30 12:47</time> 
-        
-	        Armageddon: The Battle for Germany, 1944-1945</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/inside-the-third-reich/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:47:26-07:00" title="2012-03-30 12:47">2012-03-30 12:47</time> 
-        
-	        Inside the Third Reich</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/watchmen/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-30T12:46:23-07:00" title="2012-03-30 12:46">2012-03-30 12:46</time> 
-        
-	        Watchmen</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/15/msci/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-03-15T11:13:37Z" title="2012-03-15 11:13">2012-03-15 11:13</time> 
-        
-	        New MSci degree</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/22/studentships/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-02-22T15:56:55Z" title="2012-02-22 15:56">2012-02-22 15:56</time> 
-        
-	        Studentships available</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/02/semantic-web/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-02-02T08:00:06Z" title="2012-02-02 08:00">2012-02-02 08:00</time> 
-        
-	        The semantic web: good ideas poorly supported?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/03/ebookery/" class="listtitle">
-        
-                <time class="listdate" datetime="2012-01-03T08:00:50Z" title="2012-01-03 08:00">2012-01-03 08:00</time> 
-        
-	        Ebook-ery</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="../goodreads/spies-and-commissars-the-early-years-of-the-russian-revolution/">Friday 28 December, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/spies-and-commissars-the-early-years-of-the-russian-revolution/">Spies and Commissars: The Early Years of the Russian Revolution</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="12/22/bcs-disdis/">Saturday 22 December, 2012</a></td>
+				<td style="text-align:center"><a href="12/22/bcs-disdis/">Distinguished Dissertations competition 2013</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="12/20/600th-scholarships/">Thursday 20 December, 2012</a></td>
+				<td style="text-align:center"><a href="12/20/600th-scholarships/">Six 600th anniversary PhD scholarships</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/capital-of-the-mind-how-edinburgh-changed-the-world/">Thursday 20 December, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/capital-of-the-mind-how-edinburgh-changed-the-world/">Capital of the Mind: How Edinburgh Changed the World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-end-of-history-and-the-last-man/">Saturday 1 December, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-end-of-history-and-the-last-man/">The End of History and the Last Man</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/vanished-kingdoms-the-rise-and-fall-of-states-and-nations/">Saturday 1 December, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/vanished-kingdoms-the-rise-and-fall-of-states-and-nations/">Vanished Kingdoms: The Rise and Fall of States and Nations</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/vanished-kingdoms-the-history-of-half-forgotten-europe/">Saturday 1 December, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/vanished-kingdoms-the-history-of-half-forgotten-europe/">Vanished Kingdoms: The History of Half-Forgotten Europe</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-hydrogen-sonata-culture-10/">Saturday 24 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-hydrogen-sonata-culture-10/">The Hydrogen Sonata (Culture, #10)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/17/csa/">Saturday 17 November, 2012</a></td>
+				<td style="text-align:center"><a href="11/17/csa/">Chief scientific advisor for Ireland</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/thinking-fast-and-slow/">Wednesday 14 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/thinking-fast-and-slow/">Thinking, Fast and Slow</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/godel-escher-bach-an-eternal-golden-braid/">Sunday 11 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/godel-escher-bach-an-eternal-golden-braid/">Gödel, Escher, Bach: An Eternal Golden Braid</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/empire-how-britain-made-the-modern-world/">Sunday 11 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/empire-how-britain-made-the-modern-world/">Empire: How Britain Made the Modern World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/shibumi/">Saturday 10 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/shibumi/">Shibumi</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/excession-culture-5/">Saturday 10 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/excession-culture-5/">Excession (Culture, #5)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/red-plenty-inside-the-fifties-soviet-dream/">Saturday 10 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/red-plenty-inside-the-fifties-soviet-dream/">Red Plenty: Inside the Fifties’ Soviet Dream</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/deception-spies-lies-and-how-russia-dupes-the-west/">Saturday 10 November, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/deception-spies-lies-and-how-russia-dupes-the-west/">Deception: Spies, Lies and How Russia Dupes the West</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/broken-harbour-dublin-murder-squad-4/">Wednesday 31 October, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/broken-harbour-dublin-murder-squad-4/">Broken Harbour (Dublin Murder Squad, #4)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/09/parsers/">Tuesday 9 October, 2012</a></td>
+				<td style="text-align:center"><a href="10/09/parsers/">Parser-centric grammar complexity</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/05/typewheel/">Friday 5 October, 2012</a></td>
+				<td style="text-align:center"><a href="10/05/typewheel/">The type wheel turns again</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/27/awareness/">Thursday 27 September, 2012</a></td>
+				<td style="text-align:center"><a href="09/27/awareness/">What's new for awareness researchers?: an interview</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/26/sfi-consultation/">Wednesday 26 September, 2012</a></td>
+				<td style="text-align:center"><a href="09/26/sfi-consultation/">Response to Science Foundation Ireland's consultation on its strategic plan</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="08/14/artificial-life/">Tuesday 14 August, 2012</a></td>
+				<td style="text-align:center"><a href="08/14/artificial-life/">Distinguished lecture on artificial life</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="08/08/forth-32-years/">Wednesday 8 August, 2012</a></td>
+				<td style="text-align:center"><a href="08/08/forth-32-years/">Forth, 2^5 years ago</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="08/03/mscphd-wireless-location/">Friday 3 August, 2012</a></td>
+				<td style="text-align:center"><a href="08/03/mscphd-wireless-location/">MSc/PhD positions available in wireless location systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/blackout-all-clear-1/">Wednesday 1 August, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/blackout-all-clear-1/">Blackout (All Clear, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/26/scholarships/">Thursday 26 July, 2012</a></td>
+				<td style="text-align:center"><a href="07/26/scholarships/">Scholar positions for Erasmus Mundus MSc in Dependable Software Systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/11/call-papers-midsens-2012/">Wednesday 11 July, 2012</a></td>
+				<td style="text-align:center"><a href="07/11/call-papers-midsens-2012/">Call for papers: Midsens 2012</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/19/asensis/">Tuesday 19 June, 2012</a></td>
+				<td style="text-align:center"><a href="06/19/asensis/">Workshop on naturally-inspired service ecosystems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/14/russian-dolls/">Thursday 14 June, 2012</a></td>
+				<td style="text-align:center"><a href="06/14/russian-dolls/">Layered abstractions and Russian dolls</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/1776/">Wednesday 23 May, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/1776/">1776</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/17/5-studentships/">Thursday 17 May, 2012</a></td>
+				<td style="text-align:center"><a href="05/17/5-studentships/">5 studentships in Computer Science and St Andrews</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/08/library-book/">Tuesday 8 May, 2012</a></td>
+				<td style="text-align:center"><a href="05/08/library-book/">When not to return a library book</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/04/postmodernism-programming/">Friday 4 May, 2012</a></td>
+				<td style="text-align:center"><a href="05/04/postmodernism-programming/">The post-modernisation of programming languages</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/26/brazil-science/">Thursday 26 April, 2012</a></td>
+				<td style="text-align:center"><a href="04/26/brazil-science/">Brazilian "Science without Borders" studentships available</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-great-terror-a-reassessment/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-great-terror-a-reassessment/">The Great Terror: A Reassessment</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/world-war-ii-behind-closed-doors-stalin-the-nazis-and-the-west/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/world-war-ii-behind-closed-doors-stalin-the-nazis-and-the-west/">World War II: Behind Closed Doors; Stalin, the Nazis, and the West</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/hitler-and-stalin-parallel-lives/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/hitler-and-stalin-parallel-lives/">Hitler and Stalin: Parallel Lives</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-the-dream-hunters/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-the-dream-hunters/">The Sandman: The Dream Hunters</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-5-a-game-of-you/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-5-a-game-of-you/">The Sandman, Vol. 5: A Game of You</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-10-the-wake/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-10-the-wake/">The Sandman, Vol. 10: The Wake</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-8-worlds-end/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-8-worlds-end/">The Sandman, Vol. 8: Worlds' End</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-9-the-kindly-ones/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-9-the-kindly-ones/">The Sandman, Vol. 9: The Kindly Ones</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-6-fables-reflections/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-6-fables-reflections/">The Sandman, Vol. 6: Fables &amp; Reflections</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-endless-nights/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-endless-nights/">The Sandman: Endless Nights</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-4-season-of-mists/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-4-season-of-mists/">The Sandman, Vol. 4: Season of Mists</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-3-dream-country/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-3-dream-country/">The Sandman, Vol. 3: Dream Country</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-2-the-dolls-house/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-2-the-dolls-house/">The Sandman, Vol. 2: The Doll's House</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-sandman-vol-1-preludes-nocturnes/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-sandman-vol-1-preludes-nocturnes/">The Sandman, Vol. 1: Preludes &amp; Nocturnes</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/how-ireland-really-went-bust/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/how-ireland-really-went-bust/">How Ireland Really Went Bust</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/breakfast-with-anglo/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/breakfast-with-anglo/">Breakfast With Anglo</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-ascent-of-money-a-financial-history-of-the-world/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-ascent-of-money-a-financial-history-of-the-world/">The Ascent of Money: A Financial History of the World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-artist-the-philosopher-and-the-warrior-the-intersecting-lives-of-da-vinci-machiavelli-and-borgia-and-the-world-they-shaped/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-artist-the-philosopher-and-the-warrior-the-intersecting-lives-of-da-vinci-machiavelli-and-borgia-and-the-world-they-shaped/">The Artist, the Philosopher, and the Warrior: The Intersecting Lives of Da Vinci, Machiavelli, and Borgia and the World They Shaped</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/neuromancer-sprawl-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/neuromancer-sprawl-1/">Neuromancer (Sprawl, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/animal-farm-1984/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/animal-farm-1984/">Animal Farm / 1984</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/ringworld-ringworld-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/ringworld-ringworld-1/">Ringworld (Ringworld, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/rendezvous-with-rama-rama-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/rendezvous-with-rama-rama-1/">Rendezvous with Rama (Rama, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/do-androids-dream-of-electric-sheep/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/do-androids-dream-of-electric-sheep/">Do Androids Dream of Electric Sheep?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/dune-dune-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/dune-dune-1/">Dune (Dune, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/consider-phlebas-culture-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/consider-phlebas-culture-1/">Consider Phlebas (Culture, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-color-of-magic-discworld-1-rincewind-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-color-of-magic-discworld-1-rincewind-1/">The Color of Magic (Discworld, #1; Rincewind, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/angels-demons-robert-langdon-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/angels-demons-robert-langdon-1/">Angels &amp; Demons (Robert Langdon, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-art-book/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-art-book/">The Art Book</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-shock-of-the-new/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-shock-of-the-new/">The Shock of the New</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-story-of-art/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-story-of-art/">The Story of Art</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-moon-is-a-harsh-mistress/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-moon-is-a-harsh-mistress/">The Moon Is a Harsh Mistress</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/use-of-weapons-culture-3/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/use-of-weapons-culture-3/">Use of Weapons (Culture, #3)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/hyperion-hyperion-cantos-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/hyperion-hyperion-cantos-1/">Hyperion (Hyperion Cantos, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-puppet-masters/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-puppet-masters/">The Puppet Masters</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-martian-chronicles/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-martian-chronicles/">The Martian Chronicles</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/starship-troopers/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/starship-troopers/">Starship Troopers</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/accelerando-singularity/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/accelerando-singularity/">Accelerando (Singularity)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/jurassic-park-jurassic-park-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/jurassic-park-jurassic-park-1/">Jurassic Park (Jurassic Park, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/snow-crash/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/snow-crash/">Snow Crash</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-mote-in-gods-eye-moties-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-mote-in-gods-eye-moties-1/">The Mote in God's Eye (Moties, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/stranger-in-a-strange-land/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/stranger-in-a-strange-land/">Stranger in a Strange Land</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-trial/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-trial/">The Trial</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/catch-22/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/catch-22/">Catch-22</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/1984/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/1984/">1984</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/brave-new-world/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/brave-new-world/">Brave New World</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/foundation-foundation-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/foundation-foundation-1/">Foundation (Foundation, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-past-through-tomorrow-future-history-1-21/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-past-through-tomorrow-future-history-1-21/">The Past Through Tomorrow (Future History, #1-21)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-player-of-games-culture-2/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-player-of-games-culture-2/">The Player of Games (Culture, #2)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/foundation-and-empire-foundation-2/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/foundation-and-empire-foundation-2/">Foundation and Empire (Foundation, #2)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/fahrenheit-451/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/fahrenheit-451/">Fahrenheit 451</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-hitchhikers-guide-to-the-galaxy-hitchhikers-guide-to-the-galaxy-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-hitchhikers-guide-to-the-galaxy-hitchhikers-guide-to-the-galaxy-1/">The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/enders-game-enders-saga-1/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/enders-game-enders-saga-1/">Ender’s Game (Ender's Saga, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/too-big-to-fail-the-inside-story-of-how-wall-street-and-washington-fought-to-save-the-financial-system-from-crisis-and-themselves/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/too-big-to-fail-the-inside-story-of-how-wall-street-and-washington-fought-to-save-the-financial-system-from-crisis-and-themselves/">Too Big to Fail: The Inside Story of How Wall Street and Washington Fought to Save the Financial System from Crisis — and Themselves</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-big-short-inside-the-doomsday-machine/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-big-short-inside-the-doomsday-machine/">The Big Short: Inside the Doomsday Machine</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/freakonomics-a-rogue-economist-explores-the-hidden-side-of-everything/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/freakonomics-a-rogue-economist-explores-the-hidden-side-of-everything/">Freakonomics: A Rogue Economist Explores the Hidden Side of Everything</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/bad-science/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/bad-science/">Bad Science</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/chaos-making-a-new-science/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/chaos-making-a-new-science/">Chaos: Making a New Science</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/surely-youre-joking-mr-feynman-adventures-of-a-curious-character/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/surely-youre-joking-mr-feynman-adventures-of-a-curious-character/">Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-greatest-show-on-earth-the-evidence-for-evolution/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-greatest-show-on-earth-the-evidence-for-evolution/">The Greatest Show on Earth: The Evidence for Evolution</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/parallel-worlds-a-journey-through-creation-higher-dimensions-and-the-future-of-the-cosmos/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/parallel-worlds-a-journey-through-creation-higher-dimensions-and-the-future-of-the-cosmos/">Parallel Worlds: A Journey through Creation, Higher Dimensions, and the Future of the Cosmos</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/six-easy-pieces-essentials-of-physics-by-its-most-brilliant-teacher/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/six-easy-pieces-essentials-of-physics-by-its-most-brilliant-teacher/">Six Easy Pieces: Essentials of Physics By Its Most Brilliant Teacher</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-selfish-gene/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-selfish-gene/">The Selfish Gene</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-elegant-universe-superstrings-hidden-dimensions-and-the-quest-for-the-ultimate-theory/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-elegant-universe-superstrings-hidden-dimensions-and-the-quest-for-the-ultimate-theory/">The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/a-brief-history-of-time/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/a-brief-history-of-time/">A Brief History of Time</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/armageddon-the-battle-for-germany-1944-1945/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/armageddon-the-battle-for-germany-1944-1945/">Armageddon: The Battle for Germany, 1944-1945</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/inside-the-third-reich/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/inside-the-third-reich/">Inside the Third Reich</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/watchmen/">Friday 30 March, 2012</a></td>
+				<td style="text-align:center"><a href="../goodreads/watchmen/">Watchmen</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/15/msci/">Thursday 15 March, 2012</a></td>
+				<td style="text-align:center"><a href="03/15/msci/">New MSci degree</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/22/studentships/">Wednesday 22 February, 2012</a></td>
+				<td style="text-align:center"><a href="02/22/studentships/">Studentships available</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/02/semantic-web/">Thursday 2 February, 2012</a></td>
+				<td style="text-align:center"><a href="02/02/semantic-web/">The semantic web: good ideas poorly supported?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/03/ebookery/">Tuesday 3 January, 2012</a></td>
+				<td style="text-align:center"><a href="01/03/ebookery/">Ebook-ery</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

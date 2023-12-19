@@ -1,158 +1,208 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon Dobson (old posts, page 45) | Simon Dobson</title>
+<title>Simon Dobson (old posts, page 45)</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/indices/index-45.html">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<link rel="prev" href="index-46.html" type="text/html">
-<link rel="next" href="index-44.html" type="text/html">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/23/arduino-watchdog/" rel="bookmark">Tuesday 23 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/23/arduino-watchdog/">Understanding Arduino sleep modes: the watchdog timer</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.
 
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
+<!--more-->
 
-      </div>
+[mathjax]
 
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+Powering-down the Arduino makes a lot of sense for a sensor network: it saves battery power allowing the system to survive for longer. Deciding <em>when</em> to power the system down is another story, but in this post we'll concentrate on documenting the mechanics of the process. The details are necessarily messy and low-level. (I've been greatly helped in writing this post by <a href="http://www.atmel.com/devices/atmega328p.aspx?tab=documents" target="_blank">the data sheet for the Atmel ATmega328P microcontroller</a> that's used in the Arduino Uno, as well as by <a href="http://donalmorrissey.blogspot.ie/2010/04/putting-arduino-diecimila-to-sleep-part.html" target="_blank">a series of blog posts by Donal Morrissey</a> that also deal with other sleep modes for the Atmel.)
+</p>
+<h3>Header files and general information</h3>
+To use the watchdog timer, a sketch needs to include three header files:
+
+
+<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avr/power.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;avr/wdt.h&gt;</span>
+</pre></div>
+
+
+
+These provide definitions for various functions and variables needed to control the watchdog timer and manage some of the other power functions.
+<h3>Power modes</h3>
+A power (or sleep) mode is a setting for the microcontroller that allows it to use less power in exchange of disabling some of its functions. Since a microcontroller is, to all intents and purposes, a small computer on a chip, it has a lot of sub-systems that may not be needed all the time. A power mode lets you shut these unneeded sub-systems down. The result saves power but reduces functionality.
+
+Power modes are pretty coarse control mechanisms, and can shut down more than you intend. If your project is basically software-driven, with the Arduino making all the decisions, then a "deep" power-saving mode is ideal; on the other hand, if you rely on hardware-based signals at all, a "deep" sleep will probably ignore your hardware and the Arduino may never wake up.
+
+The watchdog timer is used to manage the "power-down" mode, the deepest sleep mode with the biggest power savings.
+<h3>Watchdog timer</h3>
+The Arduino's watchdog timer is a countdown timer that's driven by its own oscillator on the microcontroller. It's designed to run even when all the other circuitry is powered down, meaning that the microcontroller is drawing as little power as possible without actually being turned off completely.
+
+Why "watchdog" timer? The basic function of a watchdog timer is to "bite" after a certain period, where "biting" means raising an interrupt, re-setting the system, or both. A typical use of a watchdog is to make a system more robust to software failures. Since the watchdog is handled by the microcontroller's hardware, independent of any program being run, it will still bite even if the software gets stuck in an infinite loop (for example). Some designers set the watchdog ahead of complex operations, so that if the operation fails, the system will reset in a short amount of time and end up back in a known-good configuration. At the end of a successful operation, the program disables the watchdog (before it bites) and carries on. Of course this assumes that the operation completes before the watchdog bites, which means the programmer needs to have a good idea of how long it will take.
+<h3>Setting the time-out period</h3>
+It's as well to understand how watchdog timers on microcontrollers work. Typically they have a fairly coarse resolution, counting a fixed number of timer ticks before "biting" and performing some function. In the case of the Arduino, the watchdog timer is driven by the internal oscillator running at 128KHz and counts off some multiple of ticks before biting. This value -- the number of ticks counted -- is referred to as the "prescalar" for the timer.
+
+The prescalar is controlled by the values of four bits in the watchdog timer's control register, <code>WDTCSR</code>. To set them up, you pick the value of prescalar you want and set the appropriate bits. If the bits contain a number \( i \), then the watchdog will bite after \( (2048 &lt;&lt; i) / 128000 \) seconds. So \( i = 0\) means the watchdog bites after 16ms; \( i = 1 \) produces  delay of 32ms; and so on up to \( i = 9 \) (the largest value allowed) means the watchdog bites after about 8s.
+
+The word "about" is important here: the oscillator's exact frequency depends on the supply voltage to the chip and some other factors, meaning that you should be conservative about relying on the delay time.
+
+Writing the appropriate value of \( i \) into the control register
+involves representing \( i \) as a four-digit binary number and then
+writing these bits into four bits of the register -- and unfortunately
+these bits aren't consecutive. if \( i = 7 \) for example, then this
+is 0b0111 in binary, so we write 1 into bits <code>WDP0</code>,
+<code>WDP1</code> and <code>WDP2</code>, and 0 into bit
+<code>WDP3</code>, and 0 into all the other bits:
+
+
+<div class="code"><pre class="code literal-block"><span class="n">WDTCSR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP0</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP2</span><span class="p">);</span>
+</pre></div>
+
+
+
+The phrases of the form <code>(1 &lt;&lt; WDP0)</code> simply takes a binary digit 1 and shifts it left into bit position <code>WDP0</code>. The <code>|</code> symbols logically OR these bits together to generate the final bit mask that is assigned to the control register.
+
+Actually there's a little bit more to it than this, as we can't change the watchdog's configuration arbitrarily. Instead we have to notify the chip that it's configuration is about to be changed, by setting two other bits in the control register and then performing the updates we want:
+
+
+<div class="code"><pre class="code literal-block"><span class="n">WDTCSR</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDCE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDE</span><span class="p">);</span>
+</pre></div>
+
+
+
+Setting <code>WDCE</code> enables changes in configuration to be made in the next few processor cycles, <em>i.e.</em> immediately. Setting <code>WDE</code> resets the timer.
+
+Finally we enable the watchdog timer interrupts by setting bit
+<code>WDIE</code>. When the watchdog timer bites, the microcontroller
+executes an interrupt handler, re-starts the main program, and clears
+<code>WDIE</code>. Any further interrupts, if the time is re-enabled,
+will then cause a system reset.
+
+
+<div class="code"><pre class="code literal-block"><span class="n">WDTCSR</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDIE</span><span class="p">);</span>
+</pre></div>
+
+
+
+So the complete code the setting up the watchdog timer to bite in 2s is:
+
+
+<div class="code"><pre class="code literal-block"><span class="n">set_sleep_mode</span><span class="p">(</span><span class="n">SLEEP_MODE_PWR_DOWN</span><span class="p">);</span><span class="w">              </span><span class="c1">// select the watchdog timer mode</span>
+<span class="n">MCUSR</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">~</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDRF</span><span class="p">);</span><span class="w">                            </span><span class="c1">// reset status flag</span>
+<span class="n">WDTCSR</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDCE</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDE</span><span class="p">);</span><span class="w">               </span><span class="c1">// enable configuration changes</span>
+<span class="n">WDTCSR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP0</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDP2</span><span class="p">);</span><span class="w"> </span><span class="c1">// set the prescalar = 7</span>
+<span class="n">WDTCSR</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">WDIE</span><span class="p">);</span><span class="w">                            </span><span class="c1">// enable interrupt mode</span>
+<span class="n">sleep_enable</span><span class="p">();</span><span class="w">                                   </span><span class="c1">// enable the sleep mode ready for use</span>
+<span class="n">sleep_mode</span><span class="p">();</span><span class="w">                                     </span><span class="c1">// trigger the sleep</span>
+
+<span class="cm">/* ...time passes ... */</span>
+
+<span class="n">sleep_disable</span><span class="p">();</span><span class="w">                                  </span><span class="c1">// prevent further sleeps&lt;/pre&gt;</span>
+</pre></div>
+
+
+
+<h3> Interrupt handler</h3>
+What happens when the watchdog bites? It causes an interrupt that has to be handled before the program can continue. The interrupt could be used for all sorts of things, but there's often no point in worrying about it: but it still has to be there, to prevent the microcontroller just resetting. The following code installs a dummy interrupt handler:
+
+
+<div class="code"><pre class="code literal-block"><span class="n">ISR</span><span class="p">(</span><span class="w"> </span><span class="n">WDT_vect</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* dummy */</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+The <code>WDT_vect</code> identifies the watchdog timer's interrupt vector.
+
+While this might seem like a waste of time, it's important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It's also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn't cause any problems.
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/permutation-city/" rel="bookmark">Friday 12 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/permutation-city/">Permutation City</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341300l/156784._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Greg Egan
+	  (1994)
+      </h2>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-    
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/permutation-city-subjective-cosmology-2/" class="u-url">Permutation City (Subjective Cosmology #2)</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../goodreads/permutation-city-subjective-cosmology-2/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-12T12:34:19-07:00" title="2013-07-12 12:34">2013-07-12 12:34</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/permutation-city-subjective-cosmology-2/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/permutation-city-subjective-cosmology-2.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-    <h1>Permutation City (Subjective Cosmology #2)</h1>
-    <div>
-      <div>
-	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341300l/156784._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-	  <h2>Greg Egan</h2>
-	    1994
-	  <p>
-	    </p>
-<hr>
-</div>
-      </div>
-      <p>
-	
+    <p>
+      
+      </p>
+<p>
+	2/5.
+	  Finished Friday 12 July, 2013.
 	</p>
 <p>
-	  2/5.
-	    Finished 12 July 2013.
-	  </p>
-<p>
-	    (Originally published on <a href="https://www.goodreads.com/review/show/569462535?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-    </p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/569462535?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
 </div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../2013/07/10/edge/" class="u-url">The edge of computer science</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../2013/07/10/edge/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T11:55:45+01:00" title="2013-07-10 11:55">2013-07-10 11:55</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../2013/07/10/edge/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/10/edge.html">Comments</a>
-
-
-        </p>
+		</div>
+	    </article>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p style="text-align: left">Where does mathematics end and computer science begin?</p>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/10/edge/" rel="bookmark">Wednesday 10 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/10/edge/">The edge of computer science</a></h1>
+		</div>
+		<div class="entry-content">
+			<p style="text-align: left">Where does mathematics end and computer science begin?</p>
 <!--more-->
 
 I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say, what separates it from maths? How do mathematicians and computer scientists see problems differently, and indeed select differently what constitutes an interesting problem?
@@ -174,57 +224,20 @@ Mathematicians don't see networks this way, because they want to make precisely 
 So a mathematician's (at least as represented in most of the complex systems literature) interest in a problem is lost at precisely the point that a computer scientist's interest kicks in: where the question is about behaviour of arbitrary computations. The question this leads to is, what model do real-world networks follow more closely? Are they composed of simple, well-behaved spreading processes? Or do they more resemble arbitrary functions hanging off a network of relationships, whose properties can only be discovered numerically? And what effect does the avoidance of arbitrary computation have on the choice of problems to which scientists apply themselves? Perhaps the way forward here is to try to find the boundary of the complexity of functions that remain analytic when used as part of a network dynamics, to get the best of both worlds: global statements about large categories of networks, without needing numerical simulation of individual cases.
 
 Such a classification would have useful consequences for general computer science as well. A lot of the problems in systems design come from the arbitrariness of code and its interactions, and from the fact that we're uncomfortable restricting that generality <em>a priori</em> because we don't know what the consequences will be for the re-usability and extensibility of the systems being designed. A more nuanced understanding of behavioural envelopes might help.
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../goodreads/mussolini/" class="u-url">Mussolini</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../goodreads/mussolini/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T01:52:26-07:00" title="2013-07-10 01:52">2013-07-10 01:52</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../goodreads/mussolini/#disqus_thread" data-disqus-identifier="cache/posts/goodreads/mussolini.html">Comments</a>
-
-
-        </p>
+		</div>
+	    </article>
 </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-    <h1>Mussolini</h1>
-    <div>
-      <div>
-	<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1315695027l/9462315._SX98_.jpg" style="float: left; margin-right: 10px"><div>
-	  <h2>Richard J.B. Bosworth</h2>
-	    2002
-	  <p>
-	    </p>
-<hr>
-</div>
-      </div>
-      <p>
-	I've wanted to read a biography of Mussolini for a while, and this one is very good. A reviewer quote on the cover describes it as "lucid, elegant, and a pleasure to read," and I'd have to agree. It's somewhat more "literary" than some biographies, and as a result doesn't always cover the historical context as well as one might like: the author's description of the March on Rome, for example, is extremely brief despite it's significance for Mussolini's rise. In this way it's not like many Hitler biographies (for example <a href="https://www.goodreads.com/book/show/355434.Hitler" title="Hitler by Joachim Fest" rel="nofollow noopener">Hitler</a> or <a href="https://www.goodreads.com/book/show/782319.Hitler_and_Stalin_Parallel_Lives" title="Hitler and Stalin Parallel Lives by Alan Bullock" rel="nofollow noopener">Hitler and Stalin: Parallel Lives</a>) which are as much about events as personality. One also has to get past the author's repetition of words like "euphonious" and "lucubrations", which get tiresome after a while. Having said all that, this is an excellent biography, full of insight and pointers to other sources (with over 80 pages of footnotes), and is a good overview to the career of someone often written off too quickly.
-	</p>
-<p>
-	  4/5.
-	    Finished 10 July 2013.
-	  </p>
-<p>
-	    (Originally published on <a href="https://www.goodreads.com/review/show/630146008?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-    </p>
-</div>
-  </div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../2013/07/10/representing-samples/" class="u-url">Representing samples</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../2013/07/10/representing-samples/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-10T08:03:31+01:00" title="2013-07-10 08:03">2013-07-10 08:03</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../2013/07/10/representing-samples/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/10/representing-samples.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/10/representing-samples/" rel="bookmark">Wednesday 10 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/10/representing-samples/">Representing samples</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
 
 <!--more-->
 
@@ -241,85 +254,70 @@ There are some compromise positions, however. <a href="http://www.json.org" targ
 JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.
 
 This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/mussolini/" rel="bookmark">Wednesday 10 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/mussolini/">Mussolini</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1315695027l/9462315._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Richard J.B. Bosworth
+	  (2002)
+      </h2>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../2013/07/09/temperature-sensors-working/" class="u-url">Temperature sensors working</a></h1>
-
-        
-        <div class="metadata">
-            <p class="dateline"><a href="../2013/07/09/temperature-sensors-working/" rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2013-07-09T19:00:20+01:00" title="2013-07-09 19:00">2013-07-09 19:00</time></a></p>
-
-                <p class="commentline"><i class="fa fa-comment"></i>         <a href="../2013/07/09/temperature-sensors-working/#disqus_thread" data-disqus-identifier="cache/posts/2013/07/09/temperature-sensors-working.html">Comments</a>
-
-
-        </p>
+    <p>
+      I've wanted to read a biography of Mussolini for a while, and this one is very good. A reviewer quote on the cover describes it as "lucid, elegant, and a pleasure to read," and I'd have to agree. It's somewhat more "literary" than some biographies, and as a result doesn't always cover the historical context as well as one might like: the author's description of the March on Rome, for example, is extremely brief despite it's significance for Mussolini's rise. In this way it's not like many Hitler biographies (for example <a href="https://www.goodreads.com/book/show/355434.Hitler" title="Hitler by Joachim Fest" rel="nofollow noopener">Hitler</a> or <a href="https://www.goodreads.com/book/show/782319.Hitler_and_Stalin_Parallel_Lives" title="Hitler and Stalin Parallel Lives by Alan Bullock" rel="nofollow noopener">Hitler and Stalin: Parallel Lives</a>) which are as much about events as personality. One also has to get past the author's repetition of words like "euphonious" and "lucubrations", which get tiresome after a while. Having said all that, this is an excellent biography, full of insight and pointers to other sources (with over 80 pages of footnotes), and is a good overview to the career of someone often written off too quickly.
+      </p>
+<p>
+	4/5.
+	  Finished Wednesday 10 July, 2013.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/630146008?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
 </div>
-    </header><div class="p-summary entry-summary">
-    <p>Temperature sensing using digital temperature sensors is easy to get working.
-
-<!--more-->
-
-The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../2013/07/08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.
-
-![DS18B20](/images/citizen-sensing/three-ds18b20.png)
-
-Three DS18B20 temperature sensors sharing a OneWire bus, standard (rail) power mode
-
-Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin -- which isn't important for hardware reasons in this project, but also saves some microcontroller RAM, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The DQ line is attached to one of the Arduino's digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to "real" temperature values.
-
-The resulting code is almost comically simple:
-
-</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;DallasTemperature.h&gt;</span>
-
-<span class="n">OneWire</span><span class="w"> </span><span class="nf">onewire</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">                  </span><span class="c1">// OneWire bus on pin 8</span>
-<span class="n">DallasTemperature</span><span class="w"> </span><span class="nf">sensors</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onewire</span><span class="p">);</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-<span class="w">  </span><span class="n">sensors</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">sensors</span><span class="p">.</span><span class="n">requestTemperatures</span><span class="p">();</span>
-<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sensors</span><span class="p">.</span><span class="n">getTempCByIndex</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Sensor "</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" = "</span><span class="p">);</span>
-<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"C"</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-
-
-That's it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).
-
-![Three DS18B30s on a prototyping shield](/images/citizen-sensing/ds18b20-prototype.jpg)
-
-One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we'll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.
-
-There's also an interesting point about parasite power mode, which is where the DS18B20 draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it's probably worth looking into parasite power a bit more.
-    </div>
-    </article>
+		</div>
+	    </article>
 </div>
-        <nav class="postindexpager"><ul class="pager">
-<li class="next">
-                <a href="index-46.html" rel="next">Newer posts</a>
-            </li>
-            <li class="previous">
-                <a href="index-44.html" rel="prev">Older posts</a>
-            </li>
-        </ul></nav><script>var disqus_shortname="simoninireland";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+    <!-- Lower Navigation links -->
+    <nav class="site-content navigation-post" role="navigation"><div class="previous">
+		<a href="index-44.html" rel="prev">
+		    <span class="meta-nav">Older Entries</span>		</a>
+	    </div>
+	    <div class="next">
+		<a href="index-46.html" rel="next">
+		    <span class="meta-nav">Newer Entries</span>		</a>
+	    </div>
+    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

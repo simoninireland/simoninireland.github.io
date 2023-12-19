@@ -1,546 +1,261 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2011 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2011/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2011</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2011</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="12/22/mirror/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-12-22T08:00:15Z" title="2011-12-22 08:00">2011-12-22 08:00</time> 
-        
-	        The mirror</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="12/19/bsc-disdis/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-12-19T08:00:27Z" title="2011-12-19 08:00">2011-12-19 08:00</time> 
-        
-	        British Computer Society Distinguished Dissertations competition</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="12/16/middleware-doughnut/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-12-16T11:09:49Z" title="2011-12-16 11:09">2011-12-16 11:09</time> 
-        
-	        The middleware doughnut</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/25/inaugural/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-11-25T12:49:10Z" title="2011-11-25 12:49">2011-11-25 12:49</time> 
-        
-	        Inaugural lecture</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/17/funded-studentships/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-11-17T11:44:25Z" title="2011-11-17 11:44">2011-11-17 11:44</time> 
-        
-	        Funded research studentships available in St Andrews</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="11/07/phd-leuven/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-11-07T11:39:02Z" title="2011-11-07 11:39">2011-11-07 11:39</time> 
-        
-	        Studentships in wireless sensor networks in Leuven</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/21/tablet-convert/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-10-21T22:27:13+01:00" title="2011-10-21 22:27">2011-10-21 22:27</time> 
-        
-	        A convert to tablet computing</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="10/03/research-fellowship-sensor-networks/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-10-03T11:36:09+01:00" title="2011-10-03 11:36">2011-10-03 11:36</time> 
-        
-	        Research fellowship in sensor networks</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/09/smart-grids/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-09-09T07:30:09+01:00" title="2011-09-09 07:30">2011-09-09 07:30</time> 
-        
-	        An issue for smart grids</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/08/people-university/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-09-08T11:56:49+01:00" title="2011-09-08 11:56">2011-09-08 11:56</time> 
-        
-	        Why do people go to university?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/05/arts-humanities/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-07-05T08:00:13+01:00" title="2011-07-05 08:00">2011-07-05 08:00</time> 
-        
-	        On not funding the arts and humanities</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/01/metrics/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-07-01T08:00:29+01:00" title="2011-07-01 08:00">2011-07-01 08:00</time> 
-        
-	        Metrics and the Research Evaluation Framework</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/27/computing-experience/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-27T16:00:55+01:00" title="2011-06-27 16:00">2011-06-27 16:00</time> 
-        
-	        The changing student computing experience</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/10/wheeliebin/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-10T15:44:06+01:00" title="2011-06-10 15:44">2011-06-10 15:44</time> 
-        
-	        Why is my wheelie bin measured in decibels?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/06/lectureship-computer-science-st-andrews/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-06T14:12:10+01:00" title="2011-06-06 14:12">2011-06-06 14:12</time> 
-        
-	        Lectureship in Computer Science at St Andrews</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/06/phd/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-06T10:32:56+01:00" title="2011-06-06 10:32">2011-06-06 10:32</time> 
-        
-	        PhD position available in intrusion detection</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/06/cfp-midsens11/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-06T10:30:18+01:00" title="2011-06-06 10:30">2011-06-06 10:30</time> 
-        
-	        Call for papers: MidSens'11</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/06/cfp-d3science/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-06T10:20:44+01:00" title="2011-06-06 10:20">2011-06-06 10:20</time> 
-        
-	        Call for papers: D3Science</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/03/pervasive-healthcare/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-06-03T14:00:35+01:00" title="2011-06-03 14:00">2011-06-03 14:00</time> 
-        
-	        Pervasive healthcare</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/27/smalltalk/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-05-27T08:00:29+01:00" title="2011-05-27 08:00">2011-05-27 08:00</time> 
-        
-	        Mainstreaming Smalltalk</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/23/code/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-05-23T08:00:59+01:00" title="2011-05-23 08:00">2011-05-23 08:00</time> 
-        
-	        Why we have code</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/20/evolving/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-05-20T08:00:11+01:00" title="2011-05-20 08:00">2011-05-20 08:00</time> 
-        
-	        Evolving programming languages</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/17/work-life/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-05-17T08:00:58+01:00" title="2011-05-17 08:00">2011-05-17 08:00</time> 
-        
-	        Not a work/life balance</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="05/04/balance-of-power/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-05-04T11:00:17+01:00" title="2011-05-04 11:00">2011-05-04 11:00</time> 
-        
-	        The shifting balance of university power</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/27/cloud-computing-cf/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-04-27T11:53:22+01:00" title="2011-04-27 11:53">2011-04-27 11:53</time> 
-        
-	        Call for participation: summer school in cloud computing</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/27/valuable/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-04-27T09:02:33+01:00" title="2011-04-27 09:02">2011-04-27 09:02</time> 
-        
-	        Some data is just too valuable</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="04/11/spectrum/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-04-11T19:00:43+01:00" title="2011-04-11 19:00">2011-04-11 19:00</time> 
-        
-	        Adventures at either end of the performance spectrum</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/23/situations/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-03-23T09:45:18Z" title="2011-03-23 09:45">2011-03-23 09:45</time> 
-        
-	        The next challenges for situation recognition</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/15/jolicloud/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-03-15T08:00:58Z" title="2011-03-15 08:00">2011-03-15 08:00</time> 
-        
-	        A very jolly cloud</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/02/disloyalty-cards/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-03-02T16:00:53Z" title="2011-03-02 16:00">2011-03-02 16:00</time> 
-        
-	        Disloyalty cards</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/25/hiring-2/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-25T08:00:35Z" title="2011-02-25 08:00">2011-02-25 08:00</time> 
-        
-	        Hiring academics</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/23/why-i-research/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-23T08:00:07Z" title="2011-02-23 08:00">2011-02-23 08:00</time> 
-        
-	        Why I research</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/21/comments/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-21T08:00:13Z" title="2011-02-21 08:00">2011-02-21 08:00</time> 
-        
-	        Where do all the comments go?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/17/meringue/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-17T08:00:15Z" title="2011-02-17 08:00">2011-02-17 08:00</time> 
-        
-	        Who invented meringue?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/09/sensor-senseability/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-09T10:09:51Z" title="2011-02-09 10:09">2011-02-09 10:09</time> 
-        
-	        Sensor and sense-ability</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/09/tumbledown/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-02-09T08:00:04Z" title="2011-02-09 08:00">2011-02-09 08:00</time> 
-        
-	        Book: Tumbledown -- the old houses of Co Sligo</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/31/fmps-cfp/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-31T11:34:52Z" title="2011-01-31 11:34">2011-01-31 11:34</time> 
-        
-	        Call for papers: Formal methods for Pervasive Systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/18/university-vision/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-18T08:00:01Z" title="2011-01-18 08:00">2011-01-18 08:00</time> 
-        
-	        The (new) idea of a (21st century) university</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/17/no-ndas/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-17T09:00:27Z" title="2011-01-17 09:00">2011-01-17 09:00</time> 
-        
-	        Why I don’t sign NDAs</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/12/modern-postcodes/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-12T08:00:31Z" title="2011-01-12 08:00">2011-01-12 08:00</time> 
-        
-	        Modern postcodes</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/10/unpopular-book/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-10T08:00:04Z" title="2011-01-10 08:00">2011-01-10 08:00</time> 
-        
-	        How to publish an unpopular book?</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/09/pmmps2011-cfp/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-09T13:17:53Z" title="2011-01-09 13:17">2011-01-09 13:17</time> 
-        
-	        Call for papers: Programming methods for mobile and pervasive systems</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/05/wikileaks/" class="listtitle">
-        
-                <time class="listdate" datetime="2011-01-05T08:30:30Z" title="2011-01-05 08:30">2011-01-05 08:30</time> 
-        
-	        Wikileaks as reality television</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="12/22/mirror/">Thursday 22 December, 2011</a></td>
+				<td style="text-align:center"><a href="12/22/mirror/">The mirror</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="12/19/bsc-disdis/">Monday 19 December, 2011</a></td>
+				<td style="text-align:center"><a href="12/19/bsc-disdis/">British Computer Society Distinguished Dissertations competition</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="12/16/middleware-doughnut/">Friday 16 December, 2011</a></td>
+				<td style="text-align:center"><a href="12/16/middleware-doughnut/">The middleware doughnut</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/25/inaugural/">Friday 25 November, 2011</a></td>
+				<td style="text-align:center"><a href="11/25/inaugural/">Inaugural lecture</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/17/funded-studentships/">Thursday 17 November, 2011</a></td>
+				<td style="text-align:center"><a href="11/17/funded-studentships/">Funded research studentships available in St Andrews</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="11/07/phd-leuven/">Monday 7 November, 2011</a></td>
+				<td style="text-align:center"><a href="11/07/phd-leuven/">Studentships in wireless sensor networks in Leuven</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/21/tablet-convert/">Friday 21 October, 2011</a></td>
+				<td style="text-align:center"><a href="10/21/tablet-convert/">A convert to tablet computing</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="10/03/research-fellowship-sensor-networks/">Monday 3 October, 2011</a></td>
+				<td style="text-align:center"><a href="10/03/research-fellowship-sensor-networks/">Research fellowship in sensor networks</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/09/smart-grids/">Friday 9 September, 2011</a></td>
+				<td style="text-align:center"><a href="09/09/smart-grids/">An issue for smart grids</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/08/people-university/">Thursday 8 September, 2011</a></td>
+				<td style="text-align:center"><a href="09/08/people-university/">Why do people go to university?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/05/arts-humanities/">Tuesday 5 July, 2011</a></td>
+				<td style="text-align:center"><a href="07/05/arts-humanities/">On not funding the arts and humanities</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/01/metrics/">Friday 1 July, 2011</a></td>
+				<td style="text-align:center"><a href="07/01/metrics/">Metrics and the Research Evaluation Framework</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/27/computing-experience/">Monday 27 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/27/computing-experience/">The changing student computing experience</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/10/wheeliebin/">Friday 10 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/10/wheeliebin/">Why is my wheelie bin measured in decibels?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/06/lectureship-computer-science-st-andrews/">Monday 6 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/06/lectureship-computer-science-st-andrews/">Lectureship in Computer Science at St Andrews</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/06/phd/">Monday 6 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/06/phd/">PhD position available in intrusion detection</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/06/cfp-midsens11/">Monday 6 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/06/cfp-midsens11/">Call for papers: MidSens'11</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/06/cfp-d3science/">Monday 6 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/06/cfp-d3science/">Call for papers: D3Science</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/03/pervasive-healthcare/">Friday 3 June, 2011</a></td>
+				<td style="text-align:center"><a href="06/03/pervasive-healthcare/">Pervasive healthcare</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/27/smalltalk/">Friday 27 May, 2011</a></td>
+				<td style="text-align:center"><a href="05/27/smalltalk/">Mainstreaming Smalltalk</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/23/code/">Monday 23 May, 2011</a></td>
+				<td style="text-align:center"><a href="05/23/code/">Why we have code</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/20/evolving/">Friday 20 May, 2011</a></td>
+				<td style="text-align:center"><a href="05/20/evolving/">Evolving programming languages</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/17/work-life/">Tuesday 17 May, 2011</a></td>
+				<td style="text-align:center"><a href="05/17/work-life/">Not a work/life balance</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="05/04/balance-of-power/">Wednesday 4 May, 2011</a></td>
+				<td style="text-align:center"><a href="05/04/balance-of-power/">The shifting balance of university power</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/27/cloud-computing-cf/">Wednesday 27 April, 2011</a></td>
+				<td style="text-align:center"><a href="04/27/cloud-computing-cf/">Call for participation: summer school in cloud computing</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/27/valuable/">Wednesday 27 April, 2011</a></td>
+				<td style="text-align:center"><a href="04/27/valuable/">Some data is just too valuable</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="04/11/spectrum/">Monday 11 April, 2011</a></td>
+				<td style="text-align:center"><a href="04/11/spectrum/">Adventures at either end of the performance spectrum</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/23/situations/">Wednesday 23 March, 2011</a></td>
+				<td style="text-align:center"><a href="03/23/situations/">The next challenges for situation recognition</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/15/jolicloud/">Tuesday 15 March, 2011</a></td>
+				<td style="text-align:center"><a href="03/15/jolicloud/">A very jolly cloud</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/02/disloyalty-cards/">Wednesday 2 March, 2011</a></td>
+				<td style="text-align:center"><a href="03/02/disloyalty-cards/">Disloyalty cards</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/25/hiring-2/">Friday 25 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/25/hiring-2/">Hiring academics</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/23/why-i-research/">Wednesday 23 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/23/why-i-research/">Why I research</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/21/comments/">Monday 21 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/21/comments/">Where do all the comments go?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/17/meringue/">Thursday 17 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/17/meringue/">Who invented meringue?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/09/sensor-senseability/">Wednesday 9 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/09/sensor-senseability/">Sensor and sense-ability</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/09/tumbledown/">Wednesday 9 February, 2011</a></td>
+				<td style="text-align:center"><a href="02/09/tumbledown/">Book: Tumbledown -- the old houses of Co Sligo</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/31/fmps-cfp/">Monday 31 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/31/fmps-cfp/">Call for papers: Formal methods for Pervasive Systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/18/university-vision/">Tuesday 18 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/18/university-vision/">The (new) idea of a (21st century) university</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/17/no-ndas/">Monday 17 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/17/no-ndas/">Why I don’t sign NDAs</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/12/modern-postcodes/">Wednesday 12 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/12/modern-postcodes/">Modern postcodes</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/10/unpopular-book/">Monday 10 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/10/unpopular-book/">How to publish an unpopular book?</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/09/pmmps2011-cfp/">Sunday 9 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/09/pmmps2011-cfp/">Call for papers: Programming methods for mobile and pervasive systems</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/05/wikileaks/">Wednesday 5 January, 2011</a></td>
+				<td style="text-align:center"><a href="01/05/wikileaks/">Wikileaks as reality television</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

@@ -1,117 +1,55 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>citizen-sensing | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
-<link rel="canonical" href="https://simondobson.org/development/projects/citizen-sensing/">
-<link rel="icon" href="../../../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script><meta name="author" content="Simon Dobson">
-<meta property="og:site_name" content="Simon Dobson">
-<meta property="og:title" content="citizen-sensing">
-<meta property="og:url" content="https://simondobson.org/development/projects/citizen-sensing/">
-<meta property="og:description" content='Citizen sensing
-In 2013 I did a summer project on using the Arduino
-as a platform for "citizen
-sensing". This rapidly became an exploration of how to create hardware
-and software that can do sensing w'>
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2022-11-02T16:41:17Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@simoninireland">
-<meta name="twitter:creator" content="@simoninireland">
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../../../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../../../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../../../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../../../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../../../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../../../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../../../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../../../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../index.html">Home</a></li>
+		    <li><a href="../../../personal/">About me</a></li>
+		    <li><a href="../../../research/">Research</a></li>
+		    <li><a href="../">Software</a></li>
+		    <li><a href="../../../writing/">Writing</a></li>
+		    <li><a href="../../../personal/contact/">Contact</a></li>
+		    <li><a href="../../../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<h1>citizen-sensing</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header></header><div class="e-content entry-content" itemprop="articleBody text">
-    <section id="citizen-sensing"><h2>Citizen sensing</h2>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<section id="citizen-sensing"><h2>Citizen sensing</h2>
 <p>In 2013 I did a summer project on using the <a class="reference external" href="https://arduino.cc">Arduino</a>
 as a platform for "citizen
 sensing". This rapidly became an exploration of how to create hardware
@@ -123,131 +61,148 @@ However, it did generate a lot of notes about low-power Arduino
 programming, both for hardware and software, and a software library
 that embodies some of them. These may still be of interest to anyone
 wanting to use Arduino technology for low-power environmental sensing.</p>
-<!-- Begin post-list post_list_e0a3315e42814a23aa9b335fca0016ae -->
-<div id="post_list_e0a3315e42814a23aa9b335fca0016ae" class="post-list">
+<!-- Begin post-list post_list_00582db15db44d4a8e428a13b527ca8b -->
+<div id="post_list_00582db15db44d4a8e428a13b527ca8b" class="post-list">
     <ul class="post-list">
 <li class="post-list-item">
-            2013-06-19 21:02
+            Wednesday 19 June, 2013
              
             <a href="../../../2013/06/19/ditch-motivation/">The ditch project: a motivation</a>
             </li>
             <li class="post-list-item">
-            2013-06-20 14:05
+            Thursday 20 June, 2013
              
             <a href="../../../2013/06/20/parts-list/">Sensor mote initial parts list</a>
             </li>
             <li class="post-list-item">
-            2013-06-21 10:00
+            Friday 21 June, 2013
              
             <a href="../../../2013/06/21/parts-arrive/">The parts arrive</a>
             </li>
             <li class="post-list-item">
-            2013-06-28 17:44
+            Friday 28 June, 2013
              
             <a href="../../../2013/06/28/soldering/">First bit of soldering done</a>
             </li>
             <li class="post-list-item">
-            2013-07-01 18:23
+            Monday 1 July, 2013
              
             <a href="../../../2013/07/01/xbee/">XBee radios</a>
             </li>
             <li class="post-list-item">
-            2013-07-02 08:00
+            Tuesday 2 July, 2013
              
             <a href="../../../2013/07/02/mesh-network/">Mesh networking</a>
             </li>
             <li class="post-list-item">
-            2013-07-02 09:00
+            Tuesday 2 July, 2013
              
             <a href="../../../2013/07/02/xctu/">XBee firmware management with X-CTU</a>
             </li>
             <li class="post-list-item">
-            2013-07-03 08:30
+            Wednesday 3 July, 2013
              
             <a href="../../../2013/07/03/xbee-arduino/">The xbee-arduino library</a>
             </li>
             <li class="post-list-item">
-            2013-07-06 12:12
+            Saturday 6 July, 2013
              
             <a href="../../../2013/07/06/api-communications/">API communications now working</a>
             </li>
             <li class="post-list-item">
-            2013-07-08 20:22
+            Monday 8 July, 2013
              
             <a href="../../../2013/07/08/ds18b20/">DS18B20 digital thermometer</a>
             </li>
             <li class="post-list-item">
-            2013-07-09 19:00
+            Tuesday 9 July, 2013
              
             <a href="../../../2013/07/09/temperature-sensors-working/">Temperature sensors working</a>
             </li>
             <li class="post-list-item">
-            2013-07-10 08:03
+            Wednesday 10 July, 2013
              
             <a href="../../../2013/07/10/representing-samples/">Representing samples</a>
             </li>
             <li class="post-list-item">
-            2013-07-23 15:21
+            Tuesday 23 July, 2013
              
             <a href="../../../2013/07/23/arduino-watchdog/">Understanding Arduino sleep modes: the watchdog timer</a>
             </li>
             <li class="post-list-item">
-            2013-07-25 13:00
+            Thursday 25 July, 2013
              
             <a href="../../../2013/07/25/sleepy-sketches/">Sleepy sketches</a>
             </li>
             <li class="post-list-item">
-            2013-07-26 12:11
+            Friday 26 July, 2013
              
             <a href="../../../2013/07/26/radio-survey/">Radio survey</a>
             </li>
             <li class="post-list-item">
-            2013-07-26 16:20
+            Friday 26 July, 2013
              
             <a href="../../../2013/07/26/improvements/">Some improvements to SleepySketch</a>
             </li>
             <li class="post-list-item">
-            2013-07-31 18:12
+            Wednesday 31 July, 2013
              
             <a href="../../../2013/07/31/power/">Basic power measurements</a>
             </li>
             <li class="post-list-item">
-            2013-08-02 12:03
+            Friday 2 August, 2013
              
             <a href="../../../2013/08/02/at-commands-2/">Issuing AT commands</a>
             </li>
             <li class="post-list-item">
-            2013-08-02 15:41
+            Friday 2 August, 2013
              
             <a href="../../../2013/08/02/xbee-sleeping/">XBee sleeping</a>
             </li>
             <li class="post-list-item">
-            2013-08-27 11:47
+            Tuesday 27 August, 2013
              
             <a href="../../../2013/08/27/arduino-breadboard/">Low-power Arduino-on-a-breadboard</a>
             </li>
             <li class="post-list-item">
-            2013-08-28 21:50
+            Wednesday 28 August, 2013
              
             <a href="../../../2013/08/28/uploading-sketches/">Uploading sketches to a breadboard Arduino</a>
             </li>
     </ul>
 </div>
-<!-- End post-list post_list_e0a3315e42814a23aa9b335fca0016ae -->
+<!-- End post-list post_list_00582db15db44d4a8e428a13b527ca8b -->
 </section>
 </div>
-    
-</article>
+	</article>
 </div>
-  </section><script src="../../../assets/js/baguetteBox.min.js"></script><script src="../../../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../../../assets/js/ToggleNav.js"></script>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>

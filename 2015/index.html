@@ -1,466 +1,229 @@
 <!DOCTYPE html>
-<html prefix="
-	og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-    " vocab="http://ogp.me/ns" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="Aut tace aut loquere meliora silentio">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts for year 2015 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/rst_base.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/fonts.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta name="theme-color" content="#5670d4">
-<meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
-<link rel="canonical" href="https://simondobson.org/2015/">
-<link rel="icon" href="../images/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-9QXRF4ZTTW"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SKZTGFK4RJ');
-</script>
 </head>
 <body>
-  <a href="#page-content" class="sr-only sr-only-focusable">
-    Skip to main content
-  </a>
-
-  
-
-  <section id="header"><a href="../">
-      <div class="logo">
-	  <div id="nologoimage">
-	    Simon Dobson
-	  </div>
-      </div>
-    </a>
-  </section><section id="socialNav"><!-- Navigation Menu - on top on small screens, down the left on larger --><div class="navlinks">
-<!--
-      <a href="/">
-	<div id="titleauth">
-	    by Simon Dobson
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
 	</div>
-      </a>
--->
-
-      <!-- Navigation links (hidden by default) -->
-      <div id="navmenuitems">
-	      <a href="../index.html" title="Home">
-	<span class="menuitemtext">Home</span>
-	<span class="menuitemicon"><i class="fa fa-home"></i></span>
-      </a>
-      <a href="../personal/" title="About me">
-	<span class="menuitemtext">About me</span>
-	<span class="menuitemicon"><i class="fa fa-user"></i></span>
-      </a>
-      <a href="../research/" title="Research">
-	<span class="menuitemtext">Research</span>
-	<span class="menuitemicon"><i class="fa fa-lightbulb"></i></span>
-      </a>
-      <a href="../development/projects/" title="Software">
-	<span class="menuitemtext">Software</span>
-	<span class="menuitemicon"><i class="fa fa-cogs"></i></span>
-      </a>
-      <a href="../writing/" title="Writing">
-	<span class="menuitemtext">Writing</span>
-	<span class="menuitemicon"><i class="fa fa-feather"></i></span>
-      </a>
-      <a href="../personal/contact/" title="Contact">
-	<span class="menuitemtext">Contact</span>
-	<span class="menuitemicon"><i class="fa fa-info-circle"></i></span>
-      </a>
-      <a href="../rss.xml" title="RSS">
-	<span class="menuitemtext">RSS</span>
-	<span class="menuitemicon"><i class="fa fa-rss"></i></span>
-      </a>
-  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-     <img alt="Creative Commons License CC-BY-NC-SA-4.0" style="border-width:0" src="../images/cc-by-nc-sa-4.0.png"></a>
-  
-  
-
-      </div>
-
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" id="hamburger" class="icon" onclick="toggleNav()">
-	<i class="fa fa-bars">
-	</i>
-      </a>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		    <li><a href="../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-search">
+	<div class="entry-meta">
+	    <span class="posted-on"> </span>
+	</div>
+	<h1>Posts for year 2015</h1>
     </div>
-  </section><section class="page-content"><div class="content" rel="main">
-<article class="listpage"><header><h1>Posts for year 2015</h1>
-    </header><ul class="postlist">
-<li>
-        
-        <a href="../goodreads/the-book-on-the-taboo-against-knowing-who-you-are/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-12-24T00:00:00-08:00" title="2015-12-24 00:00">2015-12-24 00:00</time> 
-        
-	        The Book on the Taboo Against Knowing Who You Are</a>
 
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/how-should-we-live-great-ideas-from-the-past-for-everyday-life/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-12-15T06:06:30-08:00" title="2015-12-15 06:06">2015-12-15 06:06</time> 
-        
-	        How Should We Live?: Great Ideas from the Past for Everyday Life</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/forensics-the-anatomy-of-crime/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-12-02T00:00:00-08:00" title="2015-12-02 00:00">2015-12-02 00:00</time> 
-        
-	        Forensics: The Anatomy of Crime</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-first-salute/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-10-31T11:47:19-07:00" title="2015-10-31 11:47">2015-10-31 11:47</time> 
-        
-	        The First Salute</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-history-of-the-runestaff-panther-books/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-10-10T07:53:56-07:00" title="2015-10-10 07:53">2015-10-10 07:53</time> 
-        
-	        The History Of The Runestaff (Panther Books)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/being-mortal-medicine-and-what-matters-in-the-end/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-09-27T00:00:00-07:00" title="2015-09-27 00:00">2015-09-27 00:00</time> 
-        
-	        Being Mortal: Medicine and What Matters in the End</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="09/18/phd-data-science/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-09-18T11:54:17+01:00" title="2015-09-18 11:54">2015-09-18 11:54</time> 
-        
-	        PhD data science studentships available at Trinity College Dublin</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-war-that-ended-peace-how-europe-abandoned-peace-for-the-first-world-war/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-09-09T00:00:00-07:00" title="2015-09-09 00:00">2015-09-09 00:00</time> 
-        
-	        The War That Ended Peace: How Europe Abandoned Peace for the First World War</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/consiglieri-leading-from-the-shadows-why-coming-top-is-sometimes-second-best/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-08-30T00:00:00-07:00" title="2015-08-30 00:00">2015-08-30 00:00</time> 
-        
-	        Consiglieri - Leading from the Shadows: Why Coming Top Is Sometimes Second Best</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-immortal-life-of-henrietta-lacks/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-08-18T00:00:00-07:00" title="2015-08-18 00:00">2015-08-18 00:00</time> 
-        
-	        The Immortal Life of Henrietta Lacks</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/a-canticle-for-leibowitz-st-leibowitz-1/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-08-04T00:00:00-07:00" title="2015-08-04 00:00">2015-08-04 00:00</time> 
-        
-	        A Canticle for Leibowitz (St. Leibowitz, #1)</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/selfish-whining-monkeys-how-we-ended-up-greedy-narcissistic-and-unhappy/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-07-13T00:00:00-07:00" title="2015-07-13 00:00">2015-07-13 00:00</time> 
-        
-	        Selfish Whining Monkeys: How we Ended Up Greedy, Narcissistic and Unhappy</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/chickenhawk/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-07-05T00:00:00-07:00" title="2015-07-05 00:00">2015-07-05 00:00</time> 
-        
-	        Chickenhawk</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="07/01/healthy/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-07-01T11:56:05+01:00" title="2015-07-01 11:56">2015-07-01 11:56</time> 
-        
-	        How computer science can help keep you healthy</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/1913-the-world-before-the-great-war/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-06-27T08:12:32-07:00" title="2015-06-27 08:12">2015-06-27 08:12</time> 
-        
-	        1913: The World Before the Great War</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="06/17/spatial-collective-awareness/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-06-17T11:00:31+01:00" title="2015-06-17 11:00">2015-06-17 11:00</time> 
-        
-	        CfP: Spatial and Collective Awareness workshop at SASO'15</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/death-in-florence-the-medici-savonarola-and-the-battle-for-the-soul-of-man/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-05-30T10:29:56-07:00" title="2015-05-30 10:29">2015-05-30 10:29</time> 
-        
-	        Death in Florence: The Medici, Savonarola and the Battle for the Soul of Man</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/autobiography/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-05-22T00:00:00-07:00" title="2015-05-22 00:00">2015-05-22 00:00</time> 
-        
-	        Autobiography</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/german-secret-weapons-of-the-second-world-war-the-missiles-rockets-weapons-and-new-technology-of-the-third-reich/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-05-09T07:46:37-07:00" title="2015-05-09 07:46">2015-05-09 07:46</time> 
-        
-	        German Secret Weapons of the Second World War: The Missiles, Rockets, Weapons and New Technology of the Third Reich</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-dreyfus-affair-the-story-of-the-most-infamous-miscarriage-of-justice-in-french-history/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-04-29T14:28:54-07:00" title="2015-04-29 14:28">2015-04-29 14:28</time> 
-        
-	        The Dreyfus Affair: The Story of the Most Infamous Miscarriage of Justice in French History</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/the-hidden-persuaders/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-04-24T14:17:09-07:00" title="2015-04-24 14:17">2015-04-24 14:17</time> 
-        
-	        The Hidden Persuaders</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/a-brief-history-of-the-great-moghuls/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-04-18T11:05:55-07:00" title="2015-04-18 11:05">2015-04-18 11:05</time> 
-        
-	        A Brief History of the Great Moghuls</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/reading-dante-from-here-to-eternity/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-04-11T09:20:16-07:00" title="2015-04-11 09:20">2015-04-11 09:20</time> 
-        
-	        Reading Dante: From Here to Eternity</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/10/studentships-st-andrews/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-03-10T11:47:20Z" title="2015-03-10 11:47">2015-03-10 11:47</time> 
-        
-	        PhD studentships in St Andrews</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/shackletons-whisky-the-extraordinary-story-of-an-heroic-explorer-and-twenty-five-cases-of-unique-mackinlays-old-scotch/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-03-09T00:00:00-07:00" title="2015-03-09 00:00">2015-03-09 00:00</time> 
-        
-	        Shackleton's Whisky: The extraordinary story of an heroic explorer and twenty-five cases of unique MacKinlay's Old Scotch</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/gone-girl/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-03-08T00:00:00-08:00" title="2015-03-08 00:00">2015-03-08 00:00</time> 
-        
-	        Gone Girl</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="03/05/phd-studentships-university-college-cork/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-03-05T10:51:20Z" title="2015-03-05 10:51">2015-03-05 10:51</time> 
-        
-	        PhD Studentships at University College Cork</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/fatal-fortnight-arthur-ponsonby-and-the-fight-for-british-neutrality-in-1914/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-02-28T04:05:33-08:00" title="2015-02-28 04:05">2015-02-28 04:05</time> 
-        
-	        Fatal Fortnight: Arthur Ponsonby and the Fight for British Neutrality in 1914</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/on-lies-secrets-and-silence-selected-prose-1966-1978/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-02-21T10:05:58-08:00" title="2015-02-21 10:05">2015-02-21 10:05</time> 
-        
-	        On Lies, Secrets, and Silence. Selected Prose 1966-1978</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/american-notes-for-general-circulation/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-02-17T00:00:00-08:00" title="2015-02-17 00:00">2015-02-17 00:00</time> 
-        
-	        American Notes For General Circulation</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/13/book/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-02-13T11:54:41Z" title="2015-02-13 11:54">2015-02-13 11:54</time> 
-        
-	        Complex networks, complex processes</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="02/03/phd-cs-med/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-02-03T12:12:18Z" title="2015-02-03 12:12">2015-02-03 12:12</time> 
-        
-	        Fully-funded PhD scholarship available</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/goodbye-to-all-that/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-01-24T00:00:00-08:00" title="2015-01-24 00:00">2015-01-24 00:00</time> 
-        
-	        Goodbye to All That</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="01/21/disdis15/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-01-21T12:14:35Z" title="2015-01-21 12:14">2015-01-21 12:14</time> 
-        
-	        2015 CPHC/BCS Distinguished Dissertations competition</a>
-
-        
-        </li>
-        <li>
-        
-        <a href="../goodreads/american-prometheus-the-triumph-and-tragedy-of-j-robert-oppenheimer/" class="listtitle">
-        
-                <time class="listdate" datetime="2015-01-01T08:51:23-08:00" title="2015-01-01 08:51">2015-01-01 08:51</time> 
-        
-	        American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer</a>
-
-        
-        </li>
-    </ul></article>
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		    <table>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-book-on-the-taboo-against-knowing-who-you-are/">Thursday 24 December, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-book-on-the-taboo-against-knowing-who-you-are/">The Book: On the Taboo Against Knowing Who You Are</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/how-should-we-live-great-ideas-from-the-past-for-everyday-life/">Tuesday 15 December, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/how-should-we-live-great-ideas-from-the-past-for-everyday-life/">How Should We Live?: Great Ideas from the Past for Everyday Life</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/forensics-the-anatomy-of-crime/">Wednesday 2 December, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/forensics-the-anatomy-of-crime/">Forensics: The Anatomy of Crime</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-first-salute-view-of-the-american-revolution/">Saturday 31 October, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-first-salute-view-of-the-american-revolution/">The First Salute : View of the American Revolution</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-history-of-the-runestaff/">Saturday 10 October, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-history-of-the-runestaff/">The History of the Runestaff</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/being-mortal-medicine-and-what-matters-in-the-end/">Sunday 27 September, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/being-mortal-medicine-and-what-matters-in-the-end/">Being Mortal: Medicine and What Matters in the End</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="09/18/phd-data-science/">Friday 18 September, 2015</a></td>
+				<td style="text-align:center"><a href="09/18/phd-data-science/">PhD data science studentships available at Trinity College Dublin</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-war-that-ended-peace-how-europe-abandoned-peace-for-the-first-world-war/">Wednesday 9 September, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-war-that-ended-peace-how-europe-abandoned-peace-for-the-first-world-war/">The War That Ended Peace: How Europe Abandoned Peace for the First World War</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/consiglieri-leading-from-the-shadows/">Sunday 30 August, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/consiglieri-leading-from-the-shadows/">Consiglieri: Leading From the Shadows</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-immortal-life-of-henrietta-lacks/">Tuesday 18 August, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-immortal-life-of-henrietta-lacks/">The Immortal Life of Henrietta Lacks</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/a-canticle-for-leibowitz-st-leibowitz-1/">Tuesday 4 August, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/a-canticle-for-leibowitz-st-leibowitz-1/">A Canticle for Leibowitz (St. Leibowitz, #1)</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/selfish-whining-monkeys/">Monday 13 July, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/selfish-whining-monkeys/">Selfish Whining Monkeys</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/chickenhawk/">Sunday 5 July, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/chickenhawk/">Chickenhawk</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="07/01/healthy/">Wednesday 1 July, 2015</a></td>
+				<td style="text-align:center"><a href="07/01/healthy/">How computer science can help keep you healthy</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/1913-the-world-before-the-great-war/">Saturday 27 June, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/1913-the-world-before-the-great-war/">1913: The World Before the Great War</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="06/17/spatial-collective-awareness/">Wednesday 17 June, 2015</a></td>
+				<td style="text-align:center"><a href="06/17/spatial-collective-awareness/">CfP: Spatial and Collective Awareness workshop at SASO'15</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/death-in-florence/">Saturday 30 May, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/death-in-florence/">Death In Florence</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/autobiography/">Friday 22 May, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/autobiography/">Autobiography</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/german-secret-weapons-of-the-second-world-war-the-missiles-rockets-weapons-and-new-technology-of-the-third-reich/">Saturday 9 May, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/german-secret-weapons-of-the-second-world-war-the-missiles-rockets-weapons-and-new-technology-of-the-third-reich/">German Secret Weapons of the Second World War: The Missiles, Rockets, Weapons and New Technology of the Third Reich</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-dreyfus-affair-the-story-of-the-most-infamous-miscarriage-of-justice-in-french-history/">Wednesday 29 April, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-dreyfus-affair-the-story-of-the-most-infamous-miscarriage-of-justice-in-french-history/">The Dreyfus Affair: The Story of the Most Infamous Miscarriage of Justice in French History</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/the-hidden-persuaders/">Friday 24 April, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/the-hidden-persuaders/">The Hidden Persuaders</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/a-brief-history-of-the-great-moghuls/">Saturday 18 April, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/a-brief-history-of-the-great-moghuls/">A Brief History of the Great Moghuls</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/reading-dante-from-here-to-eternity/">Saturday 11 April, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/reading-dante-from-here-to-eternity/">Reading Dante: From Here to Eternity</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/10/studentships-st-andrews/">Tuesday 10 March, 2015</a></td>
+				<td style="text-align:center"><a href="03/10/studentships-st-andrews/">PhD studentships in St Andrews</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/shackletons-whisky-the-extraordinary-story-of-an-heroic-explorer-and-twenty-five-cases-of-unique-mackinlays-old-scotch/">Monday 9 March, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/shackletons-whisky-the-extraordinary-story-of-an-heroic-explorer-and-twenty-five-cases-of-unique-mackinlays-old-scotch/">Shackleton's Whisky: The Extraordinary Story of an Heroic Explorer and Twenty-five Cases of Unique MacKinlay's Old Scotch</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/gone-girl/">Sunday 8 March, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/gone-girl/">Gone Girl</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="03/05/phd-studentships-university-college-cork/">Thursday 5 March, 2015</a></td>
+				<td style="text-align:center"><a href="03/05/phd-studentships-university-college-cork/">PhD Studentships at University College Cork</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/fatal-fortnight-arthur-ponsonby-and-the-fight-for-british-neutrality-in-1914/">Saturday 28 February, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/fatal-fortnight-arthur-ponsonby-and-the-fight-for-british-neutrality-in-1914/">Fatal Fortnight: Arthur Ponsonby and the Fight for British Neutrality in 1914</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/on-lies-secrets-and-silence-selected-prose-1966-1978/">Saturday 21 February, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/on-lies-secrets-and-silence-selected-prose-1966-1978/">On Lies, Secrets, and Silence. Selected Prose 1966-1978</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/american-notes-for-general-circulation/">Tuesday 17 February, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/american-notes-for-general-circulation/">American Notes For General Circulation</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/13/book/">Friday 13 February, 2015</a></td>
+				<td style="text-align:center"><a href="02/13/book/">Complex networks, complex processes</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="02/03/phd-cs-med/">Tuesday 3 February, 2015</a></td>
+				<td style="text-align:center"><a href="02/03/phd-cs-med/">Fully-funded PhD scholarship available</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/goodbye-to-all-that/">Saturday 24 January, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/goodbye-to-all-that/">Goodbye to All That</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="01/21/disdis15/">Wednesday 21 January, 2015</a></td>
+				<td style="text-align:center"><a href="01/21/disdis15/">2015 CPHC/BCS Distinguished Dissertations competition</a></td>
+			    </tr>
+<tr>
+<td style="text-align:center"><a href="../goodreads/american-prometheus-the-triumph-and-tragedy-of-j-robert-oppenheimer/">Thursday 1 January, 2015</a></td>
+				<td style="text-align:center"><a href="../goodreads/american-prometheus-the-triumph-and-tragedy-of-j-robert-oppenheimer/">American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer</a></td>
+			    </tr>
+</table>
 </div>
-  </section><script src="../assets/js/baguetteBox.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
-  </script><!-- end fancy dates --><script>
-    baguetteBox.run('div#content', {
-    ignoreClass: 'islink',
-    captions: function(element) {
-    return element.getElementsByTagName('img')[0].alt;
-    }});
-  </script><script src="../assets/js/ToggleNav.js"></script>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
 </body>
 </html>
