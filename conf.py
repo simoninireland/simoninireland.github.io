@@ -27,11 +27,6 @@ FEED_TEASERS = True
 GENERATE_RSS = True
 GENERATE_ATOM = False
 
-# Page icon
-FAVICONS = (
-    ("icon", "/images/favicon.png", "16x16"),
-)
-
 # Extra data for the page headers
 EXTRA_HEAD_DATA = ''
 
@@ -45,22 +40,6 @@ TRANSLATIONS = {
 TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 # Theming
-#THEME = 'adolf'
-#USE_BUNDLES = False
-# NAVIGATION_LINKS = {
-#     DEFAULT_LANG: (
-#         ('/index.html', 'Home', 'fa fa-home'),
-#         ('/personal/', 'About me', 'fa fa-user'),
-#         ('/research/', 'Research', 'fa fa-lightbulb'),
-#         ('/development/projects/', 'Software', 'fa fa-cogs'),
-#         ('/writing/', 'Writing', 'fa fa-feather'),
-#         ('/personal/contact/', 'Contact', 'fa fa-info-circle'),
-#         ('/rss.xml', 'RSS', 'fa fa-rss'),
-#     )
-# }
-# FAVICONS = (
-#     ("icon", "/images/favicon.png", "32x32"),
-# )
 THEME = "libretto-sd"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
@@ -73,6 +52,12 @@ NAVIGATION_LINKS = {
         ('/rss.xml', 'RSS'),
     )
 }
+
+
+# Page icon
+FAVICONS = (
+    ("icon", "/images/favicon.png", "16x16"),
+)
 
 
 # Post and page structure
@@ -115,6 +100,7 @@ MathJax.Hub.Config({
     }
 });
 </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 """
 
 # Filters

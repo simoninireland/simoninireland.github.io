@@ -43,8 +43,7 @@ PLUGINS_DIR = plugins
 
 # Constructed files
 EXTRAS = \
-	plugins/orgmode/conf.el \
-	themes/adolf/assets/css/fonts.css
+	plugins/orgmode/conf.el
 
 # Plug-ins to download
 PLUGINS = \
@@ -53,15 +52,6 @@ PLUGINS = \
 	accordion \
 	category_prevnext \
 	similarity
-
-# Web fonts to include (from Google Fonts)
-WEBFONTS = \
-	"Libre+Baskerville" \
-	"EB+Garamond" \
-	"Varela+Round" \
-	"Questrial" \
-	"Alegreya"
-WEBFONTS_API = "https://fonts.googleapis.com/css2?family="
 
 # The git branch we're currently working on
 GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -78,27 +68,24 @@ live: env
 build:  env
 	$(ACTIVATE) && $(NIKOLA) build
 
-# Upload to the Github remote
-publish: upload
-
-deploy: upload
-
-# Possibly auto-update as well before deployment?
-upload: env src-only
-	$(ACTIVATE) && $(NIKOLA) github_deploy
-
 # Check we're on the src branch before deploying
 src-only:
 	if [ "$(GIT_BRANCH)" != "src" ]; then echo "Can only deploy from src branch"; exit 1; fi
 
-# Update all files that need it
-update: update-files update-dblocks continuous-import
+# Update and upload
+update: upgrade upload
 
-update-files:
+upload: env src-only
+	$(ACTIVATE) && $(NIKOLA) github_deploy
+
+# Upgrade all static and generated files that need it
+upgrade: upgrade-files upgrade-dblocks continuous-import
+
+upgrade-files:
 	$(foreach f, $(UPDATE_FILES), $(RSYNC) $f files/$(shell basename $(f:.gpg=.asc));)
 	$(foreach d, $(UPDATE_DIRS), $(RSYNC) $d files/;)
 
-update-dblocks: env
+upgrade-dblocks: env
 	$(EMACS) -l "sd-update-dblocks.el" \
 	$(foreach b, $(BIBFILES), --eval "(add-to-list 'bibtex-completion-bibliography (expand-file-name \"$b\"))") \
 	$(foreach f, $(DB_REFRESH_FILES), --eval "(sd/update-dblocks-in-file (expand-file-name \"$f\"))")
@@ -127,10 +114,6 @@ extras: $(EXTRAS)
 
 plugins/orgmode/conf.el: elisp/orgmode-conf.el
 	$(RSYNC) $< $@
-
-themes/adolf/assets/css/fonts.css:
-	$(ECHO) '' $@
-	$(foreach f, $(WEBFONTS), $(CURL) $(WEBFONTS_API)$f >> $@;)
 
 # Clean up the build, to force a complete re-build
 .PHONY: clean

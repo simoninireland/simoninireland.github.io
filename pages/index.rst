@@ -19,14 +19,6 @@
        </div>
    </div>
 
-
-Latest blog posts
------------------
-
-.. post-list::
-   :type: posts
-   :stop: 5
-
 .. raw:: html
 
    <a rel="me"

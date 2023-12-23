@@ -2,7 +2,7 @@
 .. title: Where am I (in git)?
 .. slug: where-am-i
 .. date: 2020-11-27 11:14:08 UTC
-.. tags: linux, git, bash
+.. tags: linux, git, bash, programming
 .. category:
 .. link:
 .. description:

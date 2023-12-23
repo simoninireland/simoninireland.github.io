@@ -11,6 +11,10 @@
     </div>
 {% endblock %}
 
+{% block early_js %}
+{{ mathjax_config }}
+{% endblock %}
+
 {% block content_tags %}
 {% if post.tags %}
     <div class="site-content navigation-post">
