@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmatically editing a file from Emacs Lisp | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		    <li><a href="../../../../rss.xml">RSS</a></li>
+	    </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Saturday 23 December, 2023</a>
+	    </span>
+	</div>
+	<h1>Programmatically editing a file from Emacs Lisp</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org4cecbad" class="outline-2">
+<h2 id="org4cecbad">Programmatically editing a file from Emacs Lisp</h2>
+<div class="outline-text-2" id="text-org4cecbad">
+<p>
+This is something I frequently want to do: open a named file, work
+on it programmatically using Lisp code, and save it back – all
+without user intervention. Like a lot of things in Emacs, it's
+easy once you know how.
+</p>
+
+<p>
+The trick is to create a new, named, buffer for the file to get
+its contents. This is done with <code>find-file-noselect</code> as opposed to
+the more usual <code>find-file</code> that's usually bound to <code>C-x C-f</code>, and
+as its name suggests finds (opens) the file without bringing it to
+the user's attention. For example,
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="c1">;; open the file in its own buffer</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">with-current-buffer</span><span class="w"> </span><span class="p">(</span><span class="nf">find-file-noselect</span><span class="w"> </span><span class="nv">fn</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; work on it as required, as the current buffer</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">goto-char</span><span class="w"> </span><span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">search-forward</span><span class="w"> </span><span class="s">"#+END_COMMENT"</span><span class="w"> </span><span class="nv">nil</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">beginning-of-line</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">delete-region</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">newline</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; save the results back</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">save-buffer</span><span class="p">))</span>
+</pre></div>
+
+<p>
+(This example comes from my Emacs interface to the Nikola static
+site builder used to maintain this site.) The code fragment
+leaves the current buffer unchanged as far as the user (and the
+rest of the code) is concerned, and so doesn't need to be
+protected by <code>save-excursion</code> or the like.
+</p>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/emacs/">emacs</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../../goodreads/estates-an-intimate-history/" rel="prev">
+		<span class="meta-nav">Older Post</span>Estates: An Intimate History
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer><!-- Extra JavaScript -->
+</body>
+</html>

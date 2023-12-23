@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 19 Dec 2023 12:45:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbceb9b5" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Dec 2023 17:18:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4cecbad" class="outline-2"&gt;
+&lt;h2 id="org4cecbad"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4cecbad"&gt;
+&lt;p&gt;
+This is something I frequently want to do: open a named file, work
+on it programmatically using Lisp code, and save it back – all
+without user intervention. Like a lot of things in Emacs, it's
+easy once you know how.
+&lt;/p&gt;
+
+&lt;p&gt;
+The trick is to create a new, named, buffer for the file to get
+its contents. This is done with &lt;code&gt;find-file-noselect&lt;/code&gt; as opposed to
+the more usual &lt;code&gt;find-file&lt;/code&gt; that's usually bound to &lt;code&gt;C-x C-f&lt;/code&gt;, and
+as its name suggests finds (opens) the file without bringing it to
+the user's attention. For example,
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;;; open the file in its own buffer&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;with-current-buffer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;find-file-noselect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;;; work on it as required, as the current buffer&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;goto-char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-min&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;search-forward&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#+END_COMMENT"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;beginning-of-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;delete-region&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;newline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;;; save the results back&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;save-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+(This example comes from my Emacs interface to the Nikola static
+site builder used to maintain this site.) The code fragment
+leaves the current buffer unchanged as far as the user (and the
+rest of the code) is concerned, and so doesn't need to be
+protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbceb9b5" class="outline-2"&gt;
 &lt;h2 id="orgbceb9b5"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgbceb9b5"&gt;
 &lt;p&gt;

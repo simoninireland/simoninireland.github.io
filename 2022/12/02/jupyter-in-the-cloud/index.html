@@ -17,7 +17,9 @@
 	}
     </style>
 <link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
 <link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
 <link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
 <link rel="stylesheet" href="../../../../assets/css/code.css">
@@ -68,9 +70,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org4c6423a" class="outline-2">
-<h2 id="org4c6423a">Notes on using Jupyter in the cloud</h2>
-<div class="outline-text-2" id="text-org4c6423a">
+		<div id="outline-container-org2c57ed7" class="outline-2">
+<h2 id="org2c57ed7">Notes on using Jupyter in the cloud</h2>
+<div class="outline-text-2" id="text-org2c57ed7">
 <p>
 I've been thinking about running <a href="https://jupyter.org">Jupyter notebooks</a> in the cloud for
 some fairly compute-intensive simulation. Specifically I want to do
@@ -91,19 +93,19 @@ with <a href="https://colab.research.google.com/">Google Colab</a> as the most a
 </p>
 </div>
 
-<div id="outline-container-org5fa4373" class="outline-3">
-<h3 id="org5fa4373">Reference execution</h3>
-<div class="outline-text-3" id="text-org5fa4373">
+<div id="outline-container-org8b75cd3" class="outline-3">
+<h3 id="org8b75cd3">Reference execution</h3>
+<div class="outline-text-3" id="text-org8b75cd3">
 <p>
 As a reference, I firsat ran a small experiment with an SIR
 epidemic on an ER network of \(10^4\) nodes, \(\langle k \rangle =
-   10\)) experiment with 10 repetitions. The first experiment runs 10
-repetitions sequentially on a single core; the second runs 10
-repetitions for every core we run on. <a href="https://github.com/simoninireland/epyc">epyc</a>, our process management
-library, schedules worker processes in individual processes which
-can then be scheduled independently by the operating system, and
-which don't therefore run into synchronisation problems due to the
-Python Global Interpreter Lock.
+   10\). The first experiment runs 10 repetitions sequentially on a
+single core; the second runs 10 repetitions for every core we run
+on. <a href="https://github.com/simoninireland/epyc">epyc</a>, our process management library, schedules worker
+processes in individual processes which can then be scheduled
+independently by the operating system, and which don't therefore
+run into synchronisation problems due to the Python Global
+Interpreter Lock.
 </p>
 
 <p>
@@ -146,9 +148,9 @@ results from the worker processes.
 </div>
 </div>
 
-<div id="outline-container-org09caac8" class="outline-3">
-<h3 id="org09caac8">Running epydemic on a default runtime</h3>
-<div class="outline-text-3" id="text-org09caac8">
+<div id="outline-container-org89b7677" class="outline-3">
+<h3 id="org89b7677">Running epydemic on a default runtime</h3>
+<div class="outline-text-3" id="text-org89b7677">
 <p>
 I then tried the same experiments on the default Colab set-up.
 </p>
@@ -206,9 +208,9 @@ exclusively. There's really not enough information to decide.
 </div>
 </div>
 
-<div id="outline-container-org14120cd" class="outline-3">
-<h3 id="org14120cd">Using specific VM instances</h3>
-<div class="outline-text-3" id="text-org14120cd">
+<div id="outline-container-orgfe4c91d" class="outline-3">
+<h3 id="orgfe4c91d">Using specific VM instances</h3>
+<div class="outline-text-3" id="text-orgfe4c91d">
 <p>
 I signed up for Google Cloud's free trial, 90 days and $300 (£281)
 of credit. Then set up a specific project in which to run the
@@ -344,9 +346,9 @@ the notebook remembers the VM it's connected to.
 </div>
 </div>
 
-<div id="outline-container-org5a906ea" class="outline-3">
-<h3 id="org5a906ea">Experiments on specific instances</h3>
-<div class="outline-text-3" id="text-org5a906ea">
+<div id="outline-container-org5f8ee03" class="outline-3">
+<h3 id="org5f8ee03">Experiments on specific instances</h3>
+<div class="outline-text-3" id="text-org5f8ee03">
 <p>
 Running the same experiments as above on different instances gives:
 </p>
@@ -432,9 +434,9 @@ super-linear speed-up "in reality".
 </div>
 </div>
 
-<div id="outline-container-orgdb7e64f" class="outline-3">
-<h3 id="orgdb7e64f">Running larger problems</h3>
-<div class="outline-text-3" id="text-orgdb7e64f">
+<div id="outline-container-org1139fd7" class="outline-3">
+<h3 id="org1139fd7">Running larger problems</h3>
+<div class="outline-text-3" id="text-org1139fd7">
 <p>
 For more of a soak test, we can run the same SIR experiment but
 using a larger ER network (\(10^5\) nodes, \(\langle k \rangle =
@@ -541,9 +543,9 @@ The performance on the standard runtime for comparison is:
 </div>
 </div>
 
-<div id="outline-container-org225968b" class="outline-3">
-<h3 id="org225968b">Costs</h3>
-<div class="outline-text-3" id="text-org225968b">
+<div id="outline-container-orgb7bb56f" class="outline-3">
+<h3 id="orgb7bb56f">Costs</h3>
+<div class="outline-text-3" id="text-orgb7bb56f">
 <p>
 Doing all the above experiments used rather less than £10 of the
 budget for my free trial – although I was very careful not to
@@ -558,9 +560,9 @@ and then tear-down the infrastructure using a script.
 </div>
 </div>
 
-<div id="outline-container-org5e9389f" class="outline-3">
-<h3 id="org5e9389f">Experiences: Good and not-so-good</h3>
-<div class="outline-text-3" id="text-org5e9389f">
+<div id="outline-container-org92bc35c" class="outline-3">
+<h3 id="org92bc35c">Experiences: Good and not-so-good</h3>
+<div class="outline-text-3" id="text-org92bc35c">
 <p>
 Good:
 </p>

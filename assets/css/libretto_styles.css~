@@ -699,7 +699,6 @@ button:active {
 label {
     color: #a09a92;
     font-size: 18px;
-    font-size: 1.8rem;
     font-style: italic;
     text-align: left;
 }
@@ -728,14 +727,14 @@ body {
 
 .site-content {
     margin: 4rem auto;
-    max-width: 680px;
+    max-width: 800px;
     padding: 0;
     width: auto;
 }
 
 .widget {
     margin: 4rem auto;
-    max-width: 680px;
+    max-width: 800px;
     padding: 0;
     width: auto;
 }
@@ -782,7 +781,7 @@ body {
 /* If header image is not present */
 body:not(.libretto-has-header-image) .title-block {
     margin: 2rem auto;
-    max-width: 680px;
+    max-width: 800px;
 }
 
 
@@ -795,6 +794,7 @@ body:not(.libretto-has-header-image) .title-block {
     font-size: 12px;
     font-size: 1.2rem;
     line-height: 1.6;
+    text-align: center;
 }
 
 .site-footer a {
@@ -1325,138 +1325,138 @@ article .title-block h1 a {
 
     /* Tweak font sizes and margins */
     body {
-        font-size: 16px;
-        font-size: 1.6rem;
+	font-size: 16px;
+	font-size: 1.6rem;
     }
 
     blockquote {
-        font-size: 24px;
-        font-size: 2.4rem;
+	font-size: 24px;
+	font-size: 2.4rem;
     }
 
     ul,
     ol {
-        margin-left: 1em;
+	margin-left: 1em;
     }
 
     .site-content {
-        font-size: 16px;
-        font-size: 1.6rem;
-        margin: 0;
-        max-width: none;
-        min-width: 320px;
-        padding: 0 10px;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0;
+	max-width: none;
+	min-width: 320px;
+	padding: 0 10px;
     }
 
     .site-branding {
-        display: none;
+	display: none;
     }
 
     /* Use a condensed mobile menu */
     .site-navigation {
-        background: #26231e;
-        width: 100%;
+	background: #26231e;
+	width: 100%;
     }
 
     .site-navigation a {
-        color: #cacabc;
+	color: #cacabc;
     }
 
     .menu-toggle {
-        background: #363431;
-        border-bottom: 2px solid #787065;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-        color: #eae9e6;
-        cursor: pointer;
-        display: block;
-        font-size: 21px;
-        font-size: 2.1rem;
-        line-height: 1.4;
-        margin: 0;
-        min-height: 5rem;
-        padding: 1.5rem 1.5rem;
-        position: relative;
-        z-index: 50;
+	background: #363431;
+	border-bottom: 2px solid #787065;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+	color: #eae9e6;
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	font-size: 2.1rem;
+	line-height: 1.4;
+	margin: 0;
+	min-height: 5rem;
+	padding: 1.5rem 1.5rem;
+	position: relative;
+	z-index: 50;
     }
 
     /* Style menu items a bit differently */
     .site-navigation .menu li {
-        border-top: 1px solid #787065;
-        display: block;
-        text-align: left;
+	border-top: 1px solid #787065;
+	display: block;
+	text-align: left;
     }
 
     .title-block:before {
-        display: none;
+	display: none;
     }
 
     .title-block {
-        margin-bottom: 2rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+	margin-bottom: 2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
     }
 
     .entry-meta {
-        font-size: 14px;
-        font-size: 1.4rem;
+	font-size: 14px;
+	font-size: 1.4rem;
     }
 
     .title-block h1 {
-        font-size: 28px;
-        font-size: 2.8rem;
+	font-size: 28px;
+	font-size: 2.8rem;
     }
 
     /* Long-form posts should be full-width, plus padding */
     .libretto-long-form {
-        margin-left: -10px;
-        padding: 10px;
-        width: calc(100% + 20px);
+	margin-left: -10px;
+	padding: 10px;
+	width: calc(100% + 20px);
     }
 
     /* Footer is arranged in a stack */
     .site-footer .site-info,
     .social {
-        padding: 0.75rem 0.5rem;
-        text-align: center;
-        width: 100%;
+	padding: 0.75rem 0.5rem;
+	text-align: center;
+	width: 100%;
     }
 
     /* In-page navigation should be pretty simple */
     .navigation-post .previous,
     .navigation-post .next {
-        padding: 1rem 0;
-        text-align: center;
-        width: 100%;
+	padding: 1rem 0;
+	text-align: center;
+	width: 100%;
     }
 
     .navigation-post .previous {
-        border-bottom: 1px solid #d9d6d0;
+	border-bottom: 1px solid #d9d6d0;
     }
 
     .navigation-post .previous,
     .navigation-post .next {
-        text-align: center;
+	text-align: center;
     }
 
     .tag-head {
-        text-align: center;
-        font-size: 14px;
-        font-size: 1.4rem;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
+	text-align: center;
+	font-size: 14px;
+	font-size: 1.4rem;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
     }
 
     .tag-head:before {
-        font-size: 18px;
-        font-size: 1.8rem;
-        vertical-align: -3px;
+	font-size: 18px;
+	font-size: 1.8rem;
+	vertical-align: -3px;
     }
 
     .tag-list {
-        text-align: center;
-        border-bottom: 1px solid #d9d6d0;
-        padding-bottom: 10px;
-        margin-bottom: 0px;
+	text-align: center;
+	border-bottom: 1px solid #d9d6d0;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
     }
 
 }
@@ -1468,91 +1468,91 @@ article .title-block h1 a {
 @media only screen and (min-width: 641px) {
 
     .site-branding {
-        float: left;
-        margin: 0.75rem 1rem 1rem 1.5rem;
+	float: left;
+	margin: 0.75rem 1rem 1rem 1.5rem;
     }
 
     /* Main menu is styled differently from mobile */
     .menu-toggle {
-        display: none;
+	display: none;
     }
 
     .site-navigation {
-        display: block;
-        float: right;
-        font-size: 16px;
-        font-size: 1.6rem;
-        margin: 0.75rem 2rem 0.5rem 1rem;
-        position: relative;
+	display: block;
+	float: right;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0.75rem 2rem 0.5rem 1rem;
+	position: relative;
     }
 
     .site-navigation .menu > li {
-        display: inline-block;
-        line-height: 1;
-        margin: 0.25rem 0;
-        position: relative;
+	display: inline-block;
+	line-height: 1;
+	margin: 0.25rem 0;
+	position: relative;
     }
 
     .site-navigation li a {
-        border-bottom: 2px solid transparent;
-        color: #787065;
-        padding: 1rem 1rem 0.8rem;
+	border-bottom: 2px solid transparent;
+	color: #787065;
+	padding: 1rem 1rem 0.8rem;
     }
 
     .site-navigation a:hover {
-        border-bottom: 2px solid #999;
-        color: #363431;
+	border-bottom: 2px solid #999;
+	color: #363431;
     }
 
     .title-block {
-        margin: 10rem auto 1.5rem;
-        display: block;
+	margin: 10rem auto 1.5rem;
+	display: block;
     }
 
     .libretto-long-form {
-        margin-left: -1.5em;
-        margin-right: -1.5em;
-        max-width: calc(100% + 3em);
-        padding: 1.5em;
+	margin-left: -1.5em;
+	margin-right: -1.5em;
+	max-width: calc(100% + 3em);
+	padding: 1.5em;
     }
 
     /* Use a bigger drop cap */
     .format-standard .entry-content div:first-child > p:not(.no-emphasis):first-of-type:first-letter {
-        font-size: 121px;
-        line-height: 70px;
-        margin: 6px 10px 0 -5px;
+	font-size: 121px;
+	line-height: 70px;
+	margin: 6px 10px 0 -5px;
     }
 
     /* Footer can stretch out a bit */
     .site-footer {
-        padding: 0 2rem 1rem;
-        width: 100%;
+	padding: 0 2rem 1rem;
+	width: 100%;
     }
 
     .site-footer .site-info {
-        float: left;
+	text-align: center;
     }
 
     .social {
-        float: right;
-        line-height: 1;
+	float: right;
+	line-height: 1;
     }
 
     /* In-page navigation can be arranged in floats and take up a bit more space */
     .navigation-post {
-        border-top: 1px solid #d9d6d0;
+	border-top: 1px solid #d9d6d0;
     }
 
     .navigation-post .previous,
     .navigation-post .next {
-        float: left;
-        margin: 2rem 0;
-        width: 50%;
+	float: left;
+	margin: 2rem 0;
+	width: 50%;
     }
 
     .navigation-post .next {
-        border-left: 1px solid #d9d6d0;
-        min-height: 4.8rem;
+	border-left: 1px solid #d9d6d0;
+	min-height: 4.8rem;
     }
 
 }
@@ -1564,20 +1564,24 @@ article .title-block h1 a {
 @media only screen and (min-width: 860px) {
 
     .site-branding {
-        margin-left: 4rem;
+	margin-left: 4rem;
     }
 
     .libretto-long-form {
-        margin-left: -3em;
-        margin-right: -3em;
-        max-width: calc(100% + 6em);
-        padding: 3em 3em 1em;
+	margin-left: -3em;
+	margin-right: -3em;
+	max-width: calc(100% + 6em);
+	padding: 3em 3em 1em;
     }
 
     /* Footer can be spaced out more, too */
     .site-footer {
-        padding-left: 4rem;
-        padding-right: 4rem;
+	padding-left: 4rem;
+	padding-right: 4rem;
+    }
+
+    .site-footer .site-info {
+	text-align: center;
     }
 
 }

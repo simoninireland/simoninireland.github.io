@@ -17,7 +17,9 @@
 	}
     </style>
 <link rel="icon" href="../images/favicon.png" sizes="16x16">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
 <link rel="stylesheet" href="../assets/css/libretto_styles.css">
 <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
 <link rel="stylesheet" href="../assets/css/code.css">
@@ -44,6 +46,122 @@
 		    <li><a href="../personal/contact/">Contact</a></li>
 		    <li><a href="../rss.xml">RSS</a></li>
 	    </ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/" rel="bookmark">Saturday 23 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/">Programmatically editing a file from Emacs Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org4cecbad" class="outline-2">
+<h2 id="org4cecbad">Programmatically editing a file from Emacs Lisp</h2>
+<div class="outline-text-2" id="text-org4cecbad">
+<p>
+This is something I frequently want to do: open a named file, work
+on it programmatically using Lisp code, and save it back – all
+without user intervention. Like a lot of things in Emacs, it's
+easy once you know how.
+</p>
+
+<p>
+The trick is to create a new, named, buffer for the file to get
+its contents. This is done with <code>find-file-noselect</code> as opposed to
+the more usual <code>find-file</code> that's usually bound to <code>C-x C-f</code>, and
+as its name suggests finds (opens) the file without bringing it to
+the user's attention. For example,
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="c1">;; open the file in its own buffer</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">with-current-buffer</span><span class="w"> </span><span class="p">(</span><span class="nf">find-file-noselect</span><span class="w"> </span><span class="nv">fn</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; work on it as required, as the current buffer</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">goto-char</span><span class="w"> </span><span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">search-forward</span><span class="w"> </span><span class="s">"#+END_COMMENT"</span><span class="w"> </span><span class="nv">nil</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">beginning-of-line</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">delete-region</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">newline</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; save the results back</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">save-buffer</span><span class="p">))</span>
+</pre></div>
+
+<p>
+(This example comes from my Emacs interface to the Nikola static
+site builder used to maintain this site.) The code fragment
+leaves the current buffer unchanged as far as the user (and the
+rest of the code) is concerned, and so doesn't need to be
+protected by <code>save-excursion</code> or the like.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/estates-an-intimate-history/" rel="bookmark">Tuesday 19 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/estates-an-intimate-history/">Estates: An Intimate History</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328840856l/912517._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Lynsey Hanley
+	  (2007)
+      </h2>
+    </div>
+    <p>
+      A social history of segregated housing in Britain, how thw dream of a more equal approach died, and the consequences for those who lived through it.<br><br>Mass social (or council) housing was intended, in the immediate aftermath of the Second World War, to act as a social glue by mixing all sorts of people together so as to break down the walls of class that blighted British society. It failed: Aneurin Bevin's vision was diluted, as were the building standards, resulting in housing that was both inferior to private stock and immediately identifiable as such, making it stigmatic to live there. The result has been to enhance the blight, erecting what Hanley refers to as "a wall in the head" of people whose self-image is poisoned by poor housing, poor neighbours, and poor (or indeed non-existent) services.<br><br>The wall in the head exists in many forms, and one doesn't have to have grown up on a council estate to have one. But however tall it is, the wall is easy to build when young and hard to climb when older, and it'll affect you all your life in some way or other. Housing and class have a lot to do with forming the wall.<br><br>It's impossible to miss the connection with <a href="https://www.goodreads.com/book/show/25489625.Between_the_World_and_Me" title="Between the World and Me by Ta-Nehisi Coates" rel="nofollow noopener">Between the World and Me</a>, not least because of the catchy and often-repeated phrasing. <a href="https://www.goodreads.com/author/show/1214964.Ta_Nehisi_Coates" title="Ta-Nehisi Coates" rel="nofollow noopener">Ta-Nehisi Coates</a> was more concerned with physical violence rather than social class, but the parallels are there: different people from different circumstances have completely different perceptions of the country in which they live and what it's supposed to do for them. I see this all the time with different student cohorts. It's to some extent a matter of expectations of others, but also of the ability to see opportunities beyond the present. An inward-looking social environment absolutely stunts people's vision of what's possible for them.<br><br>The book ends on quite q positive note: the willingness of housing providers to renovate (rather than simply dispose of) social housing stock, and the availability of cash to do so. Whether this is sufficient is an open question, and certainly we still see developers skirting-round the requirement to provide "affordable" housing, in some cases literally walling-off the social from the private units, just as happened with the first estates built in the 1940s.
+      </p>
+<p>
+	4/5.
+	  Finished Tuesday 19 December, 2023.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6013200590?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/the-rare-metals-war-the-dark-side-of-clean-energy-and-digital-technologies/" rel="bookmark">Tuesday 19 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/the-rare-metals-war-the-dark-side-of-clean-energy-and-digital-technologies/">The Rare Metals War: the dark side of clean energy and digital technologies</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1589950483l/50353960._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Guillaume Pitron
+	  (2018)
+      </h2>
+    </div>
+    <p>
+      Is the "green" revolution actually a "ruse"? This book would have one believe so.<br><br>It's certainly useful to have "the dark side of clean energy" explored in some depth. Many of the observations are chilling, from the environmental impacts of mining to their political consequences in those parts of the world where they occur – and the ever-present shadow of China seeking to get a lock on strategic minerals that will power a world increasingly dependent on rare-earth magnets and specialist semiconductors. In many ways these consequences are the "resource curse" of oil repeating itself, as countries with minerals to extract are exploited and bullied by the companies (and countries) wanting to extract them.<br><br>I have to say that the book isn't a convincing read, despite its wealth of anecdotes and quotes. Perhaps this is because the quotes tend to be unattributed, and the science quite shallow. Having said that, it's pacey and well-structured, and a warning that the move away from fossil fuels involves a lot of shady dealing.
+      </p>
+<p>
+	3/5.
+	  Finished Tuesday 19 December, 2023.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/5350730258?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
@@ -104,101 +222,9 @@
 		</div>
 	    </article>
 </div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/the-invisible-library-the-invisible-library-1/" rel="bookmark">Wednesday 29 November, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/the-invisible-library-the-invisible-library-1/">The Invisible Library (The Invisible Library, #1)</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1416823893l/21416690._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Genevieve Cogman
-	  (2014)
-      </h2>
-    </div>
-    <p>
-      An enjoyable premise and good story: a Library outside time whose Librarians collect different variations of fiction from parallel worlds whose inhabitants live under different constellations of science, magic, chaotic faerie infestations, vampires, and the like. Clearly the start of a series, and while I don't think I'm really in the target audience, it's a book I thoroughly enjoyed.
-      </p>
-<p>
-	3/5.
-	  Finished Wednesday 29 November, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5784606374?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/going-infinite-the-rise-and-fall-of-a-new-tycoon/" rel="bookmark">Sunday 19 November, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/going-infinite-the-rise-and-fall-of-a-new-tycoon/">Going Infinite: The Rise and Fall of a New Tycoon</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684247487l/149105520._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Michael   Lewis
-	  (2023)
-      </h2>
-    </div>
-    <p>
-      An absolutely riveting account of the rise and fall of Sam Bankman-Fried, his Alameda Research hedge fund and FTX exchange. the book came out before the trial at which Bankman-Fried was found guilty of fraud other financial felonies.<br><br>The person who emerges from this account is ... strange. That's not all that unusual in tech industries: as a computer science academic I encounter lots of people at varying points on the Asperger spectrum. Like many such people Bankman-Fried has a hard time relating to others and to his own feelings, and (also like many such people) is competely open about this and other aspects of his inner world. <i>Unlike</i> others he somehow manages to gain the trust of supposedly sophisticated investors.<br><br>Why is this? I suspect it's got something to do with the archetypes of the Boy Genius and the Great Man of Science: people who are misunderstood but can nevertheless succeed beyond normal measure. That's an attractive hook for investors wanting to profit off unlikely accomplishments.<br><br>Part of Bankman-Fried's strangeness was his embrace of effective altruism and the philosophy of an analysed and quantified life. The basic premise seems to be that the probabilistic techniques that work so well in finance can be applied to <i>all</i> life decisions. The problem (I think) is that this is a mistake, and lots of pseudo-mathematical talk about "expected value" doesn't disguise that: but it does throw up a smokescreen for people who aren't themselves clear about what the maths actually says. They allow Bankman-Fried some astonishing lattitude, playing video games on reporting calls and simply not turining up for events because something else "with a higher EV" showed up. These aren't characteristics of a reliable business partner – and would label someone with a more normal affect a sociopath.<br><br>(Why do I think the talk about EV is a mistake? In order to make an expected value calculation one needs the value of an event and the probability of that event happening. The value might be available, but what about the probability? How do we assign probabilities to events that lie a long time in the future, and whose course we don't understand? A one-in-a-billion chance, for example, sounds impressively quantitative. But it actually only refers to three independent one-in-a-thousand events happening together. What are those events, how did we assign <i>their</i> probabilities, and are there <i>really</i> only three of them? If we don't know all of this information, then the numbers are simply speculative, and only <i>sound</i> quantitative. That's not to say that these calculations can't be done – finance people do them regularly – but they only work under conditions of substantial information and substantial control over the environment.)<br><br>Lewis is also quietly scathing of many of the characters who emerge around FTX. The bankruptcy CEO, John Ray, comes out badly, as do the corporate lawyers. And there are some uncomfortable questions. Why did FTX file for bankruptcy in the US when it had no presence there and didn't deal with US citizens? Why were so many senior people offered plea deals? Why were some not indicted at all?<br><br>The trial (which has happened at the time I'm writing) brought up some contradictions with Lewis' account. He clearly takes Bankman-Fried at his word a lot of the time, especially with regard to his inner calcultions, but also with the naturalness of his unkempt image. Testimony from those close to him suggest this is naïve, and was subject to a lot of delierate design. It's an open question whether the trial has achieved a more accurate view of Bankman-Fried's psychology than Lewis did, though, and this book deserves to be read in that context.
-      </p>
-<p>
-	5/5.
-	  Finished Sunday 19 November, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5886080216?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/number-go-up-inside-cryptos-wild-rise-and-staggering-fall/" rel="bookmark">Monday 13 November, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/number-go-up-inside-cryptos-wild-rise-and-staggering-fall/">Number Go Up: Inside Crypto's Wild Rise and Staggering Fall</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1687140968l/123276708._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Zeke Faux
-      </h2>
-    </div>
-    <p>
-      A broad view of the state of modern cryptocurrencies from the perspective of an investigative financial journalist. Unlike many commentaries this work has involved serious investigation, including travel to crypto industry conferences and some less-than-enthusiastic participation in some of the activities (or scams) on offer.<br><br>The investigation starts by investigating Tether, a so-called "stablecoin" whose value is supposedly backed one-to-one by US dollars, making it essentially a digital proxy for a real fiat currency that can be injected into crypto exchanges and traded for other, more speculative, assets. But is Tether actually backed by all the dollars it claims? – by the end of the book we still don't know, but we <i>do</i> know that the industry behaves <i>as if</i> it is, despite evidence to the contrary, because if it isn't the entire industry is insolvent. There simply wouldn't be enough dollars in the system to allow people to cash out.<br><br>There are some fantastically wry observations, not least how crypto presents itself as a system offering zero-trust interactions but is actually a system requiring quite extraordinary amounts of trust because of the lack of regulation, supervision, or insurance. It places participants entirely at the mercy and good intentions of actors who have every temptation to cheat behind the scenes. And the attempts to make crypto respectable (for example making them legal tender in El Salvador and Lugano) are offset by other, less credible, schemes (such as non-fungible tokens of low-resolution images trading for millions of dollars).<br><br>It's hard to get to the end of the book without forming the opinion that all crypto is at best a techology desperately in search of an <i>actual</i> application, and at worst a huge confidence trick that plays on the ability of the sophisticated and unprincipled few to attrat money from those who've been sold a dream – and who believe it because it at least offers some hope of escape from their current circumstances.
-      </p>
-<p>
-	5/5.
-	  Finished Monday 13 November, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5949471989?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-131.html" rel="prev">
+		<a href="index-134.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
