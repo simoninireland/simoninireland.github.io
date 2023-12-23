@@ -144,23 +144,23 @@ FEEDS = {
     }
 
 # Refill version: get all posts
-FEEDS = {}
-for p in range(1, 8):
-    FEEDS['goodreads-{}'.format(p)] = {
-        'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page={}'.format(p),
-        'output_folder': 'posts/goodreads',
-        'template': 'goodreads.tmpl',
-        'format': 'html',
-        'lang': 'en',
-        'category': 'book-reviews',
-        'tags': 'books',
-        'metadata': {
-            'title': 'title',
-            'previewimage': 'book_medium_image_url',
-            'date': ['user_read_at', 'user_date_added', 'published'],
-            'tags': 'user_shelves',
-            }
-        }
+# FEEDS = {}
+# for p in range(1, 10):
+#     FEEDS['goodreads-{}'.format(p)] = {
+#         'url': 'https://www.goodreads.com/review/list_rss/8492165?shelf=read&per_page=100&page={}'.format(p),
+#         'output_folder': 'posts/goodreads',
+#         'template': 'goodreads.tmpl',
+#         'format': 'html',
+#         'lang': 'en',
+#         'category': 'book-reviews',
+#         'tags': 'books',
+#         'metadata': {
+#             'title': 'title',
+#             'previewimage': 'book_medium_image_url',
+#             'date': ['user_read_at', 'user_date_added', 'published'],
+#             'tags': 'user_shelves',
+#             }
+#         }
 
 # Tag cloud
 RENDER_STATIC_TAG_CLOUDS = {

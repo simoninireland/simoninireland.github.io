@@ -25,13 +25,13 @@
 
    As a reference, I firsat ran a small experiment with an SIR
    epidemic on an ER network of $10^4$ nodes, $\langle k \rangle =
-   10$) experiment with 10 repetitions. The first experiment runs 10
-   repetitions sequentially on a single core; the second runs 10
-   repetitions for every core we run on. [[https://github.com/simoninireland/epyc][epyc]], our process management
-   library, schedules worker processes in individual processes which
-   can then be scheduled independently by the operating system, and
-   which don't therefore run into synchronisation problems due to the
-   Python Global Interpreter Lock.
+   10$. The first experiment runs 10 repetitions sequentially on a
+   single core; the second runs 10 repetitions for every core we run
+   on. [[https://github.com/simoninireland/epyc][epyc]], our process management library, schedules worker
+   processes in individual processes which can then be scheduled
+   independently by the operating system, and which don't therefore
+   run into synchronisation problems due to the Python Global
+   Interpreter Lock.
 
    Running this on my desktop machine (Intel Core i7@3.8GHz) on 8
    cores and taking averages gives:

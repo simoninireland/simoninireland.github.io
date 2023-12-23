@@ -1,0 +1,45 @@
+#+BEGIN_COMMENT
+.. title: Programmatically editing a file from Emacs Lisp
+.. slug: programmatically-editing-a-file-from-emacs-lisp
+.. date: 2023-12-23 17:16:42 UTC
+.. tags: emacs,lisp
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+*** Programmatically editing a file from Emacs Lisp
+
+    This is something I frequently want to do: open a named file, work
+    on it programmatically using Lisp code, and save it back -- all
+    without user intervention. Like a lot of things in Emacs, it's
+    easy once you know how.
+
+    The trick is to create a new, named, buffer for the file to get
+    its contents. This is done with ~find-file-noselect~ as opposed to
+    the more usual ~find-file~ that's usually bound to ~C-x C-f~, and
+    as its name suggests finds (opens) the file without bringing it to
+    the user's attention. For example,
+
+    #+begin_src emacs-lisp
+;; open the file in its own buffer
+(with-current-buffer (find-file-noselect fn)
+
+  ;; work on it as required, as the current buffer
+  (goto-char (point-min))
+  (search-forward "#+END_COMMENT" nil t)
+  (beginning-of-line 2)
+  (delete-region (point) (point-max))
+  (newline 2)
+
+  ;; save the results back
+  (save-buffer))
+    #+end_src
+
+    (This example comes from my Emacs interface to the Nikola static
+    site builder used to maintain this site.) The code fragment
+    leaves the current buffer unchanged as far as the user (and the
+    rest of the code) is concerned, and so doesn't need to be
+    protected by ~save-excursion~ or the like.
