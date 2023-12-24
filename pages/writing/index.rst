@@ -38,6 +38,8 @@ Selected
 - In computer science there are `only two kinds of PhD
   <link:/2013/01/19/hypothetical-adventures-chosen-field/>`_, you just
   have to decide which one yours will be
+- ... and there's only `one book worth reading twice
+  <link:/2010/05/14/cs-book-worth-reading-twice/>`_
 - `Me and my research <link:/2022/11/28/me-and-my-research/>`_, how
   and why to choose (and change) your research topic
 - `How to write an abstract for a paper <link:/2020/08/06/how-to-write-an-abstract>`_,
