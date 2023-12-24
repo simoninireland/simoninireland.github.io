@@ -35,9 +35,12 @@ On particular topics
 Selected
 --------
 
+- In computer science there are `only two kinds of PhD
+  <link:/2013/01/19/hypothetical-adventures-chosen-field/>`_, you just
+  have to decide which one yours will be
+- `Me and my research <link:/2022/11/28/me-and-my-research/>`_, how
+  and why to choose (and change) your research topic
 - `How to write an abstract for a paper <link:/2020/08/06/how-to-write-an-abstract>`_,
   a skill every academic and student needs to learn
 - `The experience of self-publishing a scientific textbook <link:/2020/07/22/self-publishing/>`_,
   in case you want to do so yourself
-- `Me and my research <link:/2022/11/28/me-and-my-research/>`_, on how
-  and why to choose your topic

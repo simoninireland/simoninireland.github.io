@@ -47,11 +47,7 @@ EXTRAS = \
 
 # Plug-ins to download
 PLUGINS = \
-	orgmode \
-	static_tag_cloud \
-	accordion \
-	category_prevnext \
-	similarity
+	orgmode
 
 # The git branch we're currently working on
 GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
