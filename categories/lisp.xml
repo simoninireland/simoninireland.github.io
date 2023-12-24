@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Dec 2023 17:18:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4cecbad" class="outline-2"&gt;
-&lt;h2 id="org4cecbad"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4cecbad"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 24 Dec 2023 14:55:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746c351" class="outline-2"&gt;
+&lt;h2 id="org746c351"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org746c351"&gt;
 &lt;p&gt;
 This is something I frequently want to do: open a named file, work
 on it programmatically using Lisp code, and save it back – all
@@ -39,9 +39,9 @@ rest of the code) is concerned, and so doesn't need to be
 protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbceb9b5" class="outline-2"&gt;
-&lt;h2 id="orgbceb9b5"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbceb9b5"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd0a15fe" class="outline-2"&gt;
+&lt;h2 id="orgd0a15fe"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd0a15fe"&gt;
 &lt;p&gt;
 I've recently found myself constantly introducing – and then deleting –
 whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.
