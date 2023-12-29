@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 24 Dec 2023 16:01:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746c351" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Dec 2023 14:31:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746c351" class="outline-2"&gt;
 &lt;h2 id="org746c351"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org746c351"&gt;
 &lt;p&gt;
@@ -54,22 +54,7 @@ protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
 	  Finished Tuesday 19 December, 2023.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6013200590?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/estates-an-intimate-history/</guid><pubDate>Tue, 19 Dec 2023 00:00:00 GMT</pubDate></item><item><title>The Rare Metals War: the dark side of clean energy and digital technologies</title><link>https://simondobson.org/goodreads/the-rare-metals-war-the-dark-side-of-clean-energy-and-digital-technologies/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1589950483l/50353960._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Guillaume Pitron
-	  (2018)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      Is the "green" revolution actually a "ruse"? This book would have one believe so.&lt;br&gt;&lt;br&gt;It's certainly useful to have "the dark side of clean energy" explored in some depth. Many of the observations are chilling, from the environmental impacts of mining to their political consequences in those parts of the world where they occur – and the ever-present shadow of China seeking to get a lock on strategic minerals that will power a world increasingly dependent on rare-earth magnets and specialist semiconductors. In many ways these consequences are the "resource curse" of oil repeating itself, as countries with minerals to extract are exploited and bullied by the companies (and countries) wanting to extract them.&lt;br&gt;&lt;br&gt;I have to say that the book isn't a convincing read, despite its wealth of anecdotes and quotes. Perhaps this is because the quotes tend to be unattributed, and the science quite shallow. Having said that, it's pacey and well-structured, and a warning that the move away from fossil fuels involves a lot of shady dealing.
-      &lt;/p&gt;&lt;p&gt;
-	3/5.
-	  Finished Tuesday 19 December, 2023.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5350730258?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-rare-metals-war-the-dark-side-of-clean-energy-and-digital-technologies/</guid><pubDate>Tue, 19 Dec 2023 00:00:00 GMT</pubDate></item><item><title>Technofeudalism: What Killed Capitalism</title><link>https://simondobson.org/goodreads/technofeudalism-what-killed-capitalism/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/estates-an-intimate-history/</guid><pubDate>Tue, 19 Dec 2023 00:00:00 GMT</pubDate></item><item><title>Technofeudalism: What Killed Capitalism</title><link>https://simondobson.org/goodreads/technofeudalism-what-killed-capitalism/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684846614l/75560036._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -172,4 +157,19 @@ protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
 	  Finished Wednesday 1 November, 2023.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5247217300?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-computers-that-made-britain/</guid><pubDate>Wed, 01 Nov 2023 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-computers-that-made-britain/</guid><pubDate>Wed, 01 Nov 2023 00:00:00 GMT</pubDate></item><item><title>The Power of Geography: Ten Maps That Reveal the Future of Our World</title><link>https://simondobson.org/goodreads/the-power-of-geography-ten-maps-that-reveal-the-future-of-our-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610902279l/56696339._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Tim  Marshall
+	  (2021)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A successor to &lt;a href="https://www.goodreads.com/book/show/25135194.Prisoners_of_Geography_Ten_Maps_That_Tell_You_Everything_You_Need_to_Know_About_Global_Politics" title="Prisoners of Geography Ten Maps That Tell You Everything You Need to Know About Global Politics by Tim Marshall" rel="nofollow noopener"&gt;Prisoners of Geography: Ten Maps That Tell You Everything You Need to Know About Global Politics&lt;/a&gt; that attempts to do the same thing: to argue that geography constrains the pursuit of politics more than we might realise. It does this, although as a sequel it's far less impactful than the original, and seems to spend too much time on the historical progression of the chosen countries and not enough on the ways these histories actually manifest the geographical constraints under which they're constrained. Indeed, some of the countries' geographies (such as Saudi Arabia's) seem almost irrelevant compared to their geologies.&lt;br&gt;&lt;br&gt;The inclusion of "space" as a country is interesting from a political perspective, and Marshall does manage to show that it has a "geography" of sorts – as &lt;a href="https://www.goodreads.com/author/show/31528889.Robert_Heinlein" title="Robert Heinlein" rel="nofollow noopener"&gt;Robert Heinlein&lt;/a&gt; is quoted as saying, once you're in Earth orbit you're halfway to anywhere, since getting up the gravity well is the major transport cost. I'm assuming this will be the subject of a later book.
+      &lt;/p&gt;&lt;p&gt;
+	2/5.
+	  Finished Friday 20 October, 2023.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5788060830?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-power-of-geography-ten-maps-that-reveal-the-future-of-our-world/</guid><pubDate>Fri, 20 Oct 2023 00:00:00 GMT</pubDate></item></channel></rss>
