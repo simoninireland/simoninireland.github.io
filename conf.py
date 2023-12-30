@@ -66,7 +66,7 @@ POSTS = (
     ("posts/*.md", "", "post.tmpl"),
     ("posts/*.txt", "", "post.tmpl"),
     ("posts/*.html", "", "post.tmpl"),
-    ("posts/*.ipynb", "", "post.tmpl"),
+    ("posts/*.ipynb", "", "notebook.tmpl"),
     ("posts/*.org", "", "post.tmpl"),
 )
 

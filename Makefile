@@ -54,7 +54,7 @@ GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
 
 # New post, using an org mode file
 post: env
-	$(ACTIVATE) && $(NIKOLA) new_post -d -f org
+	$(ACTIVATE) && $(NIKOLA) new_post -d -f orgmode
 
 # Run a live local server
 live: env
