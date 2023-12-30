@@ -1217,6 +1217,11 @@ a:active {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Jupyter notebooks */
+.format-notebook .prompt {
+    display: none;
+}
+
 /* "Read more" link */
 .more,
 .more>a {
