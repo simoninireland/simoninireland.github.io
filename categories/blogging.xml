@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about blogging)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/blogging.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 24 Dec 2023 14:55:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New publishing setup and theme for the web site</title><link>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0219628" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about blogging)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/blogging.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Jan 2024 19:20:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8d20c4d" class="outline-2"&gt;
+&lt;h2 id="org8d20c4d"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8d20c4d"&gt;
+&lt;p&gt;
+I recently had to make tiny changes to a large number of files
+spread nested through a directory structure. Thus turns out to be a
+lot easier than I expected with Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+My use case was actually this blog. It's been on the go for a while
+in several different formats, and over the years I've used tags to
+drive different presentations – for example articles tagged 'news'
+ended up on the front page. I no longer do this, which meant a lot
+of redundant tags to be got rid of, mainly in Nikola's &lt;code&gt;.meta&lt;/code&gt;
+metadata files but also embedded into &lt;code&gt;.md&lt;/code&gt; markdown and &lt;code&gt;.rst&lt;/code&gt;
+restructured text..
+&lt;/p&gt;
+
+&lt;p&gt;
+My plan was to use Emacs' &lt;code&gt;rgrep&lt;/code&gt; command to recursively traverse
+the directory structure of posts to find the tags I wanted to
+remove. This would give me a &lt;code&gt;grep&lt;/code&gt;-mode buffer that hyperlinks to
+the files (and lines) needing changing, which I could then click
+through to get to where each change needed to be made.
+Straightforward, but time-consuming and error-prone when there were
+about 150 files to be changed. Clearly a problem in need of a better
+solution.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then discovered the &lt;a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"&gt;&lt;code&gt;wgrep&lt;/code&gt;&lt;/a&gt; ("writable &lt;code&gt;grep&lt;/code&gt;") package. This
+makes the &lt;code&gt;grep&lt;/code&gt;-mode buffer editable, with changes being
+written-back to the underlying files. &lt;i&gt;Exactly&lt;/i&gt; what I needed.
+&lt;/p&gt;
+
+&lt;p&gt;
+Once I'd installed &lt;code&gt;wgrep&lt;/code&gt;, the workflow is ridiculously easy:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Using &lt;code&gt;rgrep&lt;/code&gt; gets a &lt;code&gt;grep&lt;/code&gt;-mode buffer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-c C-p&lt;/code&gt; makes the buffer editable&lt;/li&gt;
+&lt;li&gt;Changing the lines. In my case I could use &lt;code&gt;string-replace&lt;/code&gt; to
+remove the tags I wanted rid of. More complicated cases might
+need &lt;code&gt;regexp-replace&lt;/code&gt; or even manual editing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-x C-x&lt;/code&gt; writes the changes back out&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+(There are several other keybindings that &lt;code&gt;wgrep&lt;/code&gt; makes
+available, notably &lt;code&gt;C-c C-k&lt;/code&gt; to discard all changes.)
+&lt;/p&gt;
+
+&lt;p&gt;
+That's it! A job that I expected to take an hour took about 3
+minutes.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>New publishing setup and theme for the web site</title><link>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0219628" class="outline-2"&gt;
 &lt;h2 id="org0219628"&gt;New publishing setup and theme for the web site&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org0219628"&gt;
 &lt;p&gt;
@@ -23,4 +83,4 @@ I get very few direct comments on the blog, despite some posts getting quite a l
 
 So I think there's an opportunity here for someone: how can we aggregate comments? We aggregate blogs themselves using RSS feeds: can we do the same for the comments, and feed them back to a single point (the blog itself, perhaps) so that they're available for further comment regardless of the channel on which they were issued? It's not a trivial task, because you need to identify which comments relate to which blog posting, but it's certainly not insurmountable. Might make a good final-year undergraduate computer science project.
 
-Actually this sort of technology is useful more broadly. Any web site or &lt;a href="https://simondobson.org/2011/01/unpopular-book/"&gt;book&lt;/a&gt; that attracts comment is likely to attract them in different fora: how do you find them? How do you bring them to one place? This has both intellectual and commercial implications: intellectually it increases the network of the social media comment space and so should make it more efficient; commercially it improves the means for  assessing the popularity of a web site which is often what drives advertising revenues. Overall it would let the increasing specialisation of social media continue without this irretrievably fragmenting the very things that make it most valuable: the two-way flow of ideas.&lt;/p&gt;</description><category>Blog</category><category>blogging</category><category>innovation</category><category>social media</category><guid>https://simondobson.org/2011/02/21/comments/</guid><pubDate>Mon, 21 Feb 2011 08:00:13 GMT</pubDate></item></channel></rss>
+Actually this sort of technology is useful more broadly. Any web site or &lt;a href="https://simondobson.org/2011/01/unpopular-book/"&gt;book&lt;/a&gt; that attracts comment is likely to attract them in different fora: how do you find them? How do you bring them to one place? This has both intellectual and commercial implications: intellectually it increases the network of the social media comment space and so should make it more efficient; commercially it improves the means for  assessing the popularity of a web site which is often what drives advertising revenues. Overall it would let the increasing specialisation of social media continue without this irretrievably fragmenting the very things that make it most valuable: the two-way flow of ideas.&lt;/p&gt;</description><category>blogging</category><category>innovation</category><category>social media</category><guid>https://simondobson.org/2011/02/21/comments/</guid><pubDate>Mon, 21 Feb 2011 08:00:13 GMT</pubDate></item></channel></rss>

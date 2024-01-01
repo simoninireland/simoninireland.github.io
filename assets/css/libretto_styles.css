@@ -288,6 +288,7 @@ blockquote {
     line-height: 1.4;
     position: relative;
     z-index: 10000;
+    margin-bottom: 2.0rem;
 }
 
 blockquote::before {
@@ -787,6 +788,17 @@ body:not(.libretto-has-header-image) .title-block {
     max-width: 800px;
 }
 
+/* Subscriptions */
+.subscribe {
+    color: #a09a92;
+    display: block;
+    font-style: italic;
+}
+
+.subscribe a {
+    color: #a09a92;
+}
+
 
 /*--------------------------------------------------------------
   5.2 Footer
@@ -821,10 +833,10 @@ body:not(.libretto-has-header-image) .title-block {
     background: #d9d6d0;
     border-radius: 2px;
     color: #faf9f5;
-    content: "y";
+    /* content: "y"; */
     display: inline-block;
-    font-family: libretto-icons;
-    font-size: 22px;
+    /*font-family: libretto-icons;*/
+    font-size: 42px;
     height: 30px;
     line-height: 26px;
     padding: 2px;
@@ -839,6 +851,7 @@ body:not(.libretto-has-header-image) .title-block {
 }
 
 /* Icons */
+/*
 .social a[href*="dribbble.com"]:before {
   content: "D";
 }
@@ -884,7 +897,7 @@ body:not(.libretto-has-header-image) .title-block {
 }
 
 .social a[href*="twitter.com"]:before {
-  content: "T";
+    content: "T";
 }
 
 .social a[href*="vimeo.com"]:before {
@@ -894,6 +907,7 @@ body:not(.libretto-has-header-image) .title-block {
 .social a[href*="youtube.com"]:before {
   content: "Y";
 }
+*/
 
 /* Colours */
 .social a[href*="dribbble.com"]:hover:before {
@@ -1219,7 +1233,7 @@ a:active {
 
 /* Jupyter notebooks */
 .format-notebook .prompt {
-    display: none;
+    display: none;co
 }
 
 /* "Read more" link */
@@ -1490,7 +1504,7 @@ article .title-block h1 a {
 	float: right;
 	font-size: 16px;
 	font-size: 1.6rem;
-	margin: 0.75rem 2rem 0.5rem 1rem;
+	margin: 1.75rem 2rem 0rem 1rem;
 	position: relative;
     }
 

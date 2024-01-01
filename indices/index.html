@@ -45,15 +45,122 @@
 		    <li><a href="../development/projects/">Software</a></li>
 		    <li><a href="../writing/">Writing</a></li>
 		    <li><a href="../personal/contact/">Contact</a></li>
-		    <li><a href="../rss.xml">RSS</a></li>
-	    </ul></nav></header><div class="site-content">
+		<li>
+<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/01/making-small-changes-to-lots-of-files/" rel="bookmark">Monday 1 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/01/making-small-changes-to-lots-of-files/">Making small changes to lots of files</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org8d20c4d" class="outline-2">
+<h2 id="org8d20c4d">Making small changes to lots of files</h2>
+<div class="outline-text-2" id="text-org8d20c4d">
+<p>
+I recently had to make tiny changes to a large number of files
+spread nested through a directory structure. Thus turns out to be a
+lot easier than I expected with Emacs.
+</p>
+
+<p>
+My use case was actually this blog. It's been on the go for a while
+in several different formats, and over the years I've used tags to
+drive different presentations – for example articles tagged 'news'
+ended up on the front page. I no longer do this, which meant a lot
+of redundant tags to be got rid of, mainly in Nikola's <code>.meta</code>
+metadata files but also embedded into <code>.md</code> markdown and <code>.rst</code>
+restructured text..
+</p>
+
+<p>
+My plan was to use Emacs' <code>rgrep</code> command to recursively traverse
+the directory structure of posts to find the tags I wanted to
+remove. This would give me a <code>grep</code>-mode buffer that hyperlinks to
+the files (and lines) needing changing, which I could then click
+through to get to where each change needed to be made.
+Straightforward, but time-consuming and error-prone when there were
+about 150 files to be changed. Clearly a problem in need of a better
+solution.
+</p>
+
+<p>
+I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a> ("writable <code>grep</code>") package. This
+makes the <code>grep</code>-mode buffer editable, with changes being
+written-back to the underlying files. <i>Exactly</i> what I needed.
+</p>
+
+<p>
+Once I'd installed <code>wgrep</code>, the workflow is ridiculously easy:
+</p>
+
+<ol class="org-ol">
+<li>Using <code>rgrep</code> gets a <code>grep</code>-mode buffer</li>
+<li>
+<code>C-c C-p</code> makes the buffer editable</li>
+<li>Changing the lines. In my case I could use <code>string-replace</code> to
+remove the tags I wanted rid of. More complicated cases might
+need <code>regexp-replace</code> or even manual editing</li>
+<li>
+<code>C-x C-x</code> writes the changes back out</li>
+</ol>
+<p>
+(There are several other keybindings that <code>wgrep</code> makes
+available, notably <code>C-c C-k</code> to discard all changes.)
+</p>
+
+<p>
+That's it! A job that I expected to take an hour took about 3
+minutes.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/they-called-it-passchendaele/" rel="bookmark">Sunday 31 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/they-called-it-passchendaele/">They Called It Passchendaele</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1412445742l/1623876._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Lyn Macdonald
+	  (1978)
+      </h2>
+    </div>
+    <p>
+      A military and social history of the Third Battle of Ypres, heavily supported by material from the soldiers who were there – the Allied soldiers only, which is a shame, as it would have been nice to hear the defenders' perspective too.<br><br>It's trite to say that the story is horrific. Were it not that it's so well-known in outline, it would be unbelievable that anyone could live through such a battle, or survive at all on the moonscape that Flanders was reduced to by then. The soldiers' own stories, which Macdonald both quotes from memoirs and obtains from interviews, emphasise the sheer <i>randomness</i> of the deaths. There are so many stories of one man being killed when the man standing right next to him survives, or leaving a trench or shell-hole only for a shell to immediately kill everyone else who remained.<br><br>There's a common trope aboutthe unfeelingness of senior officers towards their own men, but that isn't on show here – with the possible exception of Douglas Haig, who adopted a deliberate strategy of attrition that accepted casualities as long as the other side was taking them too. The divisional commanders, however, are shown to have protested many times about the timing and purpose of attacks, with one (in charge of the Canadian divisions who eventually took the Passchendaele ridge) refusing to attack at all until he had positioned all the supports and artillery he needed – and then succeeded when others had failed.<br><br>There's terrible irony to the whole campaign. At the end of the battle, the Allies were left in possession of ground that they'd lost in the <i>First</i> Battle of Ypres when the defenders had been Belgian and French (and some of their bodies, still in fine uniform, are surfaced by the shellfire). And later, when the final German attack of 1918 happens, the troops are pushed back to a line that had first been proposed by their own commander in 1915 – for which suggestion he was cashiered. It's a fitting summary of the pointlessness (in hindsight) of much of the First World War.
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 31 December, 2023.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6100813932?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
 			    Posted on <a href="../2023/12/30/high-degree-differentiation/" rel="bookmark">Saturday 30 December, 2023</a>
 			</span>
 		    </div>
-		    <h1><a href="../2023/12/30/high-degree-differentiation/">High-degree numerical differentition</a></h1>
+		    <h1><a href="../2023/12/30/high-degree-differentiation/">High-degree numerical differentiation</a></h1>
 		</div>
 		<div class="entry-content">
 			<div class="cell border-box-sizing text_cell rendered" id="cell-id=7028d361">
@@ -805,6 +912,36 @@ $$</p>
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/around-the-world-in-eighty-games-from-tarot-to-tic-tac-toe-catan-to-chutes-and-ladders-a-mathematician-unlocks-the-secrets-of-the-worlds-greatest-games/" rel="bookmark">Sunday 24 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/around-the-world-in-eighty-games-from-tarot-to-tic-tac-toe-catan-to-chutes-and-ladders-a-mathematician-unlocks-the-secrets-of-the-worlds-greatest-games/">Around the World in Eighty Games: From Tarot to Tic-Tac-Toe, Catan to Chutes and Ladders, a Mathematician Unlocks the Secrets of the World's Greatest Games</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680592896l/123204511._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Marcus du Sautoy
+      </h2>
+    </div>
+    <p>
+      A world tour of the world's board (and other) games. All the usual ones are here, plus others that I guarantee will be new to everyone. The games of Africa remain under-known.<br><br>"Unlocking the secrets" is an overblown description of how maths comes into the story. There's a focus on game theory and decision theory, as one would expect, with a lot of consideration of symmetry (du Sautoy's own research area) and some autobiographical details too. There's <i>too little</i> maths in many ways, but perhaps <i>too much</i> for a non-mathematician.<br><br>The most interesting application comes from silence: two people are asked the same question three times, but it is answerable only on the third asking (the first two having provided information by the fact that neither could answer previously). Very clever.<br><br>Two entirely imaginary games also put in an appearence: Azad from <a href="https://www.goodreads.com/book/show/18630.The_Player_of_Games__Culture___2_" title="The Player of Games (Culture, #2) by Iain M. Banks" rel="nofollow noopener">The Player of Games</a>, and the (unnamed) game from <a href="https://www.goodreads.com/book/show/16634.The_Glass_Bead_Game" title="The Glass Bead Game by Hermann Hesse" rel="nofollow noopener">The Glass Bead Game</a>. Both are conceived as world-spanning games that model an entire culture's activities and concerns – but unfortunately aren't described in enough detail in their source books to admit much analysis. It's fascinating to think what such an analysis might look like, though.<br><br>There is as usual a focus on whether a game has been "solved", as in whether an optimal strategy is known to exist. Many do, of course, and for others such a Go there are "solutions" using machine learning so that a machine can win – but can't explain <i>how</i>, which is very unsatisfactory. du Sautoy is clearly exicited by the applications of machine learing to games and other mathematical applications: an excitement I, as a computer scientist, don't really share.<br><br>Having said that, this is an interesting complement to other science-driven games books such as <a href="https://www.goodreads.com/book/show/58085257.Seven_Games_A_Human_History" title="Seven Games A Human History by Oliver Roeder" rel="nofollow noopener">Seven Games: A Human History</a>, with more depth to the undelying maths.
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 24 December, 2023.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/5998737768?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/" rel="bookmark">Saturday 23 December, 2023</a>
 			</span>
 		    </div>
@@ -855,101 +992,9 @@ protected by <code>save-excursion</code> or the like.
 		</div>
 	    </article>
 </div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/estates-an-intimate-history/" rel="bookmark">Tuesday 19 December, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/estates-an-intimate-history/">Estates: An Intimate History</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328840856l/912517._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Lynsey Hanley
-	  (2007)
-      </h2>
-    </div>
-    <p>
-      A social history of segregated housing in Britain, how thw dream of a more equal approach died, and the consequences for those who lived through it.<br><br>Mass social (or council) housing was intended, in the immediate aftermath of the Second World War, to act as a social glue by mixing all sorts of people together so as to break down the walls of class that blighted British society. It failed: Aneurin Bevin's vision was diluted, as were the building standards, resulting in housing that was both inferior to private stock and immediately identifiable as such, making it stigmatic to live there. The result has been to enhance the blight, erecting what Hanley refers to as "a wall in the head" of people whose self-image is poisoned by poor housing, poor neighbours, and poor (or indeed non-existent) services.<br><br>The wall in the head exists in many forms, and one doesn't have to have grown up on a council estate to have one. But however tall it is, the wall is easy to build when young and hard to climb when older, and it'll affect you all your life in some way or other. Housing and class have a lot to do with forming the wall.<br><br>It's impossible to miss the connection with <a href="https://www.goodreads.com/book/show/25489625.Between_the_World_and_Me" title="Between the World and Me by Ta-Nehisi Coates" rel="nofollow noopener">Between the World and Me</a>, not least because of the catchy and often-repeated phrasing. <a href="https://www.goodreads.com/author/show/1214964.Ta_Nehisi_Coates" title="Ta-Nehisi Coates" rel="nofollow noopener">Ta-Nehisi Coates</a> was more concerned with physical violence rather than social class, but the parallels are there: different people from different circumstances have completely different perceptions of the country in which they live and what it's supposed to do for them. I see this all the time with different student cohorts. It's to some extent a matter of expectations of others, but also of the ability to see opportunities beyond the present. An inward-looking social environment absolutely stunts people's vision of what's possible for them.<br><br>The book ends on quite q positive note: the willingness of housing providers to renovate (rather than simply dispose of) social housing stock, and the availability of cash to do so. Whether this is sufficient is an open question, and certainly we still see developers skirting-round the requirement to provide "affordable" housing, in some cases literally walling-off the social from the private units, just as happened with the first estates built in the 1940s.
-      </p>
-<p>
-	4/5.
-	  Finished Tuesday 19 December, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6013200590?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/technofeudalism-what-killed-capitalism/" rel="bookmark">Saturday 9 December, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/technofeudalism-what-killed-capitalism/">Technofeudalism: What Killed Capitalism</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684846614l/75560036._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Yanis Varoufakis
-	  (2023)
-      </h2>
-    </div>
-    <p>
-      A penetrating analysis of where we are and why.<br><br>Varoufakis has form with analysing current political affirs, of course: he wrote about his short time as Greek finance minister during the 2008 financial crisis in <a href="https://www.goodreads.com/book/show/34673467.Adults_in_the_Room_My_Battle_with_Europe_s_Deep_Establishment" title="Adults in the Room My Battle with Europe's Deep Establishment by Yanis Varoufakis" rel="nofollow noopener">Adults in the Room: My Battle with Europe's Deep Establishment</a>. In this book he tackles a bigger subject: how has the economic system we are now experiencing diverged from the capitalism we've known for over a century? Varoufakis' take is that the torrent of government money that followed the crisis, and increased during the pandemic, was used by the owners of internet-based cloud providers and major platforms – the "cloudalists" – to build-up their capital stock risk- and cost-free, and used this to grab (and then sell) the attention of everyone. Moreover it allowed them to charge rents to everyone else looking to sell on the internet, since network effects made their platforms unavoidable. This return to rentier economics is what Varoufakis terms <i>technofeudalism</i>, and claims this is a better term that the other terms such as <i>late-stage capitalism</i> or <i>hypercapitalism</i> that fail to capture the return to rents as the major source of corporate income – to the point that the cloudalists don't <i>need</i> to be selling profitable commodities any more.<br><br>Varoufakis has a keen eye for anecdotes and corners of the economy in which to test his hypotheses, such as how General Motors turned into a hedge fund with a sideline in cars, or the irony of capitalism being defeated by ... more efficient capitalism. But the major point is that technofeudalism <i>isn't</i> capitalism, and emerged largely because of government largesse leading to unintended consequences followed by significant political capture to keep the new <i>status quo</i> in place and without meaningful regulation. <br><br>This is a book about economics, but there's a computer science perspective that's perhaps worth taking too. Cloud systems may be inefficient in economic terms, because they extract rents from all users and service providers. But technically they're almost always <i>more</i> efficient than owning and running your own computers to provide services, as well as reducing costs and risks for start-ups and being a lot more flexible and (potentially) energy-efficient. That's not to say that there's no evidence of rentier behaviour: the cloud providers segment the market to charge premium rates for not-very-different services, which in turn changes technical decisions in ways that might not benefit service providers, and they're notorious for making their charging structures as opaque as possible.<br><br>It's the network effects in terms of access to users' attention where the rents really become too significant to ignore and almost entirely negative in their effects. We're also seeing the platforms seek regulation to stifle competition, notably in AI, which will re-inforce their ownership of the most important means of computation.<br><br>Another thing to consider is that the cloudalists' rents make offerings progressively worsen. <a href="https://www.goodreads.com/author/show/12581.Cory_Doctorow" title="Cory Doctorow" rel="nofollow noopener">Cory Doctorow</a> terms this process <i>enshittification</i>, where platform-based services inevitably try to suck-in all the surplus value and squeeze-out other stakeholders – turning them into what Varoufakis terms "cloud serfs" living on whatever pittance of value the platforms don't deign to hoover-up.<br><br>So far so negative. But Varoufakis doesn't content himself with merely describing the emergence of the current situation. As a former Communist his class-based analysis (which I have to say strikes a chord with me) leads him to try to define an alternative economy that recognises the realities of the techologies we live with. His prescription seems utopian and hard to realise, although not as hard (as he points out) as when trades unions were first formed, or when right-wing dictatorships were defeated – and he provides possible strategies and rallying cries for us to fight back against the return of feudalism in a more pernicious form than anyone ever expected.<br></p>
-<p>
-	5/5.
-	  Finished Saturday 9 December, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5871145853?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/the-man-who-solved-the-market-how-jim-simons-launched-the-quant-revolution/" rel="bookmark">Sunday 3 December, 2023</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/the-man-who-solved-the-market-how-jim-simons-launched-the-quant-revolution/">The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567623099l/43889703._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Gregory Zuckerman
-	  (2019)
-      </h2>
-    </div>
-    <p>
-      A history both of quantitative investing and of one of its most successful proponents.<br><br>Jim Simons comes across as a fascinating character, who transitioned across academic science and made some important contributions before deciding to tackle the practical aspects of investing. Driven by the same sort of mindset that he employed as a scientist, his new company developed some of the first methods for properly managing and diversifying risk.<br><br>But... to what extent was Simons responsible? To what extent did he "solve" the market, and to what extent did he provide a management structure within which others could? The story told here tends to the latter interpretation.<br><br>It's also impossible to escape some of the darker aspects of the story. First of all, once the market has been "solved" (at least to the extent of extracting considerable and predictable profits) the company closes it to other investors, and it exists purely as a vehicle for its own staff. That seems like the epitome of pure financialisation. Worse, Simons and his partner Robert Mercer use their wealth and power to drive a political agenda that's entirely focused on advancing this kind of financialism at the expense of ... well, everything else. It's not clear that they actually have a broader agenda, which in some ways is more shocking than if they had, but is in keeping with the authoritarian politicians they somewhat succeed in promoting.
-      </p>
-<p>
-	4/5.
-	  Finished Sunday 3 December, 2023.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/3061685849?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-134.html" rel="prev">
+		<a href="index-135.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
@@ -957,10 +1002,10 @@ protected by <code>save-excursion</code> or the like.
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
-    </section><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
 	    <p></p>
 	    <p>
-	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
 	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
 	    </p>
@@ -973,6 +1018,6 @@ protected by <code>save-excursion</code> or the like.
 	<div class="social">
 	    <ul class="menu"></ul>
 </div>
-    </footer><!-- Extra JavaScript -->
+    </footer>
 </body>
 </html>

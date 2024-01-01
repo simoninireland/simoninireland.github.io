@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Making small changes to lots of files | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Monday 1 January, 2024</a>
+	    </span>
+	</div>
+	<h1>Making small changes to lots of files</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org8d20c4d" class="outline-2">
+<h2 id="org8d20c4d">Making small changes to lots of files</h2>
+<div class="outline-text-2" id="text-org8d20c4d">
+<p>
+I recently had to make tiny changes to a large number of files
+spread nested through a directory structure. Thus turns out to be a
+lot easier than I expected with Emacs.
+</p>
+
+<p>
+My use case was actually this blog. It's been on the go for a while
+in several different formats, and over the years I've used tags to
+drive different presentations – for example articles tagged 'news'
+ended up on the front page. I no longer do this, which meant a lot
+of redundant tags to be got rid of, mainly in Nikola's <code>.meta</code>
+metadata files but also embedded into <code>.md</code> markdown and <code>.rst</code>
+restructured text..
+</p>
+
+<p>
+My plan was to use Emacs' <code>rgrep</code> command to recursively traverse
+the directory structure of posts to find the tags I wanted to
+remove. This would give me a <code>grep</code>-mode buffer that hyperlinks to
+the files (and lines) needing changing, which I could then click
+through to get to where each change needed to be made.
+Straightforward, but time-consuming and error-prone when there were
+about 150 files to be changed. Clearly a problem in need of a better
+solution.
+</p>
+
+<p>
+I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a> ("writable <code>grep</code>") package. This
+makes the <code>grep</code>-mode buffer editable, with changes being
+written-back to the underlying files. <i>Exactly</i> what I needed.
+</p>
+
+<p>
+Once I'd installed <code>wgrep</code>, the workflow is ridiculously easy:
+</p>
+
+<ol class="org-ol">
+<li>Using <code>rgrep</code> gets a <code>grep</code>-mode buffer</li>
+<li>
+<code>C-c C-p</code> makes the buffer editable</li>
+<li>Changing the lines. In my case I could use <code>string-replace</code> to
+remove the tags I wanted rid of. More complicated cases might
+need <code>regexp-replace</code> or even manual editing</li>
+<li>
+<code>C-x C-x</code> writes the changes back out</li>
+</ol>
+<p>
+(There are several other keybindings that <code>wgrep</code> makes
+available, notably <code>C-c C-k</code> to discard all changes.)
+</p>
+
+<p>
+That's it! A job that I expected to take an hour took about 3
+minutes.
+</p>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Making%20small%20changes%20to%20lots%20of%20files%20%23blogging%20%23emacs%20%23nikola&amp;url=https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Making%20small%20changes%20to%20lots%20of%20files%20%23blogging%20%23emacs%20%23nikola&amp;url=https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/&amp;title=Making%20small%20changes%20to%20lots%20of%20files%20%23blogging%20%23emacs%20%23nikola" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Making%20small%20changes%20to%20lots%20of%20files&amp;body=https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/blogging/">blogging</a>
+		    <span>  </span>
+		<a href="../../../../categories/emacs/">emacs</a>
+		    <span>  </span>
+		<a href="../../../../categories/nikola/">nikola</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../../goodreads/they-called-it-passchendaele/" rel="prev">
+		<span class="meta-nav">Older Post</span>They Called It Passchendaele
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
+	      unless otherwise noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>
