@@ -2,7 +2,7 @@
 .. title: New, faster, release of epydemic
 .. slug: new-faster-release-of-epydemic
 .. date: 2021-05-14 09:33:17 UTC+01:00
-.. tags: news, epydemic, development, python, complex networks, epidemic spreading, simulation
+.. tags: epydemic, development, python, complex networks, epidemic spreading, simulation
 .. has_math: true
 .. category:
 .. link:

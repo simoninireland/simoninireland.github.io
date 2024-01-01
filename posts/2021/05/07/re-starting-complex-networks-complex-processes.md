@@ -2,7 +2,7 @@
 .. title: Re-starting "Complex networks, complex processes"
 .. slug: re-starting-complex-networks-complex-processes
 .. date: 2021-05-07 17:23:38 UTC+01:00
-.. tags: news, book, complex networks, research
+.. tags: book, complex networks, research
 .. category:
 .. link:
 .. description:

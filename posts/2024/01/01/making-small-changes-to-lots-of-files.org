@@ -1,0 +1,53 @@
+#+BEGIN_COMMENT
+.. title: Making small changes to lots of files
+.. slug: making-small-changes-to-lots-of-files
+.. date: 2024-01-01 16:35:31 UTC
+.. tags: emacs, blogging, nikola
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Making small changes to lots of files
+
+  I recently had to make tiny changes to a large number of files
+  spread nested through a directory structure. Thus turns out to be a
+  lot easier than I expected with Emacs.
+
+  My use case was actually this blog. It's been on the go for a while
+  in several different formats, and over the years I've used tags to
+  drive different presentations -- for example articles tagged 'news'
+  ended up on the front page. I no longer do this, which meant a lot
+  of redundant tags to be got rid of, mainly in Nikola's ~.meta~
+  metadata files but also embedded into ~.md~ markdown and ~.rst~
+  restructured text..
+
+  My plan was to use Emacs' ~rgrep~ command to recursively traverse
+  the directory structure of posts to find the tags I wanted to
+  remove. This would give me a ~grep~-mode buffer that hyperlinks to
+  the files (and lines) needing changing, which I could then click
+  through to get to where each change needed to be made.
+  Straightforward, but time-consuming and error-prone when there were
+  about 150 files to be changed. Clearly a problem in need of a better
+  solution.
+
+  I then discovered the [[https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el][~wgrep~]] ("writable ~grep~") package. This
+  makes the ~grep~-mode buffer editable, with changes being
+  written-back to the underlying files. /Exactly/ what I needed.
+
+  Once I'd installed ~wgrep~, the workflow is ridiculously easy:
+
+  1. Using ~rgrep~ gets a ~grep~-mode buffer
+  2. ~C-c C-p~ makes the buffer editable
+  3. Changing the lines. In my case I could use ~string-replace~ to
+     remove the tags I wanted rid of. More complicated cases might
+     need ~regexp-replace~ or even manual editing
+  4. ~C-x C-x~ writes the changes back out
+
+
+  (There are several other keybindings that ~wgrep~ makes
+  available, notably ~C-c C-k~ to discard all changes.)
+
+  That's it! A job that I expected to take an hour took about 3
+  minutes.

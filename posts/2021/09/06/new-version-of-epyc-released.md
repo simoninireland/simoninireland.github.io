@@ -2,7 +2,7 @@
 .. title: New version of epyc released
 .. slug: new-version-of-epyc-released
 .. date: 2021-09-06 13:50:48 UTC+01:00
-.. tags: epyc, development, software, python, news, experimental design
+.. tags: epyc, development, software, python, experimental design
 .. category:
 .. link:
 .. description:

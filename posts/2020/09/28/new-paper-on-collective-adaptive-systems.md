@@ -2,7 +2,7 @@
 .. title: New paper on collective adaptive systems
 .. slug: new-paper-cas
 .. date: 2020-09-28 17:59:20 UTC+01:00
-.. tags: news, paper, cas, adaptive systems, saso
+.. tags: paper, cas, adaptive systems, saso
 .. category:
 .. link: 
 .. description: A paper on the social aspects of engineering collective adaptive systems

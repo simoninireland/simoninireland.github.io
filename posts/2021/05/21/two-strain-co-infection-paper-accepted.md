@@ -2,7 +2,7 @@
 .. title: Two-strain co-infection paper accepted
 .. slug: two-strain-co-infection-paper-accepted
 .. date: 2021-05-21 15:57:36 UTC+01:00
-.. tags: news, complex networks, epidemic spreading, co-infection, paper
+.. tags: complex networks, epidemic spreading, co-infection, paper
 .. category:
 .. link:
 .. previewimage: /images/posts/20210521-strains.png

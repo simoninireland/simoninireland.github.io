@@ -60,6 +60,7 @@
 		{% for url, text in navigation_links[lang] %}
 		    <li><a href="{{ url }}">{{ text|e }}</a></li>
 		{% endfor %}
+		<li><a href="/rss.xml"><i class="fa fa-rss"/></a>
 	    </ul>
 	</nav>
     </header>
@@ -73,6 +74,10 @@
 	<!-- Page Content -->
 	{% block content_post %}
 	    <p> content - post </p>
+	{% endblock %}
+
+	<!-- Social sharing section -->
+	{% block content_social %}
 	{% endblock %}
 
 	<!-- Tag Section -->
@@ -94,12 +99,15 @@
 	</div>
     </section>
 
+    <!-- Extra JavaScript -->
+    {% block late_js %}{% endblock %}
+
     <!-- Site Attributions -->
     <footer class="site-footer" role="contentinfo">
 	<div class="site-info">
 	    <p>{{ content_footer }}</p>
 	    <p>
-	      Built with open-source software, especially <a href="https://emacs.org/">Emacs</a>.
+	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
 	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
 	    </p>
@@ -118,8 +126,6 @@
 	</div>
     </footer>
 
-    <!-- Extra JavaScript -->
-    {% block late_js %}{% endblock %}
 </body>
 
 </html>

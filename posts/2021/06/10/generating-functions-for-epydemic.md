@@ -2,7 +2,7 @@
 .. title: Generating functions for epydemic
 .. slug: generating-functions-for-epydemic
 .. date: 2021-06-10 18:22:16 UTC+01:00
-.. tags: news, development, complex networks, python, epidemic spreading, epydemic, simulation, generating functions
+.. tags: development, complex networks, python, epidemic spreading, epydemic, simulation, generating functions
 .. category:
 .. link:
 .. description:

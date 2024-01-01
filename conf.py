@@ -49,7 +49,6 @@ NAVIGATION_LINKS = {
         ('/development/projects/', 'Software'),
         ('/writing/', 'Writing'),
         ('/personal/contact/', 'Contact'),
-        ('/rss.xml', 'RSS'),
     )
 }
 
@@ -119,8 +118,42 @@ def j2_dayonly_filter(d):
     #return ts.strftime("%d %B %Y")
     return format_date(ts, 'EEEE d MMMM, yyyy')
 
+def hashify(t):
+    '''Hashify a tag, adding a # and removing spaces.
+
+    :param t: the tag
+    :returns: the hastag'''
+    return '#' + t.replace(' ', '')
+
+def dashify(t):
+    '''Turn spaces in a tag into dashes, ready for use in URLs.
+
+    :param t: the tag
+    :returns: the dashified tag'''
+    return t.replace(' ', '-')
+
+def tagged_title(p):
+    '''Return a string consisting of a post's title and
+    tags as hashtags, suitable for social media sharing.
+
+    :param p: the post
+    :returns: the title and hashtags'''
+
+    # title
+    tt = p.title()
+
+    # add hashtags
+    tags = p.tags
+    if len(tags) > 0:
+        hashtags = ' '.join(map(hashify, tags))
+        tt = f'{tt} {hashtags}'
+    return tt
+
 TEMPLATE_FILTERS= {
-    "dayonly":  j2_dayonly_filter
+    "dayonly": j2_dayonly_filter,
+    "taggedtitle": tagged_title,
+    "hashify": hashify,
+    "dashify": dashify,
 }
 
 # Feeds for continuous import

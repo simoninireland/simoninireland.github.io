@@ -15,6 +15,10 @@
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
+** 2024
+
+
+
 ** 2023
 
 <<citeproc_bib_item_1>>Simon Dobson and Peter Mann.  /[[https://simondobson.org/softcopy/uksystems-23.pdf][Moving a Scientific Computing System to the Cloud]]/. In /7th UK System Research Challenges Workshop/. Co Durham, UK. 2023.
@@ -275,15 +279,17 @@
 
 <<citeproc_bib_item_5>>Adrian K. Clear, Thomas Holland, Simon Dobson, Aaron Quigley, Ross Shannon, and Paddy Nixon.  /[[https://dx.doi.org//10.1016/j.pmcj.2010.04.002][Situvis: A Sensor Data Analysis and Abstraction Tool for Pervasive Computing Systems]]/. Pervasive and Mobile Computing *6*, pp.575–589. 2010.
 
-<<citeproc_bib_item_6>>Michael O’Grady, Juan Ye, G.M.P. O’Hare, Simon Dobson, Richard Tynan, and Connor Muldoon.  /[[https://simondobson.org/softcopy/implicit-interaction-10.pdf][A Middleware for Implicit Interaction]]/. In /Proceedings of the International Workshop on Instinctive Computing/. Volume 5897 of Lecture Notes in Artificial Intelligence. Springer Verlag. Pittsburgh, PA. 2010.
+<<citeproc_bib_item_6>>Graeme Stevenson, Juan Ye, Simon Dobson, and Paddy Nixon.  /[[https://dx.doi.org//10.1109/MPRV.2009.90][LOC8: A Location Model and Extensible Framework for Programming with Location]]/. IEEE Pervasive Computing *9*, pp.28–37. 2010.
 
-<<citeproc_bib_item_7>>Simon Dobson, Roy Sterritt, Paddy Nixon, and Mike Hinchey.  /[[https://dx.doi.org///10.1109/MC.2010.14][Fulfilling the Vision of Autonomic Computing]]/. IEEE Computer *43*, pp.35–41. 2010.
+<<citeproc_bib_item_7>>Michael O’Grady, Juan Ye, G.M.P. O’Hare, Simon Dobson, Richard Tynan, and Connor Muldoon.  /[[https://simondobson.org/softcopy/implicit-interaction-10.pdf][A Middleware for Implicit Interaction]]/. In /Proceedings of the International Workshop on Instinctive Computing/. Volume 5897 of Lecture Notes in Artificial Intelligence. Springer Verlag. Pittsburgh, PA. 2010.
 
-<<citeproc_bib_item_8>>Susan McKeever, Juan Ye, Lorcan Coyle, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2010-0071][Activity Recognition Using Temporal Evidence Theory]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.253–269. 2010.
+<<citeproc_bib_item_8>>Simon Dobson, Roy Sterritt, Paddy Nixon, and Mike Hinchey.  /[[https://dx.doi.org///10.1109/MC.2010.14][Fulfilling the Vision of Autonomic Computing]]/. IEEE Computer *43*, pp.35–41. 2010.
 
-<<citeproc_bib_item_9>>Emerson Loureiro, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/pdp-10.pdf][Adaptive Management of Shared Resource Pools with Decentralized Optimization and Epidemics]]/. In /Proceedings of the 18th Euromicro Conference on Parallel, Distributed and Network-Based Processing/, pp.51–58. Marco Danelutto, Julien Borgeois, and Tom Gross, editors. IEEE Computer Society Press. Pisa, IT. 2010.
+<<citeproc_bib_item_9>>Susan McKeever, Juan Ye, Lorcan Coyle, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2010-0071][Activity Recognition Using Temporal Evidence Theory]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.253–269. 2010.
 
-<<citeproc_bib_item_10>>Simon Dobson.  /[[https://simondobson.org/softcopy/back-to-the-future-talk-gp10.pdf][Progamming for Adaptive Sensor Networks: Back to the Future]]/. 2010. Invited talk to the IFIP WG2.11 workshop on Generative Programming.
+<<citeproc_bib_item_10>>Emerson Loureiro, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/pdp-10.pdf][Adaptive Management of Shared Resource Pools with Decentralized Optimization and Epidemics]]/. In /Proceedings of the 18th Euromicro Conference on Parallel, Distributed and Network-Based Processing/, pp.51–58. Marco Danelutto, Julien Borgeois, and Tom Gross, editors. IEEE Computer Society Press. Pisa, IT. 2010.
+
+<<citeproc_bib_item_11>>Simon Dobson.  /[[https://simondobson.org/softcopy/back-to-the-future-talk-gp10.pdf][Progamming for Adaptive Sensor Networks: Back to the Future]]/. 2010. Invited talk to the IFIP WG2.11 workshop on Generative Programming.
 
 ** 2009
 
@@ -535,6 +541,8 @@
 
 <<citeproc_bib_item_1>>Sotirios Terzis, Paddy Nixon, Vinny Wade, Simon Dobson, and John Fuller.  /Building the next Generation of Groupware/. In /Enterprise Information Systems/. Joaquim Filipe, editor. Kluwer Academic Press. 2001.
 
+<<citeproc_bib_item_2>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /As Strong as Possible Agent Mobility/. In /Infrastructure for Agents, Multi-Agent Systems, and Scalable Multi-Agent Systems/, pp.174–176. T. Wagner and O.F. Rana, editors. Volume 1887 of Lecture Notes in Artificial Intelligence. 2001.
+
 ** 2000
 
 <<citeproc_bib_item_1>>Paddy Nixon, Vinny Wade, Sotirios Terzis, Marcus O’Connell, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-08.pdf][The Virtues Architecture: A Software Infrastructure for Business-to-Business E-Commerce]]/. In /Proceedings of the 2nd International Conference on Enterprise Information Systems/. Stafford, UK. 2000.
@@ -555,7 +563,9 @@
 
 <<citeproc_bib_item_9>>Simon Dobson.  /[[https://simondobson.org/softcopy/ions-tr-1999.pdf][What’s in an Ion?]]/ Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_10>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /As Strong as Possible Mobility/. In /Proceedings of the 22nd Internatioal Conference on Software Engineering/, pp.779. 2000.
+<<citeproc_bib_item_10>>Simon Dobson and Brian Matthews.  /[[https://simondobson.org/softcopy/ions-ecoop-2000.ps][Ionic Types]]/. In /ECOOP 2000 – Object-Oriented Programming/, pp.296–312. Elisa Bertoni, editor. Volume 1850 of LNCS. Springer-Verlag. 2000.
+
+<<citeproc_bib_item_11>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /As Strong as Possible Mobility/. In /Proceedings of the 22nd Internatioal Conference on Software Engineering/, pp.779. 2000.
 
 ** 1999
 

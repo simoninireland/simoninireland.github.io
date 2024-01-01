@@ -2,7 +2,7 @@
 .. title: Random graphs with arbitrary clustering and their applications
 .. slug: random-graphs-clustering
 .. date: 2020-12-03 13:31:56 UTC
-.. tags: news, paper, pre, complex networks, clustered networks
+.. tags: paper, pre, complex networks, clustered networks
 .. category:
 .. link:
 .. previewimage: /images/posts/20201203-good-fit.png

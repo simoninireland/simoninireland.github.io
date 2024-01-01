@@ -1,12 +1,30 @@
 # Personal web site Makefile
-# Copyright (c) 2023 Simon Dobson <simoninireland@gmail.com>
+#
+# Copyright (c) 2022--2024 Simon Dobson <simoninireland@gmail.com>
+#
+# This is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This software  is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this software. If not, see <http://www.gnu.org/licenses/gpl.html>.
 
-# Files needing copying on an import
-UPDATE_FILES = \
+# ---------- Files ----------
+
+# Files needing copying on an upgrade
+UPGRADE_FILES = \
 	~/personal/cv/short-cv.pdf \
 	~/personal/cv/medium-cv.pdf \
+	~/personal/notebook/online-citations.csl \
+	~/personal/notebook/online-references.csl \
 	~/.gnupg/publickey.gpg
-UPDATE_DIRS = \
+UPGRADE_DIRS = \
 	~/personal/dict/softcopy
 
 # Files needing a refresh of their dynamic blocks
@@ -16,6 +34,9 @@ DB_REFRESH_FILES = \
 
 # Bibfiles
 BIBFILES = ~/personal/dict/sd.bib
+
+
+# ---------- Tools ----------
 
 # Tools
 PYTHON = python3
@@ -32,11 +53,11 @@ ECHO = echo
 CURL = curl
 EMACS = emacs --batch -L elisp
 
-# Venv
+# Python venv
 VENV = venv3
 REQUIREMENTS = requirements.txt
 
-# Constructed diretories
+# Constructed directories
 BUILD_DIR = output
 CACHE_DIOR = cache
 PLUGINS_DIR = plugins
@@ -52,6 +73,13 @@ PLUGINS = \
 # The git branch we're currently working on
 GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
 
+
+# ---------- Top-level targets ----------
+
+# Default prints a help message
+help:
+	@make usage
+
 # New post, using an org mode file
 post: env
 	$(ACTIVATE) && $(NIKOLA) new_post -d -f orgmode
@@ -66,7 +94,7 @@ build:  env
 
 # Check we're on the src branch before deploying
 src-only:
-	if [ "$(GIT_BRANCH)" != "src" ]; then echo "Can only deploy from src branch"; exit 1; fi
+	@if [ "$(GIT_BRANCH)" != "src" ]; then echo "Can only deploy from src branch"; exit 1; fi
 
 # Update and upload
 update: upgrade upload
@@ -74,12 +102,12 @@ update: upgrade upload
 upload: env src-only
 	$(ACTIVATE) && $(NIKOLA) github_deploy
 
-# Upgrade all static and generated files that need it
+# Upgrade all static and generated files
 upgrade: upgrade-files upgrade-dblocks continuous-import
 
 upgrade-files:
-	$(foreach f, $(UPDATE_FILES), $(RSYNC) $f files/$(shell basename $(f:.gpg=.asc));)
-	$(foreach d, $(UPDATE_DIRS), $(RSYNC) $d files/;)
+	$(foreach f, $(UPGRADE_FILES), $(RSYNC) $f files/$(shell basename $(f:.gpg=.asc));)
+	$(foreach d, $(UPGRADE_DIRS), $(RSYNC) $d files/;)
 
 upgrade-dblocks: env
 	$(EMACS) -l "sd-update-dblocks.el" \
@@ -120,3 +148,24 @@ clean:
 .PHONY: reallyclean
 reallyclean: clean
 	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS) $(CACHE_DIR)
+
+
+# ----- Usage -----
+
+define HELP_MESSAGE
+Available targets:
+   make live         run a local test server
+   make post         create a new post as an orgmode file
+   make build        build the web site into output/
+   make upgrade      copy files from home directory to web site
+   make upload       upload local built copy of web site
+   make update       upgrade and then upload
+   make env          install Nikola etc
+   make clean        delete local built copy
+   make reallyclean  also delete venv, plugns, etc
+
+endef
+export HELP_MESSAGE
+
+usage:
+	@echo "$$HELP_MESSAGE"

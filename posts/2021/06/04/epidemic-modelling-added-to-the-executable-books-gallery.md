@@ -2,7 +2,7 @@
 .. title: "Epidemic modelling" added to the executable books gallery
 .. slug: epidemic-modelling-added-to-the-executable-books-gallery
 .. date: 2021-06-04 08:24:05 UTC+01:00
-.. tags: news, book, epidemic spreading, python, research
+.. tags: book, epidemic spreading, python, research
 .. category:
 .. link:
 .. previewimage: /images/posts/20210604-em-book-cover-small.png

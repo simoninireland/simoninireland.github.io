@@ -15,6 +15,10 @@
 {{ mathjax_config }}
 {% endblock %}
 
+{% block late_js %}
+<script src="/assets/js/mastodon-share.js"/>
+{% endblock %}
+
 {% block content_tags %}
 {% if post.tags %}
     <div class="site-content navigation-post">
@@ -29,6 +33,22 @@
 	</div>
     </div>
 {% endif %}
+{% endblock %}
+
+{% block content_social %}
+  <div class="site-content">
+    <div class="social">
+      <ul>
+	<li><a onclick="MastodonShare(this);"
+	data-src="{{post|taggedtitle|urlencode}}&url={{abs_link(post.permalink())}}"><span title="Share on Mastodon"><i class="fab fa-mastodon"/></span></a></li>
+	<li><a href="https://twitter.com/share?text={{post|taggedtitle|urlencode}}&url={{abs_link(post.permalink())}}" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"/></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url={{abs_link(post.permalink())}}&title={{post|taggedtitle|urlencode}}" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"/></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url={{abs_link(post.permalink())}}&source={{abs_link("/")}}" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"/></span></a></li>
+	<li><a href="mailto:?subject={{post.title()|e}}&body={{abs_link(post.permalink())}}"><span title="Share by email"><i class="fa fa-envelope"/></span></a></li>
+      </ul>
+    </div>
+  </div>
 {% endblock %}
 
 {% block bottom_nav_links %}

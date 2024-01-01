@@ -2,7 +2,7 @@
 .. title: Talk at UK Systems on unit testing stochastic code
 .. slug: talk-at-uk-systems-on-unit-testing-stochastic-code
 .. date: 2021-12-06 16:49:30 UTC
-.. tags: news,talk,unit testing,epydemic,python
+.. tags: talk, unit testing, epydemic, python
 .. category:
 .. link:
 .. description:

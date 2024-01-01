@@ -3,7 +3,7 @@
 .. slug: ima-talk
 .. date: 2020-12-19 09:10:00 UTC
 .. updated: 2020-12-19 14:07:18 UTC
-.. tags: news, talk, complex networks, epidemic spreading, epydemic
+.. tags: talk, complex networks, epidemic spreading, epydemic
 .. category:
 .. previewimage: /images/posts/20201219-waterfall.png
 .. link:

@@ -2,7 +2,7 @@
 .. title: Paper on clustered percolation accepted
 .. slug: clustered-percolation
 .. date: 2020-12-21 15:55:42 UTC
-.. tags: news, complex networks, percolation, clustering
+.. tags: complex networks, percolation, clustering
 .. category:
 .. previewimage: /images/posts/20201221-clustering.png
 .. link:
