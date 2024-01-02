@@ -43,7 +43,7 @@
   3. Changing the lines. In my case I could use ~string-replace~ to
      remove the tags I wanted rid of. More complicated cases might
      need ~regexp-replace~ or even manual editing
-  4. ~C-x C-x~ writes the changes back out
+  4. ~C-x C-s~ writes the changes back out
 
 
   (There are several other keybindings that ~wgrep~ makes
