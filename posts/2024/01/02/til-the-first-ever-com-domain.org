@@ -1,0 +1,29 @@
+#+BEGIN_COMMENT
+.. title: TIL: The first ever .com domain
+.. slug: til-the-first-ever-com-domain
+.. date: 2024-01-02 11:44:10 UTC
+.. tags: internet, history, til, lisp
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* TIL: The first ever .com domain
+
+  Today I learned that the first .com internet domain registered on
+  the internet was https://symbolics.com and belonged to Symbolics, a
+  company that made Lisp machines.
+
+  It doesn't relate to Lisp any more, of course. It's been sold to
+  someone who "helps entrepreneurs and investors acquire high-end
+  domain names", which seems about as meta as things can get: the
+  first-ever .com domain name now points a company focused on
+  acquiring domain names.
+
+  Symbolics itself has a storied history, spinning-out from the MIT AI
+  lab to sell hardware dedicated to running Lisp: one of /two/ such
+  start-ups actually. The [[https://en.wikipedia.org/wiki/Symbolics][Wikipedia page]] is a good place to start.
+
+  Incidentally, the rest of the top-ten first .com domains can be
+  found [[https://www.theguardian.com/media/pda/2008/dec/22/internet-domains][here]].

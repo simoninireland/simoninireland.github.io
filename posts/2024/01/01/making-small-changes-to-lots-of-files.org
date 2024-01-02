@@ -12,7 +12,7 @@
 * Making small changes to lots of files
 
   I recently had to make tiny changes to a large number of files
-  spread nested through a directory structure. Thus turns out to be a
+  spread nested through a directory structure. This turns out to be a
   lot easier than I expected with Emacs.
 
   My use case was actually this blog. It's been on the go for a while
