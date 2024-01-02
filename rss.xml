@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Jan 2024 19:22:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8d20c4d" class="outline-2"&gt;
-&lt;h2 id="org8d20c4d"&gt;Making small changes to lots of files&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8d20c4d"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Jan 2024 12:00:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0d117c0" class="outline-2"&gt;
+&lt;h2 id="org0d117c0"&gt;TIL: The first ever .com domain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0d117c0"&gt;
+&lt;p&gt;
+Today I learned that the first .com internet domain registered on
+the internet was &lt;a href="https://symbolics.com"&gt;https://symbolics.com&lt;/a&gt; and belonged to Symbolics, a
+company that made Lisp machines.
+&lt;/p&gt;
+
+&lt;p&gt;
+It doesn't relate to Lisp any more, of course. It's been sold to
+someone who "helps entrepreneurs and investors acquire high-end
+domain names", which seems about as meta as things can get: the
+first-ever .com domain name now points a company focused on
+acquiring domain names.
+&lt;/p&gt;
+
+&lt;p&gt;
+Symbolics itself has a storied history, spinning-out from the MIT AI
+lab to sell hardware dedicated to running Lisp: one of &lt;i&gt;two&lt;/i&gt; such
+start-ups actually. The &lt;a href="https://en.wikipedia.org/wiki/Symbolics"&gt;Wikipedia page&lt;/a&gt; is a good place to start.
+&lt;/p&gt;
+
+&lt;p&gt;
+Incidentally, the rest of the top-ten first .com domains can be
+found &lt;a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains"&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>internet</category><category>lisp</category><category>til</category><guid>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</guid><pubDate>Tue, 02 Jan 2024 11:44:10 GMT</pubDate></item><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7e5de6d" class="outline-2"&gt;
+&lt;h2 id="org7e5de6d"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7e5de6d"&gt;
 &lt;p&gt;
 I recently had to make tiny changes to a large number of files
-spread nested through a directory structure. Thus turns out to be a
+spread nested through a directory structure. This turns out to be a
 lot easier than I expected with Emacs.
 &lt;/p&gt;
 
@@ -864,19 +892,4 @@ protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
 	  Finished Wednesday 29 November, 2023.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5784606374?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-invisible-library-the-invisible-library-1/</guid><pubDate>Wed, 29 Nov 2023 00:00:00 GMT</pubDate></item><item><title>Going Infinite: The Rise and Fall of a New Tycoon</title><link>https://simondobson.org/goodreads/going-infinite-the-rise-and-fall-of-a-new-tycoon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1684247487l/149105520._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Michael   Lewis
-	  (2023)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      An absolutely riveting account of the rise and fall of Sam Bankman-Fried, his Alameda Research hedge fund and FTX exchange. the book came out before the trial at which Bankman-Fried was found guilty of fraud other financial felonies.&lt;br&gt;&lt;br&gt;The person who emerges from this account is ... strange. That's not all that unusual in tech industries: as a computer science academic I encounter lots of people at varying points on the Asperger spectrum. Like many such people Bankman-Fried has a hard time relating to others and to his own feelings, and (also like many such people) is competely open about this and other aspects of his inner world. &lt;i&gt;Unlike&lt;/i&gt; others he somehow manages to gain the trust of supposedly sophisticated investors.&lt;br&gt;&lt;br&gt;Why is this? I suspect it's got something to do with the archetypes of the Boy Genius and the Great Man of Science: people who are misunderstood but can nevertheless succeed beyond normal measure. That's an attractive hook for investors wanting to profit off unlikely accomplishments.&lt;br&gt;&lt;br&gt;Part of Bankman-Fried's strangeness was his embrace of effective altruism and the philosophy of an analysed and quantified life. The basic premise seems to be that the probabilistic techniques that work so well in finance can be applied to &lt;i&gt;all&lt;/i&gt; life decisions. The problem (I think) is that this is a mistake, and lots of pseudo-mathematical talk about "expected value" doesn't disguise that: but it does throw up a smokescreen for people who aren't themselves clear about what the maths actually says. They allow Bankman-Fried some astonishing lattitude, playing video games on reporting calls and simply not turining up for events because something else "with a higher EV" showed up. These aren't characteristics of a reliable business partner – and would label someone with a more normal affect a sociopath.&lt;br&gt;&lt;br&gt;(Why do I think the talk about EV is a mistake? In order to make an expected value calculation one needs the value of an event and the probability of that event happening. The value might be available, but what about the probability? How do we assign probabilities to events that lie a long time in the future, and whose course we don't understand? A one-in-a-billion chance, for example, sounds impressively quantitative. But it actually only refers to three independent one-in-a-thousand events happening together. What are those events, how did we assign &lt;i&gt;their&lt;/i&gt; probabilities, and are there &lt;i&gt;really&lt;/i&gt; only three of them? If we don't know all of this information, then the numbers are simply speculative, and only &lt;i&gt;sound&lt;/i&gt; quantitative. That's not to say that these calculations can't be done – finance people do them regularly – but they only work under conditions of substantial information and substantial control over the environment.)&lt;br&gt;&lt;br&gt;Lewis is also quietly scathing of many of the characters who emerge around FTX. The bankruptcy CEO, John Ray, comes out badly, as do the corporate lawyers. And there are some uncomfortable questions. Why did FTX file for bankruptcy in the US when it had no presence there and didn't deal with US citizens? Why were so many senior people offered plea deals? Why were some not indicted at all?&lt;br&gt;&lt;br&gt;The trial (which has happened at the time I'm writing) brought up some contradictions with Lewis' account. He clearly takes Bankman-Fried at his word a lot of the time, especially with regard to his inner calcultions, but also with the naturalness of his unkempt image. Testimony from those close to him suggest this is naïve, and was subject to a lot of delierate design. It's an open question whether the trial has achieved a more accurate view of Bankman-Fried's psychology than Lewis did, though, and this book deserves to be read in that context.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Sunday 19 November, 2023.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5886080216?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/going-infinite-the-rise-and-fall-of-a-new-tycoon/</guid><pubDate>Sun, 19 Nov 2023 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-invisible-library-the-invisible-library-1/</guid><pubDate>Wed, 29 Nov 2023 00:00:00 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about internet)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/internet.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Jan 2024 19:20:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A non-prophecy from ten years ago</title><link>https://simondobson.org/2013/09/25/nonprophecy/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Something I said ten years ago comes back to not haunt me: in fact, I was quite pedestrian about the whole thing.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about internet)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/internet.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Jan 2024 12:00:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0d117c0" class="outline-2"&gt;
+&lt;h2 id="org0d117c0"&gt;TIL: The first ever .com domain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0d117c0"&gt;
+&lt;p&gt;
+Today I learned that the first .com internet domain registered on
+the internet was &lt;a href="https://symbolics.com"&gt;https://symbolics.com&lt;/a&gt; and belonged to Symbolics, a
+company that made Lisp machines.
+&lt;/p&gt;
+
+&lt;p&gt;
+It doesn't relate to Lisp any more, of course. It's been sold to
+someone who "helps entrepreneurs and investors acquire high-end
+domain names", which seems about as meta as things can get: the
+first-ever .com domain name now points a company focused on
+acquiring domain names.
+&lt;/p&gt;
+
+&lt;p&gt;
+Symbolics itself has a storied history, spinning-out from the MIT AI
+lab to sell hardware dedicated to running Lisp: one of &lt;i&gt;two&lt;/i&gt; such
+start-ups actually. The &lt;a href="https://en.wikipedia.org/wiki/Symbolics"&gt;Wikipedia page&lt;/a&gt; is a good place to start.
+&lt;/p&gt;
+
+&lt;p&gt;
+Incidentally, the rest of the top-ten first .com domains can be
+found &lt;a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains"&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>internet</category><category>lisp</category><category>til</category><guid>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</guid><pubDate>Tue, 02 Jan 2024 11:44:10 GMT</pubDate></item><item><title>A non-prophecy from ten years ago</title><link>https://simondobson.org/2013/09/25/nonprophecy/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Something I said ten years ago comes back to not haunt me: in fact, I was quite pedestrian about the whole thing.&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;My friend Rich was house-cleaning and came across an interview that I did with the Irish media about ten years ago, while we were running our company, Aurium. One thing really jumped out at him was the answer I gave to one particular question:&lt;/p&gt;

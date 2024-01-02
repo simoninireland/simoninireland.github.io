@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about nikola)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Jan 2024 19:20:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8d20c4d" class="outline-2"&gt;
-&lt;h2 id="org8d20c4d"&gt;Making small changes to lots of files&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8d20c4d"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about nikola)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Jan 2024 10:24:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7e5de6d" class="outline-2"&gt;
+&lt;h2 id="org7e5de6d"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7e5de6d"&gt;
 &lt;p&gt;
 I recently had to make tiny changes to a large number of files
-spread nested through a directory structure. Thus turns out to be a
+spread nested through a directory structure. This turns out to be a
 lot easier than I expected with Emacs.
 &lt;/p&gt;
 

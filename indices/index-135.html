@@ -52,6 +52,60 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/" rel="bookmark">Saturday 23 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/">Programmatically editing a file from Emacs Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org746c351" class="outline-2">
+<h2 id="org746c351">Programmatically editing a file from Emacs Lisp</h2>
+<div class="outline-text-2" id="text-org746c351">
+<p>
+This is something I frequently want to do: open a named file, work
+on it programmatically using Lisp code, and save it back – all
+without user intervention. Like a lot of things in Emacs, it's
+easy once you know how.
+</p>
+
+<p>
+The trick is to create a new, named, buffer for the file to get
+its contents. This is done with <code>find-file-noselect</code> as opposed to
+the more usual <code>find-file</code> that's usually bound to <code>C-x C-f</code>, and
+as its name suggests finds (opens) the file without bringing it to
+the user's attention. For example,
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="c1">;; open the file in its own buffer</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">with-current-buffer</span><span class="w"> </span><span class="p">(</span><span class="nf">find-file-noselect</span><span class="w"> </span><span class="nv">fn</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; work on it as required, as the current buffer</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">goto-char</span><span class="w"> </span><span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">search-forward</span><span class="w"> </span><span class="s">"#+END_COMMENT"</span><span class="w"> </span><span class="nv">nil</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">beginning-of-line</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">delete-region</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">newline</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; save the results back</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">save-buffer</span><span class="p">))</span>
+</pre></div>
+
+<p>
+(This example comes from my Emacs interface to the Nikola static
+site builder used to maintain this site.) The code fragment
+leaves the current buffer unchanged as far as the user (and the
+rest of the code) is concerned, and so doesn't need to be
+protected by <code>save-excursion</code> or the like.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/estates-an-intimate-history/" rel="bookmark">Tuesday 19 December, 2023</a>
 			</span>
 		    </div>
