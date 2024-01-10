@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,7 +67,7 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Wednesday 9 December, 2020</a>
 	    </span>
 	</div>
-	<h1>Backporting Python type annotations</h1>
+	<h1>Backporting Python type&nbsp;annotations</h1>
     </div>
 
 	<!-- Page Content -->
@@ -77,34 +77,34 @@ MathJax.Hub.Config({
 <a href="../../../../development/epyc/"><code>epyc</code></a> and
 <a href="../../../../development/epydemic/"><code>epydemic</code></a> libraries. Making these work
 while not sacrificing interoperability a wide range of Python versions
-is quite delicate.</p>
+is quite&nbsp;delicate.</p>
 <!-- TEASER_END -->
 
 <p>Python is inherently a dynamically-typed language. The parameters to
-methods and functions are checked as they are called, leading to
-<code>TypeError</code> and <code>ValueError</code> exceptions if they're used
-incorrectly. Dignifying this by calling it <a href="https://opensource.com/article/20/5/duck-typing-python">"duck
-typing"</a>
-doesn't alter the fundamental weakness -- from the perspective of a
-programming language person -- that this opens-up in the heart of a
-codebase. Unit testing isn't a proper substitute for static checks.</p>
+methods and functions are checked as they are called, leading&nbsp;to
+<code>TypeError</code> and <code>ValueError</code> exceptions if they&#8217;re used
+incorrectly. Dignifying this by calling it <a href="https://opensource.com/article/20/5/duck-typing-python">&#8220;duck
+typing&#8221;</a>
+doesn&#8217;t alter the fundamental weakness &#8212; from the perspective of a
+programming language person &#8212; that this opens-up in the heart of a
+codebase. Unit testing isn&#8217;t a proper substitute for static&nbsp;checks.</p>
 <p>Parts of the Python community have recently embraced this view too,
 leading to the
 <a href="https://docs.python.org/3/library/typing.html"><code>typing</code></a> module
-available from Python 3.5. This allows (but doesn't require)
+available from Python 3.5. This allows (but doesn&#8217;t require)
 programmers to add type annotations to code that can then be checked
 by external typecheckers. There are a range, including
 <a href="http://mypy-lang.org/"><code>mypy</code></a> and
 <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"><code>pylance</code></a>
-(which is built into Microsoft's VS Code).</p>
+(which is built into Microsoft&#8217;s <span class="caps">VS</span>&nbsp;Code).</p>
 <p>As with any emerging feature in any language, the problem then becomes
 one of backwards compatibility. I wanted to retain compatibility with
-previous versions of Python prior to my current Python 3.8 -- ideally
+previous versions of Python prior to my current Python 3.8 &#8212; ideally
 all the way back to Python 3.5. That turned out to be a version too
-far, but getting support for Python 3.6 and later proved possible.</p>
-<h3>Basic type annotations as they are intended</h3>
+far, but getting support for Python 3.6 and later proved&nbsp;possible.</p>
+<h3>Basic type annotations as they are&nbsp;intended</h3>
 <p>We should of course start with the features we want. Type annotations
-can be attached to method declarations and object attributes:</p>
+can be attached to method declarations and object&nbsp;attributes:</p>
 <div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
     <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my name'</span>
 
@@ -115,9 +115,9 @@ can be attached to method declarations and object attributes:</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
 </pre></div>
 
-<p>Hopefully self-explanatory, and note that it doesn't need any special
+<p>Hopefully self-explanatory, and note that it doesn&#8217;t need any special
 imports. If we were to extend things a little, for example to use
-lists or dicts, then we need some more machinery:</p>
+lists or dicts, then we need some more&nbsp;machinery:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
 
 <span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
@@ -136,22 +136,21 @@ lists or dicts, then we need some more machinery:</p>
         <span class="k">return</span> <span class="n">d</span>
 </pre></div>
 
-<p>Note that <code>List[]</code> and <code>Dict[]</code> are <em>type constructors</em> taking
+<p>Note&nbsp;that <code>List[]</code> and <code>Dict[]</code> are <em>type constructors</em> taking
 their element types in square brackets. A typechecker can now work out
-before execution that, for example <code>(b.asDict())[1]</code> is
-type-incorrect.</p>
-<h3>Self types</h3>
-<p>How about a method that returns an instance of <code>self</code> (or similar)?
-The obvious approach is:</p>
+before execution that, for&nbsp;example <code>(b.asDict())[1]</code> is&nbsp;type-incorrect.</p>
+<h3>Self&nbsp;types</h3>
+<p>How about a method that returns an instance&nbsp;of <code>self</code> (or similar)?
+The obvious approach&nbsp;is:</p>
 <div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
-<p>Surprisingly this will fail, as <code>C</code> isn't in scope in its own
-definition. This is such a natural thing, though, that it's going to
+<p>Surprisingly this will fail,&nbsp;as <code>C</code> isn&#8217;t in scope in its own
+definition. This is such a natural thing, though, that it&#8217;s going to
 be supported in future versions and, from Python 3.8, is available as
-an import from the <code>__future__</code> module:</p>
+an import from&nbsp;the <code>__future__</code> module:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
@@ -159,31 +158,30 @@ an import from the <code>__future__</code> module:</p>
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
-<p>(Remember that <code>__future__</code> imports have to appear as the first code
-line of a source file.)</p>
-<h3>Backporting type annotations</h3>
-<p>This all works fine in Python 3.8, so if that's all you care about you
+<p>(Remember&nbsp;that <code>__future__</code> imports have to appear as the first code
+line of a source&nbsp;file.)</p>
+<h3>Backporting type&nbsp;annotations</h3>
+<p>This all works fine in Python 3.8, so if that&#8217;s all you care about you
 can stop here. However, a lot of Python scripts want (or need) to
 continue to work with earlier versions, preferably without the
 disaster-waiting-to-happen of maintaining parallel codebases. So can
-we use <code>typing</code> for earlier versions?</p>
+we&nbsp;use <code>typing</code> for earlier&nbsp;versions?</p>
 <p>Type annotations first appeared in Python 3.5, but the ideas have been
-evolving. If all you use are "normal" types such as builtins, class
-names, <code>List[]</code> and so on, then everything works fine. But I
-discovered that there are three exceptions.</p>
-<p><strong>1. <code>Final[]</code> (and other) types</strong></p>
-<p>Suppose you have an attribute that you want to be constant. The
-<code>Final[]</code> type constructor lets you denote this:</p>
+evolving. If all you use are &#8220;normal&#8221; types such as builtins, class&nbsp;names, <code>List[]</code> and so on, then everything works fine. But I
+discovered that there are three&nbsp;exceptions.</p>
+<p><strong>1. <code>Final[]</code> (and other)&nbsp;types</strong></p>
+<p>Suppose you have an attribute that you want to be constant.&nbsp;The
+<code>Final[]</code> type constructor lets you denote&nbsp;this:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
 
 <span class="k">class</span> <span class="nc">D</span>
     <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
 </pre></div>
 
-<p><code>Final[]</code> wasn't added to <code>typing</code> until Python 3.8, though, so
+<p><code>Final[]</code> wasn&#8217;t added&nbsp;to <code>typing</code> until Python 3.8, though, so
 running this code on Python 3.7 (for example) will fail. However,
-there's another module, <code>typing_extensions</code>, that backports many new
-features which can be imported if needed:</p>
+there&#8217;s another&nbsp;module, <code>typing_extensions</code>, that backports many new
+features which can be imported if&nbsp;needed:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
@@ -196,22 +194,21 @@ features which can be imported if needed:</p>
 </pre></div>
 
 <p>(The
-<a href="https://github.com/python/typing/blob/master/typing_extensions/README.rst">documentation</a>
-for <code>typing_extensions</code> specifies the types it provides. They're all
-very specialised apart from <code>Final[]</code>.)  One the one hand this kind
+<a href="https://github.com/python/typing/blob/master/typing_extensions/README.rst">documentation</a>&nbsp;for <code>typing_extensions</code> specifies the types it provides. They&#8217;re all
+very specialised apart&nbsp;from <code>Final[]</code>.)  One the one hand this kind
 of conditional importing is messy and inelegant; on the other hand, it
-makes something possible that otherwise isn't.</p>
-<p>Of course you need to have <code>typing_extensions</code> available to be
-imported. This means that it has to be included in the
-<code>requirements.txt</code> and/or the <code>setup.py</code> files for the
-module. This requires using version annotations in those files. For
-<code>requirements.txt</code> we can "guard" the import with the Python
-versions for which it applied:</p>
+makes something possible that otherwise&nbsp;isn&#8217;t.</p>
+<p>Of course you need to&nbsp;have <code>typing_extensions</code> available to be
+imported. This means that it has to be included in&nbsp;the
+<code>requirements.txt</code> and/or&nbsp;the <code>setup.py</code> files for the
+module. This requires using version annotations in those files.&nbsp;For
+<code>requirements.txt</code> we can &#8220;guard&#8221; the import with the Python
+versions for which it&nbsp;applied:</p>
 <div class="code"><pre class="code literal-block"><span class="n">typing_extensions</span><span class="p">;</span> <span class="n">python_version</span> <span class="o">&lt;=</span> <span class="s1">'3.7'</span>
 </pre></div>
 
-<p>For <code>setup.py</code> we similarly include it as an "extra" requirement,
-guarded by the version:</p>
+<p>For <code>setup.py</code> we similarly include it as an &#8220;extra&#8221; requirement,
+guarded by the&nbsp;version:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'README.rst'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -227,20 +224,19 @@ guarded by the version:</p>
 <span class="p">)</span>
 </pre></div>
 
-<p>(All the <code>...</code>s are whatever you'd normally have in your setup
-script.)</p>
-<p>Notice the <code>package_data</code> attribute. This points to a file called
-<code>py.typed</code> which sits in the source tree and does ... absolutely
+<p>(All&nbsp;the <code>...</code>s are whatever you&#8217;d normally have in your setup&nbsp;script.)</p>
+<p>Notice&nbsp;the <code>package_data</code> attribute. This points to a file&nbsp;called
+<code>py.typed</code> which sits in the source tree and does &#8230; absolutely
 nothing, <em>except</em> indicate that the module has type annotations that
-can then be used by <em>other</em> modules that import it.</p>
-<p><strong>2. Self types</strong></p>
-<p>Methods that return instances of their own class need a <code>__future__</code>
-import that's only available from Python 3.8 onwards: used with
-earlier versions, it will be rejected. Fortunately there's a
+can then be used by <em>other</em> modules that import&nbsp;it.</p>
+<p><strong>2. Self&nbsp;types</strong></p>
+<p>Methods that return instances of their own class need&nbsp;a <code>__future__</code>
+import that&#8217;s only available from Python 3.8 onwards: used with
+earlier versions, it will be rejected. Fortunately there&#8217;s a
 workaround, which is that type annotations can be strings rather than
-more general objects. So to annotate self types portably, replace the
+more general objects. So to annotate self types portably, replace&nbsp;the
 <code>__fiture__</code> import and use of the class name with a use of the
-<em>string name</em> of the class name:</p>
+<em>string name</em> of the class&nbsp;name:</p>
 <div class="code"><pre class="code literal-block"><span class="c1"># Too far into the future...</span>
 <span class="c1">#from __future__ import annotations</span>
 
@@ -249,33 +245,33 @@ more general objects. So to annotate self types portably, replace the
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
-<p>I find this very messy -- but again, if you want portability, it's a
+<p>I find this very messy &#8212; but again, if you want portability, it&#8217;s a
 way round the problem that hopefully only appears in a few places
-within the code.</p>
-<p><strong>3. Variable annotations</strong></p>
+within the&nbsp;code.</p>
+<p><strong>3. Variable&nbsp;annotations</strong></p>
 <p>Type annotations were introduced in Python 3.5, but annotations for
 <em>variables</em> only came in with Python 3.6. So code of this form will
-fail with a syntax error when run on Python 3.5:</p>
+fail with a syntax error when run on Python&nbsp;3.5:</p>
 <div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">E</span><span class="p">:</span>
     <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my value'</span>
 </pre></div>
 
-<p>And as far as I can tell there's nothing to be done about this: the
-syntax simply isn't available. If you desperately need Python 3.5 then
+<p>And as far as I can tell there&#8217;s nothing to be done about this: the
+syntax simply isn&#8217;t available. If you desperately need Python 3.5 then
 you need to not annotate variables; otherwise, your backport stops
 with Python 3.6. In my case I chose the latter option, as I had a lot
 of constant strings that needed to be annotated. Your constraints
-might lead to a different choice.</p>
+might lead to a different&nbsp;choice.</p>
 <h3>Conclusion</h3>
 <p>Feelings vary on the usefulness and Pythonic qualities of Python type
 annotations. For me, they help eliminate logic errors and improve the
 effectiveness of testing. The typecheckers do an impressive job of
 type inference too, which reduces the need for excessive annotations:
 I almost never use them for variables within methods, for example,
-just for method signatures and attributes. The backporting isn't
-perfect but at least it's possible, and it extends the usefulness of
+just for method signatures and attributes. The backporting isn&#8217;t
+perfect but at least it&#8217;s possible, and it extends the usefulness of
 codebases without overly complicating things. I find that quite
-a Pythonic idea.</p>
+a Pythonic&nbsp;idea.</p>
 	    </div>
 	</article>
 </div>
@@ -320,7 +316,7 @@ a Pythonic idea.</p>
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -329,12 +325,12 @@ a Pythonic idea.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,22 +67,22 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 26 July, 2013</a>
 	    </span>
 	</div>
-	<h1>Some improvements to SleepySketch</h1>
+	<h1>Some improvements to&nbsp;SleepySketch</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
+		<p>It&#8217;s funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early&nbsp;testing.</p>
 <!--more-->
 
-<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
-<p>The second issue concerns scheduling -- or rather regular
+<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you&#8217;re planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of&nbsp;difference.</p>
+<p>The second issue concerns scheduling &#8212; or rather regular
 scheduling. Most sampling and communication tasks occur on predictable
 schedules, say every five hours. In an <a href="../../../06/01/actor-systems/" target="_blank">actor
 framework</a>, that means the actor instance (or another one) has to
 be re-scheduled after the first has run. We can do this within the
-definition of the actor, for example using the <code>post()</code>
+definition of the actor, for example using&nbsp;the <code>post()</code>
 action:</p>
 <div class="code"><pre class="code literal-block"><span class="n">class</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">post</span><span class="p">();</span>
@@ -96,24 +96,23 @@ action:</p>
 <span class="p">}</span>
 </pre></div>
 
-<p>(This also demonstrates the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for <em>every</em> actor that wants to run repeatedly.</p>
-<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)</p>
+<p>(This also demonstrates&nbsp;the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can&#8217;t&nbsp;re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we&#8217;d be mixing up &#8220;real&#8221; behaviour with scheduling; more importantly, we&#8217;d have to do that for <em>every</em> actor that wants to run&nbsp;repeatedly.</p>
+<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn&#8217;t affected by the time the actor actually takes to&nbsp;run.)</p>
 <div class="code"><pre class="code literal-block"><span class="n">Actor</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">RepeatingActor</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
 <span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
-<p>The <code>RepeatingActor</code> runs the behaviour of
+<p>The <code>RepeatingActor</code> runs the behaviour&nbsp;of
 <code>SomeActor</code> every 5 hours, and we initially schedule it to
 run in 5 hours. We can actually encapsulate all of this by adding a
-method to <code>SleepySketch</code> itself:</p>
+method&nbsp;to <code>SleepySketch</code> itself:</p>
 <div class="code"><pre class="code literal-block"><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleEvery</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 
-<p>to perform the wrapping and initial scheduling automatically.</p>
+<p>to perform the wrapping and initial scheduling&nbsp;automatically.</p>
 <p>Simple sleepy sketches can now be created at set-up, by scheduling
 repeating actors, and we can define the various actors and re-use them
-in different scheduling situations without complicating their own
-code.</p>
+in different scheduling situations without complicating their own&nbsp;code.</p>
 	    </div>
 	</article>
 </div>
@@ -164,7 +163,7 @@ code.</p>
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -173,12 +172,12 @@ code.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

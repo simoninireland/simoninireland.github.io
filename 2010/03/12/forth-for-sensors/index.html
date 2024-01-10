@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,40 +67,40 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 12 March, 2010</a>
 	    </span>
 	</div>
-	<h1>Forth for sensors?</h1>
+	<h1>Forth for&nbsp;sensors?</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Most sensor systems are programmed using C: compact and well-known, but low-level and tricky to get right when things get compact and complex. There have been several proposals for alternative languages from across the programming language research spectrum. I haven't heard anyone mention Forth, though, and it's worth considering -- even if only as a target for other languages.
+		<p>Most sensor systems are programmed using C: compact and well-known, but low-level and tricky to get right when things get compact and complex. There have been several proposals for alternative languages from across the programming language research spectrum. I haven&#8217;t heard anyone mention Forth, though, and it&#8217;s worth considering &#8212; even if only as a target for other languages.
 
-<!--more-->Many people will never have encountered <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth</a>, a language that's enjoyed up-and-down popularity for over four decades without ever hitting the mainstream. Sometimes touted as an alternative to Basic, it even had an <a href="http://en.wikipedia.org/wiki/Jupiter_Ace">early-1980's home computer</a> that used it as the introductory language.
+<!--more-->Many people will never have encountered <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">Forth</a>, a language that&#8217;s enjoyed up-and-down popularity for over four decades without ever hitting the mainstream. Sometimes touted as an alternative to Basic, it even had an <a href="http://en.wikipedia.org/wiki/Jupiter_Ace">early-1980&#8217;s home computer</a> that used it as the introductory language.
 
-Forth has a number of characteristics that are completely different to the vast majority of modern languages:
+Forth has a number of characteristics that are completely different to the vast majority of modern&nbsp;languages:
 </p>
 <ul>
-<li>It uses and explicit data stack and <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse-Polish notation</a> uniformly throughout the language</li>
-    <li>There's no type system. Everything is represented pretty much using addresses and integers. The programmer is on her own when building complex structures</li>
-    <li>It is a threaded interpreter where every construct in the language is a "word". Composing words together generates new words, but (unlike in an interpreter) the definitions are compiled efficiently, so there's an immediacy to things without crippling performance overheads</li>
-    <li>A standard system usually mixes its "shell" and "compiler" together, so one can define new words interactively which get compiled immediately</li>
-    <li>There's a small kernel of machine-code (or C) routines, but...</li>
-    <li>The compiler itself -- and indeed the vast majority of the system -- can be written in Forth, so you can extend the compiler (and hence the language) with new constructs that have first-class status alongside the built-in words. There's typically almost no overhead of programmer- <em>versus</em> system-defined words, since they're all written in the same (fast) language</li>
-    <li>If you're careful, you can build a cross-compiler that will generate code for a different target system: just port the kernel and the compiler <em>should</em> be re-usable to generate code that'll run on it. (It's not that simple, of course, as I'm finding myself...)</li>
+<li>It uses and explicit data stack and <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse-Polish notation</a> uniformly throughout the&nbsp;language</li>
+    <li>There&#8217;s no type system. Everything is represented pretty much using addresses and integers. The programmer is on her own when building complex&nbsp;structures</li>
+    <li>It is a threaded interpreter where every construct in the language is a &#8220;word&#8221;. Composing words together generates new words, but (unlike in an interpreter) the definitions are compiled efficiently, so there&#8217;s an immediacy to things without crippling performance&nbsp;overheads</li>
+    <li>A standard system usually mixes its &#8220;shell&#8221; and &#8220;compiler&#8221; together, so one can define new words interactively which get compiled&nbsp;immediately</li>
+    <li>There&#8217;s a small kernel of machine-code (or C) routines,&nbsp;but&#8230;</li>
+    <li>The compiler itself &#8212; and indeed the vast majority of the system &#8212; can be written in Forth, so you can extend the compiler (and hence the language) with new constructs that have first-class status alongside the built-in words. There&#8217;s typically almost no overhead of programmer- <em>versus</em> system-defined words, since they&#8217;re all written in the same (fast)&nbsp;language</li>
+    <li>If you&#8217;re careful, you can build a cross-compiler that will generate code for a different target system: just port the kernel and the compiler <em>should</em> be re-usable to generate code that&#8217;ll run on it. (It&#8217;s not that simple, of course, as I&#8217;m finding&nbsp;myself&#8230;)</li>
 </ul>
-So Forth programs don't look like other languages. There's no real phase distinction between compilation and run-time, since everything's mixed-in together, but that has the advantage that you can write new "compiler" words to make it easier to write your "application" words, all within the same framework and set of capabilities. You don't  write applications so much as extend the language itself towards your problem. That in turn means you can view Forth either as low-level -- a glorified assembler -- or very high-level in terms of its ability to define new syntax and semantics.
+So Forth programs don&#8217;t look like other languages. There&#8217;s no real phase distinction between compilation and run-time, since everything&#8217;s mixed-in together, but that has the advantage that you can write new &#8220;compiler&#8221; words to make it easier to write your &#8220;application&#8221; words, all within the same framework and set of capabilities. You don&#8217;t  write applications so much as extend the language itself towards your problem. That in turn means you can view Forth either as low-level &#8212; a glorified assembler &#8212; or very high-level in terms of its ability to define new syntax and semantics.
 
-That probably sounds like a nightmare, but suspend judgment for a while.....
+That probably sounds like a nightmare, but suspend judgment for a while&#8230;..
 
-One of the problems that concerns a lot of sensor networks people is the programming level at which we have to deal with systems. Typically we're forced to write C on a per-node basis: program the individual nodes, and try to set it up so that the network behaves, as a whole, in an intended way. This is clearly possible in many cases, and clearly gets way more difficult as things get bigger and more complex, and especially when we want the network to adapt to the phenomena it's sensing, which often requires decisions to be made on a non-local basis.
+One of the problems that concerns a lot of sensor networks people is the programming level at which we have to deal with systems. Typically we&#8217;re forced to write C on a per-node basis: program the individual nodes, and try to set it up so that the network behaves, as a whole, in an intended way. This is clearly possible in many cases, and clearly gets way more difficult as things get bigger and more complex, and especially when we want the network to adapt to the phenomena it&#8217;s sensing, which often requires decisions to be made on a non-local basis.
 
-Writing a new language is a big undertaking, but a substantially smaller undertaking with Forth. It's possible to conceive of new language structures (for example a construct that generates <a href="http://www.simondobson.org/2010/02/216/">moving averages</a>) and implement it quickly and simply. This might just be syntactic sugar, or might be something rather more ambitious in terms of control flow. Essentially you can extend the syntax <em>and</em> the semantics of Forth so that it "understands", at the same level as the rest of the compiler, the new construct you want to use.
+Writing a new language is a big undertaking, but a substantially smaller undertaking with Forth. It&#8217;s possible to conceive of new language structures (for example a construct that generates <a href="http://www.simondobson.org/2010/02/216/">moving averages</a>) and implement it quickly and simply. This might just be syntactic sugar, or might be something rather more ambitious in terms of control flow. Essentially you can extend the syntax <em>and</em> the semantics of Forth so that it &#8220;understands&#8221;, at the same level as the rest of the compiler, the new construct you want to use.
 
-Which is interesting enough, but what makes it more interesting for sensors is the structure of these compiler words. Typically they're what is known as <tt>IMMEDIATE</tt> words, which means they <em>execute</em> when encountered <em>compiling</em> a word. That may sound odd, but what it means is that the compiler word executes and generates code, rather than being compiled itself. And <em>that</em> means that, when used with a cross-compiler, the new language constructs don't add to the target system's footprint, because their action all happens at compile-time to generate code that's expressed in terms of lower-level words. In core Forth, constructs like <tt>IF</tt> and <tt>LOOP</tt> (conditional and counted loops respectively) do exactly this: they compile low-level jumps (the word <tt>(BRANCH)</tt> and <tt>(?BRANCH)</tt>, which do non-conditional and conditional branches respectively) implementing the higher-level structured-programming abstraction.
+Which is interesting enough, but what makes it more interesting for sensors is the structure of these compiler words. Typically they&#8217;re what is known as <tt><span class="caps">IMMEDIATE</span></tt> words, which means they <em>execute</em> when encountered <em>compiling</em> a word. That may sound odd, but what it means is that the compiler word executes and generates code, rather than being compiled itself. And <em>that</em> means that, when used with a cross-compiler, the new language constructs don&#8217;t add to the target system&#8217;s footprint, because their action all happens at compile-time to generate code that&#8217;s expressed in terms of lower-level words. In core Forth, constructs like <tt><span class="caps">IF</span></tt> and <tt><span class="caps">LOOP</span></tt> (conditional and counted loops respectively) do exactly this: they compile low-level jumps (the word <tt>(<span class="caps">BRANCH</span>)</tt> and <tt>(?<span class="caps">BRANCH</span>)</tt>, which do non-conditional and conditional branches respectively) implementing the higher-level structured-programming abstraction.
 
-A lot of modern languages use virtual machines as targets for their compilers, and a lot of those VMs are stack machines -- Forth, in other words. If we actually <em>use</em> Forth as the VM for a compiler, we have an <em>extensible</em> VM in which we can define new constructs, so we can evolve the VM better to fit the language that targets it. (There are also some very interesting, close parallels between Forth code and the abstract syntax trees used to represent code within compilers, but that's something I need to think about a bit more before I write about it.)
+A lot of modern languages use virtual machines as targets for their compilers, and a lot of those VMs are stack machines &#8212; Forth, in other words. If we actually <em>use</em> Forth as the <span class="caps">VM</span> for a compiler, we have an <em>extensible</em> <span class="caps">VM</span> in which we can define new constructs, so we can evolve the <span class="caps">VM</span> better to fit the language that targets it. (There are also some very interesting, close parallels between Forth code and the abstract syntax trees used to represent code within compilers, but that&#8217;s something I need to think about a bit more before I write about it.)
 
-All this is rather speculative, and doesn't really address the core problem of programming a network rather than a device, but it does provide a device-level platform that might be more amenable to language research. I've been experimenting with Forth for this purpose, and have a prototype system -- Attila, an abstract, re-targetable threaded interpreter that's fully cross-compilable -- in the works, but not quite ready to see the light of day. It's taught me a lot about the practicalities of threaded interpreters and cross-compilers. This is a strand of language design that's been almost forgotten, and I think it deserves more of a look.
+All this is rather speculative, and doesn&#8217;t really address the core problem of programming a network rather than a device, but it does provide a device-level platform that might be more amenable to language research. I&#8217;ve been experimenting with Forth for this purpose, and have a prototype system &#8212; Attila, an abstract, re-targetable threaded interpreter that&#8217;s fully cross-compilable &#8212; in the works, but not quite ready to see the light of day. It&#8217;s taught me a lot about the practicalities of threaded interpreters and cross-compilers. This is a strand of language design that&#8217;s been almost forgotten, and I think it deserves more of a look.
 	    </div>
 	</article>
 </div>
@@ -134,7 +134,7 @@ All this is rather speculative, and doesn't really address the core problem of p
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
 	    <a href="../../05/things-that-wont-change/" rel="prev">
-		<span class="meta-nav">Older Post</span>Things that won't change
+		<span class="meta-nav">Older Post</span>Things that won&#8217;t change
 	    </a>
 	</div>
 	<div class="next">
@@ -143,7 +143,7 @@ All this is rather speculative, and doesn't really address the core problem of p
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -152,12 +152,12 @@ All this is rather speculative, and doesn't really address the core problem of p
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

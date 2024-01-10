@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,70 +67,67 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Monday 1 January, 2024</a>
 	    </span>
 	</div>
-	<h1>Making small changes to lots of files</h1>
+	<h1>Making small changes to lots of&nbsp;files</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
 		<div id="outline-container-org86b476d" class="outline-2">
-<h2 id="org86b476d">Making small changes to lots of files</h2>
+<h2 id="org86b476d">Making small changes to lots of&nbsp;files</h2>
 <div class="outline-text-2" id="text-org86b476d">
 <p>
 I recently had to make tiny changes to a large number of files
 spread nested through a directory structure. This turns out to be a
-lot easier than I expected with Emacs.
+lot easier than I expected with&nbsp;Emacs.
 </p>
 
 <p>
-My use case was actually this blog. It's been on the go for a while
-in several different formats, and over the years I've used tags to
-drive different presentations – for example articles tagged 'news'
+My use case was actually this blog. It&#8217;s been on the go for a while
+in several different formats, and over the years I&#8217;ve used tags to
+drive different presentations – for example articles tagged &#8216;news&#8217;
 ended up on the front page. I no longer do this, which meant a lot
-of redundant tags to be got rid of, mainly in Nikola's <code>.meta</code>
-metadata files but also embedded into <code>.md</code> markdown and <code>.rst</code>
-restructured text..
+of redundant tags to be got rid of, mainly in&nbsp;Nikola&#8217;s <code>.meta</code>
+metadata files but also embedded&nbsp;into <code>.md</code> markdown&nbsp;and <code>.rst</code>
+restructured&nbsp;text..
 </p>
 
 <p>
-My plan was to use Emacs' <code>rgrep</code> command to recursively traverse
+My plan was to use&nbsp;Emacs&#8217; <code>rgrep</code> command to recursively traverse
 the directory structure of posts to find the tags I wanted to
-remove. This would give me a <code>grep</code>-mode buffer that hyperlinks to
+remove. This would give me&nbsp;a <code>grep</code>-mode buffer that hyperlinks to
 the files (and lines) needing changing, which I could then click
 through to get to where each change needed to be made.
 Straightforward, but time-consuming and error-prone when there were
-about 150 files to be changed. Clearly a problem in need of a better
-solution.
+about 150 files to be changed. Clearly a problem in need of a better&nbsp;solution.
 </p>
 
 <p>
-I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a> ("writable <code>grep</code>") package. This
-makes the <code>grep</code>-mode buffer editable, with changes being
-written-back to the underlying files. <i>Exactly</i> what I needed.
+I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a>&nbsp;(&#8220;writable <code>grep</code><span class="dquo">&#8220;</span>) package. This
+makes&nbsp;the <code>grep</code>-mode buffer editable, with changes being
+written-back to the underlying files. <i>Exactly</i> what I&nbsp;needed.
 </p>
 
 <p>
-Once I'd installed <code>wgrep</code>, the workflow is ridiculously easy:
+Once I&#8217;d&nbsp;installed <code>wgrep</code>, the workflow is ridiculously&nbsp;easy:
 </p>
 
 <ol class="org-ol">
-<li>Using <code>rgrep</code> gets a <code>grep</code>-mode buffer</li>
+<li>Using <code>rgrep</code> gets&nbsp;a <code>grep</code>-mode&nbsp;buffer</li>
 <li>
-<code>C-c C-p</code> makes the buffer editable</li>
-<li>Changing the lines. In my case I could use <code>string-replace</code> to
-remove the tags I wanted rid of. More complicated cases might
-need <code>regexp-replace</code> or even manual editing</li>
+<code>C-c C-p</code> makes the buffer&nbsp;editable</li>
+<li>Changing the lines. In my case I could&nbsp;use <code>string-replace</code> to
+remove the tags I wanted rid of. More complicated cases might&nbsp;need <code>regexp-replace</code> or even manual&nbsp;editing</li>
 <li>
-<code>C-x C-s</code> writes the changes back out</li>
+<code>C-x C-s</code> writes the changes back&nbsp;out</li>
 </ol>
 <p>
-(There are several other keybindings that <code>wgrep</code> makes
-available, notably <code>C-c C-k</code> to discard all changes.)
+(There are several other keybindings&nbsp;that <code>wgrep</code> makes
+available,&nbsp;notably <code>C-c C-k</code> to discard all&nbsp;changes.)
 </p>
 
 <p>
-That's it! A job that I expected to take an hour took about 3
-minutes.
+That&#8217;s it! A job that I expected to take an hour took about 3&nbsp;minutes.
 </p>
 </div>
 </div>
@@ -172,11 +169,11 @@ minutes.
 	</div>
 	<div class="next">
 	    <a href="../../02/til-the-first-ever-com-domain/" rel="next">
-		<span class="meta-nav">Newer Post</span>TIL: The first ever .com domain
+		<span class="meta-nav">Newer Post</span><span class="caps">TIL</span>: The first ever .com domain
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -185,12 +182,12 @@ minutes.
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

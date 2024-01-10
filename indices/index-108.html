@@ -32,7 +32,7 @@
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -40,7 +40,7 @@
 	    </div>
 	    <ul class="menu">
 <li><a href="../index.html">Home</a></li>
-		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
 		    <li><a href="../research/">Research</a></li>
 		    <li><a href="../development/projects/">Software</a></li>
 		    <li><a href="../writing/">Writing</a></li>
@@ -55,63 +55,61 @@
 			    Posted on <a href="../2021/02/23/ide-convergence/" rel="bookmark">Tuesday 23 February, 2021</a>
 			</span>
 		    </div>
-		    <h1><a href="../2021/02/23/ide-convergence/">IDE convergence</a></h1>
+		    <h1><a href="../2021/02/23/ide-convergence/"><span class="caps">IDE</span>&nbsp;convergence</a></h1>
 		</div>
 		<div class="entry-content">
 			<p>I recently tried out a new development environment for my Python
 development, and noticed an unexpected convergence in the designs of
-the two tools.</p>
+the two&nbsp;tools.</p>
 <!-- TASTER_END -->
 
-<p>I've been a long-time <a href="https://emacs.org">Emacs</a> user. I periodically
+<p>I&#8217;ve been a long-time <a href="https://emacs.org">Emacs</a> user. I periodically
 get a desire to try something new, something less old-school, just to
 see whether there are advantages. There always <em>are</em> advantages, of
-course -- but often significant disadvantages as well, which often
-keep me coming back to my comfort zone.</p>
-<p>My most recent excursion was to try Microsoft's <a href="https://code.visualstudio.com/">VS
+course &#8212; but often significant disadvantages as well, which often
+keep me coming back to my comfort&nbsp;zone.</p>
+<p>My most recent excursion was to try Microsoft&#8217;s <a href="https://code.visualstudio.com/"><span class="caps">VS</span>
 Code</a>.</p>
 <p><img alt="Microsoft VS Code" src="../images/posts/20210223-vscode.png"></p>
 <p>This is handily cross-platform, being built in Javascript on top of
-<a href="https://www.electronjs.org/">Electron</a>. It's got a lot of nice
+<a href="https://www.electronjs.org/">Electron</a>. It&#8217;s got a lot of nice
 features: a tree view of the project in the left-hand pane, syntax
 colouring, code style linting, integrated debugging and unit test
 running, integrated connection to git, and so on. Looking a little
 closer there are all sorts of status markers around the code and in
 the ribbons at the bottom of panes and the window overall to show
-status that might be important.</p>
-<p>But it's so <em>slow</em>. That's a feature of VS Code, not of Electron (as I
+status that might be&nbsp;important.</p>
+<p>But it&#8217;s so <em>slow</em>. That&#8217;s a feature of <span class="caps">VS</span> Code, not of Electron (as I
 first suspected), because other Electron-based editors like
-<a href="https://atom.io/">Atom</a> aren't as slow. And my development box isn't
-the latest, but it also isn't <em>that</em> old.</p>
+<a href="https://atom.io/">Atom</a> aren&#8217;t as slow. And my development box isn&#8217;t
+the latest, but it also isn&#8217;t <em>that</em>&nbsp;old.</p>
 <p>So I reverted to Emacs, but upgraded it a little to more modern
 standards. Specifically, I installed the
-<a href="https://elpy.readthedocs.io/en/latest/index.html">elpy</a> Python IDE,
-with assorted other packages suggested by various sites. The result is
-this:</p>
+<a href="https://elpy.readthedocs.io/en/latest/index.html">elpy</a> Python <span class="caps">IDE</span>,
+with assorted other packages suggested by various sites. The result is&nbsp;this:</p>
 <p><img alt="Emacs with elpy" src="../images/posts/20210223-emacs.png"></p>
-<p>Now for anyone who's used Emacs for a while, it's definitely still
-Emacs -- not least with the convoluted keystrokes and infinite
-customisation you either love or hate. But it's striking how similar
-the two IDEs now are, and striking how VS Code has inherited some
+<p>Now for anyone who&#8217;s used Emacs for a while, it&#8217;s definitely still
+Emacs &#8212; not least with the convoluted keystrokes and infinite
+customisation you either love or hate. But it&#8217;s striking how similar
+the two IDEs now are, and striking how <span class="caps">VS</span> Code has inherited some
 ideas from Emacs: resizeable panes, modelines in the ribbon, markers
-in pane gutters, and so forth -- things that Emacs-based applications
-have had for years, which have now migrated into "the mainstream".
+in pane gutters, and so forth &#8212; things that Emacs-based applications
+have had for years, which have now migrated into &#8220;the mainstream&#8221;.
 Both the feature sets and the visuals of the two systems are very
 similar indeed. Both are entirely cross-platform and extensible. For
-VS Code you write extensions in Javascript; for Emacs you write them
-in Lisp; and that's about it. And Emacs is a <em>lot</em> faster on my
-set-up. There are some limitations -- I've yet to get the hang of
-using <code>pdb</code> as a debugger, for example, especially for modules
-and from within tests -- but the functionality is really quite comparable.</p>
-<p>I think it's safe to say there's been cross-fertilisation between VS
+<span class="caps">VS</span> Code you write extensions in Javascript; for Emacs you write them
+in Lisp; and that&#8217;s about it. And Emacs is a <em>lot</em> faster on my
+set-up. There are some limitations &#8212; I&#8217;ve yet to get the hang of&nbsp;using <code>pdb</code> as a debugger, for example, especially for modules
+and from within tests &#8212; but the functionality is really quite&nbsp;comparable.</p>
+<p>I think it&#8217;s safe to say there&#8217;s been cross-fertilisation between <span class="caps">VS</span>
 Code (and other IDEs) and Emacs over the years. A lot of the
 developers of the former quite possibly used the latter. But I
 strongly suspect that most of the traffic has gone <em>from</em> Emacs <em>to</em>
 the other systems: the similarities are just too great to be
-accidental. It's interesting to think that a system that emerged at
-the dawn of the free-software movement has had -- and is still having
--- such an influence on modern development tools. And I'm happily back
-in my comfort zone.</p>
+accidental. It&#8217;s interesting to think that a system that emerged at
+the dawn of the free-software movement has had &#8212; and is still having
+&#8212; such an influence on modern development tools. And I&#8217;m happily back
+in my comfort&nbsp;zone.</p>
 		</div>
 	    </article>
 </div>
@@ -122,22 +120,21 @@ in my comfort zone.</p>
 			    Posted on <a href="../goodreads/american-kingpin-the-epic-hunt-for-the-criminal-mastermind-behind-the-silk-road/" rel="bookmark">Thursday 18 February, 2021</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/american-kingpin-the-epic-hunt-for-the-criminal-mastermind-behind-the-silk-road/">American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk Road</a></h1>
+		    <h1><a href="../goodreads/american-kingpin-the-epic-hunt-for-the-criminal-mastermind-behind-the-silk-road/">American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk&nbsp;Road</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578216397l/31920777._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Nick Bilton
-	  (2017)
+	Nick Bilton&nbsp;(2017)
       </h2>
     </div>
     <p>
-      The Silk Road occupies an interesting place in the history of the internet. To many it <i>is</i> the "dark web", the place where people can buy contraband with cryptocurrency. (Indeed, this is basically the only real-world use case for cryptocurrencies so far.)<br><br>It's a strange tale of someone who didn't seek to create the world's dark marketplace, but once he had was sucked-in to a vortex of ever-expanding crusade to support "freedom", of that particularly libertarian kind in which no harms are admitted and no constraints regarded as valid. Ross Ulbricht also seems curiously divorced from the success of his creation, in the sense that he never spent any of the millions he made, and never seems to have much intention of doing. It's a fascinating to ask what would have happened to him if he'd walked away (as he told his girlfriend he had) in the relatively early years.<br><br>There are some questions left largely unanswered, though. Does having a safe, legal, marketplace for drugs reduce harms, by removing the criminals and violence? It's hard to say, as the Silk Road never really removed the criminals from the equation. Is a recommender system sufficient to regulate a marketplace for contraband? Is the middleman as guilty as the seller – or the buyer? Taking down the Silk Road didn't end the dark web, and indeed it's now a fragmented and dynamic place that's more difficult for both law enforcement and consumers to navigate. Another thing Ulbricht never seems to have foreseen.
+      The Silk Road occupies an interesting place in the history of the internet. To many it <i>is</i> the &#8220;dark web&#8221;, the place where people can buy contraband with cryptocurrency. (Indeed, this is basically the only real-world use case for cryptocurrencies so far.)<br><br>It&#8217;s a strange tale of someone who didn&#8217;t seek to create the world&#8217;s dark marketplace, but once he had was sucked-in to a vortex of ever-expanding crusade to support &#8220;freedom&#8221;, of that particularly libertarian kind in which no harms are admitted and no constraints regarded as valid. Ross Ulbricht also seems curiously divorced from the success of his creation, in the sense that he never spent any of the millions he made, and never seems to have much intention of doing. It&#8217;s a fascinating to ask what would have happened to him if he&#8217;d walked away (as he told his girlfriend he had) in the relatively early years.<br><br>There are some questions left largely unanswered, though. Does having a safe, legal, marketplace for drugs reduce harms, by removing the criminals and violence? It&#8217;s hard to say, as the Silk Road never really removed the criminals from the equation. Is a recommender system sufficient to regulate a marketplace for contraband? Is the middleman as guilty as the seller – or the buyer? Taking down the Silk Road didn&#8217;t end the dark web, and indeed it&#8217;s now a fragmented and dynamic place that&#8217;s more difficult for both law enforcement and consumers to navigate. Another thing Ulbricht never seems to have&nbsp;foreseen.
       </p>
 <p>
 	4/5.
-	  Finished Thursday 18 February, 2021.
+	  Finished Thursday 18 February,&nbsp;2021.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/3730500772?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -153,22 +150,21 @@ in my comfort zone.</p>
 			    Posted on <a href="../goodreads/mad-bad-dangerous-to-know-the-fathers-of-wilde-yeats-and-joyce/" rel="bookmark">Wednesday 3 February, 2021</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/mad-bad-dangerous-to-know-the-fathers-of-wilde-yeats-and-joyce/">Mad, Bad, Dangerous to Know: The Fathers of Wilde, Yeats and Joyce</a></h1>
+		    <h1><a href="../goodreads/mad-bad-dangerous-to-know-the-fathers-of-wilde-yeats-and-joyce/">Mad, Bad, Dangerous to Know: The Fathers of Wilde, Yeats and&nbsp;Joyce</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535685439l/39296042._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Colm Tóibín
-	  (2018)
+	Colm Tóibín&nbsp;(2018)
       </h2>
     </div>
     <p>
-      While the description may be over-the-top when applied to Sir William Wilde or John Butler Yeats, it certainly applies in spades to John Stanislaus Joyce, whose life is almost a caricature of an artist in search of himself at the expense of his family. This is a wonderful book, full of telling character observations and synthesising a wide range of sources.<br><br>But actually the most moving part for me (as a former Dublin resident) was the loving description of one street: Westland Row, that runs along the back of Trinity College up towards Merrion Square. Tóibín moves up it almost house-by-house, detailing what happened where and how it's change in the intervening century. It gave me a sudden pull of nostalgia, so poignant that I could see the street and hear the trains on the Dart bridge above. That was an unexpected additional pleasure from an excellent biography.
+      While the description may be over-the-top when applied to Sir William Wilde or John Butler Yeats, it certainly applies in spades to John Stanislaus Joyce, whose life is almost a caricature of an artist in search of himself at the expense of his family. This is a wonderful book, full of telling character observations and synthesising a wide range of sources.<br><br>But actually the most moving part for me (as a former Dublin resident) was the loving description of one street: Westland Row, that runs along the back of Trinity College up towards Merrion Square. Tóibín moves up it almost house-by-house, detailing what happened where and how it&#8217;s change in the intervening century. It gave me a sudden pull of nostalgia, so poignant that I could see the street and hear the trains on the Dart bridge above. That was an unexpected additional pleasure from an excellent&nbsp;biography.
       </p>
 <p>
 	5/5.
-	  Finished Wednesday 3 February, 2021.
+	  Finished Wednesday 3 February,&nbsp;2021.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/2567996841?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -184,22 +180,21 @@ in my comfort zone.</p>
 			    Posted on <a href="../goodreads/the-light-brigade/" rel="bookmark">Saturday 30 January, 2021</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/the-light-brigade/">The Light Brigade</a></h1>
+		    <h1><a href="../goodreads/the-light-brigade/">The Light&nbsp;Brigade</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1537977912l/40523931._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Kameron Hurley
-	  (2019)
+	Kameron Hurley&nbsp;(2019)
       </h2>
     </div>
     <p>
-      A war fought in non-linear time – and that's the lived experience of the protagonist, not simply a narrative structure. Faster-than-light transportation leads to time shifts for some and worrying injuries for others.<br><br>It doesn't quite hang together as a novel, in my opinion, but the writing is evocative and the society – a post-climate change corporate dystopia with echoes of <i>1984</i> – is detailed and well-drawn. It needs a clearer arc to carry the complexities.
+      A war fought in non-linear time – and that&#8217;s the lived experience of the protagonist, not simply a narrative structure. Faster-than-light transportation leads to time shifts for some and worrying injuries for others.<br><br>It doesn&#8217;t quite hang together as a novel, in my opinion, but the writing is evocative and the society – a post-climate change corporate dystopia with echoes of <i>1984</i> – is detailed and well-drawn. It needs a clearer arc to carry the&nbsp;complexities.
       </p>
 <p>
 	3/5.
-	  Finished Saturday 30 January, 2021.
+	  Finished Saturday 30 January,&nbsp;2021.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/3652654864?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -215,22 +210,21 @@ in my comfort zone.</p>
 			    Posted on <a href="../goodreads/dead-famous-an-unexpected-history-of-celebrity-from-bronze-age-to-silver-screen/" rel="bookmark">Friday 29 January, 2021</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/dead-famous-an-unexpected-history-of-celebrity-from-bronze-age-to-silver-screen/">Dead Famous: An Unexpected History of Celebrity from Bronze Age to Silver Screen</a></h1>
+		    <h1><a href="../goodreads/dead-famous-an-unexpected-history-of-celebrity-from-bronze-age-to-silver-screen/">Dead Famous: An Unexpected History of Celebrity from Bronze Age to Silver&nbsp;Screen</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1627580976l/48868613._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Greg  Jenner
-	  (2020)
+	Greg  Jenner&nbsp;(2020)
       </h2>
     </div>
     <p>
-      A romp through what it means to be famous. And indeed what "famous" means, which is actually a more nuanced question than it might first appear. Are "influencers" famous? – not according to Jenner, and it seems a slightly arbitrary distinction. When did fame begin? – one has to start somewhere, so the start of newspapers seems sensible but excludes some who might otherwise be in consideration. Nonetheless there are some excellent vignettes on what it means to achieve fame, and the consequences when one has done so, enough ( suspect to kill-off many people's latent desire for celebrity.
+      A romp through what it means to be famous. And indeed what &#8220;famous&#8221; means, which is actually a more nuanced question than it might first appear. Are &#8220;influencers&#8221; famous? – not according to Jenner, and it seems a slightly arbitrary distinction. When did fame begin? – one has to start somewhere, so the start of newspapers seems sensible but excludes some who might otherwise be in consideration. Nonetheless there are some excellent vignettes on what it means to achieve fame, and the consequences when one has done so, enough ( suspect to kill-off many people&#8217;s latent desire for&nbsp;celebrity.
       </p>
 <p>
 	4/5.
-	  Finished Friday 29 January, 2021.
+	  Finished Friday 29 January,&nbsp;2021.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/3561600828?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -249,7 +243,7 @@ in my comfort zone.</p>
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -258,12 +252,12 @@ in my comfort zone.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

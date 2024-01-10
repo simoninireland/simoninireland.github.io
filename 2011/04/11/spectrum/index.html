@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,33 +67,33 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Monday 11 April, 2011</a>
 	    </span>
 	</div>
-	<h1>Adventures at either end of the performance spectrum</h1>
+	<h1>Adventures at either end of the performance&nbsp;spectrum</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Over the past week I've been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.
+		<p>Over the past week I&#8217;ve been playing with some very small machines intended as sensor network nodes. Paradoxically this has involved deploying a ridiculous amount of computing power.
 
 <!--more-->
 
-Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that's actually somewhat <em>less</em> capable than many of the nodes we work with. They're basically a hobbyist platform and are often looked down upon by professionals as being toys.
+Most of my work on sensor networks is at the level of data and sensors, not hardware. I was feeling the need to get my hands dirty, so I bought an <a href="http://www.arduino.cc">Arduino</a>, an open-source prototyping platform that&#8217;s actually somewhat <em>less</em> capable than many of the nodes we work with. They&#8217;re basically a hobbyist platform and are often looked down upon by professionals as being toys.
 
-I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren't needed in many applications. Secondly, unlike a lot of sensor network hardware, they're <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function -- co-ordination -- and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.
+I think these criticisms are unfair. Firstly, Arduinos massively simplify software development by abstracting-away from a lot of the complexities that simply aren&#8217;t needed in many applications. Secondly, unlike a lot of sensor network hardware, they&#8217;re <em>mainstream</em> and will benefit from competition, economies of scale and the like in a way that more specialised kit probably never will. Thirdly, as the centres of <a href="http://shieldlist.org/" target="_blank">an ecosystem of other boards</a> they can focus on doing one function &#8212; co-ordination &#8212; and let the daughter boards focus on their <em>their</em> own functions, rather than tying everything together.
 
-In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I'm reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That's an interesting story for another time.)
+In some ways this makes hardware more like software, and more amenable to software-like rapid development cycles. It means that each component can move up its own learning curve independently of the others, and not hold everything back to the speed of the slowest (and often hardest-to-improve) component. That has been the unfortunate outcome several times in the past: I&#8217;m reminded strongly of the demise of the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Transputer" target="_blank">Transputer</a>, that lost its early lead by trying to be too integrated. (That&#8217;s an interesting story for another time.)
 
-One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi's range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that's great for sensor systems, and I'm looking forward to understanding them better,
+One good example of Arduino  re-use is that it can interface to Zigbee radios, specifically to <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module.jsp" target="_blank">Digi&#8217;s range of XBee modules</a>. Zigbee is the latest-and-greatest short-range wireless protocol, and Arduino kit can interface directly to it rather than relying on an integrated radio sub-system. They mesh together and do all sorts of other fun stuff that&#8217;s great for sensor systems, and I&#8217;m looking forward to understanding them better,
 
-However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-CTU)  only runs on Windows. As might not be a complete surprise, I don't have any Windows machines.
+However getting XBee radios to work often involves re-flashing their firmware to make sure they take on the appropriate role in the mesh network. The tool that Digi provide to do this (unhelpfully called X-<span class="caps">CTU</span>)  only runs on Windows. As might not be a complete surprise, I don&#8217;t have any Windows machines.
 
-I doubt I'm unusual in this: if you're the sort of person who's likely to play around with hobbyist hardware, there's a reasonable chance that you run Linux and/or Mac OS X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.
+I doubt I&#8217;m unusual in this: if you&#8217;re the sort of person who&#8217;s likely to play around with hobbyist hardware, there&#8217;s a reasonable chance that you run Linux and/or Mac <span class="caps">OS</span> X as your main or only operating systems. So building kit for the hobby hardware market that relies on Windows-only tools is short-sighted. And unnecessary: there are plenty of cross-platform user interface tools available for C, or they could just write it in Java.
 
-By a strange quirk I also don't have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-CTU under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone PC on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-CTU -- all to change the firmware on a radio with significantly less computational power than a central heating thermostat.
+By a strange quirk I also don&#8217;t have an Intel-based Linux machine at the moment, so I was left in something of a quandary as to how to run the necessary firmware tools. Solving it takes us to the other end of the performance spectrum. The solution was to run X-<span class="caps">CTU</span> under the <a href="http://www.winehq.org/" target="_blank">Wine</a> emulator for Linux, with the Linux in question being a <a href="http://www.debian.org" target="_blank">Debian</a> installation running virtualised under <a href="http://www.virtualbox.org/" target="_blank">VirtualBox</a> on my Macbook Air. To put it another way, I created a virtual stand-alone <span class="caps">PC</span> on my Mac, within which I installed Linux, which therefore thought it was running on its own separate machine, within which I installed a Windows emulation layer and ran X-<span class="caps">CTU</span> &#8212; all to change the firmware on a radio with significantly less computational power than a central heating thermostat.
 
-It's things like this that make one realise how ludicrously, insanely overpowered modern computers are.
+It&#8217;s things like this that make one realise how ludicrously, insanely overpowered modern computers are.
 
-The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it's a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap -- so cheap that it's not worth worrying about it, and we haven't come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain -- and <a href="../../../../2010/03/things-that-wont-change/">I think it is</a> -- it's something we need to consider in the ways we teach computer science.</p>
+The Mac can run three-layer emulations like this without any problem at all, and can still do a load of other stuff simultaneously. And it&#8217;s a laptop, and not one noted for being massively powerful by modern standards. It seems rather perverse to need to deploy this kind of power to work with such tiny machines. I think there are several lessons. Computing power really is really, <em>really</em> cheap &#8212; so cheap that it&#8217;s not worth worrying about it, and we haven&#8217;t come close to hitting a plateau in practical terms yet. But this just highlights that programming sensor networks requires a completely different discipline and skill-set, which may not be common in programmers of more recent vintage. If this gap is going to remain &#8212; and <a href="../../../../2010/03/things-that-wont-change/">I think it is</a> &#8212; it&#8217;s something we need to consider in the ways we teach computer&nbsp;science.</p>
 	    </div>
 	</article>
 </div>
@@ -138,7 +138,7 @@ The Mac can run three-layer emulations like this without any problem at all, and
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -147,12 +147,12 @@ The Mac can run three-layer emulations like this without any problem at all, and
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

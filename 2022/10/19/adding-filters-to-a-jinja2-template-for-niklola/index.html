@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,39 +67,38 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Wednesday 19 October, 2022</a>
 	    </span>
 	</div>
-	<h1>Adding filters to a Jinja2 template for Nikola</h1>
+	<h1>Adding filters to a Jinja2 template for&nbsp;Nikola</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
 		<div id="outline-container-org0aed7ee" class="outline-2">
-<h2 id="org0aed7ee">Adding filters to a Jinja2 template for Nikola</h2>
+<h2 id="org0aed7ee">Adding filters to a Jinja2 template for&nbsp;Nikola</h2>
 <div class="outline-text-2" id="text-org0aed7ee">
 <p>
 The <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja2</a> template engine defines a suite of <a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters">filters</a> that can be
-used to transform text as it's rendered. You can define extra custom
+used to transform text as it&#8217;s rendered. You can define extra custom
 filters, and also make them available within <a href="https://getnikola.com/">Nikola</a> templates (as
-long as the theme uses Jinja as its template engine, of course.)
+long as the theme uses Jinja as its template engine, of&nbsp;course.)
 </p>
 
 <!-- TEASER_END -->
 
 <p>
-I needed this to fix the import of data from an RSS feed using the
-<a href="https://plugins.getnikola.com/v7/continuous_import/">continuous import plugin</a>. Specifically I'm getting book reviews from
+I needed this to fix the import of data from an <span class="caps">RSS</span> feed using the
+<a href="https://plugins.getnikola.com/v7/continuous_import/">continuous import plugin</a>. Specifically I&#8217;m getting book reviews from
 <a href="https://goodreads.com">Goodreads</a>, where the timestamps of when I finished a book come down
 in a too-detailed format – for example including the time and
 timezone of the Goodreads server, not of me. To change this I need
-to take the timestamp from the RSS feed (as a string), turn it into
-a Python <code>datetime</code> object, and then generate a new string with less
-information.
+to take the timestamp from the <span class="caps">RSS</span> feed (as a string), turn it into
+a&nbsp;Python <code>datetime</code> object, and then generate a new string with less&nbsp;information.
 </p>
 
 <p>
 There are two parts to this: defining the filter, and then
 installing it into Nikola. The definition is straightforward, just a
-Python function,and I included it directly into <code>conf.py</code>:
+Python function,and I included it directly&nbsp;into <code>conf.py</code>:
 </p>
 
 <div class="highlight"><pre><span></span>  <span class="c1"># Filters</span>
@@ -118,8 +117,8 @@ Python function,and I included it directly into <code>conf.py</code>:
 </pre></div>
 
 <p>
-To make the filter available you <b>don't</b> use the Jinja2 environment
-registration mechanism, but instead include it into Nikola's
+To make the filter available you <b>don&#8217;t</b> use the Jinja2 environment
+registration mechanism, but instead include it into&nbsp;Nikola&#8217;s
 <code>TEMPLATE_FILTERS</code> dict:
 </p>
 
@@ -129,7 +128,7 @@ registration mechanism, but instead include it into Nikola's
 </pre></div>
 
 <p>
-The filter can then be used in a template, for example:
+The filter can then be used in a template, for&nbsp;example:
 </p>
 
 <div class="highlight"><pre><span></span>  {% if item.user_read_at %}
@@ -138,10 +137,10 @@ The filter can then be used in a template, for example:
 </pre></div>
 
 <p>
-which pipes the <code>item.user_read_at</code> field of the Goodreads RSS feed
-into the filter for display. If I define more filters I'll move them
-into their own file and then <code>import</code> that into <code>conf.py</code>, just for
-a clean decomposition.
+which pipes&nbsp;the <code>item.user_read_at</code> field of the Goodreads <span class="caps">RSS</span> feed
+into the filter for display. If I define more filters I&#8217;ll move them
+into their own file and&nbsp;then <code>import</code> that&nbsp;into <code>conf.py</code>, just for
+a clean&nbsp;decomposition.
 </p>
 </div>
 </div>
@@ -189,7 +188,7 @@ a clean decomposition.
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -198,12 +197,12 @@ a clean decomposition.
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,35 +67,34 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 27 November, 2020</a>
 	    </span>
 	</div>
-	<h1>Where am I (in git)?</h1>
+	<h1>Where am I (in&nbsp;git)?</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>I recently started using <code>git</code> and <a href="https://github.com/simoninireland/">Github</a>
-in a more serious way than I've done in the past -- and promptly
-started getting horrendously lost in the process.</p>
+		<p>I recently started&nbsp;using <code>git</code> and <a href="https://github.com/simoninireland/">Github</a>
+in a more serious way than I&#8217;ve done in the past &#8212; and promptly
+started getting horrendously lost in the&nbsp;process.</p>
 <!-- TEASER_END -->
 
 <p>One developer kindly published
 <a href="https://daniel.haxx.se/blog/2020/11/09/this-is-how-i-git/">a very detailed workflow</a>
-with suggestions on how to manage an open-source project's repo -- a
-far more popular and complex project than any of mine -- and I adopted
-a lot of his techniques.</p>
+with suggestions on how to manage an open-source project&#8217;s repo &#8212; a
+far more popular and complex project than any of mine &#8212; and I adopted
+a lot of his&nbsp;techniques.</p>
 <p>The issue this gave rise to, though, was the more frequent and complex
-use of branches. It makes sense to keep the "master" branch holding
-the latest stable release -- all committed, tested, and working -- and
+use of branches. It makes sense to keep the &#8220;master&#8221; branch holding
+the latest stable release &#8212; all committed, tested, and working &#8212; and
 to do development on side branches that then get pulled or merged for
 the next release. And I found myself getting lost more and more often,
-forgetting which branch, dub-directory, and even project i was working
-in.</p>
-<p>Fortunately there was a solution in the same post: a modified <code>bash</code>
-prompt that shows the information. The version presented didn't quite
-work for me, as I'm not solely a developer and so needed a prompt
+forgetting which branch, dub-directory, and even project i was working&nbsp;in.</p>
+<p>Fortunately there was a solution in the same post: a&nbsp;modified <code>bash</code>
+prompt that shows the information. The version presented didn&#8217;t quite
+work for me, as I&#8217;m not solely a developer and so needed a prompt
 that works <em>outside</em> <code>git</code> repos as well as <em>inside</em> them. I
-developed the following shell function for use in my <code>~/.bashrc</code>
-configuration file:</p>
+developed the following shell function for use in&nbsp;my <code>~/.bashrc</code>
+configuration&nbsp;file:</p>
 <div class="code"><pre class="code literal-block"><span class="c1"># Show git project, branch, and prefix in command prompt when we're in a repo</span>
 brname<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="nv">ingit</span><span class="o">=</span><span class="sb">`</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--is-inside-work-tree<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="sb">`</span>
@@ -118,9 +117,9 @@ brname<span class="w"> </span><span class="o">()</span><span class="w"> </span><
 <span class="nb">export</span><span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">'$(brname)&gt; '</span>
 </pre></div>
 
-<p>Inside a repo this changes the <code>bash</code> prompt to show the project
+<p>Inside a repo this changes&nbsp;the <code>bash</code> prompt to show the project
 name, branch, and prefix path within the repo. Outside a repo, it
-just shows my name.</p>
+just shows my&nbsp;name.</p>
 	    </div>
 	</article>
 </div>
@@ -165,7 +164,7 @@ just shows my name.</p>
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -174,12 +173,12 @@ just shows my name.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

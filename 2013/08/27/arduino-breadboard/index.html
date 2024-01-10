@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,21 +67,21 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Tuesday 27 August, 2013</a>
 	    </span>
 	</div>
-	<h1>Low-power Arduino-on-a-breadboard</h1>
+	<h1>Low-power&nbsp;Arduino-on-a-breadboard</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Putting an Arduino together from scratch lets us look at where the power consumption might be reduced -- and is just an interesting thing to do anyway.</p>
+		<p>Putting an Arduino together from scratch lets us look at where the power consumption might be reduced &#8212; and is just an interesting thing to do&nbsp;anyway.</p>
 <!--more-->
 
-<p>One of the most exciting things about the Arduino is that it's open-source, so you can build them yourself -- and potentially vary the way they're put together for specific projects, which is very useful as a starting point for people (like me!) who aren't hardware engineers.</p>
+<p>One of the most exciting things about the Arduino is that it&#8217;s open-source, so you can build them yourself &#8212; and potentially vary the way they&#8217;re put together for specific projects, which is very useful as a starting point for people (like me!) who aren&#8217;t hardware&nbsp;engineers.</p>
 <p>The main challenge for sensing with Arduinos seems to be their power consumption, and the obvious way to address this is to see whether there are things to be done to reduce the power drain, for example by addressing the issue of the <a href="../../../07/31/power/">quiescent current of the power regulator</a>.</p>
-<p>As a starting point, I used an <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">on-line guide </a>to build an Arduino on a breadboard:</p>
+<p>As a starting point, I used an <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">on-line guide </a>to build an Arduino on a&nbsp;breadboard:</p>
 <p><img alt="An Arduino build from components" src="../../../../images/citizen-sensing/breadboard-arduino.jpg"></p>
-<p>Actually this isn't a "full" Arduino as the analogue to digital converter (ADC) isn't properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), LED, reset switch, power, and USB. The breakout board at the left-hand side is the USB adapter, while the cluster of components on the right is the power regulator. At present I'm powering from batteries; one can also power from the USB, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../../07/31/power/">earlier</a>.</p>
-<p>Measuring power for a simple "blink" program gives the following result:</p>
+<p>Actually this isn&#8217;t a &#8220;full&#8221; Arduino as the analogue to digital converter (<span class="caps">ADC</span>) isn&#8217;t properly set up, but it has the basic components of microcontroller (the same ATmega 328P as on an Arduino Uno), <span class="caps">LED</span>, reset switch, power, and <span class="caps">USB</span>. The breakout board at the left-hand side is the <span class="caps">USB</span> adapter, while the cluster of components on the right is the power regulator. At present I&#8217;m powering from batteries; one can also power from the <span class="caps">USB</span>, or from a wall power supply via another breakout board, but this way allows the same power measurement regime as <a href="../../../07/31/power/">earlier</a>.</p>
+<p>Measuring power for a simple &#8220;blink&#8221; program gives the following&nbsp;result:</p>
 <table style="border: 1"><tbody>
 <tr>
 <td>Activity</td>
@@ -94,20 +94,19 @@ MathJax.Hub.Config({
 <td>4.5mA</td>
 </tr>
 <tr>
-<td>Flashing LED</td>
+<td>Flashing <span class="caps">LED</span></td>
 <td>Awake</td>
 <td>17mA</td>
 </tr>
 </tbody></table>
 <p>So in deep sleep mode the system draws about a seventh the power as a
-"real" Arduino. This is all down to the choice of voltage regulator:
+&#8220;real&#8221; Arduino. This is all down to the choice of voltage regulator:
 an L7805 with a design maximum quiescent current of 6mA. To put this
 into perspective, a system that could last a week on a standard
 Arduino board would last the best part of two months in this
 configuration. Put another way, we can build a sensor mote with an
 Arduino architecture and dramatically increased lifetime by changing a
-core component and using SleepySketch to keep the system asleep by
-default.</p>
+core component and using SleepySketch to keep the system asleep by&nbsp;default.</p>
 	    </div>
 	</article>
 </div>
@@ -152,7 +151,7 @@ default.</p>
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -161,12 +160,12 @@ default.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

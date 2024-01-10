@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,21 +67,21 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Monday 8 July, 2013</a>
 	    </span>
 	</div>
-	<h1>DS18B20 digital thermometer</h1>
+	<h1><span class="caps">DS18B20</span> digital&nbsp;thermometer</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>The DS18B20 is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.
+		<p>The <span class="caps">DS18B20</span> is a programmable digital thermometer that needs no calibration and uses only one wire of the microcontroller.
 
 <!--more-->
 
-The <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2812" target="_blank">DS18B20</a> is extremely popular as a temperature sensor, for obvious reasons: they're digital, and require no calibration, in contrast to using a thermistor or similar analogue device which would need to be characterised against reference temperatures. They're not as cheap as analogue components, but their simplicity of use and accuracy probably make up for that in scientific applications.
+The <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/2812" target="_blank"><span class="caps">DS18B20</span></a> is extremely popular as a temperature sensor, for obvious reasons: they&#8217;re digital, and require no calibration, in contrast to using a thermistor or similar analogue device which would need to be characterised against reference temperatures. They&#8217;re not as cheap as analogue components, but their simplicity of use and accuracy probably make up for that in scientific applications.
 
-The devices are also notable as using the OneWire protocol developed by Dallas Semiconductor (now Maxim) and used in (amongst other devices) their <a href="http://www.maximintegrated.com/products/ibutton/" target="_blank">iButton</a> devices. Essentially <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">OneWire</a> is an embedded systems equivalent of USB that allows a set of devices to be chained together and addressed using only one pin on a microcontroller. This means that there's no real limit on the number of sensors that even a small chip can make use of. The <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank">datasheet</a> is available if needed, but they're so easy to use and have such good software support (see below) that there's no real need to refer to it.
+The devices are also notable as using the OneWire protocol developed by Dallas Semiconductor (now Maxim) and used in (amongst other devices) their <a href="http://www.maximintegrated.com/products/ibutton/" target="_blank">iButton</a> devices. Essentially <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">OneWire</a> is an embedded systems equivalent of <span class="caps">USB</span> that allows a set of devices to be chained together and addressed using only one pin on a microcontroller. This means that there&#8217;s no real limit on the number of sensors that even a small chip can make use of. The <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" target="_blank">datasheet</a> is available if needed, but they&#8217;re so easy to use and have such good software support (see below) that there&#8217;s no real need to refer to it.
 
-The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There's also a "parasitic" mode that takes power from the data bus, which I haven't got to work yet.) The communications line is the "one wire" that runs the communications protocol.
+The sensors are packaged almost like transistors, with three wires for ground, power, and data. The easiest way to use them is to power them directly with 5V and ground, and use the third wire for communications. (There&#8217;s also a &#8220;parasitic&#8221; mode that takes power from the data bus, which I haven&#8217;t got to work yet.) The communications line is the &#8220;one wire&#8221; that runs the communications protocol.
 
 Using OneWire devices, and DS18B20s in particular, is made very simple by the existence of two libraries, providing the <a href="http://www.pjrc.com/teensy/td_libs_OneWire.html" target="_blank">protocol driver</a> and <a href="http://milesburton.com/Dallas_Temperature_Control_Library" target="_blank">temperature conversion and packaging</a> respectively. Links and installation instructions can be found on the <a href="../../../../download/tools-libraries/">3rd-part tools and libraries page</a>.
 
@@ -125,7 +125,7 @@ Using OneWire devices, and DS18B20s in particular, is made very simple by the ex
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
 	    <a href="../../06/api-communications/" rel="prev">
-		<span class="meta-nav">Older Post</span>API communications now working
+		<span class="meta-nav">Older Post</span><span class="caps">API</span> communications now working
 	    </a>
 	</div>
 	<div class="next">
@@ -134,7 +134,7 @@ Using OneWire devices, and DS18B20s in particular, is made very simple by the ex
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -143,12 +143,12 @@ Using OneWire devices, and DS18B20s in particular, is made very simple by the ex
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

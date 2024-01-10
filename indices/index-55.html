@@ -32,7 +32,7 @@
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -40,7 +40,7 @@
 	    </div>
 	    <ul class="menu">
 <li><a href="../index.html">Home</a></li>
-		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
 		    <li><a href="../research/">Research</a></li>
 		    <li><a href="../development/projects/">Software</a></li>
 		    <li><a href="../writing/">Writing</a></li>
@@ -55,29 +55,29 @@
 			    Posted on <a href="../2014/03/17/tooling-terabytes/" rel="bookmark">Monday 17 March, 2014</a>
 			</span>
 		    </div>
-		    <h1><a href="../2014/03/17/tooling-terabytes/">It's the tooling, not the terabytes</a></h1>
+		    <h1><a href="../2014/03/17/tooling-terabytes/">It&#8217;s the tooling, not the&nbsp;terabytes</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>With all the hype about big data it's sometimes hard to realise that it's about more than just data. In fact, it's real interest doesn't come from big-ness at all.
+			<p>With all the hype about big data it&#8217;s sometimes hard to realise that it&#8217;s about more than just data. In fact, it&#8217;s real interest doesn&#8217;t come from big-ness at all.
 
 <!--more-->
-The term <em>big data</em> is deceptively hard to parse. It's a relative term, for a start: when you get down to it, all it really means is data that's large relative to the available storage and processing capacity. From that perspective, big data has always been with us -- and always will be. It's also curiously technology-specific for something that's garnering such broad interest. A volume of data may be "big" for one platform (a laptop, for example) and not for others (a computing cluster with a large network-attached store).
+The term <em>big data</em> is deceptively hard to parse. It&#8217;s a relative term, for a start: when you get down to it, all it really means is data that&#8217;s large relative to the available storage and processing capacity. From that perspective, big data has always been with us &#8212; and always will be. It&#8217;s also curiously technology-specific for something that&#8217;s garnering such broad interest. A volume of data may be &#8220;big&#8221; for one platform (a laptop, for example) and not for others (a computing cluster with a large network-attached store).
 
-Getting away from the data, what researchers typically mean by big data is a set of computational techniques that can be applied broadly to data somewhat independent of its origins and subject. <a href="../2014/03/data-scientists/" target="_blank">I'm not a fan of "data science"</a>, but the term does at least focus on techniques and not on data size alone. This is much more interesting, and poses a set of challenges to disciplines -- and to computer science -- to identify and expand the set of techniques and tools researchers can make use of.
+Getting away from the data, what researchers typically mean by big data is a set of computational techniques that can be applied broadly to data somewhat independent of its origins and subject. <a href="../2014/03/data-scientists/" target="_blank">I&#8217;m not a fan of &#8220;data science&#8221;</a>, but the term does at least focus on techniques and not on data size alone. This is much more interesting, and poses a set of challenges to disciplines &#8212; and to computer science &#8212; to identify and expand the set of techniques and tools researchers can make use of.
 
-What often frightens people about big data (or makes it an attractive career niche, depending on your point of view) is that there is a step-change in how you interact with data beyond a certain size -- and it's this change in tooling requirements that I think is a more significant indicator of a big-data problem than simply the data size.
+What often frightens people about big data (or makes it an attractive career niche, depending on your point of view) is that there is a step-change in how you interact with data beyond a certain size &#8212; and it&#8217;s this change in tooling requirements that I think is a more significant indicator of a big-data problem than simply the data size.
 
-Suppose you collect a dataset consisting of a few hundred samples, each with maybe ten variables -- something that could come from a small survey, for example. This size of data can easily be turned into a spreadsheet model, and a large class of researchers have become completely comfortable with building such models. (This didn't used to be the case: I had a summer job in the late 1980's building spreadsheet models for a group that didn't have the necessary experience. Research skills evolve.) Even a survey with thousands of rows would be possible.
+Suppose you collect a dataset consisting of a few hundred samples, each with maybe ten variables &#8212; something that could come from a small survey, for example. This size of data can easily be turned into a spreadsheet model, and a large class of researchers have become completely comfortable with building such models. (This didn&#8217;t used to be the case: I had a summer job in the late 1980&#8217;s building spreadsheet models for a group that didn&#8217;t have the necessary experience. Research skills evolve.) Even a survey with thousands of rows would be possible.
 
-But what if the survey has several million rows? -- for example because it came from an online survey, or because it was sensed automatically in some way. No spreadsheet program can ingest that much data.
+But what if the survey has several million rows? &#8212; for example because it came from an online survey, or because it was sensed automatically in some way. No spreadsheet program can ingest that much data.
 
-A few million rows does not constitute what many people would regard as "big data": it'll be at most several megabytes. But that's not the point: rather, the point is that, in order to deal with it, the researchers have to change tools -- and change them quite radically. Rather than using a spreadsheet, they have to become programmers; not just that, they have to become programmers who are familiar with languages like <a href="https://www.python.org/" target="_blank">Python</a> (to get the libraries), and <a href="https://hadoop.apache.org/" target="_blank">Hadoop</a> and cloud computing (to be able to scale-out the solutions). They could employ programmers, of course, but that removes them from the immediate and intimate contact with their data that many researchers find extremely valuable, and that personal computers have given us. To many people, hiring a programmer and running calculations in the cloud is suspiciously like a return to the mainframe computing we thought was rendered obsolete decades ago.
+A few million rows does not constitute what many people would regard as &#8220;big data&#8221;: it&#8217;ll be at most several megabytes. But that&#8217;s not the point: rather, the point is that, in order to deal with it, the researchers have to change tools &#8212; and change them quite radically. Rather than using a spreadsheet, they have to become programmers; not just that, they have to become programmers who are familiar with languages like <a href="https://www.python.org/" target="_blank">Python</a> (to get the libraries), and <a href="https://hadoop.apache.org/" target="_blank">Hadoop</a> and cloud computing (to be able to scale-out the solutions). They could employ programmers, of course, but that removes them from the immediate and intimate contact with their data that many researchers find extremely valuable, and that personal computers have given us. To many people, hiring a programmer and running calculations in the cloud is suspiciously like a return to the mainframe computing we thought was rendered obsolete decades ago.
 
-<em>It's not the terabytes, it's the tooling.</em> Big data starts when you cross the threshold from your familiar world of interactive tools and into a more specialised, programmers world.
+<em>It&#8217;s not the terabytes, it&#8217;s the tooling.</em> Big data starts when you cross the threshold from your familiar world of interactive tools and into a more specialised, programmers world.
 
-This transition is becoming common in humanities and social sciences, as well as in science and medicine, and to my mind it's the major challenge of big data. The basic problem is simple: changing tools takes time, expertise, and mental effort, that is taken away from what's a researcher's actual research interest. A further disincentive is that the effort may not be rewarded: after all, if this really is research, one is often not sure whether there actually is anything valuable on the other side of a data analysis. In fields where competition is really competitive, like medicine, this feels like a lot of risk for an uncertain reward. There's evidence to suggest -- and I can't prove this contention -- that people are steering clear of doing the experiments they know they should do because they know they'll generate data volumes they're uncomfortable with.
+This transition is becoming common in humanities and social sciences, as well as in science and medicine, and to my mind it&#8217;s the major challenge of big data. The basic problem is simple: changing tools takes time, expertise, and mental effort, that is taken away from what&#8217;s a researcher&#8217;s actual research interest. A further disincentive is that the effort may not be rewarded: after all, if this really is research, one is often not sure whether there actually is anything valuable on the other side of a data analysis. In fields where competition is really competitive, like medicine, this feels like a lot of risk for an uncertain reward. There&#8217;s evidence to suggest &#8212; and I can&#8217;t prove this contention &#8212; that people are steering clear of doing the experiments they know they should do because they know they&#8217;ll generate data volumes they&#8217;re uncomfortable with.
 
-This, then, is where the big data challenge actually is: minimising the cost of transition from tools that are familiar to tools that are effective on the larger data volumes that are now becoming commonplace. This is a programming and user interface challenge, to make the complex infrastructure appear easy and straightforward to people who want to accomplish tasks on it. A large challenge, but not an unprecedented one: I'm writing this just after the 25th birthday of the World Wide Web that took a complex infrastructure (the internet) and made it usable by everyone. Let's just not get too hung-up on the idea that data needs to be really big to be interesting in this new data-driven world.</p>
+This, then, is where the big data challenge actually is: minimising the cost of transition from tools that are familiar to tools that are effective on the larger data volumes that are now becoming commonplace. This is a programming and user interface challenge, to make the complex infrastructure appear easy and straightforward to people who want to accomplish tasks on it. A large challenge, but not an unprecedented one: I&#8217;m writing this just after the 25th birthday of the World Wide Web that took a complex infrastructure (the internet) and made it usable by everyone. Let&#8217;s just not get too hung-up on the idea that data needs to be really big to be interesting in this new data-driven&nbsp;world.</p>
 		</div>
 	    </article>
 </div>
@@ -88,34 +88,34 @@ This, then, is where the big data challenge actually is: minimising the cost of 
 			    Posted on <a href="../2014/03/12/data-scientists/" rel="bookmark">Wednesday 12 March, 2014</a>
 			</span>
 		    </div>
-		    <h1><a href="../2014/03/12/data-scientists/">No data scientists</a></h1>
+		    <h1><a href="../2014/03/12/data-scientists/">No data&nbsp;scientists</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>"Data science" and "data scientist" are not good terms -- for anything.
+			<p><span class="dquo">&#8220;</span>Data science&#8221; and &#8220;data scientist&#8221; are not good terms &#8212; for anything.
 
-<!--more-->The recent revolution in our ability to monitor more and more human (and indeed non-human) activity has spawned a whole new field of study. Known variously as "big data", "data science", and "digital humanities", the idea is that -- by studying the data collected -- we can perform feats of prediction and customisation that defeat other approaches.
+<!--more-->The recent revolution in our ability to monitor more and more human (and indeed non-human) activity has spawned a whole new field of study. Known variously as &#8220;big data&#8221;, &#8220;data science&#8221;, and &#8220;digital humanities&#8221;, the idea is that &#8212; by studying the data collected &#8212; we can perform feats of prediction and customisation that defeat other approaches.
 
-This is not all hype. There's no doubt that deriving algorithms from data -- known as "data-driven design" -- can often work better than <em>a priori</em> design. The best-known example of this is <a href="http://translate.google.com/" target="_blank">Google Translate</a>, whose translation approach is driven almost entirely by applying statistical learning to a large corpus of documents with for which exact translations exist across languages, and using the correlations found as the basis for translation. (The documents in question were actually the core agreements governing the operation of the EU, the <em>acquis communautaire</em>, which explains why Google Translate works best on bureaucratese and worst on poetry.) It turns out that data-driven learning works better in most cases than grammar-directed parsing.
+This is not all hype. There&#8217;s no doubt that deriving algorithms from data &#8212; known as &#8220;data-driven design&#8221; &#8212; can often work better than <em>a priori</em> design. The best-known example of this is <a href="http://translate.google.com/" target="_blank">Google Translate</a>, whose translation approach is driven almost entirely by applying statistical learning to a large corpus of documents with for which exact translations exist across languages, and using the correlations found as the basis for translation. (The documents in question were actually the core agreements governing the operation of the <span class="caps">EU</span>, the <em>acquis communautaire</em>, which explains why Google Translate works best on bureaucratese and worst on poetry.) It turns out that data-driven learning works better in most cases than grammar-directed parsing.
 
-The data-driven approach rests on several pillars. Chief among them is applied machine learning as mentioned above, allowing algorithms to look through bodies of data and learn the correlations that exist between events. (We use similar techniques to analyse sensor data and perform situation recognition. See Ye, Dobson and McKeever. <a href="http://dx.doi.org/10.1016/j.pmcj.2011.01.004" target="_blank">Situation identification techniques in pervasive computing: a review</a>. Pervasive and Mobile Computing <strong>8</strong>(1), pp. 36--66. 2012.) Various other statistical techniques can also be applied, ranging up from simple mean and variance calculations. One can usually augment the basic techniques using more structural methods: if you know the structure of the links in a web site, for example, you can learn more about how people navigate because you know that some routes are more probable (by clicking hyperlinks) than others. The results of these analyses then need to be presented as analytics for consumption by managers and decision-makers, and distilling large volumes of information into visually compelling and comprehensible form is a skill in itself.
+The data-driven approach rests on several pillars. Chief among them is applied machine learning as mentioned above, allowing algorithms to look through bodies of data and learn the correlations that exist between events. (We use similar techniques to analyse sensor data and perform situation recognition. See Ye, Dobson and McKeever. <a href="http://dx.doi.org/10.1016/j.pmcj.2011.01.004" target="_blank">Situation identification techniques in pervasive computing: a review</a>. Pervasive and Mobile Computing <strong>8</strong>(1), pp. 36&#8212;66. 2012.) Various other statistical techniques can also be applied, ranging up from simple mean and variance calculations. One can usually augment the basic techniques using more structural methods: if you know the structure of the links in a web site, for example, you can learn more about how people navigate because you know that some routes are more probable (by clicking hyperlinks) than others. The results of these analyses then need to be presented as analytics for consumption by managers and decision-makers, and distilling large volumes of information into visually compelling and comprehensible form is a skill in itself.
 
 Going a stage further, one may conduct experiments directly. If you see people searching for the same term, present the results to different people in different ways and see how that influences the links they click. Google again are at the forefront.
 
-The excitement of these techniques has spilled over into the wider science and humanities landscapes. Just within St Andrews this week I've talked about projects for analysing DNA data using machine learning, improving clinical trials, building a concept map for two centuries-worth of literature pertaining to Edinburgh, detecting intruders in computer systems, and mapping the births, deaths, and marriages of Scotland from parish records -- and it's only Wednesday. All these activities are inherently data-driven: they only become possible because we can ingest and analyse large data volumes at high-enough speeds.
+The excitement of these techniques has spilled over into the wider science and humanities landscapes. Just within St Andrews this week I&#8217;ve talked about projects for analysing <span class="caps">DNA</span> data using machine learning, improving clinical trials, building a concept map for two centuries-worth of literature pertaining to Edinburgh, detecting intruders in computer systems, and mapping the births, deaths, and marriages of Scotland from parish records &#8212; and it&#8217;s only Wednesday. All these activities are inherently data-driven: they only become possible because we can ingest and analyse large data volumes at high-enough speeds.
 
-However, none of this implies that there is a subject called "data science", and I'm starting to worry that a false premise is being established.
+However, none of this implies that there is a subject called &#8220;data science&#8221;, and I&#8217;m starting to worry that a false premise is being established.
 
-The term "data science" is a tricky one to parse. How many sciences do you know that aren't based in data? "Data-driven" is the same. That's not to say that they're meaningless, exactly: they identify a sub-set of techniques that are qualitatively different to the more theory-driven approaches, and even differentiate themselves from experimentally-driven approaches by their attempt to correlate across datasets rather than being based on a single homogeneous sampling (however large). But that's a nuanced reading, and a general reader would be forgiven for believing that "data science" was somehow a separate discipline from "ordinary" science, instead of it denoting a set of computational techniques with general applicability across the range of (non-)traditional sciences.
+The term &#8220;data science&#8221; is a tricky one to parse. How many sciences do you know that aren&#8217;t based in data? &#8220;Data-driven&#8221; is the same. That&#8217;s not to say that they&#8217;re meaningless, exactly: they identify a sub-set of techniques that are qualitatively different to the more theory-driven approaches, and even differentiate themselves from experimentally-driven approaches by their attempt to correlate across datasets rather than being based on a single homogeneous sampling (however large). But that&#8217;s a nuanced reading, and a general reader would be forgiven for believing that &#8220;data science&#8221; was somehow a separate discipline from &#8220;ordinary&#8221; science, instead of it denoting a set of computational techniques with general applicability across the range of (non-)traditional sciences.
 
-But it's "data scientist" that really troubles me. This seems to suggest that one can find scientific meaning in the data and the data alone. It seems to suggest that there's a short-cut to scientific insight through the data (and by implication, computer science) rather than through traditional scientific training. And this simply isn't true.
+But it&#8217;s &#8220;data scientist&#8221; that really troubles me. This seems to suggest that one can find scientific meaning in the data and the data alone. It seems to suggest that there&#8217;s a short-cut to scientific insight through the data (and by implication, computer science) rather than through traditional scientific training. And this simply isn&#8217;t true.
 
 The problem is the age-old different between correlation and causality. Correlation is when things happen together: you leave a cup of a tea and a biscuit on a table for long enough, the tea goes cold and the biscuit gets stale. Causality is when one thing happening triggers another thing happening: the tea got cold, and that made the biscuit become stale. Mistaking one for the other leads to all sorts of interesting possibilities: if we put the tea in an insulated cup, the biscuit will stay fresh longer.
 
 Now, the final tea-and-biscuit example is clearly meaningless, but ask yourself this: how did you <em>recognise</em> it as meaningless? Because you understand that the two effects are happening independently because of the passage of time, not because of each other: they are correlated but not causative. You understand this because you have insight into the processes of the world.
 
-And it's here that the problems start for data scientists. In order to interpret the machine learning, statistics, analytics, or other results, you have to have an understanding of the underlying processes. <em>It doesn't happen in the data at all.</em> That's fine for tea and biscuits, and is also probably fairly fine for sales of consumer goods on mass-market web sites, where we have a good intuitive understanding of the processes involved, but will drop-off rapidly as we approach areas that are more complex, more noisy, less intuitive, and less well-understood. How can you differentiate correlation from causality if you don't understand what's possible in the underlying domain? How, in fact, can you determine anything from the data in and of itself?
+And it&#8217;s here that the problems start for data scientists. In order to interpret the machine learning, statistics, analytics, or other results, you have to have an understanding of the underlying processes. <em>It doesn&#8217;t happen in the data at all.</em> That&#8217;s fine for tea and biscuits, and is also probably fairly fine for sales of consumer goods on mass-market web sites, where we have a good intuitive understanding of the processes involved, but will drop-off rapidly as we approach areas that are more complex, more noisy, less intuitive, and less well-understood. How can you differentiate correlation from causality if you don&#8217;t understand what&#8217;s possible in the underlying domain? How, in fact, can you determine anything from the data in and of itself?
 
-This suggests to me that data scientist isn't a job description, or even an aspiration: it's a misnomer that should really be read as "a trained scientist working with lots of rich empirical data". Not as sexy, but probably more useful and less likely to disappoint everyone involved.</p>
+This suggests to me that data scientist isn&#8217;t a job description, or even an aspiration: it&#8217;s a misnomer that should really be read as &#8220;a trained scientist working with lots of rich empirical data&#8221;. Not as sexy, but probably more useful and less likely to disappoint everyone&nbsp;involved.</p>
 		</div>
 	    </article>
 </div>
@@ -126,22 +126,21 @@ This suggests to me that data scientist isn't a job description, or even an aspi
 			    Posted on <a href="../goodreads/tao-te-ching/" rel="bookmark">Sunday 9 March, 2014</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/tao-te-ching/">Tao Te Ching</a></h1>
+		    <h1><a href="../goodreads/tao-te-ching/">Tao Te&nbsp;Ching</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1520551258l/57854._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Lao Tzu
-	  (-400)
+	Lao Tzu&nbsp;(-400)
       </h2>
     </div>
     <p>
-      Whatever your view on Eastern philosophy, this is a book worth reading for its poetry alone. This particular edition, with careful translations and wonderfully atmospheric accompanying photography, is a complete joy and a perfect encapsulation of the words.
+      Whatever your view on Eastern philosophy, this is a book worth reading for its poetry alone. This particular edition, with careful translations and wonderfully atmospheric accompanying photography, is a complete joy and a perfect encapsulation of the&nbsp;words.
       </p>
 <p>
 	5/5.
-	  Finished Sunday 9 March, 2014.
+	  Finished Sunday 9 March,&nbsp;2014.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/876909090?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -157,22 +156,21 @@ This suggests to me that data scientist isn't a job description, or even an aspi
 			    Posted on <a href="../goodreads/the-nazi-and-the-psychiatrist-hermann-goring-dr-douglas-m-kelley-and-a-fatal-meeting-of-minds-at-the-end-of-wwii/" rel="bookmark">Friday 7 March, 2014</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/the-nazi-and-the-psychiatrist-hermann-goring-dr-douglas-m-kelley-and-a-fatal-meeting-of-minds-at-the-end-of-wwii/">The Nazi and the Psychiatrist: Hermann Göring, Dr. Douglas M. Kelley, and a Fatal Meeting of Minds at the End of WWII</a></h1>
+		    <h1><a href="../goodreads/the-nazi-and-the-psychiatrist-hermann-goring-dr-douglas-m-kelley-and-a-fatal-meeting-of-minds-at-the-end-of-wwii/">The Nazi and the Psychiatrist: Hermann Göring, Dr. Douglas M. Kelley, and a Fatal Meeting of Minds at the End of&nbsp;<span class="caps">WWII</span></a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364865552l/17290707._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Jack El-Hai
-	  (2013)
+	Jack El-Hai&nbsp;(2013)
       </h2>
     </div>
     <p>
-      I came to this book at the recommendation of a friend, and it's one of the best I've read recently.<br><br>The book tells the story of the meeting of psychiatrist Douglas Kelley with Reichsmarschall Hermann Goering in the Nuremberg gaol where the latter was on trial. It's mainly a book about Kelley, Goering's personality having been dissected enough in other works (not least Kelley's own <a href="https://www.goodreads.com/book/show/17587693.22_cells_in_nuremberg" title="22 cells in nuremberg by Douglas M. Kelley" rel="nofollow noopener">22 cells in nuremberg</a>, which is itself well worth reading for eyewitness value). It follows Kelley from his childhood as the driven and over-achieving child of a famous, eccentric, Californian family; through his committed treatment of shell-shocked soldiers and his appointment to oversee the mental health of the Nuremberg inmates; to his later career and eventual suicide. The fascination of his suicide is that Kelley chooses the same method as Goering himself -- cyanide -- in a dramatic and public gesture that seems to lack any real motive.<br><br>Kelley's commitment to traumatised soldiers notwithstanding, he was not an attractive personality. His psychiatric certainty is alarming, especially given his reliance on Rorschach blot tests and truth drugs that would not nowadays be well thought of. The author does a good job of highlighting the controversy that Rorschach interpretation engendered, even though the consensus now favours Kelley's view that there was no "Nazi personality" or particular criminal characteristic that set the Nuremberg prisoners apart.<br><br>This really is an excellent read, and the only reason for giving it only four stars instead of five is this (which may be an unfair criticism anyway): the author never really nails the interaction between Kelley and Goering, in the sense of how the experience affected Kelley's personality. The doctor comes across as self-absorbed, opinionated, and controlling. He steps into the limelight whenever possible, offering his opinions with a quite hair-raising certainty, and one can't quite escape the suspicion that his certainly could easily have abetted miscarriages of justice in his later career. He tries to shape his eldest son in a particular image, is withdrawn and self-absorbed, and kills himself in what almost seems like a fit of pique.<br><br>But despite the book's title, the core question remains unanswered: to what extent was Kelley shaped by Nuremberg, and by Goering in particular? Did the experience of the prison change him from confident to arrogant, or was that transition inevitable and perhaps just slightly reinforced? He clearly always had a yearning for fame, and yet received his most famous assignment largely by chance. Was the experience formative for him (as wartime experiences were for so many), or did it simply provide a lever by which to accomplish pre-existing goals? I suspect Nuremberg affected Kelley less than one might imagine, his self-absorption protecting him while allowing him to function. In that sense he was the perfect choice for Nuremberg psychiatrist.
+      I came to this book at the recommendation of a friend, and it&#8217;s one of the best I&#8217;ve read recently.<br><br>The book tells the story of the meeting of psychiatrist Douglas Kelley with Reichsmarschall Hermann Goering in the Nuremberg gaol where the latter was on trial. It&#8217;s mainly a book about Kelley, Goering&#8217;s personality having been dissected enough in other works (not least Kelley&#8217;s own <a href="https://www.goodreads.com/book/show/17587693.22_cells_in_nuremberg" title="22 cells in nuremberg by Douglas M. Kelley" rel="nofollow noopener">22 cells in nuremberg</a>, which is itself well worth reading for eyewitness value). It follows Kelley from his childhood as the driven and over-achieving child of a famous, eccentric, Californian family; through his committed treatment of shell-shocked soldiers and his appointment to oversee the mental health of the Nuremberg inmates; to his later career and eventual suicide. The fascination of his suicide is that Kelley chooses the same method as Goering himself &#8212; cyanide &#8212; in a dramatic and public gesture that seems to lack any real motive.<br><br>Kelley&#8217;s commitment to traumatised soldiers notwithstanding, he was not an attractive personality. His psychiatric certainty is alarming, especially given his reliance on Rorschach blot tests and truth drugs that would not nowadays be well thought of. The author does a good job of highlighting the controversy that Rorschach interpretation engendered, even though the consensus now favours Kelley&#8217;s view that there was no &#8220;Nazi personality&#8221; or particular criminal characteristic that set the Nuremberg prisoners apart.<br><br>This really is an excellent read, and the only reason for giving it only four stars instead of five is this (which may be an unfair criticism anyway): the author never really nails the interaction between Kelley and Goering, in the sense of how the experience affected Kelley&#8217;s personality. The doctor comes across as self-absorbed, opinionated, and controlling. He steps into the limelight whenever possible, offering his opinions with a quite hair-raising certainty, and one can&#8217;t quite escape the suspicion that his certainly could easily have abetted miscarriages of justice in his later career. He tries to shape his eldest son in a particular image, is withdrawn and self-absorbed, and kills himself in what almost seems like a fit of pique.<br><br>But despite the book&#8217;s title, the core question remains unanswered: to what extent was Kelley shaped by Nuremberg, and by Goering in particular? Did the experience of the prison change him from confident to arrogant, or was that transition inevitable and perhaps just slightly reinforced? He clearly always had a yearning for fame, and yet received his most famous assignment largely by chance. Was the experience formative for him (as wartime experiences were for so many), or did it simply provide a lever by which to accomplish pre-existing goals? I suspect Nuremberg affected Kelley less than one might imagine, his self-absorption protecting him while allowing him to function. In that sense he was the perfect choice for Nuremberg&nbsp;psychiatrist.
       </p>
 <p>
 	4/5.
-	  Finished Friday 7 March, 2014.
+	  Finished Friday 7 March,&nbsp;2014.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/843075242?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -188,14 +186,13 @@ This suggests to me that data scientist isn't a job description, or even an aspi
 			    Posted on <a href="../goodreads/the-sandman-vol-7-brief-lives/" rel="bookmark">Thursday 6 March, 2014</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/the-sandman-vol-7-brief-lives/">The Sandman, Vol. 7: Brief Lives</a></h1>
+		    <h1><a href="../goodreads/the-sandman-vol-7-brief-lives/">The Sandman, Vol. 7: Brief&nbsp;Lives</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339922078l/25105._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Neil Gaiman
-	  (1993)
+	Neil Gaiman&nbsp;(1993)
       </h2>
     </div>
     <p>
@@ -203,7 +200,7 @@ This suggests to me that data scientist isn't a job description, or even an aspi
       </p>
 <p>
 	5/5.
-	  Finished Thursday 6 March, 2014.
+	  Finished Thursday 6 March,&nbsp;2014.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/303650254?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -222,7 +219,7 @@ This suggests to me that data scientist isn't a job description, or even an aspi
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -231,12 +228,12 @@ This suggests to me that data scientist isn't a job description, or even an aspi
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

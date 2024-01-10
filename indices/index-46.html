@@ -32,7 +32,7 @@
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -40,7 +40,7 @@
 	    </div>
 	    <ul class="menu">
 <li><a href="../index.html">Home</a></li>
-		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
 		    <li><a href="../research/">Research</a></li>
 		    <li><a href="../development/projects/">Software</a></li>
 		    <li><a href="../writing/">Writing</a></li>
@@ -55,22 +55,22 @@
 			    Posted on <a href="../2013/07/31/power/" rel="bookmark">Wednesday 31 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/31/power/">Basic power measurements</a></h1>
+		    <h1><a href="../2013/07/31/power/">Basic power&nbsp;measurements</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>Some initial measurements of power consumption.</p>
+			<p>Some initial measurements of power&nbsp;consumption.</p>
 <!--more-->
 
-<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes is:
+<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes&nbsp;is:
 </p>
 <ul>
 <li>Normal <code>delay()</code> loop</li>
-    <li>Deep sleep for a period (deep sleep)</li>
-    <li>Flash the LED (awake)</li>
-    <li>Flash the LED differently while sending out radio messages (awake and transmitting)</li>
+    <li>Deep sleep for a period (deep&nbsp;sleep)</li>
+    <li>Flash the <span class="caps">LED</span>&nbsp;(awake)</li>
+    <li>Flash the <span class="caps">LED</span> differently while sending out radio messages (awake and&nbsp;transmitting)</li>
 </ul>
 We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
-<p>The results are as follows:</p>
+<p>The results are as&nbsp;follows:</p>
 <table style="border: 1"><tbody>
 <tr>
 <td>Activity</td>
@@ -89,12 +89,12 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <td>33mA</td>
 </tr>
 <tr>
-<td>Steady LED</td>
+<td>Steady <span class="caps">LED</span></td>
 <td>Deep sleep</td>
 <td>34mA</td>
 </tr>
 <tr>
-<td>Flashing LED</td>
+<td>Flashing <span class="caps">LED</span></td>
 <td>Awake</td>
 <td>45mA</td>
 </tr>
@@ -114,9 +114,9 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <td>87mA</td>
 </tr>
 </tbody></table>
-<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of using <code>delay()</code> is quite power-hungry. The bad news is that the "at rest" power consumption of an Arduino even in deep sleep  -- the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing -- is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there's some variation happening faster than the ammeter's sample time).</p>
-<p>The radio isn't put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the time.</p>
-<p>[UPDATE 1Aug2013: made the table layout a bit clearer.]</p>
+<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of&nbsp;using <code>delay()</code> is quite power-hungry. The bad news is that the &#8220;at rest&#8221; power consumption of an Arduino even in deep sleep  &#8212; the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing &#8212; is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there&#8217;s some variation happening faster than the ammeter&#8217;s sample&nbsp;time).</p>
+<p>The radio isn&#8217;t put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the&nbsp;time.</p>
+<p>[<span class="caps">UPDATE</span> 1Aug2013: made the table layout a bit&nbsp;clearer.]</p>
 		</div>
 	    </article>
 </div>
@@ -127,37 +127,37 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 			    Posted on <a href="../2013/07/31/big-rich/" rel="bookmark">Wednesday 31 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/31/big-rich/">Big, or just rich?</a></h1>
+		    <h1><a href="../2013/07/31/big-rich/">Big, or just&nbsp;rich?</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>The current focus on "big data" may be obscuring something more interesting: it's often not the pure size of a dataset that's important.
+			<p>The current focus on &#8220;big data&#8221; may be obscuring something more interesting: it&#8217;s often not the pure size of a dataset that&#8217;s important.
 
 <!--more-->
 
-The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, "big data" techniques cover a number of possible approaches:
+The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, &#8220;big data&#8221; techniques cover a number of possible&nbsp;approaches:
 </p>
 <ul>
-<li>Look through the data for recurring patterns (data mining)</li>
-    <li>Present a summary of the data to highlight features (analytics)</li>
-    <li>(Less commonly) Identify automatically from the dataset what's happening in the real world (situation recognition)</li>
+<li>Look through the data for recurring patterns (data&nbsp;mining)</li>
+    <li>Present a summary of the data to highlight features&nbsp;(analytics)</li>
+    <li>(Less commonly) Identify automatically from the dataset what&#8217;s happening in the real world (situation&nbsp;recognition)</li>
 </ul>
-There's a wealth of <a href="http://data.gov.uk/" target="_blank">UK government data available</a>, for example. Making it machine-readable means it can be presented in different ways, for example <a href="http://www.telegraph.co.uk/news/uknews/crime/8294450/Crime-maps-are-just-the-beginning.html" target="_blank">geographically</a>. The real opportunities seem to come from cross-overs between datasets, though, where they can be mined and manipulated to find relationships that might otherwise remain hidden, for example the effects of crime on house prices.
+There&#8217;s a wealth of <a href="http://data.gov.uk/" target="_blank"><span class="caps">UK</span> government data available</a>, for example. Making it machine-readable means it can be presented in different ways, for example <a href="http://www.telegraph.co.uk/news/uknews/crime/8294450/Crime-maps-are-just-the-beginning.html" target="_blank">geographically</a>. The real opportunities seem to come from cross-overs between datasets, though, where they can be mined and manipulated to find relationships that might otherwise remain hidden, for example the effects of crime on house prices.
 
-Although the size and availability of datasets clearly makes a difference here -- big open data -- we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.
+Although the size and availability of datasets clearly makes a difference here &#8212; big open data &#8212; we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.
 
-<em>Big data</em> is a strange name to start with: when is data "big"? The only meaningful definition I can think of is "a dataset that's large relative to the current computing and storage capacity being deployed against it" -- which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less "big" if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can't readily name a science that <em>isn't</em> based on data. (This isn't just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren't, covered by big data/data science research.)
+<em>Big data</em> is a strange name to start with: when is data &#8220;big&#8221;? The only meaningful definition I can think of is &#8220;a dataset that&#8217;s large relative to the current computing and storage capacity being deployed against it&#8221; &#8212; which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less &#8220;big&#8221; if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can&#8217;t readily name a science that <em>isn&#8217;t</em> based on data. (This isn&#8217;t just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren&#8217;t, covered by big data/data science research.)
 
-It's worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there's an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won't reliably help you to distinguish between these options without further, non-data-driven insight.
+It&#8217;s worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there&#8217;s an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won&#8217;t reliably help you to distinguish between these options without further, non-data-driven insight.
 
-Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you're trying to relate data to the the real world, it's essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it's the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).
+Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you&#8217;re trying to relate data to the the real world, it&#8217;s essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it&#8217;s the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).
 
-Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset -- because they look indistinguishably alike -- the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don't</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.
+Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset &#8212; because they look indistinguishably alike &#8212; the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don&#8217;t</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.
 
-I've been struggling to think of an example of this idea, and this is the best I've come up with (and it's not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.
+I&#8217;ve been struggling to think of an example of this idea, and this is the best I&#8217;ve come up with (and it&#8217;s not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.
 
-There's a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he's actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it's increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.
+There&#8217;s a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he&#8217;s actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it&#8217;s increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.
 
-Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people's actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.
+Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people&#8217;s actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.
 		</div>
 	    </article>
 </div>
@@ -168,19 +168,19 @@ Focusing on connections between data has its own dangers, of course, since we al
 			    Posted on <a href="../2013/07/26/improvements/" rel="bookmark">Friday 26 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/26/improvements/">Some improvements to SleepySketch</a></h1>
+		    <h1><a href="../2013/07/26/improvements/">Some improvements to&nbsp;SleepySketch</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>It's funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early testing.</p>
+			<p>It&#8217;s funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early&nbsp;testing.</p>
 <!--more-->
 
-<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you're planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of difference.</p>
-<p>The second issue concerns scheduling -- or rather regular
+<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you&#8217;re planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of&nbsp;difference.</p>
+<p>The second issue concerns scheduling &#8212; or rather regular
 scheduling. Most sampling and communication tasks occur on predictable
 schedules, say every five hours. In an <a href="../2013/06/01/actor-systems/" target="_blank">actor
 framework</a>, that means the actor instance (or another one) has to
 be re-scheduled after the first has run. We can do this within the
-definition of the actor, for example using the <code>post()</code>
+definition of the actor, for example using&nbsp;the <code>post()</code>
 action:</p>
 <div class="code"><pre class="code literal-block"><span class="n">class</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">post</span><span class="p">();</span>
@@ -194,24 +194,23 @@ action:</p>
 <span class="p">}</span>
 </pre></div>
 
-<p>(This also demonstrates the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can't re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we'd be mixing up "real" behaviour with scheduling; more importantly, we'd have to do that for <em>every</em> actor that wants to run repeatedly.</p>
-<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn't affected by the time the actor actually takes to run.)</p>
+<p>(This also demonstrates&nbsp;the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can&#8217;t&nbsp;re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we&#8217;d be mixing up &#8220;real&#8221; behaviour with scheduling; more importantly, we&#8217;d have to do that for <em>every</em> actor that wants to run&nbsp;repeatedly.</p>
+<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn&#8217;t affected by the time the actor actually takes to&nbsp;run.)</p>
 <div class="code"><pre class="code literal-block"><span class="n">Actor</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">RepeatingActor</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
 <span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
-<p>The <code>RepeatingActor</code> runs the behaviour of
+<p>The <code>RepeatingActor</code> runs the behaviour&nbsp;of
 <code>SomeActor</code> every 5 hours, and we initially schedule it to
 run in 5 hours. We can actually encapsulate all of this by adding a
-method to <code>SleepySketch</code> itself:</p>
+method&nbsp;to <code>SleepySketch</code> itself:</p>
 <div class="code"><pre class="code literal-block"><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleEvery</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 
-<p>to perform the wrapping and initial scheduling automatically.</p>
+<p>to perform the wrapping and initial scheduling&nbsp;automatically.</p>
 <p>Simple sleepy sketches can now be created at set-up, by scheduling
 repeating actors, and we can define the various actors and re-use them
-in different scheduling situations without complicating their own
-code.</p>
+in different scheduling situations without complicating their own&nbsp;code.</p>
 		</div>
 	    </article>
 </div>
@@ -222,21 +221,21 @@ code.</p>
 			    Posted on <a href="../2013/07/26/radio-survey/" rel="bookmark">Friday 26 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/26/radio-survey/">Radio survey</a></h1>
+		    <h1><a href="../2013/07/26/radio-survey/">Radio&nbsp;survey</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>A simple radio survey establishes the ranges that the radios can manage.</p>
+			<p>A simple radio survey establishes the ranges that the radios can&nbsp;manage.</p>
 <!--more-->
 
-<p>The 2mW XBee radios we've got have a nominal range of 100m -- but that's in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There's a reasonable chance that these obstacles will reduce the real range significantly.</p>
+<p>The 2mW XBee radios we&#8217;ve got have a nominal range of 100m &#8212; but that&#8217;s in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There&#8217;s a reasonable chance that these obstacles will reduce the real range&nbsp;significantly.</p>
 <p><img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="../images/citizen-sensing/sensor-enclosure.jpg"></p>
-<p>A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station -- something as simple as possible, like sending a single packet with a count every ten seconds -- and keep careful track of the return values coming back from the radio library. We then use the only output device we have -- an LED -- to indicate the success or failure of each operation, preferably with an indication of <em>why</em> it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we've reached the edge of the effective range.</p>
-<p>With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect <em>via</em> the first, automatically. That's the theory, anyway...</p>
-<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an ATJV1 command issued to it. The easiest way to do this is at set-up, <a href="../2013/07/02/xctu/" target="_blank">through the advanced settings in X-CTU</a>.)</p>
-<p>The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30--40m -- somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10--20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no effort.</p>
-<p>This is somewhat disappointing, but that's what this project is all about: the practicalities of sensor networking with cheap hardware.</p>
-<p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the enclosure.</p>
-<p>It's also worth noting that the radio segment is horrendously hard to debug with only a single LED for signalling. Adding more LEDs might help, but it's still a very poor debugging interface, even compared to printing status messages to the USB port.</p>
+<p>A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station &#8212; something as simple as possible, like sending a single packet with a count every ten seconds &#8212; and keep careful track of the return values coming back from the radio library. We then use the only output device we have &#8212; an <span class="caps">LED</span> &#8212; to indicate the success or failure of each operation, preferably with an indication of <em>why</em> it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we&#8217;ve reached the edge of the effective&nbsp;range.</p>
+<p>With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect <em>via</em> the first, automatically. That&#8217;s the theory,&nbsp;anyway&#8230;</p>
+<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an <span class="caps">ATJV1</span> command issued to it. The easiest way to do this is at set-up, <a href="../2013/07/02/xctu/" target="_blank">through the advanced settings in X-<span class="caps">CTU</span></a>.)</p>
+<p>The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30&#8212;40m &#8212; somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10&#8212;20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no&nbsp;effort.</p>
+<p>This is somewhat disappointing, but that&#8217;s what this project is all about: the practicalities of sensor networking with cheap&nbsp;hardware.</p>
+<p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the&nbsp;enclosure.</p>
+<p>It&#8217;s also worth noting that the radio segment is horrendously hard to debug with only a single <span class="caps">LED</span> for signalling. Adding more LEDs might help, but it&#8217;s still a very poor debugging interface, even compared to printing status messages to the <span class="caps">USB</span>&nbsp;port.</p>
 		</div>
 	    </article>
 </div>
@@ -247,30 +246,30 @@ code.</p>
 			    Posted on <a href="../2013/07/25/sleepy-sketches/" rel="bookmark">Thursday 25 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/25/sleepy-sketches/">Sleepy sketches</a></h1>
+		    <h1><a href="../2013/07/25/sleepy-sketches/">Sleepy&nbsp;sketches</a></h1>
 		</div>
 		<div class="entry-content">
 			<p>Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.
 
 <!--more-->
 
-The standard Arduino software model is, well, standard: programs ("sketches") are structured in terms of a <code>setup()</code> function that runs once when the system restarts and a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn't all that desirable: a sensor system typically tries to <a href="../2013/07/25/sleepy-sketches/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
+The standard Arduino software model is, well, standard: programs (&#8220;sketches&#8221;) are structured in terms of&nbsp;a <code>setup()</code> function that runs once when the system restarts and&nbsp;a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn&#8217;t all that desirable: a sensor system typically tries to <a href="../2013/07/25/sleepy-sketches/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
 
-There are at least two ways to do this. The simplest is a library that lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means that <code>loop()</code> encapsulates all the program's logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another
+There are at least two ways to do this. The simplest is a library that&nbsp;lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means&nbsp;that <code>loop()</code> encapsulates all the program&#8217;s logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another
 
 If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="../2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.
 
-Turning this into code, we get the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.
+Turning this into code, we get&nbsp;the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.
 
 ![SleepySketch design](/images/citizen-sensing/sleepysketch.png)
 
-There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance RAM usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways: a <code>BusySleeper</code> that uses the normal <code>delay()</code> function (a busy loop) with no power-saving functions, a <code>HeavySleeper</code> that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing the <code>Actor</code> class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.
+There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance <span class="caps">RAM</span> usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways:&nbsp;a <code>BusySleeper</code> that uses the&nbsp;normal <code>delay()</code> function (a busy loop) with no power-saving functions,&nbsp;a <code>HeavySleeper</code> that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing&nbsp;the <code>Actor</code> class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.
 
-The standard library uses singleton classes quite a lot, so for example the <code>Serial</code> object represents the USB connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a singleton, <code>Sleepy</code>
+The standard library uses singleton classes quite a lot, so for example&nbsp;the <code>Serial</code> object represents the <span class="caps">USB</span> connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a&nbsp;singleton, <code>Sleepy</code>
 
 The program structure then loops something like this. If we assume
-that we've defined an actor class <code>PingActor</code>, then we can
-do the following:
+that we&#8217;ve defined an actor&nbsp;class <code>PingActor</code>, then we can
+do the&nbsp;following:
 
 
 </p>
@@ -288,9 +287,9 @@ do the following:
 
 
 
-The <code>setup()</code> code initialises the serial port and the sleepy sketch using a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.
+The <code>setup()</code> code initialises the serial port and the sleepy sketch using&nbsp;a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If&nbsp;the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.
 
-This is a first design, now just about working. It's still not as easy
+This is a first design, now just about working. It&#8217;s still not as easy
 as it could be, however, and needs some testing to make sure that the
 power savings do actually materialise.
 		</div>
@@ -306,7 +305,7 @@ power savings do actually materialise.
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -315,12 +314,12 @@ power savings do actually materialise.
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

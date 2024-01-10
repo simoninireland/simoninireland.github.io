@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,40 +67,40 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 28 May, 2010</a>
 	    </span>
 	</div>
-	<h1>Languages for extensible virtual machines</h1>
+	<h1>Languages for extensible virtual&nbsp;machines</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Many languages have an underlying virtual machine (VM) to provide a more portable and convenient substrate for compilation or interpretation. For language research it's useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what's the appropriate  language for writing experimental languages?
+		<p>Many languages have an underlying virtual machine (<span class="caps">VM</span>) to provide a more portable and convenient substrate for compilation or interpretation. For language research it&#8217;s useful to be able to generate custom VMs and other language tools for different languages. Which raises the question: what&#8217;s the appropriate  language for writing experimental languages?
 
 <!--more-->
 
-What I have in mind is slightly more than just VMs, and more a platform for experimenting with language design for novel environments such as sensor-driven systems. As well as a runtime, this requires the ability to parse, to represent and evaluate type and semantic rules, and to provide a general framework for computation that can then be exposed into a target language as constructs, types and so forth. What's the right language in which to do all this?
+What I have in mind is slightly more than just VMs, and more a platform for experimenting with language design for novel environments such as sensor-driven systems. As well as a runtime, this requires the ability to parse, to represent and evaluate type and semantic rules, and to provide a general framework for computation that can then be exposed into a target language as constructs, types and so forth. What&#8217;s the right language in which to do all this?
 
-This isn't a simple question. It's well-accepted that the correct choice of language is vital to the success of a coding project.  One could work purely at the language level, exploring constructs and type systems without any real constraint of the real world (such as being runnable on a sensor mote). This has to some extent been traditional in programming language research, justified by the Moore's law increases in performance of the target machines. It isn't justifiable for sensor networks, though, where <a href="../../../03/things-that-wont-change/">we won't see the same phenomenon</a>. If we want to prototype realistic language tools in the same framework, we need at least a run-time VM that was appropriate for these target devices; alternatively we could ignore this, focus on the language, and prototype only when we're happy with the structures, using a different framework. My gut ffeeling is that the former is preferable, if it's possible, for reasons of conceptual clarity, impact and simplicity. But even without making this decision we can consider the features of different candidate language-writing languages:
+This isn&#8217;t a simple question. It&#8217;s well-accepted that the correct choice of language is vital to the success of a coding project.  One could work purely at the language level, exploring constructs and type systems without any real constraint of the real world (such as being runnable on a sensor mote). This has to some extent been traditional in programming language research, justified by the Moore&#8217;s law increases in performance of the target machines. It isn&#8217;t justifiable for sensor networks, though, where <a href="../../../03/things-that-wont-change/">we won&#8217;t see the same phenomenon</a>. If we want to prototype realistic language tools in the same framework, we need at least a run-time <span class="caps">VM</span> that was appropriate for these target devices; alternatively we could ignore this, focus on the language, and prototype only when we&#8217;re happy with the structures, using a different framework. My gut ffeeling is that the former is preferable, if it&#8217;s possible, for reasons of conceptual clarity, impact and simplicity. But even without making this decision we can consider the features of different candidate language-writing&nbsp;languages:
 </p>
 <h3>C</h3>
-The most obvious approach is to use C, which is run-time-efficient and runs on any potential platform. For advanced language research, though, it's less attractive because of its poor symbolic data handling. That makes it harder to write type-checking sub-systems and the like, which are essentially symbolic mathematics.
+The most obvious approach is to use C, which is run-time-efficient and runs on any potential platform. For advanced language research, though, it&#8217;s less attractive because of its poor symbolic data handling. That makes it harder to write type-checking sub-systems and the like, which are essentially symbolic mathematics.
 <h3>Forth</h3>
-<a href="../../../03/forth-for-sensors/">I've wondered about Forth before</a>. At one level it combines the same drawbacks as C -- poor symbolic and dynamic data handling -- with the additional drawback of being unfamiliar to almost everyone.
+<a href="../../../03/forth-for-sensors/">I&#8217;ve wondered about Forth before</a>. At one level it combines the same drawbacks as C &#8212; poor symbolic and dynamic data handling &#8212; with the additional drawback of being unfamiliar to almost everyone.
 
-Forth <em>does</em> have some redeeming features, though. Firstly, threaded interpretation means that additional layers of abstraction are largely cost-free: they run at the same speed as the language itself. Moreover there's a sense in which threaded interpretation blurs the distinction between host language and meta-language: you don't write Forth applications, you extend it towards the problem, so the meta-language <em>becomes</em> the VM and language tool. This is something that needs some further exploration.
+Forth <em>does</em> have some redeeming features, though. Firstly, threaded interpretation means that additional layers of abstraction are largely cost-free: they run at the same speed as the language itself. Moreover there&#8217;s a sense in which threaded interpretation blurs the distinction between host language and meta-language: you don&#8217;t write Forth applications, you extend it towards the problem, so the meta-language <em>becomes</em> the <span class="caps">VM</span> and language tool. This is something that needs some further exploration.
 <h3>Scheme</h3>
-Scheme's advantages are its simplicity, regularity, and pretty much unrivalled flexibility in handling symbolic data. There's <a href="../../cs-book-worth-reading-twice/">a long  tradition of Scheme-based language tooling</a>, and so a lot of experience and libraries to make use of. It's also easy to write purely functional code, which can aid re-use.
+Scheme&#8217;s advantages are its simplicity, regularity, and pretty much unrivalled flexibility in handling symbolic data. There&#8217;s <a href="../../cs-book-worth-reading-twice/">a long  tradition of Scheme-based language tooling</a>, and so a lot of experience and libraries to make use of. It&#8217;s also easy to write purely functional code, which can aid re-use.
 
 Scheme is dynamically typed, which can be great when exploring approaches like partial evaluation (specialising an interpreter against a particular piece of code to get a compiled program, for example).
 <h3>Haskell</h3>
-In some ways, Haskell is the obvious language for a new language project. The strong typing, type classing and modules mean one can generate a typed meta-language. There are lots of libraries and plenty of activity in the research community. Moreover Haskell is in many ways the "mathematician's choice" of language, since one can often map mathematical concepts almost directly into code. Given thaat typing and semantics are just mathematical operations over symbols, this is a significant attraction.
+In some ways, Haskell is the obvious language for a new language project. The strong typing, type classing and modules mean one can generate a typed meta-language. There are lots of libraries and plenty of activity in the research community. Moreover Haskell is in many ways the &#8220;mathematician&#8217;s choice&#8221; of language, since one can often map mathematical concepts almost directly into code. Given thaat typing and semantics are just mathematical operations over symbols, this is a significant attraction.
 
-Where Haskell falls over, of course, is its runtime overheads -- mostly these days in terms of memory rather than performance. It essentially mandates a choice of target platform to be fairly meaty, which closes-off some opportunities. There are some "staged" Haskell strategies that might work around this, and one could potentially stage the code to another runtime virtual machine. Or play games like implement a Forth VM inside Haskell for experimentation, and then emit code for a <em>different</em> Forth implementation for runtime.
+Where Haskell falls over, of course, is its runtime overheads &#8212; mostly these days in terms of memory rather than performance. It essentially mandates a choice of target platform to be fairly meaty, which closes-off some opportunities. There are some &#8220;staged&#8221; Haskell strategies that might work around this, and one could potentially stage the code to another runtime virtual machine. Or play games like implement a Forth <span class="caps">VM</span> inside Haskell for experimentation, and then emit code for a <em>different</em> Forth implementation for runtime.
 <h3>Java</h3>
-Java remains the language <em>du jour</em> for most new projects. It has decent dynamic data handling, poor symbolic data handling, fairly large run-time overheads and a well-stocked library for re-use. (Actually I used Java for <a href="../../../../publications/#Vanilla-GCSE99">Vanilla</a>, an earlier project in a similar area.) Despite the attractions, Java feels wrong. It doesn't provide a good solution to <em>any</em> of the constraints, and would be awkward as a platform for manipulating rules-based descriptions.
+Java remains the language <em>du jour</em> for most new projects. It has decent dynamic data handling, poor symbolic data handling, fairly large run-time overheads and a well-stocked library for re-use. (Actually I used Java for <a href="../../../../publications/#Vanilla-GCSE99">Vanilla</a>, an earlier project in a similar area.) Despite the attractions, Java feels wrong. It doesn&#8217;t provide a good solution to <em>any</em> of the constraints, and would be awkward as a platform for manipulating rules-based descriptions.
 <h3>Smalltalk</h3>
-Smalltalk -- and especially <a href="http://www.squeak.org">Squeak</a> -- isn't a popular choice within language research, but does have a portable virtual machine, VM generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It's also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework -- something that'd be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.
+Smalltalk &#8212; and especially <a href="http://www.squeak.org">Squeak</a> &#8212; isn&#8217;t a popular choice within language research, but does have a portable virtual machine, <span class="caps">VM</span> generation, and other nice features and libraries. The structure is also attractive, being modern and object-oriented. It&#8217;s also a good platform for building interactive systems, so one could do simulation, visual programming and the like within the same framework &#8212; something that&#8217;d be much harder with other choices. There are also some obvious connectionns between Smalltalk and pervasive systems, where one is talking about the interactions of objects in the real world.
 
-Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It's unfortunate there isn't a clear winner; alternatively, it's positive that there's a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.
+Where does that leave us? Nowhere, in a sense, other than with a list of characteristics of different candidate languages for language research. It&#8217;s unfortunate there isn&#8217;t a clear winner; alternatively, it&#8217;s positive that there&#8217;s a choice depending on the final direction. The worry has to be that a project like this is a moving target that moves away from the areas of strength for any choice made.
 	    </div>
 	</article>
 </div>
@@ -127,7 +127,7 @@ Where does that leave us? Nowhere, in a sense, other than with a list of charact
 		    <span>  </span>
 		<a href="../../../../categories/haskell/">haskell</a>
 		    <span>  </span>
-		<a href="../../../../categories/moores-law/">moore's law</a>
+		<a href="../../../../categories/moores-law/">moore&#8217;s law</a>
 		    <span>  </span>
 		<a href="../../../../categories/programming/">programming</a>
 		    <span>  </span>
@@ -149,7 +149,7 @@ Where does that leave us? Nowhere, in a sense, other than with a list of charact
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -158,12 +158,12 @@ Where does that leave us? Nowhere, in a sense, other than with a list of charact
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

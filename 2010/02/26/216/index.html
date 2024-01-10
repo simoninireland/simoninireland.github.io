@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,29 +67,29 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 26 February, 2010</a>
 	    </span>
 	</div>
-	<h1>Programming with limited certainty</h1>
+	<h1>Programming with limited&nbsp;certainty</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Sensor networks are all about uncertainty: if the sensor says it's 20°C  out there, then it might be 20°C plus-or-minus half a degree or so (limited precision); or it might be some different temperature, and the sensor's just reported a duff value for some reason (limited accuracy). By contrast, computers most definitely <em>aren't</em> about uncertainty, a fact enshrined in the famous maxim "garbage in, garbage out". What does this mean for our ability to build really large, robust and flexible sensor networks?
+		<p>Sensor networks are all about uncertainty: if the sensor says it&#8217;s 20°C  out there, then it might be 20°C plus-or-minus half a degree or so (limited precision); or it might be some different temperature, and the sensor&#8217;s just reported a duff value for some reason (limited accuracy). By contrast, computers most definitely <em>aren&#8217;t</em> about uncertainty, a fact enshrined in the famous maxim &#8220;garbage in, garbage out&#8221;. What does this mean for our ability to build really large, robust and flexible sensor networks?
 
-<!--more-->All the really foundational models of computing -- λ calculus, Turing machines and the like -- pretty much reflect this notion that input is correct in some sense, and if it's wrong then that's an error to be corrected outside the computational system. That seems to mean that the computational system can't itself either tolerate or express the notions of limited certainty -- precision and accuracy -- that lie at the core of sensor networks (and a lot of other modern systems, or course). That suggests to me that there might be a problem at the heart of computer science as we currently formulate it: it isn't a realistic model of the world we're trying to compute over.
+<!--more-->All the really foundational models of computing &#8212; λ calculus, Turing machines and the like &#8212; pretty much reflect this notion that input is correct in some sense, and if it&#8217;s wrong then that&#8217;s an error to be corrected outside the computational system. That seems to mean that the computational system can&#8217;t itself either tolerate or express the notions of limited certainty &#8212; precision and accuracy &#8212; that lie at the core of sensor networks (and a lot of other modern systems, or course). That suggests to me that there might be a problem at the heart of computer science as we currently formulate it: it isn&#8217;t a realistic model of the world we&#8217;re trying to compute over.
 
-In some ways this is nether surprising nor threatening. Any mathematical or computational model is only a simplified abstraction of the real world, for which we have to make often staggeringly bold simplifications if we're to get anywhere. We should however always be prepared to challenge the <em>validity</em> and <em>necessity</em> of these simplifications, and that's what I'd like to do here.
+In some ways this is nether surprising nor threatening. Any mathematical or computational model is only a simplified abstraction of the real world, for which we have to make often staggeringly bold simplifications if we&#8217;re to get anywhere. We should however always be prepared to challenge the <em>validity</em> and <em>necessity</em> of these simplifications, and that&#8217;s what I&#8217;d like to do here.
 
-As far as validity is concerned, the simplification is quite patently <em>invalid</em> when it comes to any system that operates with real-world data: some of it is <em>bound</em> to be "wrong" in some sense. This isn't the same as being tolerant of mistakes, such as when someone presses the delete key by mistake: that's a  action that certainly happened and to which the system responded correctly, albeit "wrongly" from the user's perspective. Interesting problem, but different: we're talking here about responding to inherently erroneous input -- the delete key seeming to press itself, if you like.
+As far as validity is concerned, the simplification is quite patently <em>invalid</em> when it comes to any system that operates with real-world data: some of it is <em>bound</em> to be &#8220;wrong&#8221; in some sense. This isn&#8217;t the same as being tolerant of mistakes, such as when someone presses the delete key by mistake: that&#8217;s a  action that certainly happened and to which the system responded correctly, albeit &#8220;wrongly&#8221; from the user&#8217;s perspective. Interesting problem, but different: we&#8217;re talking here about responding to inherently erroneous input &#8212; the delete key seeming to press itself, if you like.
 
-Necessity, then: is it necessary to handle computation in this way? Clearly not: we can easily conjecture a computational model that's more tolerant of input with limited certainty.
+Necessity, then: is it necessary to handle computation in this way? Clearly not: we can easily conjecture a computational model that&#8217;s more tolerant of input with limited certainty.
 
-Consider precision first. If the input is only known to a limited precision, then we don't want that error margin to cause enormous errors. If we have a function $latex f$, then we want $latex f$ to exhibit a tolerance of imprecision such that $latex \delta x &lt; tol_x \Rightarrow \left | f(x + \delta x) - f(x) \right | &lt; s \left | \delta x \right|$ for some scaling factor $latex s &lt; 1$. $latex f$ doesn't cause errors to blow-up in unpredictable ways. A lot of functions behave in exactly this way: for example, in a sliding-window average function $latex f_w(\overline{x}, x) = \frac{x + \overline{x}(w - 1)}{w}$ for an average $latex \overline{x}$ computed from $latex w$ recent observations, we have that $latex s = \frac{1}{w}$. Small errors therefore perturb the result significantly less than the input is perturbed. If the errors are uniformly distributed, the function should converge on the "true" value.
+Consider precision first. If the input is only known to a limited precision, then we don&#8217;t want that error margin to cause enormous errors. If we have a function $latex f$, then we want $latex f$ to exhibit a tolerance of imprecision such that $latex \delta x &lt; tol_x \Rightarrow \left | f(x + \delta x) - f(x) \right | &lt; s \left | \delta x \right|$ for some scaling factor $latex s &lt; 1$. $latex f$ doesn&#8217;t cause errors to blow-up in unpredictable ways. A lot of functions behave in exactly this way: for example, in a sliding-window average function $latex f_w(\overline{x}, x) = \frac{x + \overline{x}(w - 1)}{w}$ for an average $latex \overline{x}$ computed from $latex w$ recent observations, we have that $latex s = \frac{1}{w}$. Small errors therefore perturb the result significantly less than the input is perturbed. If the errors are uniformly distributed, the function should converge on the &#8220;true&#8221; value.
 
-Conversely, a large, accurate new observation will perturb the average only slowly, so large step-changes will be detected only slowly. It's hard to distinguish such a change when it first happens from an inaccurate reading. There are various ways of dealing with this, such as using a weighted sliding window with non-linear weighting.
+Conversely, a large, accurate new observation will perturb the average only slowly, so large step-changes will be detected only slowly. It&#8217;s hard to distinguish such a change when it first happens from an inaccurate reading. There are various ways of dealing with this, such as using a weighted sliding window with non-linear weighting.
 
-This is a rather topological idea. Rather than simply mapping points in an input space (such as temperature) to an output space (average temperature over the past few minutes), we're also requiring that the mapping take elements close in the input space to elements close in the result space: we require that it be a <em>contraction mapping</em>. Building systems from contraction mappings, perhaps combined with contraction-preserving operators, yields systems that are robust to small errors in precision from their sensors.
+This is a rather topological idea. Rather than simply mapping points in an input space (such as temperature) to an output space (average temperature over the past few minutes), we&#8217;re also requiring that the mapping take elements close in the input space to elements close in the result space: we require that it be a <em>contraction mapping</em>. Building systems from contraction mappings, perhaps combined with contraction-preserving operators, yields systems that are robust to small errors in precision from their sensors.
 
-Of course not all systems <em>are</em> actually like this, and in many cases we <em>want</em> rapid changes to be detected quickly and/or propagated. The point, perhaps, is that this is a <em>choice we should make</em> rather than a <em>consequence</em> of choosing a particular model of computation. There might actually be a model of computation lurking about here, in which we define functions coupled with a model of how their input and output errors should behave. At the very least, this yields systems in which we can predict the consequences of errors and imprecisions, which is a major challenge to deal with at present.</p>
+Of course not all systems <em>are</em> actually like this, and in many cases we <em>want</em> rapid changes to be detected quickly and/or propagated. The point, perhaps, is that this is a <em>choice we should make</em> rather than a <em>consequence</em> of choosing a particular model of computation. There might actually be a model of computation lurking about here, in which we define functions coupled with a model of how their input and output errors should behave. At the very least, this yields systems in which we can predict the consequences of errors and imprecisions, which is a major challenge to deal with at&nbsp;present.</p>
 	    </div>
 	</article>
 </div>
@@ -129,11 +129,11 @@ Of course not all systems <em>are</em> actually like this, and in many cases we 
 	</div>
 	<div class="next">
 	    <a href="../../../03/05/things-that-wont-change/" rel="next">
-		<span class="meta-nav">Newer Post</span>Things that won't change
+		<span class="meta-nav">Newer Post</span>Things that won&#8217;t change
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -142,12 +142,12 @@ Of course not all systems <em>are</em> actually like this, and in many cases we 
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

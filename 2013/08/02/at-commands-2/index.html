@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,23 +67,23 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 2 August, 2013</a>
 	    </span>
 	</div>
-	<h1>Issuing AT commands</h1>
+	<h1>Issuing <span class="caps">AT</span>&nbsp;commands</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Controlling the XBee requires issuing AT commands. The XBee library has the low-level machinery to do this.</p>
+		<p>Controlling the XBee requires issuing <span class="caps">AT</span> commands. The XBee library has the low-level machinery to do&nbsp;this.</p>
 <!--more-->
 
-<p>AT commands are the basis for controlling almost all modems, and the XBee is no different. In API mode, AT commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use form.</p>
-<p>The basic approach is to send an AT command request packet and then
-read a returned packet acknowledging the command. For the moment we'll
-stick to "setting" commands, where the AT command takes an integer
+<p><span class="caps">AT</span> commands are the basis for controlling almost all modems, and the XBee is no different. In <span class="caps">API</span> mode, <span class="caps">AT</span> commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use&nbsp;form.</p>
+<p>The basic approach is to send an <span class="caps">AT</span> command request packet and then
+read a returned packet acknowledging the command. For the moment we&#8217;ll
+stick to &#8220;setting&#8221; commands, where the <span class="caps">AT</span> command takes an integer
 parameter: the other are needed less frequently. We construct the
 request packet, send it, read the response, and check that all went
 well. This isolates the rest of the program from the message exchange,
-but also hides the exact nature of any error.</p>
+but also hides the exact nature of any&nbsp;error.</p>
 <div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span>
 
 <span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
@@ -109,7 +109,7 @@ but also hides the exact nature of any error.</p>
 <span class="p">}</span>
 </pre></div>
 
-<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../../07/02/xctu/">set using X-CTU </a>when the radio firmware is installed, but commands are sometimes needed at run-time too.</p>
+<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../../07/02/xctu/">set using X-<span class="caps">CTU</span> </a>when the radio firmware is installed, but commands are sometimes needed at run-time&nbsp;too.</p>
 	    </div>
 	</article>
 </div>
@@ -156,7 +156,7 @@ but also hides the exact nature of any error.</p>
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -165,12 +165,12 @@ but also hides the exact nature of any error.</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

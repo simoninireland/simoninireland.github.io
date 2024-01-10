@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,47 +67,46 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 17 July, 2020</a>
 	    </span>
 	</div>
-	<h1>Self-publishing "Epidemic modelling"</h1>
+	<h1>Self-publishing &#8220;Epidemic&nbsp;modelling&#8221;</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
 		<p>I thought I should record the journey I took to self-publishing a
-science book, in case anyone else decides they want to follow me on
-it.</p>
+science book, in case anyone else decides they want to follow me on&nbsp;it.</p>
 <!-- TEASER_END -->
 
 <p>When I first decided to write <a href="https://www.amazon.co.uk/dp/1838535659/">a book on epidemic
-modelling</a> I didn't really have a
+modelling</a> I didn&#8217;t really have a
 clear idea what I intended. Was it supposed to be a tutorial? Popular
 science? Hardcore technical science? Was it even supposed to be for
 public consumption at all? And regardless of the answer to <em>that</em>
-question, how do you write, format, and publish a book when you don't
-want to put yourself under stress by engaging with a publisher?</p>
+question, how do you write, format, and publish a book when you don&#8217;t
+want to put yourself under stress by engaging with a&nbsp;publisher?</p>
 <p>After just under three months I now know the answers to these
 questions. It was a popular science tutorial complete with code. It
 <em>was</em> intended for public consumption, online and in print. And the
 technology is accessible and rewarding for the dedicated hacker
-(although possibly an indescribable frustration to anyone else).</p>
-<h3>The backstory</h3>
-<p>Despite a couple of decades in academia, I'd never written a book
-before. The only book-length document I'd ever completed was my PhD
-thesis, and back then (1992...) you wrote it, printed it yourself, and
+(although possibly an indescribable frustration to anyone&nbsp;else).</p>
+<h3>The&nbsp;backstory</h3>
+<p>Despite a couple of decades in academia, I&#8217;d never written a book
+before. The only book-length document I&#8217;d ever completed was my PhD
+thesis, and back then (1992&#8230;) you wrote it, printed it yourself, and
 took it along to the university print shop to be bound, and delivered
-it to the library to be filed -- probably there to rest
-undisturbed. (PhD theses are the ultimate write-only document.)</p>
+it to the library to be filed &#8212; probably there to rest
+undisturbed. (PhD theses are the ultimate write-only&nbsp;document.)</p>
 <p>I did make a start on a book a few years ago. This was conceived as a
 textbook on complex networks that would contain all the descriptions,
 maths, and code needed to get started working in the area. There are
-other introductions, but they're not typically written with computer
-scientists in mind -- or even those who are interested in building
-their own simulations -- and so they don't typically contain any code
+other introductions, but they&#8217;re not typically written with computer
+scientists in mind &#8212; or even those who are interested in building
+their own simulations &#8212; and so they don&#8217;t typically contain any code
 or discussion about the issues involved in simulation. Which is a
 shame, as they are both fascinating and essential to practical
 research. The project stumbled on my not being able to find
 a technology that would support what I had in mind without a lot of
-extra work.</p>
+extra&nbsp;work.</p>
 <p>My recent work has been concerned with understanding the mathematical
 properties of networks and stochastic spreading processes. Disease
 epidemics are a classic example of this: the disease spreads through a
@@ -115,7 +114,7 @@ network of human contacts, infecting susceptible people with some
 probability. This involves both analytical mathematics and numerical
 simulation, often written in Python and usually require a <em>lot</em> of
 processor time. The processes are also complicated enough to be a
-testing challenge. I'd therefore written two Python libraries to help
+testing challenge. I&#8217;d therefore written two Python libraries to help
 the work along: one that managed the running of computational
 experiments involving lots of experimental repetitions across
 multi-dimensional parameter spaces
@@ -126,34 +125,34 @@ epidemic and other processes
 <p>Then covid-19 hit. Lockdown. People who knew that I worked on
 epidemics spreading in networks started asking me about the pandemic,
 about government responses, and what did it actually <em>mean</em> that they
-were "following the science"? -- what sort of science would they be
+were &#8220;following the science&#8221;? &#8212; what sort of science would they be
 relying on? Well, I needed a project anyway, so I started writing in
-the style that I'd previously had in mind -- notes, maths, and code --
-and hoped the technology had moved on sufficiently.</p>
-<p>It had.</p>
-<h3>Writing technology</h3>
+the style that I&#8217;d previously had in mind &#8212; notes, maths, and code &#8212;
+and hoped the technology had moved on&nbsp;sufficiently.</p>
+<p>It&nbsp;had.</p>
+<h3>Writing&nbsp;technology</h3>
 <p>After deciding <em>what</em> to write, The next decision a writer needs to
-make is what they'll be writing <em>in</em>. For civilians that's easy, and
-they break out the word processor. For computer scientists it's
+make is what they&#8217;ll be writing <em>in</em>. For civilians that&#8217;s easy, and
+they break out the word processor. For computer scientists it&#8217;s
 harder. We have a wealth of choices, actually enough to induce a
 paralysis of indecision. Not all choices are created equal,
 however, and in particular, some choices work better together than
 others. Pick a starting point, I reasoned, and many of the secondary
-choices will fall into place automatically.</p>
+choices will fall into place&nbsp;automatically.</p>
 <p>In my case the starting point was straightforward. Since I wanted a
-lot of code, and since it'd be "live" code integral to the project and
+lot of code, and since it&#8217;d be &#8220;live&#8221; code integral to the project and
 needing to be run while I was writing, I needed some way of writing
 both literary and executable content in the same document
 structure. <a href="https://www.jupyter.org">Jupyter</a> notebooks were the
-obvious choice.</p>
-<p>A notebook sits in a browser and presents a "cell" structure to the
+obvious&nbsp;choice.</p>
+<p>A notebook sits in a browser and presents a &#8220;cell&#8221; structure to the
 writer. A cell can contain text, which can also include maths. The
 notebook lets the writer edit the cell and then render it, at which
-point any LaTeX-style maths is rendered as ... well, maths. Text cells
-actually contain "markdown" text, which is familiar to anyone who's
+point any LaTeX-style maths is rendered as &#8230; well, maths. Text cells
+actually contain &#8220;markdown&#8221; text, which is familiar to anyone who&#8217;s
 ever written Python documentation. Markdown structures plain text in
-such a way that it can be rendered properly into, for example, HTML or
-PDF. Markdpwn isn't exactly standard, but there are <a href="https://guides.github.com/features/mastering-markdown/">fairly standard
+such a way that it can be rendered properly into, for example, <span class="caps">HTML</span> or
+<span class="caps">PDF</span>. Markdpwn isn&#8217;t exactly standard, but there are <a href="https://guides.github.com/features/mastering-markdown/">fairly standard
 dialects</a> that
 are enough to be getting started with. Markdown can also include maths
 formatted using LaTeX-style formulae, which Jupyter then automatically
@@ -164,7 +163,7 @@ Python, in my case. These cells can be executed, and the results come
 back into the notebook. This is especially great if the results are a
 diagram, because that gets rendered into the notebook too. You simply
 instruct the notebook to generate diagrams inline, typically in the
-first eceutable cell where you import any packages:</p>
+first eceutable cell where you import any&nbsp;packages:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">networkx</span>
 <span class="kn">import</span> <span class="nn">epyc</span>
@@ -178,155 +177,152 @@ first eceutable cell where you import any packages:</p>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
-<p>The use of SVG makes for scalable plots, but I wasn't keen on the
-standard notebook presentation, so I used <code>seaborn</code> to get a nicer
+<p>The use of <span class="caps">SVG</span> makes for scalable plots, but I wasn&#8217;t keen on the
+standard notebook presentation, so I&nbsp;used <code>seaborn</code> to get a nicer
 layout and colour scheme adjusted for notebook use, and played with
-the font sizing until I liked it:</p>
+the font sizing until I liked&nbsp;it:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">seaborn</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn'</span><span class="p">)</span>
 <span class="n">seaborn</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">"notebook"</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.75</span><span class="p">)</span>
 </pre></div>
 
-<p>The net result is a single document that's partly text and partly
-executable. It's a very interactive way to write code. It encourages
-writing explanations of executable content at a level that's far more
+<p>The net result is a single document that&#8217;s partly text and partly
+executable. It&#8217;s a very interactive way to write code. It encourages
+writing explanations of executable content at a level that&#8217;s far more
 detailed (and for a different purpose) than code comments. Anyone old
 enough to remember <a href="http://www.literateprogramming.com/">literate
 programming</a> will get the idea
 immediately, and Jupyter is to my mind the logical extension of these
-ideas into practical computational (rather than just computer)
-science.</p>
+ideas into practical computational (rather than just computer)&nbsp;science.</p>
 <p><img alt="Jupyter in action" src="../../../../images/posts/20200722-jupyter.png"></p>
 <p>Having committed to Jupyter largely from necessity, it then made
-sense to follow this choice and write <em>everything</em> in markdown.</p>
-<p>The last piece of writing technology for the paranoid hacker isn't
-about writing, it's about backups. Putting everything on
+sense to follow this choice and write <em>everything</em> in&nbsp;markdown.</p>
+<p>The last piece of writing technology for the paranoid hacker isn&#8217;t
+about writing, it&#8217;s about backups. Putting everything on
 <a href="https://github.com">Github</a> protects the work from accidental loss
-and provides all the other advantages of version control. If you've
-used this for writing software, you won't want to abandon it for
+and provides all the other advantages of version control. If you&#8217;ve
+used this for writing software, you won&#8217;t want to abandon it for
 writing. Fortunately Jupyter and markdown generally are simply text
-files, which mean they interact well with modern version control
-systems.</p>
-<h3>Getting on the web (at all)</h3>
+files, which mean they interact well with modern version control&nbsp;systems.</p>
+<h3>Getting on the web (at&nbsp;all)</h3>
 <p>In a sense Jupyter is intrinsically on the web since all editing
-happens in a browser, but that's not suitable for public, read-only
+happens in a browser, but that&#8217;s not suitable for public, read-only
 access. But there are plenty of ways to make a notebook visible, all
-with their own advantages and disadvantages:</p>
+with their own advantages and&nbsp;disadvantages:</p>
 <ul>
 <li>You can run your own notebook server. Needs an open internet
-  connection and a cavalier attitude towards system security.</li>
+  connection and a cavalier attitude towards system&nbsp;security.</li>
 <li>Any notebook hosted on Github will be rendered when visited. Quick
-  and simple. Nasty user experience.</li>
-<li>Any notebook with a URL can be passed to
+  and simple. Nasty user&nbsp;experience.</li>
+<li>Any notebook with a <span class="caps">URL</span> can be passed to
   <a href="https://nbviewer.jupyter.org/">nbviewer</a> to be rendered. Hard to
-  interact across multiple notebooks.</li>
+  interact across multiple&nbsp;notebooks.</li>
 <li>
 <a href="https://mybinder.org/">Binder</a> will take a repo of notebooks and
   spin them up in a container. Very flexible and executable. Not a
-  reader-focused experience.</li>
+  reader-focused&nbsp;experience.</li>
 </ul>
-<p>Each of these tools meets a specific use case -- and does so very
-well. Unfortunately they weren't <em>my</em> use case: an online book,
-accessible to the non-technical reader and offering a good reading
-experience.</p>
-<h3>Getting onto the web (as a book)</h3>
+<p>Each of these tools meets a specific use case &#8212; and does so very
+well. Unfortunately they weren&#8217;t <em>my</em> use case: an online book,
+accessible to the non-technical reader and offering a good reading&nbsp;experience.</p>
+<h3>Getting onto the web (as a&nbsp;book)</h3>
 <p>And then I discovered <a href="https://jupyterbook.org/intro.html">Jupyter Book</a>.</p>
 <p>This was exactly what I had in mind. It allows a collection of
 notebooks, markdown, and files of other types to be linked together
 into a book structure, applying the necessary web styling, links, and
 other boilerplate around the writing. It renders notebooks seamlessly
 so they read like any other document. You can mark cells to be left
-un-rendered, or collapse the input or output of a cell behind a "click
-to show" button. Digging a bit deeper, you can even include <a href="https://analytics.google.com/analytics/web/">Google
+un-rendered, or collapse the input or output of a cell behind a &#8220;click
+to show&#8221; button. Digging a bit deeper, you can even include <a href="https://analytics.google.com/analytics/web/">Google
 Analytics</a> tracker code
-to monitor visits. All good.</p>
+to monitor visits. All&nbsp;good.</p>
 <p>Actually, this is just the most basic use case. Jupyter Book is
 essentially a front-end to the
-<a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> document system that's
+<a href="https://www.sphinx-doc.org/en/master/">Sphinx</a> document system that&#8217;s
 used to generate Python documentation for use on <a href="https://readthedocs.org/">Read the
 Docs</a> and similar sites, familiar to anyone
 who maintains a Python library. But Sphinx itself has more to offer:
 it can take the same collection of markdown, ReStructured Text, and
-the like and generate HTML, or LaTeX, or TexInfo, or basically any
+the like and generate <span class="caps">HTML</span>, or LaTeX, or TexInfo, or basically any
 technical format in common use. It does code syntax colour
 highlighting. It handles maths. It has extensions that understand
-BibTeX for generating reference lists. It's extensible to introduce
+BibTeX for generating reference lists. It&#8217;s extensible to introduce
 extra kinds of markup. And so on, warming the deepest recesses of the
-hacker's heart.</p>
-<p>To use Jupyter Book you define two files, <code>_config.yml</code> describing the
-overall configuration and <code>_toc.yml</code> laying-out the table of
-contents. From these Jupyter Book generates a static web site.</p>
-<p>There's a particular directory structure (which the tool populates
-when it's initialised) required. I'm never a fan of these things, as
+hacker&#8217;s&nbsp;heart.</p>
+<p>To use Jupyter Book you define two&nbsp;files, <code>_config.yml</code> describing the
+overall configuration&nbsp;and <code>_toc.yml</code> laying-out the table of
+contents. From these Jupyter Book generates a static web&nbsp;site.</p>
+<p>There&#8217;s a particular directory structure (which the tool populates
+when it&#8217;s initialised) required. I&#8217;m never a fan of these things, as
 they can lock the content too tightly into one specific tool, so I
 wrote as makefile to keep the content separate and copy the source
-files around as required to perform the build.</p>
-<p>Sitting on Sphinx means there's good theming support. Jupyter Book
-comes with a book style that's based on the work of <a href="https://www.edwardtufte.com/tufte/">Edward
+files around as required to perform the&nbsp;build.</p>
+<p>Sitting on Sphinx means there&#8217;s good theming support. Jupyter Book
+comes with a book style that&#8217;s based on the work of <a href="https://www.edwardtufte.com/tufte/">Edward
 Tufte</a>, whose work has a
 distinctive style of large margins for frequent marginal notes. The
 idea is that footnotes become sidenotes and citations are placed next
 to the text, to keep all relevant information within the visual
-field. The theme defines a <code>.. margin::</code> directive for use in markdown
+field. The theme defines&nbsp;a <code>.. margin::</code> directive for use in markdown
 to generate the marginal notes, which are then rendered properly on
-the web pages. There are also <code>{cite}</code> and <code>{index}</code> roles that
-include citations and index terms respectively.</p>
-<p>At this point I realised two things:</p>
+the web pages. There are&nbsp;also <code>{cite}</code> and <code>{index}</code> roles that
+include citations and index terms&nbsp;respectively.</p>
+<p>At this point I realised two&nbsp;things:</p>
 <ol>
 <li>I could write my book using the technologies I wanted and get a
-   reader-friendly version on the web with next to no effort.</li>
+   reader-friendly version on the web with next to no&nbsp;effort.</li>
 <li>I could <em>probably</em> get a version for proper on-demand printing too,
-   and make it available as a print book just as easily.</li>
+   and make it available as a print book just as&nbsp;easily.</li>
 </ol>
 <p>The first realisation turned out to be true; the second not exactly
 because of the alpha quality of Jupyter Book, but it <em>was</em> possible
-with care (and without a change of tooling).</p>
+with care (and without a change of&nbsp;tooling).</p>
 <p>At this point I discovered that my choice of Github as an aid to
 writing was unexpectedly also an aid to publishing. This is because of
 <a href="https://pages.github.com/">Github Pages</a>, a service that lets any
-public Github repo generate a web site for itself that's also hosted
-by Github. It's primarily intended for providing home pages for
+public Github repo generate a web site for itself that&#8217;s also hosted
+by Github. It&#8217;s primarily intended for providing home pages for
 open-source development projects, but works equally well for
-open-source books.</p>
+open-source&nbsp;books.</p>
 <p>The mechanism is easy. You designate a branch of the repo to hold the
-web site as a set of pages -- a static site, just HTML and CSS. You
+web site as a set of pages &#8212; a static site, just <span class="caps">HTML</span> and <span class="caps">CSS</span>. You
 then commit the pages you want to this branch, and they get
 served. Keeping the branches separate means you can commit to the
-master branch freely, and do a specific <code>git commit</code> on the page
+master branch freely, and do a&nbsp;specific <code>git commit</code> on the page
 branch to deploy the site. The mechanics of this might get tricky, but
-(as they say) there's a plug-in for that, in the form of the
+(as they say) there&#8217;s a plug-in for that, in the form of the
 <a href="https://github.com/davisp/ghp-import"><code>ghp-import</code></a> Python
-package. Jupyter Book generates the HTML static site, and <code>ghp-import</code>
-takes care of committing to the correct branch. Couldn't be
-easier. This also got added to my makefile.</p>
+package. Jupyter Book generates the <span class="caps">HTML</span> static site,&nbsp;and <code>ghp-import</code>
+takes care of committing to the correct branch. Couldn&#8217;t be
+easier. This also got added to my&nbsp;makefile.</p>
 <p>And so the project went on the web in reader-friendly style, without
-very much in the way of fuss.</p>
+very much in the way of&nbsp;fuss.</p>
 <p><img alt="On the web" src="../../../../images/posts/20200722-em-book.png"></p>
 <p>The theme turns out to be responsive, too, so it even looks pretty
-readable on a phone.</p>
+readable on a&nbsp;phone.</p>
 <p><img alt="On a phone" src="../../../../images/posts/20200722-em-book-phone.png"></p>
 <p>(The margins disappear, and you can see at the bottom of the screen
-that the marginal notes float into place.)</p>
+that the marginal notes float into&nbsp;place.)</p>
 <h3>Printing</h3>
 <p>I was excited to read that Jupyter Book supports the conversion of
-documents to PDF <em>via</em> <a href="https://latex.net/">LaTeX</a>, the document
+documents to <span class="caps">PDF</span> <em>via</em> <a href="https://latex.net/">LaTeX</a>, the document
 preparation of choice for many scientists. This turns out not to quite
-be true -- at least, not yet. While Jupyter Book <em>will</em> generate LaTeX
-output, there are limitations at the moment -- understandably since
-it's a new project still in the throes of defining itself. I didn't
-want to wait. So I got a lot more intimate with Sphinx.</p>
-<p>Actually the process is pretty straightforward. Sphinx is driven by a
+be true &#8212; at least, not yet. While Jupyter Book <em>will</em> generate LaTeX
+output, there are limitations at the moment &#8212; understandably since
+it&#8217;s a new project still in the throes of defining itself. I didn&#8217;t
+want to wait. So I got a lot more intimate with&nbsp;Sphinx.</p>
+<p>Actually the process is pretty straightforward. Sphinx is driven by&nbsp;a
 <code>conf.py</code> file, the
 <a href="https://www.sphinx-doc.org/en/master/usage/configuration.html">format</a>
-of which is very well-described. It won't use Jupyter Book's
+of which is very well-described. It won&#8217;t use Jupyter&nbsp;Book&#8217;s
 <code>_toc.yml</code>, which is actually a good thing as the layout of a print
 book will typically be different to that of an online book, so
-there'll typically be slightly different files in a slightly
+there&#8217;ll typically be slightly different files in a slightly
 different order. I defined a master document for this, plus some
-auxiliary bits and pieces.</p>
-<p>There were a couple of problems. Firstly, LaTeX doesn't really like
-SVG figures. Jupyter has several options, so I changed the notebook
-header cell to select PNG instead.</p>
+auxiliary bits and&nbsp;pieces.</p>
+<p>There were a couple of problems. Firstly, LaTeX doesn&#8217;t really like
+<span class="caps">SVG</span> figures. Jupyter has several options, so I changed the notebook
+header cell to select <span class="caps">PNG</span>&nbsp;instead.</p>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
@@ -337,143 +333,138 @@ work. The <a href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/">Sphin
 this</a> works
 perfectly for online use but not so well for print usage, especially
 with a more complicated document class (see below).  The citation tags
-that it generates aren't quite the ones in the underlying BibTeX
-file. They're extended with the name of the file that imports the
+that it generates aren&#8217;t quite the ones in the underlying BibTeX
+file. They&#8217;re extended with the name of the file that imports the
 bibliography, which is a feature to allow multiple bibliographies to
-co-exist. That's non-standard in the LaTeX world, so I piped the
-resulting LaTeX file through <code>sed</code> to remove the extras.</p>
-<p>Finally, Sphinx generates inline <code>\bibitem</code> calls, which again isn't
+co-exist. That&#8217;s non-standard in the LaTeX world, so I piped the
+resulting LaTeX file&nbsp;through <code>sed</code> to remove the&nbsp;extras.</p>
+<p>Finally, Sphinx generates&nbsp;inline <code>\bibitem</code> calls, which again isn&#8217;t
 quite standard for LaTeX and (it turns out) confuses some of the more
 complex LaTeX classes. I solved this by letting Sphinx ingest the
-bibfile but not using the Sphinx <code>.. bibliography::</code> directive to lay
+bibfile but not using the&nbsp;Sphinx <code>.. bibliography::</code> directive to lay
 it out in the document, and instead adding a separate file to include
-the usual LaTeX <code>\bibliographystyle</code> and <code>\bibliography</code>
+the usual&nbsp;LaTeX <code>\bibliographystyle</code> and <code>\bibliography</code>
 commands. This meant that the usual LaTeX/BibTeX square dance would
-lay the references out correctly.</p>
+lay the references out&nbsp;correctly.</p>
 <p>A similar problem affects index generation. This time it arises
-because Sphinx isn't careful enough about injecting spaces into the
-generated LaTeX <code>\index</code> commands, which causes duplicate index
+because Sphinx isn&#8217;t careful enough about injecting spaces into the
+generated&nbsp;LaTeX <code>\index</code> commands, which causes duplicate index
 entries if you have the same term indexed to different pages. Another
-piece of <code>sed</code> fixed this too, and adding <code>\printindex</code> brought the
+piece&nbsp;of <code>sed</code> fixed this too, and&nbsp;adding <code>\printindex</code> brought the
 index into the document in the appropriate place. (Strangely enough
-Sphinx emits <code>\makeindex</code> at the start of the document but doesn't
-emit <code>\printindex</code> at the end.</p>
-<h3>Better print styling</h3>
+Sphinx&nbsp;emits <code>\makeindex</code> at the start of the document but doesn&#8217;t&nbsp;emit <code>\printindex</code> at the&nbsp;end.</p>
+<h3>Better print&nbsp;styling</h3>
 <p>Sphinx is at bottom a tool for code documentation, and its in-built
-LaTeX themes are understandably restricted. Having followed Tufte's
+LaTeX themes are understandably restricted. Having followed Tufte&#8217;s
 style for the online version I wanted to do the same for a print copy
--- not least because I'm now a convert to this style.</p>
+&#8212; not least because I&#8217;m now a convert to this&nbsp;style.</p>
 <p>You can set the document class for the final document and instruct
-Sphinx to include a "prelude" of your choice. There are <a href="http://www.latextemplates.com/">lots of book
+Sphinx to include a &#8220;prelude&#8221; of your choice. There are <a href="http://www.latextemplates.com/">lots of book
 templates to choose from</a>, and
-fortunately there's a <a href="https://tufte-latex.github.io/tufte-latex/">Tufte book
-class</a> that's included in
+fortunately there&#8217;s a <a href="https://tufte-latex.github.io/tufte-latex/">Tufte book
+class</a> that&#8217;s included in
 a lot of LaTeX distributions as standard. I did a small amount of
-customisation in a <code>style.tex</code> preamble file, mainly to get a
+customisation in&nbsp;a <code>style.tex</code> preamble file, mainly to get a
 copyright page and place marginal notes into the margin by translating
 the Sphinx-generated command to the command provided by the Tufte
-class. You can also set document class options like the paper size
-(<code>b5paper</code> in my case, fairly standard for scientific books) and
-whether you're looking for a PDF suited for printing (with asymmetric
+class. You can also set document class options like the paper size&nbsp;(<code>b5paper</code> in my case, fairly standard for scientific books) and
+whether you&#8217;re looking for a <span class="caps">PDF</span> suited for printing (with asymmetric
 margins to allow for the spine) of for viewing online (symmetric
-margins). The result was very appealing.</p>
+margins). The result was very&nbsp;appealing.</p>
 <p><img alt="Tufte print styling" src="../../../../images/posts/20200722-em-book-print.png"></p>
 <p>Those wide margins are also great for figures that benefit from the
-extra width.</p>
+extra&nbsp;width.</p>
 <p><img alt="Wide figure extending into the margin" src="../../../../images/posts/20200722-em-book-print-wide.png"></p>
-<p>I got this directly from the markdown by using the <code>.. raw:: latex</code>
-directive to include specific markup into the LaTeX version that's
-ignored in the HTML or other renderings.</p>
+<p>I got this directly from the markdown by using&nbsp;the <code>.. raw:: latex</code>
+directive to include specific markup into the LaTeX version that&#8217;s
+ignored in the <span class="caps">HTML</span> or other&nbsp;renderings.</p>
 <p>This whole process takes markdown and notebooks to LaTeX (and then to
-PDF) seamlessly. I did move some notes around to make them break better
-on the pages, and re-arranged some code fragments to avoid over-long lines.</p>
-<h3>Getting into print</h3>
+<span class="caps">PDF</span>) seamlessly. I did move some notes around to make them break better
+on the pages, and re-arranged some code fragments to avoid over-long&nbsp;lines.</p>
+<h3>Getting into&nbsp;print</h3>
 <p>Most people writing a book, at least when they get this stage, have a
 publisher in mind or even a contract. A publisher wants to convince
 themselves that a book will sell enough copies to make them money, and
-will put in the effort in marketing and publicity to make this happen.</p>
+will put in the effort in marketing and publicity to make this&nbsp;happen.</p>
 <p>But self-publishing has become a lot more possible these days, with
 print-on-demand services willing to take on essentially <em>any</em> book
-since there's no inventory to be held. Only as many books are printed
+since there&#8217;s no inventory to be held. Only as many books are printed
 as are bought, but the individual cost may be higher to account for the
 lack of economies of scale. Since I harboured no delusions as to
-having a best-seller on my hands -- not least because the whole
-project sits publicly on GitHub and can be read freely online --
-self-publishing and print-on-demand were attractive.</p>
+having a best-seller on my hands &#8212; not least because the whole
+project sits publicly on GitHub and can be read freely online &#8212;
+self-publishing and print-on-demand were&nbsp;attractive.</p>
 <p>The biggest print-on-demand shop is also the biggest shop of any kind:
 Amazon. <a href="https://kdp.amazon.com/en_US">Kindle Direct Publishing</a>
 handles both e-books and print books. An account is easy to set up and
-gives access to a range of tools.  A book needs an ISBN number -- a
-different one for each format and edition, in fact -- and Amazon will
-allocate one for you.</p>
-<p>All this "free" help comes at a cost, though. Using an Amazon ISBN, or
-a cover with Amazon clip art, ties you strictly to Amazon for
-distribution.</p>
+gives access to a range of tools.  A book needs an <span class="caps">ISBN</span> number &#8212; a
+different one for each format and edition, in fact &#8212; and Amazon will
+allocate one for&nbsp;you.</p>
+<p>All this &#8220;free&#8221; help comes at a cost, though. Using an Amazon <span class="caps">ISBN</span>, or
+a cover with Amazon clip art, ties you strictly to Amazon for&nbsp;distribution.</p>
 <p>Searching online turned up
 <a href="https://www.ingramspark.com/">IngramSpark</a>, who are a print-on-demand
 and e-book distributor. They offer a broader service than Amazon, for
-example advertising to bookshops and providing order fulfilment.</p>
+example advertising to bookshops and providing order&nbsp;fulfilment.</p>
 <p>The prices involved are pretty similar. Amazon have a single price
-point for their sites, taking into account printing and their cut. I'd
+point for their sites, taking into account printing and their cut. I&#8217;d
 already decided to aim for the lowest price point for this book (not
-least because it's available for free online) which
+least because it&#8217;s available for free online) which
 worked out at £16.99 for a royalty of £1.12 per sale. IngramSpark
-allow different prices for the UK, US, Euro, Australian, and world
-markets, and I chose the same price in pounds. (Their royalty is
-£1.23.)</p>
-<p>As far as ISBN's are concerned, there are national agencies that
-allocate them -- at a price. But the renaissance in self-publishing
+allow different prices for the <span class="caps">UK</span>, <span class="caps">US</span>, Euro, Australian, and world
+markets, and I chose the same price in pounds. (Their royalty is&nbsp;£1.23.)</p>
+<p>As far as <span class="caps">ISBN</span>&#8217;s are concerned, there are national agencies that
+allocate them &#8212; at a price. But the renaissance in self-publishing
 has meant that there are also networks of people working to help
-aspiring authors. In the UK I discovered the <a href="https://bookisbn.org.uk/">Independent Publishing
+aspiring authors. In the <span class="caps">UK</span> I discovered the <a href="https://bookisbn.org.uk/">Independent Publishing
 Network</a> who provide such services,
 dealing with generating ISBNs and entering the book details into the
-relevant catalogues. They also provide -- and here's another little
-detail it's easy to forget -- a barcode for the back of your (print)
-book to help acquisition, sales, and stock management by bookshops.</p>
-<h2>Trim and cover design</h2>
+relevant catalogues. They also provide &#8212; and here&#8217;s another little
+detail it&#8217;s easy to forget &#8212; a barcode for the back of your (print)
+book to help acquisition, sales, and stock management by&nbsp;bookshops.</p>
+<h2>Trim and cover&nbsp;design</h2>
 <p>On-demand print services are quite demanding in terms of their
-requirements on PDF files for cover and content. The exact
-requirements depend on the size (or "trim") you choose for the book. I
-went with 7x10", which is ever so slightly larger than B5. The
+requirements on <span class="caps">PDF</span> files for cover and content. The exact
+requirements depend on the size (or &#8220;trim&#8221;) you choose for the book. I
+went with 7x10&#8221;, which is ever so slightly larger than B5. The
 services will provide template covers once they know the trim size and
-number of pages (for the spine width).</p>
+number of pages (for the spine&nbsp;width).</p>
 <p>At this point things got more in need of creativity. I read a lot of
 blog posts and advertorials on the subject of cover design (many of
 which warned that it was strictly a job for professionals), and they
-all recommended mining the genre in which you're writing, so I looked
-on my bookshelf.</p>
+all recommended mining the genre in which you&#8217;re writing, so I looked
+on my&nbsp;bookshelf.</p>
 <p><img alt="Book cover ideas" src="../../../../images/posts/20200722-book-cover-ideas.jpg"></p>
-<p>There's a lot of commonality there, with an obviously network-y
-("starfish") central image. These are very visually appealing, of
-course, but unfortunately they're almost entirely devoid of
-information. When we're actually doing research we almost <em>never</em> draw
+<p>There&#8217;s a lot of commonality there, with an obviously network-y
+(&#8220;starfish&#8221;) central image. These are very visually appealing, of
+course, but unfortunately they&#8217;re almost entirely devoid of
+information. When we&#8217;re actually doing research we almost <em>never</em> draw
 these sorts of diagrams (other than for their fluff value):
 traditional graph-plots and heatmaps are much more useful. On the
-other hand there's a reason why people go for eye-catching front
-covers.... This left me in a bit of a quandary.</p>
+other hand there&#8217;s a reason why people go for eye-catching front
+covers&#8230;. This left me in a bit of a&nbsp;quandary.</p>
 <p>After several false starts I realised that one of the graphs in the
 book was actually quite graphically strong and could be used almost as
 a logo once the axes labels and title were removed. And I also had a
-"starfish" network diagram, which (unusually) I'd drawn for good
+&#8220;starfish&#8221; network diagram, which (unusually) I&#8217;d drawn for good
 scientific reasons. An hour with Photoshop and some back-cover
-blurb-writing resulted in a design.</p>
+blurb-writing resulted in a&nbsp;design.</p>
 <p><img alt="Book cover" src="../../../../images/posts/20200722-cover.png"></p>
-<p>There's absolutely no doubt a professional would do better, but for a
-science book I think there's less reason to be precious about these
-things.</p>
-<h3>Print niggles</h3>
-<p>So far so good, now to upload the documents. There's a lot of scope
+<p>There&#8217;s absolutely no doubt a professional would do better, but for a
+science book I think there&#8217;s less reason to be precious about these&nbsp;things.</p>
+<h3>Print&nbsp;niggles</h3>
+<p>So far so good, now to upload the documents. There&#8217;s a lot of scope
 for error in measurements and the like. Fortunately the
 print-on-demand services also run an automated workflow, which means
-that the files are checked at submission.</p>
+that the files are checked at&nbsp;submission.</p>
 <p>I encountered two problems. Firstly, any figures are embedded into the
-PDF with a given resolution and colour profile. For printing they
+<span class="caps">PDF</span> with a given resolution and colour profile. For printing they
 really need to be 300dpi at least, and the upload flagged them as not
-meeting this standard. It's of course not obvious from a previewer
-where the problem is, but executing <code>pdfimages -list</code> on the PDF shows
+meeting this standard. It&#8217;s of course not obvious from a previewer
+where the problem is, but&nbsp;executing <code>pdfimages -list</code> on the <span class="caps">PDF</span> shows
 the images and their resolution. Jupyter uses a lower resolution by
 default, so I added an appropriate line to the cell at the head of
-each chapter:</p>
+each&nbsp;chapter:</p>
 <div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
@@ -482,136 +473,130 @@ each chapter:</p>
 
 <p>This then triggered <em>another</em> warning, this time that the images were
 <em>over</em> 300dpi! And that was true, because of course you may generate
-an image at a larger size than it appears on the page, and <code>pdflatex</code>
-doesn't automatically downsample. <code>pdfimages -list</code> again shows the
-problem.</p>
+an image at a larger size than it appears on the page,&nbsp;and <code>pdflatex</code>
+doesn&#8217;t automatically&nbsp;downsample. <code>pdfimages -list</code> again shows the&nbsp;problem.</p>
 <p><img alt="pdfimages" src="../../../../images/posts/20200722-pdfimages.png"></p>
 <p>I explored several ways around the issue, including re-encoding the
-PDF using <code>ghostscript</code> -- which re-sampled the images but introduced
-ICC colour profiles in the process, which trigger <em>yet another</em>
-warning when the PDF is uploaded. In the end I let the printer
+<span class="caps">PDF</span>&nbsp;using <code>ghostscript</code> &#8212; which re-sampled the images but introduced
+<span class="caps">ICC</span> colour profiles in the process, which trigger <em>yet another</em>
+warning when the <span class="caps">PDF</span> is uploaded. In the end I let the printer
 downsample from the too-large images and checked the print proof
-carefully for any anomalies -- and there weren't any. Phew!</p>
-<h3>No e-book (yet)</h3>
-<p>Jupyter Book doesn't yet generate EPub, although again Sphinx does. So
-I tried the same trick of driving Sphinx directly.</p>
-<p>LaTeX-style maths isn't readable in e-books, and you can't use
-<a href="https://www.mathjax.org/">MathJax</a> despite everything being in HTML
-as e-readers don't typically support Javascript. Again, there's a
-plug-in for that, in the form of <code>sphinx.ext.imgmath</code>. Include that
-and all maths is rendered as images using LaTeX. (You need another
-program, <code>dvipng</code>, to do the conversion.)</p>
-<p>However, try as I might, I couldn't get Sphinx to render the images in
-Jupyter notebook cells. This is very strange, since the Sphinx HTML
-renderer handles them just fine. I still haven't sorted this out,
-despite an extensive foray into how Sphinx (and Python <code>docutils</code>, and
-the <code>MyST-NB</code> notebook parser) work: I suspect there's a single
-configuration incantation needed.</p>
+carefully for any anomalies &#8212; and there weren&#8217;t any.&nbsp;Phew!</p>
+<h3>No e-book&nbsp;(yet)</h3>
+<p>Jupyter Book doesn&#8217;t yet generate EPub, although again Sphinx does. So
+I tried the same trick of driving Sphinx&nbsp;directly.</p>
+<p>LaTeX-style maths isn&#8217;t readable in e-books, and you can&#8217;t use
+<a href="https://www.mathjax.org/">MathJax</a> despite everything being in <span class="caps">HTML</span>
+as e-readers don&#8217;t typically support Javascript. Again, there&#8217;s a
+plug-in for that, in the form&nbsp;of <code>sphinx.ext.imgmath</code>. Include that
+and all maths is rendered as images using LaTeX. (You need another&nbsp;program, <code>dvipng</code>, to do the&nbsp;conversion.)</p>
+<p>However, try as I might, I couldn&#8217;t get Sphinx to render the images in
+Jupyter notebook cells. This is very strange, since the Sphinx <span class="caps">HTML</span>
+renderer handles them just fine. I still haven&#8217;t sorted this out,
+despite an extensive foray into how Sphinx (and&nbsp;Python <code>docutils</code>, and&nbsp;the <code>MyST-NB</code> notebook parser) work: I suspect there&#8217;s a single
+configuration incantation&nbsp;needed.</p>
 <h3>Costs</h3>
 <p>A self-publisher takes on all the costs that a publisher would
-normally absorb. In my case these have been roughly:</p>
+normally absorb. In my case these have been&nbsp;roughly:</p>
 <ul>
-<li>£40 for an ISBN number, barcode, and <a href="https://nielsenbook.co.uk/">Nielsen</a> registration</li>
-<li>£45 to upload a manuscript to IngramSpark</li>
-<li>£65 to be included in their advertising material and catalogue</li>
-<li>£60 for library deposits (see below)</li>
+<li>£40 for an <span class="caps">ISBN</span> number, barcode, and <a href="https://nielsenbook.co.uk/">Nielsen</a>&nbsp;registration</li>
+<li>£45 to upload a manuscript to&nbsp;IngramSpark</li>
+<li>£65 to be included in their advertising material and&nbsp;catalogue</li>
+<li>£60 for library deposits (see&nbsp;below)</li>
 </ul>
-<p>Call it £200 -- or, to put it another way, needing about 130 royalty
+<p>Call it £200 &#8212; or, to put it another way, needing about 130 royalty
 payments to break even. To have a hope of that happening will require
-some marketing, which won't be free.</p>
-<p>One of the costs above need explaining. Any book published in the UK
-<a href="https://bookisbn.org.uk/legal-deposit/">must by law have a copy deposited (at publisher's expense) with the
-British Library</a> -- and on
-request with the five other deposit libraries around the UK. (This
+some marketing, which won&#8217;t be&nbsp;free.</p>
+<p>One of the costs above need explaining. Any book published in the <span class="caps">UK</span>
+<a href="https://bookisbn.org.uk/legal-deposit/">must by law have a copy deposited (at publisher&#8217;s expense) with the
+British Library</a> &#8212; and on
+request with the five other deposit libraries around the <span class="caps">UK</span>. (This
 includes e-books.) Fortunately you can get author copies from
-IngramSpark at just the print cost.</p>
+IngramSpark at just the print&nbsp;cost.</p>
 <p>This shines an interesting light on the economics of
-self-publishing. I've taken several steps to <em>minimise</em> my royalties,
+self-publishing. I&#8217;ve taken several steps to <em>minimise</em> my royalties,
 not least by making the project open source, which then in turn pretty
 much mandated a minimum price point for the print book. A
 traditional, closed-source project could freely try to charge
 more. And obviously the fixed costs of e-books are essentially minimal
-compared to print (although you still need to buy an ISBN).</p>
+compared to print (although you still need to buy an&nbsp;<span class="caps">ISBN</span>).</p>
 <h3>Psychology</h3>
 <p>Not having a publisher is a double-edged sword. On the one hand, it
-frees you to write (or not) as you see fit; on the other, it's hard to
-actually bring things to an end when there's always something more you
+frees you to write (or not) as you see fit; on the other, it&#8217;s hard to
+actually bring things to an end when there&#8217;s always something more you
 could add. For this book the scope was quite clearly delineated form
-the start, and the end to the content was equally easy to decide.</p>
+the start, and the end to the content was equally easy to&nbsp;decide.</p>
 <p>I never found it hard to do writing, although I did sometimes struggle
-with exactly <em>what</em> to write -- or rather, how to put something. I'm
+with exactly <em>what</em> to write &#8212; or rather, how to put something. I&#8217;m
 much more used to writing for an academic audience, but actually the
 effort of simplifying and re-writing to make the text simpler, more
 easily grasped, and (hopefully) more memorable and better crafted are
-things I'll try to take forward into <em>all</em> my writing. There's no
+things I&#8217;ll try to take forward into <em>all</em> my writing. There&#8217;s no
 reason for scientific prose to be hard to digest, and in fact the
 easier concepts and explained the more likely they are to be picked up
-and used (and cited!).</p>
+and used (and&nbsp;cited!).</p>
 <p>But I still found it hard to let go! The hardest thing was pushing the
-button to "approve" the printed proof ahead of distribution. I must
+button to &#8220;approve&#8221; the printed proof ahead of distribution. I must
 have uploaded 20 versions, each with subtle differences in layout and
 another corrected typo. In the end I realised I was just trying to
 perfect things in order not to commit the book to the public, and just
-forced myself to go through with it. The relief was palpable.</p>
+forced myself to go through with it. The relief was&nbsp;palpable.</p>
 <h3>Conclusions</h3>
-<p>I'm very happy with the way things turned
+<p>I&#8217;m very happy with the way things turned
 out both <a href="https://simoninireland.github.io/introduction-to-epidemics/index.html">online</a>
 and <a href="https://www.amazon.co.uk/dp/1838535659/">in print</a>. Jupyter Book is an
 excellent project and does a fantastic job of rendering online
-books. It's not working yet for print or e-books, but that's surely
-only a matter of time given the Sphinx does (almost) everything
-needed.</p>
-<p>Of course what I've described is something of a hacker toolchain: you
+books. It&#8217;s not working yet for print or e-books, but that&#8217;s surely
+only a matter of time given the Sphinx does (almost) everything&nbsp;needed.</p>
+<p>Of course what I&#8217;ve described is something of a hacker toolchain: you
 need a certain attitude to write a lot of markdown with any degree of
 comfort. But then again this is technical writing, and if you already
-have comfort with these sorts of tools, then it's immensely reassuring
+have comfort with these sorts of tools, then it&#8217;s immensely reassuring
 to know that you can transfer those skills from a coding to a writing
-project. And skills like version control are equally valuable in both
-domains.</p>
-<p>It's also a slightly flaky toolchain, especially for print media. I
+project. And skills like version control are equally valuable in both&nbsp;domains.</p>
+<p>It&#8217;s also a slightly flaky toolchain, especially for print media. I
 needed to fix up citations and index terms using shell scripts, which
 is clearly undesirable. But these are only small (if fiddly) issues,
 and ones that could easily be retrofitted into the underlying
-codebases. I'll be looking to this in the near future, other
-commitments permitting.</p>
-<p>Is there an easier way? If you didn't need executable content then
+codebases. I&#8217;ll be looking to this in the near future, other
+commitments&nbsp;permitting.</p>
+<p>Is there an easier way? If you didn&#8217;t need executable content then
 writing straight into LaTeX would be an option, and then going from
-there to HTML. Personally I think I'd stick with markdown and Jupyter
-Book even if I didn't have notebooks: start with portable sources and
-then refine to presentations using the best tools for the particular
-media.</p>
+there to <span class="caps">HTML</span>. Personally I think I&#8217;d stick with markdown and Jupyter
+Book even if I didn&#8217;t have notebooks: start with portable sources and
+then refine to presentations using the best tools for the particular&nbsp;media.</p>
 <p>One final point needs making strongly. With the single exceptions of
 Photoshop for assembling the cover, Amazon for creating the cover
 template, and some help with ISBNs and barcodes, all the tools I used
 are open source. (And you could easily replace the former with
-<a href="https://www.gimp.org/">Gimp</a>.) It's amazing that the powers of open
+<a href="https://www.gimp.org/">Gimp</a>.) It&#8217;s amazing that the powers of open
 source have moved from the coding domain and into the domain of book
-publishing, and have wrought the same changes.</p>
+publishing, and have wrought the same&nbsp;changes.</p>
 <h3>Resources</h3>
 <p>You can read the book for free online
 <a href="https://simoninireland.github.io/introduction-to-epidemics/index.html">here</a>,
 or buy a print copy from <a href="https://www.amazon.co.uk/dp/1838535659/">Amazon</a>.</p>
-<p>All the files mentioned in the text are available from the project's
+<p>All the files mentioned in the text are available from the project&#8217;s
 <a href="https://github.com/simoninireland/introduction-to-epidemics">Github
 repo</a>. Some
-of the specific files referred to in the text are:</p>
+of the specific files referred to in the text&nbsp;are:</p>
 <ul>
 <li>
 <a href="https://github.com/simoninireland/introduction-to-epidemics/blob/master/Makefile"><code>Makefile</code></a>
-  -- looks complicated, but all it really does is move files around before
-  building, plus running a couple of <code>sed</code> scripts for patching.</li>
+  &#8212; looks complicated, but all it really does is move files around before
+  building, plus running a couple&nbsp;of <code>sed</code> scripts for&nbsp;patching.</li>
 <li>The <a href="https://www.latextemplates.com/template/tufte-style-book"><code>tufte-book</code></a>
-  class file</li>
+  class&nbsp;file</li>
 <li>
 <a href="https://github.com/simoninireland/introduction-to-epidemics/blob/master/latex/conf.py"><code>latex/conf.py</code></a>
-  -- LaTeX driver for Sphinx, importing the necessary extensions</li>
+  &#8212; LaTeX driver for Sphinx, importing the necessary&nbsp;extensions</li>
 <li>
 <a href="https://github.com/simoninireland/introduction-to-epidemics/blob/master/latex/style.tex"><code>latex/style.tex</code></a>
-  -- the LaTeX preamble, re-defining the <code>sphinxShadowBox</code> environment
-  to used the Tufte class' <code>\marginnote</code> command, defining the
+  &#8212; the LaTeX preamble, re-defining&nbsp;the <code>sphinxShadowBox</code> environment
+  to used the Tufte&nbsp;class&#8217; <code>\marginnote</code> command, defining&nbsp;the
   <code>\backoftitlepage</code> command to put in the copyright and imprint
-  information, and the <code>\forprint</code> command to set things up generating
-  a print PDF by disabling hyperlinks</li>
+  information, and&nbsp;the <code>\forprint</code> command to set things up generating
+  a print <span class="caps">PDF</span> by disabling&nbsp;hyperlinks</li>
 </ul>
 </div>
 	</article>
@@ -651,11 +636,11 @@ of the specific files referred to in the text are:</p>
 	</div>
 	<div class="next">
 	    <a href="../em-book-published/" rel="next">
-		<span class="meta-nav">Newer Post</span>"Epidemic modelling" published
+		<span class="meta-nav">Newer Post</span>&#8220;Epidemic modelling&#8221; published
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -664,12 +649,12 @@ of the specific files referred to in the text are:</p>
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

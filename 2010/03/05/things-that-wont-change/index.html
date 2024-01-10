@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,31 +67,31 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 5 March, 2010</a>
 	    </span>
 	</div>
-	<h1>Things that won't change</h1>
+	<h1>Things that won&#8217;t&nbsp;change</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Technology always advances, and in most areas the rate of change is also increasing all the time. But there are some areas where technological changes either happen only slowly, or even go into reverse. Not something we're used to in computer science, but it's a feature of sensor network programming: what are the challenges that technology <em>won't</em> solve for us?
+		<p>Technology always advances, and in most areas the rate of change is also increasing all the time. But there are some areas where technological changes either happen only slowly, or even go into reverse. Not something we&#8217;re used to in computer science, but it&#8217;s a feature of sensor network programming: what are the challenges that technology <em>won&#8217;t</em> solve for us?
 
-<!--more-->Moore's law has been a defining feature of computers for the past decades. By and large computing power has doubled every 18 months at constant price; alternatively, the cost of a unit of computing power has halved in the same period. The effects of this on user experience have been plain to see.
+<!--more-->Moore&#8217;s law has been a defining feature of computers for the past decades. By and large computing power has doubled every 18 months at constant price; alternatively, the cost of a unit of computing power has halved in the same period. The effects of this on user experience have been plain to see.
 
-Within computer science, Moore's law has had an effect on research directions too. In starting on a PhD a student can work on a problem that'd at the edge of the performance envelope of whatever class of machine she is targeting -- cellphone, laptop, desktop or server -- secure in the knowledge that, but the time she's coming to an end, the power available to that machine class will have quadrupled. This doesn't open-up <em>every</em> problem, of course -- a four-times speed-up on an NP-hard search problem might still leave it largely intractable -- but in fields such as middleware, software tools, language design and the like, it's enough to overcome many issues.
+Within computer science, Moore&#8217;s law has had an effect on research directions too. In starting on a PhD a student can work on a problem that&#8217;d at the edge of the performance envelope of whatever class of machine she is targeting &#8212; cellphone, laptop, desktop or server &#8212; secure in the knowledge that, but the time she&#8217;s coming to an end, the power available to that machine class will have quadrupled. This doesn&#8217;t open-up <em>every</em> problem, of course &#8212; a four-times speed-up on an <span class="caps">NP</span>-hard search problem might still leave it largely intractable &#8212; but in fields such as middleware, software tools, language design and the like, it&#8217;s enough to overcome many issues.
 
-It's therefore something of a shock to come to sensor networks and similar systems, because I suspect these systems aren't subject to Moore's law in the usual way.
+It&#8217;s therefore something of a shock to come to sensor networks and similar systems, because I suspect these systems aren&#8217;t subject to Moore&#8217;s law in the usual way.
 
-In some ways, the situation on such small systems is actually <em>better</em> than in desktops and enterprise computing. At the higher end, we're already hitting at least the suspicion that the performance increases in individual cores will soon start to flatten out. Multicore processors allow us to keep increasing performance, but at the cost of vastly complicating the sorts of programming needed in order to keep all those cores occupied. Sensor motes are still single-core and typically aren't using state-of-the-art processes at that, so there's still plenty of room for manoeuvre.
+In some ways, the situation on such small systems is actually <em>better</em> than in desktops and enterprise computing. At the higher end, we&#8217;re already hitting at least the suspicion that the performance increases in individual cores will soon start to flatten out. Multicore processors allow us to keep increasing performance, but at the cost of vastly complicating the sorts of programming needed in order to keep all those cores occupied. Sensor motes are still single-core and typically aren&#8217;t using state-of-the-art processes at that, so there&#8217;s still plenty of room for manoeuvre.
 
-But it's easy to forget that while the cash cost of a unit of processing power has decreased, the <em>power</em> cost of that unit hasn't decreased by nearly as much (and may actually have increased). Those twice-as-powerful chips eighteen months on typically burn significantly more power than their predecessors. You only have to look at the size of heatsinks on chips to realise that there's a <em>lot</em> of heat being dissipated.
+But it&#8217;s easy to forget that while the cash cost of a unit of processing power has decreased, the <em>power</em> cost of that unit hasn&#8217;t decreased by nearly as much (and may actually have increased). Those twice-as-powerful chips eighteen months on typically burn significantly more power than their predecessors. You only have to look at the size of heatsinks on chips to realise that there&#8217;s a <em>lot</em> of heat being dissipated.
 
-So for a sensor network, which is using a battery or scavenging for power,  increasing the processor power will almost certainly decrease lifetime, and that's not a trade-off designers will accept. Battery, scavenging and renewable power sources like solar cells aren't subject to Moore's law: their growth curves are those of physics and traditional engineering, not those of IT systems. Ten years ago my cellphone went for three days without a charge; my new HTC Hero lasts no more than two days, even if I turn off the data services and wifi. The extra compute cost has a severe power cost.
+So for a sensor network, which is using a battery or scavenging for power,  increasing the processor power will almost certainly decrease lifetime, and that&#8217;s not a trade-off designers will accept. Battery, scavenging and renewable power sources like solar cells aren&#8217;t subject to Moore&#8217;s law: their growth curves are those of physics and traditional engineering, not those of <span class="caps">IT</span> systems. Ten years ago my cellphone went for three days without a charge; my new <span class="caps">HTC</span> Hero lasts no more than two days, even if I turn off the data services and wifi. The extra compute cost has a severe power cost.
 
 In many sensor applications, the trade-off will actually be in reverse. Given the choice, a designer might opt for two older, less capable but less power-hungry processors over one more powerful but more hungry. Two motes can provide more coverage, or more robustness, or both.
 
-But this exposes a real programming challenge, since it implies that we're going to have to get used to building modern, open, adaptive software on machines whose capabilities are similar to those of a mid-1980's vintage home computer -- and which might in fact even <em>decrease</em> over time, since the driving forces are pushing for coverage, lifetime and redundant replication. The performance of a network in aggregate might still increase, of course, but that still means that we have to extract extra performance from co-ordinating distributed processors rather than from improving individual nodes. The history of distributed parallel processing should warn us not to be sanguine about <em>that</em> prospect.
+But this exposes a real programming challenge, since it implies that we&#8217;re going to have to get used to building modern, open, adaptive software on machines whose capabilities are similar to those of a mid-1980&#8217;s vintage home computer &#8212; and which might in fact even <em>decrease</em> over time, since the driving forces are pushing for coverage, lifetime and redundant replication. The performance of a network in aggregate might still increase, of course, but that still means that we have to extract extra performance from co-ordinating distributed processors rather than from improving individual nodes. The history of distributed parallel processing should warn us not to be sanguine about <em>that</em> prospect.
 
-Actually, though, the challenge will do us good. Modern machines encourage sloppy over-engineering and over-generalisation -- building frameworks for situations that we anticipate but which might never occur. Targeting small machines will change this, and instead encourage us to build software that's fit for immediate purpose, <em>and</em> that's build to be evolved and extended over time alongside changing requirements and constraints. This building evolution into the core of the system will make for better engineering in the long run.</p>
+Actually, though, the challenge will do us good. Modern machines encourage sloppy over-engineering and over-generalisation &#8212; building frameworks for situations that we anticipate but which might never occur. Targeting small machines will change this, and instead encourage us to build software that&#8217;s fit for immediate purpose, <em>and</em> that&#8217;s build to be evolved and extended over time alongside changing requirements and constraints. This building evolution into the core of the system will make for better engineering in the long&nbsp;run.</p>
 	    </div>
 	</article>
 </div>
@@ -114,7 +114,7 @@ Actually, though, the challenge will do us good. Modern machines encourage slopp
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/moores-law/">moore's law</a>
+		<a href="../../../../categories/moores-law/">moore&#8217;s law</a>
 		    <span>  </span>
 		<a href="../../../../categories/performance/">performance</a>
 		    <span>  </span>
@@ -134,7 +134,7 @@ Actually, though, the challenge will do us good. Modern machines encourage slopp
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -143,12 +143,12 @@ Actually, though, the challenge will do us good. Modern machines encourage slopp
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

@@ -32,7 +32,7 @@
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -40,7 +40,7 @@
 	    </div>
 	    <ul class="menu">
 <li><a href="../index.html">Home</a></li>
-		    <li><a href="../personal/">About me</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
 		    <li><a href="../research/">Research</a></li>
 		    <li><a href="../development/projects/">Software</a></li>
 		    <li><a href="../writing/">Writing</a></li>
@@ -55,18 +55,18 @@
 			    Posted on <a href="../2013/07/02/mesh-network/" rel="bookmark">Tuesday 2 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/02/mesh-network/">Mesh networking</a></h1>
+		    <h1><a href="../2013/07/02/mesh-network/">Mesh&nbsp;networking</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>A mesh network is a way of setting up a communications system when there's no fixed infrastructure available. They're often used for communications in remote sites, and on sensor networks.
+			<p>A mesh network is a way of setting up a communications system when there&#8217;s no fixed infrastructure available. They&#8217;re often used for communications in remote sites, and on sensor networks.
 
 <!--more-->
 
-If you've used wifi, you've used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, ...) and connects them to the internet. The devices don't talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.
+If you&#8217;ve used wifi, you&#8217;ve used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, &#8230;) and connects them to the internet. The devices don&#8217;t talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.
 
-Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone -- a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.
+Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone &#8212; a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.
 
-By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes' traffic. There is no infrastructure -- the nodes are both the users <em>and</em> the providers of the network -- which means a mesh can be deployed in areas without any "official" network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can't deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular telephony.</p>
+By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes&#8217; traffic. There is no infrastructure &#8212; the nodes are both the users <em>and</em> the providers of the network &#8212; which means a mesh can be deployed in areas without any &#8220;official&#8221; network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can&#8217;t deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular&nbsp;telephony.</p>
 		</div>
 	    </article>
 </div>
@@ -77,7 +77,7 @@ By contrast to these large-scale systems, XBees provide <a href="https://en.wiki
 			    Posted on <a href="../2013/07/01/xbee/" rel="bookmark">Monday 1 July, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/07/01/xbee/">XBee radios</a></h1>
+		    <h1><a href="../2013/07/01/xbee/">XBee&nbsp;radios</a></h1>
 		</div>
 		<div class="entry-content">
 			<p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.
@@ -86,30 +86,30 @@ By contrast to these large-scale systems, XBees provide <a href="https://en.wiki
 
 ![Xbees and an Arduino](/images/citizen-sensing/2013-07-01-18.12.32.jpg)
 
-XBees are made by <a href="http://www.digi.com" target="_blank">Digi</a>. The range includes a number of <a href="http://digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/" target="_blank">options</a>: you almost certainly want some variant of the Zigbee range. The Series 2 (S2) modules seem to offer good performance, low power, and a useful range of functions. There are several different antenna types and two different radio powers (2mW and 50mW): larger power provides more range (1km nominal as opposed to 100m) at the cost of twenty-five times the power consumption: best avoided unless really needed. A collection of XBee modules co-operate to form a mesh network that's quite robust against partial failure, which makes them great for use in the field.
+XBees are made by <a href="http://www.digi.com" target="_blank">Digi</a>. The range includes a number of <a href="http://digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/" target="_blank">options</a>: you almost certainly want some variant of the Zigbee range. The Series 2 (S2) modules seem to offer good performance, low power, and a useful range of functions. There are several different antenna types and two different radio powers (2mW and 50mW): larger power provides more range (1km nominal as opposed to 100m) at the cost of twenty-five times the power consumption: best avoided unless really needed. A collection of XBee modules co-operate to form a mesh network that&#8217;s quite robust against partial failure, which makes them great for use in the field.
 
-To get XBees working with an Arduino you need several pieces of hardware and software:
+To get XBees working with an Arduino you need several pieces of hardware and&nbsp;software:
 </p>
 <ul>
-<li>Two or more radios (obvious, but surprisingly easy to only buy one...)</li>
-    <li>One or more Arduinos</li>
-    <li>One Arduino XBee shield for each radio-equipped Arduino</li>
-    <li>One XBee USB breakout board</li>
-    <li>The X-CTU firmware management software</li>
+<li>Two or more radios (obvious, but surprisingly easy to only buy&nbsp;one&#8230;)</li>
+    <li>One or more&nbsp;Arduinos</li>
+    <li>One Arduino XBee shield for each radio-equipped&nbsp;Arduino</li>
+    <li>One XBee <span class="caps">USB</span> breakout&nbsp;board</li>
+    <li>The X-<span class="caps">CTU</span> firmware management&nbsp;software</li>
 </ul>
-There are also variations of Arduinos that take XBee modules directly, as well as other sensor mote systems that can work with them: they're not completely Arduino-specific.
+There are also variations of Arduinos that take XBee modules directly, as well as other sensor mote systems that can work with them: they&#8217;re not completely Arduino-specific.
 
-When buying radios, buy them all the same series: the different series aren't guaranteed to interwork (although they often do). In the photograph above there are two <em>different</em> XBees: one with a patch antenna and one with a whip antenna.
+When buying radios, buy them all the same series: the different series aren&#8217;t guaranteed to interwork (although they often do). In the photograph above there are two <em>different</em> XBees: one with a patch antenna and one with a whip antenna.
 
-The Xbee shield fits on top of the Arduino. They're sold without a radio module.
+The Xbee shield fits on top of the Arduino. They&#8217;re sold without a radio module.
 
-The breakout board is used to connect an XBee to the USB port of a computer, allowing your network to be accessed from the desktop. This is useful for debugging and for data logging, unless you're also going to build a dedicated data logger.
+The breakout board is used to connect an XBee to the <span class="caps">USB</span> port of a computer, allowing your network to be accessed from the desktop. This is useful for debugging and for data logging, unless you&#8217;re also going to build a dedicated data logger.
 
-The X-CTU software manages the firmware on the radio module. Because the radios are small and low-power, they don't have room for a sophisticated software stack, and so aren't programmed in the normal way. Instead you download a firmware providing exactly the functions you need. Each network is given an identifier (a <em>personal area network id</em> or <em>PAN</em>) so that several networks can co-exist in the same area without interfering with each other. Each network has exactly one co-ordinator, with the others being routers, Co-ordinator and router use different firmware: you nominate one of your radios as co-ordinator (which will typically live on the base station, or on the data logger) and use X-CTU to load co-ordinator firmware to it; the other radios get router firmware and are placed onto the sensor motes.
+The X-<span class="caps">CTU</span> software manages the firmware on the radio module. Because the radios are small and low-power, they don&#8217;t have room for a sophisticated software stack, and so aren&#8217;t programmed in the normal way. Instead you download a firmware providing exactly the functions you need. Each network is given an identifier (a <em>personal area network id</em> or <em><span class="caps">PAN</span></em>) so that several networks can co-exist in the same area without interfering with each other. Each network has exactly one co-ordinator, with the others being routers, Co-ordinator and router use different firmware: you nominate one of your radios as co-ordinator (which will typically live on the base station, or on the data logger) and use X-<span class="caps">CTU</span> to load co-ordinator firmware to it; the other radios get router firmware and are placed onto the sensor motes.
 
-XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the AT firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes AT commands, a standard way of controlling a modem (which is what an XBee technically is): we'll explore these commands in another post. This function set -- router and co-ordinator -- sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn't great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports API function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We'll deal with API communications in another post too.
+XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the <span class="caps">AT</span> firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes <span class="caps">AT</span> commands, a standard way of controlling a modem (which is what an XBee technically is): we&#8217;ll explore these commands in another post. This function set &#8212; router and co-ordinator &#8212; sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn&#8217;t great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports <span class="caps">API</span> function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We&#8217;ll deal with <span class="caps">API</span> communications in another post too.
 
-We'll deal with the details of using X-CTU <a href="../2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.
+We&#8217;ll deal with the details of using X-<span class="caps">CTU</span> <a href="../2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.
 		</div>
 	    </article>
 </div>
@@ -120,7 +120,7 @@ We'll deal with the details of using X-CTU <a href="../2013/07/02/xctu/">in anot
 			    Posted on <a href="../2013/06/28/soldering/" rel="bookmark">Friday 28 June, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../2013/06/28/soldering/">First bit of soldering done</a></h1>
+		    <h1><a href="../2013/06/28/soldering/">First bit of soldering&nbsp;done</a></h1>
 		</div>
 		<div class="entry-content">
 			<p>The first proto-shield has been assembled.
@@ -131,9 +131,9 @@ The <a href="https://www.sparkfun.com/products/7914" target="_blank">SparkFun pr
 
 ![Arduino prototyping shield](/images/citizen-sensing/2013-06-28-18.31.43.jpg)
 
-The "bare" version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The "helping hands"  were invaluable.
+The &#8220;bare&#8221; version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The &#8220;helping hands&#8221;  were invaluable.
 
-Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that's not being used for reset, and to bring the ICSP connectors through) which it would be useful to have.</p>
+Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that&#8217;s not being used for reset, and to bring the <span class="caps">ICSP</span> connectors through) which it would be useful to&nbsp;have.</p>
 		</div>
 	    </article>
 </div>
@@ -144,14 +144,13 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
 			    Posted on <a href="../goodreads/approaching-zero-the-extraordinary-underworld-of-hackers-phreakers-virus-writers-and-keyboard-criminals/" rel="bookmark">Sunday 23 June, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/approaching-zero-the-extraordinary-underworld-of-hackers-phreakers-virus-writers-and-keyboard-criminals/">Approaching Zero: The Extraordinary Underworld of Hackers, Phreakers, Virus Writers, and Keyboard Criminals</a></h1>
+		    <h1><a href="../goodreads/approaching-zero-the-extraordinary-underworld-of-hackers-phreakers-virus-writers-and-keyboard-criminals/">Approaching Zero: The Extraordinary Underworld of Hackers, Phreakers, Virus Writers, and Keyboard&nbsp;Criminals</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1289074849l/1347682._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Paul Mungo
-	  (1993)
+	Paul Mungo&nbsp;(1993)
       </h2>
     </div>
     <p>
@@ -159,7 +158,7 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
       </p>
 <p>
 	3/5.
-	  Finished Sunday 23 June, 2013.
+	  Finished Sunday 23 June,&nbsp;2013.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/629930343?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -175,14 +174,13 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
 			    Posted on <a href="../goodreads/mein-kampf/" rel="bookmark">Sunday 23 June, 2013</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/mein-kampf/">Mein Kampf</a></h1>
+		    <h1><a href="../goodreads/mein-kampf/">Mein&nbsp;Kampf</a></h1>
 		</div>
 		<div class="entry-content">
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1395618385l/54270._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Adolf Hitler
-	  (1925)
+	Adolf Hitler&nbsp;(1925)
       </h2>
     </div>
     <p>
@@ -190,7 +188,7 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
       </p>
 <p>
 	0/5.
-	  Finished Sunday 23 June, 2013.
+	  Finished Sunday 23 June,&nbsp;2013.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/601761741?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
@@ -209,7 +207,7 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -218,12 +216,12 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

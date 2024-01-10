@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,39 +67,39 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Tuesday 9 October, 2012</a>
 	    </span>
 	</div>
-	<h1>Parser-centric grammar complexity</h1>
+	<h1>Parser-centric grammar&nbsp;complexity</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>We usually think about formal language grammars in terms of the complexity of the <em>language</em>, but it's also possible -- and potentially more useful, for a compiler-writer or other user -- to think about them from the perspective of the <em>parser</em>, which is slightly different.
+		<p>We usually think about formal language grammars in terms of the complexity of the <em>language</em>, but it&#8217;s also possible &#8212; and potentially more useful, for a compiler-writer or other user &#8212; to think about them from the perspective of the <em>parser</em>, which is slightly different.
 
 <!--more-->
 
-I'm teaching grammars and parsing to a second-year class at the moment, which involves getting to grips with the ideas of formal languages, their representation, using them to recognise ("parse") texts that conform to their rules. Simultaneously I'm also looking at programming language grammars and how they can be simplified. I've realised that these two activities don't quite line up the way I expected.
+I&#8217;m teaching grammars and parsing to a second-year class at the moment, which involves getting to grips with the ideas of formal languages, their representation, using them to recognise (&#8220;parse&#8221;) texts that conform to their rules. Simultaneously I&#8217;m also looking at programming language grammars and how they can be simplified. I&#8217;ve realised that these two activities don&#8217;t quite line up the way I expected.
 
 Formal languages are important for computer scientists, as they let us describe the texts allowed for valid programs, data files and the like. The understanding of formal languages derives from linguistics, chiefly the work of Noam Chomsky in recognising the <a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy" target="_blank">hierarchy of languages</a> induced by very small changes in the capabilities of the underlying grammar: regular languages, context-free and context-sensitive, and so forth. Regular and context-free languages have proven to be the most useful in practice, with everything else being a bit too complicated for most uses.
 
-The typical use of grammars in (for example) compilers is that we define a syntax for the language we're trying to recognise (for example Java) using a (typically context-free) grammar. The grammar states precisely what constitutes a syntactically correct Java program and, conversely, rejects syntactically incorrect programs. This parsing process is typically purely syntactic, and says nothing about whether the program makes sense semantically. The result of parsing is usually a parse tree, a more computer-friendly form of the program that's then used to generate code after some further analysis and optimisation.
+The typical use of grammars in (for example) compilers is that we define a syntax for the language we&#8217;re trying to recognise (for example Java) using a (typically context-free) grammar. The grammar states precisely what constitutes a syntactically correct Java program and, conversely, rejects syntactically incorrect programs. This parsing process is typically purely syntactic, and says nothing about whether the program makes sense semantically. The result of parsing is usually a parse tree, a more computer-friendly form of the program that&#8217;s then used to generate code after some further analysis and optimisation.
 
-In this process we start from the grammar, which is generally quite complex: Java is a complicated system to learn. It's important to realise that many computer languages aren't like this at all: they're a lot simpler, and consequently can have parsers that are extremely simple, compact, and don't need much in the way of a formal grammar: you can build them from scratch, which would be pretty much impossible for a Java parser.
+In this process we start from the grammar, which is generally quite complex: Java is a complicated system to learn. It&#8217;s important to realise that many computer languages aren&#8217;t like this at all: they&#8217;re a lot simpler, and consequently can have parsers that are extremely simple, compact, and don&#8217;t need much in the way of a formal grammar: you can build them from scratch, which would be pretty much impossible for a Java parser.
 
-This leads to a different view of the complexity of languages, based on the difficulty of writing a parser for them -- which doesn't quite track the Chomsky hierarchy. Instead you end up with something like this:
+This leads to a different view of the complexity of languages, based on the difficulty of writing a parser for them &#8212; which doesn&#8217;t quite track the Chomsky hierarchy. Instead you end up with something like this:
 
-<strong>Isolated.</strong> In languages like Forth, programs are composed of symbols separated by whitespace and the language says nothing about the ways in which they can be put together. Put another way, each symbol is recognised and responded to <em>on its own</em> rather than as part of a larger construction. In Java terms, that's like giving meaning to the <tt>{</tt> symbol independent of whether it's part of a <tt>class</tt> definition or a <tt>for</tt> loop.
+<strong>Isolated.</strong> In languages like Forth, programs are composed of symbols separated by whitespace and the language says nothing about the ways in which they can be put together. Put another way, each symbol is recognised and responded to <em>on its own</em> rather than as part of a larger construction. In Java terms, that&#8217;s like giving meaning to the <tt>{</tt> symbol independent of whether it&#8217;s part of a <tt>class</tt> definition or a <tt>for</tt> loop.
 
-It's easy to see how simple this is for the compiler-writer: we simply look-up each symbol extracted from the input and execute or compile it, without reference to anything else. Clearly this only works to some extent: you only expect to see an else branch somewhere after a corresponding if statement, for example. In Forth this isn't a matter of grammar, but rather of compilation: there's an extra-grammatical mechanism for testing the sanity of the control constructs as part of their execution. While this may sound strange (and is, really) it means that it's easy to extend the syntax of the language -- because it doesn't really have one. Adding new control constructs means adding symbols to be parsed <em>and</em> defining the appropriate control structure to sanity-check their usage. The point is that we can simplify the parser well below the level that might be considered normal and still get a usable system.
+It&#8217;s easy to see how simple this is for the compiler-writer: we simply look-up each symbol extracted from the input and execute or compile it, without reference to anything else. Clearly this only works to some extent: you only expect to see an else branch somewhere after a corresponding if statement, for example. In Forth this isn&#8217;t a matter of grammar, but rather of compilation: there&#8217;s an extra-grammatical mechanism for testing the sanity of the control constructs as part of their execution. While this may sound strange (and is, really) it means that it&#8217;s easy to extend the syntax of the language &#8212; because it doesn&#8217;t really have one. Adding new control constructs means adding symbols to be parsed <em>and</em> defining the appropriate control structure to sanity-check their usage. The point is that we can simplify the parser well below the level that might be considered normal and still get a usable system.
 
-<strong>Incremental.</strong> The next step up is to allow the execution of a symbol to take control of the input stream itself, and define what it consumes <em>itself</em>. A good example of this is from Forth again, for parsing strings. The Forth word introducing a literal string is <tt>S"</tt>, as in <tt>S" hello world"</tt>. What happens with the <tt>hello world"</tt> part of the text isn't defined by a grammar, though: it's defined by <tt>S"</tt>, which takes control of the parsing process and consumes the text it wants before returning control to the parser. (In this case it consumes all characters until the closing quotes.)  Again this means we can define new language constructs, simply by having words that do their own parsing.
+<strong>Incremental.</strong> The next step up is to allow the execution of a symbol to take control of the input stream itself, and define what it consumes <em>itself</em>. A good example of this is from Forth again, for parsing strings. The Forth word introducing a literal string is <tt>S"</tt>, as in <tt>S" hello world"</tt>. What happens with the <tt>hello world"</tt> part of the text isn&#8217;t defined by a grammar, though: it&#8217;s defined by <tt>S"</tt>, which takes control of the parsing process and consumes the text it wants before returning control to the parser. (In this case it consumes all characters until the closing quotes.)  Again this means we can define new language constructs, simply by having words that do their own parsing.
 
-Interestingly enough, these parser words could themselves use a grammar that's different from that of the surrounding language -- possibly using a standard parser generator. The main parser takes a back seat while the parser word does its job, allowing for arbitrary extension of the syntax of the language. The disadvantage of course is that there's no central definition of what constitutes "a program" in the language -- but that's an advantage too, certainly for experimentation and extension. It's the <a href="../../typewheel/" target="_blank">ideas of dynamic languages</a> extended to syntax, in a way.
+Interestingly enough, these parser words could themselves use a grammar that&#8217;s different from that of the surrounding language &#8212; possibly using a standard parser generator. The main parser takes a back seat while the parser word does its job, allowing for arbitrary extension of the syntax of the language. The disadvantage of course is that there&#8217;s no central definition of what constitutes &#8220;a program&#8221; in the language &#8212; but that&#8217;s an advantage too, certainly for experimentation and extension. It&#8217;s the <a href="../../typewheel/" target="_blank">ideas of dynamic languages</a> extended to syntax, in a way.
 
-<strong>Structured.</strong> Part of the subtlety of defining grammars is avoid <em>ambiguity</em>, making sure that every program can be parsed in a well-defined and unique way. The simplest way to avoid ambiguity is to make everything structured and standard. Lisp and Scheme are the best illustrations of this. Every expression in the language takes the same form: an atom, or a list whose elements may be atoms or other lists. Lists are enclosed in brackets, so it's always possible to find the scope of any particular construction. It's extremely easy to write a parser for such a language, and the "grammar" fits onto about three lines of description.
+<strong>Structured.</strong> Part of the subtlety of defining grammars is avoid <em>ambiguity</em>, making sure that every program can be parsed in a well-defined and unique way. The simplest way to avoid ambiguity is to make everything structured and standard. Lisp and Scheme are the best illustrations of this. Every expression in the language takes the same form: an atom, or a list whose elements may be atoms or other lists. Lists are enclosed in brackets, so it&#8217;s always possible to find the scope of any particular construction. It&#8217;s extremely easy to write a parser for such a language, and the &#8220;grammar&#8221; fits onto about three lines of description.
 
-Interestingly, this sort of language is also highly extensible, as all constructs look the same. Adding a new control construct is straightforward <em>as long as it follows the model</em>, and again can be done extra-grammatically without defining new elements to the parser. One is more constrained than with the isolated or incremental models, but this constraint means that there's also more scope for controlled expansion. Scheme, for example, provides a macro facility that allows new syntactic forms, within the scope and style of the overall parser, that nevertheless behave differently to "normal" constructs: they can capture and manipulate fragments of program text and re-combine them into new structures using <a href="https://en.wikipedia.org/wiki/Quasi-quotation" target="_blank">quasi-quoting</a> and other mechanisms. One can provide these facilities quite uniformly without difficulty, and without explicit syntax. (This is even true for quasi-quoting, although there's usually some syntactic sugar to make it more usable.) The results will always "look like Lisp", even though they might behave rather differently: again, we limit the scope of what is dealt with grammatically and what is dealt with programmatically, and get results that are somewhat different to those we would get with the standard route to compiler construction.
+Interestingly, this sort of language is also highly extensible, as all constructs look the same. Adding a new control construct is straightforward <em>as long as it follows the model</em>, and again can be done extra-grammatically without defining new elements to the parser. One is more constrained than with the isolated or incremental models, but this constraint means that there&#8217;s also more scope for controlled expansion. Scheme, for example, provides a macro facility that allows new syntactic forms, within the scope and style of the overall parser, that nevertheless behave differently to &#8220;normal&#8221; constructs: they can capture and manipulate fragments of program text and re-combine them into new structures using <a href="https://en.wikipedia.org/wiki/Quasi-quotation" target="_blank">quasi-quoting</a> and other mechanisms. One can provide these facilities quite uniformly without difficulty, and without explicit syntax. (This is even true for quasi-quoting, although there&#8217;s usually some syntactic sugar to make it more usable.) The results will always &#8220;look like Lisp&#8221;, even though they might behave rather differently: again, we limit the scope of what is dealt with grammatically and what is dealt with programmatically, and get results that are somewhat different to those we would get with the standard route to compiler construction.
 
-This isn't to say that we should give up on grammars and go back to more primitive definitions of languages, but just to observe that grammars evolved to suit a particular purpose that needs to be continually checked for relevance. Most programmers find Java (for example) easier to read than Scheme, despite the latter's more straightforward and regular syntax: simplicity is in the eye of the beholder, not the parser. But a formal grammar may not be the best solution in situations where we <em>want</em> variable, loose and extensible syntax for whatever reason, so it's as well to be aware of the alternative that make the problem one of programming rather than of parsing.</p>
+This isn&#8217;t to say that we should give up on grammars and go back to more primitive definitions of languages, but just to observe that grammars evolved to suit a particular purpose that needs to be continually checked for relevance. Most programmers find Java (for example) easier to read than Scheme, despite the latter&#8217;s more straightforward and regular syntax: simplicity is in the eye of the beholder, not the parser. But a formal grammar may not be the best solution in situations where we <em>want</em> variable, loose and extensible syntax for whatever reason, so it&#8217;s as well to be aware of the alternative that make the problem one of programming rather than of&nbsp;parsing.</p>
 	    </div>
 	</article>
 </div>
@@ -142,7 +142,7 @@ This isn't to say that we should give up on grammars and go back to more primiti
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -151,12 +151,12 @@ This isn't to say that we should give up on grammars and go back to more primiti
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

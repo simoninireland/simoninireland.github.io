@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,25 +67,25 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Wednesday 31 July, 2013</a>
 	    </span>
 	</div>
-	<h1>Basic power measurements</h1>
+	<h1>Basic power&nbsp;measurements</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Some initial measurements of power consumption.</p>
+		<p>Some initial measurements of power&nbsp;consumption.</p>
 <!--more-->
 
-<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes is:
+<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes&nbsp;is:
 </p>
 <ul>
 <li>Normal <code>delay()</code> loop</li>
-    <li>Deep sleep for a period (deep sleep)</li>
-    <li>Flash the LED (awake)</li>
-    <li>Flash the LED differently while sending out radio messages (awake and transmitting)</li>
+    <li>Deep sleep for a period (deep&nbsp;sleep)</li>
+    <li>Flash the <span class="caps">LED</span>&nbsp;(awake)</li>
+    <li>Flash the <span class="caps">LED</span> differently while sending out radio messages (awake and&nbsp;transmitting)</li>
 </ul>
 We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
-<p>The results are as follows:</p>
+<p>The results are as&nbsp;follows:</p>
 <table style="border: 1"><tbody>
 <tr>
 <td>Activity</td>
@@ -104,12 +104,12 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <td>33mA</td>
 </tr>
 <tr>
-<td>Steady LED</td>
+<td>Steady <span class="caps">LED</span></td>
 <td>Deep sleep</td>
 <td>34mA</td>
 </tr>
 <tr>
-<td>Flashing LED</td>
+<td>Flashing <span class="caps">LED</span></td>
 <td>Awake</td>
 <td>45mA</td>
 </tr>
@@ -129,9 +129,9 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 <td>87mA</td>
 </tr>
 </tbody></table>
-<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of using <code>delay()</code> is quite power-hungry. The bad news is that the "at rest" power consumption of an Arduino even in deep sleep  -- the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing -- is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there's some variation happening faster than the ammeter's sample time).</p>
-<p>The radio isn't put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the time.</p>
-<p>[UPDATE 1Aug2013: made the table layout a bit clearer.]</p>
+<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of&nbsp;using <code>delay()</code> is quite power-hungry. The bad news is that the &#8220;at rest&#8221; power consumption of an Arduino even in deep sleep  &#8212; the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing &#8212; is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there&#8217;s some variation happening faster than the ammeter&#8217;s sample&nbsp;time).</p>
+<p>The radio isn&#8217;t put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the&nbsp;time.</p>
+<p>[<span class="caps">UPDATE</span> 1Aug2013: made the table layout a bit&nbsp;clearer.]</p>
 	    </div>
 	</article>
 </div>
@@ -174,11 +174,11 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 	</div>
 	<div class="next">
 	    <a href="../../../08/02/at-commands-2/" rel="next">
-		<span class="meta-nav">Newer Post</span>Issuing AT commands
+		<span class="meta-nav">Newer Post</span>Issuing <span class="caps">AT</span> commands
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -187,12 +187,12 @@ We perform these tasks repeatedly, keeping them going for 10s each to let the po
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

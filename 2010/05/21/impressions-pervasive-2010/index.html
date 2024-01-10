@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,35 +67,35 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 21 May, 2010</a>
 	    </span>
 	</div>
-	<h1>Impressions of Pervasive 2010</h1>
+	<h1>Impressions of Pervasive&nbsp;2010</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>I've spent this week at the <a href="http://www.pervasive2010.org">Pervasive 2010 conference</a> on pervasive computing, along with the <a href="http://www.pmmps.org">Programming Methods for Mobile and Pervasive Systems</a> workshop I co-arranged with <a href="http://www.dominicduggan.org/">Dominic Duggan</a>. Both events have been fascinating.
+		<p>I&#8217;ve spent this week at the <a href="http://www.pervasive2010.org">Pervasive 2010 conference</a> on pervasive computing, along with the <a href="http://www.pmmps.org">Programming Methods for Mobile and Pervasive Systems</a> workshop I co-arranged with <a href="http://www.dominicduggan.org/">Dominic Duggan</a>. Both events have been fascinating.
 
-<!--more-->The PMMPS workshop is something we've wanted to run for a while, bringing together the programming language and pervasive/mobile communities to see where languages  ought to go. We received a diverse set of submissions: keynotes from Roy Campbell and Aaron Quigley, talks covering topics including debugging, software processes, temporal aspects (me), context collectionvisual programming ang a lot more. Some threads emerge quite strongly, but I think they'll have to wait for a later post after I've collected my thoughts a bit more.
+<!--more-->The <span class="caps">PMMPS</span> workshop is something we&#8217;ve wanted to run for a while, bringing together the programming language and pervasive/mobile communities to see where languages  ought to go. We received a diverse set of submissions: keynotes from Roy Campbell and Aaron Quigley, talks covering topics including debugging, software processes, temporal aspects (me), context collectionvisual programming ang a lot more. Some threads emerge quite strongly, but I think they&#8217;ll have to wait for a later post after I&#8217;ve collected my thoughts a bit more.
 
 The main conference included many  papers so good that it seems a shame to single any out. The following are simply those that spoke most strongly to me:
 
-<strong>Panorama and Cascadia.</strong> The University of Washington presented work on a "complex" events system, combining lower-level raw events. Simple sensor events are noisy and often limited in their coverage. Cascadiais an event service that allows complex events to be defined over the raw event stream, using Bayesian particle filters to interpolate missing events or those from uncovered areas: so it's possible in principle to inferentially  "sense" someone's location even in places without explicit sensor coverage, using a model of the space being observed. This is something that could be generalised to other model-based sensor streams. The Panorama tool allows end-users to specify complex events by manipulating thresholds, which seems little unsatisfactory: there's no principled way to determine the thresholds, and it still begs the question of how to program with the uncertain event stream. Still, I have to say this is the first complex event system I've seen that I actually believe could work.
+<strong>Panorama and Cascadia.</strong> The University of Washington presented work on a &#8220;complex&#8221; events system, combining lower-level raw events. Simple sensor events are noisy and often limited in their coverage. Cascadiais an event service that allows complex events to be defined over the raw event stream, using Bayesian particle filters to interpolate missing events or those from uncovered areas: so it&#8217;s possible in principle to inferentially  &#8220;sense&#8221; someone&#8217;s location even in places without explicit sensor coverage, using a model of the space being observed. This is something that could be generalised to other model-based sensor streams. The Panorama tool allows end-users to specify complex events by manipulating thresholds, which seems little unsatisfactory: there&#8217;s no principled way to determine the thresholds, and it still begs the question of how to program with the uncertain event stream. Still, I have to say this is the first complex event system I&#8217;ve seen that I actually believe could work.
 
-<strong>Eyecatcher.</strong> How do you stop people hiding from a camera, or playing-up to it? Work from Ochanomizu University in Japan places a small display on top of the camera, which can be used to present images to catch the subject's attention and to suggest poses or actions. (Another version barks like a dog, to attract your pet's attention.)I have to say this research is very Japanese, a very unusual but perceptive view of the world and the problems appropriate for research.
+<strong>Eyecatcher.</strong> How do you stop people hiding from a camera, or playing-up to it? Work from Ochanomizu University in Japan places a small display on top of the camera, which can be used to present images to catch the subject&#8217;s attention and to suggest poses or actions. (Another version barks like a dog, to attract your pet&#8217;s attention.)I have to say this research is very Japanese, a very unusual but perceptive view of the world and the problems appropriate for research.
 
-<strong>Emotion modeling</strong>. Jennifer Healey from Intel described how to monitor and infer emotions from physiological data. The main problem is that there is no common language for describing emotions -- "anxious" is good for some and bad for others -- so getting ground truth is hard even given extensive logging.
+<strong>Emotion modeling</strong>. Jennifer Healey from Intel described how to monitor and infer emotions from physiological data. The main problem is that there is no common language for describing emotions &#8212; &#8220;anxious&#8221; is good for some and bad for others &#8212; so getting ground truth is hard even given extensive logging.
 
-<strong>Indoor location tracking for non-experts</strong>. More University of Washington work, this time looking at an indoor location system simple enough to be used by non-experts such as rehabilitation therapists. They used powerline positioning, injecting different frequencies into a home's power network and detecting the radiated signal using what are essentially AM radios. Interestingly one of the most important factors was the aesthetics of the sensors: people don't want ugly boxes in their home.
+<strong>Indoor location tracking for non-experts</strong>. More University of Washington work, this time looking at an indoor location system simple enough to be used by non-experts such as rehabilitation therapists. They used powerline positioning, injecting different frequencies into a home&#8217;s power network and detecting the radiated signal using what are essentially <span class="caps">AM</span> radios. Interestingly one of the most important factors was the aesthetics of the sensors: people don&#8217;t want ugly boxes in their home.
 
 <strong>Transfer learning</strong>. Tim van Kasteren of the University of Amsterdam has generated one of the most useful smart-home data sets, used across the community (including by several of my students). He reported experiences with transfering machine-learned classifiers from one sensor network to another, by mapping the data into a new, synthetic feature space. He also used the known distribution of features from the first network to condition the learning algorithhm in the second, to improve convergence.
 
-<strong>Common Sense</strong>. Work from UC Berkeley on a platform for participative sensing: <a href="http://www.communitysensing.org/">CommonSense</a>. The idea is to place environmental sensors onto commodity mobile devices, and give them to street cleaners and others "out and about" in a community. The great thing about this is that is gives information on pollution and the like to the communities themselves, directly, rather than mediated through a (possibly indifferent or otherwise) State agency.
+<strong>Common Sense</strong>. Work from <span class="caps">UC</span> Berkeley on a platform for participative sensing: <a href="http://www.communitysensing.org/">CommonSense</a>. The idea is to place environmental sensors onto commodity mobile devices, and give them to street cleaners and others &#8220;out and about&#8221; in a community. The great thing about this is that is gives information on pollution and the like to the communities themselves, directly, rather than mediated through a (possibly indifferent or otherwise) State agency.
 
-<strong>Energy-aware data traffic management</strong>. I should add the disclaimer that is work by my colleague, Mirco Musolesi of the University of  St Andrews. Sensor nodes need to be careful about the energy they use to transmit data back to their base station. This work compares a range of strategies that trade-off the accuracy of returned data with the amount of traffic exchanged and so the impact on the nodoe's battery. This is //really// important for environmental sensing, and makes me think about further modifying the models to account for what's being sensed to trade-off information content as well.
+<strong>Energy-aware data traffic management</strong>. I should add the disclaimer that is work by my colleague, Mirco Musolesi of the University of  St Andrews. Sensor nodes need to be careful about the energy they use to transmit data back to their base station. This work compares a range of strategies that trade-off the accuracy of returned data with the amount of traffic exchanged and so the impact on the nodoe&#8217;s battery. This is //really// important for environmental sensing, and makes me think about further modifying the models to account for what&#8217;s being sensed to trade-off information content as well.
 
-<strong>Tutorials</strong> AJ Brush did a wonderful tutorial on how to do user surveys. This is something we've done ourselves, and it was great to see the issues nailed-down -- along with war stories of how to plan and conduct a survey for greatest validity and impact. Equally, John Krumm did a fantastic overview of signal processing, particle filters, hidden Markov models and the like that make the maths <em>far</em> more accessible than it normally is. Adrian Friday heroically took the graveyard slot with experiences and ideas about system support for pervasive systems.
+<strong>Tutorials</strong> <span class="caps">AJ</span> Brush did a wonderful tutorial on how to do user surveys. This is something we&#8217;ve done ourselves, and it was great to see the issues nailed-down &#8212; along with war stories of how to plan and conduct a survey for greatest validity and impact. Equally, John Krumm did a fantastic overview of signal processing, particle filters, hidden Markov models and the like that make the maths <em>far</em> more accessible than it normally is. Adrian Friday heroically took the graveyard slot with experiences and ideas about system support for pervasive systems.
 
-This is the first large conference I've attended for a while, for various reasons, and it's been a great week both scientifically and socially. The organisers at the University of Helsinki deserve an enormous vote of thanks for their efforts. Pervasive next year will be in San Francisco, an I'll definitely be there -- hopefully with a paper to present :-)</p>
+This is the first large conference I&#8217;ve attended for a while, for various reasons, and it&#8217;s been a great week both scientifically and socially. The organisers at the University of Helsinki deserve an enormous vote of thanks for their efforts. Pervasive next year will be in San Francisco, an I&#8217;ll definitely be there &#8212; hopefully with a paper to present&nbsp;:-)</p>
 	    </div>
 	</article>
 </div>
@@ -140,7 +140,7 @@ This is the first large conference I've attended for a while, for various reason
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -149,12 +149,12 @@ This is the first large conference I've attended for a while, for various reason
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">

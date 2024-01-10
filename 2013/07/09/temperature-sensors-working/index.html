@@ -45,7 +45,7 @@ MathJax.Hub.Config({
     <!-- Navigation bar -->
     <header class="nav-bar"><div class="site-branding">
 	    <h1 class="site-title">
-		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon Dobson</a>
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
 	    </h1>
 	</div>
 	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 	    </div>
 	    <ul class="menu">
 <li><a href="../../../../index.html">Home</a></li>
-		    <li><a href="../../../../personal/">About me</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
 		    <li><a href="../../../../research/">Research</a></li>
 		    <li><a href="../../../../development/projects/">Software</a></li>
 		    <li><a href="../../../../writing/">Writing</a></li>
@@ -67,7 +67,7 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Tuesday 9 July, 2013</a>
 	    </span>
 	</div>
-	<h1>Temperature sensors working</h1>
+	<h1>Temperature sensors&nbsp;working</h1>
     </div>
 
 	<!-- Page Content -->
@@ -77,15 +77,15 @@ MathJax.Hub.Config({
 
 <!--more-->
 
-The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../08/ds18b20/">DS18B20 temperature sensor </a>seems well-suited for the job.
+The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../08/ds18b20/"><span class="caps">DS18B20</span> temperature sensor </a>seems well-suited for the job.
 
-![DS18B20](/images/citizen-sensing/three-ds18b20.png)
+![<span class="caps">DS18B20</span>](/images/citizen-sensing/three-ds18b20.png)
 
-Three DS18B20 temperature sensors sharing a OneWire bus, standard (rail) power mode
+Three <span class="caps">DS18B20</span> temperature sensors sharing a OneWire bus, standard (rail) power mode
 
-Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin -- which isn't important for hardware reasons in this project, but also saves some microcontroller RAM, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The DQ line is attached to one of the Arduino's digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to "real" temperature values.
+Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin &#8212; which isn&#8217;t important for hardware reasons in this project, but also saves some microcontroller <span class="caps">RAM</span>, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The <span class="caps">DQ</span> line is attached to one of the Arduino&#8217;s digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to &#8220;real&#8221; temperature values.
 
-The resulting code is almost comically simple:
+The resulting code is almost comically&nbsp;simple:
 
 </p>
 <div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;DallasTemperature.h&gt;</span>
@@ -111,13 +111,13 @@ The resulting code is almost comically simple:
 
 
 
-That's it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).
+That&#8217;s it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).
 
 ![Three DS18B30s on a prototyping shield](/images/citizen-sensing/ds18b20-prototype.jpg)
 
-One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we'll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.
+One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we&#8217;ll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.
 
-There's also an interesting point about parasite power mode, which is where the DS18B20 draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it's probably worth looking into parasite power a bit more.
+There&#8217;s also an interesting point about parasite power mode, which is where the <span class="caps">DS18B20</span> draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it&#8217;s probably worth looking into parasite power a bit more.
 	    </div>
 	</article>
 </div>
@@ -155,7 +155,7 @@ There's also an interesting point about parasite power mode, which is where the 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
 	    <a href="../../08/ds18b20/" rel="prev">
-		<span class="meta-nav">Older Post</span>DS18B20 digital thermometer
+		<span class="meta-nav">Older Post</span><span class="caps">DS18B20</span> digital thermometer
 	    </a>
 	</div>
 	<div class="next">
@@ -164,7 +164,7 @@ There's also an interesting point about parasite power mode, which is where the 
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
-	    <aside class="widget"><h2 class="widget-title">Simon Dobson</h2>
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
@@ -173,12 +173,12 @@ There's also an interesting point about parasite power mode, which is where the 
 	    <p>
 	      Built with free and open-source software.
 	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
-	      <a href="https://note2self.abraham-v.com/libretto-theme-for-nikola/">Libretto</a>.
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content licensed under
-	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>
-	      unless otherwise noted.
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
 	    </p>
 	</div>
 	<div class="social">
