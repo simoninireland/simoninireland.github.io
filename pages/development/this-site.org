@@ -1,0 +1,85 @@
+* How this site is built
+
+  This site has been through several cycles of technology over the
+  years, including being hosted on a WordPress instance and using the
+  [[https://www.gnu.org/software/emacs-muse/manual/][muse]] static site generator. This page describes the current
+  technological set-up.
+
+** Design constraints
+
+   - A static site that can just be stored in a file system and served
+     with a very simple web server
+   - Minimal use of client-side JavaScript
+   - Mostly text
+   - ...but some content is enriched with maths and images
+   - ...and some comes from diverse sources, like [[https://jupyter.org][Jupyter]] notebooks
+   - ...and I'm quite particular about layout and typography
+
+** Technology
+
+*** Nikola
+
+    The site is driven by [[https://getnikola.com][Nikola]], a static site generator written in
+    Python. I chose Nikola for a few reasons:
+
+    - It's written in Python, making it easy for me to understand
+    - It's very configurable, with a lot of pre-packaged [[https://themes.getnikola.com/][themes]] and
+      [[https://plugins.getnikola.com/][plugins]], and easy to extend as the need arises
+    - It's reasonably well-documented
+    - It's extremely flexible in terms of input formats
+
+
+    The last point is the most important. Because I have content in
+    lots of different formats corresponding to the different
+    incarnations of this site, I need to be able to re-use those
+    different formats and not have to re-type or translate them. Not
+    only can Nikola use all that content, it also leverages to
+    strengths of the different file formats and allows them to be
+    integrated: markdown, reStructured text, plain text, HTML, Jupyter
+    notebooks, and (as we'll see) org mode, with metadata either
+    inline or held in a separate ~.meta~ file. /Very/ flexible,
+    although it does occasionally mean that the presentation of older
+    content is a bit off.
+
+*** Theme
+
+    Nikola is easy to theme and re-theme. I've used several different
+    themes over the years. The current one is based on [[https://themes.getnikola.com/v7/libretto/][Libretto]],
+    modified in several ways to adjust presentation and add things
+    like social sharing buttons and RSS subscriptions.
+
+*** Github pages
+
+    I use [[https://github.com][Github]] to version-control content, as well as obviously for
+    my software development. [[https://pages.github.com/][Githib pages]] are web sites built directly
+    from code repos. I've used them to host my [[https://simondobson.org/introduction-to-epidemics/][book]] on epidemic
+    modelling. Nikola comes with a plugin that publishes directly to
+    Github pages, making it easy to host and deploy the site. So I get
+    hosting for free alongside version control.
+
+*** Emacs and org mode
+
+    Almost all my coding, writing, and note-taking is done in [[https://emacs.org][Emacs]]
+    using [[https://orgmode.org/][Org mode]], a plain-text hypertext system with an amazing set
+    of capabilities. Nikola has an org mode plugin that can render org
+    markup alongside other content formats, so new content can be
+    written using the tool I usually use without having to re-write
+    older articles.
+
+    I draw a distinction between by notebook and my site -- the
+    former is for my use and is probably unintelligible to anyone
+    else, the latter is material deliberately written for public
+    consumption. I have a set of Emacs functions to simplify moving
+    from one to the other.
+
+*** JavaScript
+
+    "Minimal", not "no", JavaScript.
+
+    Laying-out maths is a complicated process that is best performed
+    client-side. I use [[http://mathjax.org][MathJax]] for this, which takes the [[https://www.latex-project.org/][LaTeX]] maths
+    markup that almost all scientists use and renders it in HTML.
+
+    I also have some small fragments of JavaScript elsewhere around
+    the site, for example to provide the "Share to Mastodon" buttons
+    on articles.

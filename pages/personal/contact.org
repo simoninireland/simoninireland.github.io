@@ -1,11 +1,10 @@
 #+begin_verse
   **Professor Simon Dobson** FRSE CEng FBCS
   Professor of Computer Science
-  Deputy Head of School for Computer Science
 
   [[https://www.st-andrews.ac.uk/computer-science][School of Computer Science]], [[https://www.st-andrews.ac.uk][University of St Andrews]]
   Room 0.27, Jack Cole Building, North Haugh
-  St Andrews, Fife KY16 9SX, Scotland
+  St Andrews, Fife KY16 9SX, Scotland UK
   ([[http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=St+Andrews,+Fife+KY16++9SX&sll=56.458032,-2.981972&sspn=0.491711,1.5065&ie=UTF8&hq=&hnear=Saint+Andrews,+Fife+KY16+9SX,+United+Kingdom&ll=56.341448,-2.804775&spn=0.007707,0.023539&t=h&z=16][map]])
 #+end_verse
 
@@ -16,12 +15,12 @@
   <span class="menuitemtext">+44 1334 461626</span>
   <br>
   <span class="menuitemicon"><i class="fa fa-envelope"/></span>
-  <a href="mailto:simon.dobson@st-andrews.ac.uk">
+  <a href="mailto:simon.dobson@st-andrews.ac.uk" rel="me">
     <span class="menuitemtext">Work email</span>
   </a>
   <br>
   <span class="menuitemicon"><i class="fa fa-envelope"/></span>
-  <a href="mailto:simoninireland@gmail.com">
+  <a href="mailto:simoninireland@gmail.com" rel="me">
     <span class="menuitemtext">Personal email</span>
   </a>
   <br>
@@ -31,21 +30,21 @@
   </a>
   <br>
   <span class="menuitemicon"><i class="fab fa-github"/></span>
-  <a href="https://github.com/simoninireland">
+  <a href="https://github.com/simoninireland" rel="me">
     <span class="menuitemtext">GitHub</span>
   </a>
   <br>
   <span class="menuitemicon"><i class="fab fa-mastodon"/></span>
-  <a href="https://mastodon.scot/@simoninireland/">
+  <a href="https://mastodon.scot/@simoninireland/" rel="me">
     <span class="menuitemtext">Mastodon</span>
   </a>
   <br>
   <span class="menuitemicon"><i class="fab fa-linkedin"/></span>
-  <a href="https://www.linkedin.com/in/simon-dobson-9006802/">
+  <a href="https://www.linkedin.com/in/simon-dobson-9006802/" rel="me">
     <span class="menuitemtext">LinkedIn</span>
   </a>
   <br>
-  <span class="menuitemicon"><i class="fab fa-facebook"/></span>
+  <span class="menuitemicon"><i class="fab fa-facebook" rel="me"/></span>
   <a href="https://facebook.com/simoninireland">
     <span class="menuitemtext">Facebook</span>
   </a>

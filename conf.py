@@ -149,12 +149,27 @@ def tagged_title(p):
         tt = f'{tt} {hashtags}'
     return tt
 
+def this_year(p):
+    '''Return this year as a string. Used in the copyright notice
+    to automatically keep it correct.
+
+    :param p: post (unused)
+    :returns: this year'''
+    now = datetime.datetime.now().date()
+    return now.strftime("%Y")
+
 TEMPLATE_FILTERS= {
     "dayonly": j2_dayonly_filter,
     "taggedtitle": tagged_title,
     "hashify": hashify,
     "dashify": dashify,
+    "this_year": this_year,
 }
+
+# Post-processing
+FILTERS = {
+    ".html": ["filters.typogrify"],
+    }
 
 # Feeds for continuous import
 # Regular version: get the latest posts
