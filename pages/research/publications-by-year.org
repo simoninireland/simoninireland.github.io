@@ -15,10 +15,6 @@
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
-** 2024
-
-
-
 ** 2023
 
 <<citeproc_bib_item_1>>Simon Dobson and Peter Mann.  /[[https://simondobson.org/softcopy/uksystems-23.pdf][Moving a Scientific Computing System to the Cloud]]/. In /7th UK System Research Challenges Workshop/. Co Durham, UK. 2023.

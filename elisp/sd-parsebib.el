@@ -261,14 +261,12 @@ PARAMS should contain a ':key' indicating the field in a reference and a
 ':value' containing its value. The function fills-in the block with all
 the references from the `bibtex-completion-bibliography' list that have
 that value in that key."
-  (let* ((key (cond ((plist-member params :key)
-		     (prin1-to-string (plist-get params :key)))
-		    (t
-		     (error "No :key specified"))))
-	 (value (cond ((plist-member params :value)
-		       (sd/string-dequote (prin1-to-string (plist-get params :value))))
-		      (t
-		       (error "No :value specified"))))
+  (let* ((key (if (plist-member params :key)
+		  (prin1-to-string (plist-get params :key))
+		(error "No :key specified")))
+	 (value (if (plist-member params :value)
+		    (sd/string-dequote (prin1-to-string (plist-get params :value)))
+		  (error "No :value specified")))
 	 (csl-style-locale (org-collect-keywords '("CSL-STYLE" "CSL-LOCALE")))
 	 (entries (sd/parsebib--find-entries-by-key-value-in-files key value
 								   bibtex-completion-bibliography))
@@ -295,10 +293,12 @@ PARAMS should contain a key ':file' pointing to a bibfile that will be presented
 		;; (also needs to be forward or backwards)
 		(dolist (year (number-sequence this-year 1991 -1))
 		  (let ((bibyear (sd/parsebib--create-bibliography-year 'org year bibfile csl-style-locale)))
-		    (insert (format "\n** %d\n" year))
-		    (newline)
-		    (insert bibyear)
-		    (newline)))
+		    (when (> (length bibyear) 0)
+		      ;; insertonly non-empty years
+		      (insert (format "\n** %d\n" year))
+		      (newline)
+		      (insert bibyear)
+		      (newline))))
 
 		;; return the bibliography as a string
 		(string-trim (buffer-string)))))
