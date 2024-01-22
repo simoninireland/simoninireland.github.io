@@ -73,6 +73,12 @@
 		    :archived-trees nil))
 
 
+;;; ---------- Code evaluation ----------
+
+;; Execute blocks when re-building, without prompting
+(setq org-confirm-babel-evaluate nil)
+
+
 ;;; ---------- Export ----------
 
 (defun sd/blog--post-or-page (fn)

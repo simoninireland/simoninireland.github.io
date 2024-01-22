@@ -1,0 +1,129 @@
+#+BEGIN_COMMENT
+.. title: Locally overriding a function throughout a dynamic extent
+.. slug: locally-overriding-a-function-throughout-a-dynamic-extent
+.. date: 2024-01-22 10:34:45 UTC
+.. tags: emacs, lisp
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Locally overriding a function throughout a dynamic extent
+  :PROPERTIES:
+  :header-args: :exports code,results
+  :END:
+
+  A horribly dangerous but occasionally useful Lisp technique.
+
+  My use case is as follows. ~ebib~ has a command to copy a
+  formatted reference to the kill ring, using
+  ~citar-citeproc-format-reference~ to actually do the formatting.
+  This means it's easy to change the style of the formatted
+  reference. However, ~citar-citeproc-format-reference~  itself uses
+  ~citar-render-bib~ with a plain-text formatter. This is a sensible
+  default, but since I'm almost always copying references into
+  org-more documents, it loses a lot of information: it'd be better
+  to use the org formatter, but there's no argument to specify it.
+
+  Clearly the correct solution is to change
+  ~citar-citeproc-format-reference~ to take a key or optional
+  argument to specify the formatter, but that involves changing
+  someone else's code. The hacker solution is to change the call
+  ~(citeproc-render-bib proc 'plain)~ to ~(citeproc-render-bib proc
+  'org)~, but without re-writing the entire surrounding function to
+  keep the change just to the case where I need it.
+
+  One way to do this would be to define a variant
+  ~citeproc-render-bib~ that ignores its second argument (the
+  formatter) and always uses ~'org~ instead, and then substitute
+  this variant for the original -- but /only/ in the dynamic extent
+  of a /particular/ call to ~citar-citeproc-format-reference~. In
+  most languages this would be impossible -- but not in Emacs Lisp.
+
+  The solution is to use ~cl-letf~, which overrides the values of
+  general places for the duration of its body forms and restores the
+  original value on exit (normal or otherwise). The important point
+  is that the change occurs across the /extent/ of the body -- the
+  body and all the code called from the body -- and not merely in
+  the /scope/ of the body, which would only affect calls made there
+  directly.
+
+  For example, consider in the following:
+
+  #+begin_src emacs-lisp :results silent
+(defun f(a b)
+  (+ a b))
+
+(defun first (a)
+  (f a 10))
+  #+end_src
+
+  Which when called gives:
+
+  #+begin_src emacs-lisp
+(first 26)
+  #+end_src
+
+  #+RESULTS:
+  : 36
+
+  If we want to override the default value (10) that's passed to ~f~
+  and instead use 25, we can define a new version that ignores the
+  second argument and uses our preferred default, and then
+  temporarily override the definition of ~f~ in the calling
+  environment. If we want to use the original in the overriding
+  definition we need to grab it first. This gives:
+
+  #+begin_src emacs-lisp
+(let ((origf (symbol-function 'f)))
+  (cl-letf (((symbol-function 'f) (lambda (a b)
+				    (funcall origf a 25))))
+    (first 26)))
+  #+end_src
+
+  #+RESULTS:
+  : 51
+
+  What's going on? The ~cl-letf~ macro is like ~let~ but works with
+  general places (as in ~setf~). It sets the places in its argument
+  list for the duration of its body, and then restores them on exit,
+  regardless of whether that exit is normal or /via/ a condition.
+
+  The ~(symbol-function 'f)~ form returns the place that stores the
+  function associated with symbol ~f~. We use it twice: once to
+  capture this function so we can use it later, and once to identify
+  the place where we store our new variant function. This new binding
+  is then used for all calls made from the body of the ~cl-letf~,
+  regardless of depth, so the call to ~first~ makes use of our variant
+  definition of ~f~ rather than the original -- but with the original
+  then being used in the variant in our case!
+
+  If we'd used ~let~ or ~cl-flet~ instead of ~cl-letf~ we wouldn't
+  have got the behaviour we're looking for:
+
+  #+begin_src emacs-lisp
+(let ((origf (symbol-function 'f)))
+  (cl-flet ((f (a b)
+	      (funcall origf a 25))))
+    (first 26))
+  #+end_src
+
+  #+RESULTS:
+  : 36
+
+  Why? Because ~let~ and ~cl-flet~ work over the /scope/ of the body,
+  so only calls to ~f~ directly from the body of the assignment are
+  affected -- not calls from calls. This is a great illustration of
+  the difference between scope and extent, incidentally.
+
+  I did say it was horrible :-). It's basically like adding
+  temporary ~:around~ advice, and could probably benefit from a
+  macro to wrap it up.
+
+  Part of the horribleness comes from the fact that the redefinition
+  is made for the entire dynamic extent of the body forms, which
+  means /all/ instances of the overridden function will use the
+  overridden value. There might be more than you think! But for
+  well-understood code it's sometimes useful, avoiding duplicating
+  code to make tiny changes.
