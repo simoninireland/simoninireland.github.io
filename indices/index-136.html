@@ -52,6 +52,77 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/01/01/making-small-changes-to-lots-of-files/" rel="bookmark">Monday 1 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/01/making-small-changes-to-lots-of-files/">Making small changes to lots of&nbsp;files</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org86b476d" class="outline-2">
+<h2 id="org86b476d">Making small changes to lots of&nbsp;files</h2>
+<div class="outline-text-2" id="text-org86b476d">
+<p>
+I recently had to make tiny changes to a large number of files
+spread nested through a directory structure. This turns out to be a
+lot easier than I expected with&nbsp;Emacs.
+</p>
+
+<p>
+My use case was actually this blog. It&#8217;s been on the go for a while
+in several different formats, and over the years I&#8217;ve used tags to
+drive different presentations – for example articles tagged &#8216;news&#8217;
+ended up on the front page. I no longer do this, which meant a lot
+of redundant tags to be got rid of, mainly in&nbsp;Nikola&#8217;s <code>.meta</code>
+metadata files but also embedded&nbsp;into <code>.md</code> markdown&nbsp;and <code>.rst</code>
+restructured&nbsp;text..
+</p>
+
+<p>
+My plan was to use&nbsp;Emacs&#8217; <code>rgrep</code> command to recursively traverse
+the directory structure of posts to find the tags I wanted to
+remove. This would give me&nbsp;a <code>grep</code>-mode buffer that hyperlinks to
+the files (and lines) needing changing, which I could then click
+through to get to where each change needed to be made.
+Straightforward, but time-consuming and error-prone when there were
+about 150 files to be changed. Clearly a problem in need of a better&nbsp;solution.
+</p>
+
+<p>
+I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a>&nbsp;(&#8220;writable <code>grep</code><span class="dquo">&#8220;</span>) package. This
+makes&nbsp;the <code>grep</code>-mode buffer editable, with changes being
+written-back to the underlying files. <i>Exactly</i> what I&nbsp;needed.
+</p>
+
+<p>
+Once I&#8217;d&nbsp;installed <code>wgrep</code>, the workflow is ridiculously&nbsp;easy:
+</p>
+
+<ol class="org-ol">
+<li>Using <code>rgrep</code> gets&nbsp;a <code>grep</code>-mode&nbsp;buffer</li>
+<li>
+<code>C-c C-p</code> makes the buffer&nbsp;editable</li>
+<li>Changing the lines. In my case I could&nbsp;use <code>string-replace</code> to
+remove the tags I wanted rid of. More complicated cases might&nbsp;need <code>regexp-replace</code> or even manual&nbsp;editing</li>
+<li>
+<code>C-x C-s</code> writes the changes back&nbsp;out</li>
+</ol>
+<p>
+(There are several other keybindings&nbsp;that <code>wgrep</code> makes
+available,&nbsp;notably <code>C-c C-k</code> to discard all&nbsp;changes.)
+</p>
+
+<p>
+That&#8217;s it! A job that I expected to take an hour took about 3&nbsp;minutes.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/they-called-it-passchendaele/" rel="bookmark">Sunday 31 December, 2023</a>
 			</span>
 		    </div>

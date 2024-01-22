@@ -1,5 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 06 Jan 2024 23:00:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0d117c0" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 22 Jan 2024 11:00:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5abe933" class="outline-2"&gt;
+&lt;h2 id="org5abe933"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5abe933"&gt;
+&lt;p&gt;
+A horribly dangerous but occasionally useful Lisp technique.
+&lt;/p&gt;
+
+&lt;p&gt;
+My use case is as follows. &lt;code&gt;ebib&lt;/code&gt; has a command to copy a
+formatted reference to the kill ring, using
+&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to actually do the formatting.
+This means it's easy to change the style of the formatted
+reference. However, &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;  itself uses
+&lt;code&gt;citar-render-bib&lt;/code&gt; with a plain-text formatter. This is a sensible
+default, but since I'm almost always copying references into
+org-more documents, it loses a lot of information: it'd be better
+to use the org formatter, but there's no argument to specify it.
+&lt;/p&gt;
+
+&lt;p&gt;
+Clearly the correct solution is to change
+&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to take a key or optional
+argument to specify the formatter, but that involves changing
+someone else's code. The hacker solution is to change the call
+&lt;code&gt;(citeproc-render-bib proc 'plain)&lt;/code&gt; to &lt;code&gt;(citeproc-render-bib proc
+  'org)&lt;/code&gt;, but without re-writing the entire surrounding function to
+keep the change just to the case where I need it.
+&lt;/p&gt;
+
+&lt;p&gt;
+One way to do this would be to define a variant
+&lt;code&gt;citeproc-render-bib&lt;/code&gt; that ignores its second argument (the
+formatter) and always uses &lt;code&gt;'org&lt;/code&gt; instead, and then substitute
+this variant for the original – but &lt;i&gt;only&lt;/i&gt; in the dynamic extent
+of a &lt;i&gt;particular&lt;/i&gt; call to &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;. In
+most languages this would be impossible – but not in Emacs Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+The solution is to use &lt;code&gt;cl-letf&lt;/code&gt;, which overrides the values of
+general places for the duration of its body forms and restores the
+original value on exit (normal or otherwise). The important point
+is that the change occurs across the &lt;i&gt;extent&lt;/i&gt; of the body – the
+body and all the code called from the body – and not merely in
+the &lt;i&gt;scope&lt;/i&gt; of the body, which would only affect calls made there
+directly.
+&lt;/p&gt;
+
+&lt;p&gt;
+For example, consider in the following:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Which when called gives:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+36
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+If we want to override the default value (10) that's passed to &lt;code&gt;f&lt;/code&gt;
+and instead use 25, we can define a new version that ignores the
+second argument and uses our preferred default, and then
+temporarily override the definition of &lt;code&gt;f&lt;/code&gt; in the calling
+environment. If we want to use the original in the overriding
+definition we need to grab it first. This gives:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-letf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(((&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;				    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+51
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+What's going on? The &lt;code&gt;cl-letf&lt;/code&gt; macro is like &lt;code&gt;let&lt;/code&gt; but works with
+general places (as in &lt;code&gt;setf&lt;/code&gt;). It sets the places in its argument
+list for the duration of its body, and then restores them on exit,
+regardless of whether that exit is normal or &lt;i&gt;via&lt;/i&gt; a condition.
+&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;code&gt;(symbol-function 'f)&lt;/code&gt; form returns the place that stores the
+function associated with symbol &lt;code&gt;f&lt;/code&gt;. We use it twice: once to
+capture this function so we can use it later, and once to identify
+the place where we store our new variant function. This new binding
+is then used for all calls made from the body of the &lt;code&gt;cl-letf&lt;/code&gt;,
+regardless of depth, so the call to &lt;code&gt;first&lt;/code&gt; makes use of our variant
+definition of &lt;code&gt;f&lt;/code&gt; rather than the original – but with the original
+then being used in the variant in our case!
+&lt;/p&gt;
+
+&lt;p&gt;
+If we'd used &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;cl-flet&lt;/code&gt; instead of &lt;code&gt;cl-letf&lt;/code&gt; we wouldn't
+have got the behaviour we're looking for:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-flet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+36
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
+so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
+affected – not calls from calls. This is a great illustration of
+the difference between scope and extent, incidentally.
+&lt;/p&gt;
+
+&lt;p&gt;
+I did say it was horrible :-). It's basically like adding
+temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
+macro to wrap it up.
+&lt;/p&gt;
+
+&lt;p&gt;
+Part of the horribleness comes from the fact that the redefinition
+is made for the entire dynamic extent of the body forms, which
+means &lt;i&gt;all&lt;/i&gt; instances of the overridden function will use the
+overridden value. There might be more than you think! But for
+well-understood code it's sometimes useful, avoiding duplicating
+code to make tiny changes.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0d117c0" class="outline-2"&gt;
 &lt;h2 id="org0d117c0"&gt;TIL: The first ever .com domain&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org0d117c0"&gt;
 &lt;p&gt;

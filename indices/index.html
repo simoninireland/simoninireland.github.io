@@ -52,6 +52,165 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" rel="bookmark">Monday 22 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/">Locally overriding a function throughout a dynamic&nbsp;extent</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org5abe933" class="outline-2">
+<h2 id="org5abe933">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
+<div class="outline-text-2" id="text-org5abe933">
+<p>
+A horribly dangerous but occasionally useful Lisp&nbsp;technique.
+</p>
+
+<p>
+My use case is as&nbsp;follows. <code>ebib</code> has a command to copy a
+formatted reference to the kill ring,&nbsp;using
+<code>citar-citeproc-format-reference</code> to actually do the formatting.
+This means it&#8217;s easy to change the style of the formatted
+reference.&nbsp;However, <code>citar-citeproc-format-reference</code>  itself&nbsp;uses
+<code>citar-render-bib</code> with a plain-text formatter. This is a sensible
+default, but since I&#8217;m almost always copying references into
+org-more documents, it loses a lot of information: it&#8217;d be better
+to use the org formatter, but there&#8217;s no argument to specify&nbsp;it.
+</p>
+
+<p>
+Clearly the correct solution is to&nbsp;change
+<code>citar-citeproc-format-reference</code> to take a key or optional
+argument to specify the formatter, but that involves changing
+someone else&#8217;s code. The hacker solution is to change the&nbsp;call
+<code>(citeproc-render-bib proc 'plain)</code> to <code>(citeproc-render-bib proc
+  'org)</code>, but without re-writing the entire surrounding function to
+keep the change just to the case where I need&nbsp;it.
+</p>
+
+<p>
+One way to do this would be to define a&nbsp;variant
+<code>citeproc-render-bib</code> that ignores its second argument (the
+formatter) and always&nbsp;uses <code>'org</code> instead, and then substitute
+this variant for the original – but <i>only</i> in the dynamic extent
+of a <i>particular</i> call&nbsp;to <code>citar-citeproc-format-reference</code>. In
+most languages this would be impossible – but not in Emacs&nbsp;Lisp.
+</p>
+
+<p>
+The solution is to&nbsp;use <code>cl-letf</code>, which overrides the values of
+general places for the duration of its body forms and restores the
+original value on exit (normal or otherwise). The important point
+is that the change occurs across the <i>extent</i> of the body – the
+body and all the code called from the body – and not merely in
+the <i>scope</i> of the body, which would only affect calls made there&nbsp;directly.
+</p>
+
+<p>
+For example, consider in the&nbsp;following:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+<p>
+Which when called&nbsp;gives:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+36
+</pre>
+
+
+<p>
+If we want to override the default value (10) that&#8217;s passed&nbsp;to <code>f</code>
+and instead use 25, we can define a new version that ignores the
+second argument and uses our preferred default, and then
+temporarily override the definition&nbsp;of <code>f</code> in the calling
+environment. If we want to use the original in the overriding
+definition we need to grab it first. This&nbsp;gives:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">cl-letf</span><span class="w"> </span><span class="p">(((</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">				    </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)))</span>
+</pre></div>
+
+<pre class="example">
+51
+</pre>
+
+
+<p>
+What&#8217;s going on?&nbsp;The <code>cl-letf</code> macro is&nbsp;like <code>let</code> but works with
+general places (as&nbsp;in <code>setf</code>). It sets the places in its argument
+list for the duration of its body, and then restores them on exit,
+regardless of whether that exit is normal or <i>via</i> a&nbsp;condition.
+</p>
+
+<p>
+The <code>(symbol-function 'f)</code> form returns the place that stores the
+function associated with&nbsp;symbol <code>f</code>. We use it twice: once to
+capture this function so we can use it later, and once to identify
+the place where we store our new variant function. This new binding
+is then used for all calls made from the body of&nbsp;the <code>cl-letf</code>,
+regardless of depth, so the call&nbsp;to <code>first</code> makes use of our variant
+definition&nbsp;of <code>f</code> rather than the original – but with the original
+then being used in the variant in our&nbsp;case!
+</p>
+
+<p>
+If we&#8217;d&nbsp;used <code>let</code> or <code>cl-flet</code> instead&nbsp;of <code>cl-letf</code> we wouldn&#8217;t
+have got the behaviour we&#8217;re looking&nbsp;for:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">cl-flet</span><span class="w"> </span><span class="p">((</span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">	      </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+36
+</pre>
+
+
+<p>
+Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
+so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
+affected – not calls from calls. This is a great illustration of
+the difference between scope and extent,&nbsp;incidentally.
+</p>
+
+<p>
+I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
+macro to wrap it&nbsp;up.
+</p>
+
+<p>
+Part of the horribleness comes from the fact that the redefinition
+is made for the entire dynamic extent of the body forms, which
+means <i>all</i> instances of the overridden function will use the
+overridden value. There might be more than you think! But for
+well-understood code it&#8217;s sometimes useful, avoiding duplicating
+code to make tiny&nbsp;changes.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/" rel="bookmark">Sunday 21 January, 2024</a>
 			</span>
 		    </div>
@@ -182,77 +341,6 @@ start-ups actually. The <a href="https://en.wikipedia.org/wiki/Symbolics">Wikipe
 <p>
 Incidentally, the rest of the top-ten first .com domains can be
 found <a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains">here</a>.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/01/01/making-small-changes-to-lots-of-files/" rel="bookmark">Monday 1 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/01/01/making-small-changes-to-lots-of-files/">Making small changes to lots of&nbsp;files</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org86b476d" class="outline-2">
-<h2 id="org86b476d">Making small changes to lots of&nbsp;files</h2>
-<div class="outline-text-2" id="text-org86b476d">
-<p>
-I recently had to make tiny changes to a large number of files
-spread nested through a directory structure. This turns out to be a
-lot easier than I expected with&nbsp;Emacs.
-</p>
-
-<p>
-My use case was actually this blog. It&#8217;s been on the go for a while
-in several different formats, and over the years I&#8217;ve used tags to
-drive different presentations – for example articles tagged &#8216;news&#8217;
-ended up on the front page. I no longer do this, which meant a lot
-of redundant tags to be got rid of, mainly in&nbsp;Nikola&#8217;s <code>.meta</code>
-metadata files but also embedded&nbsp;into <code>.md</code> markdown&nbsp;and <code>.rst</code>
-restructured&nbsp;text..
-</p>
-
-<p>
-My plan was to use&nbsp;Emacs&#8217; <code>rgrep</code> command to recursively traverse
-the directory structure of posts to find the tags I wanted to
-remove. This would give me&nbsp;a <code>grep</code>-mode buffer that hyperlinks to
-the files (and lines) needing changing, which I could then click
-through to get to where each change needed to be made.
-Straightforward, but time-consuming and error-prone when there were
-about 150 files to be changed. Clearly a problem in need of a better&nbsp;solution.
-</p>
-
-<p>
-I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a>&nbsp;(&#8220;writable <code>grep</code><span class="dquo">&#8220;</span>) package. This
-makes&nbsp;the <code>grep</code>-mode buffer editable, with changes being
-written-back to the underlying files. <i>Exactly</i> what I&nbsp;needed.
-</p>
-
-<p>
-Once I&#8217;d&nbsp;installed <code>wgrep</code>, the workflow is ridiculously&nbsp;easy:
-</p>
-
-<ol class="org-ol">
-<li>Using <code>rgrep</code> gets&nbsp;a <code>grep</code>-mode&nbsp;buffer</li>
-<li>
-<code>C-c C-p</code> makes the buffer&nbsp;editable</li>
-<li>Changing the lines. In my case I could&nbsp;use <code>string-replace</code> to
-remove the tags I wanted rid of. More complicated cases might&nbsp;need <code>regexp-replace</code> or even manual&nbsp;editing</li>
-<li>
-<code>C-x C-s</code> writes the changes back&nbsp;out</li>
-</ol>
-<p>
-(There are several other keybindings&nbsp;that <code>wgrep</code> makes
-available,&nbsp;notably <code>C-c C-k</code> to discard all&nbsp;changes.)
-</p>
-
-<p>
-That&#8217;s it! A job that I expected to take an hour took about 3&nbsp;minutes.
 </p>
 </div>
 </div>
