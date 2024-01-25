@@ -1,5 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 06 Jan 2024 23:00:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Backporting Python type annotations</title><link>https://simondobson.org/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jan 2024 18:15:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
+&lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3d747c3"&gt;
+&lt;p&gt;
+A horribly dangerous but occasionally useful Lisp technique.
+&lt;/p&gt;
+
+&lt;p&gt;
+My use case is as follows. &lt;code&gt;ebib&lt;/code&gt; has a command to copy a
+formatted reference to the kill ring, using
+&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to actually do the formatting.
+This means it's easy to change the style of the formatted
+reference. However, &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;  itself uses
+&lt;code&gt;citar-render-bib&lt;/code&gt; with a plain-text formatter. This is a sensible
+default, but since I'm almost always copying references into
+org-more documents, it loses a lot of information: it'd be better
+to use the org formatter, but there's no argument to specify it.
+&lt;/p&gt;
+
+&lt;p&gt;
+Clearly the correct solution is to change
+&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to take a key or optional
+argument to specify the formatter, but that involves changing
+someone else's code. The hacker solution is to change the call
+&lt;code&gt;(citeproc-render-bib proc 'plain)&lt;/code&gt; to &lt;code&gt;(citeproc-render-bib proc
+  'org)&lt;/code&gt;, but without re-writing the entire surrounding function to
+keep the change just to the case where I need it.
+&lt;/p&gt;
+
+&lt;p&gt;
+One way to do this would be to define a variant
+&lt;code&gt;citeproc-render-bib&lt;/code&gt; that ignores its second argument (the
+formatter) and always uses &lt;code&gt;'org&lt;/code&gt; instead, and then substitute
+this variant for the original – but &lt;i&gt;only&lt;/i&gt; in the dynamic extent
+of a &lt;i&gt;particular&lt;/i&gt; call to &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;. In
+most languages this would be impossible – but not in Emacs Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+The solution is to use &lt;code&gt;cl-letf&lt;/code&gt;, which overrides the values of
+general places for the duration of its body forms and restores the
+original value on exit (normal or otherwise). The important point
+is that the change occurs across the &lt;i&gt;extent&lt;/i&gt; of the body – the
+body and all the code called from the body – and not merely in
+the &lt;i&gt;scope&lt;/i&gt; of the body, which would only affect calls made there
+directly.
+&lt;/p&gt;
+
+&lt;p&gt;
+For example, consider in the following:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Which when called gives:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+36
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+If we want to override the default value (10) that's passed to &lt;code&gt;f&lt;/code&gt;
+and instead use 25, we can define a new version that ignores the
+second argument and uses our preferred default, and then
+temporarily override the definition of &lt;code&gt;f&lt;/code&gt; in the calling
+environment. If we want to use the original in the overriding
+definition we need to grab it first. This gives:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-letf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(((&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;				    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+51
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+What's going on? The &lt;code&gt;cl-letf&lt;/code&gt; macro is like &lt;code&gt;let&lt;/code&gt; but works with
+general places (as in &lt;code&gt;setf&lt;/code&gt;). It sets the places in its argument
+list for the duration of its body, and then restores them on exit,
+regardless of whether that exit is normal or &lt;i&gt;via&lt;/i&gt; a condition.
+&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;code&gt;(symbol-function 'f)&lt;/code&gt; form returns the place that stores the
+function associated with symbol &lt;code&gt;f&lt;/code&gt;. We use it twice: once to
+capture this function so we can use it later, and once to identify
+the place where we store our new variant function. This new binding
+is then used for all calls made from the body of the &lt;code&gt;cl-letf&lt;/code&gt;,
+regardless of depth, so the call to &lt;code&gt;first&lt;/code&gt; makes use of our variant
+definition of &lt;code&gt;f&lt;/code&gt; rather than the original – but with the original
+then being used in the variant in our case!
+&lt;/p&gt;
+
+&lt;p&gt;
+If we'd used &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;cl-flet&lt;/code&gt; instead of &lt;code&gt;cl-letf&lt;/code&gt; we wouldn't
+have got the behaviour we're looking for:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-flet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+36
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
+so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
+affected – not calls from calls. This is a great illustration of
+the difference between the closely-related concepts of (static,
+lexical) scope and (dynamic, run-time) extent, incidentally.
+&lt;/p&gt;
+
+&lt;p&gt;
+I did say it was horrible :-). It's basically like adding
+temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
+macro to wrap it up. It's also inconceivable that it's thread- or
+co-routine-safe, although I haven't checked.
+&lt;/p&gt;
+
+&lt;p&gt;
+Part of the horribleness comes from the fact that the redefinition
+is made for the entire dynamic extent of the body forms, which
+means &lt;i&gt;all&lt;/i&gt; instances of the overridden function will use the
+overridden value. There might be more than you think! But for
+well-understood code it's sometimes useful, avoiding duplicating
+code to make tiny changes.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>Backporting Python type annotations</title><link>https://simondobson.org/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
 &lt;a href="https://simondobson.org/development/epyc/"&gt;&lt;code&gt;epyc&lt;/code&gt;&lt;/a&gt; and
 &lt;a href="https://simondobson.org/development/epydemic/"&gt;&lt;code&gt;epydemic&lt;/code&gt;&lt;/a&gt; libraries. Making these work
 while not sacrificing interoperability a wide range of Python versions
@@ -182,31 +331,4 @@ I know purists will scream at this idea, but to me it seems to go along with ide
 &lt;blockquote&gt;The "no applications" idea first surfaced for me at PARC, when we realised that you really wanted to freely construct arbitrary combinations (and could do just that with (mostly media) objects). So, instead of going to a place that has specialised tools for doing  just a few things, the idea was to be in an "open studio" and &lt;em&gt;pull&lt;/em&gt; the resources you wanted to combine to you. This doesn't mean to say  that &lt;em&gt;e.g.&lt;/em&gt; a text object shouldn't be pretty capable -- so it's a mini app if you will -- but that it and all the other objects that intermingle with each other should have very similar UIs and have their graphics aspect be essentially totally similar as far as the graphics system is concerned -- and this goes also for user constructed objects. The media presentations I do in Squeak for my talks are good examples of the directions this should be taken for the future.&lt;/blockquote&gt;
 (Anyone who has seen one of Kay's talks -- as I did at the ECOOP conference in 2000 -- can attest to how stunningly engaging they are.) To which I would add that it's equally important today that their &lt;em&gt;data&lt;/em&gt; work together seamlessly too, and with the other tools that we'll develop along the way.
 
-The use of the browser as a desktop isn't new, of course: it's central to &lt;a href="http://www.chromium.org/chromium-os" target="_blank"&gt;Google Chromium&lt;/a&gt; and to &lt;a href="https://simondobson.org/2011/03/jolicloud/" target="_blank"&gt;cloud-friendly Linux variants like Jolicloud&lt;/a&gt;. But it hasn't really been used so much as a development environment, or as the host for a language that lives inside the web's main document data structure. I'm not hung-up on it being Smalltalk -- a direct-manipulation front-end to &lt;a href="http://jqueryui.com/" target="_blank"&gt;jQuery UI&lt;/a&gt; might be even better -- but some form of highly interactive programming-in-the-web might be interesting to try.</description><category>javascript</category><category>programming</category><category>smalltalk</category><guid>https://simondobson.org/2011/05/27/smalltalk/</guid><pubDate>Fri, 27 May 2011 07:00:29 GMT</pubDate></item><item><title>Why we have code</title><link>https://simondobson.org/2011/05/23/code/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="heystaks_preview" style="width: 100%;height: 100%"&gt;&lt;/div&gt;
-Coding is an under-rated skill, even for non-programmers.
-&lt;!--more--&gt;
-
-Computer science undergraduates spend a lot of time learning to program. While one can argue convincingly that &lt;a href="https://simondobson.org/2010/05/cs-book-worth-reading-twice/" target="_blank"&gt;computer science is about more than programming&lt;/a&gt;, it's without doubt a central pillar of the craft: one can't reasonably claim to be a computer scientist without demonstrating a strong ability to work with code. (What this says about the many senior computer science academics who can no longer program effectively is another story.) The reason is that it helps one to think about process, and some of the best illustrations of that comes from teaching.
-
-Firstly, why is code important? One can argue that both programming languages and the discipline of code itself are two of the main contributions computer science has made to knowledge. (To this list I would add the fine structuring of big data and the improved understanding of human modes of interaction -- the former is about programming, the latter an area in which the programming structures are still very weak.) They're so important because they force an understanding of a process at its most basic level.
-
-When you write computer software you're effectively explaining a process to a computer in perfect detail. You often get a choice about the level of abstraction you choose. You can exploit the low-level details of the machine using assembler or C, or use the power of the machine to handle the low-level details and write in Haskell, Perl, or some other high-level language. But this doesn't alter the need to express precisely all that the machine needs to know to complete the task at hand.
-
-But that's not all. Most software is intended to be used by someone other than the programmer, and generally will be written or maintained in part by more than one person -- either directly as part of the programming team or indirectly through the use of third-party compilers and libraries. This implies that, as well as explaining a purpose to the computer, the code also has to explain a purpose to other programmers.
-
-So code, and programming languages more generally, are about &lt;em&gt;communication&lt;/em&gt; -- from humans to machines, and to other humans. More importantly, code is the communication of process reduced to its  purest form: there is &lt;em&gt;no clearer way&lt;/em&gt; to describe the way a process works than to read well-written, properly-abstracted code. I sometimes think (rather tenuously, I admit) this is an unexpected consequence of the &lt;a href="https://secure.wikimedia.org/wikipedia/en/wiki/Halting_problem" target="_blank"&gt;halting problem&lt;/a&gt;, which essentially says that the simplest (and generally only) way to decide what a program does is to run it. The simplest way to understand a process is to express it as close to executable form as possible.
-&lt;blockquote&gt;You think you know when you learn, are more sure when you can write,
-even more when you can teach, but certain only when you can program.
-
-Alan Perlis&lt;/blockquote&gt;
-There are caveats here, of course, the most important of which is that the code be well-written and properly abstracted: it needs to separate-out the details so that there's a clear process description that calls into -- but is separate from -- the details of exactly what each stage of the process does. Code that doesn't do this, for whatever reason, obfuscates rather than explains. A good programming education will aim to impart this skill of separation of concerns, and moreover will do so in a way that's independent of the language being used.
-
-Once you adopt this perspective, certain things that are otherwise slightly confusing become clear. Why do programmers always find documentation so awful? Because the code is a clearer explanation of what's going on, because it's a fundamentally &lt;em&gt;better&lt;/em&gt; description of process than natural language.
-
-This comes through clearly when marking student assessments and exams. When faced with a question of the form "explain this algorithm", some students try to explain it in words without reference to code, because they think explanation requires text. As indeed it does, but a better approach is to sketch the algorithm as code or pseudo-code and then explain with reference to that code -- because the code is the clearest description it's possible to have, and any explanation is just clearing up the details.
-
-Some of the other consequences of the discipline of programming are slightly more surprising. Every few years some computer science academic will look at the messy, unstructured, ill-defined rules that govern the processes of a university -- especially those around module choices and student assessment -- and decide that they will be immensely improved by being written in Haskell/Prolog/Perl/whatever. Often they'll actually go to the trouble of writing some or all of the rules in their code of choice, discover inconsistencies and ambiguities, and proclaim that the rules need to be re-written. It never works out, not least because the typical university administrator has not the slightest clue what's being proposed or why, but also because the process always highlights grey areas and boundary cases that can't be codified. This could be seen as a failure, but can also be regarded as a success: coding successfully distinguishes between those parts of an organisation that are structured and those parts that require human judgement, and by doing so makes clear the limits of individual intervention and authority in the processes.
-
-The important point is that, by thinking about a non-programming problem within a programming idiom, you clarify and simplify the problem and deepen your understanding of it.
-
-So programming has an impact not only on computers, but on everything to which one can bring a description of process; or, put another way, once you can precisely describe processes easily and precisely you're free to spend more time on the motivations and cultural factors that surround those processes without them dominating your thinking. Programmers think differently to other people, and often in a good way that should be encouraged and explored.</description><category>programming</category><category>university</category><guid>https://simondobson.org/2011/05/23/code/</guid><pubDate>Mon, 23 May 2011 07:00:59 GMT</pubDate></item></channel></rss>
+The use of the browser as a desktop isn't new, of course: it's central to &lt;a href="http://www.chromium.org/chromium-os" target="_blank"&gt;Google Chromium&lt;/a&gt; and to &lt;a href="https://simondobson.org/2011/03/jolicloud/" target="_blank"&gt;cloud-friendly Linux variants like Jolicloud&lt;/a&gt;. But it hasn't really been used so much as a development environment, or as the host for a language that lives inside the web's main document data structure. I'm not hung-up on it being Smalltalk -- a direct-manipulation front-end to &lt;a href="http://jqueryui.com/" target="_blank"&gt;jQuery UI&lt;/a&gt; might be even better -- but some form of highly interactive programming-in-the-web might be interesting to try.</description><category>javascript</category><category>programming</category><category>smalltalk</category><guid>https://simondobson.org/2011/05/27/smalltalk/</guid><pubDate>Fri, 27 May 2011 07:00:29 GMT</pubDate></item></channel></rss>

@@ -58,9 +58,9 @@
 		    <h1><a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/">Locally overriding a function throughout a dynamic&nbsp;extent</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org5abe933" class="outline-2">
-<h2 id="org5abe933">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
-<div class="outline-text-2" id="text-org5abe933">
+			<div id="outline-container-org3d747c3" class="outline-2">
+<h2 id="org3d747c3">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
+<div class="outline-text-2" id="text-org3d747c3">
 <p>
 A horribly dangerous but occasionally useful Lisp&nbsp;technique.
 </p>
@@ -186,12 +186,14 @@ have got the behaviour we&#8217;re looking&nbsp;for:
 Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
 so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
 affected – not calls from calls. This is a great illustration of
-the difference between scope and extent,&nbsp;incidentally.
+the difference between the closely-related concepts of (static,
+lexical) scope and (dynamic, run-time) extent,&nbsp;incidentally.
 </p>
 
 <p>
 I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
-macro to wrap it&nbsp;up.
+macro to wrap it up. It&#8217;s also inconceivable that it&#8217;s thread- or
+co-routine-safe, although I haven&#8217;t&nbsp;checked.
 </p>
 
 <p>

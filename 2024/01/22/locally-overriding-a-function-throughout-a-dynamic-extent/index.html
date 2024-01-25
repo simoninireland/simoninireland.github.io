@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org5abe933" class="outline-2">
-<h2 id="org5abe933">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
-<div class="outline-text-2" id="text-org5abe933">
+		<div id="outline-container-org3d747c3" class="outline-2">
+<h2 id="org3d747c3">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
+<div class="outline-text-2" id="text-org3d747c3">
 <p>
 A horribly dangerous but occasionally useful Lisp&nbsp;technique.
 </p>
@@ -201,12 +201,14 @@ have got the behaviour we&#8217;re looking&nbsp;for:
 Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
 so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
 affected – not calls from calls. This is a great illustration of
-the difference between scope and extent,&nbsp;incidentally.
+the difference between the closely-related concepts of (static,
+lexical) scope and (dynamic, run-time) extent,&nbsp;incidentally.
 </p>
 
 <p>
 I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
-macro to wrap it&nbsp;up.
+macro to wrap it up. It&#8217;s also inconceivable that it&#8217;s thread- or
+co-routine-safe, although I haven&#8217;t&nbsp;checked.
 </p>
 
 <p>
@@ -227,10 +229,10 @@ code to make tiny&nbsp;changes.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp&amp;url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp&amp;url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/&amp;title=Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/&amp;title=Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent%20%23emacs%20%23lisp%20%23programming" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
 	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
 	<li><a href="mailto:?subject=Locally%20overriding%20a%20function%20throughout%20a%20dynamic%20extent&amp;body=https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
@@ -244,6 +246,8 @@ code to make tiny&nbsp;changes.
 		<a href="../../../../categories/emacs/">emacs</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
 	</div>
     </div>
 

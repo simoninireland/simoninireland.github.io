@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 22 Jan 2024 11:00:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5abe933" class="outline-2"&gt;
-&lt;h2 id="org5abe933"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5abe933"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jan 2024 18:15:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
+&lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3d747c3"&gt;
 &lt;p&gt;
 A horribly dangerous but occasionally useful Lisp technique.
 &lt;/p&gt;
@@ -128,13 +128,15 @@ have got the behaviour we're looking for:
 Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
 so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
 affected – not calls from calls. This is a great illustration of
-the difference between scope and extent, incidentally.
+the difference between the closely-related concepts of (static,
+lexical) scope and (dynamic, run-time) extent, incidentally.
 &lt;/p&gt;
 
 &lt;p&gt;
 I did say it was horrible :-). It's basically like adding
 temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
-macro to wrap it up.
+macro to wrap it up. It's also inconceivable that it's thread- or
+co-routine-safe, although I haven't checked.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -146,7 +148,7 @@ well-understood code it's sometimes useful, avoiding duplicating
 code to make tiny changes.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org86b476d" class="outline-2"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org86b476d" class="outline-2"&gt;
 &lt;h2 id="org86b476d"&gt;Making small changes to lots of files&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org86b476d"&gt;
 &lt;p&gt;
