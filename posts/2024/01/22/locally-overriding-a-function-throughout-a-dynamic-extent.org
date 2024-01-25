@@ -2,7 +2,7 @@
 .. title: Locally overriding a function throughout a dynamic extent
 .. slug: locally-overriding-a-function-throughout-a-dynamic-extent
 .. date: 2024-01-22 10:34:45 UTC
-.. tags: emacs, lisp
+.. tags: emacs, lisp, programming
 .. category:
 .. link:
 .. description:
@@ -115,11 +115,13 @@
   Why? Because ~let~ and ~cl-flet~ work over the /scope/ of the body,
   so only calls to ~f~ directly from the body of the assignment are
   affected -- not calls from calls. This is a great illustration of
-  the difference between scope and extent, incidentally.
+  the difference between the closely-related concepts of (static,
+  lexical) scope and (dynamic, run-time) extent, incidentally.
 
   I did say it was horrible :-). It's basically like adding
   temporary ~:around~ advice, and could probably benefit from a
-  macro to wrap it up.
+  macro to wrap it up. It's also inconceivable that it's thread- or
+  co-routine-safe, although I haven't checked.
 
   Part of the horribleness comes from the fact that the redefinition
   is made for the entire dynamic extent of the body forms, which
