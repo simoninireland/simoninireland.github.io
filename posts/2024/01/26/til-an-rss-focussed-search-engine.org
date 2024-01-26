@@ -1,0 +1,27 @@
+#+BEGIN_COMMENT
+.. title: TIL: An RSS-focused search engine
+.. slug: til-an-rss-focused-search-engine
+.. date: 2024-01-26 13:10:23 UTC
+.. tags: til,internet
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* TIL: An RSS-focused search engine
+
+  Today I learned about [[https://feedle.world/][feedle]], a search engine focused on searching
+  blogs and podcasts -- web sites that export an [[https://en.wikipedia.org/wiki/RSS][RSS feed]], in other
+  words.
+
+  This feels like a quite a big thing for accessing content without
+  resort to the internet giants, and for the [[https://indieweb.org/][IndieWeb]] in general. It
+  means that search can prefer syndicated and typically small-scale
+  content rather than being influenced by search engine optimisation
+  (SEO) or sponsorship affecting the link rankings.
+
+  Of course this also need management, and feedle is a curated source:
+  you have to submit your RSS feed to it for review and (hopefully)
+  inclusion. I've done that for [[https://simon.dobson.org/rss.xml][this site's feed]].
