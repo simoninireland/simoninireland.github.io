@@ -14,7 +14,8 @@
 
   Today I learned about [[https://feedle.world/][feedle]], a search engine focused on searching
   blogs and podcasts -- web sites that export an [[https://en.wikipedia.org/wiki/RSS][RSS feed]], in other
-  words.
+  words. And the search results are themselves RSS feed that can be
+  subscribed to live.
 
   This feels like a quite a big thing for accessing content without
   resort to the internet giants, and for the [[https://indieweb.org/][IndieWeb]] in general. It
