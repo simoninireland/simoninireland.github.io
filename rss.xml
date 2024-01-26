@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jan 2024 18:15:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 26 Jan 2024 13:16:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: An RSS-focused search engine</title><link>https://simondobson.org/2024/01/26/til-an-rss-focused-search-engine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3dbec10" class="outline-2"&gt;
+&lt;h2 id="org3dbec10"&gt;TIL: An RSS-focused search engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3dbec10"&gt;
+&lt;p&gt;
+Today I learned about &lt;a href="https://feedle.world/"&gt;feedle&lt;/a&gt;, a search engine focused on searching
+blogs and podcasts – web sites that export an &lt;a href="https://en.wikipedia.org/wiki/RSS"&gt;RSS feed&lt;/a&gt;, in other
+words.
+&lt;/p&gt;
+
+&lt;p&gt;
+This feels like a quite a big thing for accessing content without
+resort to the internet giants, and for the &lt;a href="https://indieweb.org/"&gt;IndieWeb&lt;/a&gt; in general. It
+means that search can prefer syndicated and typically small-scale
+content rather than being influenced by search engine optimisation
+(SEO) or sponsorship affecting the link rankings.
+&lt;/p&gt;
+
+&lt;p&gt;
+Of course this also need management, and feedle is a curated source:
+you have to submit your RSS feed to it for review and (hopefully)
+inclusion. I've done that for &lt;a href="https://simon.dobson.org/rss.xml"&gt;this site's feed&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>internet</category><category>til</category><guid>https://simondobson.org/2024/01/26/til-an-rss-focused-search-engine/</guid><pubDate>Fri, 26 Jan 2024 13:10:23 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
 &lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3d747c3"&gt;
 &lt;p&gt;
@@ -995,44 +1018,4 @@ $$&lt;/p&gt;
 	  Finished Sunday 24 December, 2023.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5998737768?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/around-the-world-in-eighty-games-from-tarot-to-tic-tac-toe-catan-to-chutes-and-ladders-a-mathematician-unlocks-the-secrets-of-the-worlds-greatest-games/</guid><pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate></item><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746c351" class="outline-2"&gt;
-&lt;h2 id="org746c351"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org746c351"&gt;
-&lt;p&gt;
-This is something I frequently want to do: open a named file, work
-on it programmatically using Lisp code, and save it back – all
-without user intervention. Like a lot of things in Emacs, it's
-easy once you know how.
-&lt;/p&gt;
-
-&lt;p&gt;
-The trick is to create a new, named, buffer for the file to get
-its contents. This is done with &lt;code&gt;find-file-noselect&lt;/code&gt; as opposed to
-the more usual &lt;code&gt;find-file&lt;/code&gt; that's usually bound to &lt;code&gt;C-x C-f&lt;/code&gt;, and
-as its name suggests finds (opens) the file without bringing it to
-the user's attention. For example,
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;;; open the file in its own buffer&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;with-current-buffer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;find-file-noselect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;;; work on it as required, as the current buffer&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;goto-char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-min&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;search-forward&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"#+END_COMMENT"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;beginning-of-line&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;delete-region&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;newline&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;;; save the results back&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;save-buffer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-(This example comes from my Emacs interface to the Nikola static
-site builder used to maintain this site.) The code fragment
-leaves the current buffer unchanged as far as the user (and the
-rest of the code) is concerned, and so doesn't need to be
-protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/around-the-world-in-eighty-games-from-tarot-to-tic-tac-toe-catan-to-chutes-and-ladders-a-mathematician-unlocks-the-secrets-of-the-worlds-greatest-games/</guid><pubDate>Sun, 24 Dec 2023 00:00:00 GMT</pubDate></item></channel></rss>
