@@ -1,0 +1,46 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Common Lisp: the language
+.. slug: common-lisp-the-language
+.. date: 2024-02-02 12:10:26 UTC
+.. tags: project:lisp-bibliography, lisp, language-reference
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Common Lisp: the language                                          :ATTACH:
+  :PROPERTIES:
+  :ID:       2046d76e-4b50-4cf1-866c-7515d6fd427f
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-02-02 12:11:14
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Guy Steele.  /[[http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html][Common Lisp: The Language]]/. Digital Press. ISBN
+  1-55558-041-6. 1990.
+
+  The reference manual for Common Lisp, also [[http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html][available online in its
+  entirety]]. This is very much a reference manual and not a
+  tutorial, but having said that it's a lot more accessible than
+  many such documents.
+
+  It's remarkable that Common Lisp's standard has been stable for
+  over thirty years, despite enormous advances in Lisp practices in
+  that time. It shows the care that went into the original
+  standardisation process, but also the effects of some detailed
+  technical choices and (especially) the use of macros in preference
+  to new core mechanisms.
+
+  However, it has to be said that the standard also fixed in place
+  certain choices that now seem questionable. It's a matter of
+  opinion, of course, but personally I think the questionable set
+  includes at least: multiple-value returns and binds, which are
+  unnecessary when you can return lists and destructure them and
+  that impinge on the minimalism of the core language; and allowing
+  symbols to be bound simultaneously to values and functions, which
+  unnecessarily treats the two differently (and for which reason it
+  was removed from Scheme).

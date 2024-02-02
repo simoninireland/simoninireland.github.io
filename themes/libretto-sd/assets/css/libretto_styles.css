@@ -504,6 +504,13 @@ img {
     max-width: 100%;
 }
 
+/* "Floater" images float left of the following text */
+.floater > img {
+    float: left;
+    margin-right: 3em;
+    width: 20%;
+}
+
 figure {
     margin: 0;
 }

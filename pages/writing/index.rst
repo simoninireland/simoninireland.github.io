@@ -1,19 +1,5 @@
-Academic writing
-================
-
-My academic work can be found on my publications pages
-(`by type <link:/research/publications>`_ or
-`by year <link:/research/publications-by-year>`_).
-
-My recent book, *Epidemic modelling: Some notes, maths, and code*,
-is available to `buy <https://www.amazon.co.uk/dp/1838535659/>`_ or to
-`read online <https://simondobson.org/introduction-to-epidemics>`_.
-
-Articles
-========
-
-Recent
-------
+Recent articles
+===============
 
 .. post-list::
    :type: posts
@@ -21,24 +7,27 @@ Recent
 
 `Older articles <link:/archive.html>`_
 
-On particular topics
---------------------
+Article series
+==============
 
+- `An annotated Lisp bibliography
+  <link:/development/annotated-lisp-bibliography/>`_, a curated and
+  commented list of references into the enormous Lisp literature
+- `A citizen sensing project
+  <link:/development/projects/citizen-sensing>`_ to explore going
+  environment sensing with off-the-shelf Arduino hardware
 - `Book reviews <link:/categories/books/>`_, including all those read
   by my `book club <link:/categories/bonanza/>`_ over the past years
-- Articles about `programming <link:/categories/programming/>`_
-- Articles about `sensor networks <link:/categories/sensor-networks/>`_
-- Articles about `complex networks <link:/categories/complex-networks/>`_
 
 `Articles by tag <link:/categories/>`_
 
-Selected
---------
+Selected articles
+=================
 
 - In computer science there are `only two kinds of PhD
-  <link:/2013/01/19/hypothetical-adventures-chosen-field/>`_, you just
+  <link:/2013/01/19/hypothetical-adventures-chosen-field/>`_: you just
   have to decide which one yours will be
-- ... and there's only `one book worth reading twice
+- ... and there's only `one computer science book worth reading twice
   <link:/2010/05/14/cs-book-worth-reading-twice/>`_
 - `Me and my research <link:/2022/11/28/me-and-my-research/>`_, how
   and why to choose (and change) your research topic

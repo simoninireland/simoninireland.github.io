@@ -1,0 +1,79 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The CONNIVER reference manual
+.. slug: the-conniver-reference-manual
+.. date: 2024-02-02 12:14:30 UTC
+.. tags: project:lisp-bibliography, lisp, language-reference
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The CONNIVER reference manual
+
+  Drew McDermott and Gerald Jay Sussman.  /[[https://dspace.mit.edu/handle/1721.1/6204][The Conniver Reference
+  Manual]]/. Technical report AIM-259a. MIT AI Laboratory. 1974.
+
+  I think Conniver may have a claim to being the most influential
+  language you've never heard of. It's a mostly forgotten Lisp
+  variant that was a laboratory for some radically different
+  language design ideas, and a precursor to a surprising set of
+  features -- many of which are still uncommon in the mainstream.
+
+  Conniver was intended to manage knowledge databases. This does
+  make the report slightly hard to read in places, as there are a
+  lot of explicit references to planning techniques wrapped-up with
+  language mechanisms that don't really depend on them.
+
+  Conniver is (to the best of my knowledge) the first appearance of
+  *generators* in a programming language. It is therefore a distant
+  precursor of all the lazy functional languages and libraries, as
+  well as the generators found in Python. Implementing generators
+  /within/ a language (rather than as a built-in part of one)
+  requires control structures that can be exited and re-entered, and
+  therefore needs more flexible frames for controlling executing
+  code rather than conventional stack frames that are unwound
+  destructively on return.
+
+  The obvious (for Lisp, anyway) next step is to make these "hairy"
+  control structures visible within the language, to allow them to
+  be re-arranged in interesting ways. It does this by exposing the
+  structure of frames, consisting of:
+
+  - the bound variables
+  - the state of the ongoing computation within the frame (/e.g./,
+    the program counter)
+  - a link (the ~ALINK~) to the frame within which free variables
+    should be looked-up
+  - a link (the ~CLINK~) to the frame to which control should return
+    on exit from the frame
+
+
+  This structure in turn mandates the use of *spaghetti stack* (or
+  [[https://en.wikipedia.org/wiki/Parent_pointer_tree][parent pointer trees]]) where frames are implemented using lists
+  that can be combined in richer ways than actual, literal stacks.
+  Thee are the underpinnings of several different common structures:
+
+  - generators and continuations
+  - closures
+  - non-local transfers, like ~CATCH~ and ~THROW~ in Common Lisp, and
+    therefore probably encompassing the entire condition system
+  - functions with access to extra state (as with object methods,
+    but in this case used as callbacks for database updates)
+  - symbolic debuggers (not mentioned in the text)
+  - lexical /versus/ dynamic variable scope (not mentioned in the
+    text, and I think it's a binary choice between one or the other
+    depending on the ~ALINK~, rather than accommodating lexical and
+    "special" variable classes as Common Lisp does)
+
+
+  So these features are constructed in Conniver from more basic
+  mechanisms rather than being provided built-in. I'm fascinated by
+  what other structures one might build when every frame has /two/
+  independent super-frames (one for variable lookup,one for control
+  return) instead of one, and both can be modified independently.
+  This is radically different to most languages in which frames are
+  hidden and their manipulation reserved for the compiler and
+  run-time: it's a set of ideas that re-surface at the object level
+  in metaobject protocols.

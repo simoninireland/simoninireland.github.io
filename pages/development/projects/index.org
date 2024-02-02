@@ -1,16 +1,17 @@
 * Currently maintained projects
 
-  - [[link:/development/projects/epydemic][epydemic]]: epidemic (and other) processes on networks (and other structures)
-  - [[link:/development/projects/simplicial][simplicial]]: representing simplicial complexes
-  - [[link:/development/projects/epyc][epyc]]: management and design for computational experiments
+  - [[link:/development/projects/epydemic][epydemic]]: Epidemic (and other) processes on networks (and other structures)
+  - [[link:/development/projects/simplicial][simplicial]]: Discrete topology
+  - [[link:/development/projects/epyc][epyc]]: Management and design for computational experiments
+  - [[link:/development/projects/cl-bitfields/][cl-bitfields]]: A Common Lisp library for working with bitfields
 
 * Older un-maintained projects
 
   - [[link:/development/projects/attila][Attila]]: a portable threaded-interpreted language in the spirit of
     Forth
-  - [[link:/development/projects/citizen-sensing/][Citizen sensing]]: research and development notes from an
-    experiment in rural sensing using Arduinos
-  - [[link:/development/projects/sleepysketch][SleepySketch]]: an Arduino library for power-saving sketches
+  - [[link:/development/projects/sleepysketch][SleepySketch]]: an Arduino library for power-saving sketches,
+    developed as part of my [[link:/development/projects/citizen-sensing/]["Citizen sensing"]] project into rural
+    sensing
   - [[link:/development/projects/vanilla][Vanilla]]: an experiment in compositional language design and
     implementation
 

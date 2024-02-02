@@ -1,0 +1,21 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Learn Common Lisp in Y minutes
+.. slug: learn-common-lisp-in-y-minutes
+.. date: 2024-01-27 14:14:35 UTC
+.. tags: project:lisp-bibliography,lisp,tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Learn Common Lisp in Y minutes                                  :PUBLISHED:
+
+  https://learnxinyminutes.com/docs/common-lisp/
+
+  A one-web-page introduction to Common Lisp covering pretty much
+  all the language in enough detail to at least start writing simple
+  command-line programs (and understanding those of others).
+  Includes macros and CLOS. Quite an achievement to make it all so
+  readable.

@@ -1,0 +1,42 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Structure and interpretation of computer programs
+.. slug: structure-and-interpretation-of-computer-programs
+.. date: 2024-01-27 15:46:19 UTC
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Structure and interpretation of computer programs                  :ATTACH:
+  :PROPERTIES:
+  :ID:       526b5639-18fe-4fc6-b8b1-7c93e3011194
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-01-27 15:53:42
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Harold Abelson and Gerald Jay Sussman.  /[[https://web.mit.edu/6.001/6.037/sicp.pdf][Structure and
+  Interpretation of Computer Programs]]/. MIT Press. 1985.
+
+  A book once described ([[https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/][by me]], actually) as "the only computer
+  science book worth reading twice", and which was the foundational
+  text for teaching programming at MIT for decades.
+
+  There are many reasons that this book is so popular and
+  long-lived. It's resolutely an introductory text, but it treats
+  topics that are uncommon in introductions, and does so to a depth
+  that's quite astonishing -- although it has to be said that the
+  authors avoid the more complex constructions like conditions and
+  the complexities of macros, (They do deal with continuations,
+  however, which are essential for good Scheme programming.)
+
+  But what other introduction to programming includes a complete
+  meta-linguistic re-implementation of the language itself? -- and
+  in two different styles! It can do this because Scheme is so
+  regular and so simple -- /homoiconic/ (one representation for
+  programs and data), (although they don't use that term).

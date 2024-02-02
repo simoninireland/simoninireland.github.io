@@ -226,6 +226,12 @@ RENDER_STATIC_TAG_CLOUDS = {
     }
 }
 
+# Tags not included on the tag list
+HIDDEN_TAGS = ['mathjax',
+               'project:ditch',               # "Citizen sensing" series
+               'project:lisp-bibliography',   # "Anotated Lisp bibliography" series
+               ]
+
 # Below this point, everything is optional
 
 # Post's dates are considered in UTC by default, if you want to use
@@ -389,7 +395,7 @@ COMPILERS = {
 # If you do not want to display a tag publicly, you can mark it as hidden.
 # The tag will not be displayed on the tag list page and posts.
 # Tag pages will still be generated.
-HIDDEN_TAGS = ['mathjax']
+#HIDDEN_TAGS = ['mathjax']
 
 # Only include tags on the tag list/overview page if there are at least
 # TAGLIST_MINIMUM_POSTS number of posts or more with every tag. Every tag

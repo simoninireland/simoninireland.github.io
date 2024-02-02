@@ -1,0 +1,12 @@
+{#  -*- coding: utf-8 -*- #}
+{% block content %}
+  <div>
+    <ol class="series-post-list">
+      {% for post in posts %}
+	<li class="series-post">
+	  <a href="{{ post.permalink() }}">{{ post.title() }}</a>
+	</li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}

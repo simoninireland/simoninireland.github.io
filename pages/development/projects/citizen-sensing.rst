@@ -16,5 +16,5 @@ wanting to use Arduino technology for low-power environmental sensing.
 
 .. post-list::
    :type: posts
-   :categories: citizen-sensing
+   :tags: project:ditch
    :reverse:

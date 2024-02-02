@@ -1,1 +1,0 @@
-<html><body><p>This is a sample post created by Thank Me Later.</p></body></html>

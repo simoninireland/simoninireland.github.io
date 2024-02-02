@@ -1,0 +1,48 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: LISPcraft
+.. slug: lispcraft
+.. date: 2024-02-02 12:23:08 UTC
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* LISPcraft                                                          :ATTACH:
+  :PROPERTIES:
+  :ID:       fc8f0d76-df2a-43eb-b5ca-a79b21c2351a
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-02-02 12:23:54
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Robert Wilensky.  /LISPcraft/. W.W. Norton. ISBN
+  0-393-95442-0. 1984.
+
+  Hard to know whether to include this as an introduction or
+  collection of applications, since it runs all the way from basic
+  uses to pattern-matching and associative retrieval, by way of the
+  non-list data types in Lisp, and includes discussion of the symbol
+  table and other internals that definitely fall into the "advanced"
+  category.
+
+  However, this was my second introduction to Lisp (after [[link:/2024/01/27/structure-and-interpretation-of-computer-programs/][SICP]]), so
+  it has a fond place in my memory. The fact that it deals with
+  language internals isn't a bad thing, because it deals with the
+  basics so well. It's very much a traditional programming
+  introduction focusing on the "needed" parts of the language. It
+  pre-dates the Common Lisp standard and doesn't touch on CLOS,
+  which perhaps make it a less appropriate choice for newcomers
+  these days than [[link:/2024/01/27/practical-common-lisp/][Practical Common Lisp]].
+
+  -----
+
+  There is also a second edition. I haven't read it, but it seems that
+  it addresses at least the concern about being non-standard:
+
+  Robert Wilensky.  /Common LISPcraft/. W.W. Norton. ISBN
+  978-039395544-6. 1986.

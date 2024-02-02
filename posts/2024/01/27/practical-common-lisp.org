@@ -1,0 +1,36 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Practical Common Lisp
+.. slug: practical-common-lisp
+.. date: 2024-01-27 13:15:30 UTC
+.. tags: project:lisp-bibliography, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Practical Common Lisp                                              :ATTACH:
+  :PROPERTIES:
+  :ID:       b84b7fa7-83e9-4756-8ede-1c3cdeaeafef
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-01-27 14:22:54
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Peter Seibel.  /[[https://gigamonkeys.com/book/][Practical Common Lisp]]/. Apress. ISBN
+  978-1-4302-0017-8. 2005.
+
+  The classic, very thorough and hands-on tutorial introduction that
+  doesn't skip the hard parts like the condition system and
+  non-local blocks and exists (and the relationship between the
+  two). It's also got good chapters on CLOS.
+
+  The text is complemented by a set of modern examples, for web
+  services, database, and binary file parsers: quite a long way
+  removed from the examples in many introductory texts. It doesn't
+  make much use of macro programming in these examples, which is a
+  shame, so follow with On Lisp or Let over Lambda once the
+  structure of the language is clear.
