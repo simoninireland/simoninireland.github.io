@@ -52,34 +52,51 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/01/26/til-an-rss-focused-search-engine/" rel="bookmark">Friday 26 January, 2024</a>
+			    Posted on <a href="../2024/02/02/lispcraft/" rel="bookmark">Friday 2 February, 2024</a>
 			</span>
 		    </div>
-		    <h1><a href="../2024/01/26/til-an-rss-focused-search-engine/"><span class="caps">TIL</span>: An <span class="caps">RSS</span>-focused search&nbsp;engine</a></h1>
+		    <h1><a href="../2024/02/02/lispcraft/">LISPcraft</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org77d1ec3" class="outline-2">
-<h2 id="org77d1ec3"><span class="caps">TIL</span>: An <span class="caps">RSS</span>-focused search&nbsp;engine</h2>
-<div class="outline-text-2" id="text-org77d1ec3">
+			<div id="outline-container-org29167e9" class="outline-2">
+<h2 id="org29167e9">LISPcraft</h2>
+<div class="outline-text-2" id="text-org29167e9">
+<p class="floater">
+<img src="../attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"></p>
+
 <p>
-Today I learned about <a href="https://feedle.world/">feedle</a>, a search engine focused on searching
-blogs and podcasts – web sites that export an <a href="https://en.wikipedia.org/wiki/RSS"><span class="caps">RSS</span> feed</a>, in other
-words. And the search results are themselves <span class="caps">RSS</span> feed that can be
-subscribed to&nbsp;live.
+Robert Wilensky.  <i>LISPcraft</i>. <span class="caps">W.W.</span> Norton. <span class="caps">ISBN</span>
+0-393-95442-0.&nbsp;1984.
 </p>
 
 <p>
-This feels like a quite a big thing for accessing content without
-resort to the internet giants, and for the <a href="https://indieweb.org/">IndieWeb</a> in general. It
-means that search can prefer syndicated and typically small-scale
-content rather than being influenced by search engine optimisation
-(<span class="caps">SEO</span>) or sponsorship affecting the link&nbsp;rankings.
+Hard to know whether to include this as an introduction or
+collection of applications, since it runs all the way from basic
+uses to pattern-matching and associative retrieval, by way of the
+non-list data types in Lisp, and includes discussion of the symbol
+table and other internals that definitely fall into the &#8220;advanced&#8221;&nbsp;category.
 </p>
 
 <p>
-Of course this also need management, and feedle is a curated source:
-you have to submit your <span class="caps">RSS</span> feed to it for review and (hopefully)
-inclusion. I&#8217;ve done that for <a href="https://simon.dobson.org/rss.xml">this site&#8217;s feed</a>.
+However, this was my second introduction to Lisp (after <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a>), so
+it has a fond place in my memory. The fact that it deals with
+language internals isn&#8217;t a bad thing, because it deals with the
+basics so well. It&#8217;s very much a traditional programming
+introduction focusing on the &#8220;needed&#8221; parts of the language. It
+pre-dates the Common Lisp standard and doesn&#8217;t touch on <span class="caps">CLOS</span>,
+which perhaps make it a less appropriate choice for newcomers
+these days than <a href="/2024/01/27/practical-common-lisp/">Practical Common Lisp</a>.
+</p>
+
+<hr>
+<p>
+There is also a second edition. I haven&#8217;t read it, but it seems that
+it addresses at least the concern about being&nbsp;non-standard:
+</p>
+
+<p>
+Robert Wilensky.  <i>Common LISPcraft</i>. <span class="caps">W.W.</span> Norton. <span class="caps">ISBN</span>
+978-039395544-6.&nbsp;1986.
 </p>
 </div>
 </div>
@@ -90,157 +107,93 @@ inclusion. I&#8217;ve done that for <a href="https://simon.dobson.org/rss.xml">t
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" rel="bookmark">Monday 22 January, 2024</a>
+			    Posted on <a href="../2024/02/02/the-conniver-reference-manual/" rel="bookmark">Friday 2 February, 2024</a>
 			</span>
 		    </div>
-		    <h1><a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/">Locally overriding a function throughout a dynamic&nbsp;extent</a></h1>
+		    <h1><a href="../2024/02/02/the-conniver-reference-manual/">The <span class="caps">CONNIVER</span> reference&nbsp;manual</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org3d747c3" class="outline-2">
-<h2 id="org3d747c3">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
-<div class="outline-text-2" id="text-org3d747c3">
+			<div id="outline-container-org0fda5a5" class="outline-2">
+<h2 id="org0fda5a5">The <span class="caps">CONNIVER</span> reference&nbsp;manual</h2>
+<div class="outline-text-2" id="text-org0fda5a5">
 <p>
-A horribly dangerous but occasionally useful Lisp&nbsp;technique.
+Drew McDermott and Gerald Jay Sussman.  <i><a href="https://dspace.mit.edu/handle/1721.1/6204">The Conniver Reference
+Manual</a></i>. Technical report <span class="caps">AIM</span>-259a. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
 </p>
 
 <p>
-My use case is as&nbsp;follows. <code>ebib</code> has a command to copy a
-formatted reference to the kill ring,&nbsp;using
-<code>citar-citeproc-format-reference</code> to actually do the formatting.
-This means it&#8217;s easy to change the style of the formatted
-reference.&nbsp;However, <code>citar-citeproc-format-reference</code>  itself&nbsp;uses
-<code>citar-render-bib</code> with a plain-text formatter. This is a sensible
-default, but since I&#8217;m almost always copying references into
-org-more documents, it loses a lot of information: it&#8217;d be better
-to use the org formatter, but there&#8217;s no argument to specify&nbsp;it.
+I think Conniver may have a claim to being the most influential
+language you&#8217;ve never heard of. It&#8217;s a mostly forgotten Lisp
+variant that was a laboratory for some radically different
+language design ideas, and a precursor to a surprising set of
+features – many of which are still uncommon in the&nbsp;mainstream.
 </p>
 
 <p>
-Clearly the correct solution is to&nbsp;change
-<code>citar-citeproc-format-reference</code> to take a key or optional
-argument to specify the formatter, but that involves changing
-someone else&#8217;s code. The hacker solution is to change the&nbsp;call
-<code>(citeproc-render-bib proc 'plain)</code> to <code>(citeproc-render-bib proc
-  'org)</code>, but without re-writing the entire surrounding function to
-keep the change just to the case where I need&nbsp;it.
+Conniver was intended to manage knowledge databases. This does
+make the report slightly hard to read in places, as there are a
+lot of explicit references to planning techniques wrapped-up with
+language mechanisms that don&#8217;t really depend on&nbsp;them.
 </p>
 
 <p>
-One way to do this would be to define a&nbsp;variant
-<code>citeproc-render-bib</code> that ignores its second argument (the
-formatter) and always&nbsp;uses <code>'org</code> instead, and then substitute
-this variant for the original – but <i>only</i> in the dynamic extent
-of a <i>particular</i> call&nbsp;to <code>citar-citeproc-format-reference</code>. In
-most languages this would be impossible – but not in Emacs&nbsp;Lisp.
+Conniver is (to the best of my knowledge) the first appearance of
+<b>generators</b> in a programming language. It is therefore a distant
+precursor of all the lazy functional languages and libraries, as
+well as the generators found in Python. Implementing generators
+<i>within</i> a language (rather than as a built-in part of one)
+requires control structures that can be exited and re-entered, and
+therefore needs more flexible frames for controlling executing
+code rather than conventional stack frames that are unwound
+destructively on&nbsp;return.
 </p>
 
 <p>
-The solution is to&nbsp;use <code>cl-letf</code>, which overrides the values of
-general places for the duration of its body forms and restores the
-original value on exit (normal or otherwise). The important point
-is that the change occurs across the <i>extent</i> of the body – the
-body and all the code called from the body – and not merely in
-the <i>scope</i> of the body, which would only affect calls made there&nbsp;directly.
+The obvious (for Lisp, anyway) next step is to make these &#8220;hairy&#8221;
+control structures visible within the language, to allow them to
+be re-arranged in interesting ways. It does this by exposing the
+structure of frames, consisting&nbsp;of:
 </p>
 
+<ul class="org-ul">
+<li>the bound&nbsp;variables</li>
+<li>the state of the ongoing computation within the frame (<i>e.g.</i>,
+the program&nbsp;counter)</li>
+<li>a link&nbsp;(the <code>ALINK</code>) to the frame within which free variables
+should be&nbsp;looked-up</li>
+<li>a link&nbsp;(the <code>CLINK</code>) to the frame to which control should return
+on exit from the&nbsp;frame</li>
+</ul>
 <p>
-For example, consider in the&nbsp;following:
+This structure in turn mandates the use of <b>spaghetti stack</b> (or
+<a href="https://en.wikipedia.org/wiki/Parent_pointer_tree">parent pointer trees</a>) where frames are implemented using lists
+that can be combined in richer ways than actual, literal stacks.
+Thee are the underpinnings of several different common&nbsp;structures:
 </p>
 
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
+<ul class="org-ul">
+<li>generators and&nbsp;continuations</li>
+<li>closures</li>
+<li>non-local transfers,&nbsp;like <code>CATCH</code> and <code>THROW</code> in Common Lisp, and
+therefore probably encompassing the entire condition&nbsp;system</li>
+<li>functions with access to extra state (as with object methods,
+but in this case used as callbacks for database&nbsp;updates)</li>
+<li>symbolic debuggers (not mentioned in the&nbsp;text)</li>
+<li>lexical <i>versus</i> dynamic variable scope (not mentioned in the
+text, and I think it&#8217;s a binary choice between one or the other
+depending on&nbsp;the <code>ALINK</code>, rather than accommodating lexical and
+&#8220;special&#8221; variable classes as Common Lisp&nbsp;does)</li>
+</ul>
 <p>
-Which when called&nbsp;gives:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-36
-</pre>
-
-
-<p>
-If we want to override the default value (10) that&#8217;s passed&nbsp;to <code>f</code>
-and instead use 25, we can define a new version that ignores the
-second argument and uses our preferred default, and then
-temporarily override the definition&nbsp;of <code>f</code> in the calling
-environment. If we want to use the original in the overriding
-definition we need to grab it first. This&nbsp;gives:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">cl-letf</span><span class="w"> </span><span class="p">(((</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">				    </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)))</span>
-</pre></div>
-
-<pre class="example">
-51
-</pre>
-
-
-<p>
-What&#8217;s going on?&nbsp;The <code>cl-letf</code> macro is&nbsp;like <code>let</code> but works with
-general places (as&nbsp;in <code>setf</code>). It sets the places in its argument
-list for the duration of its body, and then restores them on exit,
-regardless of whether that exit is normal or <i>via</i> a&nbsp;condition.
-</p>
-
-<p>
-The <code>(symbol-function 'f)</code> form returns the place that stores the
-function associated with&nbsp;symbol <code>f</code>. We use it twice: once to
-capture this function so we can use it later, and once to identify
-the place where we store our new variant function. This new binding
-is then used for all calls made from the body of&nbsp;the <code>cl-letf</code>,
-regardless of depth, so the call&nbsp;to <code>first</code> makes use of our variant
-definition&nbsp;of <code>f</code> rather than the original – but with the original
-then being used in the variant in our&nbsp;case!
-</p>
-
-<p>
-If we&#8217;d&nbsp;used <code>let</code> or <code>cl-flet</code> instead&nbsp;of <code>cl-letf</code> we wouldn&#8217;t
-have got the behaviour we&#8217;re looking&nbsp;for:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">cl-flet</span><span class="w"> </span><span class="p">((</span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">	      </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">))</span>
-</pre></div>
-
-<pre class="example">
-36
-</pre>
-
-
-<p>
-Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
-so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
-affected – not calls from calls. This is a great illustration of
-the difference between the closely-related concepts of (static,
-lexical) scope and (dynamic, run-time) extent,&nbsp;incidentally.
-</p>
-
-<p>
-I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
-macro to wrap it up. It&#8217;s also inconceivable that it&#8217;s thread- or
-co-routine-safe, although I haven&#8217;t&nbsp;checked.
-</p>
-
-<p>
-Part of the horribleness comes from the fact that the redefinition
-is made for the entire dynamic extent of the body forms, which
-means <i>all</i> instances of the overridden function will use the
-overridden value. There might be more than you think! But for
-well-understood code it&#8217;s sometimes useful, avoiding duplicating
-code to make tiny&nbsp;changes.
+So these features are constructed in Conniver from more basic
+mechanisms rather than being provided built-in. I&#8217;m fascinated by
+what other structures one might build when every frame has <i>two</i>
+independent super-frames (one for variable lookup,one for control
+return) instead of one, and both can be modified independently.
+This is radically different to most languages in which frames are
+hidden and their manipulation reserved for the compiler and
+run-time: it&#8217;s a set of ideas that re-surface at the object level
+in metaobject&nbsp;protocols.
 </p>
 </div>
 </div>
@@ -251,94 +204,126 @@ code to make tiny&nbsp;changes.
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/" rel="bookmark">Sunday 21 January, 2024</a>
+			    Posted on <a href="../2024/02/02/common-lisp-the-language/" rel="bookmark">Friday 2 February, 2024</a>
 			</span>
 		    </div>
-		    <h1><a href="../goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/">This Is How They Tell Me the World Ends: The Cyberweapons Arms&nbsp;Race</a></h1>
+		    <h1><a href="../2024/02/02/common-lisp-the-language/">Common Lisp: the&nbsp;language</a></h1>
 		</div>
 		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610927353l/49247043._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Nicole Perlroth&nbsp;(2021)
-      </h2>
-    </div>
-    <p>
-      A hugely detailed and deeply researched history of the market for &#8220;zero-day: exploits, the faults and technologies underlying computer viruses and ransomware. It&#8217;s a hugely complicated and technical field which Perlroth does an amazing job of making accessible to a non-technical audience. (I should probably say here that I teach computer security.)<br><br>Most of the book is a real page-turner, deeply embedded with the government agencies, companies, and hackers who compose the zero-day market. It&#8217;s scathing of the <span class="caps">US</span>&#8217; trying to play both sides of the street, developing and buying zero-days in order to collect intelligence while weakening the security of ordinary users in the process by not informing the software developers of the problems they&#8217;ve found. They clearly knew this was dangerous, and even developed a doctrine for us: &#8220;<span class="caps">NOBUS</span>&#8221;, bugs that &#8220;no-one but us&#8221; would be smart enough to find or develop. This idea goes wrong spectacularly, as other nations realise how cheaply they too can have cyberweapons programmes: ironically they&#8217;re encouraged by the deployment of the Stuxnet virus to damage the Iranian nuclear programme. The leaks of the <span class="caps">NSA</span>&#8217;s zero-day stockpile by the Shadow Brokers – an event that&#8217;s somewhat under-explored – and their later use in hacks against <span class="caps">US</span> elections, are payback for hubris.<br><br>Perlroth is scathing of the Trump presidency&#8217;s neglect of cybersecurity and unwillingness to sanction Russia for known attacks – in part because it might cast doubt on Trump&#8217;s legitimacy as an elected president, but also seemingly from willful blindness and a mistrust of the professionals (including the military) tasked with protecting <span class="caps">US</span> networks. She was writing during the pandemic and before Trump conceded the 2020 election (to the extent that he ever did), and so if anything she understated the impacts of disinformation spreading.<br><br>The conclusions are a little breathless, but well-intentioned and technically appropriate, if a little <span class="caps">US</span>-centric – and in fairness the <span class="caps">US</span> has at least attempted to set up a more transparent approach to managing cyberweapons, even though the approach is drastically compromised by the desire to keep intelligence-gathering capabilities. Cybersecurity is an area where offence and defence are closely intertwined, and there&#8217;s a strong argument that the costs to society of the former mandate a focus on the latter. We need to accept that many cyberweapons that are used (or leaked) can be reverse-engineered and re-used against their original developers with little real up-front financial investment.<br><br>There&#8217;s some editing. including a repeated mis-use of &#8220;affect&#8221; rather than &#8220;effect&#8221;, and a really disastrous throw-away reference to the book <i>Dune</i>, the description of which is almost entirely wrong: surely an editor should have picked that&nbsp;up?
-      </p>
+			<div id="outline-container-orge0d8015" class="outline-2">
+<h2 id="orge0d8015">Common Lisp: the&nbsp;language</h2>
+<div class="outline-text-2" id="text-orge0d8015">
+<p class="floater">
+<img src="../attachments/20/46d76e-4b50-4cf1-866c-7515d6fd427f/screenshot.png" alt="nil"></p>
+
 <p>
-	4/5.
-	  Finished Sunday 21 January,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/4691376169?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/edible-economics-a-hungry-economist-explains-the-world/" rel="bookmark">Saturday 20 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/edible-economics-a-hungry-economist-explains-the-world/">Edible Economics: A Hungry Economist Explains the&nbsp;World</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1656314692l/61030740._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Ha-Joon Chang&nbsp;(2022)
-      </h2>
-    </div>
-    <p>
-      A book that combines food with economics? Not really.<br><br>I&#8217;m torn by this book. I enjoyed the food parts, especially the author&#8217;s anecdotes about his move to the <span class="caps">UK</span> from Korea, and how he&#8217;s observed the <span class="caps">UK</span>&#8217;s food scene change from incredibly insular and conservative to amazingly open and dynamic over the course of a couple of decades. It&#8217;s a change I also lived through and remember well.<br><br>I also enjoyed the economics. Chang is an eclectic collector of economic theories – all the more surprising because he&#8217;s an academic. He has an appropriate degree of scepticism for ideology and single explanation of complex questions, which is refreshing. He skewers some of the common myths, such as the &#8220;explanation&#8221; that poor countreis stay poor because their people don&#8217;t work hard enough, ingoring the massive structural factors in play. He&#8217;s equally scathing about the other &#8220;explanation&#8221; about the free-trade roots of the successes of the <span class="caps">US</span> and <span class="caps">UK</span> economies, given that they were actually massively protectionist during their main periods of growth. And he makes several policy suggestions for modern economies.<br><br>But&#8230;. as a book, I don&#8217;t think it works at all. The conceit of explaining economics through food remains just that: a conceit that&#8217;s not really threaded through the narrative in a meaningful way. The links are often just too tenuous. To give one example, a chapter that leads with anchovies ends up talking about natural-resource extraction economics using the example of bird guano – well, birds eat anchovies, so&#8230; Most of the chapters are basically diviided between food and economics with an often desperate attempt to tie them together. The economics is accessible, and a writer who can do that probably doesn&#8217;t need a gimmick to structure his&nbsp;work.
-      </p>
-<p>
-	3/5.
-	  Finished Saturday 20 January,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6013201080?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/01/10/til-the-first-scientist/" rel="bookmark">Wednesday 10 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/01/10/til-the-first-scientist/"><span class="caps">TIL</span>: The first&nbsp;scientist</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org2580dd2" class="outline-2">
-<h2 id="org2580dd2"><span class="caps">TIL</span>: The first&nbsp;scientist</h2>
-<div class="outline-text-2" id="text-org2580dd2">
-<p>
-Today I learned that <a href="https://www.themarginalian.org/2020/10/20/mary-somerville/">the first person ever to be called a
-&#8220;scientist&#8221;</a> was the Scottish … erm, scientist <a href="https://en.wikipedia.org/wiki/Mary_Somerville">Mary Sommerville</a>
-(1780–1872), who made discoveries across several fields of
-mathematics, physics, and astronomy, and was one of the first two
-women admitted to membership of the Royal Astronomical&nbsp;Society.
+Guy Steele.  <i><a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html">Common Lisp: The Language</a></i>. Digital Press. <span class="caps">ISBN</span>
+1-55558-041-6.&nbsp;1990.
 </p>
 
 <p>
-It was the fact that she was both a woman and a polymath that led to
-the need for a new word. She clearly wasn&#8217;t a &#8220;man of science&#8221;, as
-was the common description; nor did she fall into the accepted
-classes such as geologist or chemist, since she contributed to all
-these fields and more. So <a href="https://en.wikipedia.org/wiki/William_Whewell">William Whewell</a>, the Master of Trinity
-College, Cambridge, and the person who had introduced one of
-Sommerville&#8217;s books to the university&#8217;s maths curriculum, decided to
-unify all these specific classes into the new general category of
-<i>scientist</i>. (He also introduced the terms <i>physicist</i> and
-<i>linguistics</i>.)
+The reference manual for Common Lisp, also <a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html">available online in its
+entirety</a>. This is very much a reference manual and not a
+tutorial, but having said that it&#8217;s a lot more accessible than
+many such&nbsp;documents.
+</p>
+
+<p>
+It&#8217;s remarkable that Common Lisp&#8217;s standard has been stable for
+over thirty years, despite enormous advances in Lisp practices in
+that time. It shows the care that went into the original
+standardisation process, but also the effects of some detailed
+technical choices and (especially) the use of macros in preference
+to new core&nbsp;mechanisms.
+</p>
+
+<p>
+However, it has to be said that the standard also fixed in place
+certain choices that now seem questionable. It&#8217;s a matter of
+opinion, of course, but personally I think the questionable set
+includes at least: multiple-value returns and binds, which are
+unnecessary when you can return lists and destructure them and
+that impinge on the minimalism of the core language; and allowing
+symbols to be bound simultaneously to values and functions, which
+unnecessarily treats the two differently (and for which reason it
+was removed from&nbsp;Scheme).
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/27/structure-and-interpretation-of-computer-programs/" rel="bookmark">Saturday 27 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/27/structure-and-interpretation-of-computer-programs/">Structure and interpretation of computer&nbsp;programs</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org0638c56" class="outline-2">
+<h2 id="org0638c56">Structure and interpretation of computer&nbsp;programs</h2>
+<div class="outline-text-2" id="text-org0638c56">
+<p class="floater">
+<img src="../attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"></p>
+
+<p>
+Harold Abelson and Gerald Jay Sussman.  <i><a href="https://web.mit.edu/6.001/6.037/sicp.pdf">Structure and
+Interpretation of Computer Programs</a></i>. <span class="caps">MIT</span> Press.&nbsp;1985.
+</p>
+
+<p>
+A book once described (<a href="https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/">by me</a>, actually) as &#8220;the only computer
+science book worth reading twice&#8221;, and which was the foundational
+text for teaching programming at <span class="caps">MIT</span> for&nbsp;decades.
+</p>
+
+<p>
+There are many reasons that this book is so popular and
+long-lived. It&#8217;s resolutely an introductory text, but it treats
+topics that are uncommon in introductions, and does so to a depth
+that&#8217;s quite astonishing – although it has to be said that the
+authors avoid the more complex constructions like conditions and
+the complexities of macros, (They do deal with continuations,
+however, which are essential for good Scheme&nbsp;programming.)
+</p>
+
+<p>
+But what other introduction to programming includes a complete
+meta-linguistic re-implementation of the language itself? – and
+in two different styles! It can do this because Scheme is so
+regular and so simple – <i>homoiconic</i> (one representation for
+programs and data), (although they don&#8217;t use that&nbsp;term).
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/27/learn-common-lisp-in-y-minutes/" rel="bookmark">Saturday 27 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/27/learn-common-lisp-in-y-minutes/">Learn Common Lisp in Y&nbsp;minutes</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org1e4659c" class="outline-2">
+<h2 id="org1e4659c">Learn Common Lisp in Y&nbsp;minutes</h2>
+<div class="outline-text-2" id="text-org1e4659c">
+<p>
+<a href="https://learnxinyminutes.com/docs/common-lisp/">https://learnxinyminutes.com/docs/common-lisp/</a>
+</p>
+
+<p>
+A one-web-page introduction to Common Lisp covering pretty much
+all the language in enough detail to at least start writing simple
+command-line programs (and understanding those of others).
+Includes macros and <span class="caps">CLOS</span>. Quite an achievement to make it all so&nbsp;readable.
 </p>
 </div>
 </div>
@@ -347,7 +332,7 @@ unify all these specific classes into the new general category of
 </div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-136.html" rel="prev">
+		<a href="index-137.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

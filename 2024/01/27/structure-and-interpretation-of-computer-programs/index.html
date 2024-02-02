@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structure and interpretation of computer programs | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Saturday 27 January, 2024</a>
+	    </span>
+	</div>
+	<h1>Structure and interpretation of computer&nbsp;programs</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org0638c56" class="outline-2">
+<h2 id="org0638c56">Structure and interpretation of computer&nbsp;programs</h2>
+<div class="outline-text-2" id="text-org0638c56">
+<p class="floater">
+<img src="../../../../attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"></p>
+
+<p>
+Harold Abelson and Gerald Jay Sussman.  <i><a href="https://web.mit.edu/6.001/6.037/sicp.pdf">Structure and
+Interpretation of Computer Programs</a></i>. <span class="caps">MIT</span> Press.&nbsp;1985.
+</p>
+
+<p>
+A book once described (<a href="https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/">by me</a>, actually) as &#8220;the only computer
+science book worth reading twice&#8221;, and which was the foundational
+text for teaching programming at <span class="caps">MIT</span> for&nbsp;decades.
+</p>
+
+<p>
+There are many reasons that this book is so popular and
+long-lived. It&#8217;s resolutely an introductory text, but it treats
+topics that are uncommon in introductions, and does so to a depth
+that&#8217;s quite astonishing – although it has to be said that the
+authors avoid the more complex constructions like conditions and
+the complexities of macros, (They do deal with continuations,
+however, which are essential for good Scheme&nbsp;programming.)
+</p>
+
+<p>
+But what other introduction to programming includes a complete
+meta-linguistic re-implementation of the language itself? – and
+in two different styles! It can do this because Scheme is so
+regular and so simple – <i>homoiconic</i> (one representation for
+programs and data), (although they don&#8217;t use that&nbsp;term).
+</p>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Structure%20and%20interpretation%20of%20computer%20programs%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Structure%20and%20interpretation%20of%20computer%20programs%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/&amp;title=Structure%20and%20interpretation%20of%20computer%20programs%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Structure%20and%20interpretation%20of%20computer%20programs&amp;body=https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/advanced-tutorial/">advanced-tutorial</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../learn-common-lisp-in-y-minutes/" rel="prev">
+		<span class="meta-nav">Older Post</span>Learn Common Lisp in Y minutes
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../02/02/common-lisp-the-language/" rel="next">
+		<span class="meta-nav">Newer Post</span>Common Lisp: the language
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

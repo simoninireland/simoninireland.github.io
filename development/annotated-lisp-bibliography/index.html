@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An annotated Lisp bibliography | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../assets/fonts/libretto-icons.eot);
+	    src:url(../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../assets/css/code.css">
+<link rel="stylesheet" href="../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../index.html">Home</a></li>
+		    <li><a href="../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../research/">Research</a></li>
+		    <li><a href="../projects/">Software</a></li>
+		    <li><a href="../../writing/">Writing</a></li>
+		    <li><a href="../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<h1>An annotated Lisp&nbsp;bibliography</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<section id="an-annotated-lisp-bibliography"><h2>An annotated Lisp&nbsp;bibliography</h2>
+<p>Lisp is a &#8220;forever&#8221; language that&#8217;s still going reasonably strong
+despite also being an ancestor to much of modern programming language
+design. It defines both a programming style and a mode of thinking
+about programming, best expressed by <a class="reference external" href="/2024/01/27/structure-and-interpretation-of-computer-programs/">Abelson and Sussman</a>
+as &#8220;stratified&#8221; design in which all the levels are programmable &#8212; and
+its this focus on having a programming model for each abstraction
+layer that&#8217;s the key to differentiating Lisp programming. It&#8217;s an idea
+that&#8217;s influenced me profoundly and led me to become, and remain, a
+Lisp programmer &#8212; firstly to <a class="reference external" href="categories/emacs/">extend and adapt my Emacs environment</a>, and increasingly as a basis for new
+projects (even though most of my academic work needs to stay in&nbsp;Python).</p>
+<p>Such is Lisp&#8217;s longevity that it&#8217;s spawned what is perhaps the largest
+literature of any single programming language &#8212; too much to collect
+in its entirety, but for various reasons I&#8217;ve decided to bring
+together an annotated bibliography of the material I find most
+interesting. I&#8217;m doing this by curating a series of articles reviewing
+the key papers and books, adding some structure to hopefully make them
+easier to browse and&nbsp;reference.</p>
+<p>A lot of the books mentioned are now out of print and unavailable in
+electronic form: fortunately <a class="reference external" href="https://www.st-andrews.ac.uk">my university</a> has a long history of programming
+language research, and correspondingly good library collections. Some
+of the papers similarly required some tracking down, and I&#8217;ve included
+URLs wherever&nbsp;possible.</p>
+<p>This is very much a work in&nbsp;progress.</p>
+<section id="introductions"><h3>Introductions</h3>
+  <div>
+    <ol class="series-post-list">
+<li class="series-post">
+	  <a href="../../2024/01/27/practical-common-lisp/">Practical Common&nbsp;Lisp</a>
+	</li>
+	<li class="series-post">
+	  <a href="../../2024/01/27/learn-common-lisp-in-y-minutes/">Learn Common Lisp in Y&nbsp;minutes</a>
+	</li>
+	<li class="series-post">
+	  <a href="../../2024/02/02/lispcraft/">LISPcraft</a>
+	</li>
+    </ol>
+</div>
+</section><section id="more-advanced-treatments"><h3>More advanced&nbsp;treatments</h3>
+  <div>
+    <ol class="series-post-list">
+<li class="series-post">
+	  <a href="../../2024/01/27/structure-and-interpretation-of-computer-programs/">Structure and interpretation of computer&nbsp;programs</a>
+	</li>
+    </ol>
+</div>
+</section><section id="language-definitions"><h3>Language&nbsp;definitions</h3>
+  <div>
+    <ol class="series-post-list">
+<li class="series-post">
+	  <a href="../../2024/02/02/common-lisp-the-language/">Common Lisp: the&nbsp;language</a>
+	</li>
+	<li class="series-post">
+	  <a href="../../2024/02/02/the-conniver-reference-manual/">The <span class="caps">CONNIVER</span> reference&nbsp;manual</a>
+	</li>
+    </ol>
+</div>
+</section><section id="lisp-machines"><h3>Lisp&nbsp;machines</h3>
+<p>Throughout the 1970s there was a strand of research looking to develop
+processors optimised for running Lisp, since the current
+implementations rapidly butted-up against the hardware limitations. It
+was such a fertile set of ideas that <span class="caps">MIT</span> span-out <em>two</em> companies
+making different Lisp machines: <a class="reference external" href="https://en.wikipedia.org/wiki/Lisp_Machines">Lisp Machines International</a> (<span class="caps">LMI</span>) and <a class="reference external" href="https://en.wikipedia.org/wiki/Symbolics">Symbolics</a>.</p>
+  <div>
+    <ol class="series-post-list"></ol>
+</div>
+</section></section>
+</div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

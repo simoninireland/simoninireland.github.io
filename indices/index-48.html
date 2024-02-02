@@ -52,6 +52,37 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/08/28/uploading-sketches/" rel="bookmark">Wednesday 28 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/08/28/uploading-sketches/">Uploading sketches to a breadboard&nbsp;Arduino</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>It turns out there there are quite a few versions of the &#8220;same&#8221; components out there. Uploading sketches to an Arduino-on-a-breadboard is trickier than it first&nbsp;appears.</p>
+<!--more-->
+
+<p>The <a href="../2013/08/27/arduino-breadboard/">Arduino-on-a-breadboard showed</a> that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it <em>via</em> the <span class="caps">USB</span> breakout board didn&#8217;t work &#8212;&nbsp;repeatedly.</p>
+<p>It turns out that the <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">breadboard tutorial on the Arduino web site</a> is actually flawed for the current versions of the components concerned. There are actually two problems: the microcontroller needs to be manually reset before uploading a sketch; and the <span class="caps">USB</span> breakout board needs slightly more supporting electronics to talk to the&nbsp;microcontroller.</p>
+<p>The first problem stems from the microcontroller needing to be reset before code can be uploaded to it. Essentially the reset makes the bootloader wait for code for a few seconds, and start the existing program if none arrives. On older Arduino models you have to physically reset the board using the reset switch just before uploading a sketch; on newer models, this reset happens automatically. Setting up the breakout board to reset the microcontroller immediately before it tries to talk to it will solve&nbsp;this.</p>
+<p>The second problem is more subtle. The <span class="caps">USB</span> breakout board is actually a <span class="caps">USB</span> to serial converter. The <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">tutorial</a> suggests that it is enough to connect the transmit and receive (Tx and Rx) lines to the microcontroller, but this turns out not to be the case: one also needs to connect some handshaking lines to make the system synchronise and communicate correctly. I eventually found a <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> that explains this: however, <em>that post is flawed too</em>, because it relies on a particular pin-out for the <span class="caps">USB</span> breakout board that&#8217;s different tothe one I have. So here&#8217;s a debugged explanation of what needs to&nbsp;happen.</p>
+<p><img alt="FT232r breakout board" src="../images/citizen-sensing/ft232r-breakout.jpg"></p>
+<p>We need to connect the basic TxD, RxD, Vcc and Gnd lines on the breakout board as you&#8217;d expect. The picture to the right shows the the underside of my breakout board, with the pins named. If we number the pins counter-clockwise from the top left (so <span class="caps">DCD</span> is pin 1, <span class="caps">TXD</span> is 9, <span class="caps">TXLED</span> is 11, and <span class="caps">VCC</span> is 13), we connect pins 3 and 10 to ground, pin 13 to power, pin 9 to pin 2 of the ATMega microcontroller, and pin 5 to ATMega pin&nbsp;3.</p>
+<p>What now also need to happen is that we need to connect the <span class="caps">CTS</span> and <span class="caps">DTR</span> lines to something. <span class="caps">DTR</span> (Data Transfer Ready) is sent low when the <span class="caps">USB</span> has data ready: we want this to trigger a reset of at ATMega. We then need to send <span class="caps">CTS</span> (Clear To Send) low so that the board starts sending data. This is basic serial-port handshaking. The timing can be accomplished using an <span class="caps">RC</span> circuit consisting of a 100ohm resistor and a 100nF capacitor attached appropriately. Putting this circuit onto the breadboard sorts out the handshaking, and the Arduino <span class="caps">IDE</span> happily uploads sketches just as it would to a &#8220;real&#8221;&nbsp;Arduino.</p>
+<p>The net result of this is to add some more wiring to the <span class="caps">USB</span> end of the Arduino&nbsp;breadboard:</p>
+<p><img alt="USB end" src="../images/citizen-sensing/usb-end.jpg"></p>
+<p>Note the resistor and capacitor. (The red wire crossing the breakout board is a Gnd connection, needed because my breadboard only had single power rails top and bottom.) The circuit involved is as&nbsp;follows:</p>
+<p><img alt="Handshaking circuit" src="../images/citizen-sensing/breadboard-handshake.png"></p>
+<p>For my particular breakout board shown above, this means connecting pin 7 to the capacitor and pin 15 to the following resistor. (It&#8217;s this last step that the <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> gets wrong &#8212; or at least uses a different pin for <span class="caps">CTS</span>.) The net result is an Arduino-on-a-breadboard that looks like&nbsp;this:</p>
+<p><img alt="Second Arduino-on-a-breadboard" src="../images/citizen-sensing/breadboard-arduino-2.jpg"></p>
+<p>Somewhat more complicated, but rather more&nbsp;functional.</p>
+<p>I think you have to maintain a sense of perspective about these issues, annoying as they are: in many ways it&#8217;s good that the components change and evolve rather than staying exactly the same, as it means that they&#8217;re being developed and refined over time. On the other hand, it means you have to be <em>very</em> circumspect about following blindly the tutorials and explanations on blog posts from even a relatively short time&nbsp;ago.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/08/27/arduino-breadboard/" rel="bookmark">Tuesday 27 August, 2013</a>
 			</span>
 		    </div>
@@ -213,36 +244,6 @@ Shorter is often better, of course:
 (From Fang and Dobson. <a href="http://www.simondobson.org/softcopy/iwsos-faults-energy.pdf">Unifying sensor fault detection with energy conservation</a>. In Proceedings of the 7th International Workshop on Self-Organising Systems (<span class="caps">IWSOS</span>&#8216;13). Palma de Mallorca, <span class="caps">ES</span>. May 2013.) In this case my student Lei messed with the sentence structure because we wanted to get across the idea that the main problem was the totality of the existing approach to the problem, which we wanted to address as a whole. The abstract still follows the basic structure, and I think is stronger for being shorter.
 
 No rule of writing is hard-and-fast, of course, and so you&#8217;ll often find great abstracts that adopt a completely different approach. I don&#8217;t think this matters so much as ensuring that the abstract is fit for purpose: an enticement to read further.
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/who-got-einsteins-office-eccentricity-and-genius-at-the-institute-for-advanced-study/" rel="bookmark">Monday 12 August, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/who-got-einsteins-office-eccentricity-and-genius-at-the-institute-for-advanced-study/">Who Got Einstein&#8217;s Office? Eccentricity and Genius at the Institute for Advanced&nbsp;Study</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347785661l/1088138._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Ed Regis&nbsp;(1987)
-      </h2>
-    </div>
-    <p>
-      Very enjoyable mixture of history, biography, and science, not to mention some great observations on the nature of research and the divisions between experimentalists and&nbsp;theorists.
-      </p>
-<p>
-	4/5.
-	  Finished Monday 12 August,&nbsp;2013.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/610358484?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
 		</div>
 	    </article>
 </div>

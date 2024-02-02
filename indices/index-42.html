@@ -52,6 +52,36 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/mein-kampf/" rel="bookmark">Sunday 23 June, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/mein-kampf/">Mein&nbsp;Kampf</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1395618385l/54270._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Adolf Hitler&nbsp;(1925)
+      </h2>
+    </div>
+    <p>
+      
+      </p>
+<p>
+	0/5.
+	  Finished Sunday 23 June,&nbsp;2013.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/601761741?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/singularity-sky-eschaton-1/" rel="bookmark">Sunday 23 June, 2013</a>
 			</span>
 		    </div>
@@ -159,34 +189,6 @@ The main software challenges include working the hardware and &#8212; more signi
 Is this a worthwhile project? From a scientific point of view its clearly questionable, but that&#8217;s not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and uncertain.
 
 The <a href="../categories/ditch/">blog</a> for the project will let you follow all the gory&nbsp;details.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2013/06/01/actor-systems/" rel="bookmark">Saturday 1 June, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../2013/06/01/actor-systems/">Actor&nbsp;systems</a></h1>
-		</div>
-		<div class="entry-content">
-			<p>In computer science, an <em>actor system</em> is a way of building programs that are very concurrent and very amenable to scheduling and management.
-
-The idea of an actor system goes back to the PhD work of <a title="Gul Agha on Wikipedia" href="https://en.wikipedia.org/wiki/Gul_Agha_%28computer_scientist%29" target="_blank">Gul Agha</a>. His <a title="The actor model on Wikipedia" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">actor mode</a>l structures programs around a collection of simple agents called (unsurprisingly) <em>actors</em>. Each actor associates a <em>mailbox</em> with a <em>behaviour</em>. The mailbox receives <em>messages</em> from other actors or from outside the actor system. Messages are queued in mailboxes until processed one at a time by the associated behaviour.
-
-The behaviour itself is a piece of code that, when run to process a message, performs <em>bounded computation</em> on the message&#8217;s contents, which may involve sending messages to other actors and creating other actors (and their mailboxes). The boundedness of the computation is important: an actor is guaranteed to run for a finite amount of time before completing, and so cannot (for example) perform an unbounded loop. An actor&#8217;s last action before terminating is to nominate a <em>replacement behaviour</em> for its mailbox, which may be the current behaviour or some new behaviour. (A null behaviour that did nothing in response to a message would essentially delete the actor.)
-
-The complexity of the system is clearly going to come from how the behaviours are selected an scheduled. The model says very little about scheduling, leaving the implementation to decide when to process messages (by running the behaviour of the associated actor). A single-threaded implementation might repeatedly select a mailbox at random, check whether it contained messages and, if so, process one. A multi-threaded implementation could have one thread per mailbox running behaviours as messages arrive. There are plenty of other possibilities in between: the point is that an actor program doesn&#8217;t <em>control</em> the concurrency, it simply <em>induces</em> it by the way it creates actors and sends messages.
-
-A system without unbounded loops can&#8217;t express general computation, but actor systems do allow unbounded computation: they simply force the programmer to create it using communicating actors. An actor wanting to loop forever could, for example, receive a message, perform some processing, send another message to itself (its own mailbox), and then nominate itself as its own replacement behaviour, which would then receive the self-sent message, and so forth.
-
-If the actor model sounds restrictive, that&#8217;s because it is deliberately designed that way. Its strength is that it is immune from <a title="Deadlock on Wikipedia" href="https://en.wikipedia.org/wiki/Deadlock" target="_blank">deadlock</a>, since the finite behaviours cannot become stuck indefinitely. This doesn&#8217;t preclude the possibility of <a title="Livelock at Wikipedia" href="https://en.wikipedia.org/wiki/Livelock#Livelock" target="_blank">livelock</a> if the system busily processes messages without actually making progress. However, the boundedness of behaviours means that the scheduler is always guaranteed to get control back on a regular basis, which means that there is always the possibility of an actor being able to run<em>, </em>making actor systems immune to <a title="Starvation at Wikipedia" href="https://en.wikipedia.org/wiki/Resource_starvation" target="_blank">starvation.</a>
-
-It&#8217;s easy to build something that looks roughly like an actor system in a general-purpose programming language &#8212; and usually pretty much impossible to build something that is <em>actually</em> an actor system. This is because a general-purpose programming language will allow behaviours that include unbounded loops, so you can&#8217;t guarantee that a behaviour will terminate, and so you lose one of the major features of actor systems: their deadlock-freedom. With suitable programmer care, however, you can build an actor system quite easily, deploying however much concurrency is appropriate for the application and platform the system runs&nbsp;on.
-
- </p>
 		</div>
 	    </article>
 </div>

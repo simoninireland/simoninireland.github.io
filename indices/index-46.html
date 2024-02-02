@@ -52,6 +52,56 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/08/02/at-commands-2/" rel="bookmark">Friday 2 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/08/02/at-commands-2/">Issuing <span class="caps">AT</span>&nbsp;commands</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Controlling the XBee requires issuing <span class="caps">AT</span> commands. The XBee library has the low-level machinery to do&nbsp;this.</p>
+<!--more-->
+
+<p><span class="caps">AT</span> commands are the basis for controlling almost all modems, and the XBee is no different. In <span class="caps">API</span> mode, <span class="caps">AT</span> commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use&nbsp;form.</p>
+<p>The basic approach is to send an <span class="caps">AT</span> command request packet and then
+read a returned packet acknowledging the command. For the moment we&#8217;ll
+stick to &#8220;setting&#8221; commands, where the <span class="caps">AT</span> command takes an integer
+parameter: the other are needed less frequently. We construct the
+request packet, send it, read the response, and check that all went
+well. This isolates the rest of the program from the message exchange,
+but also hides the exact nature of any&nbsp;error.</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span>
+
+<span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">atCommand</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// send local AT command</span>
+<span class="w">  </span><span class="n">AtCommandRequest</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandRequest</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">));</span>
+<span class="w">  </span><span class="n">radio</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// receive response frame</span>
+<span class="w">  </span><span class="n">AtCommandResponse</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandResponse</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">readPacket</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// read packet from radio</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getApiId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AT_RESPONSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// right type?</span>
+<span class="w">       </span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getAtCommandResponse</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">isOk</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span><span class="c1">// not an error?</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// if we get here, return a failure</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../2013/07/02/xctu/">set using X-<span class="caps">CTU</span> </a>when the radio firmware is installed, but commands are sometimes needed at run-time&nbsp;too.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/07/31/power/" rel="bookmark">Wednesday 31 July, 2013</a>
 			</span>
 		    </div>
@@ -236,62 +286,6 @@ in different scheduling situations without complicating their own&nbsp;code.</p>
 <p>This is somewhat disappointing, but that&#8217;s what this project is all about: the practicalities of sensor networking with cheap&nbsp;hardware.</p>
 <p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the&nbsp;enclosure.</p>
 <p>It&#8217;s also worth noting that the radio segment is horrendously hard to debug with only a single <span class="caps">LED</span> for signalling. Adding more LEDs might help, but it&#8217;s still a very poor debugging interface, even compared to printing status messages to the <span class="caps">USB</span>&nbsp;port.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2013/07/25/sleepy-sketches/" rel="bookmark">Thursday 25 July, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../2013/07/25/sleepy-sketches/">Sleepy&nbsp;sketches</a></h1>
-		</div>
-		<div class="entry-content">
-			<p>Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.
-
-<!--more-->
-
-The standard Arduino software model is, well, standard: programs (&#8220;sketches&#8221;) are structured in terms of&nbsp;a <code>setup()</code> function that runs once when the system restarts and&nbsp;a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn&#8217;t all that desirable: a sensor system typically tries to <a href="../2013/07/25/sleepy-sketches/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
-
-There are at least two ways to do this. The simplest is a library that&nbsp;lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means&nbsp;that <code>loop()</code> encapsulates all the program&#8217;s logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another
-
-If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="../2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.
-
-Turning this into code, we get&nbsp;the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.
-
-![SleepySketch design](/images/citizen-sensing/sleepysketch.png)
-
-There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance <span class="caps">RAM</span> usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways:&nbsp;a <code>BusySleeper</code> that uses the&nbsp;normal <code>delay()</code> function (a busy loop) with no power-saving functions,&nbsp;a <code>HeavySleeper</code> that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing&nbsp;the <code>Actor</code> class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.
-
-The standard library uses singleton classes quite a lot, so for example&nbsp;the <code>Serial</code> object represents the <span class="caps">USB</span> connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a&nbsp;singleton, <code>Sleepy</code>
-
-The program structure then loops something like this. If we assume
-that we&#8217;ve defined an actor&nbsp;class <code>PingActor</code>, then we can
-do the&nbsp;following:
-
-
-</p>
-<div class="code"><pre class="code literal-block"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">HeavySleeper</span><span class="p">());</span>
-
-<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">PingActor</span><span class="p">(</span><span class="s">"Ping!"</span><span class="p">),</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>
-<span class="p">}</span>
-</pre></div>
-
-
-
-The <code>setup()</code> code initialises the serial port and the sleepy sketch using&nbsp;a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If&nbsp;the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.
-
-This is a first design, now just about working. It&#8217;s still not as easy
-as it could be, however, and needs some testing to make sure that the
-power savings do actually materialise.
 		</div>
 	    </article>
 </div>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about language-reference)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/language-reference.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Feb 2024 12:14:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The CONNIVER reference manual</title><link>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0fda5a5" class="outline-2"&gt;
+&lt;h2 id="org0fda5a5"&gt;The CONNIVER reference manual&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0fda5a5"&gt;
+&lt;p&gt;
+Drew McDermott and Gerald Jay Sussman.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/handle/1721.1/6204"&gt;The Conniver Reference
+Manual&lt;/a&gt;&lt;/i&gt;. Technical report AIM-259a. MIT AI Laboratory. 1974.
+&lt;/p&gt;
+
+&lt;p&gt;
+I think Conniver may have a claim to being the most influential
+language you've never heard of. It's a mostly forgotten Lisp
+variant that was a laboratory for some radically different
+language design ideas, and a precursor to a surprising set of
+features – many of which are still uncommon in the mainstream.
+&lt;/p&gt;
+
+&lt;p&gt;
+Conniver was intended to manage knowledge databases. This does
+make the report slightly hard to read in places, as there are a
+lot of explicit references to planning techniques wrapped-up with
+language mechanisms that don't really depend on them.
+&lt;/p&gt;
+
+&lt;p&gt;
+Conniver is (to the best of my knowledge) the first appearance of
+&lt;b&gt;generators&lt;/b&gt; in a programming language. It is therefore a distant
+precursor of all the lazy functional languages and libraries, as
+well as the generators found in Python. Implementing generators
+&lt;i&gt;within&lt;/i&gt; a language (rather than as a built-in part of one)
+requires control structures that can be exited and re-entered, and
+therefore needs more flexible frames for controlling executing
+code rather than conventional stack frames that are unwound
+destructively on return.
+&lt;/p&gt;
+
+&lt;p&gt;
+The obvious (for Lisp, anyway) next step is to make these "hairy"
+control structures visible within the language, to allow them to
+be re-arranged in interesting ways. It does this by exposing the
+structure of frames, consisting of:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;the bound variables&lt;/li&gt;
+&lt;li&gt;the state of the ongoing computation within the frame (&lt;i&gt;e.g.&lt;/i&gt;,
+the program counter)&lt;/li&gt;
+&lt;li&gt;a link (the &lt;code&gt;ALINK&lt;/code&gt;) to the frame within which free variables
+should be looked-up&lt;/li&gt;
+&lt;li&gt;a link (the &lt;code&gt;CLINK&lt;/code&gt;) to the frame to which control should return
+on exit from the frame&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+This structure in turn mandates the use of &lt;b&gt;spaghetti stack&lt;/b&gt; (or
+&lt;a href="https://en.wikipedia.org/wiki/Parent_pointer_tree"&gt;parent pointer trees&lt;/a&gt;) where frames are implemented using lists
+that can be combined in richer ways than actual, literal stacks.
+Thee are the underpinnings of several different common structures:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;generators and continuations&lt;/li&gt;
+&lt;li&gt;closures&lt;/li&gt;
+&lt;li&gt;non-local transfers, like &lt;code&gt;CATCH&lt;/code&gt; and &lt;code&gt;THROW&lt;/code&gt; in Common Lisp, and
+therefore probably encompassing the entire condition system&lt;/li&gt;
+&lt;li&gt;functions with access to extra state (as with object methods,
+but in this case used as callbacks for database updates)&lt;/li&gt;
+&lt;li&gt;symbolic debuggers (not mentioned in the text)&lt;/li&gt;
+&lt;li&gt;lexical &lt;i&gt;versus&lt;/i&gt; dynamic variable scope (not mentioned in the
+text, and I think it's a binary choice between one or the other
+depending on the &lt;code&gt;ALINK&lt;/code&gt;, rather than accommodating lexical and
+"special" variable classes as Common Lisp does)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+So these features are constructed in Conniver from more basic
+mechanisms rather than being provided built-in. I'm fascinated by
+what other structures one might build when every frame has &lt;i&gt;two&lt;/i&gt;
+independent super-frames (one for variable lookup,one for control
+return) instead of one, and both can be modified independently.
+This is radically different to most languages in which frames are
+hidden and their manipulation reserved for the compiler and
+run-time: it's a set of ideas that re-surface at the object level
+in metaobject protocols.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</guid><pubDate>Fri, 02 Feb 2024 12:14:30 GMT</pubDate></item><item><title>Common Lisp: the language</title><link>https://simondobson.org/2024/02/02/common-lisp-the-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge0d8015" class="outline-2"&gt;
+&lt;h2 id="orge0d8015"&gt;Common Lisp: the language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge0d8015"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/20/46d76e-4b50-4cf1-866c-7515d6fd427f/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Guy Steele.  &lt;i&gt;&lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;Common Lisp: The Language&lt;/a&gt;&lt;/i&gt;. Digital Press. ISBN
+1-55558-041-6. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+The reference manual for Common Lisp, also &lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;available online in its
+entirety&lt;/a&gt;. This is very much a reference manual and not a
+tutorial, but having said that it's a lot more accessible than
+many such documents.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's remarkable that Common Lisp's standard has been stable for
+over thirty years, despite enormous advances in Lisp practices in
+that time. It shows the care that went into the original
+standardisation process, but also the effects of some detailed
+technical choices and (especially) the use of macros in preference
+to new core mechanisms.
+&lt;/p&gt;
+
+&lt;p&gt;
+However, it has to be said that the standard also fixed in place
+certain choices that now seem questionable. It's a matter of
+opinion, of course, but personally I think the questionable set
+includes at least: multiple-value returns and binds, which are
+unnecessary when you can return lists and destructure them and
+that impinge on the minimalism of the core language; and allowing
+symbols to be bound simultaneously to values and functions, which
+unnecessarily treats the two differently (and for which reason it
+was removed from Scheme).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/common-lisp-the-language/</guid><pubDate>Fri, 02 Feb 2024 12:10:26 GMT</pubDate></item></channel></rss>

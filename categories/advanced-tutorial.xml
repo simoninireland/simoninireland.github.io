@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Feb 2024 11:16:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0638c56" class="outline-2"&gt;
+&lt;h2 id="org0638c56"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0638c56"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Harold Abelson and Gerald Jay Sussman.  &lt;i&gt;&lt;a href="https://web.mit.edu/6.001/6.037/sicp.pdf"&gt;Structure and
+Interpretation of Computer Programs&lt;/a&gt;&lt;/i&gt;. MIT Press. 1985.
+&lt;/p&gt;
+
+&lt;p&gt;
+A book once described (&lt;a href="https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/"&gt;by me&lt;/a&gt;, actually) as "the only computer
+science book worth reading twice", and which was the foundational
+text for teaching programming at MIT for decades.
+&lt;/p&gt;
+
+&lt;p&gt;
+There are many reasons that this book is so popular and
+long-lived. It's resolutely an introductory text, but it treats
+topics that are uncommon in introductions, and does so to a depth
+that's quite astonishing – although it has to be said that the
+authors avoid the more complex constructions like conditions and
+the complexities of macros, (They do deal with continuations,
+however, which are essential for good Scheme programming.)
+&lt;/p&gt;
+
+&lt;p&gt;
+But what other introduction to programming includes a complete
+meta-linguistic re-implementation of the language itself? – and
+in two different styles! It can do this because Scheme is so
+regular and so simple – &lt;i&gt;homoiconic&lt;/i&gt; (one representation for
+programs and data), (although they don't use that term).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</guid><pubDate>Sat, 27 Jan 2024 15:46:19 GMT</pubDate></item></channel></rss>

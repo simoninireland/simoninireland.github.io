@@ -52,6 +52,62 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/07/25/sleepy-sketches/" rel="bookmark">Thursday 25 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/25/sleepy-sketches/">Sleepy&nbsp;sketches</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Keeping the microcontroller asleep as much as possible is a key goal for a sensor system, so it makes sense to organise the entire software process around that.
+
+<!--more-->
+
+The standard Arduino software model is, well, standard: programs (&#8220;sketches&#8221;) are structured in terms of&nbsp;a <code>setup()</code> function that runs once when the system restarts and&nbsp;a <code>loop()</code> function that is run repeatedly. This suggests that the system spends its time running, which possibly isn&#8217;t all that desirable: a sensor system typically tries to <a href="../2013/07/25/sleepy-sketches/2013/07/23/arduino-watchdog">stay in a low-power mode</a> as much as possible. The easiest way to do this is to provide a programming framework that handles the sleeping, and where the active bits of the program are scheduled automatically.
+
+There are at least two ways to do this. The simplest is a library that&nbsp;lets <code>loop()</code> sleep, either directly or indirectly. This is good for simple programs and not so good for more complicated ones, as it means&nbsp;that <code>loop()</code> encapsulates all the program&#8217;s logic in a single block. A more modern and compositional approach is to let program fragments request when they want to run somehow, and have a scheduler handle the sleeping, waking up, and execution of those fragments. That lets (for example) one fragment decide at run-time to schedule another
+
+If we adopt this approach,we have to worry about the fact that one fragment might lock-out another. A desktop system might use threads; this is more problematic for a microcontroller, but an alternative is to force all fragments to only execute for a finite amount of time, so that the scheduler always gets control back. This might lead to a fragment not running when it asked (if other fragments were still running), but if we assume that the system spends most of its time asleep anyway, there will be plenty of catch-up time. Doing this results in an <a href="../2013/06/01/actor-systems/">actor system</a> where the fragments are actors that are scheduled from an actor queue.
+
+Turning this into code, we get&nbsp;the <code>SleepySketch</code> library: a library for building Arduino sketches that spend most of their time sleeping.
+
+![SleepySketch design](/images/citizen-sensing/sleepysketch.png)
+
+There are a few wrinkles that need to be taken care of for running on a resource-constrained system. Firstly, the number of actors available is fixed at start-up (defaulting to 10), so that we can balance <span class="caps">RAM</span> usage.(With only 2k to play with, we need to be careful). Secondly, we use a class to manage the sleeping functionality in different ways:&nbsp;a <code>BusySleeper</code> that uses the&nbsp;normal <code>delay()</code> function (a busy loop) with no power-saving functions,&nbsp;a <code>HeavySleeper</code> that uses the watchdog timer to shut the system down as far as possible, and possibly some other intermediate strategies. Actors are provided by sub-classing&nbsp;the <code>Actor</code> class and providing a behaviour. We also allow pre- and post-behaviour actions to define families of actors, for example sensor observers. We separate the code for an actor from its scheduling.
+
+The standard library uses singleton classes quite a lot, so for example&nbsp;the <code>Serial</code> object represents the <span class="caps">USB</span> connection from an Arduino to its host computer and is the target for all methods. We use the same approach and define a&nbsp;singleton, <code>Sleepy</code>
+
+The program structure then loops something like this. If we assume
+that we&#8217;ve defined an actor&nbsp;class <code>PingActor</code>, then we can
+do the&nbsp;following:
+
+
+</p>
+<div class="code"><pre class="code literal-block"><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">HeavySleeper</span><span class="p">());</span>
+
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">PingActor</span><span class="p">(</span><span class="s">"Ping!"</span><span class="p">),</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+The <code>setup()</code> code initialises the serial port and the sleepy sketch using&nbsp;a <code>HeavySleeper</code>, and then schedules an actor to run in 10000ms. The loop() code runs the actors while there are actors remaining to schedule. If&nbsp;the <code>PingActor</code> instance just prints its message, then there will be no further actors to execute and the program will end; alternatively the actor could schedule further actors to be run later, and the sketch will pick them up. The sketch will remain asleep for as long as possible (probably for over 9s between start-up and the first ping), allowing for some fairly significant power saving.
+
+This is a first design, now just about working. It&#8217;s still not as easy
+as it could be, however, and needs some testing to make sure that the
+power savings do actually materialise.
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/07/23/arduino-watchdog/" rel="bookmark">Tuesday 23 July, 2013</a>
 			</span>
 		    </div>
@@ -259,36 +315,6 @@ There are some compromise positions, however. <a href="http://www.json.org" targ
 <span class="caps">JSON</span>&#8217;s simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than <span class="caps">XML</span>, but capable of integration with <span class="caps">RDF</span>, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank"><span class="caps">JSON</span>-<span class="caps">LD</span></a> (<span class="caps">JSON</span> for Linked Data) that seeks to integrate <span class="caps">JSON</span> records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.
 
 This raises the possibility of using <span class="caps">JSON</span> to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, <span class="caps">JSON</span> isn&#8217;t very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in <span class="caps">JSON</span> format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing&nbsp;performance.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/mussolini/" rel="bookmark">Wednesday 10 July, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/mussolini/">Mussolini</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1315695027l/9462315._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Richard <span class="caps">J.B.</span> Bosworth&nbsp;(2002)
-      </h2>
-    </div>
-    <p>
-      I&#8217;ve wanted to read a biography of Mussolini for a while, and this one is very good. A reviewer quote on the cover describes it as &#8220;lucid, elegant, and a pleasure to read,&#8221; and I&#8217;d have to agree. It&#8217;s somewhat more &#8220;literary&#8221; than some biographies, and as a result doesn&#8217;t always cover the historical context as well as one might like: the author&#8217;s description of the March on Rome, for example, is extremely brief despite it&#8217;s significance for Mussolini&#8217;s rise. In this way it&#8217;s not like many Hitler biographies (for example <a href="https://www.goodreads.com/book/show/355434.Hitler" title="Hitler by Joachim Fest" rel="nofollow noopener">Hitler</a> or <a href="https://www.goodreads.com/book/show/782319.Hitler_and_Stalin_Parallel_Lives" title="Hitler and Stalin Parallel Lives by Alan Bullock" rel="nofollow noopener">Hitler and Stalin: Parallel Lives</a>) which are as much about events as personality. One also has to get past the author&#8217;s repetition of words like &#8220;euphonious&#8221; and &#8220;lucubrations&#8221;, which get tiresome after a while. Having said all that, this is an excellent biography, full of insight and pointers to other sources (with over 80 pages of footnotes), and is a good overview to the career of someone often written off too&nbsp;quickly.
-      </p>
-<p>
-	4/5.
-	  Finished Wednesday 10 July,&nbsp;2013.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/630146008?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
 		</div>
 	    </article>
 </div>

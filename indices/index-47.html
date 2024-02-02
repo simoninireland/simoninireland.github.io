@@ -52,6 +52,36 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/who-got-einsteins-office-eccentricity-and-genius-at-the-institute-for-advanced-study/" rel="bookmark">Monday 12 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/who-got-einsteins-office-eccentricity-and-genius-at-the-institute-for-advanced-study/">Who Got Einstein&#8217;s Office? Eccentricity and Genius at the Institute for Advanced&nbsp;Study</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347785661l/1088138._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Ed Regis&nbsp;(1987)
+      </h2>
+    </div>
+    <p>
+      Very enjoyable mixture of history, biography, and science, not to mention some great observations on the nature of research and the divisions between experimentalists and&nbsp;theorists.
+      </p>
+<p>
+	4/5.
+	  Finished Monday 12 August,&nbsp;2013.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/610358484?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/inside-hitlers-bunker-the-last-days-of-the-third-reich/" rel="bookmark">Monday 5 August, 2013</a>
 			</span>
 		    </div>
@@ -220,56 +250,6 @@ X-<span class="caps">CTU</span></a>.</p>
 <p>The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the&nbsp;radio.</p>
 <p>Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range &#8212; far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some&nbsp;work).</p>
 <p>Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more&nbsp;exploration.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2013/08/02/at-commands-2/" rel="bookmark">Friday 2 August, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../2013/08/02/at-commands-2/">Issuing <span class="caps">AT</span>&nbsp;commands</a></h1>
-		</div>
-		<div class="entry-content">
-			<p>Controlling the XBee requires issuing <span class="caps">AT</span> commands. The XBee library has the low-level machinery to do&nbsp;this.</p>
-<!--more-->
-
-<p><span class="caps">AT</span> commands are the basis for controlling almost all modems, and the XBee is no different. In <span class="caps">API</span> mode, <span class="caps">AT</span> commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use&nbsp;form.</p>
-<p>The basic approach is to send an <span class="caps">AT</span> command request packet and then
-read a returned packet acknowledging the command. For the moment we&#8217;ll
-stick to &#8220;setting&#8221; commands, where the <span class="caps">AT</span> command takes an integer
-parameter: the other are needed less frequently. We construct the
-request packet, send it, read the response, and check that all went
-well. This isolates the rest of the program from the message exchange,
-but also hides the exact nature of any&nbsp;error.</p>
-<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span>
-
-<span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">atCommand</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// send local AT command</span>
-<span class="w">  </span><span class="n">AtCommandRequest</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandRequest</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">));</span>
-<span class="w">  </span><span class="n">radio</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// receive response frame</span>
-<span class="w">  </span><span class="n">AtCommandResponse</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandResponse</span><span class="p">();</span>
-<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">readPacket</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// read packet from radio</span>
-<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getApiId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AT_RESPONSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// right type?</span>
-<span class="w">       </span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getAtCommandResponse</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
-<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">isOk</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span><span class="c1">// not an error?</span>
-<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">       </span><span class="p">}</span>
-<span class="w">     </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="c1">// if we get here, return a failure</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../2013/07/02/xctu/">set using X-<span class="caps">CTU</span> </a>when the radio firmware is installed, but commands are sometimes needed at run-time&nbsp;too.</p>
 		</div>
 	    </article>
 </div>

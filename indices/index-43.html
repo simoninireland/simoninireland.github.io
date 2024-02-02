@@ -52,6 +52,57 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/07/02/xctu/" rel="bookmark">Tuesday 2 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/02/xctu/">XBee firmware management with&nbsp;X-<span class="caps">CTU</span></a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Managing Digi&#8217;s XBee radio modules requires using their X-<span class="caps">CTU</span> package to upload the correct firmware. In this post we explain how.
+
+<!--more-->
+
+This post is slightly depressing: not because it&#8217;s on an unhappy topic, but because the effort and software needed to manage XBee radios is so complex to set up. In many ways this is just a function of the good design of the XBee: it&#8217;s so minimal in terms of footprint and power consumption at run-time that it offloads a lot of work to external tools (and the user) at system build-time. But it&#8217;s still a lot of work to get such a small piece of kit running.
+
+X-<span class="caps">CTU</span> is intended to upload firmware to XBee radio modules. This is needed to change the firmware between router and co-ordinator of the Zigbee <a href="../2013/07/02/mesh-network/" target="_blank">mesh network</a>, and between the different protocol variants that the XBee radios can support.
+
+![Xbee on <span class="caps">USB</span>](/images/citizen-sensing/2013-06-29-13.35.45.jpg)
+
+One limitation of X-<span class="caps">CTU</span> is that it only works on Windows: if you&#8217;re running Linux, X-<span class="caps">CTU</span> will run under <a href="http://www.winehq.org/" target="_blank">Wine</a>. You can download the latest X-<span class="caps">CTU</span> from <a href="http://www.digi.com/support/kbase/kbaseresultdetl?id=2125" target="_blank">Digi&#8217;s X-<span class="caps">CTU</span> page</a>; alternatively, there&#8217;s a version installed on the <a href="../download/virtual-machine/" target="_blank">Citizen Sensing <span class="caps">VM</span></a>.
+
+To use X-<span class="caps">CTU</span> you need to connect your XBee module to your computer. The easiest way to do this is using an XBee <span class="caps">USB</span> breakout board, which provides an XBee socket and a <span class="caps">USB</span> socket. Insert the radio into the board, plug in a <span class="caps">USB</span> cable, and plug the other end into a <span class="caps">USB</span> socket. The light on the breakout board will then come on (see photograph above).
+
+![X-<span class="caps">CTU</span> in operation](/images/citizen-sensing/xctu-connect.png)
+
+You next need to start up X-<span class="caps">CTU</span> and tell it where the XBee is. It hangs off a Windows <span class="caps">COM</span> port, and X-<span class="caps">CTU</span> will typically find it automatically. You should then be able to press the &#8220;Test/Query&#8221; button, and X-<span class="caps">CTU</span> will interrogate the XBee and display a small window showing some information about it, as shown in the screenshot on the right: the details don&#8217;t matter, but this shows that the XBee is talking to the computer properly.
+
+![X-<span class="caps">CTU</span> router firmware](/images/citizen-sensing/xctu-firmware-router.png)
+
+Assuming everything is now working correctly, the next step is to decide what firmware to download to the radio. Click on the &#8220;Modem configuration&#8221; tab, and then click the &#8220;Read&#8221; button: this reads the firmware that&#8217;s on the XBee at the moment, and puts the details into the window. Typically this results in a display like that shown on the left. The important things to notice are the two drop-down boxes labelled &#8220;Function Set&#8221; and &#8220;Version&#8221;. The function set is the description of the firmware, in which case indicating that the XBee is running Zigbee router firmware that responds to <span class="caps">AT</span> commands (more on this below).
+
+![X-<span class="caps">CTU</span> co-ordinator firmware](/images/citizen-sensing/xctu-firmware-coordinator.png)
+
+To download a new firmware, we then select the function set and version we want to use. Suppose we want to make this XBee into the mesh co-ordinator. We change the function set to &#8220;Zigbee Coordinator <span class="caps">AT</span>&#8221; (keeping with Zigbee and the <span class="caps">AT</span> command set) in  &#8220;Function set&#8221; the drop-down, then select the most recent version of this function set from the &#8220;Version&#8221; drop-down. (Versions are identified by hex numbers: the most recent in the screenshot right is &#8220;20A7&#8221;, that being the highest hex number. Unfortunately X-<span class="caps">CTU</span> orders the numbers alphabetically, not in hex-numeric order.) Pressing &#8220;Write&#8221; will update the radio&#8217;s firmware, and the radio is then ready for use as a co-ordinator.
+
+If you look through the list of function sets, there will be quite a few options, including protocols other than Zigbee. These probably aren&#8217;t worth too much exploration, but you&#8217;ll also notice that there are Zigbee <span class="caps">AT</span> and <span class="caps">API</span> function sets corresponding to the <a href="../2013/07/01/xbee/" target="_blank">two modes (transparent and <span class="caps">API</span>)</a> that the XBee can support. Be sure to select the correct one for your application.
+
+That&#8217;s it: the radio is now ready for&nbsp;use.
+</p>
+<h3>Advanced use: setting optional&nbsp;parameters</h3>
+There&#8217;s one more thing that X-<span class="caps">CTU</span> can be used for: it can set parameters to the firmware function set, and this is sometimes important when using the radios.
+
+![X-<span class="caps">CTU</span> parameter setting](/images/citizen-sensing/xctu-parameter-setting.png)
+
+When you&#8217;ve read the firmware from a radio, the main part of the X-<span class="caps">CTU</span> window contains a hierarchy of folders and cryptic values, for example &#8220;(4) <span class="caps">PL</span> - Power level&#8221;. These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using <span class="caps">AT</span> commands. The example we used sets the radio&#8217;s power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 (&#8220;low&#8221;) to save batteries. If you choose this and then write the firmware to the radio, the module will use this power setting.
+
+In the example shown on the left, we&#8217;re changing the <span class="caps">AP</span> parameter (&#8220;<span class="caps">API</span> enable&#8221;) to 2, which is needed for the <a href="../2013/07/03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator <span class="caps">API</span> function set selected as shown), the radio will be ready for use.
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/07/02/mesh-network/" rel="bookmark">Tuesday 2 July, 2013</a>
 			</span>
 		    </div>
@@ -162,36 +213,6 @@ Several lessons learned: I need a finer bit for my soldering iron, a smaller pai
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/629930343?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/mein-kampf/" rel="bookmark">Sunday 23 June, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/mein-kampf/">Mein&nbsp;Kampf</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1395618385l/54270._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Adolf Hitler&nbsp;(1925)
-      </h2>
-    </div>
-    <p>
-      
-      </p>
-<p>
-	0/5.
-	  Finished Sunday 23 June,&nbsp;2013.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/601761741?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
 </div>
 		</div>

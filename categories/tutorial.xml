@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Feb 2024 14:12:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org29167e9" class="outline-2"&gt;
+&lt;h2 id="org29167e9"&gt;LISPcraft&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org29167e9"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Robert Wilensky.  &lt;i&gt;LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
+0-393-95442-0. 1984.
+&lt;/p&gt;
+
+&lt;p&gt;
+Hard to know whether to include this as an introduction or
+collection of applications, since it runs all the way from basic
+uses to pattern-matching and associative retrieval, by way of the
+non-list data types in Lisp, and includes discussion of the symbol
+table and other internals that definitely fall into the "advanced"
+category.
+&lt;/p&gt;
+
+&lt;p&gt;
+However, this was my second introduction to Lisp (after &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt;), so
+it has a fond place in my memory. The fact that it deals with
+language internals isn't a bad thing, because it deals with the
+basics so well. It's very much a traditional programming
+introduction focusing on the "needed" parts of the language. It
+pre-dates the Common Lisp standard and doesn't touch on CLOS,
+which perhaps make it a less appropriate choice for newcomers
+these days than &lt;a href="/2024/01/27/practical-common-lisp/"&gt;Practical Common Lisp&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;
+There is also a second edition. I haven't read it, but it seems that
+it addresses at least the concern about being non-standard:
+&lt;/p&gt;
+
+&lt;p&gt;
+Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
+978-039395544-6. 1986.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1e4659c" class="outline-2"&gt;
+&lt;h2 id="org1e4659c"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1e4659c"&gt;
+&lt;p&gt;
+&lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A one-web-page introduction to Common Lisp covering pretty much
+all the language in enough detail to at least start writing simple
+command-line programs (and understanding those of others).
+Includes macros and CLOS. Quite an achievement to make it all so
+readable.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org12de14d" class="outline-2"&gt;
+&lt;h2 id="org12de14d"&gt;Practical Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org12de14d"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/b8/4b7fa7-83e9-4756-8ede-1c3cdeaeafef/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Peter Seibel.  &lt;i&gt;&lt;a href="https://gigamonkeys.com/book/"&gt;Practical Common Lisp&lt;/a&gt;&lt;/i&gt;. Apress. ISBN
+978-1-4302-0017-8. 2005.
+&lt;/p&gt;
+
+&lt;p&gt;
+The classic, very thorough and hands-on tutorial introduction that
+doesn't skip the hard parts like the condition system and
+non-local blocks and exists (and the relationship between the
+two). It's also got good chapters on CLOS.
+&lt;/p&gt;
+
+&lt;p&gt;
+The text is complemented by a set of modern examples, for web
+services, database, and binary file parsers: quite a long way
+removed from the examples in many introductory texts. It doesn't
+make much use of macro programming in these examples, which is a
+shame, so follow with On Lisp or Let over Lambda once the
+structure of the language is clear.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/practical-common-lisp/</guid><pubDate>Sat, 27 Jan 2024 13:15:30 GMT</pubDate></item></channel></rss>
