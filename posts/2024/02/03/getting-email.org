@@ -1,6 +1,6 @@
 # -*- org-attach-id-dir: "../../../../files/attachments"; -*-
 #+BEGIN_COMMENT
-.. title: Local email using OAUTH2 with mbsync
+.. title: Local email from Office365 using OAUTH2 with mbsync
 .. slug: getting-email
 .. date: 2024-02-03 16:19:40 UTC
 .. tags: emacs, sysadmin, email, linux
@@ -10,7 +10,7 @@
 .. type: text
 
 #+END_COMMENT
-* Local email using OAUTH2 with ~mbsync~
+* Local email from Office365 using OAUTH2 with ~mbsync~
 
   I decided recently I wanted to have a more controlled email setup,
   with a local archive rather than relying on remote servers
