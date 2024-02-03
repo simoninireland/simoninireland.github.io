@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about linux)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Feb 2024 18:57:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b62dba" class="outline-2"&gt;
-&lt;h2 id="org1b62dba"&gt;Local email using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b62dba"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about linux)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Feb 2024 19:02:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email from Office365 using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org47b9586" class="outline-2"&gt;
+&lt;h2 id="org47b9586"&gt;Local email from Office365 using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org47b9586"&gt;
 &lt;p&gt;
 I decided recently I wanted to have a more controlled email setup,
 with a local archive rather than relying on remote servers
@@ -35,9 +35,9 @@ requires quite a lot of technical manual configuration.
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org8db3dd4" class="outline-3"&gt;
-&lt;h3 id="org8db3dd4"&gt;How the internet email architecture works&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8db3dd4"&gt;
+&lt;div id="outline-container-orgdd98514" class="outline-3"&gt;
+&lt;h3 id="orgdd98514"&gt;How the internet email architecture works&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdd98514"&gt;
 &lt;p&gt;
 The old-school approach to email involves several elements, each
 potentially provided by a different tool:
@@ -88,9 +88,9 @@ authorise access to the various email services.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org5b22a6e" class="outline-3"&gt;
-&lt;h3 id="org5b22a6e"&gt;Outline solution&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org5b22a6e"&gt;
+&lt;div id="outline-container-org174ea36" class="outline-3"&gt;
+&lt;h3 id="org174ea36"&gt;Outline solution&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org174ea36"&gt;
 &lt;p&gt;
 In outline the solution is as follows:
 &lt;/p&gt;
@@ -107,9 +107,9 @@ Emacs&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orged04e5c" class="outline-3"&gt;
-&lt;h3 id="orged04e5c"&gt;Packages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orged04e5c"&gt;
+&lt;div id="outline-container-org6d4a31a" class="outline-3"&gt;
+&lt;h3 id="org6d4a31a"&gt;Packages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6d4a31a"&gt;
 &lt;p&gt;
 Under Arch Linux we need the &lt;code&gt;isync&lt;/code&gt; package for synchronisation
 and the &lt;code&gt;cyrus-sasl-xoauth2&lt;/code&gt; provider for OAUTH authentication.
@@ -128,9 +128,9 @@ names. Note that the actual synchronisation tool is called
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ff4c34" class="outline-3"&gt;
-&lt;h3 id="org9ff4c34"&gt;OAUTH2 flow management&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9ff4c34"&gt;
+&lt;div id="outline-container-org0776123" class="outline-3"&gt;
+&lt;h3 id="org0776123"&gt;OAUTH2 flow management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0776123"&gt;
 &lt;p&gt;
 We want to use OAUTH2 to authenticate an IMAP transaction, so that
 no additional passwords are needed. To this we need a script to
@@ -271,9 +271,9 @@ can basically just use &lt;code&gt;cat&lt;/code&gt; to get the information.)
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgaa8eabd" class="outline-3"&gt;
-&lt;h3 id="orgaa8eabd"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgaa8eabd"&gt;
+&lt;div id="outline-container-orgf8b9635" class="outline-3"&gt;
+&lt;h3 id="orgf8b9635"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf8b9635"&gt;
 &lt;p&gt;
 We now have OAUTH2 tokens for accessing Office365, which we can
 integrate with our MDA. &lt;code&gt;mbsync&lt;/code&gt; has four main concepts:
@@ -337,9 +337,9 @@ to create this before sync-ing.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org903e95c" class="outline-3"&gt;
-&lt;h3 id="org903e95c"&gt;Sync'ing the email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org903e95c"&gt;
+&lt;div id="outline-container-orgf995f36" class="outline-3"&gt;
+&lt;h3 id="orgf995f36"&gt;Sync'ing the email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf995f36"&gt;
 &lt;p&gt;
 For a full sync of all maildirs just run:
 &lt;/p&gt;
@@ -366,9 +366,9 @@ above).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgb30f290" class="outline-3"&gt;
-&lt;h3 id="orgb30f290"&gt;Indexing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb30f290"&gt;
+&lt;div id="outline-container-org2b4cc1b" class="outline-3"&gt;
+&lt;h3 id="org2b4cc1b"&gt;Indexing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2b4cc1b"&gt;
 &lt;p&gt;
 You'll almost certainly now want to index your newly-downloaded
 trove of messages. There are two common tools for this &lt;code&gt;mu&lt;/code&gt; and
@@ -397,9 +397,9 @@ index these differently.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7e198c9" class="outline-3"&gt;
-&lt;h3 id="org7e198c9"&gt;Sending email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7e198c9"&gt;
+&lt;div id="outline-container-orgd48652b" class="outline-3"&gt;
+&lt;h3 id="orgd48652b"&gt;Sending email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd48652b"&gt;
 &lt;p&gt;
 All of the above sets up the MDA to &lt;i&gt;get&lt;/i&gt; mail: we now need to be
 able to &lt;i&gt;send&lt;/i&gt; mail. Fortunately we've already done most of the
@@ -446,9 +446,9 @@ exactly the same script as we used above.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2226bab" class="outline-3"&gt;
-&lt;h3 id="org2226bab"&gt;Reading and writing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2226bab"&gt;
+&lt;div id="outline-container-org863f2b8" class="outline-3"&gt;
+&lt;h3 id="org863f2b8"&gt;Reading and writing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org863f2b8"&gt;
 &lt;p&gt;
 Finally we're ready to read email. I'll leave this to you: there
 are lots of text-based email clients around, notably &lt;code&gt;mutt&lt;/code&gt; that we
@@ -466,9 +466,9 @@ be pointed at the right directories and accounts.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6520c24" class="outline-3"&gt;
-&lt;h3 id="org6520c24"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6520c24"&gt;
+&lt;div id="outline-container-orgad388d0" class="outline-3"&gt;
+&lt;h3 id="orgad388d0"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgad388d0"&gt;
 &lt;p&gt;
 Gmail lets one use "app passwords" for accessing using IMAP, but
 also supports OAUTH2, which is obviously more secure. The same
@@ -494,9 +494,9 @@ and similarly in the configurations of &lt;code&gt;mbsync&lt;/code&gt; and &lt;c
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc18d251" class="outline-3"&gt;
-&lt;h3 id="orgc18d251"&gt;Conclusion&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc18d251"&gt;
+&lt;div id="outline-container-org68646ad" class="outline-3"&gt;
+&lt;h3 id="org68646ad"&gt;Conclusion&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org68646ad"&gt;
 &lt;p&gt;
 If you're still with me: congratulations, but you must &lt;i&gt;really&lt;/i&gt;
 want to read your email old-school!
@@ -517,9 +517,9 @@ though.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga746830" class="outline-3"&gt;
-&lt;h3 id="orga746830"&gt;Resources&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga746830"&gt;
+&lt;div id="outline-container-orgea8d990" class="outline-3"&gt;
+&lt;h3 id="orgea8d990"&gt;Resources&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgea8d990"&gt;
 &lt;p&gt;
 There are many resources on using &lt;code&gt;mbsync&lt;/code&gt;, &lt;code&gt;mu&lt;/code&gt;, &lt;code&gt;mu4e&lt;/code&gt;, and the
 rest on the web. I found these covered everything in great detail,

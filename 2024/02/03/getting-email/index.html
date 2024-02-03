@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Local email using OAUTH2 with mbsync | Simon Dobson</title>
+<title>Local email from Office365 using OAUTH2 with mbsync | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -67,16 +67,16 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Saturday 3 February, 2024</a>
 	    </span>
 	</div>
-	<h1>Local email using <span class="caps">OAUTH2</span> with&nbsp;mbsync</h1>
+	<h1>Local email from Office365 using <span class="caps">OAUTH2</span> with&nbsp;mbsync</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org1b62dba" class="outline-2">
-<h2 id="org1b62dba">Local email using <span class="caps">OAUTH2</span>&nbsp;with <code>mbsync</code>
+		<div id="outline-container-org47b9586" class="outline-2">
+<h2 id="org47b9586">Local email from Office365 using <span class="caps">OAUTH2</span>&nbsp;with <code>mbsync</code>
 </h2>
-<div class="outline-text-2" id="text-org1b62dba">
+<div class="outline-text-2" id="text-org47b9586">
 <p>
 I decided recently I wanted to have a more controlled email setup,
 with a local archive rather than relying on remote servers
@@ -108,9 +108,9 @@ requires quite a lot of technical manual&nbsp;configuration.
 </div>
 
 
-<div id="outline-container-org8db3dd4" class="outline-3">
-<h3 id="org8db3dd4">How the internet email architecture&nbsp;works</h3>
-<div class="outline-text-3" id="text-org8db3dd4">
+<div id="outline-container-orgdd98514" class="outline-3">
+<h3 id="orgdd98514">How the internet email architecture&nbsp;works</h3>
+<div class="outline-text-3" id="text-orgdd98514">
 <p>
 The old-school approach to email involves several elements, each
 potentially provided by a different&nbsp;tool:
@@ -158,9 +158,9 @@ authorise access to the various email&nbsp;services.
 </div>
 </div>
 
-<div id="outline-container-org5b22a6e" class="outline-3">
-<h3 id="org5b22a6e">Outline&nbsp;solution</h3>
-<div class="outline-text-3" id="text-org5b22a6e">
+<div id="outline-container-org174ea36" class="outline-3">
+<h3 id="org174ea36">Outline&nbsp;solution</h3>
+<div class="outline-text-3" id="text-org174ea36">
 <p>
 In outline the solution is as&nbsp;follows:
 </p>
@@ -175,9 +175,9 @@ In outline the solution is as&nbsp;follows:
 </div>
 </div>
 
-<div id="outline-container-orged04e5c" class="outline-3">
-<h3 id="orged04e5c">Packages</h3>
-<div class="outline-text-3" id="text-orged04e5c">
+<div id="outline-container-org6d4a31a" class="outline-3">
+<h3 id="org6d4a31a">Packages</h3>
+<div class="outline-text-3" id="text-org6d4a31a">
 <p>
 Under Arch Linux we need&nbsp;the <code>isync</code> package for synchronisation
 and&nbsp;the <code>cyrus-sasl-xoauth2</code> provider for <span class="caps">OAUTH</span>&nbsp;authentication.
@@ -196,9 +196,9 @@ names. Note that the actual synchronisation tool is&nbsp;called
 </div>
 </div>
 
-<div id="outline-container-org9ff4c34" class="outline-3">
-<h3 id="org9ff4c34"><span class="caps">OAUTH2</span> flow&nbsp;management</h3>
-<div class="outline-text-3" id="text-org9ff4c34">
+<div id="outline-container-org0776123" class="outline-3">
+<h3 id="org0776123"><span class="caps">OAUTH2</span> flow&nbsp;management</h3>
+<div class="outline-text-3" id="text-org0776123">
 <p>
 We want to use <span class="caps">OAUTH2</span> to authenticate an <span class="caps">IMAP</span> transaction, so that
 no additional passwords are needed. To this we need a script to
@@ -334,10 +334,10 @@ can basically just&nbsp;use <code>cat</code> to get the&nbsp;information.)
 </div>
 </div>
 
-<div id="outline-container-orgaa8eabd" class="outline-3">
-<h3 id="orgaa8eabd">
+<div id="outline-container-orgf8b9635" class="outline-3">
+<h3 id="orgf8b9635">
 <code>mbsync</code> for&nbsp;Office365</h3>
-<div class="outline-text-3" id="text-orgaa8eabd">
+<div class="outline-text-3" id="text-orgf8b9635">
 <p>
 We now have <span class="caps">OAUTH2</span> tokens for accessing Office365, which we can
 integrate with our&nbsp;<span class="caps">MDA</span>. <code>mbsync</code> has four main&nbsp;concepts:
@@ -399,9 +399,9 @@ to create this before&nbsp;sync-ing.
 </div>
 </div>
 
-<div id="outline-container-org903e95c" class="outline-3">
-<h3 id="org903e95c">Sync&#8217;ing the&nbsp;email</h3>
-<div class="outline-text-3" id="text-org903e95c">
+<div id="outline-container-orgf995f36" class="outline-3">
+<h3 id="orgf995f36">Sync&#8217;ing the&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgf995f36">
 <p>
 For a full sync of all maildirs just&nbsp;run:
 </p>
@@ -427,9 +427,9 @@ example, as long as the access token was held unencrypted (see&nbsp;above).
 </div>
 </div>
 
-<div id="outline-container-orgb30f290" class="outline-3">
-<h3 id="orgb30f290">Indexing&nbsp;email</h3>
-<div class="outline-text-3" id="text-orgb30f290">
+<div id="outline-container-org2b4cc1b" class="outline-3">
+<h3 id="org2b4cc1b">Indexing&nbsp;email</h3>
+<div class="outline-text-3" id="text-org2b4cc1b">
 <p>
 You&#8217;ll almost certainly now want to index your newly-downloaded
 trove of messages. There are two common tools for&nbsp;this <code>mu</code> and
@@ -458,9 +458,9 @@ index these&nbsp;differently.
 </div>
 </div>
 
-<div id="outline-container-org7e198c9" class="outline-3">
-<h3 id="org7e198c9">Sending&nbsp;email</h3>
-<div class="outline-text-3" id="text-org7e198c9">
+<div id="outline-container-orgd48652b" class="outline-3">
+<h3 id="orgd48652b">Sending&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgd48652b">
 <p>
 All of the above sets up the <span class="caps">MDA</span> to <i>get</i> mail: we now need to be
 able to <i>send</i> mail. Fortunately we&#8217;ve already done most of the
@@ -506,9 +506,9 @@ exactly the same script as we used&nbsp;above.
 </div>
 </div>
 
-<div id="outline-container-org2226bab" class="outline-3">
-<h3 id="org2226bab">Reading and writing&nbsp;email</h3>
-<div class="outline-text-3" id="text-org2226bab">
+<div id="outline-container-org863f2b8" class="outline-3">
+<h3 id="org863f2b8">Reading and writing&nbsp;email</h3>
+<div class="outline-text-3" id="text-org863f2b8">
 <p>
 Finally we&#8217;re ready to read email. I&#8217;ll leave this to you: there
 are lots of text-based email clients around,&nbsp;notably <code>mutt</code> that we
@@ -526,9 +526,9 @@ be pointed at the right directories and&nbsp;accounts.
 </div>
 </div>
 
-<div id="outline-container-org6520c24" class="outline-3">
-<h3 id="org6520c24">Accessing Gmail using&nbsp;<span class="caps">OAUTH2</span></h3>
-<div class="outline-text-3" id="text-org6520c24">
+<div id="outline-container-orgad388d0" class="outline-3">
+<h3 id="orgad388d0">Accessing Gmail using&nbsp;<span class="caps">OAUTH2</span></h3>
+<div class="outline-text-3" id="text-orgad388d0">
 <p>
 Gmail lets one use &#8220;app passwords&#8221; for accessing using <span class="caps">IMAP</span>, but
 also supports <span class="caps">OAUTH2</span>, which is obviously more secure. The same
@@ -554,9 +554,9 @@ and similarly in the configurations&nbsp;of <code>mbsync</code> and <code>msmtp<
 </div>
 </div>
 
-<div id="outline-container-orgc18d251" class="outline-3">
-<h3 id="orgc18d251">Conclusion</h3>
-<div class="outline-text-3" id="text-orgc18d251">
+<div id="outline-container-org68646ad" class="outline-3">
+<h3 id="org68646ad">Conclusion</h3>
+<div class="outline-text-3" id="text-org68646ad">
 <p>
 If you&#8217;re still with me: congratulations, but you must <i>really</i>
 want to read your email&nbsp;old-school!
@@ -576,9 +576,9 @@ simplify email processing. Those are matters for another time,&nbsp;though.
 </div>
 </div>
 
-<div id="outline-container-orga746830" class="outline-3">
-<h3 id="orga746830">Resources</h3>
-<div class="outline-text-3" id="text-orga746830">
+<div id="outline-container-orgea8d990" class="outline-3">
+<h3 id="orgea8d990">Resources</h3>
+<div class="outline-text-3" id="text-orgea8d990">
 <p>
 There are many resources on&nbsp;using <code>mbsync</code>, <code>mu</code>, <code>mu4e</code>, and the
 rest on the web. I found these covered everything in great detail,
@@ -609,12 +609,12 @@ Microsoft Azure that often isn&#8217;t possible for corporate&nbsp;email</li>
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Local%20email%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin&amp;url=https://simondobson.org/2024/02/03/getting-email/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Local%20email%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin&amp;url=https://simondobson.org/2024/02/03/getting-email/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Local%20email%20from%20Office365%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin&amp;url=https://simondobson.org/2024/02/03/getting-email/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Local%20email%20from%20Office365%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin&amp;url=https://simondobson.org/2024/02/03/getting-email/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/02/03/getting-email/&amp;title=Local%20email%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/02/03/getting-email/&amp;title=Local%20email%20from%20Office365%20using%20OAUTH2%20with%20mbsync%20%23emacs%20%23email%20%23linux%20%23sysadmin" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
 	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/02/03/getting-email/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Local%20email%20using%20OAUTH2%20with%20mbsync&amp;body=https://simondobson.org/2024/02/03/getting-email/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="mailto:?subject=Local%20email%20from%20Office365%20using%20OAUTH2%20with%20mbsync&amp;body=https://simondobson.org/2024/02/03/getting-email/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
