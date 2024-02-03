@@ -418,10 +418,6 @@
   <lastmod>2024-01-01T19:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/2013/06/01/sample-post-title/</loc>
-  <lastmod>2024-01-01T19:20:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/2013/06/19/ditch-motivation/</loc>
   <lastmod>2024-01-01T19:20:00Z</lastmod>
  </url>
@@ -882,12 +878,16 @@
   <lastmod>2024-02-02T11:45:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/02/03/getting-email/</loc>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-02-02T12:23:00Z</lastmod>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2024-02-02T11:45:00Z</lastmod>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -971,10 +971,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/categories/cat_book-reviews/</loc>
-  <lastmod>2024-01-01T19:19:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/cat_citizen-sensing/</loc>
   <lastmod>2024-01-01T19:19:00Z</lastmod>
  </url>
  <url>
@@ -1074,10 +1070,6 @@
   <lastmod>2024-01-01T19:19:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/categories/ditch/</loc>
-  <lastmod>2024-01-01T19:19:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/categories/doctoral-symposium/</loc>
   <lastmod>2024-01-01T19:19:00Z</lastmod>
  </url>
@@ -1096,6 +1088,10 @@
  <url>
   <loc>https://simondobson.org/categories/emacs/</loc>
   <lastmod>2024-01-01T19:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/email/</loc>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/epidemic-spreading/</loc>
@@ -1398,10 +1394,6 @@
   <lastmod>2024-01-27T12:38:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/categories/projectlisp-bibliography-lisp-advanced-tutorial/</loc>
-  <lastmod>2024-01-27T15:46:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/categories/projectlisp-bibliography/</loc>
   <lastmod>2024-01-27T13:15:00Z</lastmod>
  </url>
@@ -1536,6 +1528,10 @@
  <url>
   <loc>https://simondobson.org/categories/studentships/</loc>
   <lastmod>2024-01-01T19:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/sysadmin/</loc>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/system-administration/</loc>
@@ -3831,7 +3827,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-137.html</loc>
-  <lastmod>2024-02-02T12:23:00Z</lastmod>
+  <lastmod>2024-02-03T16:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-14.html</loc>
@@ -4222,10 +4218,6 @@
   <lastmod>2024-01-27T13:00:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/research/annotated-lisp-bibliography/</loc>
-  <lastmod>2024-01-27T13:00:00Z</lastmod>
- </url>
- <url>
   <loc>https://simondobson.org/research/former/</loc>
   <lastmod>2024-01-01T19:20:00Z</lastmod>
  </url>
@@ -4235,10 +4227,6 @@
  </url>
  <url>
   <loc>https://simondobson.org/research/projects/</loc>
-  <lastmod>2024-01-27T13:01:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/research/projects/annotated-lisp-bibliography/</loc>
   <lastmod>2024-01-27T13:01:00Z</lastmod>
  </url>
  <url>

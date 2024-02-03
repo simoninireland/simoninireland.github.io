@@ -1,5 +1,544 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jan 2024 18:15:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Feb 2024 18:57:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b62dba" class="outline-2"&gt;
+&lt;h2 id="org1b62dba"&gt;Local email using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1b62dba"&gt;
+&lt;p&gt;
+I decided recently I wanted to have a more controlled email setup,
+with a local archive rather than relying on remote servers
+to keep everything. The point of this is twofold:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;To have a local archive of email, separate from the corporate
+servers in case I need to change provider etc&lt;/li&gt;
+&lt;li&gt;To use different MUAs locally, rather than being stuck with only
+a few that will work with all the providers and that are clunky
+and not well-integrated with my workflow&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+There's a lot of outdated information on the web about how to set
+this up and it took some time for me to get a working setup, so I
+thought I'd share my experience. Specifically this involves
+interfacing command-line email receiving and sending to a Microsoft
+Office365 server using IMAP and SMTP with corporate-grade OAUTH2 2FA
+authentication: it's the last part that's tricky. As a bonus the
+same approach also works for OAUTH2 and Gmail, dispensing with
+insecure application passwords.
+&lt;/p&gt;
+
+&lt;p&gt;
+In case it's not obvious by now, this is a hacker set-up that
+requires quite a lot of technical manual configuration.
+&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org8db3dd4" class="outline-3"&gt;
+&lt;h3 id="org8db3dd4"&gt;How the internet email architecture works&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8db3dd4"&gt;
+&lt;p&gt;
+The old-school approach to email involves several elements, each
+potentially provided by a different tool:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;a client program or &lt;i&gt;mail user agent&lt;/i&gt; (MUA) that presents email
+to you and lets you search, delete, store, etc;&lt;/li&gt;
+&lt;li&gt;a retrieval program or &lt;i&gt;mail delivery agent&lt;/i&gt; (MDA) that retrieves
+mail from the providers and manages local email directories&lt;/li&gt;
+&lt;li&gt;a sending program or &lt;i&gt;mail transfer agent&lt;/i&gt; (MTA) that takes; and
+locally-created messages and transfer them to their intended
+recipients.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Modern GUI email clients like Thunderbird typically wrap-up all
+three services into one program that's easier to deploy and manage,
+but that therefore forces certain choices on the user. By reverting
+to the older architecture we regain flexibility and choice, at the
+expense of making our lives harder.
+&lt;/p&gt;
+
+&lt;p&gt;
+All these tools need to authenticate against other services.
+Traditionally this used usernames and passwords, which are clearly
+inadequate for the modern web. Instead we need a system based
+around stronger encryption.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://en.wikipedia.org/wiki/OAuth"&gt;OAUTH2&lt;/a&gt; is a an authorisation delegation protocol that lets a site
+grant access to someone who's authenticated against another,
+without getting sight of their credentials. The typical use case is
+for a web site to allow users to sign-in using social media
+services like Facebook or Google, which reduces the number of
+passwords a user needs to remember or manage – and, totally
+incidentally I'm sure, improves the social media services' ability
+to track users' activities across the web.
+&lt;/p&gt;
+
+&lt;p&gt;
+In our case, the OAUTH2 "flow" interacts with the authentication
+provider and acquires a bearer token that can then be presented to
+authorise access to the various email services.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5b22a6e" class="outline-3"&gt;
+&lt;h3 id="org5b22a6e"&gt;Outline solution&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5b22a6e"&gt;
+&lt;p&gt;
+In outline the solution is as follows:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Install &lt;code&gt;mbsync&lt;/code&gt; as MDA&lt;/li&gt;
+&lt;li&gt;Set up OAUTH2 authentication for Office365&lt;/li&gt;
+&lt;li&gt;Use the to authenticate &lt;code&gt;mbsync&lt;/code&gt; against Office365 to allow
+retrieval&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;msmtp&lt;/code&gt; as MTA, using the same authentication scheme&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;mu4e&lt;/code&gt; as MUA, since I want to read my email from inside
+Emacs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orged04e5c" class="outline-3"&gt;
+&lt;h3 id="orged04e5c"&gt;Packages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orged04e5c"&gt;
+&lt;p&gt;
+Under Arch Linux we need the &lt;code&gt;isync&lt;/code&gt; package for synchronisation
+and the &lt;code&gt;cyrus-sasl-xoauth2&lt;/code&gt; provider for OAUTH authentication.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S isync
+   yay -S cyrus-sasl-xoauth2
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The same packages are available for other distros under similar
+names. Note that the actual synchronisation tool is called
+&lt;code&gt;mbsync&lt;/code&gt;, even though the package that contains it is called
+&lt;code&gt;isync&lt;/code&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org9ff4c34" class="outline-3"&gt;
+&lt;h3 id="org9ff4c34"&gt;OAUTH2 flow management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9ff4c34"&gt;
+&lt;p&gt;
+We want to use OAUTH2 to authenticate an IMAP transaction, so that
+no additional passwords are needed. To this we need a script to
+manage the OAUTH2 flow.
+&lt;/p&gt;
+
+&lt;p&gt;
+Weirdly for an operation that's becoming so common on the web,
+there doesn't seem to be a package that offers OAUTH2 from the
+command line. However, there &lt;i&gt;is&lt;/i&gt; a script that does it that's
+included as an example with &lt;code&gt;mutt&lt;/code&gt; MUA, and we can use that. It can
+be found (in Arch) in the &lt;code&gt;mutt&lt;/code&gt; package.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S mutt
+   cp /usr/share/doc/mutt/samples/mutt_oauth2.py .
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This puts a copy of the script into the current directory, which we
+can then edit in two ways:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;add the internal application identification and client secrets
+for accessing Office365; and&lt;/li&gt;
+&lt;li&gt;set up the security for the OAUTH2 access tokens when they're
+downloaded and held locally.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+The client secret and app id need to be "proper", in the sense that
+Office365 knows about them – but weirdly they &lt;i&gt;don't&lt;/i&gt; have to be
+related to your email domain or cloud tenancy. It's perfectly fine
+to use credentials available in the public domain, for example
+those of Thunderbird:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;AppID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"08162f7c-0fd2-4200-a84a-f25a4db0b584"&lt;/span&gt;
+   &lt;span class="n"&gt;ClientSecret&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+(I got these from &lt;a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/"&gt;here&lt;/a&gt;, but other than that have no idea where
+they come from: they're &lt;i&gt;not&lt;/i&gt; the same as those in the
+&lt;a href="https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm"&gt;Thunderbird source code&lt;/a&gt;, as far as I can tell.)
+&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;code&gt;mutt_oauth2.py&lt;/code&gt; script stores the tokens it manages in a
+&lt;code&gt;gpg&lt;/code&gt;-encrypted file. You therefore need to provide your &lt;code&gt;gpg&lt;/code&gt;
+keypair identification, and I'm assuming anyone wanting to get
+local email has one of those! Mine is "simoninireland".
+&lt;/p&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;GPGKey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"simoninireland"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+I edited the file to look like this, with some details elided:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;MSAppID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"08162f7c-0fd2-4200-a84a-f25a4db0b584"&lt;/span&gt;
+   &lt;span class="n"&gt;MSClientSecret&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82"&lt;/span&gt;
+   &lt;span class="n"&gt;GPGKey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"simoninireland"&lt;/span&gt;
+
+   &lt;span class="n"&gt;ENCRYPTION_PIPE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'gpg'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'--encrypt'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'--recipient'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GPGKey&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+   &lt;span class="n"&gt;DECRYPTION_PIPE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'gpg'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'--decrypt'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+   &lt;span class="n"&gt;registrations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="s1"&gt;'google'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+           &lt;span class="o"&gt;...&lt;/span&gt;
+           &lt;span class="s1"&gt;'client_id'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'client_secret'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="p"&gt;},&lt;/span&gt;
+       &lt;span class="s1"&gt;'microsoft'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+           &lt;span class="o"&gt;...&lt;/span&gt;
+           &lt;span class="s1"&gt;'client_id'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;MSAppID&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;'client_secret'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;MSClientSecret&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="p"&gt;},&lt;/span&gt;
+   &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Put resulting script into &lt;code&gt;/usr/local/bin&lt;/code&gt; and make it executable.
+Then run it in "authorisation" mode. The token file can go
+anywhere: I put it in the directory used by &lt;code&gt;pass&lt;/code&gt; to allow for an
+alternative access route:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mutt_oauth2.py -t .password-store/email/work.gpg --authorize
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This will ask some questions:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;we want "microsoft" authentication&lt;/li&gt;
+&lt;li&gt;and a "localhostauthcode" flow&lt;/li&gt;
+&lt;li&gt;enter your email address (the actual user, not any alias)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+and it prints out a URL to copy into a browser to authenticate
+against Office365's web interface. In my case this involved
+interacting with the university's single sign-on and two-factor
+authentication (2FA) system. Doing this successfully put the
+necessary OAUTH2 tokens, encrypted, into the specified file.
+Running:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mutt_oauth2.py -t .password-store/email/work.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+will output the token, refreshing it automatically if it's
+expired. This may ask for the GPG key's passphrase, if it has one,
+and if it's not available from a local key agent.
+&lt;/p&gt;
+
+&lt;p&gt;
+(All this security means that the bearer tokens are stored
+ensryoted at rest. It's a little inconvenient, though, as it means
+you need to enter a &lt;code&gt;gpg&lt;/code&gt; passphrase periodically, and makes it
+hard to run &lt;code&gt;mbsync&lt;/code&gt; in a &lt;code&gt;cron&lt;/code&gt; job. This is fine if, like me,
+your level of security paranoia is such that you accept the minor
+inconvenience in exchange for not having plain-text access tokens
+lying around; on the other hand, you may decide that using, for
+example, a machine with full-disc encryption is secure enough, in
+which case you need to edit the &lt;code&gt;ENCRYPTION_PIPE&lt;/code&gt; and
+&lt;code&gt;DECRYPTION_PIPE&lt;/code&gt; commands in the script to not do encryption: they
+can basically just use &lt;code&gt;cat&lt;/code&gt; to get the information.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgaa8eabd" class="outline-3"&gt;
+&lt;h3 id="orgaa8eabd"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgaa8eabd"&gt;
+&lt;p&gt;
+We now have OAUTH2 tokens for accessing Office365, which we can
+integrate with our MDA. &lt;code&gt;mbsync&lt;/code&gt; has four main concepts:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Accounts, typically using IMAP&lt;/li&gt;
+&lt;li&gt;IMAP message stores, which are remote&lt;/li&gt;
+&lt;li&gt;Maildir stores, which are local&lt;/li&gt;
+&lt;li&gt;Channels, which tie local and remote together&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Maildir is a file format for storing email in a directory
+structure, and is a long-running standard that's supported by lots
+of tools. A maildir is typically presented in the MUA to a user as
+a folder, and represented to the MDA as a directory.
+&lt;/p&gt;
+
+&lt;p&gt;
+For Office365 we have:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   IMAPAccount work
+   Host outlook.office365.com
+   Port 993
+   User &amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;
+   PassCmd "mutt_oauth2.py -t ~/.password-store/email/work.gpg"
+   AuthMechs XOAUTH2
+   SSLType IMAPS
+
+   IMAPStore work-remote
+   Account work
+
+   MaildirStore work-local
+   Subfolders Verbatim
+   Path ~/Maildir/Work/
+   Inbox ~/Maildir/Work/Inbox
+
+   Channel Work
+   Far :work-remote:
+   Near :work-local:
+   Patterns * !"Conversation History" !Calendar !Archive !Archives !Clutter !Drafts
+   Create Both
+   Expunge Both
+   SyncState *
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+(See the &lt;code&gt;mbsync&lt;/code&gt; man pages for the details of its configuration.
+&lt;code&gt;&amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;&lt;/code&gt; should be a a proper username, not an alias.)
+For our purposes the important line is the &lt;code&gt;PassCmd&lt;/code&gt; that calls our
+edited script to retrieve the OAUTH2 bearer token. Email will be
+downloaded into a maildir tree rooted at &lt;code&gt;~/Maildir/Work&lt;/code&gt;: you need
+to create this before sync-ing.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mkdir -p ~/Maildir/Work
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org903e95c" class="outline-3"&gt;
+&lt;h3 id="org903e95c"&gt;Sync'ing the email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org903e95c"&gt;
+&lt;p&gt;
+For a full sync of all maildirs just run:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mbsync -a
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+That can be time-consuming, as all the maildirs (&lt;i&gt;i.e.&lt;/i&gt;, folders)
+have to be visited – and I have several hundred. A faster
+option is to normally just look at (for example) the inbox:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mbsync Work:INBOX
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This will ignore everything else, which means they'll drift – but
+can be re-sync'ed periodically by running a full sync. One could
+also set up a &lt;code&gt;cron&lt;/code&gt; job to do a full sync early every morning, for
+example, as long as the access token was held unencrypted (see
+above).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb30f290" class="outline-3"&gt;
+&lt;h3 id="orgb30f290"&gt;Indexing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb30f290"&gt;
+&lt;p&gt;
+You'll almost certainly now want to index your newly-downloaded
+trove of messages. There are two common tools for this &lt;code&gt;mu&lt;/code&gt; and
+&lt;code&gt;notmuch&lt;/code&gt;. Both do basically the same job of maintaining a
+structured and full-text index of messages that can be queried by
+an appropriate MUA. I chose &lt;code&gt;mu&lt;/code&gt;, for no particular reason: some
+people swear by &lt;code&gt;notmuch&lt;/code&gt;, which is based on extensive tagging of
+messages and so might be more familiar to Gmail users.
+&lt;/p&gt;
+
+&lt;p&gt;
+To install &lt;code&gt;mu&lt;/code&gt;, we first grab the packages:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   pacman -S mu
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We then initialise the index by running the indexer over the
+maildir. If we also provide our own email addresses it knows to
+index these differently.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mu init -m ~/Maildir --my-address=&amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org7e198c9" class="outline-3"&gt;
+&lt;h3 id="org7e198c9"&gt;Sending email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7e198c9"&gt;
+&lt;p&gt;
+All of the above sets up the MDA to &lt;i&gt;get&lt;/i&gt; mail: we now need to be
+able to &lt;i&gt;send&lt;/i&gt; mail. Fortunately we've already done most of the
+hard work needed to get this working.
+&lt;/p&gt;
+
+&lt;p&gt;
+We need a local MTA, for which I chose &lt;code&gt;msmtp&lt;/code&gt;. It understands
+OAUTH2 natively. Installation in Arch is easy:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S msmtp
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+It needs to be pointed at the Office365 SMTP server and provided
+with the OAUTH2 tokens, which are the same as we used above:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   defaults
+   auth           on
+   tls            on
+   tls_starttls   on
+   tls_trust_file /etc/ssl/certs/ca-certificates.crt
+   logfile        ~/.msmtp.log
+
+   account        work
+   host           smtp.office365.com
+   port           587
+   auth           xoauth2
+   user           &amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;
+   from           &amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;
+   passwordeval   "mutt_oauth2.py -t ~/.password-store/email/work.gpg"
+
+   account default : work
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Again, see the &lt;code&gt;msmtp&lt;/code&gt; man pages for the details of this, and
+replace &lt;code&gt;&amp;lt;&amp;lt;work-email&amp;gt;&amp;gt;&lt;/code&gt; as appropriate: the only interesting part
+from our current perspective is that the &lt;code&gt;passwordeval&lt;/code&gt; line calls
+exactly the same script as we used above.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2226bab" class="outline-3"&gt;
+&lt;h3 id="org2226bab"&gt;Reading and writing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2226bab"&gt;
+&lt;p&gt;
+Finally we're ready to read email. I'll leave this to you: there
+are lots of text-based email clients around, notably &lt;code&gt;mutt&lt;/code&gt; that we
+encountered earlier. There's also &lt;code&gt;mu4e&lt;/code&gt; for reading email in
+Emacs, making use of the &lt;code&gt;mu&lt;/code&gt; index; and &lt;code&gt;notmuch&lt;/code&gt; also has an
+Emacs interface.
+&lt;/p&gt;
+
+&lt;p&gt;
+I use &lt;code&gt;mu4e&lt;/code&gt;. There's a lot of documentation on the web for setting
+this up, all of which applies immediately to our new set-up: the
+MUA is entirely independent of the MDA and MTA, and simply needs to
+be pointed at the right directories and accounts.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6520c24" class="outline-3"&gt;
+&lt;h3 id="org6520c24"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6520c24"&gt;
+&lt;p&gt;
+Gmail lets one use "app passwords" for accessing using IMAP, but
+also supports OAUTH2, which is obviously more secure. The same
+approach as above works for Gmail too. The initial credentials are:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;GAppID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'406964657835-aq8lmia8j95dhl1a2bvharmfk3t1hgqj.apps.googleusercontent.com'&lt;/span&gt;
+   &lt;span class="n"&gt;GClientSecret&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'kSmqreRr0qwBWJgbf5Y-PjSU'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+(&lt;a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/"&gt;Same source&lt;/a&gt; as above.) Edit these into the script and change the
+entries in the config files to call it to authenticate with an
+appropriate store, for example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   mutt_oauth2.py -t .password-store/email/personal.gpg --authorize
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+and similarly in the configurations of &lt;code&gt;mbsync&lt;/code&gt; and &lt;code&gt;msmtp&lt;/code&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgc18d251" class="outline-3"&gt;
+&lt;h3 id="orgc18d251"&gt;Conclusion&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc18d251"&gt;
+&lt;p&gt;
+If you're still with me: congratulations, but you must &lt;i&gt;really&lt;/i&gt;
+want to read your email old-school!
+&lt;/p&gt;
+
+&lt;p&gt;
+For me, this has completely changed my relationship with email in
+ways I didn't expect. Using Emacs means typically not having the
+client visible all the time, which reduces the temptation to check
+all the time. Instead I can adopt a more structured approach and
+only check my email when I want to, which often means only three or
+four times a day. It's also made email easier to manage, for
+example by adding hyperlinks in my to-do list straight to messages
+that need attention, and adding some integrations with org mode to
+simplify email processing. Those are matters for another time,
+though.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orga746830" class="outline-3"&gt;
+&lt;h3 id="orga746830"&gt;Resources&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga746830"&gt;
+&lt;p&gt;
+There are many resources on using &lt;code&gt;mbsync&lt;/code&gt;, &lt;code&gt;mu&lt;/code&gt;, &lt;code&gt;mu4e&lt;/code&gt;, and the
+rest on the web. I found these covered everything in great detail,
+with the exception of the OAUTH2 integration I've detailed here. In
+particular I'd like to acknowledge the following:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://cvanelteren.github.io/post/mu4e/"&gt;Growing pains&lt;/a&gt;, Casper van Elteren's &lt;code&gt;mu4e&lt;/code&gt; setup that pointed me
+in the right direction&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.macs.hw.ac.uk/~rs46/posts/2022-01-11-mu4e-oauth.html"&gt;Microsoft OAuth authentication with mu4e in Emacs&lt;/a&gt;, which uses
+&lt;code&gt;offlineimap&lt;/code&gt;, a different MDA, and needs closer integration with
+Microsoft Azure that often isn't possible for corporate email&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/"&gt;Configure Mutt to work with OAuth 2.0&lt;/a&gt; that focuses on using
+&lt;code&gt;mutt&lt;/code&gt; and Gmail&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>emacs</category><category>email</category><category>linux</category><category>sysadmin</category><guid>https://simondobson.org/2024/02/03/getting-email/</guid><pubDate>Sat, 03 Feb 2024 16:19:40 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
 &lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3d747c3"&gt;
 &lt;p&gt;
