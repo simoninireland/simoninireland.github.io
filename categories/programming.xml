@@ -1,5 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 25 Jan 2024 18:15:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 11 Feb 2024 14:28:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgadfec36" class="outline-2"&gt;
+&lt;h2 id="orgadfec36"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgadfec36"&gt;
+&lt;p&gt;
+I recently had a discussion with someone on Mastodon about Lisp and
+its perceived (by them) deficiencies as a language. There were some
+interesting points, but I felt I had to try to refute them, at least
+partially.
+&lt;/p&gt;
+
+&lt;p&gt;
+I should say from the start the I'm not blind to Lisp's many
+inadequacies and anachronisms, merely pointing out that it has a
+context like everything else.
+&lt;/p&gt;
+
+&lt;p&gt;
+There seemed to be two main issues:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Poor design decisions throughout, and especially a lack of static
+typing&lt;/li&gt;
+&lt;li&gt;The shadows of really early machines in &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cadr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+These points are tied together, but let's try to unpack them.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6a45142" class="outline-3"&gt;
+&lt;h3 id="org6a45142"&gt;Design&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6a45142"&gt;
+&lt;p&gt;
+Let's start with design. Lisp is over half a century old. I'd argue
+it was exceptionally well-designed – when it was designed. It
+lacks most modern advances in types because … well, they didn't
+exist, many of them arose as solutions to perceived problems in
+Lisp (and Fortran), and many of those "solutions" still aren't
+universally accepted, such as static typing itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+What we've actually learned is that many aspects of programming
+lack any really universal solutions. If static typing were such an
+obvious and unarguable route to efficiency and quality, all new
+software would be being written in Haskell.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-orgb5406a7" class="outline-3"&gt;
+&lt;h3 id="orgb5406a7"&gt;Typing and features&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb5406a7"&gt;
+&lt;p&gt;
+And the lack of modern types isn't really as clear-cut as it
+appears. The argument about the &lt;i&gt;lack&lt;/i&gt; of features in Lisp also
+ignores the &lt;i&gt;presence&lt;/i&gt; of other features that are absent from
+almost all other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp's numeric types are surprisingly flexible. Indeed, Common Lisp
+is still, in the 21st century, just about the only languages in
+which one can write modern crypto algorithms like Diffie-Hellman
+key exchange without recourse to additional libraries, because it
+has arbitrary-precision integer arithmetic built-in to the standard
+operators. It also has rational numbers, so no loss of precision on
+division either.
+&lt;/p&gt;
+
+&lt;p&gt;
+The Common Lisp Object System (CLOS) is vastly more flexible than
+&lt;i&gt;any&lt;/i&gt; modern object-oriented language. Sub-class methods can
+specify their relationship with the methods they override, such as
+being called after or just filtering the return values. Methods
+themselves are multiple-dispatch and so can be selected based on
+the types of their arguments as well as their target. The basic
+mechanisms can be overridden or extended using a meta-object
+protocol.
+&lt;/p&gt;
+
+&lt;p&gt;
+Then there are macros. It's easy to underestimate these: after all,
+C has macros, doesn't it? Well, yes – and no. A C macro is a
+function from strings to strings that can do literal string
+substitution of its arguments. A Lisp macro is a function from code
+to code that can perform arbitrary computation. They're really not
+the same things at all, and it's misleading that the same word is
+used for both. (C++ templates are a closer analogy, but still
+limited in comparison.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org9ac573c" class="outline-3"&gt;
+&lt;h3 id="org9ac573c"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9ac573c"&gt;
+&lt;p&gt;
+The complaints about &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are long established: they
+were originally derived from &lt;a href="https://en.wikipedia.org/wiki/CAR_and_CDR"&gt;machine-language instructions on the
+IBM 704&lt;/a&gt; that was used for the first Lisp implementations. They're
+a terrible hold-over from that terrible decision … aren't they?
+&lt;/p&gt;
+
+&lt;p&gt;
+Well, yes – and no. Of course they're terrible in one sense. But
+&lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are basically nouns as far as Lisp programmers are
+concerned. One could replace them with more modern usages like
+&lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; (and indeed many Lisps define these using
+macros).
+&lt;/p&gt;
+
+&lt;p&gt;
+But it's important to remember that even "head" and "tail" are
+analogies, sanctified by familiarity in the computer science
+literature but still inexplicable to anyone outside. (If you doubt
+that, try explaining to someone who isn't a programmer that a
+shopping list has a "head" consisting of the first entry, and a
+"tail" consisting of another, shorter, shopping list, and is "in
+fact" a recursive type.) &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are artificial nouns, and
+&lt;code&gt;cons&lt;/code&gt; is an artificial verb – but really no more artificial that
+&lt;code&gt;head&lt;/code&gt;, &lt;code&gt;tail&lt;/code&gt;, and &lt;code&gt;append&lt;/code&gt;, their rough equivalents in other
+languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+One can argue that the persistence of &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; drives the
+persistence of compounds like &lt;code&gt;caaddr&lt;/code&gt;. But those are unnecessary
+and seldom used: barely anyone would mind if they were removed.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2cd4d13" class="outline-3"&gt;
+&lt;h3 id="org2cd4d13"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2cd4d13"&gt;
+&lt;p&gt;
+The suggestion that Lisp has hardware holdovers that should be
+removed also neglects these holdovers in other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+As an example, check the definition of &lt;code&gt;std::memcpy&lt;/code&gt; in C++. It
+doesn't work with overlapping memory areas. Why is that? – why is
+it so fast, but so dangerous? Does it relate to underlying machine
+features, such as machine code move instructions on particular
+machines with particular restrictions? Doesn't this introduce the
+risk of security flaws like buffer overruns?
+&lt;/p&gt;
+
+&lt;p&gt;
+Languages with more abstracted machine models don't have these
+issues. I struggle to think of how one could even introduce the
+&lt;i&gt;concept&lt;/i&gt; of a buffer overrun into Lisp, other than by using some
+external raw-memory-access library: the language itself is immune,
+as far as I know.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org4ad668c" class="outline-3"&gt;
+&lt;h3 id="org4ad668c"&gt;The different choices&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4ad668c"&gt;
+&lt;p&gt;
+For the sake of argument, let's turn the argument around and ask:
+give that early Lisps had proper macros, arbitrary-precision
+integers, and so on, why did these features disappear from what we
+now consider to be "the mainstream" of programming language design?
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp's designers had a goal of building a powerful machine in which
+to think: indeed, they intended it to eventually have its own
+hardware designed specifically for it to run on. They therefore
+didn't buy into the necessity of immediate performance, and as
+their applications were largely symbolic AI they didn't need
+numerical performance at all. They chose to create high-level
+constructs even if these couldn't be compiled efficiently, and
+explored using these to create more code as they identified more
+and more abstract patterns whose details could be automated away.
+(Paul Graham has &lt;a href="https://paulgraham.com/diff.html"&gt;a great essay&lt;/a&gt; on this.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Other language designers had other priorities. Often they needed to
+do numerical simulation, and needed both performance and scale. So
+they chose a different design pathway, emphasising efficient
+compilation to the hardware they had available, and made the
+compromises needed to get it. These have persisted, and that's why we
+have fixed-width integers that fit into a single machine register,
+and compilers that generate – but don't directly execute – the
+code of programs, which limits our ability to abstract and automate
+code generation without recourse to complicated external tools.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's interesting to explore these choices. They're at one level
+"just" historical: accidents that shaped the present. But at
+another level they're still very much present in the hardware and
+software landscape we inhabit. I think it's important that we
+remind ourselves, continuously, that &lt;i&gt;much of that landscape is a
+choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
 &lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3d747c3"&gt;
 &lt;p&gt;
@@ -308,27 +518,4 @@ Innovation, for our students, is something that happens &lt;em&gt;on top of&lt;/
 
 This is far more of a difference than simply an additional couple of decades of experience with technology and research: it sits at the heart of where the next generation will see the value of their efforts, and of where they can change the world: in services that sit at the top of the value chain, rather than in the plumbing down at its base. Once we understand that, it becomes clearer what and how we should teach the skills they'll need in order best to apply themselves to the challenges they'll select as worth their time. And I'll look forward to seeing what these result in.
 
-Congratulations to the graduating class of 2011. Have great lives, and build great things.&lt;/p&gt;</description><category>programming</category><category>university</category><guid>https://simondobson.org/2011/06/27/computing-experience/</guid><pubDate>Mon, 27 Jun 2011 15:00:55 GMT</pubDate></item><item><title>Mainstreaming Smalltalk</title><link>https://simondobson.org/2011/05/27/smalltalk/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="heystaks_preview" style="width: 100%;height: 100%"&gt;&lt;/div&gt;
-Smalltalk's influence has declined of late, at least in part because of the  "all or nothing" architecture of the most influential distribution. We've got to the stage that we could change that.
-
-&lt;!--more--&gt;
-
-Some programming languages achieve epic influence without necessarily achieving universal adoption. Lisp was phenomenally influential, but has remained in an AI niche; &lt;a href="https://secure.wikimedia.org/wikipedia/en/wiki/APL_%28programming_language%29" target="_blank"&gt;APL&lt;/a&gt; gave rise to notions of bulk processing and hidden parallelism without having much uptake outside finance. Smalltalk's influence has been similar: it re-defined what it meant to be an interactive programming environment and laid the ground for many modern interface concepts, as well as giving a boost to object-oriented programming that prepared the way for C++ and Java.
-
-So why does no-one use it any more? Partly it's because of its very interactivity. Smalltalk -- and more especially &lt;a href="http://www.squeak.org" target="_blank"&gt;Squeak&lt;/a&gt;, its most prominent modern implementation -- are unusual in basing software around  complete interactive images rather than collections of source files. This isn't inherently poor -- images start immediately and encourage direct-manipulation design and interfacing -- but it's radically unfamiliar to programmers used to source code and version control. (Squeak provides version-controlled change sets to collect code outside an image, but that's still an unfamiliar structure.)
-
-But a more important issue is the all-or-nothing nature of Squeak in particular, and in fact of novel languages in general. If you want to use Squeak for a project, all the components really need to be in Squeak (although it can also use web services and other component techniques). If you want to integrate web pages, someone needs to  write an HTML rendering component, HTTP back-end and the like; for the semantic web someone needs to write XML parsers, triple stores, reasoners and the like. You can't just re-use the ones that're already out there, at least not without violating the spirit of the system somewhat. That means it plays well at the periphery with other tools, but at its core need most of the services to be written again. This is a huge buy-in. Similarly Squeak provides a great user interface for direct manipulation -- but only within its own Squeak window, rendered differently and separately from other windows on the screen. These aren't issues inherent to Smalltalk -- it's perfectly possible to imagine a Smalltalk system that used "standard" rendering (and indeed they exist) -- but the "feel" of the language is rather more isolated than is common for modern systems used to integrating C libraries and the like. At bottom it's not necessarily all that different to Java's integration with the host operating system, but the style is very much more towards separation in pursuit of uniformity and expressive power. This is a shame, because Smalltalk is in many ways a perfect development environment for novice programmers (and especially for children, who find it captivating) who are a vast source of programming innovation for small, focused services such as we find on the web ad on smartphones.
-
-So can we make Smalltalk more mainstream? Turn it into an attractive development platform for web services and mobile apps? Looking at some recent developments I think the answer is firmly &lt;em&gt;yes&lt;/em&gt; -- and without giving up on the interactivity that gives it its attraction. The key change is (unsurprisingly) the web, or more precisely the current crop of browsers that support Javascript, style sheets, SVG, dynamic HTML and the like. The browser has now arrived at a point at which it can provide a complete GUI -- complete with windows, moving and animated elements and the like -- in a standard, platform-independent and (most importantly) cloud-friendly way.
-
-What I have in mind is essentially implementing a VM for a graphical Smalltalk system, complete with interactive compiler and direct-manipulation editing, in Javascript within a browser. The "image" is then the underlying XML document and its style sheet, which can be downloaded, shared and manipulated directly. The primitives are written in Javascript, together with an engine to run Smalltalk code and objects. Objects are persisted by turning them into document elements and storing them in the DOM tree, which incidentally allows their look and feel to be customised quite simply. Crucially, it can also appeal to any current or emerging features that can appear in style sheets, the semantic web,  Javascript or embedded components: it's mainstream with respect to the other technologies being developed.
-
-Why use Smalltalk, and not Javascript directly? I simply think that the understanding we gained from Smalltalk's simplicity of programming model and embrace of direct manipulation is too valuable to lose. That's not to say that it doesn't need to be re-imagined for the web world, though. In fact, Smalltalk's simplicity and interactivity are ideally suited to the development of front-ends, components and mobile apps -- &lt;em&gt;if&lt;/em&gt; they play well with the &lt;em&gt;other&lt;/em&gt; technologies those front-ends and apps need to use, and with a suitably low barrier to entry. It's undoubtedly attractive to be able to combine local and remote components together as end-user programs, without the hassle of a traditional compile cycle, and then be able to share those mash-ups directly to the web to be shared (and, if desired, modified) by anyone.
-
-One of the things that's always attracted me about Smalltalk (and Forth, and Scheme -- and Javascript to a lesser extent) is that the code lives completely within  the dominant data structure: indeed, the code &lt;em&gt;is&lt;/em&gt; just data in most cases, and can be manipulated using data-structure operations. This is very different from the separation you get between code and data in most other languages, and gives you a huge amount of expressive power. Conversely, one of the thing that always &lt;em&gt;fails&lt;/em&gt; to attract me about these &lt;em&gt; &lt;/em&gt;same languages is their lack of any static typing and consequent dependence on testing. Perhaps these two aspects necessarily go hand in hand, although I can't think of an obvious reason why that should be.
-
-I know purists will scream at this idea, but to me it seems to go along with ideas that Smalltalk's co-inventor, Alan Kay, has expressed, especially with regard to the need to do away with closely-packaged applications and move towards a more fluid style of software:
-&lt;blockquote&gt;The "no applications" idea first surfaced for me at PARC, when we realised that you really wanted to freely construct arbitrary combinations (and could do just that with (mostly media) objects). So, instead of going to a place that has specialised tools for doing  just a few things, the idea was to be in an "open studio" and &lt;em&gt;pull&lt;/em&gt; the resources you wanted to combine to you. This doesn't mean to say  that &lt;em&gt;e.g.&lt;/em&gt; a text object shouldn't be pretty capable -- so it's a mini app if you will -- but that it and all the other objects that intermingle with each other should have very similar UIs and have their graphics aspect be essentially totally similar as far as the graphics system is concerned -- and this goes also for user constructed objects. The media presentations I do in Squeak for my talks are good examples of the directions this should be taken for the future.&lt;/blockquote&gt;
-(Anyone who has seen one of Kay's talks -- as I did at the ECOOP conference in 2000 -- can attest to how stunningly engaging they are.) To which I would add that it's equally important today that their &lt;em&gt;data&lt;/em&gt; work together seamlessly too, and with the other tools that we'll develop along the way.
-
-The use of the browser as a desktop isn't new, of course: it's central to &lt;a href="http://www.chromium.org/chromium-os" target="_blank"&gt;Google Chromium&lt;/a&gt; and to &lt;a href="https://simondobson.org/2011/03/jolicloud/" target="_blank"&gt;cloud-friendly Linux variants like Jolicloud&lt;/a&gt;. But it hasn't really been used so much as a development environment, or as the host for a language that lives inside the web's main document data structure. I'm not hung-up on it being Smalltalk -- a direct-manipulation front-end to &lt;a href="http://jqueryui.com/" target="_blank"&gt;jQuery UI&lt;/a&gt; might be even better -- but some form of highly interactive programming-in-the-web might be interesting to try.</description><category>javascript</category><category>programming</category><category>smalltalk</category><guid>https://simondobson.org/2011/05/27/smalltalk/</guid><pubDate>Fri, 27 May 2011 07:00:29 GMT</pubDate></item></channel></rss>
+Congratulations to the graduating class of 2011. Have great lives, and build great things.&lt;/p&gt;</description><category>programming</category><category>university</category><guid>https://simondobson.org/2011/06/27/computing-experience/</guid><pubDate>Mon, 27 Jun 2011 15:00:55 GMT</pubDate></item></channel></rss>

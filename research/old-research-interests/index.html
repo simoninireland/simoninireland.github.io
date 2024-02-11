@@ -61,9 +61,10 @@ interest; some not so much; and some are now much more in the
 mainstream than they were back in the&nbsp;day.
 </p>
 
-<div id="outline-container-org0bfb987" class="outline-2">
-<h2 id="org0bfb987">Programming&nbsp;languages</h2>
-<div class="outline-text-2" id="text-org0bfb987">
+
+<div id="outline-container-orge50232f" class="outline-2">
+<h2 id="orge50232f">Programming&nbsp;languages</h2>
+<div class="outline-text-2" id="text-orge50232f">
 <p>
 <span class="caps">OK</span>, not so much of a past interest, it’s a current interest that I
 don’t have an active research programme in. In another sense, though,
@@ -76,18 +77,57 @@ that’s something that underpins all computer science&nbsp;research.
 
 <p>
 I’ve developed a number of software systems in the past, including a
-system for prototyping programming language interpreters (Vanilla) and
+system for prototyping programming language interpreters (<a href="/development/projects/vanilla/">Vanilla</a>) and
 a modern Forth compiler that we used for experiments in sensor network
-programming (Attila). Both are still available, and may even work on
+programming (<a href="/development/projects/attila">Attila</a>). Both are still available, and may even work on
 modern systems: your mileage may&nbsp;vary.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org582c502" class="outline-2">
-<h2 id="org582c502">Autonomic&nbsp;computing</h2>
-<div class="outline-text-2" id="text-org582c502">
+<div id="outline-container-org73f6704" class="outline-2">
+<h2 id="org73f6704">High-performance&nbsp;computing</h2>
+<div class="outline-text-2" id="text-org73f6704">
+<p>
+My PhD concerned programming languages for scalable parallel
+programming approaches for <a href="https://en.wikipedia.org/wiki/Transputer">Transputers</a>, a 1980s processor family
+that combined processing with four network adaptors for talking to
+neighbouring Transputers. They were intended to be constructed as 2d
+arrays, computing in parallel and exchanging data with their
+neighbours. A great idea, but hard to program effectively. We
+explored data structures that expanded onto neighbouring machines
+naturally as they grew, while being processed in parallel. It was
+sort of a generalisation of what later became <a href="https://en.wikipedia.org/wiki/MapReduce">map-reduce</a>.
+</p>
+
+<p>
+(Despite being very innovative at the time, it proved impossible for
+the Transputer to keep up with the advancing speeds of more
+traditional processor architectures – not least because they also
+had to simultaneously speed-up the interconnect to keep the balance
+right. I can still remember when we acquired an <a href="https://en.wikipedia.org/wiki/IBM_RS/6000"><span class="caps">IBM</span> <span class="caps">RS</span>/6000</a>
+workstation and realised the extent to which it blew the performance
+of our 32-Transputer array out of the water, without needing any special
+programming&nbsp;techniques.)
+</p>
+
+<p>
+I did a postdoc that similarly looked at programming language
+solutions for high-performance computing, re-visiting the idea
+parallel computing based around data types as part of a project
+called <a href="https://www.chilton-computing.org.uk/cisd/literature/atlas/p005.htm#s5">TallShiP</a>. We managed to get these structures (&#8220;shared
+abstract data types&#8221; or SADTs) to perform efficiently on
+workstations and supercomputers by weakening the memory consistency
+model in type-specific&nbsp;ways.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org03480a1" class="outline-2">
+<h2 id="org03480a1">Autonomic&nbsp;computing</h2>
+<div class="outline-text-2" id="text-org03480a1">
 <p>
 Making large computer systems more manageable involves improving the
 ways in which they model and control their own behaviour in response
@@ -99,9 +139,9 @@ managing sensor&nbsp;systems.
 </div>
 
 
-<div id="outline-container-orgeaa0d94" class="outline-2">
-<h2 id="orgeaa0d94">Pervasive&nbsp;computing</h2>
-<div class="outline-text-2" id="text-orgeaa0d94">
+<div id="outline-container-org4ac6014" class="outline-2">
+<h2 id="org4ac6014">Pervasive&nbsp;computing</h2>
+<div class="outline-text-2" id="text-org4ac6014">
 <p>
 Another topic that’s still of interest, although perhaps not in a
 mainstream way. I used to work on assisted living and other
@@ -116,9 +156,9 @@ algorithmic issues rather than just the&nbsp;applications.
 </div>
 
 
-<div id="outline-container-orgec7f9fd" class="outline-2">
-<h2 id="orgec7f9fd">Distributed and web&nbsp;systems</h2>
-<div class="outline-text-2" id="text-orgec7f9fd">
+<div id="outline-container-org7bb71cd" class="outline-2">
+<h2 id="org7bb71cd">Distributed and web&nbsp;systems</h2>
+<div class="outline-text-2" id="text-org7bb71cd">
 <p>
 I got into the web early, including putting up one of the first really
 large-scale web servers backed by a database and a content manager

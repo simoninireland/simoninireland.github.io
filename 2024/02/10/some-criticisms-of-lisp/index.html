@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trying to refute some criticisms of Lisp | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Saturday 10 February, 2024</a>
+	    </span>
+	</div>
+	<h1>Trying to refute some criticisms of&nbsp;Lisp</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-orgadfec36" class="outline-2">
+<h2 id="orgadfec36">Trying to refute some criticisms of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgadfec36">
+<p>
+I recently had a discussion with someone on Mastodon about Lisp and
+its perceived (by them) deficiencies as a language. There were some
+interesting points, but I felt I had to try to refute them, at least&nbsp;partially.
+</p>
+
+<p>
+I should say from the start the I&#8217;m not blind to Lisp&#8217;s many
+inadequacies and anachronisms, merely pointing out that it has a
+context like everything&nbsp;else.
+</p>
+
+<p>
+There seemed to be two main&nbsp;issues:
+</p>
+
+<ul class="org-ul">
+<li>Poor design decisions throughout, and especially a lack of static&nbsp;typing</li>
+<li>The shadows of really early machines&nbsp;in <code>car</code> and <code>cadr</code>
+</li>
+</ul>
+<p>
+These points are tied together, but let&#8217;s try to unpack&nbsp;them.
+</p>
+</div>
+
+<div id="outline-container-org6a45142" class="outline-3">
+<h3 id="org6a45142">Design</h3>
+<div class="outline-text-3" id="text-org6a45142">
+<p>
+Let&#8217;s start with design. Lisp is over half a century old. I&#8217;d argue
+it was exceptionally well-designed – when it was designed. It
+lacks most modern advances in types because … well, they didn&#8217;t
+exist, many of them arose as solutions to perceived problems in
+Lisp (and Fortran), and many of those &#8220;solutions&#8221; still aren&#8217;t
+universally accepted, such as static typing&nbsp;itself.
+</p>
+
+<p>
+What we&#8217;ve actually learned is that many aspects of programming
+lack any really universal solutions. If static typing were such an
+obvious and unarguable route to efficiency and quality, all new
+software would be being written in&nbsp;Haskell.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb5406a7" class="outline-3">
+<h3 id="orgb5406a7">Typing and&nbsp;features</h3>
+<div class="outline-text-3" id="text-orgb5406a7">
+<p>
+And the lack of modern types isn&#8217;t really as clear-cut as it
+appears. The argument about the <i>lack</i> of features in Lisp also
+ignores the <i>presence</i> of other features that are absent from
+almost all other&nbsp;languages.
+</p>
+
+<p>
+Lisp&#8217;s numeric types are surprisingly flexible. Indeed, Common Lisp
+is still, in the 21st century, just about the only languages in
+which one can write modern crypto algorithms like Diffie-Hellman
+key exchange without recourse to additional libraries, because it
+has arbitrary-precision integer arithmetic built-in to the standard
+operators. It also has rational numbers, so no loss of precision on
+division&nbsp;either.
+</p>
+
+<p>
+The Common Lisp Object System (<span class="caps">CLOS</span>) is vastly more flexible than
+<i>any</i> modern object-oriented language. Sub-class methods can
+specify their relationship with the methods they override, such as
+being called after or just filtering the return values. Methods
+themselves are multiple-dispatch and so can be selected based on
+the types of their arguments as well as their target. The basic
+mechanisms can be overridden or extended using a meta-object&nbsp;protocol.
+</p>
+
+<p>
+Then there are macros. It&#8217;s easy to underestimate these: after all,
+C has macros, doesn&#8217;t it? Well, yes – and no. A C macro is a
+function from strings to strings that can do literal string
+substitution of its arguments. A Lisp macro is a function from code
+to code that can perform arbitrary computation. They&#8217;re really not
+the same things at all, and it&#8217;s misleading that the same word is
+used for both. (C++ templates are a closer analogy, but still
+limited in&nbsp;comparison.)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9ac573c" class="outline-3">
+<h3 id="org9ac573c">The persistence of hardware 1: Stupid operation&nbsp;names</h3>
+<div class="outline-text-3" id="text-org9ac573c">
+<p>
+The complaints&nbsp;about <code>car</code> and <code>cdr</code> are long established: they
+were originally derived from <a href="https://en.wikipedia.org/wiki/CAR_and_CDR">machine-language instructions on the
+<span class="caps">IBM</span> 704</a> that was used for the first Lisp implementations. They&#8217;re
+a terrible hold-over from that terrible decision … aren&#8217;t&nbsp;they?
+</p>
+
+<p>
+Well, yes – and no. Of course they&#8217;re terrible in one sense.&nbsp;But
+<code>car</code> and <code>cdr</code> are basically nouns as far as Lisp programmers are
+concerned. One could replace them with more modern usages&nbsp;like
+<code>head</code> and <code>tail</code> (and indeed many Lisps define these using&nbsp;macros).
+</p>
+
+<p>
+But it&#8217;s important to remember that even &#8220;head&#8221; and &#8220;tail&#8221; are
+analogies, sanctified by familiarity in the computer science
+literature but still inexplicable to anyone outside. (If you doubt
+that, try explaining to someone who isn&#8217;t a programmer that a
+shopping list has a &#8220;head&#8221; consisting of the first entry, and a
+&#8220;tail&#8221; consisting of another, shorter, shopping list, and is &#8220;in
+fact&#8221; a recursive&nbsp;type.) <code>car</code> and <code>cdr</code> are artificial nouns,&nbsp;and
+<code>cons</code> is an artificial verb – but really no more artificial&nbsp;that
+<code>head</code>, <code>tail</code>,&nbsp;and <code>append</code>, their rough equivalents in other&nbsp;languages.
+</p>
+
+<p>
+One can argue that the persistence&nbsp;of <code>car</code> and <code>cdr</code> drives the
+persistence of compounds&nbsp;like <code>caaddr</code>. But those are unnecessary
+and seldom used: barely anyone would mind if they were&nbsp;removed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2cd4d13" class="outline-3">
+<h3 id="org2cd4d13">The persistence of hardware 2: It happens a&nbsp;lot</h3>
+<div class="outline-text-3" id="text-org2cd4d13">
+<p>
+The suggestion that Lisp has hardware holdovers that should be
+removed also neglects these holdovers in other&nbsp;languages.
+</p>
+
+<p>
+As an example, check the definition&nbsp;of <code>std::memcpy</code> in C++. It
+doesn&#8217;t work with overlapping memory areas. Why is that? – why is
+it so fast, but so dangerous? Does it relate to underlying machine
+features, such as machine code move instructions on particular
+machines with particular restrictions? Doesn&#8217;t this introduce the
+risk of security flaws like buffer&nbsp;overruns?
+</p>
+
+<p>
+Languages with more abstracted machine models don&#8217;t have these
+issues. I struggle to think of how one could even introduce the
+<i>concept</i> of a buffer overrun into Lisp, other than by using some
+external raw-memory-access library: the language itself is immune,
+as far as I&nbsp;know.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4ad668c" class="outline-3">
+<h3 id="org4ad668c">The different&nbsp;choices</h3>
+<div class="outline-text-3" id="text-org4ad668c">
+<p>
+For the sake of argument, let&#8217;s turn the argument around and ask:
+give that early Lisps had proper macros, arbitrary-precision
+integers, and so on, why did these features disappear from what we
+now consider to be &#8220;the mainstream&#8221; of programming language&nbsp;design?
+</p>
+
+<p>
+Lisp&#8217;s designers had a goal of building a powerful machine in which
+to think: indeed, they intended it to eventually have its own
+hardware designed specifically for it to run on. They therefore
+didn&#8217;t buy into the necessity of immediate performance, and as
+their applications were largely symbolic <span class="caps">AI</span> they didn&#8217;t need
+numerical performance at all. They chose to create high-level
+constructs even if these couldn&#8217;t be compiled efficiently, and
+explored using these to create more code as they identified more
+and more abstract patterns whose details could be automated away.
+(Paul Graham has <a href="https://paulgraham.com/diff.html">a great essay</a> on&nbsp;this.)
+</p>
+
+<p>
+Other language designers had other priorities. Often they needed to
+do numerical simulation, and needed both performance and scale. So
+they chose a different design pathway, emphasising efficient
+compilation to the hardware they had available, and made the
+compromises needed to get it. These have persisted, and that&#8217;s why we
+have fixed-width integers that fit into a single machine register,
+and compilers that generate – but don&#8217;t directly execute – the
+code of programs, which limits our ability to abstract and automate
+code generation without recourse to complicated external&nbsp;tools.
+</p>
+
+<p>
+It&#8217;s interesting to explore these choices. They&#8217;re at one level
+&#8220;just&#8221; historical: accidents that shaped the present. But at
+another level they&#8217;re still very much present in the hardware and
+software landscape we inhabit. I think it&#8217;s important that we
+remind ourselves, continuously, that <i>much of that landscape is a
+choice</i>, not a given, and one we can question and change as we&nbsp;wish.
+</p>
+</div>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Trying%20to%20refute%20some%20criticisms%20of%20Lisp%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/02/10/some-criticisms-of-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Trying%20to%20refute%20some%20criticisms%20of%20Lisp%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/02/10/some-criticisms-of-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/02/10/some-criticisms-of-lisp/&amp;title=Trying%20to%20refute%20some%20criticisms%20of%20Lisp%20%23lisp%20%23programming" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/02/10/some-criticisms-of-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Trying%20to%20refute%20some%20criticisms%20of%20Lisp&amp;body=https://simondobson.org/2024/02/10/some-criticisms-of-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../03/getting-email/" rel="prev">
+		<span class="meta-nav">Older Post</span>Local email from Office365 using <span class="caps">OAUTH2</span> with mbsync
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../../goodreads/the-death-of-grass/" rel="next">
+		<span class="meta-nav">Newer Post</span>The Death of Grass
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

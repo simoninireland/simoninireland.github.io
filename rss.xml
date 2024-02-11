@@ -1,7 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Feb 2024 19:02:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email from Office365 using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org47b9586" class="outline-2"&gt;
-&lt;h2 id="org47b9586"&gt;Local email from Office365 using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org47b9586"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 11 Feb 2024 14:30:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Death of Grass</title><link>https://simondobson.org/goodreads/the-death-of-grass/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1486838846l/941731._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	John Christopher
+	  (1956)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      Post-apocalyptic fiction of a determinedly British kind. It's not a bad book, and has a certain complexity to it in exploring how people's attitudes might change when faced with the destruction of normal civilisation.&lt;br&gt;&lt;br&gt;A deadly virus destroys all grass-like plants, thereby eliminating almost all food crops and the cattle that they feed. Worried the government might atom-bomb the major population centres, a small group leave London to make their way to a Lake District valley. On the way they encounter looters, towns gone feral to protect themselves – and become feral themselves, willing to kill to survive. In some ways it reads like &lt;a href="https://www.goodreads.com/book/show/7624.Lord_of_the_Flies" title="Lord of the Flies by William Golding" rel="nofollow noopener"&gt;Lord of the Flies&lt;/a&gt; with adults and a more pervading sense of long-term doom.&lt;br&gt;&lt;br&gt;But it's also very much a novel of its time, full of racism, sexism, classism, deference, stiff upper lips, and a sense of self-justification wrapped-up as duty. That makes it a hard read, and it doesn't really have enough force to balance that out. Manu similar points are made elsewhere, for example in &lt;a href="https://www.goodreads.com/book/show/93269.Earth_Abides" title="Earth Abides by George R. Stewart" rel="nofollow noopener"&gt;Earth Abides&lt;/a&gt;, without the 1950s baggage.&lt;br&gt;&lt;br&gt;
+      &lt;/p&gt;&lt;p&gt;
+	2/5.
+	  Finished Sunday 11 February, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/4779364492?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-death-of-grass/</guid><pubDate>Sun, 11 Feb 2024 00:00:00 GMT</pubDate></item><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgadfec36" class="outline-2"&gt;
+&lt;h2 id="orgadfec36"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgadfec36"&gt;
+&lt;p&gt;
+I recently had a discussion with someone on Mastodon about Lisp and
+its perceived (by them) deficiencies as a language. There were some
+interesting points, but I felt I had to try to refute them, at least
+partially.
+&lt;/p&gt;
+
+&lt;p&gt;
+I should say from the start the I'm not blind to Lisp's many
+inadequacies and anachronisms, merely pointing out that it has a
+context like everything else.
+&lt;/p&gt;
+
+&lt;p&gt;
+There seemed to be two main issues:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Poor design decisions throughout, and especially a lack of static
+typing&lt;/li&gt;
+&lt;li&gt;The shadows of really early machines in &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cadr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+These points are tied together, but let's try to unpack them.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org6a45142" class="outline-3"&gt;
+&lt;h3 id="org6a45142"&gt;Design&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6a45142"&gt;
+&lt;p&gt;
+Let's start with design. Lisp is over half a century old. I'd argue
+it was exceptionally well-designed – when it was designed. It
+lacks most modern advances in types because … well, they didn't
+exist, many of them arose as solutions to perceived problems in
+Lisp (and Fortran), and many of those "solutions" still aren't
+universally accepted, such as static typing itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+What we've actually learned is that many aspects of programming
+lack any really universal solutions. If static typing were such an
+obvious and unarguable route to efficiency and quality, all new
+software would be being written in Haskell.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-orgb5406a7" class="outline-3"&gt;
+&lt;h3 id="orgb5406a7"&gt;Typing and features&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb5406a7"&gt;
+&lt;p&gt;
+And the lack of modern types isn't really as clear-cut as it
+appears. The argument about the &lt;i&gt;lack&lt;/i&gt; of features in Lisp also
+ignores the &lt;i&gt;presence&lt;/i&gt; of other features that are absent from
+almost all other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp's numeric types are surprisingly flexible. Indeed, Common Lisp
+is still, in the 21st century, just about the only languages in
+which one can write modern crypto algorithms like Diffie-Hellman
+key exchange without recourse to additional libraries, because it
+has arbitrary-precision integer arithmetic built-in to the standard
+operators. It also has rational numbers, so no loss of precision on
+division either.
+&lt;/p&gt;
+
+&lt;p&gt;
+The Common Lisp Object System (CLOS) is vastly more flexible than
+&lt;i&gt;any&lt;/i&gt; modern object-oriented language. Sub-class methods can
+specify their relationship with the methods they override, such as
+being called after or just filtering the return values. Methods
+themselves are multiple-dispatch and so can be selected based on
+the types of their arguments as well as their target. The basic
+mechanisms can be overridden or extended using a meta-object
+protocol.
+&lt;/p&gt;
+
+&lt;p&gt;
+Then there are macros. It's easy to underestimate these: after all,
+C has macros, doesn't it? Well, yes – and no. A C macro is a
+function from strings to strings that can do literal string
+substitution of its arguments. A Lisp macro is a function from code
+to code that can perform arbitrary computation. They're really not
+the same things at all, and it's misleading that the same word is
+used for both. (C++ templates are a closer analogy, but still
+limited in comparison.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org9ac573c" class="outline-3"&gt;
+&lt;h3 id="org9ac573c"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9ac573c"&gt;
+&lt;p&gt;
+The complaints about &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are long established: they
+were originally derived from &lt;a href="https://en.wikipedia.org/wiki/CAR_and_CDR"&gt;machine-language instructions on the
+IBM 704&lt;/a&gt; that was used for the first Lisp implementations. They're
+a terrible hold-over from that terrible decision … aren't they?
+&lt;/p&gt;
+
+&lt;p&gt;
+Well, yes – and no. Of course they're terrible in one sense. But
+&lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are basically nouns as far as Lisp programmers are
+concerned. One could replace them with more modern usages like
+&lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; (and indeed many Lisps define these using
+macros).
+&lt;/p&gt;
+
+&lt;p&gt;
+But it's important to remember that even "head" and "tail" are
+analogies, sanctified by familiarity in the computer science
+literature but still inexplicable to anyone outside. (If you doubt
+that, try explaining to someone who isn't a programmer that a
+shopping list has a "head" consisting of the first entry, and a
+"tail" consisting of another, shorter, shopping list, and is "in
+fact" a recursive type.) &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are artificial nouns, and
+&lt;code&gt;cons&lt;/code&gt; is an artificial verb – but really no more artificial that
+&lt;code&gt;head&lt;/code&gt;, &lt;code&gt;tail&lt;/code&gt;, and &lt;code&gt;append&lt;/code&gt;, their rough equivalents in other
+languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+One can argue that the persistence of &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; drives the
+persistence of compounds like &lt;code&gt;caaddr&lt;/code&gt;. But those are unnecessary
+and seldom used: barely anyone would mind if they were removed.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2cd4d13" class="outline-3"&gt;
+&lt;h3 id="org2cd4d13"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2cd4d13"&gt;
+&lt;p&gt;
+The suggestion that Lisp has hardware holdovers that should be
+removed also neglects these holdovers in other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+As an example, check the definition of &lt;code&gt;std::memcpy&lt;/code&gt; in C++. It
+doesn't work with overlapping memory areas. Why is that? – why is
+it so fast, but so dangerous? Does it relate to underlying machine
+features, such as machine code move instructions on particular
+machines with particular restrictions? Doesn't this introduce the
+risk of security flaws like buffer overruns?
+&lt;/p&gt;
+
+&lt;p&gt;
+Languages with more abstracted machine models don't have these
+issues. I struggle to think of how one could even introduce the
+&lt;i&gt;concept&lt;/i&gt; of a buffer overrun into Lisp, other than by using some
+external raw-memory-access library: the language itself is immune,
+as far as I know.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org4ad668c" class="outline-3"&gt;
+&lt;h3 id="org4ad668c"&gt;The different choices&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4ad668c"&gt;
+&lt;p&gt;
+For the sake of argument, let's turn the argument around and ask:
+give that early Lisps had proper macros, arbitrary-precision
+integers, and so on, why did these features disappear from what we
+now consider to be "the mainstream" of programming language design?
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp's designers had a goal of building a powerful machine in which
+to think: indeed, they intended it to eventually have its own
+hardware designed specifically for it to run on. They therefore
+didn't buy into the necessity of immediate performance, and as
+their applications were largely symbolic AI they didn't need
+numerical performance at all. They chose to create high-level
+constructs even if these couldn't be compiled efficiently, and
+explored using these to create more code as they identified more
+and more abstract patterns whose details could be automated away.
+(Paul Graham has &lt;a href="https://paulgraham.com/diff.html"&gt;a great essay&lt;/a&gt; on this.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Other language designers had other priorities. Often they needed to
+do numerical simulation, and needed both performance and scale. So
+they chose a different design pathway, emphasising efficient
+compilation to the hardware they had available, and made the
+compromises needed to get it. These have persisted, and that's why we
+have fixed-width integers that fit into a single machine register,
+and compilers that generate – but don't directly execute – the
+code of programs, which limits our ability to abstract and automate
+code generation without recourse to complicated external tools.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's interesting to explore these choices. They're at one level
+"just" historical: accidents that shaped the present. But at
+another level they're still very much present in the hardware and
+software landscape we inhabit. I think it's important that we
+remind ourselves, continuously, that &lt;i&gt;much of that landscape is a
+choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Local email from Office365 using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2db2af5" class="outline-2"&gt;
+&lt;h2 id="org2db2af5"&gt;Local email from Office365 using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2db2af5"&gt;
 &lt;p&gt;
 I decided recently I wanted to have a more controlled email setup,
 with a local archive rather than relying on remote servers
@@ -35,9 +260,9 @@ requires quite a lot of technical manual configuration.
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orgdd98514" class="outline-3"&gt;
-&lt;h3 id="orgdd98514"&gt;How the internet email architecture works&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdd98514"&gt;
+&lt;div id="outline-container-orgc164d4a" class="outline-3"&gt;
+&lt;h3 id="orgc164d4a"&gt;How the internet email architecture works&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc164d4a"&gt;
 &lt;p&gt;
 The old-school approach to email involves several elements, each
 potentially provided by a different tool:
@@ -88,9 +313,9 @@ authorise access to the various email services.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org174ea36" class="outline-3"&gt;
-&lt;h3 id="org174ea36"&gt;Outline solution&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org174ea36"&gt;
+&lt;div id="outline-container-org10aa51a" class="outline-3"&gt;
+&lt;h3 id="org10aa51a"&gt;Outline solution&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org10aa51a"&gt;
 &lt;p&gt;
 In outline the solution is as follows:
 &lt;/p&gt;
@@ -107,9 +332,9 @@ Emacs&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org6d4a31a" class="outline-3"&gt;
-&lt;h3 id="org6d4a31a"&gt;Packages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org6d4a31a"&gt;
+&lt;div id="outline-container-org3996aef" class="outline-3"&gt;
+&lt;h3 id="org3996aef"&gt;Packages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3996aef"&gt;
 &lt;p&gt;
 Under Arch Linux we need the &lt;code&gt;isync&lt;/code&gt; package for synchronisation
 and the &lt;code&gt;cyrus-sasl-xoauth2&lt;/code&gt; provider for OAUTH authentication.
@@ -128,9 +353,9 @@ names. Note that the actual synchronisation tool is called
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org0776123" class="outline-3"&gt;
-&lt;h3 id="org0776123"&gt;OAUTH2 flow management&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org0776123"&gt;
+&lt;div id="outline-container-org1678620" class="outline-3"&gt;
+&lt;h3 id="org1678620"&gt;OAUTH2 flow management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1678620"&gt;
 &lt;p&gt;
 We want to use OAUTH2 to authenticate an IMAP transaction, so that
 no additional passwords are needed. To this we need a script to
@@ -141,8 +366,8 @@ manage the OAUTH2 flow.
 Weirdly for an operation that's becoming so common on the web,
 there doesn't seem to be a package that offers OAUTH2 from the
 command line. However, there &lt;i&gt;is&lt;/i&gt; a script that does it that's
-included as an example with &lt;code&gt;mutt&lt;/code&gt; MUA, and we can use that. It can
-be found (in Arch) in the &lt;code&gt;mutt&lt;/code&gt; package.
+included as an example with the &lt;code&gt;mutt&lt;/code&gt; MUA, and we can use that. It
+can be found (in Arch) in the &lt;code&gt;mutt&lt;/code&gt; package.
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   sudo pacman -S mutt
@@ -257,7 +482,7 @@ and if it's not available from a local key agent.
 
 &lt;p&gt;
 (All this security means that the bearer tokens are stored
-ensryoted at rest. It's a little inconvenient, though, as it means
+encryoted at rest. It's a little inconvenient, though, as it means
 you need to enter a &lt;code&gt;gpg&lt;/code&gt; passphrase periodically, and makes it
 hard to run &lt;code&gt;mbsync&lt;/code&gt; in a &lt;code&gt;cron&lt;/code&gt; job. This is fine if, like me,
 your level of security paranoia is such that you accept the minor
@@ -266,14 +491,14 @@ lying around; on the other hand, you may decide that using, for
 example, a machine with full-disc encryption is secure enough, in
 which case you need to edit the &lt;code&gt;ENCRYPTION_PIPE&lt;/code&gt; and
 &lt;code&gt;DECRYPTION_PIPE&lt;/code&gt; commands in the script to not do encryption: they
-can basically just use &lt;code&gt;cat&lt;/code&gt; to get the information.)
+can basically just use &lt;code&gt;cat&lt;/code&gt; to store and retrieve the token information.)
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf8b9635" class="outline-3"&gt;
-&lt;h3 id="orgf8b9635"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf8b9635"&gt;
+&lt;div id="outline-container-orgc6f2fdb" class="outline-3"&gt;
+&lt;h3 id="orgc6f2fdb"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc6f2fdb"&gt;
 &lt;p&gt;
 We now have OAUTH2 tokens for accessing Office365, which we can
 integrate with our MDA. &lt;code&gt;mbsync&lt;/code&gt; has four main concepts:
@@ -288,7 +513,7 @@ integrate with our MDA. &lt;code&gt;mbsync&lt;/code&gt; has four main concepts:
 
 
 &lt;p&gt;
-Maildir is a file format for storing email in a directory
+&lt;a href="https://en.wikipedia.org/wiki/Maildir"&gt;Maildir&lt;/a&gt; is a file format for storing email in a directory
 structure, and is a long-running standard that's supported by lots
 of tools. A maildir is typically presented in the MUA to a user as
 a folder, and represented to the MDA as a directory.
@@ -337,9 +562,9 @@ to create this before sync-ing.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgf995f36" class="outline-3"&gt;
-&lt;h3 id="orgf995f36"&gt;Sync'ing the email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgf995f36"&gt;
+&lt;div id="outline-container-org9ca8065" class="outline-3"&gt;
+&lt;h3 id="org9ca8065"&gt;Sync'ing the email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9ca8065"&gt;
 &lt;p&gt;
 For a full sync of all maildirs just run:
 &lt;/p&gt;
@@ -366,9 +591,9 @@ above).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org2b4cc1b" class="outline-3"&gt;
-&lt;h3 id="org2b4cc1b"&gt;Indexing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2b4cc1b"&gt;
+&lt;div id="outline-container-org7a295f7" class="outline-3"&gt;
+&lt;h3 id="org7a295f7"&gt;Indexing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7a295f7"&gt;
 &lt;p&gt;
 You'll almost certainly now want to index your newly-downloaded
 trove of messages. There are two common tools for this &lt;code&gt;mu&lt;/code&gt; and
@@ -380,7 +605,7 @@ messages and so might be more familiar to Gmail users.
 &lt;/p&gt;
 
 &lt;p&gt;
-To install &lt;code&gt;mu&lt;/code&gt;, we first grab the packages:
+To install &lt;code&gt;mu&lt;/code&gt;, we first grab the package:
 &lt;/p&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   pacman -S mu
@@ -388,7 +613,7 @@ To install &lt;code&gt;mu&lt;/code&gt;, we first grab the packages:
 
 &lt;p&gt;
 We then initialise the index by running the indexer over the
-maildir. If we also provide our own email addresses it knows to
+maildir. If we also provide our own email address (or more than one) it knows to
 index these differently.
 &lt;/p&gt;
 
@@ -397,9 +622,9 @@ index these differently.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgd48652b" class="outline-3"&gt;
-&lt;h3 id="orgd48652b"&gt;Sending email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd48652b"&gt;
+&lt;div id="outline-container-org4da7e8a" class="outline-3"&gt;
+&lt;h3 id="org4da7e8a"&gt;Sending email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4da7e8a"&gt;
 &lt;p&gt;
 All of the above sets up the MDA to &lt;i&gt;get&lt;/i&gt; mail: we now need to be
 able to &lt;i&gt;send&lt;/i&gt; mail. Fortunately we've already done most of the
@@ -446,15 +671,15 @@ exactly the same script as we used above.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org863f2b8" class="outline-3"&gt;
-&lt;h3 id="org863f2b8"&gt;Reading and writing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org863f2b8"&gt;
+&lt;div id="outline-container-org655c93e" class="outline-3"&gt;
+&lt;h3 id="org655c93e"&gt;Reading and writing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org655c93e"&gt;
 &lt;p&gt;
 Finally we're ready to read email. I'll leave this to you: there
-are lots of text-based email clients around, notably &lt;code&gt;mutt&lt;/code&gt; that we
-encountered earlier. There's also &lt;code&gt;mu4e&lt;/code&gt; for reading email in
-Emacs, making use of the &lt;code&gt;mu&lt;/code&gt; index; and &lt;code&gt;notmuch&lt;/code&gt; also has an
-Emacs interface.
+are lots of text-based email clients around, notably &lt;a href="http://www.mutt.org/"&gt;&lt;code&gt;mutt&lt;/code&gt;&lt;/a&gt; that we
+encountered earlier. There's also &lt;a href="https://www.djcbsoftware.nl/code/mu/mu4e.html"&gt;&lt;code&gt;mu4e&lt;/code&gt;&lt;/a&gt; for reading email in
+Emacs, making use of the &lt;code&gt;mu&lt;/code&gt; index; and &lt;a href="https://notmuch.readthedocs.io/en/latest/man1/notmuch.html"&gt;&lt;code&gt;notmuch&lt;/code&gt;&lt;/a&gt; also has &lt;a href="http://www.mutt.org/"&gt;an
+Emacs interface&lt;/a&gt;.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -466,9 +691,9 @@ be pointed at the right directories and accounts.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgad388d0" class="outline-3"&gt;
-&lt;h3 id="orgad388d0"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgad388d0"&gt;
+&lt;div id="outline-container-orga9338a6" class="outline-3"&gt;
+&lt;h3 id="orga9338a6"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga9338a6"&gt;
 &lt;p&gt;
 Gmail lets one use "app passwords" for accessing using IMAP, but
 also supports OAUTH2, which is obviously more secure. The same
@@ -494,9 +719,9 @@ and similarly in the configurations of &lt;code&gt;mbsync&lt;/code&gt; and &lt;c
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org68646ad" class="outline-3"&gt;
-&lt;h3 id="org68646ad"&gt;Conclusion&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org68646ad"&gt;
+&lt;div id="outline-container-org7b5169e" class="outline-3"&gt;
+&lt;h3 id="org7b5169e"&gt;Conclusion&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7b5169e"&gt;
 &lt;p&gt;
 If you're still with me: congratulations, but you must &lt;i&gt;really&lt;/i&gt;
 want to read your email old-school!
@@ -517,14 +742,14 @@ though.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgea8d990" class="outline-3"&gt;
-&lt;h3 id="orgea8d990"&gt;Resources&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgea8d990"&gt;
+&lt;div id="outline-container-orgc94be80" class="outline-3"&gt;
+&lt;h3 id="orgc94be80"&gt;Resources&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc94be80"&gt;
 &lt;p&gt;
 There are many resources on using &lt;code&gt;mbsync&lt;/code&gt;, &lt;code&gt;mu&lt;/code&gt;, &lt;code&gt;mu4e&lt;/code&gt;, and the
-rest on the web. I found these covered everything in great detail,
-with the exception of the OAUTH2 integration I've detailed here. In
-particular I'd like to acknowledge the following:
+rest on the web. I found these covered all the topics in great
+detail, with the exception of the OAUTH2 integration I've detailed
+here. In particular I'd like to acknowledge the following:
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
@@ -812,168 +1037,4 @@ you have to submit your RSS feed to it for review and (hopefully)
 inclusion. I've done that for &lt;a href="https://simon.dobson.org/rss.xml"&gt;this site's feed&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>internet</category><category>til</category><guid>https://simondobson.org/2024/01/26/til-an-rss-focused-search-engine/</guid><pubDate>Fri, 26 Jan 2024 13:10:23 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
-&lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3d747c3"&gt;
-&lt;p&gt;
-A horribly dangerous but occasionally useful Lisp technique.
-&lt;/p&gt;
-
-&lt;p&gt;
-My use case is as follows. &lt;code&gt;ebib&lt;/code&gt; has a command to copy a
-formatted reference to the kill ring, using
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to actually do the formatting.
-This means it's easy to change the style of the formatted
-reference. However, &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;  itself uses
-&lt;code&gt;citar-render-bib&lt;/code&gt; with a plain-text formatter. This is a sensible
-default, but since I'm almost always copying references into
-org-more documents, it loses a lot of information: it'd be better
-to use the org formatter, but there's no argument to specify it.
-&lt;/p&gt;
-
-&lt;p&gt;
-Clearly the correct solution is to change
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to take a key or optional
-argument to specify the formatter, but that involves changing
-someone else's code. The hacker solution is to change the call
-&lt;code&gt;(citeproc-render-bib proc 'plain)&lt;/code&gt; to &lt;code&gt;(citeproc-render-bib proc
-  'org)&lt;/code&gt;, but without re-writing the entire surrounding function to
-keep the change just to the case where I need it.
-&lt;/p&gt;
-
-&lt;p&gt;
-One way to do this would be to define a variant
-&lt;code&gt;citeproc-render-bib&lt;/code&gt; that ignores its second argument (the
-formatter) and always uses &lt;code&gt;'org&lt;/code&gt; instead, and then substitute
-this variant for the original – but &lt;i&gt;only&lt;/i&gt; in the dynamic extent
-of a &lt;i&gt;particular&lt;/i&gt; call to &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;. In
-most languages this would be impossible – but not in Emacs Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-The solution is to use &lt;code&gt;cl-letf&lt;/code&gt;, which overrides the values of
-general places for the duration of its body forms and restores the
-original value on exit (normal or otherwise). The important point
-is that the change occurs across the &lt;i&gt;extent&lt;/i&gt; of the body – the
-body and all the code called from the body – and not merely in
-the &lt;i&gt;scope&lt;/i&gt; of the body, which would only affect calls made there
-directly.
-&lt;/p&gt;
-
-&lt;p&gt;
-For example, consider in the following:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Which when called gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-If we want to override the default value (10) that's passed to &lt;code&gt;f&lt;/code&gt;
-and instead use 25, we can define a new version that ignores the
-second argument and uses our preferred default, and then
-temporarily override the definition of &lt;code&gt;f&lt;/code&gt; in the calling
-environment. If we want to use the original in the overriding
-definition we need to grab it first. This gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-letf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(((&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;				    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-51
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-What's going on? The &lt;code&gt;cl-letf&lt;/code&gt; macro is like &lt;code&gt;let&lt;/code&gt; but works with
-general places (as in &lt;code&gt;setf&lt;/code&gt;). It sets the places in its argument
-list for the duration of its body, and then restores them on exit,
-regardless of whether that exit is normal or &lt;i&gt;via&lt;/i&gt; a condition.
-&lt;/p&gt;
-
-&lt;p&gt;
-The &lt;code&gt;(symbol-function 'f)&lt;/code&gt; form returns the place that stores the
-function associated with symbol &lt;code&gt;f&lt;/code&gt;. We use it twice: once to
-capture this function so we can use it later, and once to identify
-the place where we store our new variant function. This new binding
-is then used for all calls made from the body of the &lt;code&gt;cl-letf&lt;/code&gt;,
-regardless of depth, so the call to &lt;code&gt;first&lt;/code&gt; makes use of our variant
-definition of &lt;code&gt;f&lt;/code&gt; rather than the original – but with the original
-then being used in the variant in our case!
-&lt;/p&gt;
-
-&lt;p&gt;
-If we'd used &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;cl-flet&lt;/code&gt; instead of &lt;code&gt;cl-letf&lt;/code&gt; we wouldn't
-have got the behaviour we're looking for:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-flet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
-so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
-affected – not calls from calls. This is a great illustration of
-the difference between the closely-related concepts of (static,
-lexical) scope and (dynamic, run-time) extent, incidentally.
-&lt;/p&gt;
-
-&lt;p&gt;
-I did say it was horrible :-). It's basically like adding
-temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
-macro to wrap it up. It's also inconceivable that it's thread- or
-co-routine-safe, although I haven't checked.
-&lt;/p&gt;
-
-&lt;p&gt;
-Part of the horribleness comes from the fact that the redefinition
-is made for the entire dynamic extent of the body forms, which
-means &lt;i&gt;all&lt;/i&gt; instances of the overridden function will use the
-overridden value. There might be more than you think! But for
-well-understood code it's sometimes useful, avoiding duplicating
-code to make tiny changes.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>This Is How They Tell Me the World Ends: The Cyberweapons Arms Race</title><link>https://simondobson.org/goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610927353l/49247043._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Nicole Perlroth
-	  (2021)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A hugely detailed and deeply researched history of the market for "zero-day: exploits, the faults and technologies underlying computer viruses and ransomware. It's a hugely complicated and technical field which Perlroth does an amazing job of making accessible to a non-technical audience. (I should probably say here that I teach computer security.)&lt;br&gt;&lt;br&gt;Most of the book is a real page-turner, deeply embedded with the government agencies, companies, and hackers who compose the zero-day market. It's scathing of the US' trying to play both sides of the street, developing and buying zero-days in order to collect intelligence while weakening the security of ordinary users in the process by not informing the software developers of the problems they've found. They clearly knew this was dangerous, and even developed a doctrine for us: "NOBUS", bugs that "no-one but us" would be smart enough to find or develop. This idea goes wrong spectacularly, as other nations realise how cheaply they too can have cyberweapons programmes: ironically they're encouraged by the deployment of the Stuxnet virus to damage the Iranian nuclear programme. The leaks of the NSA's zero-day stockpile by the Shadow Brokers – an event that's somewhat under-explored – and their later use in hacks against US elections, are payback for hubris.&lt;br&gt;&lt;br&gt;Perlroth is scathing of the Trump presidency's neglect of cybersecurity and unwillingness to sanction Russia for known attacks – in part because it might cast doubt on Trump's legitimacy as an elected president, but also seemingly from willful blindness and a mistrust of the professionals (including the military) tasked with protecting US networks. She was writing during the pandemic and before Trump conceded the 2020 election (to the extent that he ever did), and so if anything she understated the impacts of disinformation spreading.&lt;br&gt;&lt;br&gt;The conclusions are a little breathless, but well-intentioned and technically appropriate, if a little US-centric – and in fairness the US has at least attempted to set up a more transparent approach to managing cyberweapons, even though the approach is drastically compromised by the desire to keep intelligence-gathering capabilities. Cybersecurity is an area where offence and defence are closely intertwined, and there's a strong argument that the costs to society of the former mandate a focus on the latter. We need to accept that many cyberweapons that are used (or leaked) can be reverse-engineered and re-used against their original developers with little real up-front financial investment.&lt;br&gt;&lt;br&gt;There's some editing. including a repeated mis-use of "affect" rather than "effect", and a really disastrous throw-away reference to the book &lt;i&gt;Dune&lt;/i&gt;, the description of which is almost entirely wrong: surely an editor should have picked that up?
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Sunday 21 January, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/4691376169?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/</guid><pubDate>Sun, 21 Jan 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>internet</category><category>til</category><guid>https://simondobson.org/2024/01/26/til-an-rss-focused-search-engine/</guid><pubDate>Fri, 26 Jan 2024 13:10:23 GMT</pubDate></item></channel></rss>
