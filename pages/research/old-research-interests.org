@@ -2,6 +2,7 @@ In the past I’ve worked on a range of areas. Some are still of
 interest; some not so much; and some are now much more in the
 mainstream than they were back in the day.
 
+
 * Programming languages
 
   OK, not so much of a past interest, it’s a current interest that I
@@ -13,10 +14,40 @@ mainstream than they were back in the day.
   that’s something that underpins all computer science research.
 
   I’ve developed a number of software systems in the past, including a
-  system for prototyping programming language interpreters (Vanilla) and
+  system for prototyping programming language interpreters ([[link:/development/projects/vanilla/][Vanilla]]) and
   a modern Forth compiler that we used for experiments in sensor network
-  programming (Attila). Both are still available, and may even work on
+  programming ([[link:/development/projects/attila][Attila]]). Both are still available, and may even work on
   modern systems: your mileage may vary.
+
+
+* High-performance computing
+
+  My PhD concerned programming languages for scalable parallel
+  programming approaches for [[https://en.wikipedia.org/wiki/Transputer][Transputers]], a 1980s processor family
+  that combined processing with four network adaptors for talking to
+  neighbouring Transputers. They were intended to be constructed as 2d
+  arrays, computing in parallel and exchanging data with their
+  neighbours. A great idea, but hard to program effectively. We
+  explored data structures that expanded onto neighbouring machines
+  naturally as they grew, while being processed in parallel. It was
+  sort of a generalisation of what later became [[https://en.wikipedia.org/wiki/MapReduce][map-reduce]].
+
+  (Despite being very innovative at the time, it proved impossible for
+  the Transputer to keep up with the advancing speeds of more
+  traditional processor architectures -- not least because they also
+  had to simultaneously speed-up the interconnect to keep the balance
+  right. I can still remember when we acquired an [[https://en.wikipedia.org/wiki/IBM_RS/6000][IBM RS/6000]]
+  workstation and realised the extent to which it blew the performance
+  of our 32-Transputer array out of the water, without needing any special
+  programming techniques.)
+
+  I did a postdoc that similarly looked at programming language
+  solutions for high-performance computing, re-visiting the idea
+  parallel computing based around data types as part of a project
+  called [[https://www.chilton-computing.org.uk/cisd/literature/atlas/p005.htm#s5][TallShiP]]. We managed to get these structures ("shared
+  abstract data types" or SADTs) to perform efficiently on
+  workstations and supercomputers by weakening the memory consistency
+  model in type-specific ways.
 
 
 * Autonomic computing

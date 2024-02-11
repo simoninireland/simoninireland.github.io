@@ -110,8 +110,8 @@ yay -S cyrus-sasl-xoauth2
    Weirdly for an operation that's becoming so common on the web,
    there doesn't seem to be a package that offers OAUTH2 from the
    command line. However, there /is/ a script that does it that's
-   included as an example with ~mutt~ MUA, and we can use that. It can
-   be found (in Arch) in the ~mutt~ package.
+   included as an example with the ~mutt~ MUA, and we can use that. It
+   can be found (in Arch) in the ~mutt~ package.
 
    #+begin_src bash
 sudo pacman -S mutt
@@ -208,7 +208,7 @@ mutt_oauth2.py -t .password-store/email/work.gpg
    and if it's not available from a local key agent.
 
    (All this security means that the bearer tokens are stored
-   ensryoted at rest. It's a little inconvenient, though, as it means
+   encryoted at rest. It's a little inconvenient, though, as it means
    you need to enter a ~gpg~ passphrase periodically, and makes it
    hard to run ~mbsync~ in a ~cron~ job. This is fine if, like me,
    your level of security paranoia is such that you accept the minor
@@ -217,7 +217,7 @@ mutt_oauth2.py -t .password-store/email/work.gpg
    example, a machine with full-disc encryption is secure enough, in
    which case you need to edit the ~ENCRYPTION_PIPE~ and
    ~DECRYPTION_PIPE~ commands in the script to not do encryption: they
-   can basically just use ~cat~ to get the information.)
+   can basically just use ~cat~ to store and retrieve the token information.)
 
 ** ~mbsync~ for Office365
 
@@ -230,7 +230,7 @@ mutt_oauth2.py -t .password-store/email/work.gpg
    - Channels, which tie local and remote together
 
 
-   Maildir is a file format for storing email in a directory
+   [[https://en.wikipedia.org/wiki/Maildir][Maildir]] is a file format for storing email in a directory
    structure, and is a long-running standard that's supported by lots
    of tools. A maildir is typically presented in the MUA to a user as
    a folder, and represented to the MDA as a directory.
@@ -306,14 +306,14 @@ mbsync Work:INBOX
    people swear by ~notmuch~, which is based on extensive tagging of
    messages and so might be more familiar to Gmail users.
 
-   To install ~mu~, we first grab the packages:
+   To install ~mu~, we first grab the package:
 
    #+begin_src bash
 pacman -S mu
    #+end_src
 
    We then initialise the index by running the indexer over the
-   maildir. If we also provide our own email addresses it knows to
+   maildir. If we also provide our own email address (or more than one) it knows to
    index these differently.
 
    #+begin_src bash
@@ -363,10 +363,10 @@ account default : work
 ** Reading and writing email
 
    Finally we're ready to read email. I'll leave this to you: there
-   are lots of text-based email clients around, notably ~mutt~ that we
-   encountered earlier. There's also ~mu4e~ for reading email in
-   Emacs, making use of the ~mu~ index; and ~notmuch~ also has an
-   Emacs interface.
+   are lots of text-based email clients around, notably [[http://www.mutt.org/][~mutt~]] that we
+   encountered earlier. There's also [[https://www.djcbsoftware.nl/code/mu/mu4e.html][~mu4e~]] for reading email in
+   Emacs, making use of the ~mu~ index; and [[https://notmuch.readthedocs.io/en/latest/man1/notmuch.html][~notmuch~]] also has [[http://www.mutt.org/][an
+   Emacs interface]].
 
    I use ~mu4e~. There's a lot of documentation on the web for setting
    this up, all of which applies immediately to our new set-up: the
@@ -413,9 +413,9 @@ mutt_oauth2.py -t .password-store/email/personal.gpg --authorize
 ** Resources
 
    There are many resources on using ~mbsync~, ~mu~, ~mu4e~, and the
-   rest on the web. I found these covered everything in great detail,
-   with the exception of the OAUTH2 integration I've detailed here. In
-   particular I'd like to acknowledge the following:
+   rest on the web. I found these covered all the topics in great
+   detail, with the exception of the OAUTH2 integration I've detailed
+   here. In particular I'd like to acknowledge the following:
 
    - [[https://cvanelteren.github.io/post/mu4e/][Growing pains]], Casper van Elteren's ~mu4e~ setup that pointed me
      in the right direction

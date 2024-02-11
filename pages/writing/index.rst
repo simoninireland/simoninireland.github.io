@@ -14,7 +14,7 @@ Article series
   <link:/development/annotated-lisp-bibliography/>`_, a curated and
   commented list of references into the enormous Lisp literature
 - `A citizen sensing project
-  <link:/development/projects/citizen-sensing>`_ to explore going
+  <link:/development/projects/citizen-sensing>`_ to explore doing
   environment sensing with off-the-shelf Arduino hardware
 - `Book reviews <link:/categories/books/>`_, including all those read
   by my `book club <link:/categories/bonanza/>`_ over the past years
