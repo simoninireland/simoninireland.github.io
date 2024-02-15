@@ -54,7 +54,7 @@
    almost all other languages.
 
    Lisp's numeric types are surprisingly flexible. Indeed, Common Lisp
-   is still, in the 21st century, just about the only languages in
+   is still, in the 21st century, just about the only language in
    which one can write modern crypto algorithms like Diffie-Hellman
    key exchange without recourse to additional libraries, because it
    has arbitrary-precision integer arithmetic built-in to the standard
@@ -98,11 +98,12 @@
    literature but still inexplicable to anyone outside. (If you doubt
    that, try explaining to someone who isn't a programmer that a
    shopping list has a "head" consisting of the first entry, and a
-   "tail" consisting of another, shorter, shopping list, and is "in
-   fact" a recursive type.) ~car~ and ~cdr~ are artificial nouns, and
-   ~cons~ is an artificial verb -- but really no more artificial that
-   ~head~, ~tail~, and ~append~, their rough equivalents in other
-   languages.
+   "tail" consisting of another, shorter, shopping list, is "in fact"
+   a recursive type, and you have to acquire each item of shopping
+   sequentially by working your way down the list from the head.)
+   ~car~ and ~cdr~ are artificial nouns, and ~cons~ is an artificial
+   verb -- but really no more artificial that ~head~, ~tail~, and
+   ~append~, their rough equivalents in other languages.
 
    One can argue that the persistence of ~car~ and ~cdr~ drives the
    persistence of compounds like ~caaddr~. But those are unnecessary
@@ -138,7 +139,7 @@
    hardware designed specifically for it to run on. They therefore
    didn't buy into the necessity of immediate performance, and as
    their applications were largely symbolic AI they didn't need
-   numerical performance at all. They chose to create high-level
+   numerical performance at all. They chose instead to create high-level
    constructs even if these couldn't be compiled efficiently, and
    explored using these to create more code as they identified more
    and more abstract patterns whose details could be automated away.
@@ -148,11 +149,12 @@
    do numerical simulation, and needed both performance and scale. So
    they chose a different design pathway, emphasising efficient
    compilation to the hardware they had available, and made the
-   compromises needed to get it. These have persisted, and that's why we
-   have fixed-width integers that fit into a single machine register,
-   and compilers that generate -- but don't directly execute -- the
-   code of programs, which limits our ability to abstract and automate
-   code generation without recourse to complicated external tools.
+   compromises needed to get it. These have persisted, and that's why
+   we have languages with fixed-width integers scaled to fit into a
+   single machine register, and compilers that generate -- but don't
+   directly execute -- the code of programs, which limits our ability
+   to abstract and automate code generation without recourse to
+   complicated external tools.
 
    It's interesting to explore these choices. They're at one level
    "just" historical: accidents that shaped the present. But at
