@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgadfec36" class="outline-2">
-<h2 id="orgadfec36">Trying to refute some criticisms of&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orgadfec36">
+		<div id="outline-container-orgd98d7d7" class="outline-2">
+<h2 id="orgd98d7d7">Trying to refute some criticisms of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgd98d7d7">
 <p>
 I recently had a discussion with someone on Mastodon about Lisp and
 its perceived (by them) deficiencies as a language. There were some
@@ -102,9 +102,9 @@ These points are tied together, but let&#8217;s try to unpack&nbsp;them.
 </p>
 </div>
 
-<div id="outline-container-org6a45142" class="outline-3">
-<h3 id="org6a45142">Design</h3>
-<div class="outline-text-3" id="text-org6a45142">
+<div id="outline-container-org56c411b" class="outline-3">
+<h3 id="org56c411b">Design</h3>
+<div class="outline-text-3" id="text-org56c411b">
 <p>
 Let&#8217;s start with design. Lisp is over half a century old. I&#8217;d argue
 it was exceptionally well-designed – when it was designed. It
@@ -124,9 +124,9 @@ software would be being written in&nbsp;Haskell.
 </div>
 
 
-<div id="outline-container-orgb5406a7" class="outline-3">
-<h3 id="orgb5406a7">Typing and&nbsp;features</h3>
-<div class="outline-text-3" id="text-orgb5406a7">
+<div id="outline-container-org55c3fc3" class="outline-3">
+<h3 id="org55c3fc3">Typing and&nbsp;features</h3>
+<div class="outline-text-3" id="text-org55c3fc3">
 <p>
 And the lack of modern types isn&#8217;t really as clear-cut as it
 appears. The argument about the <i>lack</i> of features in Lisp also
@@ -136,7 +136,7 @@ almost all other&nbsp;languages.
 
 <p>
 Lisp&#8217;s numeric types are surprisingly flexible. Indeed, Common Lisp
-is still, in the 21st century, just about the only languages in
+is still, in the 21st century, just about the only language in
 which one can write modern crypto algorithms like Diffie-Hellman
 key exchange without recourse to additional libraries, because it
 has arbitrary-precision integer arithmetic built-in to the standard
@@ -168,9 +168,9 @@ limited in&nbsp;comparison.)
 </div>
 
 
-<div id="outline-container-org9ac573c" class="outline-3">
-<h3 id="org9ac573c">The persistence of hardware 1: Stupid operation&nbsp;names</h3>
-<div class="outline-text-3" id="text-org9ac573c">
+<div id="outline-container-orgf6bd10f" class="outline-3">
+<h3 id="orgf6bd10f">The persistence of hardware 1: Stupid operation&nbsp;names</h3>
+<div class="outline-text-3" id="text-orgf6bd10f">
 <p>
 The complaints&nbsp;about <code>car</code> and <code>cdr</code> are long established: they
 were originally derived from <a href="https://en.wikipedia.org/wiki/CAR_and_CDR">machine-language instructions on the
@@ -191,10 +191,12 @@ analogies, sanctified by familiarity in the computer science
 literature but still inexplicable to anyone outside. (If you doubt
 that, try explaining to someone who isn&#8217;t a programmer that a
 shopping list has a &#8220;head&#8221; consisting of the first entry, and a
-&#8220;tail&#8221; consisting of another, shorter, shopping list, and is &#8220;in
-fact&#8221; a recursive&nbsp;type.) <code>car</code> and <code>cdr</code> are artificial nouns,&nbsp;and
-<code>cons</code> is an artificial verb – but really no more artificial&nbsp;that
-<code>head</code>, <code>tail</code>,&nbsp;and <code>append</code>, their rough equivalents in other&nbsp;languages.
+&#8220;tail&#8221; consisting of another, shorter, shopping list, is &#8220;in fact&#8221;
+a recursive type, and you have to acquire each item of shopping
+sequentially by working your way down the list from the&nbsp;head.)
+<code>car</code> and <code>cdr</code> are artificial nouns,&nbsp;and <code>cons</code> is an artificial
+verb – but really no more artificial&nbsp;that <code>head</code>, <code>tail</code>,&nbsp;and
+<code>append</code>, their rough equivalents in other&nbsp;languages.
 </p>
 
 <p>
@@ -205,9 +207,9 @@ and seldom used: barely anyone would mind if they were&nbsp;removed.
 </div>
 </div>
 
-<div id="outline-container-org2cd4d13" class="outline-3">
-<h3 id="org2cd4d13">The persistence of hardware 2: It happens a&nbsp;lot</h3>
-<div class="outline-text-3" id="text-org2cd4d13">
+<div id="outline-container-org877de7f" class="outline-3">
+<h3 id="org877de7f">The persistence of hardware 2: It happens a&nbsp;lot</h3>
+<div class="outline-text-3" id="text-org877de7f">
 <p>
 The suggestion that Lisp has hardware holdovers that should be
 removed also neglects these holdovers in other&nbsp;languages.
@@ -232,9 +234,9 @@ as far as I&nbsp;know.
 </div>
 </div>
 
-<div id="outline-container-org4ad668c" class="outline-3">
-<h3 id="org4ad668c">The different&nbsp;choices</h3>
-<div class="outline-text-3" id="text-org4ad668c">
+<div id="outline-container-org96431c6" class="outline-3">
+<h3 id="org96431c6">The different&nbsp;choices</h3>
+<div class="outline-text-3" id="text-org96431c6">
 <p>
 For the sake of argument, let&#8217;s turn the argument around and ask:
 give that early Lisps had proper macros, arbitrary-precision
@@ -248,7 +250,7 @@ to think: indeed, they intended it to eventually have its own
 hardware designed specifically for it to run on. They therefore
 didn&#8217;t buy into the necessity of immediate performance, and as
 their applications were largely symbolic <span class="caps">AI</span> they didn&#8217;t need
-numerical performance at all. They chose to create high-level
+numerical performance at all. They chose instead to create high-level
 constructs even if these couldn&#8217;t be compiled efficiently, and
 explored using these to create more code as they identified more
 and more abstract patterns whose details could be automated away.
@@ -260,11 +262,12 @@ Other language designers had other priorities. Often they needed to
 do numerical simulation, and needed both performance and scale. So
 they chose a different design pathway, emphasising efficient
 compilation to the hardware they had available, and made the
-compromises needed to get it. These have persisted, and that&#8217;s why we
-have fixed-width integers that fit into a single machine register,
-and compilers that generate – but don&#8217;t directly execute – the
-code of programs, which limits our ability to abstract and automate
-code generation without recourse to complicated external&nbsp;tools.
+compromises needed to get it. These have persisted, and that&#8217;s why
+we have languages with fixed-width integers scaled to fit into a
+single machine register, and compilers that generate – but don&#8217;t
+directly execute – the code of programs, which limits our ability
+to abstract and automate code generation without recourse to
+complicated external&nbsp;tools.
 </p>
 
 <p>
