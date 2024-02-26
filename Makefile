@@ -103,7 +103,7 @@ upload: env src-only
 	$(ACTIVATE) && $(NIKOLA) github_deploy
 
 # Upgrade all static and generated files
-upgrade: upgrade-files upgrade-dblocks continuous-import
+upgrade: upgrade-files upgrade-dblocks upgrade-external
 
 upgrade-files:
 	$(foreach f, $(UPGRADE_FILES), $(RSYNC) $f files/$(shell basename $(f:.gpg=.asc));)
@@ -114,7 +114,7 @@ upgrade-dblocks: env
 	$(foreach b, $(BIBFILES), --eval "(add-to-list 'bibtex-completion-bibliography (expand-file-name \"$b\"))") \
 	$(foreach f, $(DB_REFRESH_FILES), --eval "(sd/update-dblocks-in-file (expand-file-name \"$f\"))")
 
-continuous-import: env
+upgrade-external: env
 	$(ACTIVATE) && $(NIKOLA) continuous_import
 
 # Build the environment
