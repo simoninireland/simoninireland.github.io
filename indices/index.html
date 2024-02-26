@@ -52,6 +52,36 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/diary-of-an-mps-wife-inside-and-outside-power/" rel="bookmark">Friday 23 February, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/diary-of-an-mps-wife-inside-and-outside-power/">Diary of an <span class="caps">MP</span>&#8217;s Wife: Inside and Outside&nbsp;Power</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599934352l/55310315._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Sasha&nbsp;Swire
+      </h2>
+    </div>
+    <p>
+      An insight into the British politics of the 2010s. And not a pretty sight.<br><br>The pitch for this book is that, as a political wife, the author had a unique ringside seat from which to observe the goings-on the (mostly male) politicians. And it&#8217;s true that she has plenty of insight into them and into her own position in the circle.<br><br>But she also exposes herself as almost a caricature of a Tory. She accepts the misogyny and crudeness of the male MPs as just how it is, and utterly lacks any understanding of why anyone would disagree with her own positions. She can&#8217;t accept, for example, that Remainers were sincere and their misgivings might be valid, or that the <span class="caps">EU</span> is anything other that fascinated with the idea of humiliating Britain. She constantly refers to the Labour party as &#8220;Marxists&#8221; and trots-out the usual tropes of how they would bankrupt the country, despite the fact that their &#8220;extreme left-wing&#8221; positions would be entirely mainstream in many European countries. She&#8217;s clear-eyed and unenthusiastic about Boris Johnson as Prime Minister, but then fawns over him when he wins his election landslide and glides over the time-bomb he planted on the Irish border issue, even though this was evident at the time.<br><br>The overwhelming theme, returned to again and again, is how self-interested the political class is, focused entirely on who&#8217;s up, who&#8217;s down, and how if affects their own careers. Lots of dinner parties, gentlemen&#8217;s clubs, and holidays: one is left amazed by how shallow everyone is.<br><br>It&#8217;s not a bad book, and an enjoyably light read. But politically insightful it isn&#8217;t, other than to highlight the trivial nature of&nbsp;politicians.
+      </p>
+<p>
+	3/5.
+	  Finished Friday 23 February,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6052150109?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/the-death-of-grass/" rel="bookmark">Sunday 11 February, 2024</a>
 			</span>
 		    </div>
@@ -888,103 +918,6 @@ it addresses at least the concern about being&nbsp;non-standard:
 <p>
 Robert Wilensky.  <i>Common LISPcraft</i>. <span class="caps">W.W.</span> Norton. <span class="caps">ISBN</span>
 978-039395544-6.&nbsp;1986.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/02/02/the-conniver-reference-manual/" rel="bookmark">Friday 2 February, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/02/02/the-conniver-reference-manual/">The <span class="caps">CONNIVER</span> reference&nbsp;manual</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org0fda5a5" class="outline-2">
-<h2 id="org0fda5a5">The <span class="caps">CONNIVER</span> reference&nbsp;manual</h2>
-<div class="outline-text-2" id="text-org0fda5a5">
-<p>
-Drew McDermott and Gerald Jay Sussman.  <i><a href="https://dspace.mit.edu/handle/1721.1/6204">The Conniver Reference
-Manual</a></i>. Technical report <span class="caps">AIM</span>-259a. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
-</p>
-
-<p>
-I think Conniver may have a claim to being the most influential
-language you&#8217;ve never heard of. It&#8217;s a mostly forgotten Lisp
-variant that was a laboratory for some radically different
-language design ideas, and a precursor to a surprising set of
-features – many of which are still uncommon in the&nbsp;mainstream.
-</p>
-
-<p>
-Conniver was intended to manage knowledge databases. This does
-make the report slightly hard to read in places, as there are a
-lot of explicit references to planning techniques wrapped-up with
-language mechanisms that don&#8217;t really depend on&nbsp;them.
-</p>
-
-<p>
-Conniver is (to the best of my knowledge) the first appearance of
-<b>generators</b> in a programming language. It is therefore a distant
-precursor of all the lazy functional languages and libraries, as
-well as the generators found in Python. Implementing generators
-<i>within</i> a language (rather than as a built-in part of one)
-requires control structures that can be exited and re-entered, and
-therefore needs more flexible frames for controlling executing
-code rather than conventional stack frames that are unwound
-destructively on&nbsp;return.
-</p>
-
-<p>
-The obvious (for Lisp, anyway) next step is to make these &#8220;hairy&#8221;
-control structures visible within the language, to allow them to
-be re-arranged in interesting ways. It does this by exposing the
-structure of frames, consisting&nbsp;of:
-</p>
-
-<ul class="org-ul">
-<li>the bound&nbsp;variables</li>
-<li>the state of the ongoing computation within the frame (<i>e.g.</i>,
-the program&nbsp;counter)</li>
-<li>a link&nbsp;(the <code>ALINK</code>) to the frame within which free variables
-should be&nbsp;looked-up</li>
-<li>a link&nbsp;(the <code>CLINK</code>) to the frame to which control should return
-on exit from the&nbsp;frame</li>
-</ul>
-<p>
-This structure in turn mandates the use of <b>spaghetti stack</b> (or
-<a href="https://en.wikipedia.org/wiki/Parent_pointer_tree">parent pointer trees</a>) where frames are implemented using lists
-that can be combined in richer ways than actual, literal stacks.
-Thee are the underpinnings of several different common&nbsp;structures:
-</p>
-
-<ul class="org-ul">
-<li>generators and&nbsp;continuations</li>
-<li>closures</li>
-<li>non-local transfers,&nbsp;like <code>CATCH</code> and <code>THROW</code> in Common Lisp, and
-therefore probably encompassing the entire condition&nbsp;system</li>
-<li>functions with access to extra state (as with object methods,
-but in this case used as callbacks for database&nbsp;updates)</li>
-<li>symbolic debuggers (not mentioned in the&nbsp;text)</li>
-<li>lexical <i>versus</i> dynamic variable scope (not mentioned in the
-text, and I think it&#8217;s a binary choice between one or the other
-depending on&nbsp;the <code>ALINK</code>, rather than accommodating lexical and
-&#8220;special&#8221; variable classes as Common Lisp&nbsp;does)</li>
-</ul>
-<p>
-So these features are constructed in Conniver from more basic
-mechanisms rather than being provided built-in. I&#8217;m fascinated by
-what other structures one might build when every frame has <i>two</i>
-independent super-frames (one for variable lookup,one for control
-return) instead of one, and both can be modified independently.
-This is radically different to most languages in which frames are
-hidden and their manipulation reserved for the compiler and
-run-time: it&#8217;s a set of ideas that re-surface at the object level
-in metaobject&nbsp;protocols.
 </p>
 </div>
 </div>

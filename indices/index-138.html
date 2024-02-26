@@ -52,6 +52,103 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/02/02/the-conniver-reference-manual/" rel="bookmark">Friday 2 February, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/02/02/the-conniver-reference-manual/">The <span class="caps">CONNIVER</span> reference&nbsp;manual</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org0fda5a5" class="outline-2">
+<h2 id="org0fda5a5">The <span class="caps">CONNIVER</span> reference&nbsp;manual</h2>
+<div class="outline-text-2" id="text-org0fda5a5">
+<p>
+Drew McDermott and Gerald Jay Sussman.  <i><a href="https://dspace.mit.edu/handle/1721.1/6204">The Conniver Reference
+Manual</a></i>. Technical report <span class="caps">AIM</span>-259a. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
+</p>
+
+<p>
+I think Conniver may have a claim to being the most influential
+language you&#8217;ve never heard of. It&#8217;s a mostly forgotten Lisp
+variant that was a laboratory for some radically different
+language design ideas, and a precursor to a surprising set of
+features – many of which are still uncommon in the&nbsp;mainstream.
+</p>
+
+<p>
+Conniver was intended to manage knowledge databases. This does
+make the report slightly hard to read in places, as there are a
+lot of explicit references to planning techniques wrapped-up with
+language mechanisms that don&#8217;t really depend on&nbsp;them.
+</p>
+
+<p>
+Conniver is (to the best of my knowledge) the first appearance of
+<b>generators</b> in a programming language. It is therefore a distant
+precursor of all the lazy functional languages and libraries, as
+well as the generators found in Python. Implementing generators
+<i>within</i> a language (rather than as a built-in part of one)
+requires control structures that can be exited and re-entered, and
+therefore needs more flexible frames for controlling executing
+code rather than conventional stack frames that are unwound
+destructively on&nbsp;return.
+</p>
+
+<p>
+The obvious (for Lisp, anyway) next step is to make these &#8220;hairy&#8221;
+control structures visible within the language, to allow them to
+be re-arranged in interesting ways. It does this by exposing the
+structure of frames, consisting&nbsp;of:
+</p>
+
+<ul class="org-ul">
+<li>the bound&nbsp;variables</li>
+<li>the state of the ongoing computation within the frame (<i>e.g.</i>,
+the program&nbsp;counter)</li>
+<li>a link&nbsp;(the <code>ALINK</code>) to the frame within which free variables
+should be&nbsp;looked-up</li>
+<li>a link&nbsp;(the <code>CLINK</code>) to the frame to which control should return
+on exit from the&nbsp;frame</li>
+</ul>
+<p>
+This structure in turn mandates the use of <b>spaghetti stack</b> (or
+<a href="https://en.wikipedia.org/wiki/Parent_pointer_tree">parent pointer trees</a>) where frames are implemented using lists
+that can be combined in richer ways than actual, literal stacks.
+Thee are the underpinnings of several different common&nbsp;structures:
+</p>
+
+<ul class="org-ul">
+<li>generators and&nbsp;continuations</li>
+<li>closures</li>
+<li>non-local transfers,&nbsp;like <code>CATCH</code> and <code>THROW</code> in Common Lisp, and
+therefore probably encompassing the entire condition&nbsp;system</li>
+<li>functions with access to extra state (as with object methods,
+but in this case used as callbacks for database&nbsp;updates)</li>
+<li>symbolic debuggers (not mentioned in the&nbsp;text)</li>
+<li>lexical <i>versus</i> dynamic variable scope (not mentioned in the
+text, and I think it&#8217;s a binary choice between one or the other
+depending on&nbsp;the <code>ALINK</code>, rather than accommodating lexical and
+&#8220;special&#8221; variable classes as Common Lisp&nbsp;does)</li>
+</ul>
+<p>
+So these features are constructed in Conniver from more basic
+mechanisms rather than being provided built-in. I&#8217;m fascinated by
+what other structures one might build when every frame has <i>two</i>
+independent super-frames (one for variable lookup,one for control
+return) instead of one, and both can be modified independently.
+This is radically different to most languages in which frames are
+hidden and their manipulation reserved for the compiler and
+run-time: it&#8217;s a set of ideas that re-surface at the object level
+in metaobject&nbsp;protocols.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/02/02/common-lisp-the-language/" rel="bookmark">Friday 2 February, 2024</a>
 			</span>
 		    </div>
