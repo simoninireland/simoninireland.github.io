@@ -1,0 +1,49 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: TIL: Web site carbon ratings
+.. slug: til-web-site-carbon-ratings
+.. date: 2024-03-04 18:50:35 UTC
+.. tags: til
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* TIL: Web site carbon ratings                                       :ATTACH:
+  :PROPERTIES:
+  :ID:       16f4bcd8-963e-40ce-9f63-be78ec585965
+  :END:
+
+  Today I learned about a site that rates web pages according to their
+  carbon footprints.
+
+  My web site does well:
+
+  #+DOWNLOADED: file:/Users/sd80/Desktop/Screenshot 2024-03-04 at 18.43.17.png @ 2024-03-04 18:51:25
+  #+attr_org: :width 350
+  [[attachment:rating-simondobson-org.png]]
+
+  I'm not all that surprised by this, since I [[link:/development/this-site/][use]] a static site
+  generator and minimal (almost no) JavaScript: basically as low-power
+  as one could get.
+
+  The [[https://www.websitecarbon.com/website/simondobson-org/][full report]] includes an approximate carbon cost per page visit
+  (60mg), and even tries to work out the underlying energy provision,
+  dirty or renewable -- dirty in my case at the moment, unfortunately.
+  (I'm currently hosted on GitHub.) I should perhaps take the hint and
+  move onto an alternative provider, or even host it myself with a
+  solar-powered Raspberry Pi. [[https://solar.lowtechmagazine.com/][Low-tech Magazine]] does this, but they
+  /are/ based in Barcelona rather than Scotland...
+
+  You can even include a badge that reports your rating "live":
+
+  #+begin_export html
+  <div id="wcb" class="carbonbadge"></div>
+  <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+  #+end_export
+
+  (It caches so as to only make one request per day.) On the other
+  hand this increases the JavaScript footprint slightly, so I don't
+  think I'll be using it anywhere apart from just here.
