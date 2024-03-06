@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgd922b0d" class="outline-2">
-<h2 id="orgd922b0d">Notes on using Jupyter in the&nbsp;cloud</h2>
-<div class="outline-text-2" id="text-orgd922b0d">
+		<div id="outline-container-orgb509f21" class="outline-2">
+<h2 id="orgb509f21">Notes on using Jupyter in the&nbsp;cloud</h2>
+<div class="outline-text-2" id="text-orgb509f21">
 <p>
 I&#8217;ve been thinking about running <a href="https://jupyter.org">Jupyter notebooks</a> in the cloud for
 some fairly compute-intensive simulation. Specifically I want to do
@@ -96,9 +96,9 @@ with <a href="https://colab.research.google.com/">Google Colab</a> as the most&n
 </p>
 </div>
 
-<div id="outline-container-org31a6a9b" class="outline-3">
-<h3 id="org31a6a9b">Reference&nbsp;execution</h3>
-<div class="outline-text-3" id="text-org31a6a9b">
+<div id="outline-container-org9dca72a" class="outline-3">
+<h3 id="org9dca72a">Reference&nbsp;execution</h3>
+<div class="outline-text-3" id="text-org9dca72a">
 <p>
 As a reference, I firsat ran a small experiment with an <span class="caps">SIR</span>
 epidemic on an <span class="caps">ER</span> network of \(10^4\) nodes, \(\langle k \rangle =
@@ -151,9 +151,9 @@ results from the worker&nbsp;processes.
 </div>
 </div>
 
-<div id="outline-container-org2e85edf" class="outline-3">
-<h3 id="org2e85edf">Running epydemic on a default&nbsp;runtime</h3>
-<div class="outline-text-3" id="text-org2e85edf">
+<div id="outline-container-org300f53d" class="outline-3">
+<h3 id="org300f53d">Running epydemic on a default&nbsp;runtime</h3>
+<div class="outline-text-3" id="text-org300f53d">
 <p>
 I then tried the same experiments on the default Colab&nbsp;set-up.
 </p>
@@ -210,9 +210,9 @@ exclusively. There&#8217;s really not enough information to&nbsp;decide.
 </div>
 </div>
 
-<div id="outline-container-org68d40a0" class="outline-3">
-<h3 id="org68d40a0">Using specific <span class="caps">VM</span>&nbsp;instances</h3>
-<div class="outline-text-3" id="text-org68d40a0">
+<div id="outline-container-org241b44f" class="outline-3">
+<h3 id="org241b44f">Using specific <span class="caps">VM</span>&nbsp;instances</h3>
+<div class="outline-text-3" id="text-org241b44f">
 <p>
 I signed up for Google Cloud&#8217;s free trial, 90 days and $300 (£281)
 of credit. Then set up a specific project in which to run the
@@ -346,9 +346,9 @@ the notebook remembers the <span class="caps">VM</span> it&#8217;s connected&nbs
 </div>
 </div>
 
-<div id="outline-container-org3222011" class="outline-3">
-<h3 id="org3222011">Experiments on specific&nbsp;instances</h3>
-<div class="outline-text-3" id="text-org3222011">
+<div id="outline-container-orga64c89b" class="outline-3">
+<h3 id="orga64c89b">Experiments on specific&nbsp;instances</h3>
+<div class="outline-text-3" id="text-orga64c89b">
 <p>
 Running the same experiments as above on different instances&nbsp;gives:
 </p>
@@ -434,9 +434,9 @@ super-linear speed-up &#8220;in&nbsp;reality&#8221;.
 </div>
 </div>
 
-<div id="outline-container-org85d7107" class="outline-3">
-<h3 id="org85d7107">Running larger&nbsp;problems</h3>
-<div class="outline-text-3" id="text-org85d7107">
+<div id="outline-container-org3ac6493" class="outline-3">
+<h3 id="org3ac6493">Running larger&nbsp;problems</h3>
+<div class="outline-text-3" id="text-org3ac6493">
 <p>
 For more of a soak test, we can run the same <span class="caps">SIR</span> experiment but
 using a larger <span class="caps">ER</span> network (\(10^5\) nodes, \(\langle k \rangle =&nbsp;10\)):
@@ -542,9 +542,9 @@ The performance on the standard runtime for comparison&nbsp;is:
 </div>
 </div>
 
-<div id="outline-container-org4ee880d" class="outline-3">
-<h3 id="org4ee880d">Costs</h3>
-<div class="outline-text-3" id="text-org4ee880d">
+<div id="outline-container-org50c429c" class="outline-3">
+<h3 id="org50c429c">Costs</h3>
+<div class="outline-text-3" id="text-org50c429c">
 <p>
 Doing all the above experiments used rather less than £10 of the
 budget for my free trial – although I was very careful not to
@@ -559,9 +559,9 @@ and then tear-down the infrastructure using a&nbsp;script.
 </div>
 </div>
 
-<div id="outline-container-org12b1ffd" class="outline-3">
-<h3 id="org12b1ffd">Experiences: Good and&nbsp;not-so-good</h3>
-<div class="outline-text-3" id="text-org12b1ffd">
+<div id="outline-container-org9fcb4ae" class="outline-3">
+<h3 id="org9fcb4ae">Experiences: Good and&nbsp;not-so-good</h3>
+<div class="outline-text-3" id="text-org9fcb4ae">
 <p>
 Good:
 </p>

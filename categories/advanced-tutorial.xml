@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Feb 2024 11:16:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0638c56" class="outline-2"&gt;
-&lt;h2 id="org0638c56"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0638c56"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2024 19:17:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org39b5a23" class="outline-2"&gt;
+&lt;h2 id="org39b5a23"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org39b5a23"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Edmund Weitz.  &lt;i&gt;&lt;a href="https://doi.org/10.1007/978-1-4842-1176-2"&gt;Common Lisp Recipes: A Problem-Solution Approach&lt;/a&gt;&lt;/i&gt;.
+Apress. 2016.
+&lt;/p&gt;
+
+&lt;p&gt;
+An extensive list of recipes for using common data structures,
+how the differ in Lisp from the equivalents in other languages,
+and what novel features Lisp has to offer. A great place to start
+when moving away from being a beginner, and for dipping into in
+search of solutions.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's probably strongest on the "gotchas" and dangers that Lisp
+presents, but also has a lot to say about coding style and code
+optimisation.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</guid><pubDate>Wed, 06 Mar 2024 18:55:31 GMT</pubDate></item><item><title>The Common Lisp condition system</title><link>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org792bbd5" class="outline-2"&gt;
+&lt;h2 id="org792bbd5"&gt;The Common Lisp condition system&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org792bbd5"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/06/efe121-b8ab-4558-a705-733fbbe7b1f9/978-1-4842-6134-7.webp" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Michał "phoe" Herda.  &lt;i&gt;&lt;a href="https://doi.org/10.1007/978-1-4842-6134-7"&gt;The Common Lisp Condition System&lt;/a&gt;&lt;/i&gt;. Apress. 2020.
+&lt;/p&gt;
+
+&lt;p&gt;
+An enormously detailed look at the condition system, sometimes
+regarded as the Lisp equivalent of exception-handling in other
+languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+But that's massively unfair to the condition system, which is
+really a way to deal with non-local transfers of control in the
+most flexible way possible. Exceptions are &lt;i&gt;just one type&lt;/i&gt; of
+this, and the condition system aims to separate three aspects that
+are often combined in other languages: detecting and signalling a
+condition, responding to a condition, and deciding on the binding
+between the two, possibly combining responses differently in
+different contexts. It's a set of concepts that are in many ways
+foreign to a lot of other languages, and so justify the detail for
+those occasions when these techniques are appropriate: deciding
+&lt;i&gt;when&lt;/i&gt; they are appropriate is non-trivial, a matter of both
+functionality and style.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</guid><pubDate>Wed, 06 Mar 2024 18:46:57 GMT</pubDate></item><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org22cf69e" class="outline-2"&gt;
+&lt;h2 id="org22cf69e"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org22cf69e"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;

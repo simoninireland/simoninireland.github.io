@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 10 Feb 2024 13:21:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email from Office365 using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2db2af5" class="outline-2"&gt;
-&lt;h2 id="org2db2af5"&gt;Local email from Office365 using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2db2af5"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about emacs)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2024 19:17:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Local email from Office365 using OAUTH2 with mbsync</title><link>https://simondobson.org/2024/02/03/getting-email/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7647c89" class="outline-2"&gt;
+&lt;h2 id="org7647c89"&gt;Local email from Office365 using OAUTH2 with &lt;code&gt;mbsync&lt;/code&gt;&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7647c89"&gt;
 &lt;p&gt;
 I decided recently I wanted to have a more controlled email setup,
 with a local archive rather than relying on remote servers
@@ -35,9 +35,9 @@ requires quite a lot of technical manual configuration.
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orgc164d4a" class="outline-3"&gt;
-&lt;h3 id="orgc164d4a"&gt;How the internet email architecture works&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc164d4a"&gt;
+&lt;div id="outline-container-org04f0fec" class="outline-3"&gt;
+&lt;h3 id="org04f0fec"&gt;How the internet email architecture works&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org04f0fec"&gt;
 &lt;p&gt;
 The old-school approach to email involves several elements, each
 potentially provided by a different tool:
@@ -88,9 +88,9 @@ authorise access to the various email services.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org10aa51a" class="outline-3"&gt;
-&lt;h3 id="org10aa51a"&gt;Outline solution&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org10aa51a"&gt;
+&lt;div id="outline-container-org419d96b" class="outline-3"&gt;
+&lt;h3 id="org419d96b"&gt;Outline solution&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org419d96b"&gt;
 &lt;p&gt;
 In outline the solution is as follows:
 &lt;/p&gt;
@@ -107,9 +107,9 @@ Emacs&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org3996aef" class="outline-3"&gt;
-&lt;h3 id="org3996aef"&gt;Packages&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3996aef"&gt;
+&lt;div id="outline-container-orgad3a534" class="outline-3"&gt;
+&lt;h3 id="orgad3a534"&gt;Packages&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgad3a534"&gt;
 &lt;p&gt;
 Under Arch Linux we need the &lt;code&gt;isync&lt;/code&gt; package for synchronisation
 and the &lt;code&gt;cyrus-sasl-xoauth2&lt;/code&gt; provider for OAUTH authentication.
@@ -128,9 +128,9 @@ names. Note that the actual synchronisation tool is called
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org1678620" class="outline-3"&gt;
-&lt;h3 id="org1678620"&gt;OAUTH2 flow management&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1678620"&gt;
+&lt;div id="outline-container-orgf0d5eb1" class="outline-3"&gt;
+&lt;h3 id="orgf0d5eb1"&gt;OAUTH2 flow management&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf0d5eb1"&gt;
 &lt;p&gt;
 We want to use OAUTH2 to authenticate an IMAP transaction, so that
 no additional passwords are needed. To this we need a script to
@@ -271,9 +271,9 @@ can basically just use &lt;code&gt;cat&lt;/code&gt; to store and retrieve the to
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc6f2fdb" class="outline-3"&gt;
-&lt;h3 id="orgc6f2fdb"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc6f2fdb"&gt;
+&lt;div id="outline-container-org28857ec" class="outline-3"&gt;
+&lt;h3 id="org28857ec"&gt;&lt;code&gt;mbsync&lt;/code&gt; for Office365&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org28857ec"&gt;
 &lt;p&gt;
 We now have OAUTH2 tokens for accessing Office365, which we can
 integrate with our MDA. &lt;code&gt;mbsync&lt;/code&gt; has four main concepts:
@@ -337,9 +337,9 @@ to create this before sync-ing.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org9ca8065" class="outline-3"&gt;
-&lt;h3 id="org9ca8065"&gt;Sync'ing the email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9ca8065"&gt;
+&lt;div id="outline-container-org5fe8930" class="outline-3"&gt;
+&lt;h3 id="org5fe8930"&gt;Sync'ing the email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5fe8930"&gt;
 &lt;p&gt;
 For a full sync of all maildirs just run:
 &lt;/p&gt;
@@ -366,9 +366,9 @@ above).
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7a295f7" class="outline-3"&gt;
-&lt;h3 id="org7a295f7"&gt;Indexing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7a295f7"&gt;
+&lt;div id="outline-container-org978a264" class="outline-3"&gt;
+&lt;h3 id="org978a264"&gt;Indexing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org978a264"&gt;
 &lt;p&gt;
 You'll almost certainly now want to index your newly-downloaded
 trove of messages. There are two common tools for this &lt;code&gt;mu&lt;/code&gt; and
@@ -397,9 +397,9 @@ index these differently.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org4da7e8a" class="outline-3"&gt;
-&lt;h3 id="org4da7e8a"&gt;Sending email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org4da7e8a"&gt;
+&lt;div id="outline-container-org098ee03" class="outline-3"&gt;
+&lt;h3 id="org098ee03"&gt;Sending email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org098ee03"&gt;
 &lt;p&gt;
 All of the above sets up the MDA to &lt;i&gt;get&lt;/i&gt; mail: we now need to be
 able to &lt;i&gt;send&lt;/i&gt; mail. Fortunately we've already done most of the
@@ -446,9 +446,9 @@ exactly the same script as we used above.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org655c93e" class="outline-3"&gt;
-&lt;h3 id="org655c93e"&gt;Reading and writing email&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org655c93e"&gt;
+&lt;div id="outline-container-org12cf7dd" class="outline-3"&gt;
+&lt;h3 id="org12cf7dd"&gt;Reading and writing email&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org12cf7dd"&gt;
 &lt;p&gt;
 Finally we're ready to read email. I'll leave this to you: there
 are lots of text-based email clients around, notably &lt;a href="http://www.mutt.org/"&gt;&lt;code&gt;mutt&lt;/code&gt;&lt;/a&gt; that we
@@ -466,9 +466,9 @@ be pointed at the right directories and accounts.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orga9338a6" class="outline-3"&gt;
-&lt;h3 id="orga9338a6"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga9338a6"&gt;
+&lt;div id="outline-container-org64bc918" class="outline-3"&gt;
+&lt;h3 id="org64bc918"&gt;Accessing Gmail using OAUTH2&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org64bc918"&gt;
 &lt;p&gt;
 Gmail lets one use "app passwords" for accessing using IMAP, but
 also supports OAUTH2, which is obviously more secure. The same
@@ -494,9 +494,9 @@ and similarly in the configurations of &lt;code&gt;mbsync&lt;/code&gt; and &lt;c
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org7b5169e" class="outline-3"&gt;
-&lt;h3 id="org7b5169e"&gt;Conclusion&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org7b5169e"&gt;
+&lt;div id="outline-container-orged4f81e" class="outline-3"&gt;
+&lt;h3 id="orged4f81e"&gt;Conclusion&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orged4f81e"&gt;
 &lt;p&gt;
 If you're still with me: congratulations, but you must &lt;i&gt;really&lt;/i&gt;
 want to read your email old-school!
@@ -517,9 +517,9 @@ though.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgc94be80" class="outline-3"&gt;
-&lt;h3 id="orgc94be80"&gt;Resources&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc94be80"&gt;
+&lt;div id="outline-container-org7160687" class="outline-3"&gt;
+&lt;h3 id="org7160687"&gt;Resources&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7160687"&gt;
 &lt;p&gt;
 There are many resources on using &lt;code&gt;mbsync&lt;/code&gt;, &lt;code&gt;mu&lt;/code&gt;, &lt;code&gt;mu4e&lt;/code&gt;, and the
 rest on the web. I found these covered all the topics in great
@@ -538,9 +538,9 @@ Microsoft Azure that often isn't possible for corporate email&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>email</category><category>linux</category><category>sysadmin</category><guid>https://simondobson.org/2024/02/03/getting-email/</guid><pubDate>Sat, 03 Feb 2024 16:19:40 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d747c3" class="outline-2"&gt;
-&lt;h2 id="org3d747c3"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3d747c3"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>email</category><category>linux</category><category>sysadmin</category><guid>https://simondobson.org/2024/02/03/getting-email/</guid><pubDate>Sat, 03 Feb 2024 16:19:40 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8a8e5" class="outline-2"&gt;
+&lt;h2 id="org5e8a8e5"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5e8a8e5"&gt;
 &lt;p&gt;
 A horribly dangerous but occasionally useful Lisp technique.
 &lt;/p&gt;
@@ -687,9 +687,9 @@ well-understood code it's sometimes useful, avoiding duplicating
 code to make tiny changes.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org86b476d" class="outline-2"&gt;
-&lt;h2 id="org86b476d"&gt;Making small changes to lots of files&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org86b476d"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6b6aab4" class="outline-2"&gt;
+&lt;h2 id="org6b6aab4"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6b6aab4"&gt;
 &lt;p&gt;
 I recently had to make tiny changes to a large number of files
 spread nested through a directory structure. This turns out to be a
@@ -747,9 +747,9 @@ That's it! A job that I expected to take an hour took about 3
 minutes.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746c351" class="outline-2"&gt;
-&lt;h2 id="org746c351"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org746c351"&gt;
+&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>Programmatically editing a file from Emacs Lisp</title><link>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge4baa1b" class="outline-2"&gt;
+&lt;h2 id="orge4baa1b"&gt;Programmatically editing a file from Emacs Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge4baa1b"&gt;
 &lt;p&gt;
 This is something I frequently want to do: open a named file, work
 on it programmatically using Lisp code, and save it back – all
@@ -787,9 +787,9 @@ rest of the code) is concerned, and so doesn't need to be
 protected by &lt;code&gt;save-excursion&lt;/code&gt; or the like.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd0a15fe" class="outline-2"&gt;
-&lt;h2 id="orgd0a15fe"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd0a15fe"&gt;
+&lt;/div&gt;</description><category>emacs</category><category>lisp</category><guid>https://simondobson.org/2023/12/23/programmatically-editing-a-file-from-emacs-lisp/</guid><pubDate>Sat, 23 Dec 2023 17:16:42 GMT</pubDate></item><item><title>A quick function to delete whitespace in Lisp programs</title><link>https://simondobson.org/2023/01/13/a-quick-function-to-delete-whitespace-in-lisp-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8f9ef2e" class="outline-2"&gt;
+&lt;h2 id="org8f9ef2e"&gt;A quick function to delete whitespace in Lisp programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8f9ef2e"&gt;
 &lt;p&gt;
 I've recently found myself constantly introducing – and then deleting –
 whitespace when writing Lisp. A quick bit of Emacs hacking fixed it.

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy of Lisp | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Wednesday 6 March, 2024</a>
+	    </span>
+	</div>
+	<h1>Anatomy of&nbsp;Lisp</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org94f3557" class="outline-2">
+<h2 id="org94f3557">Anatomy of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-org94f3557">
+<p>
+John Allen.  <i>Anatomy of Lisp</i>. McGraw-Hill. <span class="caps">ISBN</span>
+0-07-001115-X.&nbsp;1978.
+</p>
+
+<p>
+This is a hard book to characterise. It&#8217;s simultaneously an
+introduction, a collection of advanced (for the time) programming
+techniques, and a guide to some very low-level implementation
+details. It contains a lot of the usual introductory material, but
+then delves into different representational choices for the basic
+data structures – lists, but also arrays and hash tables as well
+as Lisp code itself – and for the frames needed to represent
+function calls. It the tackles interpretation <i>versus</i>
+compilation, and even topics such as cross-compilation and
+just-in-time or memoised&nbsp;compilation.
+</p>
+
+<p>
+It&#8217;s impossible to read this book without thinking of <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a>, and
+indeed I think in many ways it&#8217;s a direct precursor. (It&#8217;s
+referenced a couple of times in <span class="caps">SICP</span>.) It has that same
+combination of high-level, semantics-driven programming combined
+with descriptions of underlying mechanisms. Where I think it
+mainly differs is that it mixes representations, using a more
+semantics-driven notation and explicit assembler instructions
+rather than sticking with Lisp variants for <i>everything</i>. It&#8217;s
+only when you see the two approaches side by side that you realise
+how <i>clear</i> Lisp can be in radically different&nbsp;contexts..
+</p>
+
+<p>
+Another important book was published in 1978: Kernighan and
+Ritchie&#8217;s <i><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C programming language</a></i>. The two books share a
+certain low-level focus, but come to very different conclusions
+about the correct approach to dynamic storage, as the following
+footnote by Allen (slightly edited for clarity)&nbsp;illustrates:
+</p>
+
+<blockquote>
+<p>
+Experiments have been performed in which Lisp programmers were
+allowed to return &#8220;garbage&#8221; to the free-space list themselves. The
+results were disastrous: list structure thought to be garbage was
+returned to the free-space list even though the structure was
+still being used by other&nbsp;computations.
+</p>
+</blockquote>
+
+<p>
+C, of course, accepts this &#8220;disaster&#8221; as a natural consequence of
+manual allocation management. It encapsulates the different
+attitudes of the two contemporary language communities, though:
+one wanting a machine in which to think (and willing to use
+computing power to simplify tasks), and those wanting raw
+performance from limited hardware (and willing to complicate the
+programming task to get&nbsp;it).
+</p>
+
+<p>
+Overall, Allen&#8217;s book is a great attempt at an end-to-end
+discussion of Lisp all the way down to the metal. Many of the
+techniques are still relevant, at least as exemplars against
+later, more efficient, techniques should be&nbsp;judged.
+</p>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Anatomy%20of%20Lisp%20%23implementation-techiques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/anatomy-of-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Anatomy%20of%20Lisp%20%23implementation-techiques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/anatomy-of-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/06/anatomy-of-lisp/&amp;title=Anatomy%20of%20Lisp%20%23implementation-techiques%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/06/anatomy-of-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Anatomy%20of%20Lisp&amp;body=https://simondobson.org/2024/03/06/anatomy-of-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/implementation-techiques/">implementation-techiques</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../04/til-web-site-carbon-ratings/" rel="prev">
+		<span class="meta-nav">Older Post</span><span class="caps">TIL</span>: Web site carbon ratings
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../the-common-lisp-condition-system/" rel="next">
+		<span class="meta-nav">Newer Post</span>The Common Lisp condition system
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>
