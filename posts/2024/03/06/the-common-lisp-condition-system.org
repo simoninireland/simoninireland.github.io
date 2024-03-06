@@ -1,0 +1,41 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The Common Lisp condition system
+.. slug: the-common-lisp-condition-system
+.. date: 2024-03-06 18:46:57 UTC
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The Common Lisp condition system                                   :ATTACH:
+  :PROPERTIES:
+  :ID:       06efe121-b8ab-4558-a705-733fbbe7b1f9
+  :END:
+
+
+  #+DOWNLOADED: file:/Users/sd80/Downloads/978-1-4842-6134-7.webp @ 2024-03-06 18:51:06
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:978-1-4842-6134-7.webp]]
+
+  Michał "phoe" Herda.  /[[https://doi.org/10.1007/978-1-4842-6134-7][The Common Lisp Condition System]]/. Apress. 2020.
+
+  An enormously detailed look at the condition system, sometimes
+  regarded as the Lisp equivalent of exception-handling in other
+  languages.
+
+  But that's massively unfair to the condition system, which is
+  really a way to deal with non-local transfers of control in the
+  most flexible way possible. Exceptions are /just one type/ of
+  this, and the condition system aims to separate three aspects that
+  are often combined in other languages: detecting and signalling a
+  condition, responding to a condition, and deciding on the binding
+  between the two, possibly combining responses differently in
+  different contexts. It's a set of concepts that are in many ways
+  foreign to a lot of other languages, and so justify the detail for
+  those occasions when these techniques are appropriate: deciding
+  /when/ they are appropriate is non-trivial, a matter of both
+  functionality and style.

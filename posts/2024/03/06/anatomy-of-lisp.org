@@ -1,0 +1,65 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Anatomy of Lisp
+.. slug: anatomy-of-lisp
+.. date: 2024-03-06 18:38:17 UTC
+.. tags: project:lisp-bibliography, lisp, implementation-techiques
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Anatomy of Lisp
+
+  John Allen.  /Anatomy of Lisp/. McGraw-Hill. ISBN
+  0-07-001115-X. 1978.
+
+  This is a hard book to characterise. It's simultaneously an
+  introduction, a collection of advanced (for the time) programming
+  techniques, and a guide to some very low-level implementation
+  details. It contains a lot of the usual introductory material, but
+  then delves into different representational choices for the basic
+  data structures -- lists, but also arrays and hash tables as well
+  as Lisp code itself -- and for the frames needed to represent
+  function calls. It the tackles interpretation /versus/
+  compilation, and even topics such as cross-compilation and
+  just-in-time or memoised compilation.
+
+  It's impossible to read this book without thinking of [[link:/2024/01/27/structure-and-interpretation-of-computer-programs/][SICP]], and
+  indeed I think in many ways it's a direct precursor. (It's
+  referenced a couple of times in SICP.) It has that same
+  combination of high-level, semantics-driven programming combined
+  with descriptions of underlying mechanisms. Where I think it
+  mainly differs is that it mixes representations, using a more
+  semantics-driven notation and explicit assembler instructions
+  rather than sticking with Lisp variants for /everything/. It's
+  only when you see the two approaches side by side that you realise
+  how /clear/ Lisp can be in radically different contexts..
+
+  Another important book was published in 1978: Kernighan and
+  Ritchie's /[[https://en.wikipedia.org/wiki/The_C_Programming_Language][The C programming language]]/. The two books share a
+  certain low-level focus, but come to very different conclusions
+  about the correct approach to dynamic storage, as the following
+  footnote by Allen (slightly edited for clarity) illustrates:
+
+  #+begin_quote
+  Experiments have been performed in which Lisp programmers were
+  allowed to return "garbage" to the free-space list themselves. The
+  results were disastrous: list structure thought to be garbage was
+  returned to the free-space list even though the structure was
+  still being used by other computations.
+  #+end_quote
+
+  C, of course, accepts this "disaster" as a natural consequence of
+  manual allocation management. It encapsulates the different
+  attitudes of the two contemporary language communities, though:
+  one wanting a machine in which to think (and willing to use
+  computing power to simplify tasks), and those wanting raw
+  performance from limited hardware (and willing to complicate the
+  programming task to get it).
+
+  Overall, Allen's book is a great attempt at an end-to-end
+  discussion of Lisp all the way down to the metal. Many of the
+  techniques are still relevant, at least as exemplars against
+  later, more efficient, techniques should be judged.

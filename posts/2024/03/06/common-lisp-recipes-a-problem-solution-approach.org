@@ -1,0 +1,34 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Common Lisp recipes: A problem-solution approach
+.. slug: common-lisp-recipes-a-problem-solution-approach
+.. date: 2024-03-06 18:55:31 UTC
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Common Lisp recipes: A problem-solution approach                   :ATTACH:
+  :PROPERTIES:
+  :ID:       2e6e47a1-73a8-4ac5-a703-1f6ab0a2262b
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-03-06 18:57:39
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Edmund Weitz.  /[[https://doi.org/10.1007/978-1-4842-1176-2][Common Lisp Recipes: A Problem-Solution Approach]]/.
+  Apress. 2016.
+
+  An extensive list of recipes for using common data structures,
+  how the differ in Lisp from the equivalents in other languages,
+  and what novel features Lisp has to offer. A great place to start
+  when moving away from being a beginner, and for dipping into in
+  search of solutions.
+
+  It's probably strongest on the "gotchas" and dangers that Lisp
+  presents, but also has a lot to say about coding style and code
+  optimisation.

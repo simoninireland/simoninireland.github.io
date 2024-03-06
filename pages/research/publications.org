@@ -7,11 +7,13 @@
 ** Submitted and under review
 
 #+begin: sd/bibliography :key category :value submitted
-<<citeproc_bib_item_1>>Peter Mann and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
+<<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /Revisiting the Application of Machine Learning Approaches to Predicting Aqueous Solubility/. Submitted to the Journal of Chemical Information and Modeling.
 
-<<citeproc_bib_item_2>>Peter Mann, Lei Fang, and Simon Dobson.  /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
 
-<<citeproc_bib_item_3>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
+<<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
+
+<<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
 #+end:
 
 ** Books

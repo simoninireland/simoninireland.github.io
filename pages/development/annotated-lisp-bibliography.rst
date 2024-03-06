@@ -30,7 +30,8 @@ language research, and correspondingly good library collections. Some
 of the papers similarly required some tracking down, and I've included
 URLs wherever possible.
 
-This is very much a work in progress.
+Some caveats: This is very much a work in progress, and is a
+collection of my opinions, /not/ a peer-reviewed survey.
 
 
 Introductions
@@ -50,6 +51,17 @@ More advanced treatments
 .. post-list::
    :type: posts
    :tags: project:lisp-bibliography, advanced-tutorial
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
+
+Implementation techniques
+-------------------------
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, implementation-techiques
    :template: series_post_list.tmpl
    :require_all_tags:
    :reverse:
