@@ -30,8 +30,9 @@ language research, and correspondingly good library collections. Some
 of the papers similarly required some tracking down, and I've included
 URLs wherever possible.
 
-Some caveats: This is very much a work in progress, and is a
-collection of my opinions, /not/ a peer-reviewed survey.
+Some caveats: This is very much a work in progress, has significant
+gaps, and is a collection of my opinions, *not* a peer-reviewed
+survey. Having said that, I hope it's useful.
 
 
 Introductions
@@ -92,6 +93,20 @@ making different Lisp machines: `Lisp Machines International
 .. post-list::
    :type: posts
    :tags: project:lisp-bibliography, hardware
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
+
+Where it all started
+--------------------
+
+Some of the very earliest papers and books on Lisp, and the ideas that
+predate it.
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, history
    :template: series_post_list.tmpl
    :require_all_tags:
    :reverse:

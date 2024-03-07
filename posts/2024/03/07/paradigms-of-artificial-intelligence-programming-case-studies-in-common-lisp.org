@@ -1,0 +1,38 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Paradigms of artificial intelligence programming: Case studies in Common Lisp
+.. slug: paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp
+.. date: 2024-03-07 19:07:31 UTC
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Paradigms of artificial intelligence programming: Case studies in Common Lisp :ATTACH:
+  :PROPERTIES:
+  :ID:       55a8fc4d-075e-4914-90ea-c2bcc0021821
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-03-07 19:09:14
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+
+  Peter Norvig.  /[[https://norvig.github.io/paip-lisp/][Paradigms of Artificial Intelligence Programming:
+  Case Studies in Common Lisp]]/. Morgan Kaufmann. 1992.
+
+  An absolute classic of both AI and Lisp, and really two books in
+  one. The applications presented cover the entire range of
+  "classic" AI up to the late 90s: expert systems, logic
+  programming, symbolic mathematics, knowledge representation,
+  constraint programming, game search, syntax-driven natural
+  language processing, and more.
+
+  It uses Lisp as the programming vehicle, and doesn't shy-away from
+  depth, dealing with the effects of garbage collection (and how to
+  program effectively in its presence), the effects of different
+  representations, low-level optimisation and disassembly, and all
+  the approaches one needs to use Lisp in real, scalable practice.

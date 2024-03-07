@@ -1,0 +1,24 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: List processing
+.. slug: list-processing
+.. date: 2024-03-07 19:39:09 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* List processing
+
+  J.M. Foster.  /List Processing/. Macdonald and Co. 1967.
+
+  A slim volume discussing list processing with reference to Lisp
+  and to other list processing systems of the time (including some
+  libraries embedded into Fortran).
+
+  The most fascinating part of the book is its bibliography, which
+  references a lot of papers that have disappeared from the
+  collective memory of computer science, but whose implications
+  were profound.

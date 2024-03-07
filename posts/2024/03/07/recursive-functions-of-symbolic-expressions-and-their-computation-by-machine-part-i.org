@@ -1,0 +1,34 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Recursive functions of symbolic expressions and their computation by machine, Part I
+.. slug: recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i
+.. date: 2024-03-07 19:34:45 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Recursive functions of symbolic expressions and their computation by machine, Part I
+
+  John McCarthy.  /[[https://doi.org/10.1145/367177.367199][Recursive Functions of Symbolic Expressions and
+  Their Computation by Machine, Part I]]/. Communications of the ACM
+  *3*, pp.184–195. 1960.
+
+  The original Lisp paper from 1960, which opens:
+
+  #+begin_quote
+  A programming system called LISP (for LISt Processor) has been
+  developed for the IBM 704 computer...
+  #+end_quote
+
+  The paper then proceeds to lay out everything that's since been
+  built on: the basic constructs, the use of cons cells (pairs) as a
+  data representation, the world's first garbage collection algorithm,
+  an equational semantics, and ideas for interpretation and
+  compilation. It's awesome, and humbling to read it and realise its
+  age and the vision of computing it developed.
+
+  (Despite this paper being labelled Part I, incidentally, there
+  isn't a part II.)
