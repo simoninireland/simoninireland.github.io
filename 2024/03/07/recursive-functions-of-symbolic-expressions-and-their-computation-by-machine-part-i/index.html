@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Common Lisp recipes: A problem-solution approach | Simon Dobson</title>
+<title>Recursive functions of symbolic expressions and their computation by machine, Part I | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,37 +64,47 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Wednesday 6 March, 2024</a>
+		Posted on <a href="." rel="bookmark">Thursday 7 March, 2024</a>
 	    </span>
 	</div>
-	<h1>Common Lisp recipes: A problem-solution&nbsp;approach</h1>
+	<h1>Recursive functions of symbolic expressions and their computation by machine, Part&nbsp;I</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org39b5a23" class="outline-2">
-<h2 id="org39b5a23">Common Lisp recipes: A problem-solution&nbsp;approach</h2>
-<div class="outline-text-2" id="text-org39b5a23">
-<p class="floater">
-<img src="../../../../attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"></p>
-
+		<div id="outline-container-org832df62" class="outline-2">
+<h2 id="org832df62">Recursive functions of symbolic expressions and their computation by machine, Part&nbsp;I</h2>
+<div class="outline-text-2" id="text-org832df62">
 <p>
-Edmund Weitz.  <i><a href="https://doi.org/10.1007/978-1-4842-1176-2">Common Lisp Recipes: A Problem-Solution Approach</a></i>.
-Apress.&nbsp;2016.
+John McCarthy.  <i><a href="https://doi.org/10.1145/367177.367199">Recursive Functions of Symbolic Expressions and
+Their Computation by Machine, Part I</a></i>. Communications of the <span class="caps">ACM</span>
+<b>3</b>, pp.184–195.&nbsp;1960.
 </p>
 
 <p>
-An extensive list of recipes for using common data structures,
-how the differ in Lisp from the equivalents in other languages,
-and what novel features Lisp has to offer. A great place to start
-when moving away from being a beginner, and for dipping into in
-search of&nbsp;solutions.
+The original Lisp paper from 1960, which&nbsp;opens:
+</p>
+
+<blockquote>
+<p>
+A programming system called <span class="caps">LISP</span> (for LISt Processor) has been
+developed for the <span class="caps">IBM</span> 704&nbsp;computer…
+</p>
+</blockquote>
+
+<p>
+The paper then proceeds to lay out everything that&#8217;s since been
+built on: the basic constructs, the use of cons cells (pairs) as a
+data representation, the world&#8217;s first garbage collection algorithm,
+an equational semantics, and ideas for interpretation and
+compilation. It&#8217;s awesome, and humbling to read it and realise its
+age and the vision of computing it&nbsp;developed.
 </p>
 
 <p>
-It&#8217;s probably strongest on the &#8220;gotchas&#8221; and dangers that Lisp
-presents, but also has a lot to say about coding style and code&nbsp;optimisation.
+(Despite this paper being labelled Part I, incidentally, there
+isn&#8217;t a part&nbsp;<span class="caps">II</span>.)
 </p>
 </div>
 </div>
@@ -106,12 +116,12 @@ presents, but also has a lot to say about coding style and code&nbsp;optimisatio
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Common%20Lisp%20recipes%3A%20A%20problem-solution%20approach%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Common%20Lisp%20recipes%3A%20A%20problem-solution%20approach%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Recursive%20functions%20of%20symbolic%20expressions%20and%20their%20computation%20by%20machine%2C%20Part%20I%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Recursive%20functions%20of%20symbolic%20expressions%20and%20their%20computation%20by%20machine%2C%20Part%20I%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/&amp;title=Common%20Lisp%20recipes%3A%20A%20problem-solution%20approach%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Common%20Lisp%20recipes:%20A%20problem-solution%20approach&amp;body=https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/&amp;title=Recursive%20functions%20of%20symbolic%20expressions%20and%20their%20computation%20by%20machine%2C%20Part%20I%20%23history%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Recursive%20functions%20of%20symbolic%20expressions%20and%20their%20computation%20by%20machine,%20Part%20I&amp;body=https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -120,7 +130,7 @@ presents, but also has a lot to say about coding style and code&nbsp;optimisatio
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/advanced-tutorial/">advanced-tutorial</a>
+		<a href="../../../../categories/history/">history</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -130,13 +140,13 @@ presents, but also has a lot to say about coding style and code&nbsp;optimisatio
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../the-common-lisp-condition-system/" rel="prev">
-		<span class="meta-nav">Older Post</span>The Common Lisp condition system
+	    <a href="../paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/" rel="prev">
+		<span class="meta-nav">Older Post</span>Paradigms of artificial intelligence programming: Case studies in Common Lisp
 	    </a>
 	</div>
 	<div class="next">
-	    <a href="../../07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/" rel="next">
-		<span class="meta-nav">Newer Post</span>Paradigms of artificial intelligence programming: Case studies in Common Lisp
+	    <a href="../list-processing/" rel="next">
+		<span class="meta-nav">Newer Post</span>List processing
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

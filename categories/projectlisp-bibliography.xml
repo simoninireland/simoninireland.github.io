@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2024 19:17:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org39b5a23" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 07 Mar 2024 19:39:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1411fb0" class="outline-2"&gt;
+&lt;h2 id="org1411fb0"&gt;List processing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1411fb0"&gt;
+&lt;p&gt;
+J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
+&lt;/p&gt;
+
+&lt;p&gt;
+A slim volume discussing list processing with reference to Lisp
+and to other list processing systems of the time (including some
+libraries embedded into Fortran).
+&lt;/p&gt;
+
+&lt;p&gt;
+The most fascinating part of the book is its bibliography, which
+references a lot of papers that have disappeared from the
+collective memory of computer science, but whose implications
+were profound.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org832df62" class="outline-2"&gt;
+&lt;h2 id="org832df62"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org832df62"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
+Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
+&lt;b&gt;3&lt;/b&gt;, pp.184–195. 1960.
+&lt;/p&gt;
+
+&lt;p&gt;
+The original Lisp paper from 1960, which opens:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+A programming system called LISP (for LISt Processor) has been
+developed for the IBM 704 computer…
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+The paper then proceeds to lay out everything that's since been
+built on: the basic constructs, the use of cons cells (pairs) as a
+data representation, the world's first garbage collection algorithm,
+an equational semantics, and ideas for interpretation and
+compilation. It's awesome, and humbling to read it and realise its
+age and the vision of computing it developed.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Despite this paper being labelled Part I, incidentally, there
+isn't a part II.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc0f48ab" class="outline-2"&gt;
+&lt;h2 id="orgc0f48ab"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc0f48ab"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Peter Norvig.  &lt;i&gt;&lt;a href="https://norvig.github.io/paip-lisp/"&gt;Paradigms of Artificial Intelligence Programming:
+Case Studies in Common Lisp&lt;/a&gt;&lt;/i&gt;. Morgan Kaufmann. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+An absolute classic of both AI and Lisp, and really two books in
+one. The applications presented cover the entire range of
+"classic" AI up to the late 90s: expert systems, logic
+programming, symbolic mathematics, knowledge representation,
+constraint programming, game search, syntax-driven natural
+language processing, and more.
+&lt;/p&gt;
+
+&lt;p&gt;
+It uses Lisp as the programming vehicle, and doesn't shy-away from
+depth, dealing with the effects of garbage collection (and how to
+program effectively in its presence), the effects of different
+representations, low-level optimisation and disassembly, and all
+the approaches one needs to use Lisp in real, scalable practice.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org39b5a23" class="outline-2"&gt;
 &lt;h2 id="org39b5a23"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org39b5a23"&gt;
 &lt;p class="floater"&gt;
@@ -333,47 +417,4 @@ regular and so simple – &lt;i&gt;homoiconic&lt;/i&gt; (one representation for
 programs and data), (although they don't use that term).
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</guid><pubDate>Sat, 27 Jan 2024 15:46:19 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb7db32b" class="outline-2"&gt;
-&lt;h2 id="orgb7db32b"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7db32b"&gt;
-&lt;p&gt;
-&lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A one-web-page introduction to Common Lisp covering pretty much
-all the language in enough detail to at least start writing simple
-command-line programs (and understanding those of others).
-Includes macros and CLOS. Quite an achievement to make it all so
-readable.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6a0c54b" class="outline-2"&gt;
-&lt;h2 id="org6a0c54b"&gt;Practical Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6a0c54b"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/b8/4b7fa7-83e9-4756-8ede-1c3cdeaeafef/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Peter Seibel.  &lt;i&gt;&lt;a href="https://gigamonkeys.com/book/"&gt;Practical Common Lisp&lt;/a&gt;&lt;/i&gt;. Apress. ISBN
-978-1-4302-0017-8. 2005.
-&lt;/p&gt;
-
-&lt;p&gt;
-The classic, very thorough and hands-on tutorial introduction that
-doesn't skip the hard parts like the condition system and
-non-local blocks and exists (and the relationship between the
-two). It's also got good chapters on CLOS.
-&lt;/p&gt;
-
-&lt;p&gt;
-The text is complemented by a set of modern examples, for web
-services, database, and binary file parsers: quite a long way
-removed from the examples in many introductory texts. It doesn't
-make much use of macro programming in these examples, which is a
-shame, so follow with On Lisp or Let over Lambda once the
-structure of the language is clear.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/practical-common-lisp/</guid><pubDate>Sat, 27 Jan 2024 13:15:30 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</guid><pubDate>Sat, 27 Jan 2024 15:46:19 GMT</pubDate></item></channel></rss>

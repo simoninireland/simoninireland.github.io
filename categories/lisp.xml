@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2024 19:17:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org39b5a23" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 07 Mar 2024 19:39:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1411fb0" class="outline-2"&gt;
+&lt;h2 id="org1411fb0"&gt;List processing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1411fb0"&gt;
+&lt;p&gt;
+J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
+&lt;/p&gt;
+
+&lt;p&gt;
+A slim volume discussing list processing with reference to Lisp
+and to other list processing systems of the time (including some
+libraries embedded into Fortran).
+&lt;/p&gt;
+
+&lt;p&gt;
+The most fascinating part of the book is its bibliography, which
+references a lot of papers that have disappeared from the
+collective memory of computer science, but whose implications
+were profound.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org832df62" class="outline-2"&gt;
+&lt;h2 id="org832df62"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org832df62"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
+Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
+&lt;b&gt;3&lt;/b&gt;, pp.184–195. 1960.
+&lt;/p&gt;
+
+&lt;p&gt;
+The original Lisp paper from 1960, which opens:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+A programming system called LISP (for LISt Processor) has been
+developed for the IBM 704 computer…
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+The paper then proceeds to lay out everything that's since been
+built on: the basic constructs, the use of cons cells (pairs) as a
+data representation, the world's first garbage collection algorithm,
+an equational semantics, and ideas for interpretation and
+compilation. It's awesome, and humbling to read it and realise its
+age and the vision of computing it developed.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Despite this paper being labelled Part I, incidentally, there
+isn't a part II.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc0f48ab" class="outline-2"&gt;
+&lt;h2 id="orgc0f48ab"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc0f48ab"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Peter Norvig.  &lt;i&gt;&lt;a href="https://norvig.github.io/paip-lisp/"&gt;Paradigms of Artificial Intelligence Programming:
+Case Studies in Common Lisp&lt;/a&gt;&lt;/i&gt;. Morgan Kaufmann. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+An absolute classic of both AI and Lisp, and really two books in
+one. The applications presented cover the entire range of
+"classic" AI up to the late 90s: expert systems, logic
+programming, symbolic mathematics, knowledge representation,
+constraint programming, game search, syntax-driven natural
+language processing, and more.
+&lt;/p&gt;
+
+&lt;p&gt;
+It uses Lisp as the programming vehicle, and doesn't shy-away from
+depth, dealing with the effects of garbage collection (and how to
+program effectively in its presence), the effects of different
+representations, low-level optimisation and disassembly, and all
+the approaches one needs to use Lisp in real, scalable practice.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org39b5a23" class="outline-2"&gt;
 &lt;h2 id="org39b5a23"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org39b5a23"&gt;
 &lt;p class="floater"&gt;
@@ -509,204 +593,4 @@ unnecessarily treats the two differently (and for which reason it
 was removed from Scheme).
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/common-lisp-the-language/</guid><pubDate>Fri, 02 Feb 2024 12:10:26 GMT</pubDate></item><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org22cf69e" class="outline-2"&gt;
-&lt;h2 id="org22cf69e"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org22cf69e"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Harold Abelson and Gerald Jay Sussman.  &lt;i&gt;&lt;a href="https://web.mit.edu/6.001/6.037/sicp.pdf"&gt;Structure and
-Interpretation of Computer Programs&lt;/a&gt;&lt;/i&gt;. MIT Press. 1985.
-&lt;/p&gt;
-
-&lt;p&gt;
-A book once described (&lt;a href="https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/"&gt;by me&lt;/a&gt;, actually) as "the only computer
-science book worth reading twice", and which was the foundational
-text for teaching programming at MIT for decades.
-&lt;/p&gt;
-
-&lt;p&gt;
-There are many reasons that this book is so popular and
-long-lived. It's resolutely an introductory text, but it treats
-topics that are uncommon in introductions, and does so to a depth
-that's quite astonishing – although it has to be said that the
-authors avoid the more complex constructions like conditions and
-the complexities of macros, (They do deal with continuations,
-however, which are essential for good Scheme programming.)
-&lt;/p&gt;
-
-&lt;p&gt;
-But what other introduction to programming includes a complete
-meta-linguistic re-implementation of the language itself? – and
-in two different styles! It can do this because Scheme is so
-regular and so simple – &lt;i&gt;homoiconic&lt;/i&gt; (one representation for
-programs and data), (although they don't use that term).
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</guid><pubDate>Sat, 27 Jan 2024 15:46:19 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb7db32b" class="outline-2"&gt;
-&lt;h2 id="orgb7db32b"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb7db32b"&gt;
-&lt;p&gt;
-&lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A one-web-page introduction to Common Lisp covering pretty much
-all the language in enough detail to at least start writing simple
-command-line programs (and understanding those of others).
-Includes macros and CLOS. Quite an achievement to make it all so
-readable.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8a8e5" class="outline-2"&gt;
-&lt;h2 id="org5e8a8e5"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5e8a8e5"&gt;
-&lt;p&gt;
-A horribly dangerous but occasionally useful Lisp technique.
-&lt;/p&gt;
-
-&lt;p&gt;
-My use case is as follows. &lt;code&gt;ebib&lt;/code&gt; has a command to copy a
-formatted reference to the kill ring, using
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to actually do the formatting.
-This means it's easy to change the style of the formatted
-reference. However, &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;  itself uses
-&lt;code&gt;citar-render-bib&lt;/code&gt; with a plain-text formatter. This is a sensible
-default, but since I'm almost always copying references into
-org-more documents, it loses a lot of information: it'd be better
-to use the org formatter, but there's no argument to specify it.
-&lt;/p&gt;
-
-&lt;p&gt;
-Clearly the correct solution is to change
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to take a key or optional
-argument to specify the formatter, but that involves changing
-someone else's code. The hacker solution is to change the call
-&lt;code&gt;(citeproc-render-bib proc 'plain)&lt;/code&gt; to &lt;code&gt;(citeproc-render-bib proc
-  'org)&lt;/code&gt;, but without re-writing the entire surrounding function to
-keep the change just to the case where I need it.
-&lt;/p&gt;
-
-&lt;p&gt;
-One way to do this would be to define a variant
-&lt;code&gt;citeproc-render-bib&lt;/code&gt; that ignores its second argument (the
-formatter) and always uses &lt;code&gt;'org&lt;/code&gt; instead, and then substitute
-this variant for the original – but &lt;i&gt;only&lt;/i&gt; in the dynamic extent
-of a &lt;i&gt;particular&lt;/i&gt; call to &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;. In
-most languages this would be impossible – but not in Emacs Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-The solution is to use &lt;code&gt;cl-letf&lt;/code&gt;, which overrides the values of
-general places for the duration of its body forms and restores the
-original value on exit (normal or otherwise). The important point
-is that the change occurs across the &lt;i&gt;extent&lt;/i&gt; of the body – the
-body and all the code called from the body – and not merely in
-the &lt;i&gt;scope&lt;/i&gt; of the body, which would only affect calls made there
-directly.
-&lt;/p&gt;
-
-&lt;p&gt;
-For example, consider in the following:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Which when called gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-If we want to override the default value (10) that's passed to &lt;code&gt;f&lt;/code&gt;
-and instead use 25, we can define a new version that ignores the
-second argument and uses our preferred default, and then
-temporarily override the definition of &lt;code&gt;f&lt;/code&gt; in the calling
-environment. If we want to use the original in the overriding
-definition we need to grab it first. This gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-letf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(((&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;				    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-51
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-What's going on? The &lt;code&gt;cl-letf&lt;/code&gt; macro is like &lt;code&gt;let&lt;/code&gt; but works with
-general places (as in &lt;code&gt;setf&lt;/code&gt;). It sets the places in its argument
-list for the duration of its body, and then restores them on exit,
-regardless of whether that exit is normal or &lt;i&gt;via&lt;/i&gt; a condition.
-&lt;/p&gt;
-
-&lt;p&gt;
-The &lt;code&gt;(symbol-function 'f)&lt;/code&gt; form returns the place that stores the
-function associated with symbol &lt;code&gt;f&lt;/code&gt;. We use it twice: once to
-capture this function so we can use it later, and once to identify
-the place where we store our new variant function. This new binding
-is then used for all calls made from the body of the &lt;code&gt;cl-letf&lt;/code&gt;,
-regardless of depth, so the call to &lt;code&gt;first&lt;/code&gt; makes use of our variant
-definition of &lt;code&gt;f&lt;/code&gt; rather than the original – but with the original
-then being used in the variant in our case!
-&lt;/p&gt;
-
-&lt;p&gt;
-If we'd used &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;cl-flet&lt;/code&gt; instead of &lt;code&gt;cl-letf&lt;/code&gt; we wouldn't
-have got the behaviour we're looking for:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-flet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
-so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
-affected – not calls from calls. This is a great illustration of
-the difference between the closely-related concepts of (static,
-lexical) scope and (dynamic, run-time) extent, incidentally.
-&lt;/p&gt;
-
-&lt;p&gt;
-I did say it was horrible :-). It's basically like adding
-temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
-macro to wrap it up. It's also inconceivable that it's thread- or
-co-routine-safe, although I haven't checked.
-&lt;/p&gt;
-
-&lt;p&gt;
-Part of the horribleness comes from the fact that the redefinition
-is made for the entire dynamic extent of the body forms, which
-means &lt;i&gt;all&lt;/i&gt; instances of the overridden function will use the
-overridden value. There might be more than you think! But for
-well-understood code it's sometimes useful, avoiding duplicating
-code to make tiny changes.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/common-lisp-the-language/</guid><pubDate>Fri, 02 Feb 2024 12:10:26 GMT</pubDate></item></channel></rss>
