@@ -58,44 +58,28 @@
 		    <h1><a href="../2013/07/02/xctu/">XBee firmware management with&nbsp;X-<span class="caps">CTU</span></a></h1>
 		</div>
 		<div class="entry-content">
-			<p>Managing Digi&#8217;s XBee radio modules requires using their X-<span class="caps">CTU</span> package to upload the correct firmware. In this post we explain how.
-
+			<p>Managing Digi&#8217;s XBee radio modules requires using their X-<span class="caps">CTU</span> package to upload the correct firmware. In this post we explain&nbsp;how.</p>
 <!--more-->
 
-This post is slightly depressing: not because it&#8217;s on an unhappy topic, but because the effort and software needed to manage XBee radios is so complex to set up. In many ways this is just a function of the good design of the XBee: it&#8217;s so minimal in terms of footprint and power consumption at run-time that it offloads a lot of work to external tools (and the user) at system build-time. But it&#8217;s still a lot of work to get such a small piece of kit running.
-
-X-<span class="caps">CTU</span> is intended to upload firmware to XBee radio modules. This is needed to change the firmware between router and co-ordinator of the Zigbee <a href="../2013/07/02/mesh-network/" target="_blank">mesh network</a>, and between the different protocol variants that the XBee radios can support.
-
-![Xbee on <span class="caps">USB</span>](/images/citizen-sensing/2013-06-29-13.35.45.jpg)
-
-One limitation of X-<span class="caps">CTU</span> is that it only works on Windows: if you&#8217;re running Linux, X-<span class="caps">CTU</span> will run under <a href="http://www.winehq.org/" target="_blank">Wine</a>. You can download the latest X-<span class="caps">CTU</span> from <a href="http://www.digi.com/support/kbase/kbaseresultdetl?id=2125" target="_blank">Digi&#8217;s X-<span class="caps">CTU</span> page</a>; alternatively, there&#8217;s a version installed on the <a href="../download/virtual-machine/" target="_blank">Citizen Sensing <span class="caps">VM</span></a>.
-
-To use X-<span class="caps">CTU</span> you need to connect your XBee module to your computer. The easiest way to do this is using an XBee <span class="caps">USB</span> breakout board, which provides an XBee socket and a <span class="caps">USB</span> socket. Insert the radio into the board, plug in a <span class="caps">USB</span> cable, and plug the other end into a <span class="caps">USB</span> socket. The light on the breakout board will then come on (see photograph above).
-
-![X-<span class="caps">CTU</span> in operation](/images/citizen-sensing/xctu-connect.png)
-
-You next need to start up X-<span class="caps">CTU</span> and tell it where the XBee is. It hangs off a Windows <span class="caps">COM</span> port, and X-<span class="caps">CTU</span> will typically find it automatically. You should then be able to press the &#8220;Test/Query&#8221; button, and X-<span class="caps">CTU</span> will interrogate the XBee and display a small window showing some information about it, as shown in the screenshot on the right: the details don&#8217;t matter, but this shows that the XBee is talking to the computer properly.
-
-![X-<span class="caps">CTU</span> router firmware](/images/citizen-sensing/xctu-firmware-router.png)
-
-Assuming everything is now working correctly, the next step is to decide what firmware to download to the radio. Click on the &#8220;Modem configuration&#8221; tab, and then click the &#8220;Read&#8221; button: this reads the firmware that&#8217;s on the XBee at the moment, and puts the details into the window. Typically this results in a display like that shown on the left. The important things to notice are the two drop-down boxes labelled &#8220;Function Set&#8221; and &#8220;Version&#8221;. The function set is the description of the firmware, in which case indicating that the XBee is running Zigbee router firmware that responds to <span class="caps">AT</span> commands (more on this below).
-
-![X-<span class="caps">CTU</span> co-ordinator firmware](/images/citizen-sensing/xctu-firmware-coordinator.png)
-
-To download a new firmware, we then select the function set and version we want to use. Suppose we want to make this XBee into the mesh co-ordinator. We change the function set to &#8220;Zigbee Coordinator <span class="caps">AT</span>&#8221; (keeping with Zigbee and the <span class="caps">AT</span> command set) in  &#8220;Function set&#8221; the drop-down, then select the most recent version of this function set from the &#8220;Version&#8221; drop-down. (Versions are identified by hex numbers: the most recent in the screenshot right is &#8220;20A7&#8221;, that being the highest hex number. Unfortunately X-<span class="caps">CTU</span> orders the numbers alphabetically, not in hex-numeric order.) Pressing &#8220;Write&#8221; will update the radio&#8217;s firmware, and the radio is then ready for use as a co-ordinator.
-
-If you look through the list of function sets, there will be quite a few options, including protocols other than Zigbee. These probably aren&#8217;t worth too much exploration, but you&#8217;ll also notice that there are Zigbee <span class="caps">AT</span> and <span class="caps">API</span> function sets corresponding to the <a href="../2013/07/01/xbee/" target="_blank">two modes (transparent and <span class="caps">API</span>)</a> that the XBee can support. Be sure to select the correct one for your application.
-
-That&#8217;s it: the radio is now ready for&nbsp;use.
+<p>This post is slightly depressing: not because it&#8217;s on an unhappy topic, but because the effort and software needed to manage XBee radios is so complex to set up. In many ways this is just a function of the good design of the XBee: it&#8217;s so minimal in terms of footprint and power consumption at run-time that it offloads a lot of work to external tools (and the user) at system build-time. But it&#8217;s still a lot of work to get such a small piece of kit&nbsp;running.</p>
+<p>X-<span class="caps">CTU</span> is intended to upload firmware to XBee radio modules. This is needed to change the firmware between router and co-ordinator of the Zigbee <a href="../2013/07/02/mesh-network/" target="_blank">mesh network</a>, and between the different protocol variants that the XBee radios can&nbsp;support.</p>
+<p><img alt="Xbee on USB" src="../images/citizen-sensing/2013-06-29-13.35.45.jpg"></p>
+<p>One limitation of X-<span class="caps">CTU</span> is that it only works on Windows: if you&#8217;re running Linux, X-<span class="caps">CTU</span> will run under <a href="http://www.winehq.org/" target="_blank">Wine</a>. You can download the latest X-<span class="caps">CTU</span> from <a href="http://www.digi.com/support/kbase/kbaseresultdetl?id=2125" target="_blank">Digi&#8217;s X-<span class="caps">CTU</span> page</a>; alternatively, there&#8217;s a version installed on the <a href="../download/virtual-machine/" target="_blank">Citizen Sensing <span class="caps">VM</span></a>.</p>
+<p>To use X-<span class="caps">CTU</span> you need to connect your XBee module to your computer. The easiest way to do this is using an XBee <span class="caps">USB</span> breakout board, which provides an XBee socket and a <span class="caps">USB</span> socket. Insert the radio into the board, plug in a <span class="caps">USB</span> cable, and plug the other end into a <span class="caps">USB</span> socket. The light on the breakout board will then come on (see photograph&nbsp;above).</p>
+<p><img alt="X-CTU in operation" src="../images/citizen-sensing/xctu-connect.png"></p>
+<p>You next need to start up X-<span class="caps">CTU</span> and tell it where the XBee is. It hangs off a Windows <span class="caps">COM</span> port, and X-<span class="caps">CTU</span> will typically find it automatically. You should then be able to press the &#8220;Test/Query&#8221; button, and X-<span class="caps">CTU</span> will interrogate the XBee and display a small window showing some information about it, as shown in the screenshot on the right: the details don&#8217;t matter, but this shows that the XBee is talking to the computer&nbsp;properly.</p>
+<p><img alt="X-CTU router firmware" src="../images/citizen-sensing/xctu-firmware-router.png"></p>
+<p>Assuming everything is now working correctly, the next step is to decide what firmware to download to the radio. Click on the &#8220;Modem configuration&#8221; tab, and then click the &#8220;Read&#8221; button: this reads the firmware that&#8217;s on the XBee at the moment, and puts the details into the window. Typically this results in a display like that shown on the left. The important things to notice are the two drop-down boxes labelled &#8220;Function Set&#8221; and &#8220;Version&#8221;. The function set is the description of the firmware, in which case indicating that the XBee is running Zigbee router firmware that responds to <span class="caps">AT</span> commands (more on this&nbsp;below).</p>
+<p><img alt="X-CTU co-ordinator firmware" src="../images/citizen-sensing/xctu-firmware-coordinator.png"></p>
+<p>To download a new firmware, we then select the function set and version we want to use. Suppose we want to make this XBee into the mesh co-ordinator. We change the function set to &#8220;Zigbee Coordinator <span class="caps">AT</span>&#8221; (keeping with Zigbee and the <span class="caps">AT</span> command set) in  &#8220;Function set&#8221; the drop-down, then select the most recent version of this function set from the &#8220;Version&#8221; drop-down. (Versions are identified by hex numbers: the most recent in the screenshot right is &#8220;20A7&#8221;, that being the highest hex number. Unfortunately X-<span class="caps">CTU</span> orders the numbers alphabetically, not in hex-numeric order.) Pressing &#8220;Write&#8221; will update the radio&#8217;s firmware, and the radio is then ready for use as a&nbsp;co-ordinator.</p>
+<p>If you look through the list of function sets, there will be quite a few options, including protocols other than Zigbee. These probably aren&#8217;t worth too much exploration, but you&#8217;ll also notice that there are Zigbee <span class="caps">AT</span> and <span class="caps">API</span> function sets corresponding to the <a href="../2013/07/01/xbee/" target="_blank">two modes (transparent and <span class="caps">API</span>)</a> that the XBee can support. Be sure to select the correct one for your&nbsp;application.</p>
+<p>That&#8217;s it: the radio is now ready for&nbsp;use.
 </p>
 <h3>Advanced use: setting optional&nbsp;parameters</h3>
 There&#8217;s one more thing that X-<span class="caps">CTU</span> can be used for: it can set parameters to the firmware function set, and this is sometimes important when using the radios.
-
-![X-<span class="caps">CTU</span> parameter setting](/images/citizen-sensing/xctu-parameter-setting.png)
-
-When you&#8217;ve read the firmware from a radio, the main part of the X-<span class="caps">CTU</span> window contains a hierarchy of folders and cryptic values, for example &#8220;(4) <span class="caps">PL</span> - Power level&#8221;. These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using <span class="caps">AT</span> commands. The example we used sets the radio&#8217;s power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 (&#8220;low&#8221;) to save batteries. If you choose this and then write the firmware to the radio, the module will use this power setting.
-
-In the example shown on the left, we&#8217;re changing the <span class="caps">AP</span> parameter (&#8220;<span class="caps">API</span> enable&#8221;) to 2, which is needed for the <a href="../2013/07/03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator <span class="caps">API</span> function set selected as shown), the radio will be ready for use.
+<p><img alt="X-CTU parameter setting" src="../images/citizen-sensing/xctu-parameter-setting.png"></p>
+<p>When you&#8217;ve read the firmware from a radio, the main part of the X-<span class="caps">CTU</span> window contains a hierarchy of folders and cryptic values, for example &#8220;(4) <span class="caps">PL</span> - Power level&#8221;. These are parameters that can be changed to modify the detailed behaviour of the radio. Some can also be set using <span class="caps">AT</span> commands. The example we used sets the radio&#8217;s power level to 4. If you click on this, it will show a drop-down box giving other options. You might, for some applications, choose to reduce the radio power to 1 (&#8220;low&#8221;) to save batteries. If you choose this and then write the firmware to the radio, the module will use this power&nbsp;setting.</p>
+<p>In the example shown on the left, we&#8217;re changing the <span class="caps">AP</span> parameter (&#8220;<span class="caps">API</span> enable&#8221;) to 2, which is needed for the <a href="../2013/07/03/xbee-arduino" target="_blank">xbee-arduino library</a> to work properly. If we now write the firmware (with the Zigbee co-ordinator <span class="caps">API</span> function set selected as shown), the radio will be ready for&nbsp;use.</p>
 		</div>
 	    </article>
 </div>
@@ -109,15 +93,12 @@ In the example shown on the left, we&#8217;re changing the <span class="caps">AP
 		    <h1><a href="../2013/07/02/mesh-network/">Mesh&nbsp;networking</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>A mesh network is a way of setting up a communications system when there&#8217;s no fixed infrastructure available. They&#8217;re often used for communications in remote sites, and on sensor networks.
-
+			<p>A mesh network is a way of setting up a communications system when there&#8217;s no fixed infrastructure available. They&#8217;re often used for communications in remote sites, and on sensor&nbsp;networks.</p>
 <!--more-->
 
-If you&#8217;ve used wifi, you&#8217;ve used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, &#8230;) and connects them to the internet. The devices don&#8217;t talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the router.
-
-Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone &#8212; a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the infrastructure.
-
-By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes&#8217; traffic. There is no infrastructure &#8212; the nodes are both the users <em>and</em> the providers of the network &#8212; which means a mesh can be deployed in areas without any &#8220;official&#8221; network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can&#8217;t deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular&nbsp;telephony.</p>
+<p>If you&#8217;ve used wifi, you&#8217;ve used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, &#8230;) and connects them to the internet. The devices don&#8217;t talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the&nbsp;router.</p>
+<p>Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone &#8212; a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the&nbsp;infrastructure.</p>
+<p>By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes&#8217; traffic. There is no infrastructure &#8212; the nodes are both the users <em>and</em> the providers of the network &#8212; which means a mesh can be deployed in areas without any &#8220;official&#8221; network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can&#8217;t deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular&nbsp;telephony.</p>
 		</div>
 	    </article>
 </div>
@@ -131,15 +112,12 @@ By contrast to these large-scale systems, XBees provide <a href="https://en.wiki
 		    <h1><a href="../2013/07/01/xbee/">XBee&nbsp;radios</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.
-
+			<p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with&nbsp;Arduinos.</p>
 <!--more-->
 
-![Xbees and an Arduino](/images/citizen-sensing/2013-07-01-18.12.32.jpg)
-
-XBees are made by <a href="http://www.digi.com" target="_blank">Digi</a>. The range includes a number of <a href="http://digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/" target="_blank">options</a>: you almost certainly want some variant of the Zigbee range. The Series 2 (S2) modules seem to offer good performance, low power, and a useful range of functions. There are several different antenna types and two different radio powers (2mW and 50mW): larger power provides more range (1km nominal as opposed to 100m) at the cost of twenty-five times the power consumption: best avoided unless really needed. A collection of XBee modules co-operate to form a mesh network that&#8217;s quite robust against partial failure, which makes them great for use in the field.
-
-To get XBees working with an Arduino you need several pieces of hardware and&nbsp;software:
+<p><img alt="Xbees and an Arduino" src="../images/citizen-sensing/2013-07-01-18.12.32.jpg"></p>
+<p>XBees are made by <a href="http://www.digi.com" target="_blank">Digi</a>. The range includes a number of <a href="http://digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/" target="_blank">options</a>: you almost certainly want some variant of the Zigbee range. The Series 2 (S2) modules seem to offer good performance, low power, and a useful range of functions. There are several different antenna types and two different radio powers (2mW and 50mW): larger power provides more range (1km nominal as opposed to 100m) at the cost of twenty-five times the power consumption: best avoided unless really needed. A collection of XBee modules co-operate to form a mesh network that&#8217;s quite robust against partial failure, which makes them great for use in the&nbsp;field.</p>
+<p>To get XBees working with an Arduino you need several pieces of hardware and&nbsp;software:
 </p>
 <ul>
 <li>Two or more radios (obvious, but surprisingly easy to only buy&nbsp;one&#8230;)</li>
@@ -149,18 +127,12 @@ To get XBees working with an Arduino you need several pieces of hardware and&nbs
     <li>The X-<span class="caps">CTU</span> firmware management&nbsp;software</li>
 </ul>
 There are also variations of Arduinos that take XBee modules directly, as well as other sensor mote systems that can work with them: they&#8217;re not completely Arduino-specific.
-
-When buying radios, buy them all the same series: the different series aren&#8217;t guaranteed to interwork (although they often do). In the photograph above there are two <em>different</em> XBees: one with a patch antenna and one with a whip antenna.
-
-The Xbee shield fits on top of the Arduino. They&#8217;re sold without a radio module.
-
-The breakout board is used to connect an XBee to the <span class="caps">USB</span> port of a computer, allowing your network to be accessed from the desktop. This is useful for debugging and for data logging, unless you&#8217;re also going to build a dedicated data logger.
-
-The X-<span class="caps">CTU</span> software manages the firmware on the radio module. Because the radios are small and low-power, they don&#8217;t have room for a sophisticated software stack, and so aren&#8217;t programmed in the normal way. Instead you download a firmware providing exactly the functions you need. Each network is given an identifier (a <em>personal area network id</em> or <em><span class="caps">PAN</span></em>) so that several networks can co-exist in the same area without interfering with each other. Each network has exactly one co-ordinator, with the others being routers, Co-ordinator and router use different firmware: you nominate one of your radios as co-ordinator (which will typically live on the base station, or on the data logger) and use X-<span class="caps">CTU</span> to load co-ordinator firmware to it; the other radios get router firmware and are placed onto the sensor motes.
-
-XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the <span class="caps">AT</span> firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes <span class="caps">AT</span> commands, a standard way of controlling a modem (which is what an XBee technically is): we&#8217;ll explore these commands in another post. This function set &#8212; router and co-ordinator &#8212; sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn&#8217;t great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports <span class="caps">API</span> function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We&#8217;ll deal with <span class="caps">API</span> communications in another post too.
-
-We&#8217;ll deal with the details of using X-<span class="caps">CTU</span> <a href="../2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.
+<p>When buying radios, buy them all the same series: the different series aren&#8217;t guaranteed to interwork (although they often do). In the photograph above there are two <em>different</em> XBees: one with a patch antenna and one with a whip&nbsp;antenna.</p>
+<p>The Xbee shield fits on top of the Arduino. They&#8217;re sold without a radio&nbsp;module.</p>
+<p>The breakout board is used to connect an XBee to the <span class="caps">USB</span> port of a computer, allowing your network to be accessed from the desktop. This is useful for debugging and for data logging, unless you&#8217;re also going to build a dedicated data&nbsp;logger.</p>
+<p>The X-<span class="caps">CTU</span> software manages the firmware on the radio module. Because the radios are small and low-power, they don&#8217;t have room for a sophisticated software stack, and so aren&#8217;t programmed in the normal way. Instead you download a firmware providing exactly the functions you need. Each network is given an identifier (a <em>personal area network id</em> or <em><span class="caps">PAN</span></em>) so that several networks can co-exist in the same area without interfering with each other. Each network has exactly one co-ordinator, with the others being routers, Co-ordinator and router use different firmware: you nominate one of your radios as co-ordinator (which will typically live on the base station, or on the data logger) and use X-<span class="caps">CTU</span> to load co-ordinator firmware to it; the other radios get router firmware and are placed onto the sensor&nbsp;motes.</p>
+<p>XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the <span class="caps">AT</span> firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes <span class="caps">AT</span> commands, a standard way of controlling a modem (which is what an XBee technically is): we&#8217;ll explore these commands in another post. This function set &#8212; router and co-ordinator &#8212; sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn&#8217;t great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports <span class="caps">API</span> function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We&#8217;ll deal with <span class="caps">API</span> communications in another post&nbsp;too.</p>
+<p>We&#8217;ll deal with the details of using X-<span class="caps">CTU</span> <a href="../2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple&nbsp;network.</p>
 		</div>
 	    </article>
 </div>
@@ -174,17 +146,13 @@ We&#8217;ll deal with the details of using X-<span class="caps">CTU</span> <a hr
 		    <h1><a href="../2013/06/28/soldering/">First bit of soldering&nbsp;done</a></h1>
 		</div>
 		<div class="entry-content">
-			<p>The first proto-shield has been assembled.
-
+			<p>The first proto-shield has been&nbsp;assembled.</p>
 <!--more-->
 
-The <a href="https://www.sparkfun.com/products/7914" target="_blank">SparkFun prototype shield</a> for the Arduino essentially lets you put a small custom circuit onto an Arduino shield.
-
-![Arduino prototyping shield](/images/citizen-sensing/2013-06-28-18.31.43.jpg)
-
-The &#8220;bare&#8221; version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The &#8220;helping hands&#8221;  were invaluable.
-
-Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that&#8217;s not being used for reset, and to bring the <span class="caps">ICSP</span> connectors through) which it would be useful to&nbsp;have.</p>
+<p>The <a href="https://www.sparkfun.com/products/7914" target="_blank">SparkFun prototype shield</a> for the Arduino essentially lets you put a small custom circuit onto an Arduino&nbsp;shield.</p>
+<p><img alt="Arduino prototyping shield" src="../images/citizen-sensing/2013-06-28-18.31.43.jpg"></p>
+<p>The &#8220;bare&#8221; version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The &#8220;helping hands&#8221;  were&nbsp;invaluable.</p>
+<p>Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that&#8217;s not being used for reset, and to bring the <span class="caps">ICSP</span> connectors through) which it would be useful to&nbsp;have.</p>
 		</div>
 	    </article>
 </div>

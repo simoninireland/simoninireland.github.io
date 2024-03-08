@@ -73,21 +73,14 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<p>Temperature sensing using digital temperature sensors is easy to get working.
-
+		<p>Temperature sensing using digital temperature sensors is easy to get&nbsp;working.</p>
 <!--more-->
 
-The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../08/ds18b20/"><span class="caps">DS18B20</span> temperature sensor </a>seems well-suited for the job.
-
-![<span class="caps">DS18B20</span>](/images/citizen-sensing/three-ds18b20.png)
-
-Three <span class="caps">DS18B20</span> temperature sensors sharing a OneWire bus, standard (rail) power mode
-
-Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin &#8212; which isn&#8217;t important for hardware reasons in this project, but also saves some microcontroller <span class="caps">RAM</span>, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The <span class="caps">DQ</span> line is attached to one of the Arduino&#8217;s digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to &#8220;real&#8221; temperature values.
-
-The resulting code is almost comically&nbsp;simple:
-
-</p>
+<p>The temperature sensing part of the project requires three sensors for ambient, high-up and low-down measurement. The <a href="../../08/ds18b20/"><span class="caps">DS18B20</span> temperature sensor </a>seems well-suited for the&nbsp;job.</p>
+<p><img alt="DS18B20" src="../../../../images/citizen-sensing/three-ds18b20.png"></p>
+<p>Three <span class="caps">DS18B20</span> temperature sensors sharing a OneWire bus, standard (rail) power&nbsp;mode</p>
+<p>Hooking-up a OneWire bus for the three sensors lets them share a single microcontroller pin &#8212; which isn&#8217;t important for hardware reasons in this project, but also saves some microcontroller <span class="caps">RAM</span>, which might be. The circuit is very simple, with the three sensors sharing power and ground lines and with a common data line pulled-up to the power rail through a 4.7K resistor. The <span class="caps">DQ</span> line is attached to one of the Arduino&#8217;s digital lines. The OneWire library is then used to instantiate a protocol handler for that line, and passed to the temperature control library to manage the interaction with the devices, including their conversion from raw to &#8220;real&#8221; temperature&nbsp;values.</p>
+<p>The resulting code is almost comically&nbsp;simple:</p>
 <div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;DallasTemperature.h&gt;</span>
 
 <span class="n">OneWire</span><span class="w"> </span><span class="nf">onewire</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w">                  </span><span class="c1">// OneWire bus on pin 8</span>
@@ -109,15 +102,10 @@ The resulting code is almost comically&nbsp;simple:
 <span class="p">}</span>
 </pre></div>
 
-
-
-That&#8217;s it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite fiddly).
-
-![Three DS18B30s on a prototyping shield](/images/citizen-sensing/ds18b20-prototype.jpg)
-
-One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we&#8217;ll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus instance.
-
-There&#8217;s also an interesting point about parasite power mode, which is where the <span class="caps">DS18B20</span> draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it&#8217;s probably worth looking into parasite power a bit more.
+<p>That&#8217;s it! The temperature library packages everything up nicely, including the conversion and the interaction with the OneWire protocol (which is quite&nbsp;fiddly).</p>
+<p><img alt="Three DS18B30s on a prototyping shield" src="../../../../images/citizen-sensing/ds18b20-prototype.jpg"></p>
+<p>One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we&#8217;ll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus&nbsp;instance.</p>
+<p>There&#8217;s also an interesting point about parasite power mode, which is where the <span class="caps">DS18B20</span> draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it&#8217;s probably worth looking into parasite power a bit&nbsp;more.</p>
 	    </div>
 	</article>
 </div>

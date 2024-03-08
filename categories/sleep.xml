@@ -1,80 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sleep)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sleep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 06 Mar 2024 19:17:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding Arduino sleep modes: the watchdog timer</title><link>https://simondobson.org/2013/07/23/arduino-watchdog/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.
-
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sleep)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sleep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 08 Mar 2024 12:16:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Understanding Arduino sleep modes: the watchdog timer</title><link>https://simondobson.org/2013/07/23/arduino-watchdog/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.&lt;/p&gt;
 &lt;!--more--&gt;
 
-[mathjax]
-
-Powering-down the Arduino makes a lot of sense for a sensor network: it saves battery power allowing the system to survive for longer. Deciding &lt;em&gt;when&lt;/em&gt; to power the system down is another story, but in this post we'll concentrate on documenting the mechanics of the process. The details are necessarily messy and low-level. (I've been greatly helped in writing this post by &lt;a href="http://www.atmel.com/devices/atmega328p.aspx?tab=documents" target="_blank"&gt;the data sheet for the Atmel ATmega328P microcontroller&lt;/a&gt; that's used in the Arduino Uno, as well as by &lt;a href="http://donalmorrissey.blogspot.ie/2010/04/putting-arduino-diecimila-to-sleep-part.html" target="_blank"&gt;a series of blog posts by Donal Morrissey&lt;/a&gt; that also deal with other sleep modes for the Atmel.)
+&lt;p&gt;Powering-down the Arduino makes a lot of sense for a sensor network: it saves battery power allowing the system to survive for longer. Deciding &lt;em&gt;when&lt;/em&gt; to power the system down is another story, but in this post we'll concentrate on documenting the mechanics of the process. The details are necessarily messy and low-level. (I've been greatly helped in writing this post by &lt;a href="http://www.atmel.com/devices/atmega328p.aspx?tab=documents" target="_blank"&gt;the data sheet for the Atmel ATmega328P microcontroller&lt;/a&gt; that's used in the Arduino Uno, as well as by &lt;a href="http://donalmorrissey.blogspot.ie/2010/04/putting-arduino-diecimila-to-sleep-part.html" target="_blank"&gt;a series of blog posts by Donal Morrissey&lt;/a&gt; that also deal with other sleep modes for the Atmel.)
 &lt;/p&gt;&lt;h3&gt;Header files and general information&lt;/h3&gt;
 To use the watchdog timer, a sketch needs to include three header files:
-
-
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;avr/power.h&amp;gt;&lt;/span&gt;
 &lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;avr/wdt.h&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
-These provide definitions for various functions and variables needed to control the watchdog timer and manage some of the other power functions.
+&lt;p&gt;These provide definitions for various functions and variables needed to control the watchdog timer and manage some of the other power functions.&lt;/p&gt;
 &lt;h3&gt;Power modes&lt;/h3&gt;
-A power (or sleep) mode is a setting for the microcontroller that allows it to use less power in exchange of disabling some of its functions. Since a microcontroller is, to all intents and purposes, a small computer on a chip, it has a lot of sub-systems that may not be needed all the time. A power mode lets you shut these unneeded sub-systems down. The result saves power but reduces functionality.
-
-Power modes are pretty coarse control mechanisms, and can shut down more than you intend. If your project is basically software-driven, with the Arduino making all the decisions, then a "deep" power-saving mode is ideal; on the other hand, if you rely on hardware-based signals at all, a "deep" sleep will probably ignore your hardware and the Arduino may never wake up.
-
-The watchdog timer is used to manage the "power-down" mode, the deepest sleep mode with the biggest power savings.
+&lt;p&gt;A power (or sleep) mode is a setting for the microcontroller that allows it to use less power in exchange of disabling some of its functions. Since a microcontroller is, to all intents and purposes, a small computer on a chip, it has a lot of sub-systems that may not be needed all the time. A power mode lets you shut these unneeded sub-systems down. The result saves power but reduces functionality.&lt;/p&gt;
+&lt;p&gt;Power modes are pretty coarse control mechanisms, and can shut down more than you intend. If your project is basically software-driven, with the Arduino making all the decisions, then a "deep" power-saving mode is ideal; on the other hand, if you rely on hardware-based signals at all, a "deep" sleep will probably ignore your hardware and the Arduino may never wake up.&lt;/p&gt;
+&lt;p&gt;The watchdog timer is used to manage the "power-down" mode, the deepest sleep mode with the biggest power savings.&lt;/p&gt;
 &lt;h3&gt;Watchdog timer&lt;/h3&gt;
-The Arduino's watchdog timer is a countdown timer that's driven by its own oscillator on the microcontroller. It's designed to run even when all the other circuitry is powered down, meaning that the microcontroller is drawing as little power as possible without actually being turned off completely.
-
-Why "watchdog" timer? The basic function of a watchdog timer is to "bite" after a certain period, where "biting" means raising an interrupt, re-setting the system, or both. A typical use of a watchdog is to make a system more robust to software failures. Since the watchdog is handled by the microcontroller's hardware, independent of any program being run, it will still bite even if the software gets stuck in an infinite loop (for example). Some designers set the watchdog ahead of complex operations, so that if the operation fails, the system will reset in a short amount of time and end up back in a known-good configuration. At the end of a successful operation, the program disables the watchdog (before it bites) and carries on. Of course this assumes that the operation completes before the watchdog bites, which means the programmer needs to have a good idea of how long it will take.
+&lt;p&gt;The Arduino's watchdog timer is a countdown timer that's driven by its own oscillator on the microcontroller. It's designed to run even when all the other circuitry is powered down, meaning that the microcontroller is drawing as little power as possible without actually being turned off completely.&lt;/p&gt;
+&lt;p&gt;Why "watchdog" timer? The basic function of a watchdog timer is to "bite" after a certain period, where "biting" means raising an interrupt, re-setting the system, or both. A typical use of a watchdog is to make a system more robust to software failures. Since the watchdog is handled by the microcontroller's hardware, independent of any program being run, it will still bite even if the software gets stuck in an infinite loop (for example). Some designers set the watchdog ahead of complex operations, so that if the operation fails, the system will reset in a short amount of time and end up back in a known-good configuration. At the end of a successful operation, the program disables the watchdog (before it bites) and carries on. Of course this assumes that the operation completes before the watchdog bites, which means the programmer needs to have a good idea of how long it will take.&lt;/p&gt;
 &lt;h3&gt;Setting the time-out period&lt;/h3&gt;
-It's as well to understand how watchdog timers on microcontrollers work. Typically they have a fairly coarse resolution, counting a fixed number of timer ticks before "biting" and performing some function. In the case of the Arduino, the watchdog timer is driven by the internal oscillator running at 128KHz and counts off some multiple of ticks before biting. This value -- the number of ticks counted -- is referred to as the "prescalar" for the timer.
-
-The prescalar is controlled by the values of four bits in the watchdog timer's control register, &lt;code&gt;WDTCSR&lt;/code&gt;. To set them up, you pick the value of prescalar you want and set the appropriate bits. If the bits contain a number \( i \), then the watchdog will bite after \( (2048 &amp;lt;&amp;lt; i) / 128000 \) seconds. So \( i = 0\) means the watchdog bites after 16ms; \( i = 1 \) produces  delay of 32ms; and so on up to \( i = 9 \) (the largest value allowed) means the watchdog bites after about 8s.
-
-The word "about" is important here: the oscillator's exact frequency depends on the supply voltage to the chip and some other factors, meaning that you should be conservative about relying on the delay time.
-
-Writing the appropriate value of \( i \) into the control register
-involves representing \( i \) as a four-digit binary number and then
+&lt;p&gt;It's as well to understand how watchdog timers on microcontrollers work. Typically they have a fairly coarse resolution, counting a fixed number of timer ticks before "biting" and performing some function. In the case of the Arduino, the watchdog timer is driven by the internal oscillator running at 128KHz and counts off some multiple of ticks before biting. This value -- the number of ticks counted -- is referred to as the "prescalar" for the timer.&lt;/p&gt;
+&lt;p&gt;The prescalar is controlled by the values of four bits in the watchdog timer's control register, &lt;code&gt;WDTCSR&lt;/code&gt;. To set them up, you pick the value of prescalar you want and set the appropriate bits. If the bits contain a number ( i ), then the watchdog will bite after ( (2048 &amp;lt;&amp;lt; i) / 128000 ) seconds. So ( i = 0) means the watchdog bites after 16ms; ( i = 1 ) produces  delay of 32ms; and so on up to ( i = 9 ) (the largest value allowed) means the watchdog bites after about 8s.&lt;/p&gt;
+&lt;p&gt;The word "about" is important here: the oscillator's exact frequency depends on the supply voltage to the chip and some other factors, meaning that you should be conservative about relying on the delay time.&lt;/p&gt;
+&lt;p&gt;Writing the appropriate value of ( i ) into the control register
+involves representing ( i ) as a four-digit binary number and then
 writing these bits into four bits of the register -- and unfortunately
-these bits aren't consecutive. if \( i = 7 \) for example, then this
+these bits aren't consecutive. if ( i = 7 ) for example, then this
 is 0b0111 in binary, so we write 1 into bits &lt;code&gt;WDP0&lt;/code&gt;,
 &lt;code&gt;WDP1&lt;/code&gt; and &lt;code&gt;WDP2&lt;/code&gt;, and 0 into bit
-&lt;code&gt;WDP3&lt;/code&gt;, and 0 into all the other bits:
-
-
+&lt;code&gt;WDP3&lt;/code&gt;, and 0 into all the other bits:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;WDTCSR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDP0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDP1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDP2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
-The phrases of the form &lt;code&gt;(1 &amp;lt;&amp;lt; WDP0)&lt;/code&gt; simply takes a binary digit 1 and shifts it left into bit position &lt;code&gt;WDP0&lt;/code&gt;. The &lt;code&gt;|&lt;/code&gt; symbols logically OR these bits together to generate the final bit mask that is assigned to the control register.
-
-Actually there's a little bit more to it than this, as we can't change the watchdog's configuration arbitrarily. Instead we have to notify the chip that it's configuration is about to be changed, by setting two other bits in the control register and then performing the updates we want:
-
-
+&lt;p&gt;The phrases of the form &lt;code&gt;(1 &amp;lt;&amp;lt; WDP0)&lt;/code&gt; simply takes a binary digit 1 and shifts it left into bit position &lt;code&gt;WDP0&lt;/code&gt;. The &lt;code&gt;|&lt;/code&gt; symbols logically OR these bits together to generate the final bit mask that is assigned to the control register.&lt;/p&gt;
+&lt;p&gt;Actually there's a little bit more to it than this, as we can't change the watchdog's configuration arbitrarily. Instead we have to notify the chip that it's configuration is about to be changed, by setting two other bits in the control register and then performing the updates we want:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;WDTCSR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDCE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDE&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
-Setting &lt;code&gt;WDCE&lt;/code&gt; enables changes in configuration to be made in the next few processor cycles, &lt;em&gt;i.e.&lt;/em&gt; immediately. Setting &lt;code&gt;WDE&lt;/code&gt; resets the timer.
-
-Finally we enable the watchdog timer interrupts by setting bit
+&lt;p&gt;Setting &lt;code&gt;WDCE&lt;/code&gt; enables changes in configuration to be made in the next few processor cycles, &lt;em&gt;i.e.&lt;/em&gt; immediately. Setting &lt;code&gt;WDE&lt;/code&gt; resets the timer.&lt;/p&gt;
+&lt;p&gt;Finally we enable the watchdog timer interrupts by setting bit
 &lt;code&gt;WDIE&lt;/code&gt;. When the watchdog timer bites, the microcontroller
 executes an interrupt handler, re-starts the main program, and clears
 &lt;code&gt;WDIE&lt;/code&gt;. Any further interrupts, if the time is re-enabled,
-will then cause a system reset.
-
-
+will then cause a system reset.&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;WDTCSR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDIE&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
-So the complete code the setting up the watchdog timer to bite in 2s is:
-
-
+&lt;p&gt;So the complete code the setting up the watchdog timer to bite in 2s is:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;set_sleep_mode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SLEEP_MODE_PWR_DOWN&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="c1"&gt;// select the watchdog timer mode&lt;/span&gt;
 &lt;span class="n"&gt;MCUSR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDRF&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;                            &lt;/span&gt;&lt;span class="c1"&gt;// reset status flag&lt;/span&gt;
 &lt;span class="n"&gt;WDTCSR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDCE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDE&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="c1"&gt;// enable configuration changes&lt;/span&gt;
@@ -88,19 +59,12 @@ So the complete code the setting up the watchdog timer to bite in 2s is:
 &lt;span class="n"&gt;sleep_disable&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;                                  &lt;/span&gt;&lt;span class="c1"&gt;// prevent further sleeps&amp;lt;/pre&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
 &lt;h3&gt; Interrupt handler&lt;/h3&gt;
-What happens when the watchdog bites? It causes an interrupt that has to be handled before the program can continue. The interrupt could be used for all sorts of things, but there's often no point in worrying about it: but it still has to be there, to prevent the microcontroller just resetting. The following code installs a dummy interrupt handler:
-
-
+&lt;p&gt;What happens when the watchdog bites? It causes an interrupt that has to be handled before the program can continue. The interrupt could be used for all sorts of things, but there's often no point in worrying about it: but it still has to be there, to prevent the microcontroller just resetting. The following code installs a dummy interrupt handler:&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;&lt;span class="n"&gt;ISR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;WDT_vect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="cm"&gt;/* dummy */&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-
-
-The &lt;code&gt;WDT_vect&lt;/code&gt; identifies the watchdog timer's interrupt vector.
-
-While this might seem like a waste of time, it's important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It's also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn't cause any problems.</description><category>arduino</category><category>making</category><category>power management</category><category>project:ditch</category><category>sleep</category><guid>https://simondobson.org/2013/07/23/arduino-watchdog/</guid><pubDate>Tue, 23 Jul 2013 14:21:27 GMT</pubDate></item></channel></rss>
+&lt;p&gt;The &lt;code&gt;WDT_vect&lt;/code&gt; identifies the watchdog timer's interrupt vector.&lt;/p&gt;
+&lt;p&gt;While this might seem like a waste of time, it's important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It's also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn't cause any problems.&lt;/p&gt;</description><category>arduino</category><category>making</category><category>power management</category><category>project:ditch</category><category>sleep</category><guid>https://simondobson.org/2013/07/23/arduino-watchdog/</guid><pubDate>Tue, 23 Jul 2013 14:21:27 GMT</pubDate></item></channel></rss>
