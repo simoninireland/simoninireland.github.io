@@ -1,4 +1,4 @@
-<html><body><p>A small sensor network now working, with two edge devices talking to a base station.
+A small sensor network now working, with two edge devices talking to a base station.
 
 <!--more-->
 

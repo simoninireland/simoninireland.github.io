@@ -1,4 +1,4 @@
-<html><body><p style="text-align: left">Where does mathematics end and computer science begin?</p>
+Where does mathematics end and computer science begin?
 <!--more-->
 
 I don't seem to have posted to this blog recently, so let's re-start with a big question: where is the edge of computer science? That is to say, what separates it from maths? How do mathematicians and computer scientists see problems differently, and indeed select differently what constitutes an interesting problem?
@@ -20,5 +20,3 @@ Mathematicians don't see networks this way, because they want to make precisely 
 So a mathematician's (at least as represented in most of the complex systems literature) interest in a problem is lost at precisely the point that a computer scientist's interest kicks in: where the question is about behaviour of arbitrary computations. The question this leads to is, what model do real-world networks follow more closely? Are they composed of simple, well-behaved spreading processes? Or do they more resemble arbitrary functions hanging off a network of relationships, whose properties can only be discovered numerically? And what effect does the avoidance of arbitrary computation have on the choice of problems to which scientists apply themselves? Perhaps the way forward here is to try to find the boundary of the complexity of functions that remain analytic when used as part of a network dynamics, to get the best of both worlds: global statements about large categories of networks, without needing numerical simulation of individual cases.
 
 Such a classification would have useful consequences for general computer science as well. A lot of the problems in systems design come from the arbitrariness of code and its interactions, and from the fact that we're uncomfortable restricting that generality <em>a priori</em> because we don't know what the consequences will be for the re-usability and extensibility of the systems being designed. A more nuanced understanding of behavioural envelopes might help.
-
- </body></html>

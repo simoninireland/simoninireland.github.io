@@ -1,4 +1,4 @@
-<html><body><p>The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.
+The XBee is a series of small radio modules that implement the Zigbee protocol and work well with Arduinos.
 
 <!--more-->
 
@@ -27,5 +27,3 @@ The X-CTU software manages the firmware on the radio module. Because the radios 
 XBees actually have two communication modes you can choose between, by choosing different firmware. The simplest is the AT firmware. These provide simple, text-based communications between radios: what one Arduino writes as text comes out on the other. In this mode the XBee also responds to Hayes AT commands, a standard way of controlling a modem (which is what an XBee technically is): we'll explore these commands in another post. This function set -- router and co-ordinator -- sets up what might be called a <em>transparent</em> network, in the sense that it behaves just like a serial pipe. This makes it easy to get things up and running.Text-based interaction isn't great for computer-to-computer communications, however, not least because of the effort (and memory) needed to understand text-based protocols. For this reason, the XBee also supports API function sets that provide binary communications. These are better for computers, and faster when running, but require more programming and more intellectual effort to understand. We'll deal with API communications in another post too.
 
 We'll deal with the details of using X-CTU <a href="/2013/07/02/xctu/">in another post</a>, as well as explaining how to set up a simple network.
-
- </body></html>

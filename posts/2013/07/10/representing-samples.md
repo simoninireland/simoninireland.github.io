@@ -1,4 +1,4 @@
-<html><body><p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
+Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?
 
 <!--more-->
 
@@ -14,4 +14,4 @@ There are some compromise positions, however. <a href="http://www.json.org" targ
 
 JSON's simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than XML, but capable of integration with RDF, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank">JSON-LD</a> (JSON for Linked Data) that seeks to integrate JSON records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.
 
-This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.</p></body></html>
+This raises the possibility of using JSON to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, JSON isn't very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in JSON format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing performance.

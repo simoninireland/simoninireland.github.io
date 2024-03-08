@@ -18,8 +18,9 @@
 	 <p>
 	   Most of my work is in Python, but I also write a lot of
 	   Lisp and occasionally C and C++.
-       </div>
+      </div>
    </div>
+
 
 .. raw:: html
 

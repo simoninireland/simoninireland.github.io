@@ -1,4 +1,4 @@
-<html><body><p>Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.
+Managing Digi's XBee radio modules requires using their X-CTU package to upload the correct firmware. In this post we explain how.
 
 <!--more-->
 

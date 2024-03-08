@@ -1,8 +1,6 @@
-<html><body><p>The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.
+The Arduino has several sleep modes that can be used to reduce power consumption. The most useful for sensor networks is probably the one that uses the watchdog timer.
 
 <!--more-->
-
-[mathjax]
 
 Powering-down the Arduino makes a lot of sense for a sensor network: it saves battery power allowing the system to survive for longer. Deciding <em>when</em> to power the system down is another story, but in this post we'll concentrate on documenting the mechanics of the process. The details are necessarily messy and low-level. (I've been greatly helped in writing this post by <a href="http://www.atmel.com/devices/atmega328p.aspx?tab=documents" target="_blank">the data sheet for the Atmel ATmega328P microcontroller</a> that's used in the Arduino Uno, as well as by <a href="http://donalmorrissey.blogspot.ie/2010/04/putting-arduino-diecimila-to-sleep-part.html" target="_blank">a series of blog posts by Donal Morrissey</a> that also deal with other sleep modes for the Atmel.)
 </p><h2>Header files and general information</h2>

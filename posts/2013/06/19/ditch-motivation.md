@@ -1,4 +1,4 @@
-<html><body><p>Citizen Sensing's first project is to perform environmental monitoring on a small scale with minimally-specification hardware.
+Citizen Sensing's first project is to perform environmental monitoring on a small scale with minimally-specification hardware.
 
 <!--more-->
 
@@ -14,4 +14,4 @@ The main software challenges include working the hardware and -- more significan
 
 Is this a worthwhile project? From a scientific point of view its clearly questionable, but that's not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and uncertain.
 
-The <a href="/categories/ditch/">blog</a> for the project will let you follow all the gory details.</p></body></html>
+The <a href="/development/projects/citizen-sensing/">blog</a> for the project will let you follow all the gory details.
