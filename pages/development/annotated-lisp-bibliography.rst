@@ -34,9 +34,15 @@ Some caveats: This is very much a work in progress, has significant
 gaps, and is a collection of my opinions, *not* a peer-reviewed
 survey. Having said that, I hope it's useful.
 
+You can subscribe to new posts in this series `here </categories/projectlisp-bibliography.xml>`_.
+
 
 Introductions
 -------------
+
+There are plenty of sources for learning Lisp from scratch, and rather
+intriguingly they've continued to be written from the earliest days up
+to the present.
 
 .. post-list::
    :type: posts
@@ -49,6 +55,14 @@ Introductions
 More advanced treatments
 ------------------------
 
+Once you've got the basics, a more advanced treatment is in order.
+Lisp has what is in many people's opinion (including mine) the best
+advanced treatment of programming ever written for *any* language --
+and then also has books has push the boundaries of what's possible
+within the language and (especially) its macro system. And its macros
+that really make Lisp code fly and give it a power that exceeds that
+of many more modern languages.
+
 .. post-list::
    :type: posts
    :tags: project:lisp-bibliography, advanced-tutorial
@@ -57,8 +71,31 @@ More advanced treatments
    :reverse:
 
 
+Applications
+------------
+
+Contrary to popular belief, there is still new software being written
+in Lisp. Admittedly it's a niche speciality and not as supported by
+libraries as are other languages. But Lisp's extensibility does make
+it attractive for some domains (and some programmers), and there are
+several places in which its unique features really give an edge.
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, applications
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
+
 Implementation techniques
 -------------------------
+
+All languages benefit from specific implementation techniques: Lisp
+perhaps more than others, as its programming model sits so far from
+that of most processors. That having been said, Lisp has served as a
+test-bed for a range of techniques from compilation to run-time, some
+of which have influenced other languages' designs as well.
 
 .. post-list::
    :type: posts
@@ -70,6 +107,11 @@ Implementation techniques
 
 Language definitions
 --------------------
+
+Lisp isn't really just *one* language, or even just Common Lisp and
+Scheme. It's better thought of as a style or family of languages
+that has grown alongside the capabilities of processors and the
+imaginations of its users.
 
 .. post-list::
    :type: posts

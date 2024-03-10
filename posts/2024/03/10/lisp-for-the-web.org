@@ -1,0 +1,35 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp for the web
+.. slug: lisp-for-the-web
+.. date: 2024-03-10 10:28:45 UTC
+.. tags: project:lisp-bibliography, lisp, applications
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp for the web
+
+  Adam Tornhill.  /[[http://leanpub.com/lispweb][Lisp for the Web]]/. Leanpub. 2015.
+
+  A short, practical guide to build a dynamic web site entirely
+  using Common Lisp. Makes extensive use of several libraries,
+  including the intriguingly-named [[https://edicl.github.io/hunchentoot/][hunchentoot]] web server (named
+  after a never-staged musical written by Frank Zappa), the [[https://edicl.github.io/cl-who/][CL-WHO]]
+  HTML generator, and -- perhaps most interesting -- the [[https://cliki.net/Parenscript][Parenscript]]
+  Lisp to Javascript compiler.
+
+  One gain from using Lisp is the ability to wrap-up standard
+  constructions like page templates as macros. Other than this, it's
+  hard to assess whether the gains are all that significant. One
+  interesting point is that the whole development occurs in Lisp, so
+  there's no cognitive dissonance between writing the back-end and
+  the front-end: essentially the same argument for using [[https://nodejs.org/][node.js]] as
+  a back-end framework. While Parenscript isn't a fully-featured
+  Lisp-in-the-browser it again can benefit from macros and other
+  features. There's a throwaway comment about linking it to [[https://jquery.com/][jQuery]],
+  although that isn't demonstrated in practice: it feels intriguing,
+  though, especially if there's a way to represent jQuery
+  functionality idiomatically in Lisp.

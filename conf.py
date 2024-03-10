@@ -126,11 +126,12 @@ def hashify(t):
     return '#' + t.replace(' ', '')
 
 def dashify(t):
-    '''Turn spaces in a tag into dashes, ready for use in URLs.
+    '''Turn spaces in a tag into dashes and drop other
+    punctuation, ready for use in URLs.
 
     :param t: the tag
     :returns: the dashified tag'''
-    return t.replace(' ', '-')
+    return t.replace(' ', '-').replace(':', '')
 
 def tagged_title(p):
     '''Return a string consisting of a post's title and
