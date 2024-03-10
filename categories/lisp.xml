@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 07 Mar 2024 19:39:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1411fb0" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 10 Mar 2024 10:29:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9407c19" class="outline-2"&gt;
+&lt;h2 id="org9407c19"&gt;Lisp for the web&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9407c19"&gt;
+&lt;p&gt;
+Adam Tornhill.  &lt;i&gt;&lt;a href="http://leanpub.com/lispweb"&gt;Lisp for the Web&lt;/a&gt;&lt;/i&gt;. Leanpub. 2015.
+&lt;/p&gt;
+
+&lt;p&gt;
+A short, practical guide to build a dynamic web site entirely
+using Common Lisp. Makes extensive use of several libraries,
+including the intriguingly-named &lt;a href="https://edicl.github.io/hunchentoot/"&gt;hunchentoot&lt;/a&gt; web server (named
+after a never-staged musical written by Frank Zappa), the &lt;a href="https://edicl.github.io/cl-who/"&gt;CL-WHO&lt;/a&gt;
+HTML generator, and – perhaps most interesting – the &lt;a href="https://cliki.net/Parenscript"&gt;Parenscript&lt;/a&gt;
+Lisp to Javascript compiler.
+&lt;/p&gt;
+
+&lt;p&gt;
+One gain from using Lisp is the ability to wrap-up standard
+constructions like page templates as macros. Other than this, it's
+hard to assess whether the gains are all that significant. One
+interesting point is that the whole development occurs in Lisp, so
+there's no cognitive dissonance between writing the back-end and
+the front-end: essentially the same argument for using &lt;a href="https://nodejs.org/"&gt;node.js&lt;/a&gt; as
+a back-end framework. While Parenscript isn't a fully-featured
+Lisp-in-the-browser it again can benefit from macros and other
+features. There's a throwaway comment about linking it to &lt;a href="https://jquery.com/"&gt;jQuery&lt;/a&gt;,
+although that isn't demonstrated in practice: it feels intriguing,
+though, especially if there's a way to represent jQuery
+functionality idiomatically in Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/10/lisp-for-the-web/</guid><pubDate>Sun, 10 Mar 2024 10:28:45 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1411fb0" class="outline-2"&gt;
 &lt;h2 id="org1411fb0"&gt;List processing&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org1411fb0"&gt;
 &lt;p&gt;
@@ -553,44 +584,4 @@ run-time: it's a set of ideas that re-surface at the object level
 in metaobject protocols.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</guid><pubDate>Fri, 02 Feb 2024 12:14:30 GMT</pubDate></item><item><title>Common Lisp: the language</title><link>https://simondobson.org/2024/02/02/common-lisp-the-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4b56ae4" class="outline-2"&gt;
-&lt;h2 id="org4b56ae4"&gt;Common Lisp: the language&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4b56ae4"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/20/46d76e-4b50-4cf1-866c-7515d6fd427f/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Guy Steele.  &lt;i&gt;&lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;Common Lisp: The Language&lt;/a&gt;&lt;/i&gt;. Digital Press. ISBN
-1-55558-041-6. 1990.
-&lt;/p&gt;
-
-&lt;p&gt;
-The reference manual for Common Lisp, also &lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;available online in its
-entirety&lt;/a&gt;. This is very much a reference manual and not a
-tutorial, but having said that it's a lot more accessible than
-many such documents.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's remarkable that Common Lisp's standard has been stable for
-over thirty years, despite enormous advances in Lisp practices in
-that time. It shows the care that went into the original
-standardisation process, but also the effects of some detailed
-technical choices and (especially) the use of macros in preference
-to new core mechanisms.
-&lt;/p&gt;
-
-&lt;p&gt;
-However, it has to be said that the standard also fixed in place
-certain choices that now seem questionable. It's a matter of
-opinion, of course, but personally I think the questionable set
-includes at least: multiple-value returns and binds, which are
-unnecessary when you can return lists and destructure them and
-that impinge on the minimalism of the core language; and allowing
-symbols to be bound simultaneously to values and functions, which
-unnecessarily treats the two differently (and for which reason it
-was removed from Scheme).
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/common-lisp-the-language/</guid><pubDate>Fri, 02 Feb 2024 12:10:26 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</guid><pubDate>Fri, 02 Feb 2024 12:14:30 GMT</pubDate></item></channel></rss>

@@ -52,6 +52,51 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/03/10/lisp-for-the-web/" rel="bookmark">Sunday 10 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/10/lisp-for-the-web/">Lisp for the&nbsp;web</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org9407c19" class="outline-2">
+<h2 id="org9407c19">Lisp for the&nbsp;web</h2>
+<div class="outline-text-2" id="text-org9407c19">
+<p>
+Adam Tornhill.  <i><a href="http://leanpub.com/lispweb">Lisp for the Web</a></i>. Leanpub.&nbsp;2015.
+</p>
+
+<p>
+A short, practical guide to build a dynamic web site entirely
+using Common Lisp. Makes extensive use of several libraries,
+including the intriguingly-named <a href="https://edicl.github.io/hunchentoot/">hunchentoot</a> web server (named
+after a never-staged musical written by Frank Zappa), the <a href="https://edicl.github.io/cl-who/"><span class="caps">CL</span>-<span class="caps">WHO</span></a>
+<span class="caps">HTML</span> generator, and – perhaps most interesting – the <a href="https://cliki.net/Parenscript">Parenscript</a>
+Lisp to Javascript&nbsp;compiler.
+</p>
+
+<p>
+One gain from using Lisp is the ability to wrap-up standard
+constructions like page templates as macros. Other than this, it&#8217;s
+hard to assess whether the gains are all that significant. One
+interesting point is that the whole development occurs in Lisp, so
+there&#8217;s no cognitive dissonance between writing the back-end and
+the front-end: essentially the same argument for using <a href="https://nodejs.org/">node.js</a> as
+a back-end framework. While Parenscript isn&#8217;t a fully-featured
+Lisp-in-the-browser it again can benefit from macros and other
+features. There&#8217;s a throwaway comment about linking it to <a href="https://jquery.com/">jQuery</a>,
+although that isn&#8217;t demonstrated in practice: it feels intriguing,
+though, especially if there&#8217;s a way to represent jQuery
+functionality idiomatically in&nbsp;Lisp.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/03/07/list-processing/" rel="bookmark">Thursday 7 March, 2024</a>
 			</span>
 		    </div>
@@ -211,53 +256,9 @@ presents, but also has a lot to say about coding style and code&nbsp;optimisatio
 		</div>
 	    </article>
 </div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/03/06/the-common-lisp-condition-system/" rel="bookmark">Wednesday 6 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/06/the-common-lisp-condition-system/">The Common Lisp condition&nbsp;system</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org792bbd5" class="outline-2">
-<h2 id="org792bbd5">The Common Lisp condition&nbsp;system</h2>
-<div class="outline-text-2" id="text-org792bbd5">
-<p class="floater">
-<img src="../attachments/06/efe121-b8ab-4558-a705-733fbbe7b1f9/978-1-4842-6134-7.webp" alt="nil"></p>
-
-<p>
-Michał &#8220;phoe&#8221; Herda.  <i><a href="https://doi.org/10.1007/978-1-4842-6134-7">The Common Lisp Condition System</a></i>. Apress.&nbsp;2020.
-</p>
-
-<p>
-An enormously detailed look at the condition system, sometimes
-regarded as the Lisp equivalent of exception-handling in other&nbsp;languages.
-</p>
-
-<p>
-But that&#8217;s massively unfair to the condition system, which is
-really a way to deal with non-local transfers of control in the
-most flexible way possible. Exceptions are <i>just one type</i> of
-this, and the condition system aims to separate three aspects that
-are often combined in other languages: detecting and signalling a
-condition, responding to a condition, and deciding on the binding
-between the two, possibly combining responses differently in
-different contexts. It&#8217;s a set of concepts that are in many ways
-foreign to a lot of other languages, and so justify the detail for
-those occasions when these techniques are appropriate: deciding
-<i>when</i> they are appropriate is non-trivial, a matter of both
-functionality and&nbsp;style.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-139.html" rel="prev">
+		<a href="index-140.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
