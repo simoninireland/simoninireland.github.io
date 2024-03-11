@@ -1284,6 +1284,25 @@ article .title-block h1 a {
     color: #787065;
 }
 
+/* Three-column layout */
+div.entry-content .column {
+  float: left;
+  width: 45%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+div.entry-content row {
+    display: "table";
+}
+
+div.entry-content .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 /*--------------------------------------------------------------
 8.0 Widgets
 --------------------------------------------------------------*/
