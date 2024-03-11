@@ -1,14 +1,7 @@
-Recent articles
-===============
-
-.. post-list::
-   :type: posts
-   :stop: 5
-
-`Older articles <link:/archive.html>`_
-
 Article series
 ==============
+
+A lot of my articles form series that can be read together.
 
 - `An annotated Lisp bibliography
   <link:/development/annotated-lisp-bibliography/>`_, a curated and
@@ -20,6 +13,19 @@ Article series
   by my `book club <link:/categories/bonanza/>`_ over the past years
 
 `Articles by tag <link:/categories/>`_
+
+
+Recent articles
+===============
+
+Alternatively, you can also read in the normal reverse date order.
+
+.. post-list::
+   :type: posts
+   :stop: 5
+
+`Older articles <link:/archive.html>`_
+
 
 Selected articles
 =================

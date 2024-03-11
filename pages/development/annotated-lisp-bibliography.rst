@@ -152,3 +152,18 @@ predate it.
    :template: series_post_list.tmpl
    :require_all_tags:
    :reverse:
+
+
+Other resources
+---------------
+
+Only when I started pulling this series together did I really
+understand the extent of the Lisp literature and the wide range of
+historical (and other) resources that already exist. These include:
+
+- The amazingly complete
+  `Interlisp bibliography <https://interlisp.org/history/bibliography/>`_,
+  unsurprisingly focused mainly on `Medley Interlisp <https://interlisp.org/>`_
+  and not annotated, but including pointers to a huge range of
+  material. (Thanks to `Paolo Amoroso <https://fosstodon.org/@amoroso>`_
+  for pointing me at this.)
