@@ -16,8 +16,10 @@
 	   integrating sensors to incorporate real-world, real-time
 	   data to build "digital twins".
 	 <p>
-	   Most of my work is in Python, but I also write a lot of
-	   Lisp and occasionally C and C++.
+	   I <a href="/writing/">write</a> about various topics in
+	   computing, and <a href="/development/projects/">develop
+	   software</a> in (mainly) Python and Lisp.
+
       </div>
    </div>
 
