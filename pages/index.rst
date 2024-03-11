@@ -17,9 +17,9 @@
 	   data to build "digital twins".
 	 <p>
 	   I <a href="/writing/">write</a> about various topics in
-	   computing, and <a href="/development/projects/">develop
-	   software</a> in (mainly) Python and Lisp.
-
+	   science, computing, and books, and
+	   <a href="/development/projects/">develop software</a>
+	   in (mainly) Python and Lisp.
       </div>
    </div>
 

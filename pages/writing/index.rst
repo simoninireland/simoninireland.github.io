@@ -1,7 +1,9 @@
 Article series
 ==============
 
-A lot of my articles form series that can be read together.
+I tend to write short-form articles on this site. Some of these I've
+brought together as curated series that can be read together as
+long-form.
 
 - `An annotated Lisp bibliography
   <link:/development/annotated-lisp-bibliography/>`_, a curated and
@@ -17,8 +19,6 @@ A lot of my articles form series that can be read together.
 
 Recent articles
 ===============
-
-Alternatively, you can also read in the normal reverse date order.
 
 .. post-list::
    :type: posts
