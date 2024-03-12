@@ -59,7 +59,7 @@ FAVICONS = (
 )
 
 
-# Post and page structure
+# Post and page templates
 POSTS = (
     ("posts/*.rst", "", "post.tmpl"),
     ("posts/*.md", "", "post.tmpl"),
@@ -228,10 +228,30 @@ RENDER_STATIC_TAG_CLOUDS = {
 }
 
 # Tags not included on the tag list
-HIDDEN_TAGS = ['mathjax',
-               'project:ditch',               # "Citizen sensing" series
-               'project:lisp-bibliography',   # "Anotated Lisp bibliography" series
-               ]
+HIDDEN_TAGS = [
+    'mathjax',
+    'project:ditch',
+    'project:lisp-bibliography',
+]
+
+# Series links from tags
+SERIES_TAGS = {
+    'project:lisp-bibliography': {
+        'title': 'An annotated Lisp bibliography',
+        'link': '/development/annotated-lisp-bibliography/'
+    },
+    'project:ditch': {
+        'title': 'Citizen sensing',
+        'link': '/development/projects/citizen-sensing/'
+    }
+}
+
+
+# Data passed through for templating
+GLOBAL_CONTEXT = {
+    'series_tags': SERIES_TAGS,
+}
+
 
 # Below this point, everything is optional
 
@@ -1349,7 +1369,7 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+#GLOBAL_CONTEXT = {}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
