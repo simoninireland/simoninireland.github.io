@@ -95,6 +95,8 @@ Having been discussing this in the context of Javascript, I then stumbled across
 
 Actually there <em>are</em> strong arguments for the need for non-static run-time checks, most notably in distributed systems when you can&#8217;t be sure the data you receive will be type-correct even if the compiler that generated the code thinks it is, since you generally don&#8217;t have complete control over all the components and their evolutions. But this isn&#8217;t an argument against strong typing in general: it still helps, even if there are small holes. Instead one perhaps needs to check types at the component boundaries so that, once admitted, you have confidence in their type-correctness. This in turn places demands on the transport protocols to be self-describing in terms of their payloads&#8217; types, and doing so supports other constructs (like type-driven computation) for free without sacrificing the benefits of the strong checks. Having some dynamism (and room for run-time failure) within a generally static seems like a decent&nbsp;compromise.</p>
 	    </div>
+
+
 	</article>
 </div>
 

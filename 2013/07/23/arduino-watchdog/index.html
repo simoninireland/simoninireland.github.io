@@ -144,6 +144,12 @@ will then cause a system&nbsp;reset.</p>
 <p>The <code>WDT_vect</code> identifies the watchdog timer&#8217;s interrupt&nbsp;vector.</p>
 <p>While this might seem like a waste of time, it&#8217;s important to have an interrupt handler as the default behaviour of the watchdog timer is to reset the microcontroller, which we want to avoid. It&#8217;s also worth noting that, once enabled, the watchdog timer will keep biting, so the interrupt handler will be called repeatedly. (Put a print statement in the hander to see.) This doesn&#8217;t cause any&nbsp;problems.</p>
 	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
 	</article>
 </div>
 

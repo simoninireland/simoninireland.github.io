@@ -84,6 +84,12 @@ MathJax.Hub.Config({
 <p>The software is quite straightforward, and the <a href="../../03/xbee-arduino/">xbee-arduino library</a> handles all the low-level communications &#8212; although it&#8217;s very low-level, fine for the experienced programmer but probably all but mystifying to anyone not used to this kind of software. The corresponding Java xbee-api library is slightly more friendly, but <em>only</em> slightly: they probably both need wrapping into a framework that hides the radio&nbsp;nastiness.</p>
 <p>I think the biggest hurdle for this sort of system is the data format &#8212; or, more precisely, the need (or desire, at least) to to use C at one end and Processing/Java at the other, which means that the data on the wire is being described twice. A framework approach could use (for example) <a href="http://www.json.org/" target="_blank"><span class="caps">JSON</span></a>, although there&#8217;d still be a need to make sure it was compactly encoded and&nbsp;transmitted.</p>
 	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
 	</article>
 </div>
 

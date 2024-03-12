@@ -107,6 +107,12 @@ MathJax.Hub.Config({
 <p>One potential problem for the future is that access to the sensors is by index, not by any particular identifier, and it;s not clear whether the ordering is always the same: does the sensor closest to the microcontroller always appear as index 0, for example? If not, then we&#8217;ll have to identify which sensor is which somehow to sample the temperature from the correct place, or run each one on a different OneWire bus&nbsp;instance.</p>
 <p>There&#8217;s also an interesting point about parasite power mode, which is where the <span class="caps">DS18B20</span> draws its power from the data bus rather than from a dedicated power rail. This might make power management easier, since the sensor would be unpowered when not being used, such as when the Arduino is asleep. This suggests it&#8217;s probably worth looking into parasite power a bit&nbsp;more.</p>
 	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
 	</article>
 </div>
 
