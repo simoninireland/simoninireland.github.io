@@ -1,0 +1,41 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The Lisp machine
+.. slug: the-lisp-machine
+.. date: 2024-03-14 16:50:46 UTC
+.. tags: project:lisp-bibliography, lisp, hardware
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The Lisp machine
+
+  Richard Greenblatt.  /[[https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf][The Lisp Machine]]/. Working
+  paper 79. MIT AI Laboratory. 1974.
+
+  A description of the architecture later built and sold by LMI.
+
+  A visionary description of a machine to run Lisp at a
+  "non-prohibitive cost" of $70,000 per system. (The web tells me
+  that this is the equivalent of [[https://www.in2013dollars.com/us/inflation/1974?amount=70000][$440,000]] in 2024.) A completely
+  integrated system based on a Cons processor and using a PDP-11 as
+  a console. A relocating, compacting, garbage collector with
+  invisible forwarding pointers. Non-linear spaghetti stacks to
+  support advanced programming constructs.
+
+  One of the many notable facets of this design is one of its
+  proposals (the "frame pushdown list") to avoid excessive conses
+  and garbage collection overhead by maintaining lists of blocks of
+  particular sizes. It uses this approach to manage the creation of
+  call stack frames; modern Python implementations use this scheme
+  throughout to avoid heap fragmentation through allocating and
+  re-allocating blocks of different sizes. (Lisp has this feature
+  generally, of course, with its use of fixed-size cons cells.)
+
+  It's also fascinating to see that, even at this early stage,
+  hardware design was being seen as an exercise in refinement to
+  maintain software-level abstractions even as features were being
+  pushed into hardware -- while still providing optimised
+  implementations that were invisible to the programmer.

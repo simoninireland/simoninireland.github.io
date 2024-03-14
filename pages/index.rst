@@ -9,7 +9,8 @@
 	   I'm a computer scientist interested in complex systems,
 	   where chains of cause and effect can be difficult to establish.
 	 <p>
-	   I build the computational tools needed to study these
+	   In my <a href="/research/">research</a> I build the
+	   computational tools needed to study these
 	   systems at scale, which includes using simulators and cloud
 	   computing solutions; develop better ways to understand them
 	   using advanced analytical techniques; and work on
@@ -17,7 +18,7 @@
 	   data to build "digital twins".
 	 <p>
 	   I <a href="/writing/">write</a> about various topics in
-	   science, computing, and books, and
+	   science, computing, research practice, and books, and
 	   <a href="/development/projects/">develop software</a>
 	   in (mainly) Python and Lisp.
       </div>
