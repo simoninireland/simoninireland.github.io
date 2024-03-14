@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Mar 2024 17:51:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cbb477" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Mar 2024 16:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdeaa592" class="outline-2"&gt;
+&lt;h2 id="orgdeaa592"&gt;The Lisp machine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdeaa592"&gt;
+&lt;p&gt;
+Richard Greenblatt.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf"&gt;The Lisp Machine&lt;/a&gt;&lt;/i&gt;. Working
+paper 79. MIT AI Laboratory. 1974.
+&lt;/p&gt;
+
+&lt;p&gt;
+A description of the architecture later built and sold by LMI.
+&lt;/p&gt;
+
+&lt;p&gt;
+A visionary description of a machine to run Lisp at a
+"non-prohibitive cost" of $70,000 per system. (The web tells me
+that this is the equivalent of &lt;a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000"&gt;$440,000&lt;/a&gt; in 2024.) A completely
+integrated system based on a Cons processor and using a PDP-11 as
+a console. A relocating, compacting, garbage collector with
+invisible forwarding pointers. Non-linear spaghetti stacks to
+support advanced programming constructs.
+&lt;/p&gt;
+
+&lt;p&gt;
+One of the many notable facets of this design is one of its
+proposals (the "frame pushdown list") to avoid excessive conses
+and garbage collection overhead by maintaining lists of blocks of
+particular sizes. It uses this approach to manage the creation of
+call stack frames; modern Python implementations use this scheme
+throughout to avoid heap fragmentation through allocating and
+re-allocating blocks of different sizes. (Lisp has this feature
+generally, of course, with its use of fixed-size cons cells.)
+&lt;/p&gt;
+
+&lt;p&gt;
+It's also fascinating to see that, even at this early stage,
+hardware design was being seen as an exercise in refinement to
+maintain software-level abstractions even as features were being
+pushed into hardware – while still providing optimised
+implementations that were invisible to the programmer.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cbb477" class="outline-2"&gt;
 &lt;h2 id="org8cbb477"&gt;Lisp for the web&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org8cbb477"&gt;
 &lt;p&gt;
@@ -497,91 +538,4 @@ Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
 978-039395544-6. 1986.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>The CONNIVER reference manual</title><link>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4f1017d" class="outline-2"&gt;
-&lt;h2 id="org4f1017d"&gt;The CONNIVER reference manual&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4f1017d"&gt;
-&lt;p&gt;
-Drew McDermott and Gerald Jay Sussman.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/handle/1721.1/6204"&gt;The Conniver Reference
-Manual&lt;/a&gt;&lt;/i&gt;. Technical report AIM-259a. MIT AI Laboratory. 1974.
-&lt;/p&gt;
-
-&lt;p&gt;
-I think Conniver may have a claim to being the most influential
-language you've never heard of. It's a mostly forgotten Lisp
-variant that was a laboratory for some radically different
-language design ideas, and a precursor to a surprising set of
-features – many of which are still uncommon in the mainstream.
-&lt;/p&gt;
-
-&lt;p&gt;
-Conniver was intended to manage knowledge databases. This does
-make the report slightly hard to read in places, as there are a
-lot of explicit references to planning techniques wrapped-up with
-language mechanisms that don't really depend on them.
-&lt;/p&gt;
-
-&lt;p&gt;
-Conniver is (to the best of my knowledge) the first appearance of
-&lt;b&gt;generators&lt;/b&gt; in a programming language. It is therefore a distant
-precursor of all the lazy functional languages and libraries, as
-well as the generators found in Python. Implementing generators
-&lt;i&gt;within&lt;/i&gt; a language (rather than as a built-in part of one)
-requires control structures that can be exited and re-entered, and
-therefore needs more flexible frames for controlling executing
-code rather than conventional stack frames that are unwound
-destructively on return.
-&lt;/p&gt;
-
-&lt;p&gt;
-The obvious (for Lisp, anyway) next step is to make these "hairy"
-control structures visible within the language, to allow them to
-be re-arranged in interesting ways. It does this by exposing the
-structure of frames, consisting of:
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;the bound variables&lt;/li&gt;
-&lt;li&gt;the state of the ongoing computation within the frame (&lt;i&gt;e.g.&lt;/i&gt;,
-the program counter)&lt;/li&gt;
-&lt;li&gt;a link (the &lt;code&gt;ALINK&lt;/code&gt;) to the frame within which free variables
-should be looked-up&lt;/li&gt;
-&lt;li&gt;a link (the &lt;code&gt;CLINK&lt;/code&gt;) to the frame to which control should return
-on exit from the frame&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-This structure in turn mandates the use of &lt;b&gt;spaghetti stack&lt;/b&gt; (or
-&lt;a href="https://en.wikipedia.org/wiki/Parent_pointer_tree"&gt;parent pointer trees&lt;/a&gt;) where frames are implemented using lists
-that can be combined in richer ways than actual, literal stacks.
-Thee are the underpinnings of several different common structures:
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;generators and continuations&lt;/li&gt;
-&lt;li&gt;closures&lt;/li&gt;
-&lt;li&gt;non-local transfers, like &lt;code&gt;CATCH&lt;/code&gt; and &lt;code&gt;THROW&lt;/code&gt; in Common Lisp, and
-therefore probably encompassing the entire condition system&lt;/li&gt;
-&lt;li&gt;functions with access to extra state (as with object methods,
-but in this case used as callbacks for database updates)&lt;/li&gt;
-&lt;li&gt;symbolic debuggers (not mentioned in the text)&lt;/li&gt;
-&lt;li&gt;lexical &lt;i&gt;versus&lt;/i&gt; dynamic variable scope (not mentioned in the
-text, and I think it's a binary choice between one or the other
-depending on the &lt;code&gt;ALINK&lt;/code&gt;, rather than accommodating lexical and
-"special" variable classes as Common Lisp does)&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-So these features are constructed in Conniver from more basic
-mechanisms rather than being provided built-in. I'm fascinated by
-what other structures one might build when every frame has &lt;i&gt;two&lt;/i&gt;
-independent super-frames (one for variable lookup,one for control
-return) instead of one, and both can be modified independently.
-This is radically different to most languages in which frames are
-hidden and their manipulation reserved for the compiler and
-run-time: it's a set of ideas that re-surface at the object level
-in metaobject protocols.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</guid><pubDate>Fri, 02 Feb 2024 12:14:30 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item></channel></rss>

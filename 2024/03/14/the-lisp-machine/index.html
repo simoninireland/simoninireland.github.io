@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lisp for the web | Simon Dobson</title>
+<title>The Lisp machine | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,44 +64,54 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Sunday 10 March, 2024</a>
+		Posted on <a href="." rel="bookmark">Thursday 14 March, 2024</a>
 	    </span>
 	</div>
-	<h1>Lisp for the&nbsp;web</h1>
+	<h1>The Lisp&nbsp;machine</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org8cbb477" class="outline-2">
-<h2 id="org8cbb477">Lisp for the&nbsp;web</h2>
-<div class="outline-text-2" id="text-org8cbb477">
+		<div id="outline-container-orgdeaa592" class="outline-2">
+<h2 id="orgdeaa592">The Lisp&nbsp;machine</h2>
+<div class="outline-text-2" id="text-orgdeaa592">
 <p>
-Adam Tornhill.  <i><a href="http://leanpub.com/lispweb">Lisp for the Web</a></i>. Leanpub.&nbsp;2015.
+Richard Greenblatt.  <i><a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf">The Lisp Machine</a></i>. Working
+paper 79. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
 </p>
 
 <p>
-A short, practical guide to build a dynamic web site entirely
-using Common Lisp. Makes extensive use of several libraries,
-including the intriguingly-named <a href="https://edicl.github.io/hunchentoot/">hunchentoot</a> web server (named
-after a never-staged musical written by Frank Zappa), the <a href="https://edicl.github.io/cl-who/"><span class="caps">CL</span>-<span class="caps">WHO</span></a>
-<span class="caps">HTML</span> generator, and – perhaps most interesting – the <a href="https://cliki.net/Parenscript">Parenscript</a>
-Lisp to Javascript&nbsp;compiler.
+A description of the architecture later built and sold by&nbsp;<span class="caps">LMI</span>.
 </p>
 
 <p>
-One gain from using Lisp is the ability to wrap-up standard
-constructions like page templates as macros. Other than this, it&#8217;s
-hard to assess whether the gains are all that significant. One
-interesting point is that the whole development occurs in Lisp, so
-there&#8217;s no cognitive dissonance between writing the back-end and
-the front-end: essentially the same argument for using <a href="https://nodejs.org/">node.js</a> as
-a back-end framework. While Parenscript isn&#8217;t a fully-featured
-Lisp-in-the-browser it again can benefit from macros and other
-features. There&#8217;s a throwaway comment about linking it to <a href="https://jquery.com/">jQuery</a>,
-although that isn&#8217;t demonstrated in practice: it feels intriguing,
-though, especially if there&#8217;s a way to represent jQuery
-functionality idiomatically in&nbsp;Lisp.
+A visionary description of a machine to run Lisp at a
+&#8220;non-prohibitive cost&#8221; of $70,000 per system. (The web tells me
+that this is the equivalent of <a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000">$440,000</a> in 2024.) A completely
+integrated system based on a Cons processor and using a <span class="caps">PDP</span>-11 as
+a console. A relocating, compacting, garbage collector with
+invisible forwarding pointers. Non-linear spaghetti stacks to
+support advanced programming&nbsp;constructs.
+</p>
+
+<p>
+One of the many notable facets of this design is one of its
+proposals (the &#8220;frame pushdown list&#8221;) to avoid excessive conses
+and garbage collection overhead by maintaining lists of blocks of
+particular sizes. It uses this approach to manage the creation of
+call stack frames; modern Python implementations use this scheme
+throughout to avoid heap fragmentation through allocating and
+re-allocating blocks of different sizes. (Lisp has this feature
+generally, of course, with its use of fixed-size cons&nbsp;cells.)
+</p>
+
+<p>
+It&#8217;s also fascinating to see that, even at this early stage,
+hardware design was being seen as an exercise in refinement to
+maintain software-level abstractions even as features were being
+pushed into hardware – while still providing optimised
+implementations that were invisible to the&nbsp;programmer.
 </p>
 </div>
 </div>
@@ -119,12 +129,12 @@ functionality idiomatically in&nbsp;Lisp.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Lisp%20for%20the%20web%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/10/lisp-for-the-web/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Lisp%20for%20the%20web%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/10/lisp-for-the-web/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/14/the-lisp-machine/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/14/the-lisp-machine/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/10/lisp-for-the-web/&amp;title=Lisp%20for%20the%20web%20%23applications%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/10/lisp-for-the-web/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Lisp%20for%20the%20web&amp;body=https://simondobson.org/2024/03/10/lisp-for-the-web/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/14/the-lisp-machine/&amp;title=The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/14/the-lisp-machine/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20Lisp%20machine&amp;body=https://simondobson.org/2024/03/14/the-lisp-machine/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -133,7 +143,7 @@ functionality idiomatically in&nbsp;Lisp.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/applications/">applications</a>
+		<a href="../../../../categories/hardware/">hardware</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -143,13 +153,8 @@ functionality idiomatically in&nbsp;Lisp.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../07/list-processing/" rel="prev">
-		<span class="meta-nav">Older Post</span>List processing
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../14/the-lisp-machine/" rel="next">
-		<span class="meta-nav">Newer Post</span>The Lisp machine
+	    <a href="../../10/lisp-for-the-web/" rel="prev">
+		<span class="meta-nav">Older Post</span>Lisp for the web
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
