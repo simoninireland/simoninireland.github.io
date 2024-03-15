@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A micro-manual for Lisp: Not the whole truth | Simon Dobson</title>
+<title>How Lisp is designing nanotechnology | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -67,45 +67,33 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 15 March, 2024</a>
 	    </span>
 	</div>
-	<h1>A micro-manual for Lisp: Not the whole&nbsp;truth</h1>
+	<h1>How Lisp is designing&nbsp;nanotechnology</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orge13fcda" class="outline-2">
-<h2 id="orge13fcda">A micro-manual for Lisp: Not the whole&nbsp;truth</h2>
-<div class="outline-text-2" id="text-orge13fcda">
+		<div id="outline-container-org73b3aa3" class="outline-2">
+<h2 id="org73b3aa3">How Lisp is designing&nbsp;nanotechnology</h2>
+<div class="outline-text-2" id="text-org73b3aa3">
 <p>
-John McCarthy.  <i><a href="https://doi.org/10.1145/960118.808386">A Micro-Manual for Lisp: Not the Whole Truth</a></i>. <span class="caps">ACM</span>
-<span class="caps">SIGPLAN</span> Notices <b>13</b>, pp.215–216.&nbsp;1978.
+<a href="https://www.youtube.com/watch?v=fytGL8vzGeQ">How Lisp is designing nanotechnology</a> (video, 52&nbsp;minutes).
 </p>
 
 <p>
-A &#8220;manual&#8221; in the sense of providing a complete implementation of
-Lisp – in Lisp&nbsp;itself.
+An interview on the <a href="https://www.youtube.com/@DeveloperVoices">Developer Voices</a> podcast with <a href="https://www.schafmeistergroup.com/">Prof Christian
+Schafmeister</a> on designing enzymes using a custom dialect of Lisp
+to control computational chemistry&nbsp;libraries.
 </p>
 
 <p>
-Is that useful? A semantics expert would say &#8220;no&#8221;, since such a
-model has no real explanatory power: the recursion doesn&#8217;t
-bottom-out to define the concepts. However, a programming language
-expert might disagree and observe that this is <i>meta-linguistic
-abstraction</i>, the use of one high-level language to capture the
-definition of another. The &#8220;host&#8221; language provides a higher level
-of abstraction than is usual when writing interpreters and
-compilers, so it becomes easier to experiment with different forms
-of &#8220;target&#8221; language as there&#8217;s less low-level work to do. This
-benefit exists even when host and target are the same: essentially
-the target is bootstrapped and can then be adjusted while running
-within an earlier version of&nbsp;itself.
-</p>
-
-<p>
-As far as I know this is the first example of meta-linguistic
-abstraction in the computer science literature. The idea was
-popularised by <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a> (using Scheme), and forms the basis for a lot
-of modern bootstrapped&nbsp;compilers.
+He initially started from an idea based on <span class="caps">CAD</span> applications
+(written in Smalltalk), but rapidly realised there were too many
+possible components and combinations to work with graphically and
+so started treating it as a language-design problem – and
+designed a custom Lisp based on <a href="https://ecl.common-lisp.dev/"><span class="caps">ECL</span></a>. Lisp provides simplicity and
+efficiency, as well as being a &#8220;forever&#8221; language in which
+software keeps working over the long&nbsp;term.
 </p>
 </div>
 </div>
@@ -123,12 +111,12 @@ of modern bootstrapped&nbsp;compilers.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="How%20Lisp%20is%20designing%20nanotechnology%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=How%20Lisp%20is%20designing%20nanotechnology%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/&amp;title=A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=A%20micro-manual%20for%20Lisp:%20Not%20the%20whole%20truth&amp;body=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/&amp;title=How%20Lisp%20is%20designing%20nanotechnology%20%23applications%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=How%20Lisp%20is%20designing%20nanotechnology&amp;body=https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -137,7 +125,7 @@ of modern bootstrapped&nbsp;compilers.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/history/">history</a>
+		<a href="../../../../categories/applications/">applications</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -147,13 +135,8 @@ of modern bootstrapped&nbsp;compilers.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../14/the-lisp-machine/" rel="prev">
-		<span class="meta-nav">Older Post</span>The Lisp machine
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../how-lisp-is-designing-nanotechnology/" rel="next">
-		<span class="meta-nav">Newer Post</span>How Lisp is designing nanotechnology
+	    <a href="../a-micro-manual-for-lisp-not-the-whole-truth/" rel="prev">
+		<span class="meta-nav">Older Post</span>A micro-manual for Lisp: Not the whole truth
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

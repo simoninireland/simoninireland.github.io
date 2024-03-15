@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 17:29:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 19:19:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How Lisp is designing nanotechnology</title><link>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org73b3aa3" class="outline-2"&gt;
+&lt;h2 id="org73b3aa3"&gt;How Lisp is designing nanotechnology&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org73b3aa3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.youtube.com/watch?v=fytGL8vzGeQ"&gt;How Lisp is designing nanotechnology&lt;/a&gt; (video, 52 minutes).
+&lt;/p&gt;
+
+&lt;p&gt;
+An interview on the &lt;a href="https://www.youtube.com/@DeveloperVoices"&gt;Developer Voices&lt;/a&gt; podcast with &lt;a href="https://www.schafmeistergroup.com/"&gt;Prof Christian
+Schafmeister&lt;/a&gt; on designing enzymes using a custom dialect of Lisp
+to control computational chemistry libraries.
+&lt;/p&gt;
+
+&lt;p&gt;
+He initially started from an idea based on CAD applications
+(written in Smalltalk), but rapidly realised there were too many
+possible components and combinations to work with graphically and
+so started treating it as a language-design problem – and
+designed a custom Lisp based on &lt;a href="https://ecl.common-lisp.dev/"&gt;ECL&lt;/a&gt;. Lisp provides simplicity and
+efficiency, as well as being a "forever" language in which
+software keeps working over the long term.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</guid><pubDate>Fri, 15 Mar 2024 19:19:15 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
 &lt;h2 id="orge13fcda"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge13fcda"&gt;
 &lt;p&gt;
@@ -317,48 +340,4 @@ techniques are still relevant, at least as exemplars against
 later, more efficient, techniques should be judged.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techiques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/anatomy-of-lisp/</guid><pubDate>Wed, 06 Mar 2024 18:38:17 GMT</pubDate></item><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9deaffe" class="outline-2"&gt;
-&lt;h2 id="org9deaffe"&gt;LISPcraft&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9deaffe"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Robert Wilensky.  &lt;i&gt;LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
-0-393-95442-0. 1984.
-&lt;/p&gt;
-
-&lt;p&gt;
-Hard to know whether to include this as an introduction or
-collection of applications, since it runs all the way from basic
-uses to pattern-matching and associative retrieval, by way of the
-non-list data types in Lisp, and includes discussion of the symbol
-table and other internals that definitely fall into the "advanced"
-category.
-&lt;/p&gt;
-
-&lt;p&gt;
-However, this was my second introduction to Lisp (after &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt;), so
-it has a fond place in my memory. The fact that it deals with
-language internals isn't a bad thing, because it deals with the
-basics so well. It's very much a traditional programming
-introduction focusing on the "needed" parts of the language. It
-pre-dates the Common Lisp standard and doesn't touch on CLOS,
-which perhaps make it a less appropriate choice for newcomers
-these days than &lt;a href="/2024/01/27/practical-common-lisp/"&gt;Practical Common Lisp&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;
-There is also a second edition. I haven't read it, but it seems that
-it addresses at least the concern about being non-standard:
-&lt;/p&gt;
-
-&lt;p&gt;
-Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
-978-039395544-6. 1986.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>implementation-techiques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/anatomy-of-lisp/</guid><pubDate>Wed, 06 Mar 2024 18:38:17 GMT</pubDate></item></channel></rss>

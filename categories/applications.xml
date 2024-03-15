@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Mar 2024 17:51:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cbb477" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 19:19:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How Lisp is designing nanotechnology</title><link>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org73b3aa3" class="outline-2"&gt;
+&lt;h2 id="org73b3aa3"&gt;How Lisp is designing nanotechnology&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org73b3aa3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.youtube.com/watch?v=fytGL8vzGeQ"&gt;How Lisp is designing nanotechnology&lt;/a&gt; (video, 52 minutes).
+&lt;/p&gt;
+
+&lt;p&gt;
+An interview on the &lt;a href="https://www.youtube.com/@DeveloperVoices"&gt;Developer Voices&lt;/a&gt; podcast with &lt;a href="https://www.schafmeistergroup.com/"&gt;Prof Christian
+Schafmeister&lt;/a&gt; on designing enzymes using a custom dialect of Lisp
+to control computational chemistry libraries.
+&lt;/p&gt;
+
+&lt;p&gt;
+He initially started from an idea based on CAD applications
+(written in Smalltalk), but rapidly realised there were too many
+possible components and combinations to work with graphically and
+so started treating it as a language-design problem – and
+designed a custom Lisp based on &lt;a href="https://ecl.common-lisp.dev/"&gt;ECL&lt;/a&gt;. Lisp provides simplicity and
+efficiency, as well as being a "forever" language in which
+software keeps working over the long term.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</guid><pubDate>Fri, 15 Mar 2024 19:19:15 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cbb477" class="outline-2"&gt;
 &lt;h2 id="org8cbb477"&gt;Lisp for the web&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org8cbb477"&gt;
 &lt;p&gt;

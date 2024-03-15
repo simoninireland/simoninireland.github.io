@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 17:29:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 19:19:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>How Lisp is designing nanotechnology</title><link>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org73b3aa3" class="outline-2"&gt;
+&lt;h2 id="org73b3aa3"&gt;How Lisp is designing nanotechnology&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org73b3aa3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.youtube.com/watch?v=fytGL8vzGeQ"&gt;How Lisp is designing nanotechnology&lt;/a&gt; (video, 52 minutes).
+&lt;/p&gt;
+
+&lt;p&gt;
+An interview on the &lt;a href="https://www.youtube.com/@DeveloperVoices"&gt;Developer Voices&lt;/a&gt; podcast with &lt;a href="https://www.schafmeistergroup.com/"&gt;Prof Christian
+Schafmeister&lt;/a&gt; on designing enzymes using a custom dialect of Lisp
+to control computational chemistry libraries.
+&lt;/p&gt;
+
+&lt;p&gt;
+He initially started from an idea based on CAD applications
+(written in Smalltalk), but rapidly realised there were too many
+possible components and combinations to work with graphically and
+so started treating it as a language-design problem – and
+designed a custom Lisp based on &lt;a href="https://ecl.common-lisp.dev/"&gt;ECL&lt;/a&gt;. Lisp provides simplicity and
+efficiency, as well as being a "forever" language in which
+software keeps working over the long term.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</guid><pubDate>Fri, 15 Mar 2024 19:19:15 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
 &lt;h2 id="orge13fcda"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge13fcda"&gt;
 &lt;p&gt;
@@ -317,49 +340,4 @@ techniques are still relevant, at least as exemplars against
 later, more efficient, techniques should be judged.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techiques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/anatomy-of-lisp/</guid><pubDate>Wed, 06 Mar 2024 18:38:17 GMT</pubDate></item><item><title>TIL: Web site carbon ratings</title><link>https://simondobson.org/2024/03/04/til-web-site-carbon-ratings/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org89eb51d" class="outline-2"&gt;
-&lt;h2 id="org89eb51d"&gt;TIL: Web site carbon ratings&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89eb51d"&gt;
-&lt;p&gt;
-Today I learned about a site that rates web pages according to their
-carbon footprints.
-&lt;/p&gt;
-
-&lt;p&gt;
-My web site does well:
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/16/f4bcd8-963e-40ce-9f63-be78ec585965/rating-simondobson-org.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm not all that surprised by this, since I &lt;a href="/development/this-site/"&gt;use&lt;/a&gt; a static site
-generator and minimal (almost no) JavaScript: basically as low-power
-as one could get.
-&lt;/p&gt;
-
-&lt;p&gt;
-The &lt;a href="https://www.websitecarbon.com/website/simondobson-org/"&gt;full report&lt;/a&gt; includes an approximate carbon cost per page visit
-(60mg), and even tries to work out the underlying energy provision,
-dirty or renewable – dirty in my case at the moment, unfortunately.
-(I'm currently hosted on GitHub.) I should perhaps take the hint and
-move onto an alternative provider, or even host it myself with a
-solar-powered Raspberry Pi. &lt;a href="https://solar.lowtechmagazine.com/"&gt;Low-tech Magazine&lt;/a&gt; does this, but they
-&lt;i&gt;are&lt;/i&gt; based in Barcelona rather than Scotland…
-&lt;/p&gt;
-
-&lt;p&gt;
-You can even include a badge that reports your rating "live":
-&lt;/p&gt;
-
-&lt;div id="wcb" class="carbonbadge"&gt;&lt;/div&gt;
-&lt;script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer&gt;&lt;/script&gt;
-
-&lt;p&gt;
-(It caches so as to only make one request per day.) On the other
-hand this increases the JavaScript footprint slightly, so I don't
-think I'll be using it anywhere apart from just here.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>til</category><guid>https://simondobson.org/2024/03/04/til-web-site-carbon-ratings/</guid><pubDate>Mon, 04 Mar 2024 18:50:35 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>implementation-techiques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/anatomy-of-lisp/</guid><pubDate>Wed, 06 Mar 2024 18:38:17 GMT</pubDate></item></channel></rss>
