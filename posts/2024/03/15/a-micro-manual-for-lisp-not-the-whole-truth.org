@@ -1,0 +1,37 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: A micro-manual for Lisp: Not the whole truth
+.. slug: a-micro-manual-for-lisp-not-the-whole-truth
+.. date: 2024-03-15 17:25:10 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* A micro-manual for Lisp: Not the whole truth
+
+  John McCarthy.  /[[https://doi.org/10.1145/960118.808386][A Micro-Manual for Lisp: Not the Whole Truth]]/. ACM
+  SIGPLAN Notices *13*, pp.215–216. 1978.
+
+  A "manual" in the sense of providing a complete implementation of
+  Lisp -- in Lisp itself.
+
+  Is that useful? A semantics expert would say "no", since such a
+  model has no real explanatory power: the recursion doesn't
+  bottom-out to define the concepts. However, a programming language
+  expert might disagree and observe that this is /meta-linguistic
+  abstraction/, the use of one high-level language to capture the
+  definition of another. The "host" language provides a higher level
+  of abstraction than is usual when writing interpreters and
+  compilers, so it becomes easier to experiment with different forms
+  of "target" language as there's less low-level work to do. This
+  benefit exists even when host and target are the same: essentially
+  the target is bootstrapped and can then be adjusted while running
+  within an earlier version of itself.
+
+  As far as I know this is the first example of meta-linguistic
+  abstraction in the computer science literature. The idea was
+  popularised by [[link:/2024/01/27/structure-and-interpretation-of-computer-programs/][SICP]] (using Scheme), and forms the basis for a lot
+  of modern bootstrapped compilers.
