@@ -1,0 +1,27 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: How Lisp is designing nanotechnology
+.. slug: how-lisp-is-designing-nanotechnology
+.. date: 2024-03-15 19:19:15 UTC
+.. tags: project:lisp-bibliography, lisp, applications
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* How Lisp is designing nanotechnology
+
+  [[https://www.youtube.com/watch?v=fytGL8vzGeQ][How Lisp is designing nanotechnology]] (video, 52 minutes).
+
+  An interview on the [[https://www.youtube.com/@DeveloperVoices][Developer Voices]] podcast with [[https://www.schafmeistergroup.com/][Prof Christian
+  Schafmeister]] on designing enzymes using a custom dialect of Lisp
+  to control computational chemistry libraries.
+
+  He initially started from an idea based on CAD applications
+  (written in Smalltalk), but rapidly realised there were too many
+  possible components and combinations to work with graphically and
+  so started treating it as a language-design problem -- and
+  designed a custom Lisp based on [[https://ecl.common-lisp.dev/][ECL]]. Lisp provides simplicity and
+  efficiency, as well as being a "forever" language in which
+  software keeps working over the long term.
