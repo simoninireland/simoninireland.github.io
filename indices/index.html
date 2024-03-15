@@ -52,6 +52,55 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/" rel="bookmark">Friday 15 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/">A micro-manual for Lisp: Not the whole&nbsp;truth</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orge13fcda" class="outline-2">
+<h2 id="orge13fcda">A micro-manual for Lisp: Not the whole&nbsp;truth</h2>
+<div class="outline-text-2" id="text-orge13fcda">
+<p>
+John McCarthy.  <i><a href="https://doi.org/10.1145/960118.808386">A Micro-Manual for Lisp: Not the Whole Truth</a></i>. <span class="caps">ACM</span>
+<span class="caps">SIGPLAN</span> Notices <b>13</b>, pp.215–216.&nbsp;1978.
+</p>
+
+<p>
+A &#8220;manual&#8221; in the sense of providing a complete implementation of
+Lisp – in Lisp&nbsp;itself.
+</p>
+
+<p>
+Is that useful? A semantics expert would say &#8220;no&#8221;, since such a
+model has no real explanatory power: the recursion doesn&#8217;t
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is <i>meta-linguistic
+abstraction</i>, the use of one high-level language to capture the
+definition of another. The &#8220;host&#8221; language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of &#8220;target&#8221; language as there&#8217;s less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of&nbsp;itself.
+</p>
+
+<p>
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a> (using Scheme), and forms the basis for a lot
+of modern bootstrapped&nbsp;compilers.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/03/14/the-lisp-machine/" rel="bookmark">Thursday 14 March, 2024</a>
 			</span>
 		    </div>
@@ -224,49 +273,6 @@ age and the vision of computing it&nbsp;developed.
 <p>
 (Despite this paper being labelled Part I, incidentally, there
 isn&#8217;t a part&nbsp;<span class="caps">II</span>.)
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/" rel="bookmark">Thursday 7 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/">Paradigms of artificial intelligence programming: Case studies in Common&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgca14d34" class="outline-2">
-<h2 id="orgca14d34">Paradigms of artificial intelligence programming: Case studies in Common&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orgca14d34">
-<p class="floater">
-<img src="../attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"></p>
-
-
-<p>
-Peter Norvig.  <i><a href="https://norvig.github.io/paip-lisp/">Paradigms of Artificial Intelligence Programming:
-Case Studies in Common Lisp</a></i>. Morgan Kaufmann.&nbsp;1992.
-</p>
-
-<p>
-An absolute classic of both <span class="caps">AI</span> and Lisp, and really two books in
-one. The applications presented cover the entire range of
-&#8220;classic&#8221; <span class="caps">AI</span> up to the late 90s: expert systems, logic
-programming, symbolic mathematics, knowledge representation,
-constraint programming, game search, syntax-driven natural
-language processing, and&nbsp;more.
-</p>
-
-<p>
-It uses Lisp as the programming vehicle, and doesn&#8217;t shy-away from
-depth, dealing with the effects of garbage collection (and how to
-program effectively in its presence), the effects of different
-representations, low-level optimisation and disassembly, and all
-the approaches one needs to use Lisp in real, scalable&nbsp;practice.
 </p>
 </div>
 </div>

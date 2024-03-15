@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Lisp machine | Simon Dobson</title>
+<title>A micro-manual for Lisp: Not the whole truth | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,54 +64,48 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Thursday 14 March, 2024</a>
+		Posted on <a href="." rel="bookmark">Friday 15 March, 2024</a>
 	    </span>
 	</div>
-	<h1>The Lisp&nbsp;machine</h1>
+	<h1>A micro-manual for Lisp: Not the whole&nbsp;truth</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgdeaa592" class="outline-2">
-<h2 id="orgdeaa592">The Lisp&nbsp;machine</h2>
-<div class="outline-text-2" id="text-orgdeaa592">
+		<div id="outline-container-orge13fcda" class="outline-2">
+<h2 id="orge13fcda">A micro-manual for Lisp: Not the whole&nbsp;truth</h2>
+<div class="outline-text-2" id="text-orge13fcda">
 <p>
-Richard Greenblatt.  <i><a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf">The Lisp Machine</a></i>. Working
-paper 79. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
+John McCarthy.  <i><a href="https://doi.org/10.1145/960118.808386">A Micro-Manual for Lisp: Not the Whole Truth</a></i>. <span class="caps">ACM</span>
+<span class="caps">SIGPLAN</span> Notices <b>13</b>, pp.215–216.&nbsp;1978.
 </p>
 
 <p>
-A description of the architecture later built and sold by&nbsp;<span class="caps">LMI</span>.
+A &#8220;manual&#8221; in the sense of providing a complete implementation of
+Lisp – in Lisp&nbsp;itself.
 </p>
 
 <p>
-A visionary description of a machine to run Lisp at a
-&#8220;non-prohibitive cost&#8221; of $70,000 per system. (The web tells me
-that this is the equivalent of <a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000">$440,000</a> in 2024.) A completely
-integrated system based on a Cons processor and using a <span class="caps">PDP</span>-11 as
-a console. A relocating, compacting, garbage collector with
-invisible forwarding pointers. Non-linear spaghetti stacks to
-support advanced programming&nbsp;constructs.
+Is that useful? A semantics expert would say &#8220;no&#8221;, since such a
+model has no real explanatory power: the recursion doesn&#8217;t
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is <i>meta-linguistic
+abstraction</i>, the use of one high-level language to capture the
+definition of another. The &#8220;host&#8221; language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of &#8220;target&#8221; language as there&#8217;s less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of&nbsp;itself.
 </p>
 
 <p>
-One of the many notable facets of this design is one of its
-proposals (the &#8220;frame pushdown list&#8221;) to avoid excessive conses
-and garbage collection overhead by maintaining lists of blocks of
-particular sizes. It uses this approach to manage the creation of
-call stack frames; modern Python implementations use this scheme
-throughout to avoid heap fragmentation through allocating and
-re-allocating blocks of different sizes. (Lisp has this feature
-generally, of course, with its use of fixed-size cons&nbsp;cells.)
-</p>
-
-<p>
-It&#8217;s also fascinating to see that, even at this early stage,
-hardware design was being seen as an exercise in refinement to
-maintain software-level abstractions even as features were being
-pushed into hardware – while still providing optimised
-implementations that were invisible to the&nbsp;programmer.
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a> (using Scheme), and forms the basis for a lot
+of modern bootstrapped&nbsp;compilers.
 </p>
 </div>
 </div>
@@ -129,12 +123,12 @@ implementations that were invisible to the&nbsp;programmer.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/14/the-lisp-machine/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/14/the-lisp-machine/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/14/the-lisp-machine/&amp;title=The%20Lisp%20machine%20%23hardware%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/14/the-lisp-machine/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=The%20Lisp%20machine&amp;body=https://simondobson.org/2024/03/14/the-lisp-machine/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/&amp;title=A%20micro-manual%20for%20Lisp%3A%20Not%20the%20whole%20truth%20%23history%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=A%20micro-manual%20for%20Lisp:%20Not%20the%20whole%20truth&amp;body=https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -143,7 +137,7 @@ implementations that were invisible to the&nbsp;programmer.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/hardware/">hardware</a>
+		<a href="../../../../categories/history/">history</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -153,13 +147,8 @@ implementations that were invisible to the&nbsp;programmer.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../10/lisp-for-the-web/" rel="prev">
-		<span class="meta-nav">Older Post</span>Lisp for the web
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../15/a-micro-manual-for-lisp-not-the-whole-truth/" rel="next">
-		<span class="meta-nav">Newer Post</span>A micro-manual for Lisp: Not the whole truth
+	    <a href="../../14/the-lisp-machine/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Lisp machine
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

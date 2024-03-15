@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 14 Mar 2024 16:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdeaa592" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 17:29:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
+&lt;h2 id="orge13fcda"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge13fcda"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/960118.808386"&gt;A Micro-Manual for Lisp: Not the Whole Truth&lt;/a&gt;&lt;/i&gt;. ACM
+SIGPLAN Notices &lt;b&gt;13&lt;/b&gt;, pp.215–216. 1978.
+&lt;/p&gt;
+
+&lt;p&gt;
+A "manual" in the sense of providing a complete implementation of
+Lisp – in Lisp itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+Is that useful? A semantics expert would say "no", since such a
+model has no real explanatory power: the recursion doesn't
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is &lt;i&gt;meta-linguistic
+abstraction&lt;/i&gt;, the use of one high-level language to capture the
+definition of another. The "host" language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of "target" language as there's less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt; (using Scheme), and forms the basis for a lot
+of modern bootstrapped compilers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdeaa592" class="outline-2"&gt;
 &lt;h2 id="orgdeaa592"&gt;The Lisp machine&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgdeaa592"&gt;
 &lt;p&gt;
@@ -494,48 +529,4 @@ choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9deaffe" class="outline-2"&gt;
-&lt;h2 id="org9deaffe"&gt;LISPcraft&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9deaffe"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Robert Wilensky.  &lt;i&gt;LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
-0-393-95442-0. 1984.
-&lt;/p&gt;
-
-&lt;p&gt;
-Hard to know whether to include this as an introduction or
-collection of applications, since it runs all the way from basic
-uses to pattern-matching and associative retrieval, by way of the
-non-list data types in Lisp, and includes discussion of the symbol
-table and other internals that definitely fall into the "advanced"
-category.
-&lt;/p&gt;
-
-&lt;p&gt;
-However, this was my second introduction to Lisp (after &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt;), so
-it has a fond place in my memory. The fact that it deals with
-language internals isn't a bad thing, because it deals with the
-basics so well. It's very much a traditional programming
-introduction focusing on the "needed" parts of the language. It
-pre-dates the Common Lisp standard and doesn't touch on CLOS,
-which perhaps make it a less appropriate choice for newcomers
-these days than &lt;a href="/2024/01/27/practical-common-lisp/"&gt;Practical Common Lisp&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;
-There is also a second edition. I haven't read it, but it seems that
-it addresses at least the concern about being non-standard:
-&lt;/p&gt;
-
-&lt;p&gt;
-Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
-978-039395544-6. 1986.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Mar 2024 17:51:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge901cfd" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 15 Mar 2024 17:29:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
+&lt;h2 id="orge13fcda"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge13fcda"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/960118.808386"&gt;A Micro-Manual for Lisp: Not the Whole Truth&lt;/a&gt;&lt;/i&gt;. ACM
+SIGPLAN Notices &lt;b&gt;13&lt;/b&gt;, pp.215–216. 1978.
+&lt;/p&gt;
+
+&lt;p&gt;
+A "manual" in the sense of providing a complete implementation of
+Lisp – in Lisp itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+Is that useful? A semantics expert would say "no", since such a
+model has no real explanatory power: the recursion doesn't
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is &lt;i&gt;meta-linguistic
+abstraction&lt;/i&gt;, the use of one high-level language to capture the
+definition of another. The "host" language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of "target" language as there's less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt; (using Scheme), and forms the basis for a lot
+of modern bootstrapped compilers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge901cfd" class="outline-2"&gt;
 &lt;h2 id="orge901cfd"&gt;List processing&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge901cfd"&gt;
 &lt;p&gt;
