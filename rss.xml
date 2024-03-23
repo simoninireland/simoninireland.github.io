@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Mar 2024 12:47:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Romanovs: 1613-1918</title><link>https://simondobson.org/goodreads/the-romanovs-1613-1918/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Mar 2024 14:58:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1019229" class="outline-2"&gt;
+&lt;h2 id="org1019229"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1019229"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/4f/11131f-cfc4-4d14-8fae-72c78607964b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Vsevolod Dyomkin.  &lt;i&gt;&lt;a href="https://leanpub.com/lisphackers"&gt;Lisp Hackers: Interviews with 100x More Productive
+Programmers&lt;/a&gt;&lt;/i&gt;. Leanpub. 2013.
+&lt;/p&gt;
+
+&lt;p&gt;
+I'm not convinced by the sub-title: at the very least, there's no
+evidence to support the claim that Lisp programmers really are
+hundreds of time more productive. But there are some serious
+insights here from individuals who've made serious contributions
+to the Lisp world – and beyond. The contributions all take the
+form of email interviews consisting of a standard prelude of
+questions (how did you discover Lisp?, do you use it at work?)
+followed by a couple of questions tailored to the interviewee.
+&lt;/p&gt;
+
+&lt;p&gt;
+The practitioners selected have all been affected by Lisp, either
+in terms of it changing their own thought processes, or by helping
+to develop the core ecosystem, or by applying Lisp to real-world
+problems, and often to great effect. My favourite was the
+discussion with someone who was using Common Lisp to develop
+low-latency network routing for financial services: it's hard
+to think of a better example of Lisp's power and range.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org72b3739" class="outline-2"&gt;
+&lt;h2 id="org72b3739"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org72b3739"&gt;
+&lt;p&gt;
+&lt;a href="https://www.gnu.org/gnu/rms-lisp.html"&gt;My Lisp Experiences and the Development of GNU Emacs&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The never-dull Richard Stallman talks about his experiences with
+Lisp and with the development of Emacs. It's got some useful
+observations on &lt;i&gt;why&lt;/i&gt; Lisp became the core of Emacs: it was news to
+me that this hadn't always been the case. It started with an
+"editor control" language in the spirit of editors like &lt;code&gt;ed&lt;/code&gt;. But as
+people wanted more support from their editor, they wanted to
+program it more effectively.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+The language that you build your extensions on shouldn't be
+thought of as a programming language in afterthought; it should be
+designed as a programming language. In fact, we discovered that
+the best programming language for that purpose was Lisp.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+The result was a re-write of Emacs in C (for portability), with a
+Lisp interpreter specialised towards editing tasks.
+&lt;/p&gt;
+
+&lt;p&gt;
+He then gives an insider's perspective on the Lisp machines and
+their evolution, as well as revealing the genesis of his ideas for
+the free software movement. While these are interesting to read,
+it should be noted that much of it has been rebutted: his
+description of the formation and later history of the two
+spin-outs, Symbolics and Lisp Machines Inc, is strongly disputed
+by Dan Weinreb on &lt;a href="https://web.archive.org/web/20090101103828/http://danweinreb.org/blog/rebuttal-to-stallmans-story-about-the-formation-of-symbolics-and-lmi"&gt;his blog&lt;/a&gt;.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item><item><title>The Romanovs: 1613-1918</title><link>https://simondobson.org/goodreads/the-romanovs-1613-1918/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435023227l/21094391._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -213,60 +287,4 @@ age and the vision of computing it developed.
 isn't a part II.)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgca14d34" class="outline-2"&gt;
-&lt;h2 id="orgca14d34"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgca14d34"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-
-&lt;p&gt;
-Peter Norvig.  &lt;i&gt;&lt;a href="https://norvig.github.io/paip-lisp/"&gt;Paradigms of Artificial Intelligence Programming:
-Case Studies in Common Lisp&lt;/a&gt;&lt;/i&gt;. Morgan Kaufmann. 1992.
-&lt;/p&gt;
-
-&lt;p&gt;
-An absolute classic of both AI and Lisp, and really two books in
-one. The applications presented cover the entire range of
-"classic" AI up to the late 90s: expert systems, logic
-programming, symbolic mathematics, knowledge representation,
-constraint programming, game search, syntax-driven natural
-language processing, and more.
-&lt;/p&gt;
-
-&lt;p&gt;
-It uses Lisp as the programming vehicle, and doesn't shy-away from
-depth, dealing with the effects of garbage collection (and how to
-program effectively in its presence), the effects of different
-representations, low-level optimisation and disassembly, and all
-the approaches one needs to use Lisp in real, scalable practice.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org89dc61a" class="outline-2"&gt;
-&lt;h2 id="org89dc61a"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89dc61a"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Edmund Weitz.  &lt;i&gt;&lt;a href="https://doi.org/10.1007/978-1-4842-1176-2"&gt;Common Lisp Recipes: A Problem-Solution Approach&lt;/a&gt;&lt;/i&gt;.
-Apress. 2016.
-&lt;/p&gt;
-
-&lt;p&gt;
-An extensive list of recipes for using common data structures,
-how the differ in Lisp from the equivalents in other languages,
-and what novel features Lisp has to offer. A great place to start
-when moving away from being a beginner, and for dipping into in
-search of solutions.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's probably strongest on the "gotchas" and dangers that Lisp
-presents, but also has a lot to say about coding style and code
-optimisation.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</guid><pubDate>Wed, 06 Mar 2024 18:55:31 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item></channel></rss>

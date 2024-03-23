@@ -52,6 +52,110 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/" rel="bookmark">Friday 15 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/">A micro-manual for Lisp: Not the whole&nbsp;truth</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orge13fcda" class="outline-2">
+<h2 id="orge13fcda">A micro-manual for Lisp: Not the whole&nbsp;truth</h2>
+<div class="outline-text-2" id="text-orge13fcda">
+<p>
+John McCarthy.  <i><a href="https://doi.org/10.1145/960118.808386">A Micro-Manual for Lisp: Not the Whole Truth</a></i>. <span class="caps">ACM</span>
+<span class="caps">SIGPLAN</span> Notices <b>13</b>, pp.215–216.&nbsp;1978.
+</p>
+
+<p>
+A &#8220;manual&#8221; in the sense of providing a complete implementation of
+Lisp – in Lisp&nbsp;itself.
+</p>
+
+<p>
+Is that useful? A semantics expert would say &#8220;no&#8221;, since such a
+model has no real explanatory power: the recursion doesn&#8217;t
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is <i>meta-linguistic
+abstraction</i>, the use of one high-level language to capture the
+definition of another. The &#8220;host&#8221; language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of &#8220;target&#8221; language as there&#8217;s less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of&nbsp;itself.
+</p>
+
+<p>
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a> (using Scheme), and forms the basis for a lot
+of modern bootstrapped&nbsp;compilers.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/03/14/the-lisp-machine/" rel="bookmark">Thursday 14 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/14/the-lisp-machine/">The Lisp&nbsp;machine</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgdeaa592" class="outline-2">
+<h2 id="orgdeaa592">The Lisp&nbsp;machine</h2>
+<div class="outline-text-2" id="text-orgdeaa592">
+<p>
+Richard Greenblatt.  <i><a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf">The Lisp Machine</a></i>. Working
+paper 79. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
+</p>
+
+<p>
+A description of the architecture later built and sold by&nbsp;<span class="caps">LMI</span>.
+</p>
+
+<p>
+A visionary description of a machine to run Lisp at a
+&#8220;non-prohibitive cost&#8221; of $70,000 per system. (The web tells me
+that this is the equivalent of <a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000">$440,000</a> in 2024.) A completely
+integrated system based on a Cons processor and using a <span class="caps">PDP</span>-11 as
+a console. A relocating, compacting, garbage collector with
+invisible forwarding pointers. Non-linear spaghetti stacks to
+support advanced programming&nbsp;constructs.
+</p>
+
+<p>
+One of the many notable facets of this design is one of its
+proposals (the &#8220;frame pushdown list&#8221;) to avoid excessive conses
+and garbage collection overhead by maintaining lists of blocks of
+particular sizes. It uses this approach to manage the creation of
+call stack frames; modern Python implementations use this scheme
+throughout to avoid heap fragmentation through allocating and
+re-allocating blocks of different sizes. (Lisp has this feature
+generally, of course, with its use of fixed-size cons&nbsp;cells.)
+</p>
+
+<p>
+It&#8217;s also fascinating to see that, even at this early stage,
+hardware design was being seen as an exercise in refinement to
+maintain software-level abstractions even as features were being
+pushed into hardware – while still providing optimised
+implementations that were invisible to the&nbsp;programmer.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/03/10/lisp-for-the-web/" rel="bookmark">Sunday 10 March, 2024</a>
 			</span>
 		    </div>
