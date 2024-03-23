@@ -88,6 +88,20 @@ several places in which its unique features really give an edge.
    :reverse:
 
 
+Experiences
+-----------
+
+A collection of works that speak to the "Lisp experience" in different
+ways.
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, experience
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
+
 Implementation techniques
 -------------------------
 

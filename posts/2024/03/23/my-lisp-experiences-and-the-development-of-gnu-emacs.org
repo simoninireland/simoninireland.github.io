@@ -1,0 +1,41 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: My Lisp experiences and the development of GNU Emacs
+.. slug: my-lisp-experiences-and-the-development-of-gnu-emacs
+.. date: 2024-03-23 14:55:26 UTC
+.. tags: project:lisp-bibliography, lisp, experience
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* My Lisp experiences and the development of GNU Emacs
+
+    [[https://www.gnu.org/gnu/rms-lisp.html][My Lisp Experiences and the Development of GNU Emacs]]
+
+    The never-dull Richard Stallman talks about his experiences with
+    Lisp and with the development of Emacs. It's got some useful
+    observations on /why/ Lisp became the core of Emacs: it was news to
+    me that this hadn't always been the case. It started with an
+    "editor control" language in the spirit of editors like ~ed~. But as
+    people wanted more support from their editor, they wanted to
+    program it more effectively.
+
+    #+begin_quote
+    The language that you build your extensions on shouldn't be
+    thought of as a programming language in afterthought; it should be
+    designed as a programming language. In fact, we discovered that
+    the best programming language for that purpose was Lisp.
+#+end_quote
+
+    The result was a re-write of Emacs in C (for portability), with a
+    Lisp interpreter specialised towards editing tasks.
+
+    He then gives an insider's perspective on the Lisp machines and
+    their evolution, as well as revealing the genesis of his ideas for
+    the free software movement. While these are interesting to read,
+    it should be noted that much of it has been rebutted: his
+    description of the formation and later history of the two
+    spin-outs, Symbolics and Lisp Machines Inc, is strongly disputed
+    by Dan Weinreb on [[https://web.archive.org/web/20090101103828/http://danweinreb.org/blog/rebuttal-to-stallmans-story-about-the-formation-of-symbolics-and-lmi][his blog]].)
