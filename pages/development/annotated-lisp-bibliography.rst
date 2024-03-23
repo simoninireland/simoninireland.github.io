@@ -59,8 +59,8 @@ Once you've got the basics, a more advanced treatment is in order.
 Lisp has what is in many people's opinion (including mine) the best
 advanced treatment of programming ever written for *any* language --
 and then also has books has push the boundaries of what's possible
-within the language and (especially) its macro system. And its macros
-that really make Lisp code fly and give it a power that exceeds that
+within the language and (especially) its macro system. And macros are
+what really make Lisp code fly and give it a power that exceeds that
 of many more modern languages.
 
 .. post-list::
