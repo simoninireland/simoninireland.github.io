@@ -181,3 +181,7 @@ historical (and other) resources that already exist. These include:
   and not annotated, but including pointers to a huge range of
   material. (Thanks to `Paolo Amoroso <https://fosstodon.org/@amoroso>`_
   for pointing me at this.)
+- Nelson Beebe's `Common Lisp bibliography
+  <http://ftp.math.utah.edu/pub/tex/bib/common-lisp.html>`_, again
+  covering a wide range of Lisp and Lisp-adjacent systems. (Thanks to
+  Mastodon user `@lispm <https://moth.social/@lispm>`_ for the link.)
