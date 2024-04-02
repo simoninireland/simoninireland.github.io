@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Apr 2024 15:34:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9238410" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Apr 2024 15:59:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
+&lt;h2 id="org237bc98"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org237bc98"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/7a/bd1498-3024-4f11-91a7-97f3e99084d7/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Mark Watson.  &lt;i&gt;&lt;a href="https://leanpub.com/lovinglisp"&gt;Loving Common Lisp, or the Savvy Programmer’s Secret
+Weapon&lt;/a&gt;&lt;/i&gt;. Leanpub. 2023.
+&lt;/p&gt;
+
+&lt;p&gt;
+While pitched as a way of sharing the author's enthusiasm for Lisp
+(which really shines through), this book is really a deep
+demonstration in using Lisp in modern applications – from web
+APIs and the semantic web to deep learning, large language models,
+and chatbots.
+&lt;/p&gt;
+
+&lt;p&gt;
+In some ways, like many other Lisp books, it's really two books in
+one. The first chapters are introductory – and to be perfectly
+honest could be dispensed with, as they're inadequate as a proper
+introduction and there are far better introductions out there. The
+later chapters focus on applications, and provide the real value.
+One could criticise them as often tying-together tools in other
+languages, with the Lisp code basically being glue; but that's a
+very effective way of leveraging all the code and services out
+there, and is an important technique for Lisp programmers too.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9238410" class="outline-2"&gt;
 &lt;h2 id="org9238410"&gt;Lisp in space&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org9238410"&gt;
 &lt;p&gt;
