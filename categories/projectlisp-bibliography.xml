@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Mar 2024 14:58:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1019229" class="outline-2"&gt;
-&lt;h2 id="org1019229"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1019229"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Apr 2024 15:34:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9238410" class="outline-2"&gt;
+&lt;h2 id="org9238410"&gt;Lisp in space&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9238410"&gt;
+&lt;p&gt;
+&lt;a href="https://corecursive.com/lisp-in-space-with-ron-garret/"&gt;Lisp in space&lt;/a&gt; (podcast, 38 minutes)
+&lt;/p&gt;
+
+&lt;p&gt;
+An interview on the Corecursive podcast with Ron Garret.
+&lt;/p&gt;
+
+&lt;p&gt;
+In 1988 (when, for context, I was in the second year of my BSc)
+Garret started working on autonomous navigation software for
+&lt;a href="https://en.wikipedia.org/wiki/Sojourner_(rover)"&gt;Sojourner&lt;/a&gt;, NASA's first Mars rover, which flew in 1997. He used Lisp
+to do planning, essentially developing an entire domain-specific
+language for autonomous vehicles. The project was never flown, as
+NASA opted for a far less ambitious approach to driving to rovers –
+a decision that Garret now considers to have been the correct one.
+&lt;/p&gt;
+
+&lt;p&gt;
+But that isn't the end of the story, because Garret then went on
+to develop an autonomous Remote Agent controller for the &lt;a href="https://en.wikipedia.org/wiki/Deep_Space_1"&gt;Deep
+Space 1&lt;/a&gt; technology demonstration mission that performed asteroid
+and comet fly-bys. Without spoiling to story, the spacecraft flies
+with a full Lisp system onboard, and Garret gets to interact with
+its REPL at a distance of 30 light-minutes &lt;i&gt;via&lt;/i&gt; the Deep Space
+Network – surely the longest latency of any REPL session ever!
+&lt;/p&gt;
+
+&lt;p&gt;
+It's an fascinating insight into both the potentials of Lisp and
+the political difficulties that using a non-standard development
+language can engender.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/lisp-in-space/</guid><pubDate>Tue, 02 Apr 2024 15:32:56 GMT</pubDate></item><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc3ce0d6" class="outline-2"&gt;
+&lt;h2 id="orgc3ce0d6"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc3ce0d6"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/4f/11131f-cfc4-4d14-8fae-72c78607964b/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -32,9 +69,9 @@ low-latency network routing for financial services: it's hard
 to think of a better example of Lisp's power and range.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org72b3739" class="outline-2"&gt;
-&lt;h2 id="org72b3739"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org72b3739"&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07eea9a" class="outline-2"&gt;
+&lt;h2 id="org07eea9a"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07eea9a"&gt;
 &lt;p&gt;
 &lt;a href="https://www.gnu.org/gnu/rms-lisp.html"&gt;My Lisp Experiences and the Development of GNU Emacs&lt;/a&gt;
 &lt;/p&gt;
@@ -73,9 +110,9 @@ spin-outs, Symbolics and Lisp Machines Inc, is strongly disputed
 by Dan Weinreb on &lt;a href="https://web.archive.org/web/20090101103828/http://danweinreb.org/blog/rebuttal-to-stallmans-story-about-the-formation-of-symbolics-and-lmi"&gt;his blog&lt;/a&gt;.)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item><item><title>How Lisp is designing nanotechnology</title><link>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org73b3aa3" class="outline-2"&gt;
-&lt;h2 id="org73b3aa3"&gt;How Lisp is designing nanotechnology&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org73b3aa3"&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item><item><title>How Lisp is designing nanotechnology</title><link>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3974158" class="outline-2"&gt;
+&lt;h2 id="org3974158"&gt;How Lisp is designing nanotechnology&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3974158"&gt;
 &lt;p&gt;
 &lt;a href="https://www.youtube.com/watch?v=fytGL8vzGeQ"&gt;How Lisp is designing nanotechnology&lt;/a&gt; (video, 52 minutes).
 &lt;/p&gt;
@@ -96,9 +133,9 @@ efficiency, as well as being a "forever" language in which
 software keeps working over the long term.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</guid><pubDate>Fri, 15 Mar 2024 19:19:15 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge13fcda" class="outline-2"&gt;
-&lt;h2 id="orge13fcda"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge13fcda"&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/how-lisp-is-designing-nanotechnology/</guid><pubDate>Fri, 15 Mar 2024 19:19:15 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4e8aef0" class="outline-2"&gt;
+&lt;h2 id="org4e8aef0"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4e8aef0"&gt;
 &lt;p&gt;
 John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/960118.808386"&gt;A Micro-Manual for Lisp: Not the Whole Truth&lt;/a&gt;&lt;/i&gt;. ACM
 SIGPLAN Notices &lt;b&gt;13&lt;/b&gt;, pp.215–216. 1978.
@@ -131,9 +168,9 @@ popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-
 of modern bootstrapped compilers.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdeaa592" class="outline-2"&gt;
-&lt;h2 id="orgdeaa592"&gt;The Lisp machine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdeaa592"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc4e369c" class="outline-2"&gt;
+&lt;h2 id="orgc4e369c"&gt;The Lisp machine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc4e369c"&gt;
 &lt;p&gt;
 Richard Greenblatt.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf"&gt;The Lisp Machine&lt;/a&gt;&lt;/i&gt;. Working
 paper 79. MIT AI Laboratory. 1974.
@@ -172,9 +209,13 @@ pushed into hardware – while still providing optimised
 implementations that were invisible to the programmer.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cbb477" class="outline-2"&gt;
-&lt;h2 id="org8cbb477"&gt;Lisp for the web&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8cbb477"&gt;
+&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org81ce847" class="outline-2"&gt;
+&lt;h2 id="org81ce847"&gt;Lisp for the web&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org81ce847"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/1d/7ec1a6-7ac8-4088-8d51-8affdd18f3e7/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
 &lt;p&gt;
 Adam Tornhill.  &lt;i&gt;&lt;a href="http://leanpub.com/lispweb"&gt;Lisp for the Web&lt;/a&gt;&lt;/i&gt;. Leanpub. 2015.
 &lt;/p&gt;
@@ -203,9 +244,9 @@ though, especially if there's a way to represent jQuery
 functionality idiomatically in Lisp.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/10/lisp-for-the-web/</guid><pubDate>Sun, 10 Mar 2024 10:28:45 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge901cfd" class="outline-2"&gt;
-&lt;h2 id="orge901cfd"&gt;List processing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge901cfd"&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/10/lisp-for-the-web/</guid><pubDate>Sun, 10 Mar 2024 10:28:45 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9b0849e" class="outline-2"&gt;
+&lt;h2 id="org9b0849e"&gt;List processing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9b0849e"&gt;
 &lt;p&gt;
 J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
 &lt;/p&gt;
@@ -223,9 +264,9 @@ collective memory of computer science, but whose implications
 were profound.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org59665c6" class="outline-2"&gt;
-&lt;h2 id="org59665c6"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org59665c6"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6afe058" class="outline-2"&gt;
+&lt;h2 id="org6afe058"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6afe058"&gt;
 &lt;p&gt;
 John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
 Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
@@ -257,9 +298,9 @@ age and the vision of computing it developed.
 isn't a part II.)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgca14d34" class="outline-2"&gt;
-&lt;h2 id="orgca14d34"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgca14d34"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org283346a" class="outline-2"&gt;
+&lt;h2 id="org283346a"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org283346a"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -287,30 +328,4 @@ representations, low-level optimisation and disassembly, and all
 the approaches one needs to use Lisp in real, scalable practice.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org89dc61a" class="outline-2"&gt;
-&lt;h2 id="org89dc61a"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org89dc61a"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Edmund Weitz.  &lt;i&gt;&lt;a href="https://doi.org/10.1007/978-1-4842-1176-2"&gt;Common Lisp Recipes: A Problem-Solution Approach&lt;/a&gt;&lt;/i&gt;.
-Apress. 2016.
-&lt;/p&gt;
-
-&lt;p&gt;
-An extensive list of recipes for using common data structures,
-how the differ in Lisp from the equivalents in other languages,
-and what novel features Lisp has to offer. A great place to start
-when moving away from being a beginner, and for dipping into in
-search of solutions.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's probably strongest on the "gotchas" and dangers that Lisp
-presents, but also has a lot to say about coding style and code
-optimisation.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</guid><pubDate>Wed, 06 Mar 2024 18:55:31 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item></channel></rss>

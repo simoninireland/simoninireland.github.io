@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about nikola)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 12 Mar 2024 17:51:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb1e8a2d" class="outline-2"&gt;
-&lt;h2 id="orgb1e8a2d"&gt;Making small changes to lots of files&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb1e8a2d"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about nikola)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/nikola.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 16 Mar 2024 13:15:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org635aaba" class="outline-2"&gt;
+&lt;h2 id="org635aaba"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org635aaba"&gt;
 &lt;p&gt;
 I recently had to make tiny changes to a large number of files
 spread nested through a directory structure. This turns out to be a
@@ -59,9 +59,9 @@ That's it! A job that I expected to take an hour took about 3
 minutes.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdfedcc6" class="outline-2"&gt;
-&lt;h2 id="orgdfedcc6"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdfedcc6"&gt;
+&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org96c9635" class="outline-2"&gt;
+&lt;h2 id="org96c9635"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org96c9635"&gt;
 &lt;p&gt;
 The &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/"&gt;Jinja2&lt;/a&gt; template engine defines a suite of &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters"&gt;filters&lt;/a&gt; that can be
 used to transform text as it's rendered. You can define extra custom
