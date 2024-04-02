@@ -1,0 +1,37 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp in space
+.. slug: lisp-in-space
+.. date: 2024-04-02 16:32:56 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, applications
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp in space
+
+  [[https://corecursive.com/lisp-in-space-with-ron-garret/][Lisp in space]] (podcast, 38 minutes)
+
+  An interview on the Corecursive podcast with Ron Garret.
+
+  In 1988 (when, for context, I was in the second year of my BSc)
+  Garret started working on autonomous navigation software for
+  [[https://en.wikipedia.org/wiki/Sojourner_(rover)][Sojourner]], NASA's first Mars rover, which flew in 1997. He used Lisp
+  to do planning, essentially developing an entire domain-specific
+  language for autonomous vehicles. The project was never flown, as
+  NASA opted for a far less ambitious approach to driving to rovers --
+  a decision that Garret now considers to have been the correct one.
+
+  But that isn't the end of the story, because Garret then went on
+  to develop an autonomous Remote Agent controller for the [[https://en.wikipedia.org/wiki/Deep_Space_1][Deep
+  Space 1]] technology demonstration mission that performed asteroid
+  and comet fly-bys. Without spoiling to story, the spacecraft flies
+  with a full Lisp system onboard, and Garret gets to interact with
+  its REPL at a distance of 30 light-minutes /via/ the Deep Space
+  Network -- surely the longest latency of any REPL session ever!
+
+  It's an fascinating insight into both the potentials of Lisp and
+  the political difficulties that using a non-standard development
+  language can engender.

@@ -56,6 +56,7 @@ EMACS = emacs --batch -L elisp
 # Python venv
 VENV = venv3
 REQUIREMENTS = requirements.txt
+KNOWN_GOOD = known-good-requirements.txt
 
 # Constructed directories
 BUILD_DIR = output
@@ -127,6 +128,11 @@ $(VENV):
 $(PLUGINS_DIR):
 	$(MKDIR) $(PLUGINS_DIR)
 	$(foreach p, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $p)
+
+# Build a known-good environment, rather than against the current versions
+known-good-env: $(VENV)
+	$(PYTHON) -m venv $(VENV)
+	$(ACTIVATE) && $(PIP) install -U pip wheel && $(PIP) install -r $(KNOWN_GOOD)
 
 # Checkout the modified continuous_import plugin from the forked repo,
 # until it gets merged with the main tree
