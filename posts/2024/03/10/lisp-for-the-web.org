@@ -10,7 +10,15 @@
 .. type: text
 
 #+END_COMMENT
-* Lisp for the web
+* Lisp for the web                                                   :ATTACH:
+  :PROPERTIES:
+  :ID:       1d7ec1a6-7ac8-4088-8d51-8affdd18f3e7
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2024-03-24 12:00:05
+  #+attr_org: :width 350
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
 
   Adam Tornhill.  /[[http://leanpub.com/lispweb][Lisp for the Web]]/. Leanpub. 2015.
 
