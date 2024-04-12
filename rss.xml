@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Apr 2024 10:59:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Apr 2024 11:27:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga506648" class="outline-2"&gt;
+&lt;h2 id="orga506648"&gt;TIL: Cognitohazards&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga506648"&gt;
+&lt;p&gt;
+Could social media posts be actively damaging to our mental health?
+– literally, not just figuratively? That's the premise of &lt;a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction"&gt;a
+TechScape article in The Guardian&lt;/a&gt;, that draws on both science
+fiction and psychological research.
+&lt;/p&gt;
+
+&lt;p&gt;
+In Neal Stephenson's "Snow crash" there is a plot device of an image
+in a metaverse that, when viewed, crashes the viewer's brain. We
+haven't seen this in social media (yet), but there's an increasing
+concern about deepfake images and other forms of misinformation.
+Research suggests that such images are damaging &lt;i&gt;even if viewers
+know that they're fakes&lt;/i&gt;, which suggests that techniques like
+content-labelling images as AI-generated are insufficient to remove
+their harm. Other examples include massively engaging artificial
+images such as the "pong wars" animation of two simultaneous
+"Breakout" games going on between two algorithms: something that
+shouldn't be as engaging as it is (as I can attest to myself).
+&lt;/p&gt;
+
+&lt;p&gt;
+Social media attention grabbing at an industrial scale might
+therefore constitute a &lt;i&gt;cognitohazard&lt;/i&gt;, a way of hacking people's
+brains simply by being viewed.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>internet</category><category>social media</category><category>til</category><guid>https://simondobson.org/2024/04/12/til-cognitohazards/</guid><pubDate>Fri, 12 Apr 2024 11:18:58 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
 &lt;h2 id="org237bc98"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org237bc98"&gt;
 &lt;p class="floater"&gt;
@@ -271,39 +301,4 @@ pushed into hardware – while still providing optimised
 implementations that were invisible to the programmer.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org81ce847" class="outline-2"&gt;
-&lt;h2 id="org81ce847"&gt;Lisp for the web&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org81ce847"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/1d/7ec1a6-7ac8-4088-8d51-8affdd18f3e7/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Adam Tornhill.  &lt;i&gt;&lt;a href="http://leanpub.com/lispweb"&gt;Lisp for the Web&lt;/a&gt;&lt;/i&gt;. Leanpub. 2015.
-&lt;/p&gt;
-
-&lt;p&gt;
-A short, practical guide to build a dynamic web site entirely
-using Common Lisp. Makes extensive use of several libraries,
-including the intriguingly-named &lt;a href="https://edicl.github.io/hunchentoot/"&gt;hunchentoot&lt;/a&gt; web server (named
-after a never-staged musical written by Frank Zappa), the &lt;a href="https://edicl.github.io/cl-who/"&gt;CL-WHO&lt;/a&gt;
-HTML generator, and – perhaps most interesting – the &lt;a href="https://cliki.net/Parenscript"&gt;Parenscript&lt;/a&gt;
-Lisp to Javascript compiler.
-&lt;/p&gt;
-
-&lt;p&gt;
-One gain from using Lisp is the ability to wrap-up standard
-constructions like page templates as macros. Other than this, it's
-hard to assess whether the gains are all that significant. One
-interesting point is that the whole development occurs in Lisp, so
-there's no cognitive dissonance between writing the back-end and
-the front-end: essentially the same argument for using &lt;a href="https://nodejs.org/"&gt;node.js&lt;/a&gt; as
-a back-end framework. While Parenscript isn't a fully-featured
-Lisp-in-the-browser it again can benefit from macros and other
-features. There's a throwaway comment about linking it to &lt;a href="https://jquery.com/"&gt;jQuery&lt;/a&gt;,
-although that isn't demonstrated in practice: it feels intriguing,
-though, especially if there's a way to represent jQuery
-functionality idiomatically in Lisp.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/10/lisp-for-the-web/</guid><pubDate>Sun, 10 Mar 2024 10:28:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item></channel></rss>

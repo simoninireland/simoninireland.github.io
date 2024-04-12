@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about til)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/til.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 16 Mar 2024 13:14:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Web site carbon ratings</title><link>https://simondobson.org/2024/03/04/til-web-site-carbon-ratings/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd3ce558" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about til)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/til.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Apr 2024 11:27:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga506648" class="outline-2"&gt;
+&lt;h2 id="orga506648"&gt;TIL: Cognitohazards&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga506648"&gt;
+&lt;p&gt;
+Could social media posts be actively damaging to our mental health?
+– literally, not just figuratively? That's the premise of &lt;a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction"&gt;a
+TechScape article in The Guardian&lt;/a&gt;, that draws on both science
+fiction and psychological research.
+&lt;/p&gt;
+
+&lt;p&gt;
+In Neal Stephenson's "Snow crash" there is a plot device of an image
+in a metaverse that, when viewed, crashes the viewer's brain. We
+haven't seen this in social media (yet), but there's an increasing
+concern about deepfake images and other forms of misinformation.
+Research suggests that such images are damaging &lt;i&gt;even if viewers
+know that they're fakes&lt;/i&gt;, which suggests that techniques like
+content-labelling images as AI-generated are insufficient to remove
+their harm. Other examples include massively engaging artificial
+images such as the "pong wars" animation of two simultaneous
+"Breakout" games going on between two algorithms: something that
+shouldn't be as engaging as it is (as I can attest to myself).
+&lt;/p&gt;
+
+&lt;p&gt;
+Social media attention grabbing at an industrial scale might
+therefore constitute a &lt;i&gt;cognitohazard&lt;/i&gt;, a way of hacking people's
+brains simply by being viewed.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>internet</category><category>social media</category><category>til</category><guid>https://simondobson.org/2024/04/12/til-cognitohazards/</guid><pubDate>Fri, 12 Apr 2024 11:18:58 GMT</pubDate></item><item><title>TIL: Web site carbon ratings</title><link>https://simondobson.org/2024/03/04/til-web-site-carbon-ratings/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd3ce558" class="outline-2"&gt;
 &lt;h2 id="orgd3ce558"&gt;TIL: Web site carbon ratings&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgd3ce558"&gt;
 &lt;p&gt;
