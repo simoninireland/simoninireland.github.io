@@ -1,0 +1,35 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: TIL: Cognitohazards
+.. slug: til-cognitohazards
+.. date: 2024-04-12 12:18:58 UTC+01:00
+.. tags: til, internet, social media
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* TIL: Cognitohazards
+
+  Could social media posts be actively damaging to our mental health?
+  -- literally, not just figuratively? That's the premise of [[https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction][a
+  TechScape article in The Guardian]], that draws on both science
+  fiction and psychological research.
+
+  In Neal Stephenson's "Snow crash" there is a plot device of an image
+  in a metaverse that, when viewed, crashes the viewer's brain. We
+  haven't seen this in social media (yet), but there's an increasing
+  concern about deepfake images and other forms of misinformation.
+  Research suggests that such images are damaging /even if viewers
+  know that they're fakes/, which suggests that techniques like
+  content-labelling images as AI-generated are insufficient to remove
+  their harm. Other examples include massively engaging artificial
+  images such as the "pong wars" animation of two simultaneous
+  "Breakout" games going on between two algorithms: something that
+  shouldn't be as engaging as it is (as I can attest to myself).
+
+  Social media attention grabbing at an industrial scale might
+  therefore constitute a /cognitohazard/, a way of hacking people's
+  brains simply by being viewed.
