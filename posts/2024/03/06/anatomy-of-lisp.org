@@ -12,7 +12,7 @@
 #+END_COMMENT
 * Anatomy of Lisp
 
-  John Allen.  /Anatomy of Lisp/. McGraw-Hill. ISBN
+  John Allen.  [[https://dl.acm.org/doi/book/10.5555/542865][/Anatomy of Lisp/]]. McGraw-Hill. ISBN
   0-07-001115-X. 1978.
 
   This is a hard book to characterise. It's simultaneously an
@@ -63,3 +63,7 @@
   discussion of Lisp all the way down to the metal. Many of the
   techniques are still relevant, at least as exemplars against
   later, more efficient, techniques should be judged.
+
+  (Thanks to [[https://mcjones.org/paul/][Paul McJones]] for pointing me to the free PDF of the book,
+  which he was responsible for developing. See [[https://mcjones.org/dustydecks/archives/2024/04/11/1249/][this post]] for a history
+  of how this came about.)
