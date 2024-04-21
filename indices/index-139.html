@@ -52,95 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/03/06/anatomy-of-lisp/" rel="bookmark">Wednesday 6 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/06/anatomy-of-lisp/">Anatomy of&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgc511952" class="outline-2">
-<h2 id="orgc511952">Anatomy of&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orgc511952">
-<p>
-John Allen.  <a href="https://dl.acm.org/doi/book/10.5555/542865"><i>Anatomy of Lisp</i></a>. McGraw-Hill. <span class="caps">ISBN</span>
-0-07-001115-X.&nbsp;1978.
-</p>
-
-<p>
-This is a hard book to characterise. It&#8217;s simultaneously an
-introduction, a collection of advanced (for the time) programming
-techniques, and a guide to some very low-level implementation
-details. It contains a lot of the usual introductory material, but
-then delves into different representational choices for the basic
-data structures – lists, but also arrays and hash tables as well
-as Lisp code itself – and for the frames needed to represent
-function calls. It the tackles interpretation <i>versus</i>
-compilation, and even topics such as cross-compilation and
-just-in-time or memoised&nbsp;compilation.
-</p>
-
-<p>
-It&#8217;s impossible to read this book without thinking of <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a>, and
-indeed I think in many ways it&#8217;s a direct precursor. (It&#8217;s
-referenced a couple of times in <span class="caps">SICP</span>.) It has that same
-combination of high-level, semantics-driven programming combined
-with descriptions of underlying mechanisms. Where I think it
-mainly differs is that it mixes representations, using a more
-semantics-driven notation and explicit assembler instructions
-rather than sticking with Lisp variants for <i>everything</i>. It&#8217;s
-only when you see the two approaches side by side that you realise
-how <i>clear</i> Lisp can be in radically different&nbsp;contexts..
-</p>
-
-<p>
-Another important book was published in 1978: Kernighan and
-Ritchie&#8217;s <i><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C programming language</a></i>. The two books share a
-certain low-level focus, but come to very different conclusions
-about the correct approach to dynamic storage, as the following
-footnote by Allen (slightly edited for clarity)&nbsp;illustrates:
-</p>
-
-<blockquote>
-<p>
-Experiments have been performed in which Lisp programmers were
-allowed to return &#8220;garbage&#8221; to the free-space list themselves. The
-results were disastrous: list structure thought to be garbage was
-returned to the free-space list even though the structure was
-still being used by other&nbsp;computations.
-</p>
-</blockquote>
-
-<p>
-C, of course, accepts this &#8220;disaster&#8221; as a natural consequence of
-manual allocation management. It encapsulates the different
-attitudes of the two contemporary language communities, though:
-one wanting a machine in which to think (and willing to use
-computing power to simplify tasks), and those wanting raw
-performance from limited hardware (and willing to complicate the
-programming task to get&nbsp;it).
-</p>
-
-<p>
-Overall, Allen&#8217;s book is a great attempt at an end-to-end
-discussion of Lisp all the way down to the metal. Many of the
-techniques are still relevant, at least as exemplars against
-later, more efficient, techniques should be&nbsp;judged.
-</p>
-
-<p>
-(Thanks to <a href="https://mcjones.org/paul/">Paul McJones</a> for pointing me to the free <span class="caps">PDF</span> of the book,
-which he was responsible for developing. See <a href="https://mcjones.org/dustydecks/archives/2024/04/11/1249/">this post</a> for a history
-of how this came&nbsp;about.)
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/03/04/til-web-site-carbon-ratings/" rel="bookmark">Monday 4 March, 2024</a>
 			</span>
 		    </div>
@@ -467,6 +378,547 @@ software landscape we inhabit. I think it&#8217;s important that we
 remind ourselves, continuously, that <i>much of that landscape is a
 choice</i>, not a given, and one we can question and change as we&nbsp;wish.
 </p>
+</div>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/02/03/getting-email/" rel="bookmark">Saturday 3 February, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/02/03/getting-email/">Local email from Office365 using <span class="caps">OAUTH2</span> with&nbsp;mbsync</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgc13f1ab" class="outline-2">
+<h2 id="orgc13f1ab">Local email from Office365 using <span class="caps">OAUTH2</span>&nbsp;with <code>mbsync</code>
+</h2>
+<div class="outline-text-2" id="text-orgc13f1ab">
+<p>
+I decided recently I wanted to have a more controlled email setup,
+with a local archive rather than relying on remote servers
+to keep everything. The point of this is&nbsp;twofold:
+</p>
+
+<ol class="org-ol">
+<li>To have a local archive of email, separate from the corporate
+servers in case I need to change provider&nbsp;etc</li>
+<li>To use different MUAs locally, rather than being stuck with only
+a few that will work with all the providers and that are clunky
+and not well-integrated with my&nbsp;workflow</li>
+</ol>
+<p>
+There&#8217;s a lot of outdated information on the web about how to set
+this up and it took some time for me to get a working setup, so I
+thought I&#8217;d share my experience. Specifically this involves
+interfacing command-line email receiving and sending to a Microsoft
+Office365 server using <span class="caps">IMAP</span> and <span class="caps">SMTP</span> with corporate-grade <span class="caps">OAUTH2</span> <span class="caps">2FA</span>
+authentication: it&#8217;s the last part that&#8217;s tricky. As a bonus the
+same approach also works for <span class="caps">OAUTH2</span> and Gmail, dispensing with
+insecure application&nbsp;passwords.
+</p>
+
+<p>
+In case it&#8217;s not obvious by now, this is a hacker set-up that
+requires quite a lot of technical manual&nbsp;configuration.
+</p>
+</div>
+
+
+<div id="outline-container-orge41cd06" class="outline-3">
+<h3 id="orge41cd06">How the internet email architecture&nbsp;works</h3>
+<div class="outline-text-3" id="text-orge41cd06">
+<p>
+The old-school approach to email involves several elements, each
+potentially provided by a different&nbsp;tool:
+</p>
+
+<ul class="org-ul">
+<li>a client program or <i>mail user agent</i> (<span class="caps">MUA</span>) that presents email
+to you and lets you search, delete, store,&nbsp;etc;</li>
+<li>a retrieval program or <i>mail delivery agent</i> (<span class="caps">MDA</span>) that retrieves
+mail from the providers and manages local email&nbsp;directories</li>
+<li>a sending program or <i>mail transfer agent</i> (<span class="caps">MTA</span>) that takes; and
+locally-created messages and transfer them to their intended&nbsp;recipients.</li>
+</ul>
+<p>
+Modern <span class="caps">GUI</span> email clients like Thunderbird typically wrap-up all
+three services into one program that&#8217;s easier to deploy and manage,
+but that therefore forces certain choices on the user. By reverting
+to the older architecture we regain flexibility and choice, at the
+expense of making our lives&nbsp;harder.
+</p>
+
+<p>
+All these tools need to authenticate against other services.
+Traditionally this used usernames and passwords, which are clearly
+inadequate for the modern web. Instead we need a system based
+around stronger&nbsp;encryption.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/OAuth"><span class="caps">OAUTH2</span></a> is a an authorisation delegation protocol that lets a site
+grant access to someone who&#8217;s authenticated against another,
+without getting sight of their credentials. The typical use case is
+for a web site to allow users to sign-in using social media
+services like Facebook or Google, which reduces the number of
+passwords a user needs to remember or manage – and, totally
+incidentally I&#8217;m sure, improves the social media services&#8217; ability
+to track users&#8217; activities across the&nbsp;web.
+</p>
+
+<p>
+In our case, the <span class="caps">OAUTH2</span> &#8220;flow&#8221; interacts with the authentication
+provider and acquires a bearer token that can then be presented to
+authorise access to the various email&nbsp;services.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb742b0e" class="outline-3">
+<h3 id="orgb742b0e">Outline&nbsp;solution</h3>
+<div class="outline-text-3" id="text-orgb742b0e">
+<p>
+In outline the solution is as&nbsp;follows:
+</p>
+
+<ol class="org-ol">
+<li>Install <code>mbsync</code> as&nbsp;<span class="caps">MDA</span></li>
+<li>Set up <span class="caps">OAUTH2</span> authentication for&nbsp;Office365</li>
+<li>Use the to&nbsp;authenticate <code>mbsync</code> against Office365 to allow&nbsp;retrieval</li>
+<li>Install <code>msmtp</code> as <span class="caps">MTA</span>, using the same authentication&nbsp;scheme</li>
+<li>Install <code>mu4e</code> as <span class="caps">MUA</span>, since I want to read my email from inside&nbsp;Emacs</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgcda19bf" class="outline-3">
+<h3 id="orgcda19bf">Packages</h3>
+<div class="outline-text-3" id="text-orgcda19bf">
+<p>
+Under Arch Linux we need&nbsp;the <code>isync</code> package for synchronisation
+and&nbsp;the <code>cyrus-sasl-xoauth2</code> provider for <span class="caps">OAUTH</span>&nbsp;authentication.
+</p>
+
+<div class="highlight"><pre><span></span>   sudo pacman -S isync
+   yay -S cyrus-sasl-xoauth2
+</pre></div>
+
+<p>
+The same packages are available for other distros under similar
+names. Note that the actual synchronisation tool is&nbsp;called
+<code>mbsync</code>, even though the package that contains it is&nbsp;called
+<code>isync</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9922c7f" class="outline-3">
+<h3 id="org9922c7f"><span class="caps">OAUTH2</span> flow&nbsp;management</h3>
+<div class="outline-text-3" id="text-org9922c7f">
+<p>
+We want to use <span class="caps">OAUTH2</span> to authenticate an <span class="caps">IMAP</span> transaction, so that
+no additional passwords are needed. To this we need a script to
+manage the <span class="caps">OAUTH2</span>&nbsp;flow.
+</p>
+
+<p>
+Weirdly for an operation that&#8217;s becoming so common on the web,
+there doesn&#8217;t seem to be a package that offers <span class="caps">OAUTH2</span> from the
+command line. However, there <i>is</i> a script that does it that&#8217;s
+included as an example with&nbsp;the <code>mutt</code> <span class="caps">MUA</span>, and we can use that. It
+can be found (in Arch) in&nbsp;the <code>mutt</code> package.
+</p>
+
+<div class="highlight"><pre><span></span>   sudo pacman -S mutt
+   cp /usr/share/doc/mutt/samples/mutt_oauth2.py .
+</pre></div>
+
+<p>
+This puts a copy of the script into the current directory, which we
+can then edit in two&nbsp;ways:
+</p>
+
+<ul class="org-ul">
+<li>add the internal application identification and client secrets
+for accessing Office365;&nbsp;and</li>
+<li>set up the security for the <span class="caps">OAUTH2</span> access tokens when they&#8217;re
+downloaded and held&nbsp;locally.</li>
+</ul>
+<p>
+The client secret and app id need to be &#8220;proper&#8221;, in the sense that
+Office365 knows about them – but weirdly they <i>don&#8217;t</i> have to be
+related to your email domain or cloud tenancy. It&#8217;s perfectly fine
+to use credentials available in the public domain, for example
+those of&nbsp;Thunderbird:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="n">AppID</span> <span class="o">=</span> <span class="s2">"08162f7c-0fd2-4200-a84a-f25a4db0b584"</span>
+   <span class="n">ClientSecret</span> <span class="o">=</span> <span class="s2">"TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82"</span>
+</pre></div>
+
+<p>
+(I got these from <a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/">here</a>, but other than that have no idea where
+they come from: they&#8217;re <i>not</i> the same as those in the
+<a href="https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm">Thunderbird source code</a>, as far as I can&nbsp;tell.)
+</p>
+
+<p>
+The <code>mutt_oauth2.py</code> script stores the tokens it manages in&nbsp;a
+<code>gpg</code>-encrypted file. You therefore need to provide&nbsp;your <code>gpg</code>
+keypair identification, and I&#8217;m assuming anyone wanting to get
+local email has one of those! Mine is&nbsp;&#8220;simoninireland&#8221;.
+</p>
+
+
+<div class="highlight"><pre><span></span>   <span class="n">GPGKey</span> <span class="o">=</span> <span class="s2">"simoninireland"</span>
+</pre></div>
+
+<p>
+I edited the file to look like this, with some details&nbsp;elided:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="n">MSAppID</span> <span class="o">=</span> <span class="s2">"08162f7c-0fd2-4200-a84a-f25a4db0b584"</span>
+   <span class="n">MSClientSecret</span> <span class="o">=</span> <span class="s2">"TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82"</span>
+   <span class="n">GPGKey</span> <span class="o">=</span> <span class="s2">"simoninireland"</span>
+
+   <span class="n">ENCRYPTION_PIPE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gpg'</span><span class="p">,</span> <span class="s1">'--encrypt'</span><span class="p">,</span> <span class="s1">'--recipient'</span><span class="p">,</span> <span class="n">GPGKey</span><span class="p">]</span>
+   <span class="n">DECRYPTION_PIPE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'gpg'</span><span class="p">,</span> <span class="s1">'--decrypt'</span><span class="p">]</span>
+
+   <span class="n">registrations</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="s1">'google'</span><span class="p">:</span> <span class="p">{</span>
+           <span class="o">...</span>
+           <span class="s1">'client_id'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+           <span class="s1">'client_secret'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+       <span class="p">},</span>
+       <span class="s1">'microsoft'</span><span class="p">:</span> <span class="p">{</span>
+           <span class="o">...</span>
+           <span class="s1">'client_id'</span><span class="p">:</span> <span class="n">MSAppID</span><span class="p">,</span>
+           <span class="s1">'client_secret'</span><span class="p">:</span> <span class="n">MSClientSecret</span><span class="p">,</span>
+       <span class="p">},</span>
+   <span class="p">}</span>
+</pre></div>
+
+<p>
+Put resulting script&nbsp;into <code>/usr/local/bin</code> and make it executable.
+Then run it in &#8220;authorisation&#8221; mode. The token file can go
+anywhere: I put it in the directory used&nbsp;by <code>pass</code> to allow for an
+alternative access&nbsp;route:
+</p>
+
+<div class="highlight"><pre><span></span>   mutt_oauth2.py -t .password-store/email/work.gpg --authorize
+</pre></div>
+
+<p>
+This will ask some&nbsp;questions:
+</p>
+
+<ul class="org-ul">
+<li>we want &#8220;microsoft&#8221;&nbsp;authentication</li>
+<li>and a &#8220;localhostauthcode&#8221;&nbsp;flow</li>
+<li>enter your email address (the actual user, not any&nbsp;alias)</li>
+</ul>
+<p>
+and it prints out a <span class="caps">URL</span> to copy into a browser to authenticate
+against Office365&#8217;s web interface. In my case this involved
+interacting with the university&#8217;s single sign-on and two-factor
+authentication (<span class="caps">2FA</span>) system. Doing this successfully put the
+necessary <span class="caps">OAUTH2</span> tokens, encrypted, into the specified file.&nbsp;Running:
+</p>
+
+<div class="highlight"><pre><span></span>   mutt_oauth2.py -t .password-store/email/work.gpg
+</pre></div>
+
+<p>
+will output the token, refreshing it automatically if it&#8217;s
+expired. This may ask for the <span class="caps">GPG</span> key&#8217;s passphrase, if it has one,
+and if it&#8217;s not available from a local key&nbsp;agent.
+</p>
+
+<p>
+(All this security means that the bearer tokens are stored
+encryoted at rest. It&#8217;s a little inconvenient, though, as it means
+you need to enter&nbsp;a <code>gpg</code> passphrase periodically, and makes it
+hard to&nbsp;run <code>mbsync</code> in&nbsp;a <code>cron</code> job. This is fine if, like me,
+your level of security paranoia is such that you accept the minor
+inconvenience in exchange for not having plain-text access tokens
+lying around; on the other hand, you may decide that using, for
+example, a machine with full-disc encryption is secure enough, in
+which case you need to edit&nbsp;the <code>ENCRYPTION_PIPE</code> and
+<code>DECRYPTION_PIPE</code> commands in the script to not do encryption: they
+can basically just&nbsp;use <code>cat</code> to store and retrieve the token&nbsp;information.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5049d26" class="outline-3">
+<h3 id="org5049d26">
+<code>mbsync</code> for&nbsp;Office365</h3>
+<div class="outline-text-3" id="text-org5049d26">
+<p>
+We now have <span class="caps">OAUTH2</span> tokens for accessing Office365, which we can
+integrate with our&nbsp;<span class="caps">MDA</span>. <code>mbsync</code> has four main&nbsp;concepts:
+</p>
+
+<ul class="org-ul">
+<li>Accounts, typically using&nbsp;<span class="caps">IMAP</span></li>
+<li><span class="caps">IMAP</span> message stores, which are&nbsp;remote</li>
+<li>Maildir stores, which are&nbsp;local</li>
+<li>Channels, which tie local and remote&nbsp;together</li>
+</ul>
+<p>
+<a href="https://en.wikipedia.org/wiki/Maildir">Maildir</a> is a file format for storing email in a directory
+structure, and is a long-running standard that&#8217;s supported by lots
+of tools. A maildir is typically presented in the <span class="caps">MUA</span> to a user as
+a folder, and represented to the <span class="caps">MDA</span> as a&nbsp;directory.
+</p>
+
+<p>
+For Office365 we&nbsp;have:
+</p>
+
+<div class="highlight"><pre><span></span>   IMAPAccount work
+   Host outlook.office365.com
+   Port 993
+   User &lt;&lt;work-email&gt;&gt;
+   PassCmd "mutt_oauth2.py -t ~/.password-store/email/work.gpg"
+   AuthMechs XOAUTH2
+   SSLType IMAPS
+
+   IMAPStore work-remote
+   Account work
+
+   MaildirStore work-local
+   Subfolders Verbatim
+   Path ~/Maildir/Work/
+   Inbox ~/Maildir/Work/Inbox
+
+   Channel Work
+   Far :work-remote:
+   Near :work-local:
+   Patterns * !"Conversation History" !Calendar !Archive !Archives !Clutter !Drafts
+   Create Both
+   Expunge Both
+   SyncState *
+</pre></div>
+
+<p>
+(See&nbsp;the <code>mbsync</code> man pages for the details of its&nbsp;configuration.
+<code>&lt;&lt;work-email&gt;&gt;</code> should be a a proper username, not an alias.)
+For our purposes the important line is&nbsp;the <code>PassCmd</code> that calls our
+edited script to retrieve the <span class="caps">OAUTH2</span> bearer token. Email will be
+downloaded into a maildir tree rooted&nbsp;at <code>~/Maildir/Work</code>: you need
+to create this before&nbsp;sync-ing.
+</p>
+
+<div class="highlight"><pre><span></span>   mkdir -p ~/Maildir/Work
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orgb1e2ba6" class="outline-3">
+<h3 id="orgb1e2ba6">Sync&#8217;ing the&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgb1e2ba6">
+<p>
+For a full sync of all maildirs just&nbsp;run:
+</p>
+
+<div class="highlight"><pre><span></span>   mbsync -a
+</pre></div>
+
+<p>
+That can be time-consuming, as all the maildirs (<i>i.e.</i>, folders)
+have to be visited – and I have several hundred. A faster
+option is to normally just look at (for example) the&nbsp;inbox:
+</p>
+
+<div class="highlight"><pre><span></span>   mbsync Work:INBOX
+</pre></div>
+
+<p>
+This will ignore everything else, which means they&#8217;ll drift – but
+can be re-sync&#8217;ed periodically by running a full sync. One could
+also set up&nbsp;a <code>cron</code> job to do a full sync early every morning, for
+example, as long as the access token was held unencrypted (see&nbsp;above).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc12eed5" class="outline-3">
+<h3 id="orgc12eed5">Indexing&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgc12eed5">
+<p>
+You&#8217;ll almost certainly now want to index your newly-downloaded
+trove of messages. There are two common tools for&nbsp;this <code>mu</code> and
+<code>notmuch</code>. Both do basically the same job of maintaining a
+structured and full-text index of messages that can be queried by
+an appropriate <span class="caps">MUA</span>. I&nbsp;chose <code>mu</code>, for no particular reason: some
+people swear&nbsp;by <code>notmuch</code>, which is based on extensive tagging of
+messages and so might be more familiar to Gmail&nbsp;users.
+</p>
+
+<p>
+To&nbsp;install <code>mu</code>, we first grab the&nbsp;package:
+</p>
+
+<div class="highlight"><pre><span></span>   pacman -S mu
+</pre></div>
+
+<p>
+We then initialise the index by running the indexer over the
+maildir. If we also provide our own email address (or more than one) it knows to
+index these&nbsp;differently.
+</p>
+
+<div class="highlight"><pre><span></span>   mu init -m ~/Maildir --my-address=&lt;&lt;work-email&gt;&gt;
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-orga845751" class="outline-3">
+<h3 id="orga845751">Sending&nbsp;email</h3>
+<div class="outline-text-3" id="text-orga845751">
+<p>
+All of the above sets up the <span class="caps">MDA</span> to <i>get</i> mail: we now need to be
+able to <i>send</i> mail. Fortunately we&#8217;ve already done most of the
+hard work needed to get this&nbsp;working.
+</p>
+
+<p>
+We need a local <span class="caps">MTA</span>, for which I&nbsp;chose <code>msmtp</code>. It understands
+<span class="caps">OAUTH2</span> natively. Installation in Arch is&nbsp;easy:
+</p>
+
+<div class="highlight"><pre><span></span>   sudo pacman -S msmtp
+</pre></div>
+
+<p>
+It needs to be pointed at the Office365 <span class="caps">SMTP</span> server and provided
+with the <span class="caps">OAUTH2</span> tokens, which are the same as we used&nbsp;above:
+</p>
+
+<div class="highlight"><pre><span></span>   defaults
+   auth           on
+   tls            on
+   tls_starttls   on
+   tls_trust_file /etc/ssl/certs/ca-certificates.crt
+   logfile        ~/.msmtp.log
+
+   account        work
+   host           smtp.office365.com
+   port           587
+   auth           xoauth2
+   user           &lt;&lt;work-email&gt;&gt;
+   from           &lt;&lt;work-email&gt;&gt;
+   passwordeval   "mutt_oauth2.py -t ~/.password-store/email/work.gpg"
+
+   account default : work
+</pre></div>
+
+<p>
+Again, see&nbsp;the <code>msmtp</code> man pages for the details of this, and&nbsp;replace <code>&lt;&lt;work-email&gt;&gt;</code> as appropriate: the only interesting part
+from our current perspective is that&nbsp;the <code>passwordeval</code> line calls
+exactly the same script as we used&nbsp;above.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org28e1ed6" class="outline-3">
+<h3 id="org28e1ed6">Reading and writing&nbsp;email</h3>
+<div class="outline-text-3" id="text-org28e1ed6">
+<p>
+Finally we&#8217;re ready to read email. I&#8217;ll leave this to you: there
+are lots of text-based email clients around, notably <a href="http://www.mutt.org/"><code>mutt</code></a> that we
+encountered earlier. There&#8217;s also <a href="https://www.djcbsoftware.nl/code/mu/mu4e.html"><code>mu4e</code></a> for reading email in
+Emacs, making use of&nbsp;the <code>mu</code> index; and <a href="https://notmuch.readthedocs.io/en/latest/man1/notmuch.html"><code>notmuch</code></a> also has <a href="http://www.mutt.org/">an
+Emacs interface</a>.
+</p>
+
+<p>
+I&nbsp;use <code>mu4e</code>. There&#8217;s a lot of documentation on the web for setting
+this up, all of which applies immediately to our new set-up: the
+<span class="caps">MUA</span> is entirely independent of the <span class="caps">MDA</span> and <span class="caps">MTA</span>, and simply needs to
+be pointed at the right directories and&nbsp;accounts.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee7b61b" class="outline-3">
+<h3 id="orgee7b61b">Accessing Gmail using&nbsp;<span class="caps">OAUTH2</span></h3>
+<div class="outline-text-3" id="text-orgee7b61b">
+<p>
+Gmail lets one use &#8220;app passwords&#8221; for accessing using <span class="caps">IMAP</span>, but
+also supports <span class="caps">OAUTH2</span>, which is obviously more secure. The same
+approach as above works for Gmail too. The initial credentials&nbsp;are:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="n">GAppID</span> <span class="o">=</span> <span class="s1">'406964657835-aq8lmia8j95dhl1a2bvharmfk3t1hgqj.apps.googleusercontent.com'</span>
+   <span class="n">GClientSecret</span> <span class="o">=</span> <span class="s1">'kSmqreRr0qwBWJgbf5Y-PjSU'</span>
+</pre></div>
+
+<p>
+(<a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/">Same source</a> as above.) Edit these into the script and change the
+entries in the config files to call it to authenticate with an
+appropriate store, for&nbsp;example:
+</p>
+
+<div class="highlight"><pre><span></span>   mutt_oauth2.py -t .password-store/email/personal.gpg --authorize
+</pre></div>
+
+<p>
+and similarly in the configurations&nbsp;of <code>mbsync</code> and <code>msmtp</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d519a7" class="outline-3">
+<h3 id="org0d519a7">Conclusion</h3>
+<div class="outline-text-3" id="text-org0d519a7">
+<p>
+If you&#8217;re still with me: congratulations, but you must <i>really</i>
+want to read your email&nbsp;old-school!
+</p>
+
+<p>
+For me, this has completely changed my relationship with email in
+ways I didn&#8217;t expect. Using Emacs means typically not having the
+client visible all the time, which reduces the temptation to check
+all the time. Instead I can adopt a more structured approach and
+only check my email when I want to, which often means only three or
+four times a day. It&#8217;s also made email easier to manage, for
+example by adding hyperlinks in my to-do list straight to messages
+that need attention, and adding some integrations with org mode to
+simplify email processing. Those are matters for another time,&nbsp;though.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3088dac" class="outline-3">
+<h3 id="org3088dac">Resources</h3>
+<div class="outline-text-3" id="text-org3088dac">
+<p>
+There are many resources on&nbsp;using <code>mbsync</code>, <code>mu</code>, <code>mu4e</code>, and the
+rest on the web. I found these covered all the topics in great
+detail, with the exception of the <span class="caps">OAUTH2</span> integration I&#8217;ve detailed
+here. In particular I&#8217;d like to acknowledge the&nbsp;following:
+</p>
+
+<ul class="org-ul">
+<li>
+<a href="https://cvanelteren.github.io/post/mu4e/">Growing pains</a>, Casper van&nbsp;Elteren&#8217;s <code>mu4e</code> setup that pointed me
+in the right&nbsp;direction</li>
+<li>
+<a href="https://www.macs.hw.ac.uk/~rs46/posts/2022-01-11-mu4e-oauth.html">Microsoft OAuth authentication with mu4e in Emacs</a>, which&nbsp;uses
+<code>offlineimap</code>, a different <span class="caps">MDA</span>, and needs closer integration with
+Microsoft Azure that often isn&#8217;t possible for corporate&nbsp;email</li>
+<li>
+<a href="https://www.dcs.gla.ac.uk/~jacobd/posts/2022/03/configure-mutt-to-work-with-oauth-20/">Configure Mutt to work with OAuth 2.0</a> that focuses on&nbsp;using
+<code>mutt</code> and&nbsp;Gmail</li>
+</ul>
 </div>
 </div>
 </div>

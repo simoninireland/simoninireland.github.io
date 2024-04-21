@@ -52,40 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/03/07/list-processing/" rel="bookmark">Thursday 7 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/07/list-processing/">List&nbsp;processing</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org9b0849e" class="outline-2">
-<h2 id="org9b0849e">List&nbsp;processing</h2>
-<div class="outline-text-2" id="text-org9b0849e">
-<p>
-<span class="caps">J.M.</span> Foster.  <i>List Processing</i>. Macdonald and Co.&nbsp;1967.
-</p>
-
-<p>
-A slim volume discussing list processing with reference to Lisp
-and to other list processing systems of the time (including some
-libraries embedded into&nbsp;Fortran).
-</p>
-
-<p>
-The most fascinating part of the book is its bibliography, which
-references a lot of papers that have disappeared from the
-collective memory of computer science, but whose implications
-were&nbsp;profound.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/" rel="bookmark">Thursday 7 March, 2024</a>
 			</span>
 		    </div>
@@ -249,6 +215,95 @@ foreign to a lot of other languages, and so justify the detail for
 those occasions when these techniques are appropriate: deciding
 <i>when</i> they are appropriate is non-trivial, a matter of both
 functionality and&nbsp;style.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/03/06/anatomy-of-lisp/" rel="bookmark">Wednesday 6 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/06/anatomy-of-lisp/">Anatomy of&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgc511952" class="outline-2">
+<h2 id="orgc511952">Anatomy of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgc511952">
+<p>
+John Allen.  <a href="https://dl.acm.org/doi/book/10.5555/542865"><i>Anatomy of Lisp</i></a>. McGraw-Hill. <span class="caps">ISBN</span>
+0-07-001115-X.&nbsp;1978.
+</p>
+
+<p>
+This is a hard book to characterise. It&#8217;s simultaneously an
+introduction, a collection of advanced (for the time) programming
+techniques, and a guide to some very low-level implementation
+details. It contains a lot of the usual introductory material, but
+then delves into different representational choices for the basic
+data structures – lists, but also arrays and hash tables as well
+as Lisp code itself – and for the frames needed to represent
+function calls. It the tackles interpretation <i>versus</i>
+compilation, and even topics such as cross-compilation and
+just-in-time or memoised&nbsp;compilation.
+</p>
+
+<p>
+It&#8217;s impossible to read this book without thinking of <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a>, and
+indeed I think in many ways it&#8217;s a direct precursor. (It&#8217;s
+referenced a couple of times in <span class="caps">SICP</span>.) It has that same
+combination of high-level, semantics-driven programming combined
+with descriptions of underlying mechanisms. Where I think it
+mainly differs is that it mixes representations, using a more
+semantics-driven notation and explicit assembler instructions
+rather than sticking with Lisp variants for <i>everything</i>. It&#8217;s
+only when you see the two approaches side by side that you realise
+how <i>clear</i> Lisp can be in radically different&nbsp;contexts..
+</p>
+
+<p>
+Another important book was published in 1978: Kernighan and
+Ritchie&#8217;s <i><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C programming language</a></i>. The two books share a
+certain low-level focus, but come to very different conclusions
+about the correct approach to dynamic storage, as the following
+footnote by Allen (slightly edited for clarity)&nbsp;illustrates:
+</p>
+
+<blockquote>
+<p>
+Experiments have been performed in which Lisp programmers were
+allowed to return &#8220;garbage&#8221; to the free-space list themselves. The
+results were disastrous: list structure thought to be garbage was
+returned to the free-space list even though the structure was
+still being used by other&nbsp;computations.
+</p>
+</blockquote>
+
+<p>
+C, of course, accepts this &#8220;disaster&#8221; as a natural consequence of
+manual allocation management. It encapsulates the different
+attitudes of the two contemporary language communities, though:
+one wanting a machine in which to think (and willing to use
+computing power to simplify tasks), and those wanting raw
+performance from limited hardware (and willing to complicate the
+programming task to get&nbsp;it).
+</p>
+
+<p>
+Overall, Allen&#8217;s book is a great attempt at an end-to-end
+discussion of Lisp all the way down to the metal. Many of the
+techniques are still relevant, at least as exemplars against
+later, more efficient, techniques should be&nbsp;judged.
+</p>
+
+<p>
+(Thanks to <a href="https://mcjones.org/paul/">Paul McJones</a> for pointing me to the free <span class="caps">PDF</span> of the book,
+which he was responsible for developing. See <a href="https://mcjones.org/dustydecks/archives/2024/04/11/1249/">this post</a> for a history
+of how this came&nbsp;about.)
 </p>
 </div>
 </div>
