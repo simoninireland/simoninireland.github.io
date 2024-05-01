@@ -187,7 +187,7 @@ historical (and other) resources that already exist. These include:
   Mastodon user `@lispm <https://moth.social/@lispm>`_ for the link.)
 - Paul McJones' `History of Lisp
   <https://www.softwarepreservation.org/projects/LISP/>`_ page,
-  focusing mainly on the genealogy of the Lisp 1.5 system but really
-  covering a huge breadth of Lisp implementations, their source code
-  and documentation. (Thanks to `Paul <https://mcjones.org/paul/>`_
+  starting with the genealogy of the Lisp 1.5 system and going on to
+  cover a huge breadth of Lisp implementations, their source code and
+  documentation. (Thanks to `Paul <https://mcjones.org/paul/>`_
   himself for pointing me to this.)
