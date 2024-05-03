@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about til)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/til.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Apr 2024 11:27:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga506648" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about til)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/til.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2024 08:59:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org769a36e" class="outline-2"&gt;
+&lt;h2 id="org769a36e"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org769a36e"&gt;
+&lt;p&gt;
+Today I learned about a program that generates the sounds that help
+people navigate as they exit long tunnels when an emergency such as
+a fire has destroyed the visibility.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/"&gt;The World's Loudest Lisp Program to the Rescue&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This describes the challenges of building a software system that has
+to work unmonitored once deployed, for years, as well as
+withstanding a fairly rugged environment where, for example, the
+installedc hardware will be periodically sprayed with a
+high-pressure hose as the walls get cleaned. Overall the system is
+soft real-time, but has to cope with component failure, network
+partitions, consensus, and all the usual distributed systems
+challenges, while be guaranteed to work when needed.
+&lt;/p&gt;
+
+&lt;p&gt;
+The developers built the system in Common Lisp, which wouldn't be
+the normal go-to choice for an embedded system. But their argument
+was that they could better handle complex and changing requirements
+by retaining a high level of abstraction, and that development was
+overall far faster than using C. Modern Common Lisp compilers are so
+efficient that there's no significant performance hit at deployment.
+They made use of complicated components like planners (for which
+Lisp is an ideal choice), and built a set of macros to wrap-up the
+handling of industrial control and robust communications.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's a great read.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga506648" class="outline-2"&gt;
 &lt;h2 id="orga506648"&gt;TIL: Cognitohazards&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orga506648"&gt;
 &lt;p&gt;

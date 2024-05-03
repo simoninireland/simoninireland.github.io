@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Apr 2024 10:59:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2024 08:59:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org769a36e" class="outline-2"&gt;
+&lt;h2 id="org769a36e"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org769a36e"&gt;
+&lt;p&gt;
+Today I learned about a program that generates the sounds that help
+people navigate as they exit long tunnels when an emergency such as
+a fire has destroyed the visibility.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/"&gt;The World's Loudest Lisp Program to the Rescue&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This describes the challenges of building a software system that has
+to work unmonitored once deployed, for years, as well as
+withstanding a fairly rugged environment where, for example, the
+installedc hardware will be periodically sprayed with a
+high-pressure hose as the walls get cleaned. Overall the system is
+soft real-time, but has to cope with component failure, network
+partitions, consensus, and all the usual distributed systems
+challenges, while be guaranteed to work when needed.
+&lt;/p&gt;
+
+&lt;p&gt;
+The developers built the system in Common Lisp, which wouldn't be
+the normal go-to choice for an embedded system. But their argument
+was that they could better handle complex and changing requirements
+by retaining a high level of abstraction, and that development was
+overall far faster than using C. Modern Common Lisp compilers are so
+efficient that there's no significant performance hit at deployment.
+They made use of complicated components like planners (for which
+Lisp is an ideal choice), and built a set of macros to wrap-up the
+handling of industrial control and robust communications.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's a great read.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
 &lt;h2 id="org237bc98"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org237bc98"&gt;
 &lt;p class="floater"&gt;
@@ -296,38 +336,4 @@ collective memory of computer science, but whose implications
 were profound.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6afe058" class="outline-2"&gt;
-&lt;h2 id="org6afe058"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6afe058"&gt;
-&lt;p&gt;
-John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
-Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
-&lt;b&gt;3&lt;/b&gt;, pp.184–195. 1960.
-&lt;/p&gt;
-
-&lt;p&gt;
-The original Lisp paper from 1960, which opens:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-A programming system called LISP (for LISt Processor) has been
-developed for the IBM 704 computer…
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-The paper then proceeds to lay out everything that's since been
-built on: the basic constructs, the use of cons cells (pairs) as a
-data representation, the world's first garbage collection algorithm,
-an equational semantics, and ideas for interpretation and
-compilation. It's awesome, and humbling to read it and realise its
-age and the vision of computing it developed.
-&lt;/p&gt;
-
-&lt;p&gt;
-(Despite this paper being labelled Part I, incidentally, there
-isn't a part II.)
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item></channel></rss>

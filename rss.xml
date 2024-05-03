@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 21 Apr 2024 17:18:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Beyond</title><link>https://simondobson.org/goodreads/beyond/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2024 08:59:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org769a36e" class="outline-2"&gt;
+&lt;h2 id="org769a36e"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org769a36e"&gt;
+&lt;p&gt;
+Today I learned about a program that generates the sounds that help
+people navigate as they exit long tunnels when an emergency such as
+a fire has destroyed the visibility.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/"&gt;The World's Loudest Lisp Program to the Rescue&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This describes the challenges of building a software system that has
+to work unmonitored once deployed, for years, as well as
+withstanding a fairly rugged environment where, for example, the
+installedc hardware will be periodically sprayed with a
+high-pressure hose as the walls get cleaned. Overall the system is
+soft real-time, but has to cope with component failure, network
+partitions, consensus, and all the usual distributed systems
+challenges, while be guaranteed to work when needed.
+&lt;/p&gt;
+
+&lt;p&gt;
+The developers built the system in Common Lisp, which wouldn't be
+the normal go-to choice for an embedded system. But their argument
+was that they could better handle complex and changing requirements
+by retaining a high level of abstraction, and that development was
+overall far faster than using C. Modern Common Lisp compilers are so
+efficient that there's no significant performance hit at deployment.
+They made use of complicated components like planners (for which
+Lisp is an ideal choice), and built a set of macros to wrap-up the
+handling of industrial control and robust communications.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's a great read.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Beyond</title><link>https://simondobson.org/goodreads/beyond/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639479657l/58849383._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -232,19 +272,4 @@ spin-outs, Symbolics and Lisp Machines Inc, is strongly disputed
 by Dan Weinreb on &lt;a href="https://web.archive.org/web/20090101103828/http://danweinreb.org/blog/rebuttal-to-stallmans-story-about-the-formation-of-symbolics-and-lmi"&gt;his blog&lt;/a&gt;.)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item><item><title>The Romanovs: 1613-1918</title><link>https://simondobson.org/goodreads/the-romanovs-1613-1918/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435023227l/21094391._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Simon Sebag Montefiore
-	  (2016)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      When complimented on his armies capturing Berlin at the end of the Second World War, Stalin famously replied that "Tsar Alexander made it to Paris." This book describes how, and why, that happened – and why it meant to much to Stalin, on whom Sebag Montefirore is of course a recognised expert.&lt;br&gt;&lt;br&gt;The sweep of Romanov history is epic in all senses. It's impossible not to realise how deeply &lt;i&gt;personal&lt;/i&gt; their rule was, identifying their own reigns absolutely with Russia and its greatness. The main characters are all flawed in tragic ways, sometimes grotesque but equally often brilliant and self-aware within the limitations of their eras – which none ever really managed to trascend, with the possible exception of Peter and later Catherine, each known as "the Great" for that reason.&lt;br&gt;&lt;br&gt;The story is made powerful by recent research in the Russian archives and access to previously-unkown letters between Alexander II and his mistress, and later between Nicholas II and Alexandra. They highlight the impact of extra-marital affairs on high policy right across the Romonov era: it's often hard to keep track of who is related to (or sleeping with) whom, or to understand the true importance of some of the less well-known characters in the story who may have have had an advisory impact far beyond what their "official" position might suggest.&lt;br&gt;&lt;br&gt;It's a book that's hard on autocracy – but also quite hard on the alternatives that came after. Sebag Montefiore sees a continuity between the tsars, Lenin, Stalin, and Putin, and almost seems to regard it as inevitable that Russia will need strongman leadership. One can perhaps hope not.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Saturday 23 March, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/1522092865?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-romanovs-1613-1918/</guid><pubDate>Sat, 23 Mar 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item></channel></rss>
