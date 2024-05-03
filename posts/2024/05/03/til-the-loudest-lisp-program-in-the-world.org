@@ -1,0 +1,41 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: TIL: The loudest Lisp program in the world
+.. slug: til-the-loudest-lisp-program-in-the-world
+.. date: 2024-05-03 09:50:16 UTC+01:00
+.. tags: til, lisp, programming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* TIL: The loudest Lisp program in the world
+
+  Today I learned about a program that generates the sounds that help
+  people navigate as they exit long tunnels when an emergency such as
+  a fire has destroyed the visibility.
+
+  [[https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/][The World's Loudest Lisp Program to the Rescue]]
+
+  This describes the challenges of building a software system that has
+  to work unmonitored once deployed, for years, as well as
+  withstanding a fairly rugged environment where, for example, the
+  installedc hardware will be periodically sprayed with a
+  high-pressure hose as the walls get cleaned. Overall the system is
+  soft real-time, but has to cope with component failure, network
+  partitions, consensus, and all the usual distributed systems
+  challenges, while be guaranteed to work when needed.
+
+  The developers built the system in Common Lisp, which wouldn't be
+  the normal go-to choice for an embedded system. But their argument
+  was that they could better handle complex and changing requirements
+  by retaining a high level of abstraction, and that development was
+  overall far faster than using C. Modern Common Lisp compilers are so
+  efficient that there's no significant performance hit at deployment.
+  They made use of complicated components like planners (for which
+  Lisp is an ideal choice), and built a set of macros to wrap-up the
+  handling of industrial control and robust communications.
+
+  It's a great read.
