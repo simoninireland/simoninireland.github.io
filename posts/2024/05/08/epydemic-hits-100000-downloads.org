@@ -1,0 +1,32 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: epydemic hits 100,000 downloads
+.. slug: epydemic-100000
+.. date: 2024-05-08 16:21:29 UTC+01:00
+.. tags: epydemic, software
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* epydemic hits 100,000 downloads
+
+  Downloads of ~epydemic~, my library for epidemic (and other) process
+  simulation on networks (and hopefully other combinatorial structures
+  soon...) recently passed 100,000.
+
+  That number comes from the project's [[https://www.pepy.tech/projects/epydemic][PePy page]], which tracks
+  downloads from the main [[https://pypi.org/project/epydemic/][PyPi page]] as used by ~pip~. I can't say
+  whether or not that number is accurate. Quite honestly it's at least
+  98,000 more than I ever expected, but 100,000 feels like something
+  of a milestone to be pleased about.
+
+  ~epydemic~ came about because of a lack of standard tooling for doing
+  epidemic simulation. This involves a lot of stochastic simulation,
+  which is quite tricky code to write and to make efficient. Testing
+  the system actually involved us thinking more deeply about the
+  effectiveness of unit testing for stochastic code, which then led to
+  a [[link:/softcopy/stochastic-testing-21.pdf][presentation at UK Systems in 2021]] explaining the problems we'd
+  had.

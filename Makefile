@@ -69,7 +69,8 @@ EXTRAS = \
 
 # Plug-ins to download
 PLUGINS = \
-	orgmode
+	orgmode \
+	continuous_import
 
 # The git branch we're currently working on
 GIT_BRANCH = $(shell $(GIT) rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -119,7 +120,7 @@ upgrade-external: env
 	$(ACTIVATE) && $(NIKOLA) continuous_import
 
 # Build the environment
-env: $(VENV) $(PLUGINS_DIR) $(PLUGINS_DIR)/continuous_import extras
+env: $(VENV) $(PLUGINS_DIR) extras
 
 $(VENV):
 	$(PYTHON) -m venv $(VENV)
@@ -130,8 +131,8 @@ $(PLUGINS_DIR):
 	$(foreach p, $(PLUGINS), $(ACTIVATE) && $(NIKOLA) plugin -i $p)
 
 # Build a known-good environment, rather than against the current versions
-known-good-env: $(VENV)
-	$(PYTHON) -m venv $(VENV)
+known-good-env:
+	$(PYTHON).12 -m venv $(VENV)
 	$(ACTIVATE) && $(PIP) install -U pip wheel && $(PIP) install -r $(KNOWN_GOOD)
 
 # Checkout the modified continuous_import plugin from the forked repo,
@@ -142,6 +143,9 @@ $(PLUGINS_DIR)/continuous_import:
 
 extras: $(EXTRAS)
 
+# Install the extra configuration for org mode
+# Unfortunately we also need to change the plugin's own initialisation
+# to make other installed Emacs packages available
 plugins/orgmode/conf.el: elisp/orgmode-conf.el
 	$(RSYNC) $< $@
 
@@ -153,7 +157,7 @@ clean:
 # Clean up the environment as well
 .PHONY: reallyclean
 reallyclean: clean
-	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS) $(CACHE_DIR)
+	$(RM) $(VENV) $(PLUGINS_DIR) $(EXTRAS) $(CACHE_DIR) .doit.db
 
 
 # ----- Usage -----

@@ -36,9 +36,6 @@
 ;; - org
 ;; - org-ref
 
-(setq package-load-list '(all))
-(package-initialize)
-
 ;;; ---------- Citation and attachment handling ----------
 
 ;; Use org-ref for expanding citation and bibliography links

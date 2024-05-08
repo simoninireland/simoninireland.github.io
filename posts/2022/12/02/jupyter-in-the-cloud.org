@@ -23,7 +23,7 @@
 
 ** Reference execution
 
-   As a reference, I firsat ran a small experiment with an SIR
+   As a reference, I first ran a small experiment with an SIR
    epidemic on an ER network of $10^4$ nodes, $\langle k \rangle =
    10$. The first experiment runs 10 repetitions sequentially on a
    single core; the second runs 10 repetitions for every core we run
