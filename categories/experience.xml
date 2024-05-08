@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about experience)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/experience.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 02 Apr 2024 15:14:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc3ce0d6" class="outline-2"&gt;
-&lt;h2 id="orgc3ce0d6"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc3ce0d6"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about experience)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/experience.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7891f7f" class="outline-2"&gt;
+&lt;h2 id="org7891f7f"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7891f7f"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/4f/11131f-cfc4-4d14-8fae-72c78607964b/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -32,9 +32,9 @@ low-latency network routing for financial services: it's hard
 to think of a better example of Lisp's power and range.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07eea9a" class="outline-2"&gt;
-&lt;h2 id="org07eea9a"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org07eea9a"&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org82bfee4" class="outline-2"&gt;
+&lt;h2 id="org82bfee4"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org82bfee4"&gt;
 &lt;p&gt;
 &lt;a href="https://www.gnu.org/gnu/rms-lisp.html"&gt;My Lisp Experiences and the Development of GNU Emacs&lt;/a&gt;
 &lt;/p&gt;

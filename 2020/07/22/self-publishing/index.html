@@ -20,7 +20,7 @@
 <link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono%7CLibre+Baskerville%7CMontserrat%7CPlayfair+Display%7CTangerine">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
 <link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
 <link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
 <link rel="stylesheet" href="../../../../assets/css/code.css">
@@ -164,26 +164,26 @@ back into the notebook. This is especially great if the results are a
 diagram, because that gets rendered into the notebook too. You simply
 instruct the notebook to generate diagrams inline, typically in the
 first eceutable cell where you import any&nbsp;packages:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">networkx</span>
-<span class="kn">import</span> <span class="nn">epyc</span>
-<span class="kn">import</span> <span class="nn">epydemic</span>
-<span class="kn">import</span> <span class="nn">pandas</span>
-<span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">epyc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">epydemic</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'svg'</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span><span class="w"> </span><span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span><span class="w"> </span><span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'svg'</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 
 <p>The use of <span class="caps">SVG</span> makes for scalable plots, but I wasn&#8217;t keen on the
 standard notebook presentation, so I&nbsp;used <code>seaborn</code> to get a nicer
 layout and colour scheme adjusted for notebook use, and played with
 the font sizing until I liked&nbsp;it:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">seaborn</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn'</span><span class="p">)</span>
-<span class="n">seaborn</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">"notebook"</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.75</span><span class="p">)</span>
+<span class="n">seaborn</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">"notebook"</span><span class="p">,</span><span class="w"> </span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.75</span><span class="p">)</span>
 </pre></div>
 
 <p>The net result is a single document that&#8217;s partly text and partly
@@ -323,9 +323,9 @@ auxiliary bits and&nbsp;pieces.</p>
 <p>There were a couple of problems. Firstly, LaTeX doesn&#8217;t really like
 <span class="caps">SVG</span> figures. Jupyter has several options, so I changed the notebook
 header cell to select <span class="caps">PNG</span>&nbsp;instead.</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span><span class="w"> </span><span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span><span class="w"> </span><span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'png'</span>
 </pre></div>
 
 <p>The other issue concerned getting references and citations to
@@ -465,10 +465,10 @@ where the problem is, but&nbsp;executing <code>pdfimages -list</code> on the <sp
 the images and their resolution. Jupyter uses a lower resolution by
 default, so I added an appropriate line to the cell at the head of
 each&nbsp;chapter:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">'png'</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.dpi'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="o">%</span><span class="n">matplotlib</span><span class="w"> </span><span class="n">inline</span>
+<span class="o">%</span><span class="n">config</span><span class="w"> </span><span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'png'</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.dpi'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span>
 </pre></div>
 
 <p>This then triggered <em>another</em> warning, this time that the images were
@@ -613,7 +613,7 @@ of the specific files referred to in the text&nbsp;are:</p>
 	fa-twitter"></i></span></a></li>
 	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2020/07/22/self-publishing/&amp;title=Self-publishing%20%22Epidemic%20modelling%22%20%23essay%20%23experience%20%23self-publishing" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
 	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2020/07/22/self-publishing/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Self-publishing%20%22Epidemic%20modelling%22&amp;body=https://simondobson.org/2020/07/22/self-publishing/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href='mailto:?subject=Self-publishing%20"Epidemic%20modelling"&amp;body=https://simondobson.org/2020/07/22/self-publishing/'><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>

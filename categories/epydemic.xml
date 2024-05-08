@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about epydemic)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/epydemic.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 16 Mar 2024 13:14:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0acb916" class="outline-2"&gt;
-&lt;h2 id="org0acb916"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0acb916"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about epydemic)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/epydemic.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 16:11:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge092ceb" class="outline-2"&gt;
+&lt;h2 id="orge092ceb"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge092ceb"&gt;
+&lt;p&gt;
+Downloads of &lt;code&gt;epydemic&lt;/code&gt;, my library for epidemic (and other) process
+simulation on networks (and hopefully other combinatorial structures
+soon…) recently passed 100,000.
+&lt;/p&gt;
+
+&lt;p&gt;
+That number comes from the project's &lt;a href="https://www.pepy.tech/projects/epydemic"&gt;PePy page&lt;/a&gt;, which tracks
+downloads from the main &lt;a href="https://pypi.org/project/epydemic/"&gt;PyPi page&lt;/a&gt; as used by &lt;code&gt;pip&lt;/code&gt;. I can't say
+whether or not that number is accurate. Quite honestly it's at least
+98,000 more than I ever expected, but 100,000 feels like something
+of a milestone to be pleased about.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;epydemic&lt;/code&gt; came about because of a lack of standard tooling for doing
+epidemic simulation. This involves a lot of stochastic simulation,
+which is quite tricky code to write and to make efficient. Testing
+the system actually involved us thinking more deeply about the
+effectiveness of unit testing for stochastic code, which then led to
+a &lt;a href="/softcopy/stochastic-testing-21.pdf"&gt;presentation at UK Systems in 2021&lt;/a&gt; explaining the problems we'd
+had.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged27775" class="outline-2"&gt;
+&lt;h2 id="orged27775"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged27775"&gt;
 &lt;p&gt;
 I've been thinking about running &lt;a href="https://jupyter.org"&gt;Jupyter notebooks&lt;/a&gt; in the cloud for
 some fairly compute-intensive simulation. Specifically I want to do

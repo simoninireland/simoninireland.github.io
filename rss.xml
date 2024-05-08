@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2024 08:59:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org769a36e" class="outline-2"&gt;
-&lt;h2 id="org769a36e"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org769a36e"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 16:11:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge092ceb" class="outline-2"&gt;
+&lt;h2 id="orge092ceb"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge092ceb"&gt;
+&lt;p&gt;
+Downloads of &lt;code&gt;epydemic&lt;/code&gt;, my library for epidemic (and other) process
+simulation on networks (and hopefully other combinatorial structures
+soon…) recently passed 100,000.
+&lt;/p&gt;
+
+&lt;p&gt;
+That number comes from the project's &lt;a href="https://www.pepy.tech/projects/epydemic"&gt;PePy page&lt;/a&gt;, which tracks
+downloads from the main &lt;a href="https://pypi.org/project/epydemic/"&gt;PyPi page&lt;/a&gt; as used by &lt;code&gt;pip&lt;/code&gt;. I can't say
+whether or not that number is accurate. Quite honestly it's at least
+98,000 more than I ever expected, but 100,000 feels like something
+of a milestone to be pleased about.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;epydemic&lt;/code&gt; came about because of a lack of standard tooling for doing
+epidemic simulation. This involves a lot of stochastic simulation,
+which is quite tricky code to write and to make efficient. Testing
+the system actually involved us thinking more deeply about the
+effectiveness of unit testing for stochastic code, which then led to
+a &lt;a href="/softcopy/stochastic-testing-21.pdf"&gt;presentation at UK Systems in 2021&lt;/a&gt; explaining the problems we'd
+had.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org052d9b5" class="outline-2"&gt;
+&lt;h2 id="org052d9b5"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org052d9b5"&gt;
 &lt;p&gt;
 Today I learned about a program that generates the sounds that help
 people navigate as they exit long tunnels when an emergency such as
@@ -69,9 +96,9 @@ It's a great read.
 	  Finished Sunday 21 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga506648" class="outline-2"&gt;
-&lt;h2 id="orga506648"&gt;TIL: Cognitohazards&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga506648"&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf69a63d" class="outline-2"&gt;
+&lt;h2 id="orgf69a63d"&gt;TIL: Cognitohazards&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf69a63d"&gt;
 &lt;p&gt;
 Could social media posts be actively damaging to our mental health?
 – literally, not just figuratively? That's the premise of &lt;a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction"&gt;a
@@ -114,9 +141,9 @@ brains simply by being viewed.
 	  Finished Sunday 7 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5897614552?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org237bc98" class="outline-2"&gt;
-&lt;h2 id="org237bc98"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org237bc98"&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaeff83b" class="outline-2"&gt;
+&lt;h2 id="orgaeff83b"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaeff83b"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/7a/bd1498-3024-4f11-91a7-97f3e99084d7/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -146,9 +173,9 @@ very effective way of leveraging all the code and services out
 there, and is an important technique for Lisp programmers too.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9238410" class="outline-2"&gt;
-&lt;h2 id="org9238410"&gt;Lisp in space&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9238410"&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc901eb4" class="outline-2"&gt;
+&lt;h2 id="orgc901eb4"&gt;Lisp in space&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc901eb4"&gt;
 &lt;p&gt;
 &lt;a href="https://corecursive.com/lisp-in-space-with-ron-garret/"&gt;Lisp in space&lt;/a&gt; (podcast, 38 minutes)
 &lt;/p&gt;
@@ -198,9 +225,9 @@ language can engender.
 	  Finished Saturday 30 March, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326777750?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</guid><pubDate>Sat, 30 Mar 2024 00:00:00 GMT</pubDate></item><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc3ce0d6" class="outline-2"&gt;
-&lt;h2 id="orgc3ce0d6"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc3ce0d6"&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</guid><pubDate>Sat, 30 Mar 2024 00:00:00 GMT</pubDate></item><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7891f7f" class="outline-2"&gt;
+&lt;h2 id="org7891f7f"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7891f7f"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/4f/11131f-cfc4-4d14-8fae-72c78607964b/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -231,45 +258,4 @@ low-latency network routing for financial services: it's hard
 to think of a better example of Lisp's power and range.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item><item><title>My Lisp experiences and the development of GNU Emacs</title><link>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07eea9a" class="outline-2"&gt;
-&lt;h2 id="org07eea9a"&gt;My Lisp experiences and the development of GNU Emacs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org07eea9a"&gt;
-&lt;p&gt;
-&lt;a href="https://www.gnu.org/gnu/rms-lisp.html"&gt;My Lisp Experiences and the Development of GNU Emacs&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-The never-dull Richard Stallman talks about his experiences with
-Lisp and with the development of Emacs. It's got some useful
-observations on &lt;i&gt;why&lt;/i&gt; Lisp became the core of Emacs: it was news to
-me that this hadn't always been the case. It started with an
-"editor control" language in the spirit of editors like &lt;code&gt;ed&lt;/code&gt;. But as
-people wanted more support from their editor, they wanted to
-program it more effectively.
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-The language that you build your extensions on shouldn't be
-thought of as a programming language in afterthought; it should be
-designed as a programming language. In fact, we discovered that
-the best programming language for that purpose was Lisp.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-The result was a re-write of Emacs in C (for portability), with a
-Lisp interpreter specialised towards editing tasks.
-&lt;/p&gt;
-
-&lt;p&gt;
-He then gives an insider's perspective on the Lisp machines and
-their evolution, as well as revealing the genesis of his ideas for
-the free software movement. While these are interesting to read,
-it should be noted that much of it has been rebutted: his
-description of the formation and later history of the two
-spin-outs, Symbolics and Lisp Machines Inc, is strongly disputed
-by Dan Weinreb on &lt;a href="https://web.archive.org/web/20090101103828/http://danweinreb.org/blog/rebuttal-to-stallmans-story-about-the-formation-of-symbolics-and-lmi"&gt;his blog&lt;/a&gt;.)
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/my-lisp-experiences-and-the-development-of-gnu-emacs/</guid><pubDate>Sat, 23 Mar 2024 14:55:26 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item></channel></rss>

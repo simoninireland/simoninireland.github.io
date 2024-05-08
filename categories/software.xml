@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about software)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/software.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 16 Mar 2024 13:14:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New version of epyc released</title><link>https://simondobson.org/2021/09/06/new-version-of-epyc-released/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I released a new version of my &lt;code&gt;epyc&lt;/code&gt; experimental management
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about software)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/software.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 16:11:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge092ceb" class="outline-2"&gt;
+&lt;h2 id="orge092ceb"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge092ceb"&gt;
+&lt;p&gt;
+Downloads of &lt;code&gt;epydemic&lt;/code&gt;, my library for epidemic (and other) process
+simulation on networks (and hopefully other combinatorial structures
+soon…) recently passed 100,000.
+&lt;/p&gt;
+
+&lt;p&gt;
+That number comes from the project's &lt;a href="https://www.pepy.tech/projects/epydemic"&gt;PePy page&lt;/a&gt;, which tracks
+downloads from the main &lt;a href="https://pypi.org/project/epydemic/"&gt;PyPi page&lt;/a&gt; as used by &lt;code&gt;pip&lt;/code&gt;. I can't say
+whether or not that number is accurate. Quite honestly it's at least
+98,000 more than I ever expected, but 100,000 feels like something
+of a milestone to be pleased about.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;epydemic&lt;/code&gt; came about because of a lack of standard tooling for doing
+epidemic simulation. This involves a lot of stochastic simulation,
+which is quite tricky code to write and to make efficient. Testing
+the system actually involved us thinking more deeply about the
+effectiveness of unit testing for stochastic code, which then led to
+a &lt;a href="/softcopy/stochastic-testing-21.pdf"&gt;presentation at UK Systems in 2021&lt;/a&gt; explaining the problems we'd
+had.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>New version of epyc released</title><link>https://simondobson.org/2021/09/06/new-version-of-epyc-released/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I released a new version of my &lt;code&gt;epyc&lt;/code&gt; experimental management
 library.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://simondobson.org/2021/09/06/new-version-of-epyc-released/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>development</category><category>epyc</category><category>experimental design</category><category>python</category><category>software</category><guid>https://simondobson.org/2021/09/06/new-version-of-epyc-released/</guid><pubDate>Mon, 06 Sep 2021 12:50:48 GMT</pubDate></item><item><title>First SleepySketch release</title><link>https://simondobson.org/2014/01/07/sleepysketch-release/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Happy 2014! We're particularly happy to be making the first release of the SleepySketch library for writing low-power Arduino sketches.
 

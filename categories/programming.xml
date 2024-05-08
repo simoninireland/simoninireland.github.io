@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 03 May 2024 08:59:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org769a36e" class="outline-2"&gt;
-&lt;h2 id="org769a36e"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org769a36e"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org052d9b5" class="outline-2"&gt;
+&lt;h2 id="org052d9b5"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org052d9b5"&gt;
 &lt;p&gt;
 Today I learned about a program that generates the sounds that help
 people navigate as they exit long tunnels when an emergency such as
@@ -39,9 +39,9 @@ handling of industrial control and robust communications.
 It's a great read.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8aaa568" class="outline-2"&gt;
-&lt;h2 id="org8aaa568"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8aaa568"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0dae078" class="outline-2"&gt;
+&lt;h2 id="org0dae078"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0dae078"&gt;
 &lt;p&gt;
 I recently had a discussion with someone on Mastodon about Lisp and
 its perceived (by them) deficiencies as a language. There were some
@@ -71,9 +71,9 @@ These points are tied together, but let's try to unpack them.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org326db4d" class="outline-3"&gt;
-&lt;h3 id="org326db4d"&gt;Design&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org326db4d"&gt;
+&lt;div id="outline-container-org51c0928" class="outline-3"&gt;
+&lt;h3 id="org51c0928"&gt;Design&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org51c0928"&gt;
 &lt;p&gt;
 Let's start with design. Lisp is over half a century old. I'd argue
 it was exceptionally well-designed – when it was designed. It
@@ -93,9 +93,9 @@ software would be being written in Haskell.
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-orgdba6490" class="outline-3"&gt;
-&lt;h3 id="orgdba6490"&gt;Typing and features&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgdba6490"&gt;
+&lt;div id="outline-container-orgdd77dd5" class="outline-3"&gt;
+&lt;h3 id="orgdd77dd5"&gt;Typing and features&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdd77dd5"&gt;
 &lt;p&gt;
 And the lack of modern types isn't really as clear-cut as it
 appears. The argument about the &lt;i&gt;lack&lt;/i&gt; of features in Lisp also
@@ -138,9 +138,9 @@ limited in comparison.)
 &lt;/div&gt;
 
 
-&lt;div id="outline-container-org9a69847" class="outline-3"&gt;
-&lt;h3 id="org9a69847"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9a69847"&gt;
+&lt;div id="outline-container-orgb318967" class="outline-3"&gt;
+&lt;h3 id="orgb318967"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb318967"&gt;
 &lt;p&gt;
 The complaints about &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are long established: they
 were originally derived from &lt;a href="https://en.wikipedia.org/wiki/CAR_and_CDR"&gt;machine-language instructions on the
@@ -178,9 +178,9 @@ and seldom used: barely anyone would mind if they were removed.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgbf55fb2" class="outline-3"&gt;
-&lt;h3 id="orgbf55fb2"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgbf55fb2"&gt;
+&lt;div id="outline-container-org7f8b169" class="outline-3"&gt;
+&lt;h3 id="org7f8b169"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7f8b169"&gt;
 &lt;p&gt;
 The suggestion that Lisp has hardware holdovers that should be
 removed also neglects these holdovers in other languages.
@@ -205,9 +205,9 @@ as far as I know.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-org82d3540" class="outline-3"&gt;
-&lt;h3 id="org82d3540"&gt;The different choices&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org82d3540"&gt;
+&lt;div id="outline-container-org39895fa" class="outline-3"&gt;
+&lt;h3 id="org39895fa"&gt;The different choices&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org39895fa"&gt;
 &lt;p&gt;
 For the sake of argument, let's turn the argument around and ask:
 give that early Lisps had proper macros, arbitrary-precision
@@ -251,9 +251,9 @@ choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4a105f9" class="outline-2"&gt;
-&lt;h2 id="org4a105f9"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4a105f9"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org60506a8" class="outline-2"&gt;
+&lt;h2 id="org60506a8"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org60506a8"&gt;
 &lt;p&gt;
 A horribly dangerous but occasionally useful Lisp technique.
 &lt;/p&gt;
