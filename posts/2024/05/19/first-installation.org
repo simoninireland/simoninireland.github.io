@@ -26,14 +26,14 @@
   Raspberry Pi B that I had lying around, and put a 64-bit "lite"
   install on it to run headless.
 
-  Basically followed the [[https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide][installation guide]]. There was an issue with
-  the installation script when cloning the GitHub repo: I suspect
-  this was because of limited memory on the Pi. I downloaded
-  manually, and manually ran the rest of the install script, which
-  did a /lot/ of setup of services and a PHP web server.
+  I then basically just followed the [[https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide][installation guide]]. There was an
+  issue with the installation script when cloning the GitHub repo: I
+  suspect this was because of limited memory on the Pi. I downloaded
+  manually, and manually ran the rest of the install script, which did
+  a /lot/ of setup of services and a PHP web server.
 
   I compiled the [[https://www.waveshare.com/wiki/WM8960_Audio_HAT][drivers]] for the HAT, which worked fine. The new
-  sound card is recognised but is not the default.
+  sound card is recognised but is not the system default.
 
   The installed components seem to include:
 
@@ -48,14 +48,15 @@
 
   The recognition models are built with TensorFlow. This is a great
   example of how the standard Linux tools and services can be combined
-  to get a scientific-grade sensor platform. (Caddy doesn't see to be
+  to get a scientific-grade sensor platform. (Caddy doesn't seem to be
   running over TLS by default, which would be an issue outside a
   firewall.)
 
-  Since the sound card isn't the default, the easiest way to correct
-  this is to change the device in the "advanced settings" panel: in
-  my case I changed from "default" to "hw:2,0", reflecting the
-  output of ~arecord -l~ that shows the sound card devices.
+  Since the sound card isn't the default, the easiest way to get the
+  system listening to the right mics is to change the device in the
+  "advanced settings" panel: in my case I changed from "default" to
+  "hw:2,0", reflecting the output of ~arecord -l~ that shows the sound
+  card devices.
 
   I then deployed the Pi out of the kitchen window.
 
