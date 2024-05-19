@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about raspberry pi)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/raspberry-pi.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:53:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org374f665" class="outline-2"&gt;
-&lt;h2 id="org374f665"&gt;First installation&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org374f665"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about raspberry pi)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/raspberry-pi.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:57:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5c9d58a" class="outline-2"&gt;
+&lt;h2 id="org5c9d58a"&gt;First installation&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5c9d58a"&gt;
 &lt;p&gt;
 The BirdNET-Pi system aims to provide out-of-the-box bird
 identification. It's slightly more awkward than that, but still
@@ -18,16 +18,16 @@ install on it to run headless.
 &lt;/p&gt;
 
 &lt;p&gt;
-Basically followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an issue with
-the installation script when cloning the GitHub repo: I suspect
-this was because of limited memory on the Pi. I downloaded
-manually, and manually ran the rest of the install script, which
-did a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
+I then basically just followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an
+issue with the installation script when cloning the GitHub repo: I
+suspect this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which did
+a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
 &lt;/p&gt;
 
 &lt;p&gt;
 I compiled the &lt;a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT"&gt;drivers&lt;/a&gt; for the HAT, which worked fine. The new
-sound card is recognised but is not the default.
+sound card is recognised but is not the system default.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -48,16 +48,17 @@ The installed components seem to include:
 &lt;p&gt;
 The recognition models are built with TensorFlow. This is a great
 example of how the standard Linux tools and services can be combined
-to get a scientific-grade sensor platform. (Caddy doesn't see to be
+to get a scientific-grade sensor platform. (Caddy doesn't seem to be
 running over TLS by default, which would be an issue outside a
 firewall.)
 &lt;/p&gt;
 
 &lt;p&gt;
-Since the sound card isn't the default, the easiest way to correct
-this is to change the device in the "advanced settings" panel: in
-my case I changed from "default" to "hw:2,0", reflecting the
-output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound card devices.
+Since the sound card isn't the default, the easiest way to get the
+system listening to the right mics is to change the device in the
+"advanced settings" panel: in my case I changed from "default" to
+"hw:2,0", reflecting the output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound
+card devices.
 &lt;/p&gt;
 
 &lt;p&gt;
