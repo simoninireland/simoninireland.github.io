@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd58310c" class="outline-2"&gt;
-&lt;h2 id="orgd58310c"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd58310c"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org68fffef" class="outline-2"&gt;
+&lt;h2 id="org68fffef"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org68fffef"&gt;
 &lt;p&gt;
 John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/960118.808386"&gt;A Micro-Manual for Lisp: Not the Whole Truth&lt;/a&gt;&lt;/i&gt;. ACM
 SIGPLAN Notices &lt;b&gt;13&lt;/b&gt;, pp.215–216. 1978.
@@ -34,9 +34,9 @@ popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-
 of modern bootstrapped compilers.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org59966e4" class="outline-2"&gt;
-&lt;h2 id="org59966e4"&gt;List processing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org59966e4"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4a9b31b" class="outline-2"&gt;
+&lt;h2 id="org4a9b31b"&gt;List processing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4a9b31b"&gt;
 &lt;p&gt;
 J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
 &lt;/p&gt;
@@ -54,9 +54,9 @@ collective memory of computer science, but whose implications
 were profound.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org42156d0" class="outline-2"&gt;
-&lt;h2 id="org42156d0"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org42156d0"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0cdb842" class="outline-2"&gt;
+&lt;h2 id="org0cdb842"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0cdb842"&gt;
 &lt;p&gt;
 John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
 Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
@@ -88,9 +88,9 @@ age and the vision of computing it developed.
 isn't a part II.)
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07c8e67" class="outline-2"&gt;
-&lt;h2 id="org07c8e67"&gt;TIL: The first ever .com domain&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org07c8e67"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org77cb165" class="outline-2"&gt;
+&lt;h2 id="org77cb165"&gt;TIL: The first ever .com domain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org77cb165"&gt;
 &lt;p&gt;
 Today I learned that the first .com internet domain registered on
 the internet was &lt;a href="https://symbolics.com"&gt;https://symbolics.com&lt;/a&gt; and belonged to Symbolics, a

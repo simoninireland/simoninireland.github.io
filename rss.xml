@@ -1,7 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 16:14:27 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9ece863" class="outline-2"&gt;
-&lt;h2 id="org9ece863"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9ece863"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:53:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org374f665" class="outline-2"&gt;
+&lt;h2 id="org374f665"&gt;First installation&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org374f665"&gt;
+&lt;p&gt;
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It's slightly more awkward than that, but still
+pretty straightforward to get up and running.
+&lt;/p&gt;
+
+&lt;p&gt;
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a &lt;a href="https://www.waveshare.com/wm8960-audio-hat.htm"&gt;Waveshare WM8960 HAT&lt;/a&gt; for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I'm not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit "lite"
+install on it to run headless.
+&lt;/p&gt;
+
+&lt;p&gt;
+Basically followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an issue with
+the installation script when cloning the GitHub repo: I suspect
+this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which
+did a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
+&lt;/p&gt;
+
+&lt;p&gt;
+I compiled the &lt;a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT"&gt;drivers&lt;/a&gt; for the HAT, which worked fine. The new
+sound card is recognised but is not the default.
+&lt;/p&gt;
+
+&lt;p&gt;
+The installed components seem to include:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;icecast2&lt;/code&gt;, a streaming server, used to replay recordings&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caddy&lt;/code&gt; web server&lt;/li&gt;
+&lt;li&gt;PHP for serving the web pages&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arecord&lt;/code&gt; to actually record audio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ffmpeg&lt;/code&gt; to extract waveforms&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sqlite for the database&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;the actual machine learning model used for recognition&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn't see to be
+running over TLS by default, which would be an issue outside a
+firewall.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Since the sound card isn't the default, the easiest way to correct
+this is to change the device in the "advanced settings" panel: in
+my case I changed from "default" to "hw:2,0", reflecting the
+output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound card devices.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then deployed the Pi out of the kitchen window.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+To start with it wasn't hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more effective:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+That's an appropriate set of birds being seen – and we hardly ever
+&lt;i&gt;see&lt;/i&gt; magpies, but know they're around. There's actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand out.
+&lt;/p&gt;
+
+&lt;p&gt;
+I can't see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a &lt;i&gt;lot&lt;/i&gt; easier.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>raspberry pi</category><category>sensing</category><guid>https://simondobson.org/2024/05/19/first-installation/</guid><pubDate>Sun, 19 May 2024 14:19:45 GMT</pubDate></item><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org74f003b" class="outline-2"&gt;
+&lt;h2 id="org74f003b"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org74f003b"&gt;
 &lt;p&gt;
 Downloads of &lt;code&gt;epydemic&lt;/code&gt;, my &lt;a href="/development/projects/epydemic/"&gt;library&lt;/a&gt; for epidemic (and other) process
 simulation on networks (and hopefully other combinatorial structures
@@ -26,9 +118,9 @@ a &lt;a href="/softcopy/stochastic-testing-21.pdf"&gt;presentation at UK Systems
 had.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org052d9b5" class="outline-2"&gt;
-&lt;h2 id="org052d9b5"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org052d9b5"&gt;
+&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
+&lt;h2 id="org69b2fff"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org69b2fff"&gt;
 &lt;p&gt;
 Today I learned about a program that generates the sounds that help
 people navigate as they exit long tunnels when an emergency such as
@@ -96,9 +188,9 @@ It's a great read.
 	  Finished Sunday 21 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf69a63d" class="outline-2"&gt;
-&lt;h2 id="orgf69a63d"&gt;TIL: Cognitohazards&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf69a63d"&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item><item><title>TIL: Cognitohazards</title><link>https://simondobson.org/2024/04/12/til-cognitohazards/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org65a04c2" class="outline-2"&gt;
+&lt;h2 id="org65a04c2"&gt;TIL: Cognitohazards&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org65a04c2"&gt;
 &lt;p&gt;
 Could social media posts be actively damaging to our mental health?
 – literally, not just figuratively? That's the premise of &lt;a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction"&gt;a
@@ -141,9 +233,9 @@ brains simply by being viewed.
 	  Finished Sunday 7 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5897614552?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaeff83b" class="outline-2"&gt;
-&lt;h2 id="orgaeff83b"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaeff83b"&gt;
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b914c8" class="outline-2"&gt;
+&lt;h2 id="org1b914c8"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1b914c8"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/7a/bd1498-3024-4f11-91a7-97f3e99084d7/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -173,9 +265,9 @@ very effective way of leveraging all the code and services out
 there, and is an important technique for Lisp programmers too.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc901eb4" class="outline-2"&gt;
-&lt;h2 id="orgc901eb4"&gt;Lisp in space&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc901eb4"&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5458425" class="outline-2"&gt;
+&lt;h2 id="org5458425"&gt;Lisp in space&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5458425"&gt;
 &lt;p&gt;
 &lt;a href="https://corecursive.com/lisp-in-space-with-ron-garret/"&gt;Lisp in space&lt;/a&gt; (podcast, 38 minutes)
 &lt;/p&gt;
@@ -209,6 +301,11 @@ It's an fascinating insight into both the potentials of Lisp and
 the political difficulties that using a non-standard development
 language can engender.
 &lt;/p&gt;
+
+&lt;p&gt;
+UPDATE 2024-05-16: Ron also wrote a &lt;a href="https://flownet.com/gat/jpl-lisp.html"&gt;short essay&lt;/a&gt; about his
+experiences.
+&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/lisp-in-space/</guid><pubDate>Tue, 02 Apr 2024 15:32:56 GMT</pubDate></item><item><title>Red Memory: The Afterlives of China's Cultural Revolution</title><link>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
@@ -225,37 +322,4 @@ language can engender.
 	  Finished Saturday 30 March, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326777750?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</guid><pubDate>Sat, 30 Mar 2024 00:00:00 GMT</pubDate></item><item><title>Lisp hackers: Interviews with 100x more productive programmers</title><link>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7891f7f" class="outline-2"&gt;
-&lt;h2 id="org7891f7f"&gt;Lisp hackers: Interviews with 100x more productive programmers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7891f7f"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/4f/11131f-cfc4-4d14-8fae-72c78607964b/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Vsevolod Dyomkin.  &lt;i&gt;&lt;a href="https://leanpub.com/lisphackers"&gt;Lisp Hackers: Interviews with 100x More Productive
-Programmers&lt;/a&gt;&lt;/i&gt;. Leanpub. 2013.
-&lt;/p&gt;
-
-&lt;p&gt;
-I'm not convinced by the sub-title: at the very least, there's no
-evidence to support the claim that Lisp programmers really are
-hundreds of time more productive. But there are some serious
-insights here from individuals who've made serious contributions
-to the Lisp world – and beyond. The contributions all take the
-form of email interviews consisting of a standard prelude of
-questions (how did you discover Lisp?, do you use it at work?)
-followed by a couple of questions tailored to the interviewee.
-&lt;/p&gt;
-
-&lt;p&gt;
-The practitioners selected have all been affected by Lisp, either
-in terms of it changing their own thought processes, or by helping
-to develop the core ecosystem, or by applying Lisp to real-world
-problems, and often to great effect. My favourite was the
-discussion with someone who was using Common Lisp to develop
-low-latency network routing for financial services: it's hard
-to think of a better example of Lisp's power and range.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/23/lisp-hackers-interviews-with-100x-more-productive-programmers/</guid><pubDate>Sat, 23 Mar 2024 14:57:08 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</guid><pubDate>Sat, 30 Mar 2024 00:00:00 GMT</pubDate></item></channel></rss>

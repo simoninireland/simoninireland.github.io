@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1e206fc" class="outline-2"&gt;
-&lt;h2 id="org1e206fc"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1e206fc"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaea97c7" class="outline-2"&gt;
+&lt;h2 id="orgaea97c7"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaea97c7"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/55/a8fc4d-075e-4914-90ea-c2bcc0021821/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -29,9 +29,9 @@ representations, low-level optimisation and disassembly, and all
 the approaches one needs to use Lisp in real, scalable practice.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdaec641" class="outline-2"&gt;
-&lt;h2 id="orgdaec641"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdaec641"&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</guid><pubDate>Thu, 07 Mar 2024 19:07:31 GMT</pubDate></item><item><title>Common Lisp recipes: A problem-solution approach</title><link>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8757d38" class="outline-2"&gt;
+&lt;h2 id="org8757d38"&gt;Common Lisp recipes: A problem-solution approach&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8757d38"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -55,9 +55,9 @@ presents, but also has a lot to say about coding style and code
 optimisation.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</guid><pubDate>Wed, 06 Mar 2024 18:55:31 GMT</pubDate></item><item><title>The Common Lisp condition system</title><link>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6947989" class="outline-2"&gt;
-&lt;h2 id="org6947989"&gt;The Common Lisp condition system&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6947989"&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/common-lisp-recipes-a-problem-solution-approach/</guid><pubDate>Wed, 06 Mar 2024 18:55:31 GMT</pubDate></item><item><title>The Common Lisp condition system</title><link>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3832c73" class="outline-2"&gt;
+&lt;h2 id="org3832c73"&gt;The Common Lisp condition system&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3832c73"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/06/efe121-b8ab-4558-a705-733fbbe7b1f9/978-1-4842-6134-7.webp" alt="nil"&gt;
 &lt;/p&gt;
@@ -87,9 +87,9 @@ those occasions when these techniques are appropriate: deciding
 functionality and style.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</guid><pubDate>Wed, 06 Mar 2024 18:46:57 GMT</pubDate></item><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd5e888a" class="outline-2"&gt;
-&lt;h2 id="orgd5e888a"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd5e888a"&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/the-common-lisp-condition-system/</guid><pubDate>Wed, 06 Mar 2024 18:46:57 GMT</pubDate></item><item><title>Structure and interpretation of computer programs</title><link>https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgea92793" class="outline-2"&gt;
+&lt;h2 id="orgea92793"&gt;Structure and interpretation of computer programs&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgea92793"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/52/6b5639-18fe-4fc6-b8b1-7c93e3011194/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;

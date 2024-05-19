@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First installation | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Sunday 19 May, 2024</a>
+	    </span>
+	</div>
+	<h1>First&nbsp;installation</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org374f665" class="outline-2">
+<h2 id="org374f665">First&nbsp;installation</h2>
+<div class="outline-text-2" id="text-org374f665">
+<p>
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It&#8217;s slightly more awkward than that, but still
+pretty straightforward to get up and&nbsp;running.
+</p>
+
+<p>
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a <a href="https://www.waveshare.com/wm8960-audio-hat.htm">Waveshare <span class="caps">WM8960</span> <span class="caps">HAT</span></a> for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I&#8217;m not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit &#8220;lite&#8221;
+install on it to run&nbsp;headless.
+</p>
+
+<p>
+Basically followed the <a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide">installation guide</a>. There was an issue with
+the installation script when cloning the GitHub repo: I suspect
+this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which
+did a <i>lot</i> of setup of services and a <span class="caps">PHP</span> web&nbsp;server.
+</p>
+
+<p>
+I compiled the <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">drivers</a> for the <span class="caps">HAT</span>, which worked fine. The new
+sound card is recognised but is not the&nbsp;default.
+</p>
+
+<p>
+The installed components seem to&nbsp;include:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>icecast2</code>, a streaming server, used to replay&nbsp;recordings</li>
+<li>
+<code>caddy</code> web&nbsp;server</li>
+<li><span class="caps">PHP</span> for serving the web&nbsp;pages</li>
+<li>
+<code>arecord</code> to actually record&nbsp;audio</li>
+<li>
+<code>ffmpeg</code> to extract&nbsp;waveforms</li>
+<li><code>sqlite for the database</code></li>
+<li>the actual machine learning model used for&nbsp;recognition</li>
+</ul>
+<p>
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn&#8217;t see to be
+running over <span class="caps">TLS</span> by default, which would be an issue outside a&nbsp;firewall.)
+</p>
+
+<p>
+Since the sound card isn&#8217;t the default, the easiest way to correct
+this is to change the device in the &#8220;advanced settings&#8221; panel: in
+my case I changed from &#8220;default&#8221; to &#8220;hw:2,0&#8221;, reflecting the
+output&nbsp;of <code>arecord -l</code> that shows the sound card&nbsp;devices.
+</p>
+
+<p>
+I then deployed the Pi out of the kitchen&nbsp;window.
+</p>
+
+<p>
+<img src="../../../../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"></p>
+
+<p>
+To start with it wasn&#8217;t hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more&nbsp;effective:
+</p>
+
+<p>
+<img src="../../../../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"></p>
+
+<p>
+That&#8217;s an appropriate set of birds being seen – and we hardly ever
+<i>see</i> magpies, but know they&#8217;re around. There&#8217;s actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand&nbsp;out.
+</p>
+
+<p>
+I can&#8217;t see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a <i>lot</i>&nbsp;easier.
+</p>
+</div>
+</div>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/acoustic-birds/">Bird counting with acoustic sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="First%20installation%20%23acoustic%20%23project%3Aacoustic-birds%20%23raspberrypi%20%23sensing&amp;url=https://simondobson.org/2024/05/19/first-installation/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=First%20installation%20%23acoustic%20%23project%3Aacoustic-birds%20%23raspberrypi%20%23sensing&amp;url=https://simondobson.org/2024/05/19/first-installation/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/05/19/first-installation/&amp;title=First%20installation%20%23acoustic%20%23project%3Aacoustic-birds%20%23raspberrypi%20%23sensing" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/05/19/first-installation/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=First%20installation&amp;body=https://simondobson.org/2024/05/19/first-installation/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/acoustic/">acoustic</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectacoustic-birds/">project:acoustic-birds</a>
+		    <span>  </span>
+		<a href="../../../../categories/raspberry-pi/">raspberry pi</a>
+		    <span>  </span>
+		<a href="../../../../categories/sensing/">sensing</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../08/epydemic-100000/" rel="prev">
+		<span class="meta-nav">Older Post</span>epydemic hits 100,000 downloads
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

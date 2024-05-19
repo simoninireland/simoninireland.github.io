@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1e82ce3" class="outline-2"&gt;
-&lt;h2 id="org1e82ce3"&gt;LISPcraft&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1e82ce3"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc629a4a" class="outline-2"&gt;
+&lt;h2 id="orgc629a4a"&gt;LISPcraft&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc629a4a"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -43,9 +43,9 @@ Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
 978-039395544-6. 1986.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org078e3f1" class="outline-2"&gt;
-&lt;h2 id="org078e3f1"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org078e3f1"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1e3e7eb" class="outline-2"&gt;
+&lt;h2 id="org1e3e7eb"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1e3e7eb"&gt;
 &lt;p&gt;
 &lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
 &lt;/p&gt;
@@ -58,9 +58,9 @@ Includes macros and CLOS. Quite an achievement to make it all so
 readable.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org823fdd4" class="outline-2"&gt;
-&lt;h2 id="org823fdd4"&gt;Practical Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org823fdd4"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org648276a" class="outline-2"&gt;
+&lt;h2 id="org648276a"&gt;Practical Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org648276a"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/b8/4b7fa7-83e9-4756-8ede-1c3cdeaeafef/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;

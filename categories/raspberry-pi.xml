@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about raspberry pi)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/raspberry-pi.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:53:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org374f665" class="outline-2"&gt;
+&lt;h2 id="org374f665"&gt;First installation&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org374f665"&gt;
+&lt;p&gt;
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It's slightly more awkward than that, but still
+pretty straightforward to get up and running.
+&lt;/p&gt;
+
+&lt;p&gt;
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a &lt;a href="https://www.waveshare.com/wm8960-audio-hat.htm"&gt;Waveshare WM8960 HAT&lt;/a&gt; for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I'm not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit "lite"
+install on it to run headless.
+&lt;/p&gt;
+
+&lt;p&gt;
+Basically followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an issue with
+the installation script when cloning the GitHub repo: I suspect
+this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which
+did a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
+&lt;/p&gt;
+
+&lt;p&gt;
+I compiled the &lt;a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT"&gt;drivers&lt;/a&gt; for the HAT, which worked fine. The new
+sound card is recognised but is not the default.
+&lt;/p&gt;
+
+&lt;p&gt;
+The installed components seem to include:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;icecast2&lt;/code&gt;, a streaming server, used to replay recordings&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caddy&lt;/code&gt; web server&lt;/li&gt;
+&lt;li&gt;PHP for serving the web pages&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arecord&lt;/code&gt; to actually record audio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ffmpeg&lt;/code&gt; to extract waveforms&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sqlite for the database&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;the actual machine learning model used for recognition&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn't see to be
+running over TLS by default, which would be an issue outside a
+firewall.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Since the sound card isn't the default, the easiest way to correct
+this is to change the device in the "advanced settings" panel: in
+my case I changed from "default" to "hw:2,0", reflecting the
+output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound card devices.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then deployed the Pi out of the kitchen window.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+To start with it wasn't hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more effective:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+That's an appropriate set of birds being seen – and we hardly ever
+&lt;i&gt;see&lt;/i&gt; magpies, but know they're around. There's actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand out.
+&lt;/p&gt;
+
+&lt;p&gt;
+I can't see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a &lt;i&gt;lot&lt;/i&gt; easier.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>raspberry pi</category><category>sensing</category><guid>https://simondobson.org/2024/05/19/first-installation/</guid><pubDate>Sun, 19 May 2024 14:19:45 GMT</pubDate></item></channel></rss>

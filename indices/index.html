@@ -52,15 +52,120 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/05/19/first-installation/" rel="bookmark">Sunday 19 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/19/first-installation/">First&nbsp;installation</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org374f665" class="outline-2">
+<h2 id="org374f665">First&nbsp;installation</h2>
+<div class="outline-text-2" id="text-org374f665">
+<p>
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It&#8217;s slightly more awkward than that, but still
+pretty straightforward to get up and&nbsp;running.
+</p>
+
+<p>
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a <a href="https://www.waveshare.com/wm8960-audio-hat.htm">Waveshare <span class="caps">WM8960</span> <span class="caps">HAT</span></a> for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I&#8217;m not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit &#8220;lite&#8221;
+install on it to run&nbsp;headless.
+</p>
+
+<p>
+Basically followed the <a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide">installation guide</a>. There was an issue with
+the installation script when cloning the GitHub repo: I suspect
+this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which
+did a <i>lot</i> of setup of services and a <span class="caps">PHP</span> web&nbsp;server.
+</p>
+
+<p>
+I compiled the <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">drivers</a> for the <span class="caps">HAT</span>, which worked fine. The new
+sound card is recognised but is not the&nbsp;default.
+</p>
+
+<p>
+The installed components seem to&nbsp;include:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>icecast2</code>, a streaming server, used to replay&nbsp;recordings</li>
+<li>
+<code>caddy</code> web&nbsp;server</li>
+<li><span class="caps">PHP</span> for serving the web&nbsp;pages</li>
+<li>
+<code>arecord</code> to actually record&nbsp;audio</li>
+<li>
+<code>ffmpeg</code> to extract&nbsp;waveforms</li>
+<li><code>sqlite for the database</code></li>
+<li>the actual machine learning model used for&nbsp;recognition</li>
+</ul>
+<p>
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn&#8217;t see to be
+running over <span class="caps">TLS</span> by default, which would be an issue outside a&nbsp;firewall.)
+</p>
+
+<p>
+Since the sound card isn&#8217;t the default, the easiest way to correct
+this is to change the device in the &#8220;advanced settings&#8221; panel: in
+my case I changed from &#8220;default&#8221; to &#8220;hw:2,0&#8221;, reflecting the
+output&nbsp;of <code>arecord -l</code> that shows the sound card&nbsp;devices.
+</p>
+
+<p>
+I then deployed the Pi out of the kitchen&nbsp;window.
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"></p>
+
+<p>
+To start with it wasn&#8217;t hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more&nbsp;effective:
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"></p>
+
+<p>
+That&#8217;s an appropriate set of birds being seen – and we hardly ever
+<i>see</i> magpies, but know they&#8217;re around. There&#8217;s actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand&nbsp;out.
+</p>
+
+<p>
+I can&#8217;t see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a <i>lot</i>&nbsp;easier.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/05/08/epydemic-100000/" rel="bookmark">Wednesday 8 May, 2024</a>
 			</span>
 		    </div>
 		    <h1><a href="../2024/05/08/epydemic-100000/">epydemic hits 100,000&nbsp;downloads</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org9ece863" class="outline-2">
-<h2 id="org9ece863">epydemic hits 100,000&nbsp;downloads</h2>
-<div class="outline-text-2" id="text-org9ece863">
+			<div id="outline-container-org74f003b" class="outline-2">
+<h2 id="org74f003b">epydemic hits 100,000&nbsp;downloads</h2>
+<div class="outline-text-2" id="text-org74f003b">
 <p>
 Downloads&nbsp;of <code>epydemic</code>, my <a href="/development/projects/epydemic/">library</a> for epidemic (and other) process
 simulation on networks (and hopefully other combinatorial structures
@@ -98,9 +203,9 @@ a <a href="/softcopy/stochastic-testing-21.pdf">presentation at <span class="cap
 		    <h1><a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org052d9b5" class="outline-2">
-<h2 id="org052d9b5"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</h2>
-<div class="outline-text-2" id="text-org052d9b5">
+			<div id="outline-container-org69b2fff" class="outline-2">
+<h2 id="org69b2fff"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</h2>
+<div class="outline-text-2" id="text-org69b2fff">
 <p>
 Today I learned about a program that generates the sounds that help
 people navigate as they exit long tunnels when an emergency such as
@@ -198,50 +303,6 @@ It&#8217;s a great&nbsp;read.
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/04/12/til-cognitohazards/" rel="bookmark">Friday 12 April, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/04/12/til-cognitohazards/"><span class="caps">TIL</span>:&nbsp;Cognitohazards</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgf69a63d" class="outline-2">
-<h2 id="orgf69a63d"><span class="caps">TIL</span>:&nbsp;Cognitohazards</h2>
-<div class="outline-text-2" id="text-orgf69a63d">
-<p>
-Could social media posts be actively damaging to our mental health?
-– literally, not just figuratively? That&#8217;s the premise of <a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction">a
-TechScape article in The Guardian</a>, that draws on both science
-fiction and psychological&nbsp;research.
-</p>
-
-<p>
-In Neal Stephenson&#8217;s &#8220;Snow crash&#8221; there is a plot device of an image
-in a metaverse that, when viewed, crashes the viewer&#8217;s brain. We
-haven&#8217;t seen this in social media (yet), but there&#8217;s an increasing
-concern about deepfake images and other forms of misinformation.
-Research suggests that such images are damaging <i>even if viewers
-know that they&#8217;re fakes</i>, which suggests that techniques like
-content-labelling images as <span class="caps">AI</span>-generated are insufficient to remove
-their harm. Other examples include massively engaging artificial
-images such as the &#8220;pong wars&#8221; animation of two simultaneous
-&#8220;Breakout&#8221; games going on between two algorithms: something that
-shouldn&#8217;t be as engaging as it is (as I can attest to&nbsp;myself).
-</p>
-
-<p>
-Social media attention grabbing at an industrial scale might
-therefore constitute a <i>cognitohazard</i>, a way of hacking people&#8217;s
-brains simply by being&nbsp;viewed.
-</p>
-</div>
 </div>
 		</div>
 	    </article>
