@@ -8,6 +8,10 @@ long-form.
 - `An annotated Lisp bibliography
   <link:/development/annotated-lisp-bibliography/>`_, a curated and
   commented list of references into the enormous Lisp literature
+- `Bird counting with acoustic sensing
+  <link:/development/acoustic-birds/>`_, using largely off-the-shelf
+  hardware to drive some experiments in data analytics for estimating
+  bird abundance
 - `A citizen sensing project
   <link:/development/projects/citizen-sensing>`_ to explore doing
   environment sensing with off-the-shelf Arduino hardware

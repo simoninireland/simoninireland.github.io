@@ -1,0 +1,81 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: First installation
+.. slug: first-installation
+.. date: 2024-05-19 15:19:45 UTC+01:00
+.. tags: sensing, acoustic, raspberry pi, project:acoustic-birds
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* First installation                                                 :ATTACH:
+  :PROPERTIES:
+  :ID:       18408cf7-5f1f-4b07-81ef-e8f94d1c38d3
+  :END:
+
+  The BirdNET-Pi system aims to provide out-of-the-box bird
+  identification. It's slightly more awkward than that, but still
+  pretty straightforward to get up and running.
+
+  My first hardware plan was to use a Raspberry Pi Zero as the
+  compute host with a [[https://www.waveshare.com/wm8960-audio-hat.htm][Waveshare WM8960 HAT]] for the sound capture. It
+  turns out that BirdNET needs a 64-bit platform -- why I'm not sure
+  -- and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+  Raspberry Pi B that I had lying around, and put a 64-bit "lite"
+  install on it to run headless.
+
+  Basically followed the [[https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide][installation guide]]. There was an issue with
+  the installation script when cloning the GitHub repo: I suspect
+  this was because of limited memory on the Pi. I downloaded
+  manually, and manually ran the rest of the install script, which
+  did a /lot/ of setup of services and a PHP web server.
+
+  I compiled the [[https://www.waveshare.com/wiki/WM8960_Audio_HAT][drivers]] for the HAT, which worked fine. The new
+  sound card is recognised but is not the default.
+
+  The installed components seem to include:
+
+  - ~icecast2~, a streaming server, used to replay recordings
+  - ~caddy~ web server
+  - PHP for serving the web pages
+  - ~arecord~ to actually record audio
+  - ~ffmpeg~ to extract waveforms
+  - ~sqlite for the database~
+  - the actual machine learning model used for recognition
+
+
+  The recognition models are built with TensorFlow. This is a great
+  example of how the standard Linux tools and services can be combined
+  to get a scientific-grade sensor platform. (Caddy doesn't see to be
+  running over TLS by default, which would be an issue outside a
+  firewall.)
+
+  Since the sound card isn't the default, the easiest way to correct
+  this is to change the device in the "advanced settings" panel: in
+  my case I changed from "default" to "hw:2,0", reflecting the
+  output of ~arecord -l~ that shows the sound card devices.
+
+  I then deployed the Pi out of the kitchen window.
+
+  #+DOWNLOADED: screenshot @ 2024-05-12 16:12:53
+  #+attr_org: :width 500q
+  [[attachment:screenshot.png]]
+
+  To start with it wasn't hearing anything, which I think may be
+  because of the waterfall in the courtyard: turning this off made
+  things much more effective:
+
+  #+DOWNLOADED: screenshot @ 2024-05-12 11:53:13
+  #+attr_org: :width 500
+  [[attachment:screenshot-1.png]]
+
+ That's an appropriate set of birds being seen -- and we hardly ever
+ /see/ magpies, but know they're around. There's actually quite a lot
+ of background noise even in such a quiet village, but the bird
+ calls do stand out.
+
+ I can't see any reason for the manual installation on bare metal:
+ as far as I can see everything could be containerised, which would
+ make deployment and management a /lot/ easier.

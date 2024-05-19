@@ -232,6 +232,7 @@ HIDDEN_TAGS = [
     'mathjax',
     'project:ditch',
     'project:lisp-bibliography',
+    'project:acoustic-birds',
 ]
 
 # Series links from tags
@@ -239,6 +240,10 @@ SERIES_TAGS = {
     'project:lisp-bibliography': {
         'title': 'An annotated Lisp bibliography',
         'link': '/development/annotated-lisp-bibliography/'
+    },
+    'project:acoustic-birds': {
+        'title': 'Bird counting with acoustic sensing',
+        'link': '/development/acoustic-birds/'
     },
     'project:ditch': {
         'title': 'Citizen sensing',
