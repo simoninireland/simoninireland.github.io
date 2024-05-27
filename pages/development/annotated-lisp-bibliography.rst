@@ -191,3 +191,6 @@ historical (and other) resources that already exist. These include:
   cover a huge breadth of Lisp implementations, their source code and
   documentation. (Thanks to `Paul <https://mcjones.org/paul/>`_
   himself for pointing me to this.)
+- The `Symbolics Lisp Machine Museum <https://smbx.org/>`_, a
+  work-in-progress memorial for the hardware, software, and culture of
+  Symbolics.

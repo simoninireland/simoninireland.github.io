@@ -1,0 +1,19 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Pascal Costanza's highly opinionated guide to Lisp
+.. slug: pascal-costanza1s-highly-opinionated-guide-to-lisp
+.. date: 2024-05-27 17:04:50 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, experience
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Pascal Costanza's highly opinionated guide to Lisp
+
+  [[https://www.p-cos.net/lisp/guide.html][Pascal Costanza's Highly Opinionated Guide to Lisp]]
+
+  Part introduction, part paean to the language's power, part study
+  guide, while dipping into an eclectically-chosen subset of Lisp
+  features that really illustrate what makes it different.

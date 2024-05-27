@@ -1,0 +1,26 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: A road to Common Lisp
+.. slug: a-road-to-common-lisp
+.. date: 2024-05-27 17:00:55 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* A road to Common Lisp
+
+  [[https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/][A Road to Common Lisp]]
+
+  This a really brief, yet really interesting, approach to
+  introducing Lisp to someone. Interesting because it covers all the
+  usual ground, but also has copious pointers to other material
+  slightly-beyond-introductory ("Where to go from here"). It also
+  links to material that's essential to modern practice, such as
+  Lisp packages and systems, and the essential "standard libraries"
+  such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
+  things that are needed in practice and which in other languages
+  would probably be built-in and included directly in an
+  introduction.
