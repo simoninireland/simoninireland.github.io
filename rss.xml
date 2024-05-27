@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:57:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5c9d58a" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 16:06:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
+&lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9a991ba"&gt;
+&lt;p&gt;
+&lt;a href="https://www.p-cos.net/lisp/guide.html"&gt;Pascal Costanza's Highly Opinionated Guide to Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Part introduction, part paean to the language's power, part study
+guide, while dipping into an eclectically-chosen subset of Lisp
+features that really illustrate what makes it different.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</guid><pubDate>Mon, 27 May 2024 16:04:50 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga7343e8" class="outline-2"&gt;
+&lt;h2 id="orga7343e8"&gt;A road to Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga7343e8"&gt;
+&lt;p&gt;
+&lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This a really brief, yet really interesting, approach to
+introducing Lisp to someone. Interesting because it covers all the
+usual ground, but also has copious pointers to other material
+slightly-beyond-introductory ("Where to go from here"). It also
+links to material that's essential to modern practice, such as
+Lisp packages and systems, and the essential "standard libraries"
+such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
+things that are needed in practice and which in other languages
+would probably be built-in and included directly in an
+introduction.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5c9d58a" class="outline-2"&gt;
 &lt;h2 id="org5c9d58a"&gt;First installation&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org5c9d58a"&gt;
 &lt;p&gt;
@@ -266,61 +299,4 @@ very effective way of leveraging all the code and services out
 there, and is an important technique for Lisp programmers too.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5458425" class="outline-2"&gt;
-&lt;h2 id="org5458425"&gt;Lisp in space&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5458425"&gt;
-&lt;p&gt;
-&lt;a href="https://corecursive.com/lisp-in-space-with-ron-garret/"&gt;Lisp in space&lt;/a&gt; (podcast, 38 minutes)
-&lt;/p&gt;
-
-&lt;p&gt;
-An interview on the Corecursive podcast with Ron Garret.
-&lt;/p&gt;
-
-&lt;p&gt;
-In 1988 (when, for context, I was in the second year of my BSc)
-Garret started working on autonomous navigation software for
-&lt;a href="https://en.wikipedia.org/wiki/Sojourner_(rover)"&gt;Sojourner&lt;/a&gt;, NASA's first Mars rover, which flew in 1997. He used Lisp
-to do planning, essentially developing an entire domain-specific
-language for autonomous vehicles. The project was never flown, as
-NASA opted for a far less ambitious approach to driving to rovers –
-a decision that Garret now considers to have been the correct one.
-&lt;/p&gt;
-
-&lt;p&gt;
-But that isn't the end of the story, because Garret then went on
-to develop an autonomous Remote Agent controller for the &lt;a href="https://en.wikipedia.org/wiki/Deep_Space_1"&gt;Deep
-Space 1&lt;/a&gt; technology demonstration mission that performed asteroid
-and comet fly-bys. Without spoiling to story, the spacecraft flies
-with a full Lisp system onboard, and Garret gets to interact with
-its REPL at a distance of 30 light-minutes &lt;i&gt;via&lt;/i&gt; the Deep Space
-Network – surely the longest latency of any REPL session ever!
-&lt;/p&gt;
-
-&lt;p&gt;
-It's an fascinating insight into both the potentials of Lisp and
-the political difficulties that using a non-standard development
-language can engender.
-&lt;/p&gt;
-
-&lt;p&gt;
-UPDATE 2024-05-16: Ron also wrote a &lt;a href="https://flownet.com/gat/jpl-lisp.html"&gt;short essay&lt;/a&gt; about his
-experiences.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/lisp-in-space/</guid><pubDate>Tue, 02 Apr 2024 15:32:56 GMT</pubDate></item><item><title>Red Memory: The Afterlives of China's Cultural Revolution</title><link>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1701695268l/174927273._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Tania Branigan
-	  (2023)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      It's unusual to read a book that probably couldn't have been written before &lt;i&gt;or&lt;/i&gt; after it actually was: the political environment of China thawed just enough to give people confidence to speak to a foreign author about the events of the Cultural Revolution.&lt;br&gt;&lt;br&gt;The horrors shine through, in the memories of the young Red Guards and their victims. But so too do the current sensitivities, not least in the rather farcical museums and monuments that can be found across China – but that can't be visited, because the custodians race to close them up "for maintenance" as soon as a visitor arrives. It's a different approach to that described in &lt;a href="https://www.goodreads.com/book/show/50215644.Between_Two_Fires_Truth__Ambition__and_Compromise_in_Putin_s_Russia" title="Between Two Fires Truth, Ambition, and Compromise in Putin's Russia by Joshua Yaffa" rel="nofollow noopener"&gt;Between Two Fires: Truth, Ambition, and Compromise in Putin's Russia&lt;/a&gt;, where museums are re-assigned to new curators who subtly change their message, but it reinforces the fears that authoritarian regimes have of their own histories and those who might actually remember them.&lt;br&gt;&lt;br&gt;China has never had a public reckoning with the Cultural Revolution – and it doesn't look that it will have one for a long time. The message of this book is that this hiding of the past continues to do damage to the present, not least because it provides a vague and unexamined fear of disorder that can be used to justify repression "in case it happens again". But the fact is that it didn't just "happen": it was commanded, by a regime that's the linear predecessor of the current leadership who seem to want to both disown it &lt;i&gt;and&lt;/i&gt; levarage it for their own ends.&lt;br&gt;
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Saturday 30 March, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326777750?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/red-memory-the-afterlives-of-chinas-cultural-revolution/</guid><pubDate>Sat, 30 Mar 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item></channel></rss>

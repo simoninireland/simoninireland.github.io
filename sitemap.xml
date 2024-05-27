@@ -962,8 +962,16 @@
   <lastmod>2024-05-19T14:18:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</loc>
+  <lastmod>2024-05-27T16:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</loc>
+  <lastmod>2024-05-27T16:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-05-19T14:49:00Z</lastmod>
+  <lastmod>2024-05-27T16:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
@@ -3795,7 +3803,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/</loc>
-  <lastmod>2024-05-08T15:57:00Z</lastmod>
+  <lastmod>2024-05-27T16:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-1.html</loc>
@@ -3995,7 +4003,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-143.html</loc>
-  <lastmod>2024-05-19T14:51:00Z</lastmod>
+  <lastmod>2024-05-27T16:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/indices/index-144.html</loc>
+  <lastmod>2024-05-27T16:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-15.html</loc>

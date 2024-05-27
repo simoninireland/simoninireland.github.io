@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 16:06:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
+&lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9a991ba"&gt;
+&lt;p&gt;
+&lt;a href="https://www.p-cos.net/lisp/guide.html"&gt;Pascal Costanza's Highly Opinionated Guide to Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Part introduction, part paean to the language's power, part study
+guide, while dipping into an eclectically-chosen subset of Lisp
+features that really illustrate what makes it different.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</guid><pubDate>Mon, 27 May 2024 16:04:50 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga7343e8" class="outline-2"&gt;
+&lt;h2 id="orga7343e8"&gt;A road to Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga7343e8"&gt;
+&lt;p&gt;
+&lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This a really brief, yet really interesting, approach to
+introducing Lisp to someone. Interesting because it covers all the
+usual ground, but also has copious pointers to other material
+slightly-beyond-introductory ("Where to go from here"). It also
+links to material that's essential to modern practice, such as
+Lisp packages and systems, and the essential "standard libraries"
+such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
+things that are needed in practice and which in other languages
+would probably be built-in and included directly in an
+introduction.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
 &lt;h2 id="org69b2fff"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org69b2fff"&gt;
 &lt;p&gt;
@@ -286,59 +319,4 @@ pushed into hardware – while still providing optimised
 implementations that were invisible to the programmer.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item><item><title>Lisp for the web</title><link>https://simondobson.org/2024/03/10/lisp-for-the-web/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6095f38" class="outline-2"&gt;
-&lt;h2 id="org6095f38"&gt;Lisp for the web&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org6095f38"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/1d/7ec1a6-7ac8-4088-8d51-8affdd18f3e7/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Adam Tornhill.  &lt;i&gt;&lt;a href="http://leanpub.com/lispweb"&gt;Lisp for the Web&lt;/a&gt;&lt;/i&gt;. Leanpub. 2015.
-&lt;/p&gt;
-
-&lt;p&gt;
-A short, practical guide to build a dynamic web site entirely
-using Common Lisp. Makes extensive use of several libraries,
-including the intriguingly-named &lt;a href="https://edicl.github.io/hunchentoot/"&gt;hunchentoot&lt;/a&gt; web server (named
-after a never-staged musical written by Frank Zappa), the &lt;a href="https://edicl.github.io/cl-who/"&gt;CL-WHO&lt;/a&gt;
-HTML generator, and – perhaps most interesting – the &lt;a href="https://cliki.net/Parenscript"&gt;Parenscript&lt;/a&gt;
-Lisp to Javascript compiler.
-&lt;/p&gt;
-
-&lt;p&gt;
-One gain from using Lisp is the ability to wrap-up standard
-constructions like page templates as macros. Other than this, it's
-hard to assess whether the gains are all that significant. One
-interesting point is that the whole development occurs in Lisp, so
-there's no cognitive dissonance between writing the back-end and
-the front-end: essentially the same argument for using &lt;a href="https://nodejs.org/"&gt;node.js&lt;/a&gt; as
-a back-end framework. While Parenscript isn't a fully-featured
-Lisp-in-the-browser it again can benefit from macros and other
-features. There's a throwaway comment about linking it to &lt;a href="https://jquery.com/"&gt;jQuery&lt;/a&gt;,
-although that isn't demonstrated in practice: it feels intriguing,
-though, especially if there's a way to represent jQuery
-functionality idiomatically in Lisp.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/10/lisp-for-the-web/</guid><pubDate>Sun, 10 Mar 2024 10:28:45 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4a9b31b" class="outline-2"&gt;
-&lt;h2 id="org4a9b31b"&gt;List processing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org4a9b31b"&gt;
-&lt;p&gt;
-J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
-&lt;/p&gt;
-
-&lt;p&gt;
-A slim volume discussing list processing with reference to Lisp
-and to other list processing systems of the time (including some
-libraries embedded into Fortran).
-&lt;/p&gt;
-
-&lt;p&gt;
-The most fascinating part of the book is its bibliography, which
-references a lot of papers that have disappeared from the
-collective memory of computer science, but whose implications
-were profound.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item></channel></rss>
