@@ -1,0 +1,70 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Deploying a MicroMoth
+.. slug: configuring-the-board
+.. date: 2024-06-10 11:11:02 UTC+01:00
+.. tags: acoustic, sensing, project:acoustic-birds
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Deploying a MicroMoth                                              :ATTACH:
+  :PROPERTIES:
+  :ID:       4b0ad2d7-5cb3-4b93-a0ec-4963e2868155
+  :END:
+
+  The MicroMoth (or uMoth) from [[id:c0a38f8e-970a-499d-a30e-56ec235b6ea9][Open Acoustic Devices]] is the same as
+  their better-known AudioMoth recorder but with a significantly
+  smaller footprint. It's just a traditional recorder or data-logger,
+  with now on-board analysis and no wireless connectivity. I got hold
+  of some to use in a larger project we're thinking about running, and
+  they're not kidding about the "micro" part.
+
+  #+DOWNLOADED: screenshot @ 2024-06-08 14:21:52
+  #+attr_org: :width 500
+  [[attachment:IMG_20240528_144150.jpg]]
+
+  The uMoth uses the same software as the AudioMoth, and therefore
+  the same configuration app available from the [[https://www.openacousticdevices.info/applications][apps page]] -- for
+  64-bit Linux in my case. It downloads as a ~.appimage~ file, which
+  is simply a self-contained archive. It needed to be marked as
+  executable, and then ran directly from a double-click. (The page
+  suggests that there may be some extra steps for some Linux
+  distros: there weren't for Arch.)
+
+  I then followed the [[https://www.openacousticdevices.info/config-app-guide][configuration guide]]. The time is set
+  automatically from the computer's clock when you configure the
+  device.
+
+  For testing I chose two recording periods, 0400--0800 and
+  1400--1600.
+
+  #+DOWNLOADED: screenshot @ 2024-06-08 14:21:52
+  #+attr_org: :width 500
+  [[attachment:config.png]]
+
+  As shown this will, with the default 48KHz sampling, generate
+  about 2GB of data per day and use about 70mAh of energy. For my
+  tests I just hung the device out of the window on a USB tether for
+  power: it works fine drawing power from the USB rather than from
+  the battery connector.
+
+  #+DOWNLOADED: file:///home/sd80/Downloads/IMG_20240608_141527.jpg @ 2024-06-08 14:26:26
+  #+attr_org: :width 350
+  [[attachment:IMG_20240608_141527.jpg]]
+
+  This turned out not to record anything, because the time is lost
+  if the power is disconnected, even though the configuration is
+  retained. (The manual does actually say this, with a suitably
+  close reading. It could be clearer.) There's a smartphone app that
+  can reset the time once the device is in the field and powered-up,
+  though, by making an audio chime that encodes the current time and
+  location in a way the board can understand. Flashing the device
+  with the "Always require acoustic chime on switching to CUSTOM"
+  makes it wait after power is applied until its time is set.
+
+  The red LED flashes when the device is recording. The green LED
+  flashes when the device is waiting for a recording period to
+  start. The red LED stays lit while the time is unset.
