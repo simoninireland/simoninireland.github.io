@@ -1,5 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sensing)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sensing.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 10 Jun 2024 10:22:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploying a MicroMoth</title><link>https://simondobson.org/2024/06/10/configuring-the-board/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf2790be" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about sensing)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/sensing.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 10 Jun 2024 11:59:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Processing MicroMoth recordings offline</title><link>https://simondobson.org/2024/06/10/processing-the-data-offline/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfccf4b6" class="outline-2"&gt;
+&lt;h2 id="orgfccf4b6"&gt;Processing MicroMoth recordings offline&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfccf4b6"&gt;
+&lt;p&gt;
+The uMoth generates &lt;code&gt;.wav&lt;/code&gt; files, uncompressed waveforms of what it
+records. These need to be processed to identify any bird calls
+within them.
+&lt;/p&gt;
+
+&lt;p&gt;
+This function is integrated in BirdNET-Pi, which does recording and
+classification, and provides a web GUI. With the uMoths we need to
+provide classification as part of a data processing pipeline. We
+can however make direct use of the classifier "brain" within
+BirdNET-PI, which is unsurprisingly called &lt;a href="https://github.com/kahst/BirdNET-Analyzer"&gt;BirdNET-Analyzer&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1ca5243" class="outline-3"&gt;
+&lt;h3 id="org1ca5243"&gt;Installation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1ca5243"&gt;
+&lt;p&gt;
+I'm working on a 16-core Intel Core i7@3.8GHz running Arch Linux.
+&lt;/p&gt;
+
+&lt;p&gt;
+First we clone the BirdNET-Analyzer repo. This takes a long time
+as it includes the ML models, some of which are 40MB or more.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    git clone https://github.com/kahst/BirdNET-Analyzer.git
+    cd BirdNET-Analyzer
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The repo includes a Docker file that we can use to build the
+analyser in a container.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker build .
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The container setup is quite basic and is probably intended for
+testing rather than production, but it gives a usable system that
+could then be embedded into something more usable. The core of the
+system is the &lt;code&gt;analyze.py&lt;/code&gt; script.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge6466b1" class="outline-3"&gt;
+&lt;h3 id="orge6466b1"&gt;Analysing some data (AKA identifying some birds!)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge6466b1"&gt;
+&lt;p&gt;
+The container as defined looks into its &lt;code&gt;/example&lt;/code&gt; directory for
+waveforms and analyses them, generating text file for each sample.
+The easiest way to get it to analyse captured data is to mount a
+data directory of files onto this mount point (thereby shadowing
+the example waveform provided).
+&lt;/p&gt;
+
+&lt;p&gt;
+There are various parameters that configure the classifier. I
+copied the &lt;a href="/2024/05/19/first-installation/"&gt;defaults I was using with BirdNET-Pi&lt;/a&gt;, only accepting classifications
+at or above 0.7 confidence.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker run -v /var/run/media/sd80/DATA:/example birdnet-analyzer analyze.py --rtype=csv --min_conf=0.7 --sensitivity=1.25
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This crunches through all the files (982 of them from my first
+run) and generates a CSV file for each. An example is:
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-right"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-right"&gt;Start (s)&lt;/td&gt;
+&lt;td class="org-right"&gt;End (s)&lt;/td&gt;
+&lt;td class="org-left"&gt;Scientific name&lt;/td&gt;
+&lt;td class="org-left"&gt;Common name&lt;/td&gt;
+&lt;td class="org-right"&gt;Confidence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;6.0&lt;/td&gt;
+&lt;td class="org-right"&gt;9.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.9360&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;9.0&lt;/td&gt;
+&lt;td class="org-right"&gt;12.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8472&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;12.0&lt;/td&gt;
+&lt;td class="org-right"&gt;15.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8681&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;15.0&lt;/td&gt;
+&lt;td class="org-right"&gt;18.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8677&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;24.0&lt;/td&gt;
+&lt;td class="org-right"&gt;27.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
+&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
+&lt;td class="org-right"&gt;0.9198&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;27.0&lt;/td&gt;
+&lt;td class="org-right"&gt;30.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
+&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
+&lt;td class="org-right"&gt;0.7716&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;45.0&lt;/td&gt;
+&lt;td class="org-right"&gt;48.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8023&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;48.0&lt;/td&gt;
+&lt;td class="org-right"&gt;51.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.7696&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+Those are entirely credible identifications. The start- and
+end-point offsets allow rough location within the recording.
+(BirdNET segments the recordings into 3s chunks for analysis.)
+&lt;/p&gt;
+
+&lt;p&gt;
+This is clearly not as straightforward as BirdNET-Pi, nor as
+immediately satisfying. But it does scale to analysing lots of
+data (and could be made to do so even better, with a better
+front-end to the container), which is important for any
+large-scale deployment.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/processing-the-data-offline/</guid><pubDate>Mon, 10 Jun 2024 11:57:22 GMT</pubDate></item><item><title>Deploying a MicroMoth</title><link>https://simondobson.org/2024/06/10/configuring-the-board/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf2790be" class="outline-2"&gt;
 &lt;h2 id="orgf2790be"&gt;Deploying a MicroMoth&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgf2790be"&gt;
 &lt;p&gt;

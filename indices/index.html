@@ -52,6 +52,185 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/06/10/processing-the-data-offline/" rel="bookmark">Monday 10 June, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/06/10/processing-the-data-offline/">Processing MicroMoth recordings&nbsp;offline</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgfccf4b6" class="outline-2">
+<h2 id="orgfccf4b6">Processing MicroMoth recordings&nbsp;offline</h2>
+<div class="outline-text-2" id="text-orgfccf4b6">
+<p>
+The uMoth&nbsp;generates <code>.wav</code> files, uncompressed waveforms of what it
+records. These need to be processed to identify any bird calls
+within&nbsp;them.
+</p>
+
+<p>
+This function is integrated in BirdNET-Pi, which does recording and
+classification, and provides a web <span class="caps">GUI</span>. With the uMoths we need to
+provide classification as part of a data processing pipeline. We
+can however make direct use of the classifier &#8220;brain&#8221; within
+BirdNET-<span class="caps">PI</span>, which is unsurprisingly called <a href="https://github.com/kahst/BirdNET-Analyzer">BirdNET-Analyzer</a>.
+</p>
+</div>
+
+<div id="outline-container-org1ca5243" class="outline-3">
+<h3 id="org1ca5243">Installation</h3>
+<div class="outline-text-3" id="text-org1ca5243">
+<p>
+I&#8217;m working on a 16-core Intel Core i7@3.8GHz running Arch&nbsp;Linux.
+</p>
+
+<p>
+First we clone the BirdNET-Analyzer repo. This takes a long time
+as it includes the <span class="caps">ML</span> models, some of which are <span class="caps">40MB</span> or&nbsp;more.
+</p>
+
+<div class="highlight"><pre><span></span>    git clone https://github.com/kahst/BirdNET-Analyzer.git
+    cd BirdNET-Analyzer
+</pre></div>
+
+<p>
+The repo includes a Docker file that we can use to build the
+analyser in a&nbsp;container.
+</p>
+
+<div class="highlight"><pre><span></span>    docker build .
+</pre></div>
+
+<p>
+The container setup is quite basic and is probably intended for
+testing rather than production, but it gives a usable system that
+could then be embedded into something more usable. The core of the
+system is&nbsp;the <code>analyze.py</code> script.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6466b1" class="outline-3">
+<h3 id="orge6466b1">Analysing some data (<span class="caps">AKA</span> identifying some&nbsp;birds!)</h3>
+<div class="outline-text-3" id="text-orge6466b1">
+<p>
+The container as defined looks into&nbsp;its <code>/example</code> directory for
+waveforms and analyses them, generating text file for each sample.
+The easiest way to get it to analyse captured data is to mount a
+data directory of files onto this mount point (thereby shadowing
+the example waveform&nbsp;provided).
+</p>
+
+<p>
+There are various parameters that configure the classifier. I
+copied the <a href="/2024/05/19/first-installation/">defaults I was using with BirdNET-Pi</a>, only accepting classifications
+at or above 0.7&nbsp;confidence.
+</p>
+
+<div class="highlight"><pre><span></span>    docker run -v /var/run/media/sd80/DATA:/example birdnet-analyzer analyze.py --rtype=csv --min_conf=0.7 --sensitivity=1.25
+</pre></div>
+
+<p>
+This crunches through all the files (982 of them from my first
+run) and generates a <span class="caps">CSV</span> file for each. An example&nbsp;is:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-right">
+<col class="org-right">
+<col class="org-left">
+<col class="org-left">
+<col class="org-right">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">Start (s)</td>
+<td class="org-right">End (s)</td>
+<td class="org-left">Scientific name</td>
+<td class="org-left">Common name</td>
+<td class="org-right">Confidence</td>
+</tr>
+<tr>
+<td class="org-right">6.0</td>
+<td class="org-right">9.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.9360</td>
+</tr>
+<tr>
+<td class="org-right">9.0</td>
+<td class="org-right">12.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.8472</td>
+</tr>
+<tr>
+<td class="org-right">12.0</td>
+<td class="org-right">15.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.8681</td>
+</tr>
+<tr>
+<td class="org-right">15.0</td>
+<td class="org-right">18.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.8677</td>
+</tr>
+<tr>
+<td class="org-right">24.0</td>
+<td class="org-right">27.0</td>
+<td class="org-left">Columba palumbus</td>
+<td class="org-left">Common Wood-Pigeon</td>
+<td class="org-right">0.9198</td>
+</tr>
+<tr>
+<td class="org-right">27.0</td>
+<td class="org-right">30.0</td>
+<td class="org-left">Columba palumbus</td>
+<td class="org-left">Common Wood-Pigeon</td>
+<td class="org-right">0.7716</td>
+</tr>
+<tr>
+<td class="org-right">45.0</td>
+<td class="org-right">48.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.8023</td>
+</tr>
+<tr>
+<td class="org-right">48.0</td>
+<td class="org-right">51.0</td>
+<td class="org-left">Corvus monedula</td>
+<td class="org-left">Eurasian Jackdaw</td>
+<td class="org-right">0.7696</td>
+</tr>
+</tbody>
+</table>
+<p>
+Those are entirely credible identifications. The start- and
+end-point offsets allow rough location within the recording.
+(BirdNET segments the recordings into 3s chunks for&nbsp;analysis.)
+</p>
+
+<p>
+This is clearly not as straightforward as BirdNET-Pi, nor as
+immediately satisfying. But it does scale to analysing lots of
+data (and could be made to do so even better, with a better
+front-end to the container), which is important for any
+large-scale&nbsp;deployment.
+</p>
+</div>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/06/10/configuring-the-board/" rel="bookmark">Monday 10 June, 2024</a>
 			</span>
 		    </div>
@@ -288,46 +467,6 @@ calls do stand&nbsp;out.
 I can&#8217;t see any reason for the manual installation on bare metal:
 as far as I can see everything could be containerised, which would
 make deployment and management a <i>lot</i>&nbsp;easier.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/05/08/epydemic-100000/" rel="bookmark">Wednesday 8 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/08/epydemic-100000/">epydemic hits 100,000&nbsp;downloads</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org74f003b" class="outline-2">
-<h2 id="org74f003b">epydemic hits 100,000&nbsp;downloads</h2>
-<div class="outline-text-2" id="text-org74f003b">
-<p>
-Downloads&nbsp;of <code>epydemic</code>, my <a href="/development/projects/epydemic/">library</a> for epidemic (and other) process
-simulation on networks (and hopefully other combinatorial structures
-soon…) recently passed&nbsp;100,000.
-</p>
-
-<p>
-That number comes from the project&#8217;s <a href="https://www.pepy.tech/projects/epydemic">PePy page</a>, which tracks
-downloads from the main <a href="https://pypi.org/project/epydemic/">PyPi page</a> as used&nbsp;by <code>pip</code>. I can&#8217;t say
-whether or not that number is accurate. Quite honestly it&#8217;s at least
-98,000 more than I ever expected, but 100,000 feels like something
-of a milestone to be pleased&nbsp;about.
-</p>
-
-<p>
-<code>epydemic</code> came about because of a lack of standard tooling for doing
-epidemic simulation. This involves a lot of stochastic simulation,
-which is quite tricky code to write and to make efficient. Testing
-the system actually involved us thinking more deeply about the
-effectiveness of unit testing for stochastic code, which then led to
-a <a href="/softcopy/stochastic-testing-21.pdf">presentation at <span class="caps">UK</span> Systems in 2021</a> explaining the problems we&#8217;d&nbsp;had.
 </p>
 </div>
 </div>
