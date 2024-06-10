@@ -1,0 +1,92 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Processing MicroMoth recordings offline
+.. slug: processing-the-data-offline
+.. date: 2024-06-10 12:57:22 UTC+01:00
+.. tags: sensing, acoustic, project:acoustic-birds
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Processing MicroMoth recordings offline
+  :PROPERTIES:
+  :header-args: :session birdnet-sh :dir ~/programming/umoth :results output
+  :END:
+
+  The uMoth generates ~.wav~ files, uncompressed waveforms of what it
+  records. These need to be processed to identify any bird calls
+  within them.
+
+  This function is integrated in BirdNET-Pi, which does recording and
+  classification, and provides a web GUI. With the uMoths we need to
+  provide classification as part of a data processing pipeline. We
+  can however make direct use of the classifier "brain" within
+  BirdNET-PI, which is unsurprisingly called [[https://github.com/kahst/BirdNET-Analyzer][BirdNET-Analyzer]].
+
+** Installation
+
+    I'm working on a 16-core Intel Core i7@3.8GHz running Arch Linux.
+
+    First we clone the BirdNET-Analyzer repo. This takes a long time
+    as it includes the ML models, some of which are 40MB or more.
+
+    #+begin_src bash
+git clone https://github.com/kahst/BirdNET-Analyzer.git
+cd BirdNET-Analyzer
+    #+end_src
+
+    The repo includes a Docker file that we can use to build the
+    analyser in a container.
+
+    #+begin_src bash
+docker build .
+    #+end_src
+
+    The container setup is quite basic and is probably intended for
+    testing rather than production, but it gives a usable system that
+    could then be embedded into something more usable. The core of the
+    system is the ~analyze.py~ script.
+
+** Analysing some data (AKA identifying some birds!)
+   :PROPERTIES:
+   :header-args: :session birdnet-sh :dir ~/programming/umoth :results output
+   :END:
+
+    The container as defined looks into its ~/example~ directory for
+    waveforms and analyses them, generating text file for each sample.
+    The easiest way to get it to analyse captured data is to mount a
+    data directory of files onto this mount point (thereby shadowing
+    the example waveform provided).
+
+    There are various parameters that configure the classifier. I
+    copied the [[link:/2024/05/19/first-installation/][defaults I was using with BirdNET-Pi]], only accepting classifications
+    at or above 0.7 confidence.
+
+    #+begin_src bash
+docker run -v /var/run/media/sd80/DATA:/example birdnet-analyzer analyze.py --rtype=csv --min_conf=0.7 --sensitivity=1.25
+    #+end_src
+
+    This crunches through all the files (982 of them from my first
+    run) and generates a CSV file for each. An example is:
+
+    | Start (s) | End (s) | Scientific name  | Common name        | Confidence |
+    |       6.0 |     9.0 | Corvus monedula  | Eurasian Jackdaw   |     0.9360 |
+    |       9.0 |    12.0 | Corvus monedula  | Eurasian Jackdaw   |     0.8472 |
+    |      12.0 |    15.0 | Corvus monedula  | Eurasian Jackdaw   |     0.8681 |
+    |      15.0 |    18.0 | Corvus monedula  | Eurasian Jackdaw   |     0.8677 |
+    |      24.0 |    27.0 | Columba palumbus | Common Wood-Pigeon |     0.9198 |
+    |      27.0 |    30.0 | Columba palumbus | Common Wood-Pigeon |     0.7716 |
+    |      45.0 |    48.0 | Corvus monedula  | Eurasian Jackdaw   |     0.8023 |
+    |      48.0 |    51.0 | Corvus monedula  | Eurasian Jackdaw   |     0.7696 |
+
+    Those are entirely credible identifications. The start- and
+    end-point offsets allow rough location within the recording.
+    (BirdNET segments the recordings into 3s chunks for analysis.)
+
+    This is clearly not as straightforward as BirdNET-Pi, nor as
+    immediately satisfying. But it does scale to analysing lots of
+    data (and could be made to do so even better, with a better
+    front-end to the container), which is important for any
+    large-scale deployment.
