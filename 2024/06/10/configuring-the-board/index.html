@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pascal Costanza's highly opinionated guide to Lisp | Simon Dobson</title>
+<title>Deploying a MicroMoth | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,26 +64,79 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Monday 27 May, 2024</a>
+		Posted on <a href="." rel="bookmark">Monday 10 June, 2024</a>
 	    </span>
 	</div>
-	<h1>Pascal Costanza&#8217;s highly opinionated guide to&nbsp;Lisp</h1>
+	<h1>Deploying a&nbsp;MicroMoth</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org9a991ba" class="outline-2">
-<h2 id="org9a991ba">Pascal Costanza&#8217;s highly opinionated guide to&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-org9a991ba">
+		<div id="outline-container-orgf2790be" class="outline-2">
+<h2 id="orgf2790be">Deploying a&nbsp;MicroMoth</h2>
+<div class="outline-text-2" id="text-orgf2790be">
 <p>
-<a href="https://www.p-cos.net/lisp/guide.html">Pascal Costanza&#8217;s Highly Opinionated Guide to&nbsp;Lisp</a>
+The MicroMoth (or uMoth) from <a href="personal/notebook/open_acoustic_devices-contact.html#ID-c0a38f8e-970a-499d-a30e-56ec235b6ea9">Open Acoustic Devices</a> is the same as
+their better-known AudioMoth recorder but with a significantly
+smaller footprint. It&#8217;s just a traditional recorder or data-logger,
+with now on-board analysis and no wireless connectivity. I got hold
+of some to use in a larger project we&#8217;re thinking about running, and
+they&#8217;re not kidding about the &#8220;micro&#8221;&nbsp;part.
 </p>
 
 <p>
-Part introduction, part paean to the language&#8217;s power, part study
-guide, while dipping into an eclectically-chosen subset of Lisp
-features that really illustrate what makes it&nbsp;different.
+<img src="../../../../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240528_144150.jpg" alt="nil"></p>
+
+<p>
+The uMoth uses the same software as the AudioMoth, and therefore
+the same configuration app available from the <a href="https://www.openacousticdevices.info/applications">apps page</a> – for
+64-bit Linux in my case. It downloads as&nbsp;a <code>.appimage</code> file, which
+is simply a self-contained archive. It needed to be marked as
+executable, and then ran directly from a double-click. (The page
+suggests that there may be some extra steps for some Linux
+distros: there weren&#8217;t for&nbsp;Arch.)
+</p>
+
+<p>
+I then followed the <a href="https://www.openacousticdevices.info/config-app-guide">configuration guide</a>. The time is set
+automatically from the computer&#8217;s clock when you configure the&nbsp;device.
+</p>
+
+<p>
+For testing I chose two recording periods, 0400–0800 and&nbsp;1400–1600.
+</p>
+
+<p>
+<img src="../../../../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/config.png" alt="nil"></p>
+
+<p>
+As shown this will, with the default 48KHz sampling, generate
+about <span class="caps">2GB</span> of data per day and use about 70mAh of energy. For my
+tests I just hung the device out of the window on a <span class="caps">USB</span> tether for
+power: it works fine drawing power from the <span class="caps">USB</span> rather than from
+the battery&nbsp;connector.
+</p>
+
+<p>
+<img src="../../../../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240608_141527.jpg" alt="nil"></p>
+
+<p>
+This turned out not to record anything, because the time is lost
+if the power is disconnected, even though the configuration is
+retained. (The manual does actually say this, with a suitably
+close reading. It could be clearer.) There&#8217;s a smartphone app that
+can reset the time once the device is in the field and powered-up,
+though, by making an audio chime that encodes the current time and
+location in a way the board can understand. Flashing the device
+with the &#8220;Always require acoustic chime on switching to <span class="caps">CUSTOM</span>&#8221;
+makes it wait after power is applied until its time is&nbsp;set.
+</p>
+
+<p>
+The red <span class="caps">LED</span> flashes when the device is recording. The green <span class="caps">LED</span>
+flashes when the device is waiting for a recording period to
+start. The red <span class="caps">LED</span> stays lit while the time is&nbsp;unset.
 </p>
 </div>
 </div>
@@ -91,7 +144,7 @@ features that really illustrate what makes it&nbsp;different.
 
 		<div>
 		  (Part of the series
-		  <a href="../../../../development/annotated-lisp-bibliography/">An annotated Lisp bibliography</a>.)
+		  <a href="../../../../development/acoustic-birds/">Bird counting with acoustic sensing</a>.)
 		</div>
 
 	</article>
@@ -101,12 +154,12 @@ features that really illustrate what makes it&nbsp;different.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Pascal%20Costanza%27s%20highly%20opinionated%20guide%20to%20Lisp%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Pascal%20Costanza%27s%20highly%20opinionated%20guide%20to%20Lisp%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Deploying%20a%20MicroMoth%20%23acoustic%20%23project%3Aacoustic-birds%20%23sensing&amp;url=https://simondobson.org/2024/06/10/configuring-the-board/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Deploying%20a%20MicroMoth%20%23acoustic%20%23project%3Aacoustic-birds%20%23sensing&amp;url=https://simondobson.org/2024/06/10/configuring-the-board/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/&amp;title=Pascal%20Costanza%27s%20highly%20opinionated%20guide%20to%20Lisp%20%23experience%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Pascal%20Costanza's%20highly%20opinionated%20guide%20to%20Lisp&amp;body=https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/06/10/configuring-the-board/&amp;title=Deploying%20a%20MicroMoth%20%23acoustic%20%23project%3Aacoustic-birds%20%23sensing" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/06/10/configuring-the-board/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Deploying%20a%20MicroMoth&amp;body=https://simondobson.org/2024/06/10/configuring-the-board/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -115,23 +168,18 @@ features that really illustrate what makes it&nbsp;different.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/experience/">experience</a>
+		<a href="../../../../categories/acoustic/">acoustic</a>
 		    <span>  </span>
-		<a href="../../../../categories/lisp/">lisp</a>
+		<a href="../../../../categories/projectacoustic-birds/">project:acoustic-birds</a>
 		    <span>  </span>
-		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+		<a href="../../../../categories/sensing/">sensing</a>
 	</div>
     </div>
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../a-road-to-common-lisp/" rel="prev">
-		<span class="meta-nav">Older Post</span>A road to Common Lisp
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../../06/10/configuring-the-board/" rel="next">
-		<span class="meta-nav">Newer Post</span>Configuring the board
+	    <a href="../../../05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/" rel="prev">
+		<span class="meta-nav">Older Post</span>Pascal Costanza&#8217;s highly opinionated guide to Lisp
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

@@ -52,6 +52,86 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/06/10/configuring-the-board/" rel="bookmark">Monday 10 June, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/06/10/configuring-the-board/">Deploying a&nbsp;MicroMoth</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgf2790be" class="outline-2">
+<h2 id="orgf2790be">Deploying a&nbsp;MicroMoth</h2>
+<div class="outline-text-2" id="text-orgf2790be">
+<p>
+The MicroMoth (or uMoth) from <a href="personal/notebook/open_acoustic_devices-contact.html#ID-c0a38f8e-970a-499d-a30e-56ec235b6ea9">Open Acoustic Devices</a> is the same as
+their better-known AudioMoth recorder but with a significantly
+smaller footprint. It&#8217;s just a traditional recorder or data-logger,
+with now on-board analysis and no wireless connectivity. I got hold
+of some to use in a larger project we&#8217;re thinking about running, and
+they&#8217;re not kidding about the &#8220;micro&#8221;&nbsp;part.
+</p>
+
+<p>
+<img src="../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240528_144150.jpg" alt="nil"></p>
+
+<p>
+The uMoth uses the same software as the AudioMoth, and therefore
+the same configuration app available from the <a href="https://www.openacousticdevices.info/applications">apps page</a> – for
+64-bit Linux in my case. It downloads as&nbsp;a <code>.appimage</code> file, which
+is simply a self-contained archive. It needed to be marked as
+executable, and then ran directly from a double-click. (The page
+suggests that there may be some extra steps for some Linux
+distros: there weren&#8217;t for&nbsp;Arch.)
+</p>
+
+<p>
+I then followed the <a href="https://www.openacousticdevices.info/config-app-guide">configuration guide</a>. The time is set
+automatically from the computer&#8217;s clock when you configure the&nbsp;device.
+</p>
+
+<p>
+For testing I chose two recording periods, 0400–0800 and&nbsp;1400–1600.
+</p>
+
+<p>
+<img src="../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/config.png" alt="nil"></p>
+
+<p>
+As shown this will, with the default 48KHz sampling, generate
+about <span class="caps">2GB</span> of data per day and use about 70mAh of energy. For my
+tests I just hung the device out of the window on a <span class="caps">USB</span> tether for
+power: it works fine drawing power from the <span class="caps">USB</span> rather than from
+the battery&nbsp;connector.
+</p>
+
+<p>
+<img src="../attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240608_141527.jpg" alt="nil"></p>
+
+<p>
+This turned out not to record anything, because the time is lost
+if the power is disconnected, even though the configuration is
+retained. (The manual does actually say this, with a suitably
+close reading. It could be clearer.) There&#8217;s a smartphone app that
+can reset the time once the device is in the field and powered-up,
+though, by making an audio chime that encodes the current time and
+location in a way the board can understand. Flashing the device
+with the &#8220;Always require acoustic chime on switching to <span class="caps">CUSTOM</span>&#8221;
+makes it wait after power is applied until its time is&nbsp;set.
+</p>
+
+<p>
+The red <span class="caps">LED</span> flashes when the device is recording. The green <span class="caps">LED</span>
+flashes when the device is waiting for a recording period to
+start. The red <span class="caps">LED</span> stays lit while the time is&nbsp;unset.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/" rel="bookmark">Monday 27 May, 2024</a>
 			</span>
 		    </div>
@@ -115,12 +195,12 @@ would probably be built-in and included directly in an&nbsp;introduction.
 			    Posted on <a href="../2024/05/19/first-installation/" rel="bookmark">Sunday 19 May, 2024</a>
 			</span>
 		    </div>
-		    <h1><a href="../2024/05/19/first-installation/">First&nbsp;installation</a></h1>
+		    <h1><a href="../2024/05/19/first-installation/">First installation of&nbsp;BirdNET-Pi</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org5c9d58a" class="outline-2">
-<h2 id="org5c9d58a">First&nbsp;installation</h2>
-<div class="outline-text-2" id="text-org5c9d58a">
+			<div id="outline-container-orgbcc6fc2" class="outline-2">
+<h2 id="orgbcc6fc2">First installation of&nbsp;BirdNET-Pi</h2>
+<div class="outline-text-2" id="text-orgbcc6fc2">
 <p>
 The BirdNET-Pi system aims to provide out-of-the-box bird
 identification. It&#8217;s slightly more awkward than that, but still
@@ -248,60 +328,6 @@ which is quite tricky code to write and to make efficient. Testing
 the system actually involved us thinking more deeply about the
 effectiveness of unit testing for stochastic code, which then led to
 a <a href="/softcopy/stochastic-testing-21.pdf">presentation at <span class="caps">UK</span> Systems in 2021</a> explaining the problems we&#8217;d&nbsp;had.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/" rel="bookmark">Friday 3 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org69b2fff" class="outline-2">
-<h2 id="org69b2fff"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</h2>
-<div class="outline-text-2" id="text-org69b2fff">
-<p>
-Today I learned about a program that generates the sounds that help
-people navigate as they exit long tunnels when an emergency such as
-a fire has destroyed the&nbsp;visibility.
-</p>
-
-<p>
-<a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/">The World&#8217;s Loudest Lisp Program to the&nbsp;Rescue</a>
-</p>
-
-<p>
-This describes the challenges of building a software system that has
-to work unmonitored once deployed, for years, as well as
-withstanding a fairly rugged environment where, for example, the
-installedc hardware will be periodically sprayed with a
-high-pressure hose as the walls get cleaned. Overall the system is
-soft real-time, but has to cope with component failure, network
-partitions, consensus, and all the usual distributed systems
-challenges, while be guaranteed to work when&nbsp;needed.
-</p>
-
-<p>
-The developers built the system in Common Lisp, which wouldn&#8217;t be
-the normal go-to choice for an embedded system. But their argument
-was that they could better handle complex and changing requirements
-by retaining a high level of abstraction, and that development was
-overall far faster than using C. Modern Common Lisp compilers are so
-efficient that there&#8217;s no significant performance hit at deployment.
-They made use of complicated components like planners (for which
-Lisp is an ideal choice), and built a set of macros to wrap-up the
-handling of industrial control and robust&nbsp;communications.
-</p>
-
-<p>
-It&#8217;s a great&nbsp;read.
 </p>
 </div>
 </div>

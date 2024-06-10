@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 16:06:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 10 Jun 2024 10:22:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deploying a MicroMoth</title><link>https://simondobson.org/2024/06/10/configuring-the-board/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf2790be" class="outline-2"&gt;
+&lt;h2 id="orgf2790be"&gt;Deploying a MicroMoth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf2790be"&gt;
+&lt;p&gt;
+The MicroMoth (or uMoth) from &lt;a href="https://simondobson.org/2024/06/10/configuring-the-board/personal/notebook/open_acoustic_devices-contact.html#ID-c0a38f8e-970a-499d-a30e-56ec235b6ea9"&gt;Open Acoustic Devices&lt;/a&gt; is the same as
+their better-known AudioMoth recorder but with a significantly
+smaller footprint. It's just a traditional recorder or data-logger,
+with now on-board analysis and no wireless connectivity. I got hold
+of some to use in a larger project we're thinking about running, and
+they're not kidding about the "micro" part.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240528_144150.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The uMoth uses the same software as the AudioMoth, and therefore
+the same configuration app available from the &lt;a href="https://www.openacousticdevices.info/applications"&gt;apps page&lt;/a&gt; – for
+64-bit Linux in my case. It downloads as a &lt;code&gt;.appimage&lt;/code&gt; file, which
+is simply a self-contained archive. It needed to be marked as
+executable, and then ran directly from a double-click. (The page
+suggests that there may be some extra steps for some Linux
+distros: there weren't for Arch.)
+&lt;/p&gt;
+
+&lt;p&gt;
+I then followed the &lt;a href="https://www.openacousticdevices.info/config-app-guide"&gt;configuration guide&lt;/a&gt;. The time is set
+automatically from the computer's clock when you configure the
+device.
+&lt;/p&gt;
+
+&lt;p&gt;
+For testing I chose two recording periods, 0400–0800 and
+1400–1600.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/config.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+As shown this will, with the default 48KHz sampling, generate
+about 2GB of data per day and use about 70mAh of energy. For my
+tests I just hung the device out of the window on a USB tether for
+power: it works fine drawing power from the USB rather than from
+the battery connector.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240608_141527.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This turned out not to record anything, because the time is lost
+if the power is disconnected, even though the configuration is
+retained. (The manual does actually say this, with a suitably
+close reading. It could be clearer.) There's a smartphone app that
+can reset the time once the device is in the field and powered-up,
+though, by making an audio chime that encodes the current time and
+location in a way the board can understand. Flashing the device
+with the "Always require acoustic chime on switching to CUSTOM"
+makes it wait after power is applied until its time is set.
+&lt;/p&gt;
+
+&lt;p&gt;
+The red LED flashes when the device is recording. The green LED
+flashes when the device is waiting for a recording period to
+start. The red LED stays lit while the time is unset.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/configuring-the-board/</guid><pubDate>Mon, 10 Jun 2024 10:11:02 GMT</pubDate></item><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
 &lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org9a991ba"&gt;
 &lt;p&gt;
@@ -32,9 +103,9 @@ would probably be built-in and included directly in an
 introduction.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>First installation</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5c9d58a" class="outline-2"&gt;
-&lt;h2 id="org5c9d58a"&gt;First installation&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5c9d58a"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>First installation of BirdNET-Pi</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcc6fc2" class="outline-2"&gt;
+&lt;h2 id="orgbcc6fc2"&gt;First installation of BirdNET-Pi&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbcc6fc2"&gt;
 &lt;p&gt;
 The BirdNET-Pi system aims to provide out-of-the-box bird
 identification. It's slightly more awkward than that, but still
@@ -267,36 +338,4 @@ brains simply by being viewed.
 	  Finished Sunday 7 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5897614552?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b914c8" class="outline-2"&gt;
-&lt;h2 id="org1b914c8"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b914c8"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/7a/bd1498-3024-4f11-91a7-97f3e99084d7/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Mark Watson.  &lt;i&gt;&lt;a href="https://leanpub.com/lovinglisp"&gt;Loving Common Lisp, or the Savvy Programmer’s Secret
-Weapon&lt;/a&gt;&lt;/i&gt;. Leanpub. 2023.
-&lt;/p&gt;
-
-&lt;p&gt;
-While pitched as a way of sharing the author's enthusiasm for Lisp
-(which really shines through), this book is really a deep
-demonstration in using Lisp in modern applications – from web
-APIs and the semantic web to deep learning, large language models,
-and chatbots.
-&lt;/p&gt;
-
-&lt;p&gt;
-In some ways, like many other Lisp books, it's really two books in
-one. The first chapters are introductory – and to be perfectly
-honest could be dispensed with, as they're inadequate as a proper
-introduction and there are far better introductions out there. The
-later chapters focus on applications, and provide the real value.
-One could criticise them as often tying-together tools in other
-languages, with the Lisp code basically being glue; but that's a
-very effective way of leveraging all the code and services out
-there, and is an important technique for Lisp programmers too.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-great-post-office-scandal-the-fight-to-expose-a-multimillion-pound-it-disaster-which-put-innocent-people-in-jail/</guid><pubDate>Sun, 07 Apr 2024 00:00:00 GMT</pubDate></item></channel></rss>
