@@ -52,6 +52,112 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/05/19/first-installation/" rel="bookmark">Sunday 19 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/19/first-installation/">First installation of&nbsp;BirdNET-Pi</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbcc6fc2" class="outline-2">
+<h2 id="orgbcc6fc2">First installation of&nbsp;BirdNET-Pi</h2>
+<div class="outline-text-2" id="text-orgbcc6fc2">
+<p>
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It&#8217;s slightly more awkward than that, but still
+pretty straightforward to get up and&nbsp;running.
+</p>
+
+<p>
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a <a href="https://www.waveshare.com/wm8960-audio-hat.htm">Waveshare <span class="caps">WM8960</span> <span class="caps">HAT</span></a> for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I&#8217;m not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit &#8220;lite&#8221;
+install on it to run&nbsp;headless.
+</p>
+
+<p>
+I then basically just followed the <a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide">installation guide</a>. There was an
+issue with the installation script when cloning the GitHub repo: I
+suspect this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which did
+a <i>lot</i> of setup of services and a <span class="caps">PHP</span> web&nbsp;server.
+</p>
+
+<p>
+I compiled the <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">drivers</a> for the <span class="caps">HAT</span>, which worked fine. The new
+sound card is recognised but is not the system&nbsp;default.
+</p>
+
+<p>
+The installed components seem to&nbsp;include:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>icecast2</code>, a streaming server, used to replay&nbsp;recordings</li>
+<li>
+<code>caddy</code> web&nbsp;server</li>
+<li><span class="caps">PHP</span> for serving the web&nbsp;pages</li>
+<li>
+<code>arecord</code> to actually record&nbsp;audio</li>
+<li>
+<code>ffmpeg</code> to extract&nbsp;waveforms</li>
+<li><code>sqlite for the database</code></li>
+<li>the actual machine learning model used for&nbsp;recognition</li>
+</ul>
+<p>
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn&#8217;t seem to be
+running over <span class="caps">TLS</span> by default, which would be an issue outside a&nbsp;firewall.)
+</p>
+
+<p>
+Since the sound card isn&#8217;t the default, the easiest way to get the
+system listening to the right mics is to change the device in the
+&#8220;advanced settings&#8221; panel: in my case I changed from &#8220;default&#8221; to
+&#8220;hw:2,0&#8221;, reflecting the output&nbsp;of <code>arecord -l</code> that shows the sound
+card&nbsp;devices.
+</p>
+
+<p>
+I then deployed the Pi out of the kitchen&nbsp;window.
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"></p>
+
+<p>
+To start with it wasn&#8217;t hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more&nbsp;effective:
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"></p>
+
+<p>
+That&#8217;s an appropriate set of birds being seen – and we hardly ever
+<i>see</i> magpies, but know they&#8217;re around. There&#8217;s actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand&nbsp;out.
+</p>
+
+<p>
+I can&#8217;t see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a <i>lot</i>&nbsp;easier.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/05/08/epydemic-100000/" rel="bookmark">Wednesday 8 May, 2024</a>
 			</span>
 		    </div>

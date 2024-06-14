@@ -1,5 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 May 2024 16:06:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 14 Jun 2024 13:28:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb0dcbd6" class="outline-2"&gt;
+&lt;h2 id="orgb0dcbd6"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb0dcbd6"&gt;
+&lt;p&gt;
+I was talking with one of my colleagues the other day about
+programming languages, and we ended up comparing macros in Rust and
+Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+Rust has a couple of &lt;a href="https://doc.rust-lang.org/reference/procedural-macros.html"&gt;couple of different kinds&lt;/a&gt; of macros:
+&lt;b&gt;declarative&lt;/b&gt; macros that pattern-match on arguments to emit code; and
+&lt;b&gt;procedural&lt;/b&gt; macros that perform more general code-to-code
+transformations. Lisp has only one kind that operates from code to
+code.
+&lt;/p&gt;
+
+&lt;p&gt;
+Both approaches are &lt;i&gt;far&lt;/i&gt; more powerful than the macros in C and C++,
+which are basically just string expanders. Indeed, one definition of
+macroprogramming is that it's writing code that returns code, and
+there's a reasonable argument that C's "macros" are programs that
+return &lt;i&gt;strings&lt;/i&gt; and therefore aren't macros at all. But that's just
+bring pedantic.
+&lt;/p&gt;
+
+&lt;p&gt;
+The Rust operations seem quite awkward, at least from a Lisp
+perspective. They're invoked in a way that's syntactically different
+to ordinary code, so it's always possible to see in the source code
+where procedural code generation is occurring. Perhaps that's not an
+entirely bad thing, as it makes it obvious when compile-time
+computation occurs – although one might also argue that a true
+language extension or DSL should be so seamless that you don't &lt;i&gt;need&lt;/i&gt;
+to see it.
+&lt;/p&gt;
+
+&lt;p&gt;
+I think a more basic difference is in how Rust needs to handle
+code-type arguments. A macro is a function from code to code, so it
+needs to represent its code arguments in a way that the macros
+(which is also code) can manipulate. Lisp's &lt;a href="https://en.wikipedia.org/wiki/Homoiconicity"&gt;homoiconicity&lt;/a&gt; makes this
+trivial: code is a list, just like non-code, and can ba manipulated
+as such. Rust doesn't have this, so code needs to be passed to
+macros as a token stream that's been parsed from the program text.
+That's a reasonable solution to the problem, but it does mean that
+to write macros you need to understand how Rust is tokenised. You
+also get a token stream, not an abstract syntax tree (AST), which
+means that manipulating complex code is more difficult: essentially
+you need to re-create as much of the AST as you need and traverse it
+within the macro body. There's a standard library that does this for
+Rust's own syntax, which simplifies matters somewhat but still means
+that writing macros exposes the programmer to the underlying
+representations. Hopefully they won't change, as that would break a
+lot of macros.
+&lt;/p&gt;
+
+&lt;p&gt;
+By contrast, Lisp macros only require an understanding of Lisp
+itself, not of its internals, and can operate on the entire detailed
+structure of the code arguments. It's a striking example of the
+power of homoiconicity.
+&lt;/p&gt;
+
+&lt;p&gt;
+An approach closer to that of Rust is also available, in Common Lisp
+anyway, in the form of &lt;b&gt;reader macros&lt;/b&gt; that modify the Lisp reader to
+allow access to the character stream as the source code is being
+read. I think I've only ever encountered read macros for providing
+new styles of literals, or variants of strings that benefit from
+being treated slightly differently at read-time: they're an unusual
+use case, anyway, and Lisp makes the more usual case of macros
+manipulating Lisp code a lot simpler, without exposing the
+programmer to parsing.
+&lt;/p&gt;
+
+&lt;p&gt;
+I suspect the main difference between the two languages' approaches
+is that macros are &lt;b&gt;additional&lt;/b&gt; to Rust but &lt;b&gt;inherent&lt;/b&gt; to Lisp. None of
+the core of Rust uses macros: they're for extensions. By contrast,
+even common operations like &lt;code&gt;defun&lt;/code&gt; in Lisp are actually macros that
+expand to the simpler core operations. This perhaps explains the
+Rust designers' decision to make macros syntactically distinct.
+&lt;/p&gt;
+
+&lt;dl class="org-dl"&gt;
+&lt;dt&gt;tags&lt;/dt&gt;&lt;dd&gt;&lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/lisp.html#ID-7240ed21-61a0-493f-8799-87aaabc6e09d"&gt;lisp&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/programming.html#ID-a09035c3-bbf7-4664-af41-2c2d0864ae6a"&gt;programming&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/rust.html#ID-0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a"&gt;rust&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/macroprogramming.html#ID-185b94cf-fb44-4feb-9c06-86eea9a972da"&gt;macroprogramming&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
 &lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org9a991ba"&gt;
 &lt;p&gt;
@@ -278,45 +367,4 @@ popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-
 of modern bootstrapped compilers.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>The Lisp machine</title><link>https://simondobson.org/2024/03/14/the-lisp-machine/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgadf5365" class="outline-2"&gt;
-&lt;h2 id="orgadf5365"&gt;The Lisp machine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgadf5365"&gt;
-&lt;p&gt;
-Richard Greenblatt.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf"&gt;The Lisp Machine&lt;/a&gt;&lt;/i&gt;. Working
-paper 79. MIT AI Laboratory. 1974.
-&lt;/p&gt;
-
-&lt;p&gt;
-A description of the architecture later built and sold by LMI.
-&lt;/p&gt;
-
-&lt;p&gt;
-A visionary description of a machine to run Lisp at a
-"non-prohibitive cost" of $70,000 per system. (The web tells me
-that this is the equivalent of &lt;a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000"&gt;$440,000&lt;/a&gt; in 2024.) A completely
-integrated system based on a Cons processor and using a PDP-11 as
-a console. A relocating, compacting, garbage collector with
-invisible forwarding pointers. Non-linear spaghetti stacks to
-support advanced programming constructs.
-&lt;/p&gt;
-
-&lt;p&gt;
-One of the many notable facets of this design is one of its
-proposals (the "frame pushdown list") to avoid excessive conses
-and garbage collection overhead by maintaining lists of blocks of
-particular sizes. It uses this approach to manage the creation of
-call stack frames; modern Python implementations use this scheme
-throughout to avoid heap fragmentation through allocating and
-re-allocating blocks of different sizes. (Lisp has this feature
-generally, of course, with its use of fixed-size cons cells.)
-&lt;/p&gt;
-
-&lt;p&gt;
-It's also fascinating to see that, even at this early stage,
-hardware design was being seen as an exercise in refinement to
-maintain software-level abstractions even as features were being
-pushed into hardware – while still providing optimised
-implementations that were invisible to the programmer.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>hardware</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/14/the-lisp-machine/</guid><pubDate>Thu, 14 Mar 2024 16:50:46 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item></channel></rss>

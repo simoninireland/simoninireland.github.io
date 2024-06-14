@@ -978,12 +978,16 @@
   <lastmod>2024-06-10T11:57:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</loc>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2024-05-19T14:39:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1378,6 +1382,10 @@
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/categories/macroprogramming/</loc>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/categories/making/</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </url>
@@ -1540,6 +1548,10 @@
  <url>
   <loc>https://simondobson.org/categories/risk/</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/rust/</loc>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/s4/</loc>
@@ -4015,7 +4027,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-144.html</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-15.html</loc>

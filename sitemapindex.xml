@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/acoustic.xml</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-10T11:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/actors.xml</loc>
@@ -391,11 +391,15 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/lisp.xml</loc>
-  <lastmod>2024-05-27T16:06:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/machine-learning.xml</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/macroprogramming.xml</loc>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/making.xml</loc>
@@ -515,11 +519,11 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/programming.xml</loc>
-  <lastmod>2024-05-19T14:51:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectacoustic-birds.xml</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-10T11:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectditch.xml</loc>
@@ -562,6 +566,10 @@
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/rust.xml</loc>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/s4.xml</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
@@ -599,7 +607,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/sensing.xml</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-10T11:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/sensor-networks.xml</loc>
@@ -799,10 +807,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2024-06-10T11:57:00Z</lastmod>
+  <lastmod>2024-06-14T13:23:00Z</lastmod>
  </sitemap>
 </sitemapindex>
