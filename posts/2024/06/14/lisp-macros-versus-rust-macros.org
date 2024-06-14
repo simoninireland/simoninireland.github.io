@@ -1,0 +1,85 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp macros versus Rust macros
+.. slug: lisp-macros-versus-rust-macros
+.. date: 2024-06-14 14:23:46 UTC+01:00
+.. tags: lisp, programming, rust, macroprogramming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp macros /versus/ Rust macros                                  :PUBLISHED:
+  :PROPERTIES:
+  :PUBLISHED-SOURCE: [[~/programming/simoninireland.github.io/posts/2024/06/14/lisp-macros-versus-rust-macros.org][lisp-macros-versus-rust-macros]]
+  :PUBLISHED-URL: https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros
+  :END:
+
+  I was talking with one of my colleagues the other day about
+  programming languages, and we ended up comparing macros in Rust and
+  Lisp.
+
+  Rust has a couple of [[https://doc.rust-lang.org/reference/procedural-macros.html][couple of different kinds]] of macros:
+  *declarative* macros that pattern-match on arguments to emit code; and
+  *procedural* macros that perform more general code-to-code
+  transformations. Lisp has only one kind that operates from code to
+  code.
+
+  Both approaches are /far/ more powerful than the macros in C and C++,
+  which are basically just string expanders. Indeed, one definition of
+  macroprogramming is that it's writing code that returns code, and
+  there's a reasonable argument that C's "macros" are programs that
+  return /strings/ and therefore aren't macros at all. But that's just
+  bring pedantic.
+
+  The Rust operations seem quite awkward, at least from a Lisp
+  perspective. They're invoked in a way that's syntactically different
+  to ordinary code, so it's always possible to see in the source code
+  where procedural code generation is occurring. Perhaps that's not an
+  entirely bad thing, as it makes it obvious when compile-time
+  computation occurs -- although one might also argue that a true
+  language extension or DSL should be so seamless that you don't /need/
+  to see it.
+
+  I think a more basic difference is in how Rust needs to handle
+  code-type arguments. A macro is a function from code to code, so it
+  needs to represent its code arguments in a way that the macros
+  (which is also code) can manipulate. Lisp's [[https://en.wikipedia.org/wiki/Homoiconicity][homoiconicity]] makes this
+  trivial: code is a list, just like non-code, and can ba manipulated
+  as such. Rust doesn't have this, so code needs to be passed to
+  macros as a token stream that's been parsed from the program text.
+  That's a reasonable solution to the problem, but it does mean that
+  to write macros you need to understand how Rust is tokenised. You
+  also get a token stream, not an abstract syntax tree (AST), which
+  means that manipulating complex code is more difficult: essentially
+  you need to re-create as much of the AST as you need and traverse it
+  within the macro body. There's a standard library that does this for
+  Rust's own syntax, which simplifies matters somewhat but still means
+  that writing macros exposes the programmer to the underlying
+  representations. Hopefully they won't change, as that would break a
+  lot of macros.
+
+  By contrast, Lisp macros only require an understanding of Lisp
+  itself, not of its internals, and can operate on the entire detailed
+  structure of the code arguments. It's a striking example of the
+  power of homoiconicity.
+
+  An approach closer to that of Rust is also available, in Common Lisp
+  anyway, in the form of *reader macros* that modify the Lisp reader to
+  allow access to the character stream as the source code is being
+  read. I think I've only ever encountered read macros for providing
+  new styles of literals, or variants of strings that benefit from
+  being treated slightly differently at read-time: they're an unusual
+  use case, anyway, and Lisp makes the more usual case of macros
+  manipulating Lisp code a lot simpler, without exposing the
+  programmer to parsing.
+
+  I suspect the main difference between the two languages' approaches
+  is that macros are *additional* to Rust but *inherent* to Lisp. None of
+  the core of Rust uses macros: they're for extensions. By contrast,
+  even common operations like ~defun~ in Lisp are actually macros that
+  expand to the simpler core operations. This perhaps explains the
+  Rust designers' decision to make macros syntactically distinct.
+
++ tags :: [[id:7240ed21-61a0-493f-8799-87aaabc6e09d][lisp]] [[id:a09035c3-bbf7-4664-af41-2c2d0864ae6a][programming]] [[id:0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a][rust]] [[id:185b94cf-fb44-4feb-9c06-86eea9a972da][macroprogramming]]
