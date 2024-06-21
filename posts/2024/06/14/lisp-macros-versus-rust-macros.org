@@ -81,5 +81,3 @@
   even common operations like ~defun~ in Lisp are actually macros that
   expand to the simpler core operations. This perhaps explains the
   Rust designers' decision to make macros syntactically distinct.
-
-+ tags :: [[id:7240ed21-61a0-493f-8799-87aaabc6e09d][lisp]] [[id:a09035c3-bbf7-4664-af41-2c2d0864ae6a][programming]] [[id:0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a][rust]] [[id:185b94cf-fb44-4feb-9c06-86eea9a972da][macroprogramming]]

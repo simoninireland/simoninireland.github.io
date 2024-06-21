@@ -1,0 +1,156 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: C++ template macroprogramming versus Lisp macros
+.. slug: c++-template-macroprogramming-versus-lisp-macros
+.. date: 2024-06-21 11:22:54 UTC+01:00
+.. tags: lisp, programming, macroprogramming, c++
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* C++ template macroprogramming /versus/ Lisp macros
+
+  Following on from [[link:/2024/06/14/lisp-macros-versus-rust-macros/][Lisp macros versus Rust macros]], I also want to
+  compare C++ templates to Lisp macros.
+
+  Templates in C++ were designed as a way of generating typed versions
+  of classes. The template declares some type variables that can be
+  used as placeholders within a class declaration. When the template
+  is instanciated and provided with actual type names, these are
+  substituted for the type variables and the class is expanded. (It
+  used to literally happen like this, so each use generated a
+  completely new class. Modern compilers are smart enough to avoid the
+  code repetition.) A classic example is a typed singly-linked list:
+
+  #+begin_src C++
+template<typename A>
+struct List<A> {
+  A value;
+  struct List<A> next;
+};
+  #+end_src
+
+  However, the template system also allows values to be used in
+  templates instead of (or as well as) type names. When these are
+  encountered they are expanded at compile-time, and may cause further
+  templates to be expanded. A classic example of this is to
+  pre-compute some factorials:
+
+#+name: factorial-template
+  #+begin_src C++
+template<unsigned n>
+struct factorial {
+  enum { value = n * factorial<n - 1>::value };
+};
+
+template <>
+struct factorial<0> {
+  enum { value = 1 };
+};
+  #+end_src
+
+  In this code the first clause defines a template that defines the
+  usual recursive factorial calculation. The second clause bottoms-out
+  this recursion by defining a specialised template that directly
+  provides the factorial of zero. This can then be used in code such
+  as:
+
+  #+begin_src C++ :includes <iostream> :tangle factorial :noweb yes :exports both
+<<factorial-template>>
+
+int main() {
+  std::cout << factorial<7>::value << std::endl;
+}
+  #+end_src
+
+#+RESULTS:
+: 5040
+
+  which outputs the factorial of 7 as one might expect -- but with the
+  factorial having been computed at compile-time and inserted into the
+  code as a literal, so the calculation introduces no run-time calculation.
+
+  There are some stringent limitations on the ways in which templates
+  can be expanded. They can't have mutable variables for a start
+  (that's why we needed to use the recursive factorial algorithm).
+  Weirdly this makes the template language a /functional programming
+  sub-set/ of C++. Having said that, as with Lisp macros, it allows
+  calculations that can be statically performed forward to be brought
+  forward to compile-time. This makes it useful for building read-only
+  tables, unrolling loops, and the like.
+
+  It's [[https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming][claimed]] that templates are now so akin to "normal" C++ that
+  they incur less of a readability penalty. That's a subjective
+  statement that may be true. But the template language /isn't/ C++.
+  While one /can/ write programs in it, they're /nothing like/ the C++ one
+  would normally write. The template language is Turing complete, but
+  that just means one can encode any /computation/, not that one can
+  encode any /particular program/ -- and most template programs will
+  require massive re-writing from the code one would write normally
+  for execution at run-time. Template macroprogramming is therefore a
+  non-trivial programming task to undertake.
+
+  Again as with Rust /versus/ Lisp, C++ templates are an extension to
+  the language rather than a core part of it, although they're now
+  used quite extensively in the standard library for generic typing.
+  Also as with Rust, use of templates is semantically and
+  syntactically distinct from "normal" C++ code or syntax, and it's
+  this that causes the programming load.
+
+  A Lisp macro for the factorial computation, by contrast, looks
+  /almost exactly/ like a normal factorial function that can access the
+  entire language, both when defined and when used:
+
+  #+begin_src lisp :exports both
+(defmacro factorial (n)
+  (labels ((fact (m)
+	     (if (= m 0)
+		 1
+		 (* m (fact (1- m))))))
+    `,(fact n)))
+
+(princ (factorial 7))
+  #+end_src
+
+#+RESULTS:
+: 5040
+
+  The choice of macro or function (~defmacro~ or ~defun~) has no further
+  /syntactic/ implications for the rest of the program, and no
+  restrictions on the code that can be used within the definition; we
+  could re-write the to use iteration, mutable variables, or any other
+  code, and it would simply be executed at compile-time. The whole
+  language is there, all the time. We can show this by taking a
+  factorial function written in "normal" Lisp and macro-ifying it to
+  be computed at compile-time:
+
+  #+begin_src lisp :exports both
+(defun fact (m)
+  "Compute the factorial of M."
+  (if (= m 0)
+      1
+      (* m (fact (1- m)))))
+
+(defmacro factorial (n)
+  `,(fact n))
+
+(princ (factorial 7))
+  #+end_src
+
+#+RESULTS:
+: 5040
+
+  More importantly, a Lisp (and indeed Rust) macro can abstract over
+  syntax as well as classes and values, and so allow the language to
+  be extended with new first-class-at-compile-time structures.
+  Templates are restricted to instanciating templates written with
+  a fixed syntax; in Lisp the syntax has to be "Lisp-like", although
+  that's a very light restriction; and in Rust a macro can use any
+  syntax that Rust can tokenise.
+
+  While C++ templates are sometimes described as macroprogramming (or
+  metaprogramming), they're addressing a substantially different use
+  case to that addressed by Lisp or Rust macros, and doing so within a
+  more restricted computational and syntactic envelope.
