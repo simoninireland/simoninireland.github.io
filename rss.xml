@@ -1,7 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 14 Jun 2024 13:28:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb0dcbd6" class="outline-2"&gt;
-&lt;h2 id="orgb0dcbd6"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb0dcbd6"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Jun 2024 10:39:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cca84d" class="outline-2"&gt;
+&lt;h2 id="org8cca84d"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8cca84d"&gt;
+&lt;p&gt;
+Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
+compare C++ templates to Lisp macros.
+&lt;/p&gt;
+
+&lt;p&gt;
+Templates in C++ were designed as a way of generating typed versions
+of classes. The template declares some type variables that can be
+used as placeholders within a class declaration. When the template
+is instanciated and provided with actual type names, these are
+substituted for the type variables and the class is expanded. (It
+used to literally happen like this, so each use generated a
+completely new class. Modern compilers are smart enough to avoid the
+code repetition.) A classic example is a typed singly-linked list:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;typename&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+However, the template system also allows values to be used in
+templates instead of (or as well as) type names. When these are
+encountered they are expanded at compile-time, and may cause further
+templates to be expanded. A classic example of this is to
+pre-compute some factorials:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+In this code the first clause defines a template that defines the
+usual recursive factorial calculation. The second clause bottoms-out
+this recursion by defining a specialised template that directly
+provides the factorial of zero. This can then be used in code such
+as:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+which outputs the factorial of 7 as one might expect – but with the
+factorial having been computed at compile-time and inserted into the
+code as a literal, so the calculation introduces no run-time calculation.
+&lt;/p&gt;
+
+&lt;p&gt;
+There are some stringent limitations on the ways in which templates
+can be expanded. They can't have mutable variables for a start
+(that's why we needed to use the recursive factorial algorithm).
+Weirdly this makes the template language a &lt;i&gt;functional programming
+sub-set&lt;/i&gt; of C++. Having said that, as with Lisp macros, it allows
+calculations that can be statically performed forward to be brought
+forward to compile-time. This makes it useful for building read-only
+tables, unrolling loops, and the like.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's &lt;a href="https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming"&gt;claimed&lt;/a&gt; that templates are now so akin to "normal" C++ that
+they incur less of a readability penalty. That's a subjective
+statement that may be true. But the template language &lt;i&gt;isn't&lt;/i&gt; C++.
+While one &lt;i&gt;can&lt;/i&gt; write programs in it, they're &lt;i&gt;nothing like&lt;/i&gt; the C++ one
+would normally write. The template language is Turing complete, but
+that just means one can encode any &lt;i&gt;computation&lt;/i&gt;, not that one can
+encode any &lt;i&gt;particular program&lt;/i&gt; – and most template programs will
+require massive re-writing from the code one would write normally
+for execution at run-time. Template macroprogramming is therefore a
+non-trivial programming task to undertake.
+&lt;/p&gt;
+
+&lt;p&gt;
+Again as with Rust &lt;i&gt;versus&lt;/i&gt; Lisp, C++ templates are an extension to
+the language rather than a core part of it, although they're now
+used quite extensively in the standard library for generic typing.
+Also as with Rust, use of templates is semantically and
+syntactically distinct from "normal" C++ code or syntax, and it's
+this that causes the programming load.
+&lt;/p&gt;
+
+&lt;p&gt;
+A Lisp macro for the factorial computation, by contrast, looks
+&lt;i&gt;almost exactly&lt;/i&gt; like a normal factorial function that can access the
+entire language, both when defined and when used:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;labels&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+The choice of macro or function (&lt;code&gt;defmacro&lt;/code&gt; or &lt;code&gt;defun&lt;/code&gt;) has no further
+&lt;i&gt;syntactic&lt;/i&gt; implications for the rest of the program, and no
+restrictions on the code that can be used within the definition; we
+could re-write the to use iteration, mutable variables, or any other
+code, and it would simply be executed at compile-time. The whole
+language is there, all the time. We can show this by taking a
+factorial function written in "normal" Lisp and macro-ifying it to
+be computed at compile-time:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"Compute the factorial of M."&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+More importantly, a Lisp (and indeed Rust) macro can abstract over
+syntax as well as classes and values, and so allow the language to
+be extended with new first-class-at-compile-time structures.
+Templates are restricted to instanciating templates written with
+a fixed syntax; in Lisp the syntax has to be "Lisp-like", although
+that's a very light restriction; and in Rust a macro can use any
+syntax that Rust can tokenise.
+&lt;/p&gt;
+
+&lt;p&gt;
+While C++ templates are sometimes described as macroprogramming (or
+metaprogramming), they're addressing a substantially different use
+case to that addressed by Lisp or Rust macros, and doing so within a
+more restricted computational and syntactic envelope.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
+&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
 &lt;p&gt;
 I was talking with one of my colleagues the other day about
 programming languages, and we ended up comparing macros in Rust and
@@ -83,10 +261,6 @@ even common operations like &lt;code&gt;defun&lt;/code&gt; in Lisp are actually 
 expand to the simpler core operations. This perhaps explains the
 Rust designers' decision to make macros syntactically distinct.
 &lt;/p&gt;
-
-&lt;dl class="org-dl"&gt;
-&lt;dt&gt;tags&lt;/dt&gt;&lt;dd&gt;&lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/lisp.html#ID-7240ed21-61a0-493f-8799-87aaabc6e09d"&gt;lisp&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/programming.html#ID-a09035c3-bbf7-4664-af41-2c2d0864ae6a"&gt;programming&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/rust.html#ID-0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a"&gt;rust&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/macroprogramming.html#ID-185b94cf-fb44-4feb-9c06-86eea9a972da"&gt;macroprogramming&lt;/a&gt;&lt;/dd&gt;
-&lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>Processing MicroMoth recordings offline</title><link>https://simondobson.org/2024/06/10/processing-the-data-offline/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfccf4b6" class="outline-2"&gt;
 &lt;h2 id="orgfccf4b6"&gt;Processing MicroMoth recordings offline&lt;/h2&gt;
@@ -547,19 +721,4 @@ It's a great read.
 	  Finished Sunday 21 April, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6395477584?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/beyond/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item><item><title>The Emergence of Numerical Weather Prediction: Richardson's Dream</title><link>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348662620l/275229._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Peter   Lynch
-	  (2006)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A very technical examination of the world's first numerical weather "prediction" – although in fact it was really a "postdiction", taking detailed data and using it to compute a scenario that could be compared against a known ground truth. It was an incredible achievement anyway, performing manually and at low resolution the calculations now routinely performed by computers.&lt;br&gt;&lt;br&gt;Richardson was the person who saw that this would be possible, realising that the physics and mathematics could be solved even though the computational capabilities didn't exist. In this he foresaw the emergence of the modern power of data, where the existence of more and better data transforms both the way we do science and the sciene that we do. It's something that should put him alongside Turing and Von Neumann as visionaries of what computation could achieve.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Sunday 21 April, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/beyond/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item></channel></rss>

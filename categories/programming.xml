@@ -1,7 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 14 Jun 2024 13:28:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb0dcbd6" class="outline-2"&gt;
-&lt;h2 id="orgb0dcbd6"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb0dcbd6"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Jun 2024 10:39:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8cca84d" class="outline-2"&gt;
+&lt;h2 id="org8cca84d"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8cca84d"&gt;
+&lt;p&gt;
+Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
+compare C++ templates to Lisp macros.
+&lt;/p&gt;
+
+&lt;p&gt;
+Templates in C++ were designed as a way of generating typed versions
+of classes. The template declares some type variables that can be
+used as placeholders within a class declaration. When the template
+is instanciated and provided with actual type names, these are
+substituted for the type variables and the class is expanded. (It
+used to literally happen like this, so each use generated a
+completely new class. Modern compilers are smart enough to avoid the
+code repetition.) A classic example is a typed singly-linked list:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;typename&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+However, the template system also allows values to be used in
+templates instead of (or as well as) type names. When these are
+encountered they are expanded at compile-time, and may cause further
+templates to be expanded. A classic example of this is to
+pre-compute some factorials:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+In this code the first clause defines a template that defines the
+usual recursive factorial calculation. The second clause bottoms-out
+this recursion by defining a specialised template that directly
+provides the factorial of zero. This can then be used in code such
+as:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+which outputs the factorial of 7 as one might expect – but with the
+factorial having been computed at compile-time and inserted into the
+code as a literal, so the calculation introduces no run-time calculation.
+&lt;/p&gt;
+
+&lt;p&gt;
+There are some stringent limitations on the ways in which templates
+can be expanded. They can't have mutable variables for a start
+(that's why we needed to use the recursive factorial algorithm).
+Weirdly this makes the template language a &lt;i&gt;functional programming
+sub-set&lt;/i&gt; of C++. Having said that, as with Lisp macros, it allows
+calculations that can be statically performed forward to be brought
+forward to compile-time. This makes it useful for building read-only
+tables, unrolling loops, and the like.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's &lt;a href="https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming"&gt;claimed&lt;/a&gt; that templates are now so akin to "normal" C++ that
+they incur less of a readability penalty. That's a subjective
+statement that may be true. But the template language &lt;i&gt;isn't&lt;/i&gt; C++.
+While one &lt;i&gt;can&lt;/i&gt; write programs in it, they're &lt;i&gt;nothing like&lt;/i&gt; the C++ one
+would normally write. The template language is Turing complete, but
+that just means one can encode any &lt;i&gt;computation&lt;/i&gt;, not that one can
+encode any &lt;i&gt;particular program&lt;/i&gt; – and most template programs will
+require massive re-writing from the code one would write normally
+for execution at run-time. Template macroprogramming is therefore a
+non-trivial programming task to undertake.
+&lt;/p&gt;
+
+&lt;p&gt;
+Again as with Rust &lt;i&gt;versus&lt;/i&gt; Lisp, C++ templates are an extension to
+the language rather than a core part of it, although they're now
+used quite extensively in the standard library for generic typing.
+Also as with Rust, use of templates is semantically and
+syntactically distinct from "normal" C++ code or syntax, and it's
+this that causes the programming load.
+&lt;/p&gt;
+
+&lt;p&gt;
+A Lisp macro for the factorial computation, by contrast, looks
+&lt;i&gt;almost exactly&lt;/i&gt; like a normal factorial function that can access the
+entire language, both when defined and when used:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;labels&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+The choice of macro or function (&lt;code&gt;defmacro&lt;/code&gt; or &lt;code&gt;defun&lt;/code&gt;) has no further
+&lt;i&gt;syntactic&lt;/i&gt; implications for the rest of the program, and no
+restrictions on the code that can be used within the definition; we
+could re-write the to use iteration, mutable variables, or any other
+code, and it would simply be executed at compile-time. The whole
+language is there, all the time. We can show this by taking a
+factorial function written in "normal" Lisp and macro-ifying it to
+be computed at compile-time:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"Compute the factorial of M."&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+5040
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+More importantly, a Lisp (and indeed Rust) macro can abstract over
+syntax as well as classes and values, and so allow the language to
+be extended with new first-class-at-compile-time structures.
+Templates are restricted to instanciating templates written with
+a fixed syntax; in Lisp the syntax has to be "Lisp-like", although
+that's a very light restriction; and in Rust a macro can use any
+syntax that Rust can tokenise.
+&lt;/p&gt;
+
+&lt;p&gt;
+While C++ templates are sometimes described as macroprogramming (or
+metaprogramming), they're addressing a substantially different use
+case to that addressed by Lisp or Rust macros, and doing so within a
+more restricted computational and syntactic envelope.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
+&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
 &lt;p&gt;
 I was talking with one of my colleagues the other day about
 programming languages, and we ended up comparing macros in Rust and
@@ -83,10 +261,6 @@ even common operations like &lt;code&gt;defun&lt;/code&gt; in Lisp are actually 
 expand to the simpler core operations. This perhaps explains the
 Rust designers' decision to make macros syntactically distinct.
 &lt;/p&gt;
-
-&lt;dl class="org-dl"&gt;
-&lt;dt&gt;tags&lt;/dt&gt;&lt;dd&gt;&lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/lisp.html#ID-7240ed21-61a0-493f-8799-87aaabc6e09d"&gt;lisp&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/programming.html#ID-a09035c3-bbf7-4664-af41-2c2d0864ae6a"&gt;programming&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/rust.html#ID-0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a"&gt;rust&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/macroprogramming.html#ID-185b94cf-fb44-4feb-9c06-86eea9a972da"&gt;macroprogramming&lt;/a&gt;&lt;/dd&gt;
-&lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
 &lt;h2 id="org69b2fff"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
@@ -555,36 +729,4 @@ So it's not decomposition that's the issue, it's &lt;em&gt;decomposition manifes
 
 So one thought for tackling complexity is to change where decomposition manifests itself. If instead of placing new functions in the run-time system, we placed it into the compiler used to build the run-time, we could use compilation techniques to optimise-out the unnecessary functionality so that what results is optimised for the configuration that it's actually being placed in, rather than being general enough to represent any configuration. There's substantial work on these ideas in the fields of staged compilation and partial evaluation (for example &lt;a href="http://www.metaocaml.org/" target="_blank"&gt;MetaOCaml&lt;/a&gt;, &lt;a href="http://www.haskell.org/haskellwiki/Template_Haskell" target="_blank"&gt;Template Haskell&lt;/a&gt;, Flask and the like): the flexibility is manifested at compile-time as compile-time abstractions, that in the course of compilation are removed and replaced with inflexible -- but more efficient and potentially more dependable -- specialised code. Think taking the source code for Linux, Apache and MySQL, accelerating them together at high speed, and getting out a single program that'd run on a bare machine, had nothing it didn't actually need, and had all the options for the various (conceptual) sub-systems set correctly to work together.
 
-Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and&lt;a href="https://simondobson.org/2011/05/evolving/" target="_blank"&gt; into the languages and compilers&lt;/a&gt; might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like &lt;a href="https://simondobson.org/2011/12/middleware-doughnut/" target="_blank"&gt;ever-more-specialised middleware&lt;/a&gt; that remove bloat and overhead at the cost of generality. Keeping the former &lt;em&gt;and&lt;/em&gt; the latter seems like a worthwhile goal.&lt;/p&gt;</description><category>compilers</category><category>programming</category><category>software engineering</category><category>virtualisation</category><guid>https://simondobson.org/2012/06/14/russian-dolls/</guid><pubDate>Thu, 14 Jun 2012 07:00:52 GMT</pubDate></item><item><title>The post-modernisation of programming languages</title><link>https://simondobson.org/2012/05/04/postmodernism-programming/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Do we now have some post-modern programming languages?
-
-&lt;!--more--&gt;
-
-Programming languages change all the time. It's never been the case that one could learn just one and then use it: programming is too rich and complicated for that to be a solution for the majority of programmers. However, we seem to be seeing a change in what we think of as programming languages and how they're used to build larger software systems.
-
-At the risk of gross over-simplification (and ridicule), let's divide languages into various "eras". In the beginning, the &lt;em&gt;early&lt;/em&gt; languages were built around some explicit notion of the machine on which they were running. Assemblers were devoted to a single machine code. Higher-level languages like Forth abstracted away from the machine code but still exposed the guts of the machine, and in particular its data bus width and memory access mechanisms.
-
-The next step in abstraction -- to &lt;em&gt;pre-modernism&lt;/em&gt; -- was to provide a machine that was still recognisably a Von Neumann system but that hid the details of the underlying machine code and architecture. C and Pascal fall into this category: their operations and abstractions are still largely those of the physical machine, but at a sufficient remove to achieve portability and a usable programming model. But we still have a view of the machine's underlying limitations. &lt;em&gt;Modern&lt;/em&gt; languages like Perl, Java and Haskell offer a model of computation, and especially a model of memory, that's considerably removed from the underlying machine and enormously simplifies the programmer's task, at least for "suitable" programs.
-
-(Interestingly enough languages don't fall into eras in the sequence of their design or popularity. Lisp considerably pre-dates C but is definitely modern using the terminology above.)
-
-What's perhaps not obvious is that all these languages share a common design philosophy. They are all based on a small set of primitive notions combined with some ways of combining those notions, to get compound abstractions that resemble their primitive underpinnings. In C we get a small number of base types, some compound structs and unions, and pointers, and most interesting compound structures one builds will contain pointers all over the place. In Java we can build classes that create and combine objects; in Haskell we get lists and higher-order functions as the basic building blocks. The point is that the basic concepts are &lt;em&gt;general&lt;/em&gt;, as are the composition operators, and the larger capabilities are in some sense a &lt;em&gt;consequence&lt;/em&gt; of these initial choices and characterise the programs it's easy (or hard) to write.
-
-This philosophy makes perfect sense, of course, which explains why it's so widespread. Programmers have to get to grips with a small set of basic concepts and composition methods. Everything else flows from this, and the extensions to the language -- libraries and the like -- will be the same as code one could write oneself: they're time-savers, but not fundamentally different from your own code. As a consequence the basic concepts have to be well-chosen to support the range of programs people will want to write. Some will be easier to write than others -- that's what makes the choice of language more than simply a matter of fashion -- but there's an acceptance that pretty much anything is writeable.&lt;em&gt;&lt;/em&gt;
-
-However, we're now seeing languages emerge that aren't like this. Instead they're very much targeted at specific domains and problem sets. We've always had domain-specific languages (DSLs), of course, but the current crop seem to me to be rather different. They've abandoned the design philosophy of a small, basic set of abstractions and powerful composition, in favour of large basic abstractions and limited composition and extension. This significantly changes development, and the balance of power between the language designer and the programmer.
-
-XSLT is the language that's brought this most to mind, and especially the transition from XSLT 1.0 to XSLT 2.0.
-
-First we have to defend the notion that XSLT is a programming language. I first thought of it as just a transformation system for documents, and so it is: but it's targeted at such a general set of applications that it takes on the flavour of a DSL. It's essentially a functional language with pattern-matching and recursion, whose main data structure is the XML document. It lets one write programs that are driven by these documents: another way to look at it is that it gives executable semantics to a set of XML tags, allowing them to perform computation.
-
-XSLT's design doesn't start with a small set of primitives. Instead it provides a collection of tags that can be used to perform the common document operations. If you want to number a list, for example, XSLT contains tags that support the common numbering formats: numbers, letters with brackets, and so forth. What?, you wanted something else? Well, you can &lt;em&gt;probably&lt;/em&gt; do it, but it'll be indescribably hard because you'll be writing a program in a language for which full computation is an afterthought. Instead, XSLT 2.0 adds &lt;em&gt;new&lt;/em&gt; numbering formats that you can select using a helpful set of tags, and this is done &lt;em&gt;within&lt;/em&gt; the XSLT processor, not &lt;em&gt;using&lt;/em&gt; the XSLT processor. Meaningful extension requires the intervention of the language designer.
-
-This is a major philosophical change, a &lt;em&gt;post-modern&lt;/em&gt; approach to language design. Don't focus on getting the core abstractions right: instead, build a system -- &lt;em&gt;any&lt;/em&gt; system -- that demonstrates initial functionality, and then extend it with new features to meet new demands regardless of how they fit. There's no overarching conceptual scheme to the system. Instead it's judged purely on the functions it provides, regardless of how they fit together. (&lt;a href="http://www.wall.org/~larry/pm.html" target="_blank"&gt;Larry Wall described Perl as post-modern&lt;/a&gt;, but I don't think he meant quite what I'm getting at here -- although there are similarities.)
-
-Post-modernism  works for three reasons. Firstly, no-one is expecting to write very large amounts of code in these systems. They're intended for &lt;em&gt;sub-&lt;/em&gt;systems, not for systems themselves, and so the need for generality is limited. Secondly, there's a premium on speed of development rather than on maintenance, which in turn puts a premium on getting some result out quickly rather than on ensuring that, in the future, we can get any result out we need. The sub-systems are intended to change on a short timescale, so maintenance and extensibility is perceived to be less of an issue than agility. Thirdly, a lot of these languages target people who aren't programmers -- or at least don't think of themselves as programmers -- who are focused on something other than the code.
-
-Post-modernism isn't wrong, and &lt;a href="https://simondobson.org/2011/12/middleware-doughnut/" target="_blank"&gt;appears in middleware too&lt;/a&gt;. It's also important to realise the benefits: it makes it easier to put together larger systems, and increases &lt;a href="https://simondobson.org/2011/06/computing-experience/" target="_blank"&gt;the ambition of projects one can undertake&lt;/a&gt; compared to having to build so much from scratch, But it may be misguided. The people who spent the 1960's writing all the COBOL code that's still running today never thought it'd still be being maintained -- and the consequences of that lead to code that's now impossible to change. Simple solutions have a tendency to grow into more complex ones -- "just one more feature and we're done" -- which can push the costs of inappropriate choices out along the project lifecycle.
-
-More importantly, for researchers post-modernism is a seductive siren call that lets you step away from tackling some difficult choices. Instead of picking a small set of concepts, choose &lt;em&gt;any set&lt;/em&gt; and then extend them, in &lt;em&gt;any way&lt;/em&gt;, to build up your system. I think this obscures some insights one might otherwise gain from simplifying your set of concepts.
-
-I think it's also worth remembering that increasing the size and number of abstractions isn't without cost: not for the computer or the compiler, but for the programmer. The more programmers have to remember, and in particular the less well the things to be remembered fit together as a conceptual whole, the harder it is to use the system to its fullest advantage. People instead stay with small sub-sets of the language or -- worse -- settle for programs producing results that aren't those they want, just to stay within their language comfort zone. This sort of simplification is a step backwards, and we need to be careful of the consequences.&lt;/p&gt;</description><category>programming</category><category>xhtml</category><guid>https://simondobson.org/2012/05/04/postmodernism-programming/</guid><pubDate>Fri, 04 May 2012 12:17:13 GMT</pubDate></item></channel></rss>
+Don't believe it's possible? Neither do I. There's too much code and especially too much legacy code for this to work at enterprise (or even desktop) level. However, for embedded systems and sensor networks it's a different story. For these systems, every extra abstraction that makes the programmer's life easier is a menace if it increases the code size hitting the metal: there just isn't the memory. But there also isn't the legacy code base, and there is a crying need for better abstractions. So an approach to the Russian dolls that moves the abstractions out of the run-time and&lt;a href="https://simondobson.org/2011/05/evolving/" target="_blank"&gt; into the languages and compilers&lt;/a&gt; might work, and might considerably improve the robustness and ease of use for many systems we need to develop. It also works well with modern language technology, and with other trends like &lt;a href="https://simondobson.org/2011/12/middleware-doughnut/" target="_blank"&gt;ever-more-specialised middleware&lt;/a&gt; that remove bloat and overhead at the cost of generality. Keeping the former &lt;em&gt;and&lt;/em&gt; the latter seems like a worthwhile goal.&lt;/p&gt;</description><category>compilers</category><category>programming</category><category>software engineering</category><category>virtualisation</category><guid>https://simondobson.org/2012/06/14/russian-dolls/</guid><pubDate>Thu, 14 Jun 2012 07:00:52 GMT</pubDate></item></channel></rss>

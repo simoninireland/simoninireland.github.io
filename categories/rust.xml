@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about rust)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/rust.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 14 Jun 2024 13:28:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb0dcbd6" class="outline-2"&gt;
-&lt;h2 id="orgb0dcbd6"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb0dcbd6"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about rust)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/rust.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Jun 2024 10:21:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
+&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
 &lt;p&gt;
 I was talking with one of my colleagues the other day about
 programming languages, and we ended up comparing macros in Rust and
@@ -83,9 +83,5 @@ even common operations like &lt;code&gt;defun&lt;/code&gt; in Lisp are actually 
 expand to the simpler core operations. This perhaps explains the
 Rust designers' decision to make macros syntactically distinct.
 &lt;/p&gt;
-
-&lt;dl class="org-dl"&gt;
-&lt;dt&gt;tags&lt;/dt&gt;&lt;dd&gt;&lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/lisp.html#ID-7240ed21-61a0-493f-8799-87aaabc6e09d"&gt;lisp&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/programming.html#ID-a09035c3-bbf7-4664-af41-2c2d0864ae6a"&gt;programming&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/rust.html#ID-0d8ccbf1-1fec-4cf0-b0ce-bff5d214098a"&gt;rust&lt;/a&gt; &lt;a href="https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/personal/notebook/macroprogramming.html#ID-185b94cf-fb44-4feb-9c06-86eea9a972da"&gt;macroprogramming&lt;/a&gt;&lt;/dd&gt;
-&lt;/dl&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item></channel></rss>
