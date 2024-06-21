@@ -142,7 +142,7 @@ int main() {
 #+RESULTS:
 : 5040
 
-  More importantly, a Lisp (and indeed Rust) macro can abstract over
+  More importantly, Lisp (and indeed Rust) macro can abstract over
   syntax as well as classes and values, and so allow the language to
   be extended with new first-class-at-compile-time structures.
   Templates are restricted to instanciating templates written with
