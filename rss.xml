@@ -1,5 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 21 Jun 2024 10:40:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 28 Jun 2024 16:19:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgca11d36" class="outline-2"&gt;
+&lt;h2 id="orgca11d36"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgca11d36"&gt;
+&lt;p&gt;
+I recently had a use case where I wanted to associate a constant
+value with a class &lt;i&gt;and&lt;/i&gt; its instances – but I needed to be able to
+get the value without having an instance to hand. This turns out
+to be solvable in CLOS.
+&lt;/p&gt;
+
+&lt;p&gt;
+In languages like Java you can associate class variables with
+classes, which can then be accessed without having an instance of
+the class. CLOS also has class-allocated slots, for example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defclass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;instance-slot&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:initarg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:allocation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:class&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:initarg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:documentation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"A class with instance- and class-allocated slots."&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+An instance of &lt;code&gt;A&lt;/code&gt; has two slots: &lt;code&gt;instance-slot&lt;/code&gt; stored per-instance,
+and &lt;code&gt;class-slot&lt;/code&gt; stored only once and shared amongst all instances.
+This is close to Java's notion of class variables, but one still
+needs an instance against which to call the method. (Seibel makes
+this point in &lt;a href="https://gigamonkeys.com/book/object-reorientation-classes"&gt;chapter 17 of "Practical Common Lisp"&lt;/a&gt;.)
+&lt;/p&gt;
+
+&lt;p&gt;
+One could just create a basic object and retrieve the slot:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;slot-value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-instance&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'A&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'class-slot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+but that's inelegant and could potentially trigger a lot of
+unnecessary execution (and errors) if there are constructors
+(overridden &lt;code&gt;initialize-instance&lt;/code&gt; methods) for &lt;code&gt;A&lt;/code&gt;. One could use the
+metaobject protocol to introspect on the slot, but that's quite
+involved and still allows the slot to be changed, which isn't part
+of this use case.
+&lt;/p&gt;
+
+&lt;p&gt;
+What I really want is to be able to define a generic function such
+as &lt;code&gt;class-slot&lt;/code&gt; – but specialised against the &lt;i&gt;class&lt;/i&gt; &lt;code&gt;A&lt;/code&gt; rather than
+against the &lt;i&gt;instances&lt;/i&gt; of &lt;code&gt;A&lt;/code&gt;. I thought this would need a metaclass
+to define the method on, but it turned out that generic functions
+are powerful enough on their own.
+&lt;/p&gt;
+
+&lt;p&gt;
+The trick is to first define a generic method:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defgeneric&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;classname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="s"&gt;"Access the class slot on class."&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+As the argument name suggests, we're planning on passing a class
+name to this method, not an instance. To set the value for &lt;code&gt;A&lt;/code&gt;, we
+specialise the method as working on exactly the class A:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;classname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;eql&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'A&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The &lt;code&gt;eql&lt;/code&gt; specialiser selects this method only when exactly this
+object is passed in – that is to say, the name of &lt;code&gt;A&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+But what if we have an &lt;i&gt;instance&lt;/i&gt; of &lt;code&gt;A&lt;/code&gt;? The same generic function
+can still be used, but instead we specialise it against objects
+of class &lt;code&gt;A&lt;/code&gt; in the usual way:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;class-name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;class-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If we now pass an instance of &lt;code&gt;A&lt;/code&gt;, we extract its class name and then
+re-call the &lt;i&gt;same&lt;/i&gt; generic function, passing it the class name
+instead of the object itself (which it doesn't need, because the
+slot value is independent of the actual object). This will select
+the correct specialisation and return the slot value.
+&lt;/p&gt;
+
+&lt;p&gt;
+This approach works if we generate sub-classes of &lt;code&gt;A&lt;/code&gt;: we just use
+&lt;code&gt;eql&lt;/code&gt; to specialise the generic function to the class we're
+interested in. It also works fine with packages, since the
+undecorated symbol passed to the specialiser will be expanded
+correctly according to what symbols are in scope. However, the
+value is &lt;i&gt;only&lt;/i&gt; associated with a single class, and isn't inherited.
+That's not a massive limitation for my current use case, but would
+be in general, I think.
+&lt;/p&gt;
+
+&lt;p&gt;
+This approach critically relies on an easily-forgotten property of
+Lisp: &lt;i&gt;values&lt;/i&gt; have types, but &lt;i&gt;variables&lt;/i&gt; don't, and we can
+specialise the &lt;i&gt;same&lt;/i&gt; generic function against &lt;i&gt;any&lt;/i&gt; value &lt;i&gt;or&lt;/i&gt; type.
+The pattern makes use of this to avoid actually storing the value
+of &lt;code&gt;class-slot&lt;/code&gt; anywhere, which as a side effect avoids the problem
+of someone accidentally assigning a new value to it. It's an
+example of how powerful generic functions are: more so than the
+method tables and messages found in most O-O languages. And it's
+sufficiently structured that it's crying-out for a couple of
+macros to define these kinds of class slots.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
 &lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org1aec963"&gt;
 &lt;p&gt;
@@ -706,19 +828,4 @@ handling of industrial control and robust communications.
 It's a great read.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Beyond</title><link>https://simondobson.org/goodreads/beyond/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639479657l/58849383._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Stephen Walker
-	  (2021)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      The space race from the American perspective is well-known: this book presents the same race from the Soviet perspective.&lt;br&gt;&lt;br&gt;The differences are profound, of course, mainly driven by the Soviet programme occurring in complete secrecy to duck the risks that failure would have on the programme's image. The American programme by contrast was conducted in the open at least as far as the actual "shots" were concerned – and their public failures did indeed endanger their ability to continue, at least in part because neither public nor politicians understood the process of engineering or just how &lt;i&gt;hard&lt;/i&gt; each shot was. The deep irony is that the Soviet successes appeared so sudden and dramatic they led directly to the deepening of the American programme and commitment or more money and effort than the Soviets seemed able to maintain to capitalise on their early lead.&lt;br&gt;&lt;br&gt;There are plenty of revelations even for those with a detailed interest in space history. I remember hearing all through the 1970s that the Soviet spacecraft landed on land, but it turns out that in many cases the cosmonauts were bailing-out and parachuting to earth instead, with this being intensively covered-up even to the extent of falsifying reports to the international organisation responsible for certifying "firsts" in space.&lt;br&gt;&lt;br&gt;While the achievements of both programmes were profound, they were perhaps doomed in the long term by a lack of vision for what they were actually &lt;i&gt;for&lt;/i&gt;. The benefits of space technology are now obvious; those of exploration perhaps less so, although it doesn't (in my opinion) require much suspension of disbelief to feel that science-driven activities lead almost inevitably to enormously valuable spin-offs. The fact that we can't quantify these &lt;i&gt;a priori&lt;/i&gt; shouldn't (in my opinion, again) stop us keeping the faith in the value of experiments that advance our science &lt;i&gt;and&lt;/i&gt; engineering in ways that wouldn't otherwise happen.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Sunday 21 April, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6395477584?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/beyond/</guid><pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item></channel></rss>

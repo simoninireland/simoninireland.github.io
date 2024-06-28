@@ -52,6 +52,138 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/" rel="bookmark">Friday 28 June, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/">Class slots that work with classes and instances in&nbsp;<span class="caps">CLOS</span></a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgca11d36" class="outline-2">
+<h2 id="orgca11d36">Class slots that work with classes and instances in&nbsp;<span class="caps">CLOS</span></h2>
+<div class="outline-text-2" id="text-orgca11d36">
+<p>
+I recently had a use case where I wanted to associate a constant
+value with a class <i>and</i> its instances – but I needed to be able to
+get the value without having an instance to hand. This turns out
+to be solvable in&nbsp;<span class="caps">CLOS</span>.
+</p>
+
+<p>
+In languages like Java you can associate class variables with
+classes, which can then be accessed without having an instance of
+the class. <span class="caps">CLOS</span> also has class-allocated slots, for&nbsp;example:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="p">(</span><span class="nb">defclass</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="p">()</span>
+<span class="w">      </span><span class="p">((</span><span class="nv">instance-slot</span>
+<span class="w">        </span><span class="ss">:initarg</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">       </span><span class="p">(</span><span class="nv">class-slot</span>
+<span class="w">        </span><span class="ss">:allocation</span><span class="w"> </span><span class="ss">:class</span>
+<span class="w">        </span><span class="ss">:initarg</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="ss">:documentation</span><span class="w"> </span><span class="s">"A class with instance- and class-allocated slots."</span><span class="p">))</span>
+</pre></div>
+
+<p>
+An instance&nbsp;of <code>A</code> has two&nbsp;slots: <code>instance-slot</code> stored per-instance,&nbsp;and <code>class-slot</code> stored only once and shared amongst all instances.
+This is close to Java&#8217;s notion of class variables, but one still
+needs an instance against which to call the method. (Seibel makes
+this point in <a href="https://gigamonkeys.com/book/object-reorientation-classes">chapter 17 of &#8220;Practical Common Lisp&#8221;</a>.)
+</p>
+
+<p>
+One could just create a basic object and retrieve the&nbsp;slot:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w"> </span><span class="p">(</span><span class="nb">slot-value</span><span class="w"> </span><span class="p">(</span><span class="nb">make-instance</span><span class="w"> </span><span class="ss">'A</span><span class="p">)</span><span class="w"> </span><span class="ss">'class-slot</span><span class="p">)</span>
+</pre></div>
+
+<p>
+but that&#8217;s inelegant and could potentially trigger a lot of
+unnecessary execution (and errors) if there are constructors&nbsp;(overridden <code>initialize-instance</code> methods)&nbsp;for <code>A</code>. One could use the
+metaobject protocol to introspect on the slot, but that&#8217;s quite
+involved and still allows the slot to be changed, which isn&#8217;t part
+of this use&nbsp;case.
+</p>
+
+<p>
+What I really want is to be able to define a generic function such&nbsp;as <code>class-slot</code> – but specialised against the <i>class</i> <code>A</code> rather than
+against the <i>instances</i>&nbsp;of <code>A</code>. I thought this would need a metaclass
+to define the method on, but it turned out that generic functions
+are powerful enough on their&nbsp;own.
+</p>
+
+<p>
+The trick is to first define a generic&nbsp;method:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="p">(</span><span class="nb">defgeneric</span><span class="w"> </span><span class="nv">class-slot</span><span class="w"> </span><span class="p">(</span><span class="nv">classname</span><span class="p">)</span>
+<span class="w">      </span><span class="s">"Access the class slot on class."</span><span class="p">)</span>
+</pre></div>
+
+<p>
+As the argument name suggests, we&#8217;re planning on passing a class
+name to this method, not an instance. To set the value&nbsp;for <code>A</code>, we
+specialise the method as working on exactly the class&nbsp;A:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">class-slot</span><span class="w"> </span><span class="p">((</span><span class="nv">classname</span><span class="w"> </span><span class="p">(</span><span class="nb">eql</span><span class="w"> </span><span class="ss">'A</span><span class="p">)))</span>
+<span class="w">      </span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<p>
+The <code>eql</code> specialiser selects this method only when exactly this
+object is passed in – that is to say, the name&nbsp;of <code>A</code>.
+</p>
+
+<p>
+But what if we have an <i>instance</i>&nbsp;of <code>A</code>? The same generic function
+can still be used, but instead we specialise it against objects
+of&nbsp;class <code>A</code> in the usual&nbsp;way:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">class-slot</span><span class="w"> </span><span class="p">((</span><span class="nv">a</span><span class="w"> </span><span class="nv">A</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">class-slot</span><span class="w"> </span><span class="p">(</span><span class="nb">class-name</span><span class="w"> </span><span class="p">(</span><span class="nb">class-of</span><span class="w"> </span><span class="nv">a</span><span class="p">))))</span>
+</pre></div>
+
+<p>
+If we now pass an instance&nbsp;of <code>A</code>, we extract its class name and then
+re-call the <i>same</i> generic function, passing it the class name
+instead of the object itself (which it doesn&#8217;t need, because the
+slot value is independent of the actual object). This will select
+the correct specialisation and return the slot&nbsp;value.
+</p>
+
+<p>
+This approach works if we generate sub-classes&nbsp;of <code>A</code>: we just&nbsp;use
+<code>eql</code> to specialise the generic function to the class we&#8217;re
+interested in. It also works fine with packages, since the
+undecorated symbol passed to the specialiser will be expanded
+correctly according to what symbols are in scope. However, the
+value is <i>only</i> associated with a single class, and isn&#8217;t inherited.
+That&#8217;s not a massive limitation for my current use case, but would
+be in general, I&nbsp;think.
+</p>
+
+<p>
+This approach critically relies on an easily-forgotten property of
+Lisp: <i>values</i> have types, but <i>variables</i> don&#8217;t, and we can
+specialise the <i>same</i> generic function against <i>any</i> value <i>or</i> type.
+The pattern makes use of this to avoid actually storing the value&nbsp;of <code>class-slot</code> anywhere, which as a side effect avoids the problem
+of someone accidentally assigning a new value to it. It&#8217;s an
+example of how powerful generic functions are: more so than the
+method tables and messages found in most O-O languages. And it&#8217;s
+sufficiently structured that it&#8217;s crying-out for a couple of
+macros to define these kinds of class&nbsp;slots.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/" rel="bookmark">Friday 21 June, 2024</a>
 			</span>
 		    </div>
@@ -595,36 +727,9 @@ start. The red <span class="caps">LED</span> stays lit while the time is&nbsp;un
 		</div>
 	    </article>
 </div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/" rel="bookmark">Monday 27 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/">Pascal Costanza&#8217;s highly opinionated guide to&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org9a991ba" class="outline-2">
-<h2 id="org9a991ba">Pascal Costanza&#8217;s highly opinionated guide to&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-org9a991ba">
-<p>
-<a href="https://www.p-cos.net/lisp/guide.html">Pascal Costanza&#8217;s Highly Opinionated Guide to&nbsp;Lisp</a>
-</p>
-
-<p>
-Part introduction, part paean to the language&#8217;s power, part study
-guide, while dipping into an eclectically-chosen subset of Lisp
-features that really illustrate what makes it&nbsp;different.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-144.html" rel="prev">
+		<a href="index-145.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
