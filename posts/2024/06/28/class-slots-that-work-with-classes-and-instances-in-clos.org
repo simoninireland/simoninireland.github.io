@@ -1,0 +1,111 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Class slots that work with classes and instances in CLOS
+.. slug: class-slots-that-work-with-classes-and-instances-in-clos
+.. date: 2024-06-28 17:17:41 UTC+01:00
+.. tags: lisp, programming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Class slots that work with classes and instances in CLOS
+
+    I recently had a use case where I wanted to associate a constant
+    value with a class /and/ its instances -- but I needed to be able to
+    get the value without having an instance to hand. This turns out
+    to be solvable in CLOS.
+
+    In languages like Java you can associate class variables with
+    classes, which can then be accessed without having an instance of
+    the class. CLOS also has class-allocated slots, for example:
+
+    #+begin_src lisp
+(defclass A ()
+  ((instance-slot
+    :initarg 1)
+   (class-slot
+    :allocation :class
+    :initarg 2))
+  (:documentation "A class with instance- and class-allocated slots."))
+    #+end_src
+
+    An instance of ~A~ has two slots: ~instance-slot~ stored per-instance,
+    and ~class-slot~ stored only once and shared amongst all instances.
+    This is close to Java's notion of class variables, but one still
+    needs an instance against which to call the method. (Seibel makes
+    this point in [[https://gigamonkeys.com/book/object-reorientation-classes][chapter 17 of "Practical Common Lisp"]].)
+
+    One could just create a basic object and retrieve the slot:
+
+ #+begin_src lisp
+(slot-value (make-instance 'A) 'class-slot)
+ #+end_src
+
+    but that's inelegant and could potentially trigger a lot of
+    unnecessary execution (and errors) if there are constructors
+    (overridden ~initialize-instance~ methods) for ~A~. One could use the
+    metaobject protocol to introspect on the slot, but that's quite
+    involved and still allows the slot to be changed, which isn't part
+    of this use case.
+
+    What I really want is to be able to define a generic function such
+    as ~class-slot~ -- but specialised against the /class/ ~A~ rather than
+    against the /instances/ of ~A~. I thought this would need a metaclass
+    to define the method on, but it turned out that generic functions
+    are powerful enough on their own.
+
+    The trick is to first define a generic method:
+
+    #+begin_src lisp
+(defgeneric class-slot (classname)
+  "Access the class slot on class.")
+    #+end_src
+
+    As the argument name suggests, we're planning on passing a class
+    name to this method, not an instance. To set the value for ~A~, we
+    specialise the method as working on exactly the class A:
+
+    #+begin_src lisp
+(defmethod class-slot ((classname (eql 'A)))
+  2)
+    #+end_src
+
+    The ~eql~ specialiser selects this method only when exactly this
+    object is passed in -- that is to say, the name of ~A~.
+
+    But what if we have an /instance/ of ~A~? The same generic function
+    can still be used, but instead we specialise it against objects
+    of class ~A~ in the usual way:
+
+    #+begin_src lisp
+(defmethod class-slot ((a A))
+  (class-slot (class-name (class-of a))))
+    #+end_src
+
+    If we now pass an instance of ~A~, we extract its class name and then
+    re-call the /same/ generic function, passing it the class name
+    instead of the object itself (which it doesn't need, because the
+    slot value is independent of the actual object). This will select
+    the correct specialisation and return the slot value.
+
+    This approach works if we generate sub-classes of ~A~: we just use
+    ~eql~ to specialise the generic function to the class we're
+    interested in. It also works fine with packages, since the
+    undecorated symbol passed to the specialiser will be expanded
+    correctly according to what symbols are in scope. However, the
+    value is /only/ associated with a single class, and isn't inherited.
+    That's not a massive limitation for my current use case, but would
+    be in general, I think.
+
+    This approach critically relies on an easily-forgotten property of
+    Lisp: /values/ have types, but /variables/ don't, and we can
+    specialise the /same/ generic function against /any/ value /or/ type.
+    The pattern makes use of this to avoid actually storing the value
+    of ~class-slot~ anywhere, which as a side effect avoids the problem
+    of someone accidentally assigning a new value to it. It's an
+    example of how powerful generic functions are: more so than the
+    method tables and messages found in most O-O languages. And it's
+    sufficiently structured that it's crying-out for a couple of
+    macros to define these kinds of class slots.
