@@ -24,10 +24,10 @@
     #+begin_src lisp
 (defclass A ()
   ((instance-slot
-    :initarg 1)
+    :initform 1)
    (class-slot
     :allocation :class
-    :initarg 2))
+    :initform 2))
   (:documentation "A class with instance- and class-allocated slots."))
     #+end_src
 
@@ -109,3 +109,7 @@
     method tables and messages found in most O-O languages. And it's
     sufficiently structured that it's crying-out for a couple of
     macros to define these kinds of class slots.
+
+    UPDATED 2024-06-29: Fixed the typo in the class definition to use
+    ~:initform~ and not ~:initarg~. Thanks to [[https://framapiaf.org/@vindarel][@vindarel]] for pointing this
+    out to me.

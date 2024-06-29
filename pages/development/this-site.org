@@ -14,6 +14,7 @@
    - ...but some content is enriched with maths and images
    - ...and some comes from diverse sources, like [[https://jupyter.org][Jupyter]] notebooks
    - ...and I'm quite particular about layout and typography
+   - ...and I want the site to be readable on limited devices
 
 ** Technology
 
@@ -83,3 +84,13 @@
     I also have some small fragments of JavaScript elsewhere around
     the site, for example to provide the "Share to Mastodon" buttons
     on articles.
+
+*** Accessibility
+
+    I tried the site on several devices: on proper screens, on a
+    phone, and on ~eww~, the [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][Emacs Web Wowser]] mainly-text browser.
+    Everything is readable, images are included and properly sized,
+    and navigation works. Maths markup doesn't get expanded on ~eww~
+    since there's no JavaScript at all in Emacs, although if you're
+    using Emacs in the first place I'm guessing you can read the
+    LaTeX maths format anyway.
