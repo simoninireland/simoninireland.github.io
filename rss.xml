@@ -1,5 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 29 Jun 2024 16:16:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 07 Jul 2024 14:31:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A New Kind of Science</title><link>https://simondobson.org/goodreads/a-new-kind-of-science/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386925097l/238558._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Stephen Wolfram
+	  (1997)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      I have very mixed feelings about this book. On the one hand it's a triumph of computational experimental technique, taking an idea that was well-known (cellular automata) and subjecting it to rigorous exploration. This uncovers a lot of new science, not least showing that complex systems can arise from even the simplest set of rules, but also that this complexity falls into classes that show graded complexity depending purely on the fine structure of the initial conditions. That's a massively important discovery.&lt;br&gt;&lt;br&gt;On the other hand.... It's hard to describe this as a "new kind" of science. "New science," yes, but not indicative of a new paradigm or &lt;i&gt;way&lt;/i&gt; of doing science, other than by emphasising the structured use of simulation. Wolfram completely over-sells what he's achieved, making claims he can't substantiate to aggrandise his own contributions. And that's a shame, not least because it's so &lt;i&gt;unnecessary&lt;/i&gt;: Wolfram has made some important discoveries, both here and to several other branches of physics and computer science, as well as popularising computational methods and tools. It's tragic that he doesn't seem to be able to appreciate himself as being sufficient.&lt;br&gt;&lt;br&gt;The book is also quite terribly written, being almost half-composed of footnotes, meaning a reader is constantly skipping forwards and back: difficult in print, and I suspect impossible in a digital edition unless it's been very carefully hyperlinked. And the footnotes are often important! – indeed, they often provide evidence to back-up a claim in the main text that's entirely unsupportable from what's been presented. So it can be seen as both excessively long and insufficiently detailed, which is quite an achievement.
+      &lt;/p&gt;&lt;p&gt;
+	3/5.
+	  Finished Sunday 7 July, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/4934435584?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/a-new-kind-of-science/</guid><pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate></item><item><title>Shikasta: Canopus Dans Argos: Archives</title><link>https://simondobson.org/goodreads/shikasta-canopus-dans-argos-archives/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516764001l/38189412._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Doris Lessing
+	  (1979)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      Why is modern civilisation so self-destructive and complicated? The answer from this alternative history is that a previously time of happiness and long lives was subverted by a change in the universal forces to induce the current malaise.&lt;br&gt;&lt;br&gt;I did enjoy this book, but it does live up to its sub-title: &lt;i&gt;Personal, psychological, historical documents relating to visit by Johor (George Sherban) Emissary (Grade 9) 87th of the Period of the Last Days&lt;/i&gt;. It's told in a very disjointed form using purported reports and other documents, much of the time from the diary of a young girl who doesn't really know what's going on, and so can't really advance the plot very effectively. That makes it hard work, even though the writing and the overall premise are excellent.
+      &lt;/p&gt;&lt;p&gt;
+	2/5.
+	  Finished Sunday 7 July, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5723914316?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/shikasta-canopus-dans-argos-archives/</guid><pubDate>Sun, 07 Jul 2024 00:00:00 GMT</pubDate></item><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfbf54c4" class="outline-2"&gt;
+&lt;h2 id="orgfbf54c4"&gt;Let over Lambda&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfbf54c4"&gt;
+&lt;p&gt;
+Doug Hoyte.  &lt;i&gt;&lt;a href="http://letoverlambda.com"&gt;Let over Lambda&lt;/a&gt;&lt;/i&gt;. HCSW and Hoytech. ISBN
+978-1-4357-1275-1. 2008.
+&lt;/p&gt;
+
+&lt;p&gt;
+A gloriously opinionated (in the best way) take on Lisp macro
+programming. The author treats Lisp – one of the first languages
+– as the ultimate, &lt;i&gt;final&lt;/i&gt; language to which all others can (and
+should) be translated, since they're simply special cases of Lisp
+forms. And he makes a surprisingly compelling case.
+&lt;/p&gt;
+
+&lt;p&gt;
+The material builds extensively on &lt;a href="/2024/07/05/on-lisp/"&gt;On Lisp&lt;/a&gt;, re-presenting the
+idea of &lt;i&gt;anaphoric&lt;/i&gt; macros (those that bind lexical variables for
+use in their bodies) and extending them with &lt;i&gt;pandoric&lt;/i&gt; macros
+that allow introspection into an otherwise closed lexical
+environment. A lot of these examples feel contrived as presented,
+but the techniques are anything but: powerful ways to build
+abstractions.
+&lt;/p&gt;
+
+&lt;p&gt;
+The finale is the implementation of Forth in Lisp, and then a
+reflection to allow Forth programs to define Lisp functions –
+converting a (transparent) threaded-interpreted structure into an
+(opaque) code block. It's a slightly non-standard Forth, but it's
+true to the basics and exposes issues like the implementations of
+interpretation, compilation, and tail recursion really well. It's
+only another step to explore Lisp &lt;i&gt;implemented&lt;/i&gt; in Forth through
+the medium of macro programming, which deserves a book itself.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/let-over-lambda/</guid><pubDate>Fri, 05 Jul 2024 10:19:07 GMT</pubDate></item><item><title>On Lisp</title><link>https://simondobson.org/2024/07/05/on-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaac5f5f" class="outline-2"&gt;
+&lt;h2 id="orgaac5f5f"&gt;On Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaac5f5f"&gt;
+&lt;p&gt;
+Paul Graham.  &lt;i&gt;&lt;a href="http://www.paulgraham.com/onlisp.html"&gt;On Lisp: Advanced Techniques for Common Lisp&lt;/a&gt;&lt;/i&gt;. Prentice
+Hall. ISBN 0-13-030552-9. 1993.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+An ideal world is left as an exercise to the reader.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+One of the most famous advanced treatments of Lisp. Essentially
+it's a book in two parts. The first deals with the traditional
+advanced topics of functional programming such as identifying
+patterns that can be factored-out into higher-order functions and
+re-used. But the second, better-known, part deals with macro
+programming in extraordinary detail and with enormous creativity,
+including developing macros for continuations and several embedded
+languages.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/on-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:16:34 GMT</pubDate></item><item><title>Debugging Lisp</title><link>https://simondobson.org/2024/07/05/debugging-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb9a4deb" class="outline-2"&gt;
+&lt;h2 id="orgb9a4deb"&gt;Debugging Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb9a4deb"&gt;
+&lt;p&gt;
+&lt;a href="https://malisper.me/debugging-lisp-part-1-recompilation/"&gt;Debugging Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A four-part blog post series on debugging Lisp, covering:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Live recompilation of code from inside a debugging session,
+together with re-executing changed code from within a running
+stack trace&lt;/li&gt;
+&lt;li&gt;Inspecting objects and interacting with traces of function calls&lt;/li&gt;
+&lt;li&gt;Redefining classes, and how to ensure that existing instances
+are upgraded to be compatible with the new definition&lt;/li&gt;
+&lt;li&gt;Restarts, the neglected part of the condition system that
+controls how programs continue after encountering errors&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+The first two are essential, and show how &lt;i&gt;different&lt;/i&gt; Lisp
+programming is from using other languages. In fact it requires a
+considerable mental shift to re-acquire the right reflexes for
+dealing with errors and debugging in a fully interactive
+environment: well, it did for me, anyway. We're not used to
+interactivity in large development environments. There is seldom
+any need to close down a running Lisp session and start again, as
+everything can usually be changed and adapted within a session.
+This is very unlike the usual compile-edit-debug cycles we've
+become accustomed to.
+&lt;/p&gt;
+
+&lt;p&gt;
+The third post – on redefining classes – shows how one can
+upgrade a program that simply &lt;i&gt;has&lt;/i&gt; to keep running, because its
+live state upgrade can be programmed too.
+&lt;/p&gt;
+
+&lt;p&gt;
+The most significant part of the mental shift is to realise that
+the debugger is written in Lisp itself, and makes use of restarts
+and other features to provide the interface. This is a consequence
+of the degree of exposure of the Lisp run-time structures into to
+language itself, where they can be examined and manipulated using
+the full power of the language – and then be re-started or
+discarded as required.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item><item><title>Ultra-Processed People: The Science Behind Food That Isn't Food</title><link>https://simondobson.org/goodreads/ultra-processed-people-the-science-behind-food-that-isnt-food/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679715862l/62586003._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Chris van Tulleken
+	  (2023)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      Food &lt;i&gt;versus&lt;/i&gt; food-shaped industrial products.&lt;br&gt;&lt;br&gt;Ultra-processed food (UPF) is pervasive in modern diets, and with it comes a litany of actual, conjectured, and supposed harms. UPF itself is a strange beast, taking food crops and turning them into pure components that can then be re-mixed to construct new products. This has some perverse consequences, such as flavours being removed from purified and "modified" oils and starches in order to make them more broadly usable – and then having &lt;i&gt;those same flavours&lt;/i&gt; re-introduced later in the process, again in "modified" form. That sounds insane – how can it be cheaper than using the original oil? – but in fact it makes perfet commercial sense for companies wanting fungible raw materials to produce unvarying, known-ahead-of-time tastes and textures. &lt;br&gt;&lt;br&gt;The resulting products (I'm now reluctant to call them foods), being created in labs, can be re-worked in pursuit of particular commercial goals, for example by adding powdered soya when looking to create a "high-protein" snack. They can also be re-engineered to be far more pleasurable and addictive for consumers, for example by hacking the body's responses to food (which are themselves coming to be understood as far more subtle and complicated than we used to think).&lt;br&gt;&lt;br&gt;van Tulleken has a science background, and it shows in the writing: most of the claims are carefully framed and evidenced. His background also saves him from falling for the industry's faux-refutations about there not being definitive causal links to specific harms: randomised controlled trials &lt;i&gt;aren't&lt;/i&gt; the "scientific gold standard" in situations where they're impossible to conduct in the real world, and epidemiological evidence coupled with some knowledge of the possible harm pathways can provide sufficient evidence. Having said that, he does sometimes deviate from this careful path, and there are a few instances of words like "may" and "could" doing a lot of heavy lifting.&lt;br&gt;&lt;br&gt;One of the most powerful elements of the book is that it simultaneously doesn't preach or prescribe, but does offer suggestions for ways forward. UPF is very difficult to precisely define, and is therefore difficult to legislate for or avoid. Does a single stabiliser in a product render it UPF? – because if so literally &lt;i&gt;anything in a packet&lt;/i&gt; would be included. van Tulleken also takes aim at some of the wider social drivers of UPF, notably its cheapness and ease of preparation compared to "real" food, reinforcing poor diet as a consequence of poverty. He also suggests some interesting policy options, while also taking aim at a policy infrastructure that's heavily co-opted by the UPF industry. Regulators and the food industry are &lt;i&gt;not&lt;/i&gt; partners and have goals that are mutually irreconcilable within the current framework of pre-eminent shareholder value.
+      &lt;/p&gt;&lt;p&gt;
+	5/5.
+	  Finished Thursday 4 July, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6565805510?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/ultra-processed-people-the-science-behind-food-that-isnt-food/</guid><pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate></item><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
 &lt;h2 id="orgf8dcbd0"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgf8dcbd0"&gt;
 &lt;p&gt;
@@ -127,7 +286,22 @@ UPDATED 2024-06-29: Fixed the typo in the class definition to use
 out to me.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>Sandworm: A New Era of Cyberwar and the Hunt for the Kremlin's Most Dangerous Hackers</title><link>https://simondobson.org/goodreads/sandworm-a-new-era-of-cyberwar-and-the-hunt-for-the-kremlins-most-dangerous-hackers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567555830l/41436213._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Andy Greenberg
+	  (2019)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A history of cybersecurity with an emphasis on attacks against critical infrastructure.&lt;br&gt;&lt;br&gt;Rather than bomb a power plant or dam, why not have its own IT systems turn on it? That's the premise of a lot of modern cyberattacks, and they can be run with all the same sophistication as more conventional attacks against purely digital targets – but with the proviso that a lot of the targets don't think of themselves as IT organisations and haven't interalised the importance of their digital control systems. Since they don't emphasise security at board level, it gets neglected and becomes a weak spot that can be exploited from anywhere on the globe.&lt;br&gt;&lt;br&gt;The remedies aren't always trivial. Many attacks detailed in this book are almost incredibly elongated, involving the compromise of several servers and softwate packages on the way to the target. Keeping industrial control systems up-to-date can be difficult (or impossible): physical infrastructure exists on far longer timescales than the digital systems than control it. (I've had personal experience of laboratory equipment with control software that can &lt;i&gt;only&lt;/i&gt; run on Windows 95, which isn't being upgraded. Keeping that secure needs dedicated changes in the network architecture, and has a lot of knock-on consequences for efficiency and data management.)&lt;br&gt;&lt;br&gt;The value of such hacking for criminals is easy to understand, but it's also the ultimate technique of asymmetric warefare, letting an attacker deny responsibility and avoid counterattacks. Even the most powerful countries have an incentive to stop responses going kinetic, after all. But the asymmetry works both ways, with the US as one of the primary developers of sophisticated cyberweapons and so having an incentive not to push for international controls even while at the same time the US critical infrastructure is more vulnerable than others' to those weapons.&lt;br&gt;&lt;br&gt;Greenberg is a long-time student of cyberwarfare, and writes with a lot of insight into both the politics and the technology. He highlights the impacts of many short-sighted decisions made in the interests of national security advantage, culminating in the Shadow Brokers' release of a cache of NSA tools that form the basis for a new generation of cyberweapons. This is a great book to pair with &lt;a href="https://www.goodreads.com/book/show/49247043.This_Is_How_They_Tell_Me_the_World_Ends_The_Cyberweapons_Arms_Race" title="This Is How They Tell Me the World Ends The Cyberweapons Arms Race by Nicole Perlroth" rel="nofollow noopener"&gt;This Is How They Tell Me the World Ends: The Cyberweapons Arms Race&lt;/a&gt; for a broad-ranging and highly technically literate exploration of the new arms frontier.
+      &lt;/p&gt;&lt;p&gt;
+	4/5.
+	  Finished Friday 28 June, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6337793870?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/sandworm-a-new-era-of-cyberwar-and-the-hunt-for-the-kremlins-most-dangerous-hackers/</guid><pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
 &lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org1aec963"&gt;
 &lt;p&gt;
@@ -390,448 +564,4 @@ expand to the simpler core operations. This perhaps explains the
 Rust designers' decision to make macros syntactically distinct.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>Processing MicroMoth recordings offline</title><link>https://simondobson.org/2024/06/10/processing-the-data-offline/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfccf4b6" class="outline-2"&gt;
-&lt;h2 id="orgfccf4b6"&gt;Processing MicroMoth recordings offline&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfccf4b6"&gt;
-&lt;p&gt;
-The uMoth generates &lt;code&gt;.wav&lt;/code&gt; files, uncompressed waveforms of what it
-records. These need to be processed to identify any bird calls
-within them.
-&lt;/p&gt;
-
-&lt;p&gt;
-This function is integrated in BirdNET-Pi, which does recording and
-classification, and provides a web GUI. With the uMoths we need to
-provide classification as part of a data processing pipeline. We
-can however make direct use of the classifier "brain" within
-BirdNET-PI, which is unsurprisingly called &lt;a href="https://github.com/kahst/BirdNET-Analyzer"&gt;BirdNET-Analyzer&lt;/a&gt;.
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-org1ca5243" class="outline-3"&gt;
-&lt;h3 id="org1ca5243"&gt;Installation&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1ca5243"&gt;
-&lt;p&gt;
-I'm working on a 16-core Intel Core i7@3.8GHz running Arch Linux.
-&lt;/p&gt;
-
-&lt;p&gt;
-First we clone the BirdNET-Analyzer repo. This takes a long time
-as it includes the ML models, some of which are 40MB or more.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    git clone https://github.com/kahst/BirdNET-Analyzer.git
-    cd BirdNET-Analyzer
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The repo includes a Docker file that we can use to build the
-analyser in a container.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker build .
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The container setup is quite basic and is probably intended for
-testing rather than production, but it gives a usable system that
-could then be embedded into something more usable. The core of the
-system is the &lt;code&gt;analyze.py&lt;/code&gt; script.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-orge6466b1" class="outline-3"&gt;
-&lt;h3 id="orge6466b1"&gt;Analysing some data (AKA identifying some birds!)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge6466b1"&gt;
-&lt;p&gt;
-The container as defined looks into its &lt;code&gt;/example&lt;/code&gt; directory for
-waveforms and analyses them, generating text file for each sample.
-The easiest way to get it to analyse captured data is to mount a
-data directory of files onto this mount point (thereby shadowing
-the example waveform provided).
-&lt;/p&gt;
-
-&lt;p&gt;
-There are various parameters that configure the classifier. I
-copied the &lt;a href="/2024/05/19/first-installation/"&gt;defaults I was using with BirdNET-Pi&lt;/a&gt;, only accepting classifications
-at or above 0.7 confidence.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker run -v /var/run/media/sd80/DATA:/example birdnet-analyzer analyze.py --rtype=csv --min_conf=0.7 --sensitivity=1.25
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-This crunches through all the files (982 of them from my first
-run) and generates a CSV file for each. An example is:
-&lt;/p&gt;
-
-&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
-
-
-&lt;colgroup&gt;
-&lt;col class="org-right"&gt;
-
-&lt;col class="org-right"&gt;
-
-&lt;col class="org-left"&gt;
-
-&lt;col class="org-left"&gt;
-
-&lt;col class="org-right"&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td class="org-right"&gt;Start (s)&lt;/td&gt;
-&lt;td class="org-right"&gt;End (s)&lt;/td&gt;
-&lt;td class="org-left"&gt;Scientific name&lt;/td&gt;
-&lt;td class="org-left"&gt;Common name&lt;/td&gt;
-&lt;td class="org-right"&gt;Confidence&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;6.0&lt;/td&gt;
-&lt;td class="org-right"&gt;9.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.9360&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;9.0&lt;/td&gt;
-&lt;td class="org-right"&gt;12.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.8472&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;12.0&lt;/td&gt;
-&lt;td class="org-right"&gt;15.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.8681&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;15.0&lt;/td&gt;
-&lt;td class="org-right"&gt;18.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.8677&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;24.0&lt;/td&gt;
-&lt;td class="org-right"&gt;27.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
-&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
-&lt;td class="org-right"&gt;0.9198&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;27.0&lt;/td&gt;
-&lt;td class="org-right"&gt;30.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
-&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
-&lt;td class="org-right"&gt;0.7716&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;45.0&lt;/td&gt;
-&lt;td class="org-right"&gt;48.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.8023&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td class="org-right"&gt;48.0&lt;/td&gt;
-&lt;td class="org-right"&gt;51.0&lt;/td&gt;
-&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
-&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
-&lt;td class="org-right"&gt;0.7696&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;
-Those are entirely credible identifications. The start- and
-end-point offsets allow rough location within the recording.
-(BirdNET segments the recordings into 3s chunks for analysis.)
-&lt;/p&gt;
-
-&lt;p&gt;
-This is clearly not as straightforward as BirdNET-Pi, nor as
-immediately satisfying. But it does scale to analysing lots of
-data (and could be made to do so even better, with a better
-front-end to the container), which is important for any
-large-scale deployment.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/processing-the-data-offline/</guid><pubDate>Mon, 10 Jun 2024 11:57:22 GMT</pubDate></item><item><title>Deploying a MicroMoth</title><link>https://simondobson.org/2024/06/10/configuring-the-board/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf2790be" class="outline-2"&gt;
-&lt;h2 id="orgf2790be"&gt;Deploying a MicroMoth&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf2790be"&gt;
-&lt;p&gt;
-The MicroMoth (or uMoth) from &lt;a href="https://simondobson.org/2024/06/10/configuring-the-board/personal/notebook/open_acoustic_devices-contact.html#ID-c0a38f8e-970a-499d-a30e-56ec235b6ea9"&gt;Open Acoustic Devices&lt;/a&gt; is the same as
-their better-known AudioMoth recorder but with a significantly
-smaller footprint. It's just a traditional recorder or data-logger,
-with now on-board analysis and no wireless connectivity. I got hold
-of some to use in a larger project we're thinking about running, and
-they're not kidding about the "micro" part.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240528_144150.jpg" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-The uMoth uses the same software as the AudioMoth, and therefore
-the same configuration app available from the &lt;a href="https://www.openacousticdevices.info/applications"&gt;apps page&lt;/a&gt; – for
-64-bit Linux in my case. It downloads as a &lt;code&gt;.appimage&lt;/code&gt; file, which
-is simply a self-contained archive. It needed to be marked as
-executable, and then ran directly from a double-click. (The page
-suggests that there may be some extra steps for some Linux
-distros: there weren't for Arch.)
-&lt;/p&gt;
-
-&lt;p&gt;
-I then followed the &lt;a href="https://www.openacousticdevices.info/config-app-guide"&gt;configuration guide&lt;/a&gt;. The time is set
-automatically from the computer's clock when you configure the
-device.
-&lt;/p&gt;
-
-&lt;p&gt;
-For testing I chose two recording periods, 0400–0800 and
-1400–1600.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/config.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-As shown this will, with the default 48KHz sampling, generate
-about 2GB of data per day and use about 70mAh of energy. For my
-tests I just hung the device out of the window on a USB tether for
-power: it works fine drawing power from the USB rather than from
-the battery connector.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240608_141527.jpg" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-This turned out not to record anything, because the time is lost
-if the power is disconnected, even though the configuration is
-retained. (The manual does actually say this, with a suitably
-close reading. It could be clearer.) There's a smartphone app that
-can reset the time once the device is in the field and powered-up,
-though, by making an audio chime that encodes the current time and
-location in a way the board can understand. Flashing the device
-with the "Always require acoustic chime on switching to CUSTOM"
-makes it wait after power is applied until its time is set.
-&lt;/p&gt;
-
-&lt;p&gt;
-The red LED flashes when the device is recording. The green LED
-flashes when the device is waiting for a recording period to
-start. The red LED stays lit while the time is unset.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/configuring-the-board/</guid><pubDate>Mon, 10 Jun 2024 10:11:02 GMT</pubDate></item><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
-&lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a991ba"&gt;
-&lt;p&gt;
-&lt;a href="https://www.p-cos.net/lisp/guide.html"&gt;Pascal Costanza's Highly Opinionated Guide to Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Part introduction, part paean to the language's power, part study
-guide, while dipping into an eclectically-chosen subset of Lisp
-features that really illustrate what makes it different.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</guid><pubDate>Mon, 27 May 2024 16:04:50 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga7343e8" class="outline-2"&gt;
-&lt;h2 id="orga7343e8"&gt;A road to Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga7343e8"&gt;
-&lt;p&gt;
-&lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-This a really brief, yet really interesting, approach to
-introducing Lisp to someone. Interesting because it covers all the
-usual ground, but also has copious pointers to other material
-slightly-beyond-introductory ("Where to go from here"). It also
-links to material that's essential to modern practice, such as
-Lisp packages and systems, and the essential "standard libraries"
-such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
-things that are needed in practice and which in other languages
-would probably be built-in and included directly in an
-introduction.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>First installation of BirdNET-Pi</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcc6fc2" class="outline-2"&gt;
-&lt;h2 id="orgbcc6fc2"&gt;First installation of BirdNET-Pi&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbcc6fc2"&gt;
-&lt;p&gt;
-The BirdNET-Pi system aims to provide out-of-the-box bird
-identification. It's slightly more awkward than that, but still
-pretty straightforward to get up and running.
-&lt;/p&gt;
-
-&lt;p&gt;
-My first hardware plan was to use a Raspberry Pi Zero as the
-compute host with a &lt;a href="https://www.waveshare.com/wm8960-audio-hat.htm"&gt;Waveshare WM8960 HAT&lt;/a&gt; for the sound capture. It
-turns out that BirdNET needs a 64-bit platform – why I'm not sure
-– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
-Raspberry Pi B that I had lying around, and put a 64-bit "lite"
-install on it to run headless.
-&lt;/p&gt;
-
-&lt;p&gt;
-I then basically just followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an
-issue with the installation script when cloning the GitHub repo: I
-suspect this was because of limited memory on the Pi. I downloaded
-manually, and manually ran the rest of the install script, which did
-a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
-&lt;/p&gt;
-
-&lt;p&gt;
-I compiled the &lt;a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT"&gt;drivers&lt;/a&gt; for the HAT, which worked fine. The new
-sound card is recognised but is not the system default.
-&lt;/p&gt;
-
-&lt;p&gt;
-The installed components seem to include:
-&lt;/p&gt;
-
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;code&gt;icecast2&lt;/code&gt;, a streaming server, used to replay recordings&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;caddy&lt;/code&gt; web server&lt;/li&gt;
-&lt;li&gt;PHP for serving the web pages&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;arecord&lt;/code&gt; to actually record audio&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ffmpeg&lt;/code&gt; to extract waveforms&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sqlite for the database&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;the actual machine learning model used for recognition&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-The recognition models are built with TensorFlow. This is a great
-example of how the standard Linux tools and services can be combined
-to get a scientific-grade sensor platform. (Caddy doesn't seem to be
-running over TLS by default, which would be an issue outside a
-firewall.)
-&lt;/p&gt;
-
-&lt;p&gt;
-Since the sound card isn't the default, the easiest way to get the
-system listening to the right mics is to change the device in the
-"advanced settings" panel: in my case I changed from "default" to
-"hw:2,0", reflecting the output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound
-card devices.
-&lt;/p&gt;
-
-&lt;p&gt;
-I then deployed the Pi out of the kitchen window.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-To start with it wasn't hearing anything, which I think may be
-because of the waterfall in the courtyard: turning this off made
-things much more effective:
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-That's an appropriate set of birds being seen – and we hardly ever
-&lt;i&gt;see&lt;/i&gt; magpies, but know they're around. There's actually quite a lot
-of background noise even in such a quiet village, but the bird
-calls do stand out.
-&lt;/p&gt;
-
-&lt;p&gt;
-I can't see any reason for the manual installation on bare metal:
-as far as I can see everything could be containerised, which would
-make deployment and management a &lt;i&gt;lot&lt;/i&gt; easier.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>raspberry pi</category><category>sensing</category><guid>https://simondobson.org/2024/05/19/first-installation/</guid><pubDate>Sun, 19 May 2024 14:19:45 GMT</pubDate></item><item><title>epydemic hits 100,000 downloads</title><link>https://simondobson.org/2024/05/08/epydemic-100000/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org74f003b" class="outline-2"&gt;
-&lt;h2 id="org74f003b"&gt;epydemic hits 100,000 downloads&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org74f003b"&gt;
-&lt;p&gt;
-Downloads of &lt;code&gt;epydemic&lt;/code&gt;, my &lt;a href="/development/projects/epydemic/"&gt;library&lt;/a&gt; for epidemic (and other) process
-simulation on networks (and hopefully other combinatorial structures
-soon…) recently passed 100,000.
-&lt;/p&gt;
-
-&lt;p&gt;
-That number comes from the project's &lt;a href="https://www.pepy.tech/projects/epydemic"&gt;PePy page&lt;/a&gt;, which tracks
-downloads from the main &lt;a href="https://pypi.org/project/epydemic/"&gt;PyPi page&lt;/a&gt; as used by &lt;code&gt;pip&lt;/code&gt;. I can't say
-whether or not that number is accurate. Quite honestly it's at least
-98,000 more than I ever expected, but 100,000 feels like something
-of a milestone to be pleased about.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;code&gt;epydemic&lt;/code&gt; came about because of a lack of standard tooling for doing
-epidemic simulation. This involves a lot of stochastic simulation,
-which is quite tricky code to write and to make efficient. Testing
-the system actually involved us thinking more deeply about the
-effectiveness of unit testing for stochastic code, which then led to
-a &lt;a href="/softcopy/stochastic-testing-21.pdf"&gt;presentation at UK Systems in 2021&lt;/a&gt; explaining the problems we'd
-had.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>epydemic</category><category>software</category><guid>https://simondobson.org/2024/05/08/epydemic-100000/</guid><pubDate>Wed, 08 May 2024 15:21:29 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
-&lt;h2 id="org69b2fff"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org69b2fff"&gt;
-&lt;p&gt;
-Today I learned about a program that generates the sounds that help
-people navigate as they exit long tunnels when an emergency such as
-a fire has destroyed the visibility.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/"&gt;The World's Loudest Lisp Program to the Rescue&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-This describes the challenges of building a software system that has
-to work unmonitored once deployed, for years, as well as
-withstanding a fairly rugged environment where, for example, the
-installedc hardware will be periodically sprayed with a
-high-pressure hose as the walls get cleaned. Overall the system is
-soft real-time, but has to cope with component failure, network
-partitions, consensus, and all the usual distributed systems
-challenges, while be guaranteed to work when needed.
-&lt;/p&gt;
-
-&lt;p&gt;
-The developers built the system in Common Lisp, which wouldn't be
-the normal go-to choice for an embedded system. But their argument
-was that they could better handle complex and changing requirements
-by retaining a high level of abstraction, and that development was
-overall far faster than using C. Modern Common Lisp compilers are so
-efficient that there's no significant performance hit at deployment.
-They made use of complicated components like planners (for which
-Lisp is an ideal choice), and built a set of macros to wrap-up the
-handling of industrial control and robust communications.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's a great read.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item></channel></rss>

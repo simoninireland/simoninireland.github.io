@@ -75,13 +75,212 @@ features that really illustrate what makes it&nbsp;different.
 		</div>
 	    </article>
 </div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/05/27/a-road-to-common-lisp/" rel="bookmark">Monday 27 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/27/a-road-to-common-lisp/">A road to Common&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orga7343e8" class="outline-2">
+<h2 id="orga7343e8">A road to Common&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orga7343e8">
+<p>
+<a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/">A Road to Common&nbsp;Lisp</a>
+</p>
+
+<p>
+This a really brief, yet really interesting, approach to
+introducing Lisp to someone. Interesting because it covers all the
+usual ground, but also has copious pointers to other material
+slightly-beyond-introductory (&#8220;Where to go from here&#8221;). It also
+links to material that&#8217;s essential to modern practice, such as
+Lisp packages and systems, and the essential &#8220;standard libraries&#8221;
+such as Alexandria, Bordeaux, <span class="caps">CL</span>-<span class="caps">PPCRE</span>, usocket, and the like: the
+things that are needed in practice and which in other languages
+would probably be built-in and included directly in an&nbsp;introduction.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/a-mathematicians-apology/" rel="bookmark">Friday 24 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/a-mathematicians-apology/">A Mathematician&#8217;s&nbsp;Apology</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348629338l/154060._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	<span class="caps">G.H.</span> Hardy&nbsp;(1940)
+      </h2>
+    </div>
+    <p>
+      A short dispatch from another world. It&#8217;s hard to recognise the academia portrayed by Hardy, and I&#8217;m not sure that&#8217;s a bad thing. One has to admire its purity, though: a principled neglect of everything outside a particular field of study, and the deeply interwoven social life that goes with it. It sounds at once attractive and claustrophobic, inspiring and shallow.<br><br>Hardy is a perfect narrator and exemplar, being so diffident about his own accomplishments as to characterise them as having worked with one excellent mathematician (Littlewood) and discovered another (Ramanujan). He was a lot more than that within the small world of number theory in which he worked, including being a foundational contributor to computational complexity theory (although not in the exact definition currently used).<br><br>Reading this book sometimes feels like an intellectual making a trip to the world of <a href="https://www.goodreads.com/book/show/58045504.Brideshead_Revisited_The_Sacred_and_Profane_Memories_of_Captain_Charles_Ryder" title="Brideshead Revisited The Sacred and Profane Memories of Captain Charles Ryder by Evelyn Waugh" rel="nofollow noopener">Brideshead Revisited</a>, and that may be the right way to think of academia in the inter-war years: tied-up in upper-class privilege, class-consciousness, and&nbsp;repression.
+      </p>
+<p>
+	3/5.
+	  Finished Friday 24 May,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/2907726884?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/05/19/first-installation/" rel="bookmark">Sunday 19 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/19/first-installation/">First installation of&nbsp;BirdNET-Pi</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbcc6fc2" class="outline-2">
+<h2 id="orgbcc6fc2">First installation of&nbsp;BirdNET-Pi</h2>
+<div class="outline-text-2" id="text-orgbcc6fc2">
+<p>
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It&#8217;s slightly more awkward than that, but still
+pretty straightforward to get up and&nbsp;running.
+</p>
+
+<p>
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a <a href="https://www.waveshare.com/wm8960-audio-hat.htm">Waveshare <span class="caps">WM8960</span> <span class="caps">HAT</span></a> for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I&#8217;m not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit &#8220;lite&#8221;
+install on it to run&nbsp;headless.
+</p>
+
+<p>
+I then basically just followed the <a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide">installation guide</a>. There was an
+issue with the installation script when cloning the GitHub repo: I
+suspect this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which did
+a <i>lot</i> of setup of services and a <span class="caps">PHP</span> web&nbsp;server.
+</p>
+
+<p>
+I compiled the <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">drivers</a> for the <span class="caps">HAT</span>, which worked fine. The new
+sound card is recognised but is not the system&nbsp;default.
+</p>
+
+<p>
+The installed components seem to&nbsp;include:
+</p>
+
+<ul class="org-ul">
+<li>
+<code>icecast2</code>, a streaming server, used to replay&nbsp;recordings</li>
+<li>
+<code>caddy</code> web&nbsp;server</li>
+<li><span class="caps">PHP</span> for serving the web&nbsp;pages</li>
+<li>
+<code>arecord</code> to actually record&nbsp;audio</li>
+<li>
+<code>ffmpeg</code> to extract&nbsp;waveforms</li>
+<li><code>sqlite for the database</code></li>
+<li>the actual machine learning model used for&nbsp;recognition</li>
+</ul>
+<p>
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn&#8217;t seem to be
+running over <span class="caps">TLS</span> by default, which would be an issue outside a&nbsp;firewall.)
+</p>
+
+<p>
+Since the sound card isn&#8217;t the default, the easiest way to get the
+system listening to the right mics is to change the device in the
+&#8220;advanced settings&#8221; panel: in my case I changed from &#8220;default&#8221; to
+&#8220;hw:2,0&#8221;, reflecting the output&nbsp;of <code>arecord -l</code> that shows the sound
+card&nbsp;devices.
+</p>
+
+<p>
+I then deployed the Pi out of the kitchen&nbsp;window.
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"></p>
+
+<p>
+To start with it wasn&#8217;t hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more&nbsp;effective:
+</p>
+
+<p>
+<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"></p>
+
+<p>
+That&#8217;s an appropriate set of birds being seen – and we hardly ever
+<i>see</i> magpies, but know they&#8217;re around. There&#8217;s actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand&nbsp;out.
+</p>
+
+<p>
+I can&#8217;t see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a <i>lot</i>&nbsp;easier.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/sideshow-kissinger-nixon-the-destruction-of-cambodia/" rel="bookmark">Saturday 18 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/sideshow-kissinger-nixon-the-destruction-of-cambodia/">Sideshow: Kissinger, Nixon <span class="amp">&amp;</span> the Destruction of&nbsp;Cambodia</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1172210282l/150092._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	William Shawcross&nbsp;(1979)
+      </h2>
+    </div>
+    <p>
+      A shocking tale of aggression and duplicity, where a country whose only fault is to be too weak to resist incursions by another is attacked and undermined by a third country still claiming the moral high ground.<br><br>Alost every character comes out badly from this story – but especially Henry Kissinger, whose willingness to sacrifice foreign lives while protecting his own reputation and influence are quite breathtaking. It&#8217;s troubling that Nixon&#8217;s fall was for reasons <i>other</i> than his orders to bomb Cambodia and his willingness to lie to Congress (whom he was constitution-bound to consult and inform). The fact that the Cambodian leadership of Lon Nol and Sihanouk were also corrupt and self-serving offers no excuse. The <span class="caps">US</span> Joint Chiefs stood behind him because it suited them to extend the Vietnam War rather than end it, even after the point that they knew it was un-winnable and were extracting their own ground forces. Together these people all opened the door for the Khmer Rouge and the killing fields that followed, and did so knowing the risks they were&nbsp;running.
+      </p>
+<p>
+	4/5.
+	  Finished Saturday 18 May,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6051760452?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
 		<a href="index-144.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
 	    <div class="next">
-		<a href="." rel="next">
+		<a href="index-146.html" rel="next">
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

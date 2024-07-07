@@ -52,54 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/" rel="bookmark">Thursday 7 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/">Recursive functions of symbolic expressions and their computation by machine, Part&nbsp;I</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org0cdb842" class="outline-2">
-<h2 id="org0cdb842">Recursive functions of symbolic expressions and their computation by machine, Part&nbsp;I</h2>
-<div class="outline-text-2" id="text-org0cdb842">
-<p>
-John McCarthy.  <i><a href="https://doi.org/10.1145/367177.367199">Recursive Functions of Symbolic Expressions and
-Their Computation by Machine, Part I</a></i>. Communications of the <span class="caps">ACM</span>
-<b>3</b>, pp.184–195.&nbsp;1960.
-</p>
-
-<p>
-The original Lisp paper from 1960, which&nbsp;opens:
-</p>
-
-<blockquote>
-<p>
-A programming system called <span class="caps">LISP</span> (for LISt Processor) has been
-developed for the <span class="caps">IBM</span> 704&nbsp;computer…
-</p>
-</blockquote>
-
-<p>
-The paper then proceeds to lay out everything that&#8217;s since been
-built on: the basic constructs, the use of cons cells (pairs) as a
-data representation, the world&#8217;s first garbage collection algorithm,
-an equational semantics, and ideas for interpretation and
-compilation. It&#8217;s awesome, and humbling to read it and realise its
-age and the vision of computing it&nbsp;developed.
-</p>
-
-<p>
-(Despite this paper being labelled Part I, incidentally, there
-isn&#8217;t a part&nbsp;<span class="caps">II</span>.)
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/" rel="bookmark">Thursday 7 March, 2024</a>
 			</span>
 		    </div>
@@ -304,6 +256,62 @@ later, more efficient, techniques should be&nbsp;judged.
 (Thanks to <a href="https://mcjones.org/paul/">Paul McJones</a> for pointing me to the free <span class="caps">PDF</span> of the book,
 which he was responsible for developing. See <a href="https://mcjones.org/dustydecks/archives/2024/04/11/1249/">this post</a> for a history
 of how this came&nbsp;about.)
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/03/04/til-web-site-carbon-ratings/" rel="bookmark">Monday 4 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/04/til-web-site-carbon-ratings/"><span class="caps">TIL</span>: Web site carbon&nbsp;ratings</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org2fb4988" class="outline-2">
+<h2 id="org2fb4988"><span class="caps">TIL</span>: Web site carbon&nbsp;ratings</h2>
+<div class="outline-text-2" id="text-org2fb4988">
+<p>
+Today I learned about a site that rates web pages according to their
+carbon&nbsp;footprints.
+</p>
+
+<p>
+My web site does&nbsp;well:
+</p>
+
+<p>
+<img src="../attachments/16/f4bcd8-963e-40ce-9f63-be78ec585965/rating-simondobson-org.png" alt="nil"></p>
+
+<p>
+I&#8217;m not all that surprised by this, since I <a href="/development/this-site/">use</a> a static site
+generator and minimal (almost no) JavaScript: basically as low-power
+as one could&nbsp;get.
+</p>
+
+<p>
+The <a href="https://www.websitecarbon.com/website/simondobson-org/">full report</a> includes an approximate carbon cost per page visit
+(60mg), and even tries to work out the underlying energy provision,
+dirty or renewable – dirty in my case at the moment, unfortunately.
+(I&#8217;m currently hosted on GitHub.) I should perhaps take the hint and
+move onto an alternative provider, or even host it myself with a
+solar-powered Raspberry Pi. <a href="https://solar.lowtechmagazine.com/">Low-tech Magazine</a> does this, but they
+<i>are</i> based in Barcelona rather than&nbsp;Scotland…
+</p>
+
+<p>
+You can even include a badge that reports your rating&nbsp;&#8220;live&#8221;:
+</p>
+
+<div id="wcb" class="carbonbadge"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script><p>
+(It caches so as to only make one request per day.) On the other
+hand this increases the JavaScript footprint slightly, so I don&#8217;t
+think I&#8217;ll be using it anywhere apart from just&nbsp;here.
 </p>
 </div>
 </div>

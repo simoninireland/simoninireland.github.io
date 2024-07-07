@@ -52,145 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/05/27/a-road-to-common-lisp/" rel="bookmark">Monday 27 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/27/a-road-to-common-lisp/">A road to Common&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orga7343e8" class="outline-2">
-<h2 id="orga7343e8">A road to Common&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orga7343e8">
-<p>
-<a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/">A Road to Common&nbsp;Lisp</a>
-</p>
-
-<p>
-This a really brief, yet really interesting, approach to
-introducing Lisp to someone. Interesting because it covers all the
-usual ground, but also has copious pointers to other material
-slightly-beyond-introductory (&#8220;Where to go from here&#8221;). It also
-links to material that&#8217;s essential to modern practice, such as
-Lisp packages and systems, and the essential &#8220;standard libraries&#8221;
-such as Alexandria, Bordeaux, <span class="caps">CL</span>-<span class="caps">PPCRE</span>, usocket, and the like: the
-things that are needed in practice and which in other languages
-would probably be built-in and included directly in an&nbsp;introduction.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/05/19/first-installation/" rel="bookmark">Sunday 19 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/19/first-installation/">First installation of&nbsp;BirdNET-Pi</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgbcc6fc2" class="outline-2">
-<h2 id="orgbcc6fc2">First installation of&nbsp;BirdNET-Pi</h2>
-<div class="outline-text-2" id="text-orgbcc6fc2">
-<p>
-The BirdNET-Pi system aims to provide out-of-the-box bird
-identification. It&#8217;s slightly more awkward than that, but still
-pretty straightforward to get up and&nbsp;running.
-</p>
-
-<p>
-My first hardware plan was to use a Raspberry Pi Zero as the
-compute host with a <a href="https://www.waveshare.com/wm8960-audio-hat.htm">Waveshare <span class="caps">WM8960</span> <span class="caps">HAT</span></a> for the sound capture. It
-turns out that BirdNET needs a 64-bit platform – why I&#8217;m not sure
-– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
-Raspberry Pi B that I had lying around, and put a 64-bit &#8220;lite&#8221;
-install on it to run&nbsp;headless.
-</p>
-
-<p>
-I then basically just followed the <a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide">installation guide</a>. There was an
-issue with the installation script when cloning the GitHub repo: I
-suspect this was because of limited memory on the Pi. I downloaded
-manually, and manually ran the rest of the install script, which did
-a <i>lot</i> of setup of services and a <span class="caps">PHP</span> web&nbsp;server.
-</p>
-
-<p>
-I compiled the <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">drivers</a> for the <span class="caps">HAT</span>, which worked fine. The new
-sound card is recognised but is not the system&nbsp;default.
-</p>
-
-<p>
-The installed components seem to&nbsp;include:
-</p>
-
-<ul class="org-ul">
-<li>
-<code>icecast2</code>, a streaming server, used to replay&nbsp;recordings</li>
-<li>
-<code>caddy</code> web&nbsp;server</li>
-<li><span class="caps">PHP</span> for serving the web&nbsp;pages</li>
-<li>
-<code>arecord</code> to actually record&nbsp;audio</li>
-<li>
-<code>ffmpeg</code> to extract&nbsp;waveforms</li>
-<li><code>sqlite for the database</code></li>
-<li>the actual machine learning model used for&nbsp;recognition</li>
-</ul>
-<p>
-The recognition models are built with TensorFlow. This is a great
-example of how the standard Linux tools and services can be combined
-to get a scientific-grade sensor platform. (Caddy doesn&#8217;t seem to be
-running over <span class="caps">TLS</span> by default, which would be an issue outside a&nbsp;firewall.)
-</p>
-
-<p>
-Since the sound card isn&#8217;t the default, the easiest way to get the
-system listening to the right mics is to change the device in the
-&#8220;advanced settings&#8221; panel: in my case I changed from &#8220;default&#8221; to
-&#8220;hw:2,0&#8221;, reflecting the output&nbsp;of <code>arecord -l</code> that shows the sound
-card&nbsp;devices.
-</p>
-
-<p>
-I then deployed the Pi out of the kitchen&nbsp;window.
-</p>
-
-<p>
-<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"></p>
-
-<p>
-To start with it wasn&#8217;t hearing anything, which I think may be
-because of the waterfall in the courtyard: turning this off made
-things much more&nbsp;effective:
-</p>
-
-<p>
-<img src="../attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"></p>
-
-<p>
-That&#8217;s an appropriate set of birds being seen – and we hardly ever
-<i>see</i> magpies, but know they&#8217;re around. There&#8217;s actually quite a lot
-of background noise even in such a quiet village, but the bird
-calls do stand&nbsp;out.
-</p>
-
-<p>
-I can&#8217;t see any reason for the manual installation on bare metal:
-as far as I can see everything could be containerised, which would
-make deployment and management a <i>lot</i>&nbsp;easier.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/05/08/epydemic-100000/" rel="bookmark">Wednesday 8 May, 2024</a>
 			</span>
 		    </div>
@@ -285,6 +146,36 @@ It&#8217;s a great&nbsp;read.
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/how-to-win-an-information-war-the-propagandist-who-outwitted-hitler/" rel="bookmark">Friday 3 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/how-to-win-an-information-war-the-propagandist-who-outwitted-hitler/">How to Win an Information War: The Propagandist Who Outwitted&nbsp;Hitler</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698420610l/182761575._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Peter Pomerantsev&nbsp;(2024)
+      </h2>
+    </div>
+    <p>
+      Part biography and part assessment of the modern media landscape in the face of prolonged and well-funded disinformation. Sefton Delmer crafted a lot of British propaganda against the Nazis, drawing on his own childhood in Germany.<br><br>As with <a href="https://www.goodreads.com/book/show/52382865.How_to_Lose_the_Information_War_Russia__Fake_News_and_the_Future_of_Conflict" title="How to Lose the Information War Russia, Fake News and the Future of Conflict by Nina Jankowicz" rel="nofollow noopener">How to Lose the Information War: Russia, Fake News and the Future of Conflict</a> – another take on the same issues, with less of an historical driver – Pomerentsev focuses on the importance of the perceived messenger as well as the message: the idea that &#8220;truth will prevail&#8221; simply isn&#8217;t true when untruth is being cleverly promoted. Delmer pioneered this approach by creating radio-based characters crafted to appeal to particular segments of German society and seed disquiet amongst them.<br><br>(I was reminded at one point of a character in <a href="https://www.goodreads.com/book/show/530965.The_Day_of_the_Triffids" title="The Day of the Triffids by John Wyndham" rel="nofollow noopener">The Day of the Triffids</a> who works as a professional agitator able to meet anyone on their own ground, changing his voice, dress, and presentation style to suit the audience, and arguing that the way you deliver a message is at least as important as its content. Delmer would have approved.)<br><br>One can see Delmer as the origin of the modern approach to &#8220;flood the zone&#8221; and undermine belief in <i>all</i> media and information. He was constantly criticised by his opponents (both those making moral arguments and those simply wanting to be in control) to demonstrate the efficacy of his techniques. That misses the point somewhat. He wasn&#8217;t looking to bring about concrete, short-term changes, but rather was trying to influence the medium-term attitudes his listeners had to their information sources: marketing rather than sales. It&#8217;s hard to measure the successes of this, other than to point out that now, eighty years later, his approach seems to have been refined and re-applied by people who are, in many cases, closely aligned to the politics he himself fought&nbsp;against.
+      </p>
+<p>
+	4/5.
+	  Finished Friday 3 May,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6149473453?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/beyond/" rel="bookmark">Sunday 21 April, 2024</a>
 			</span>
 		    </div>
@@ -306,6 +197,36 @@ It&#8217;s a great&nbsp;read.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/6395477584?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/" rel="bookmark">Sunday 21 April, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/">The Emergence of Numerical Weather Prediction: Richardson&#8217;s&nbsp;Dream</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348662620l/275229._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Peter   Lynch&nbsp;(2006)
+      </h2>
+    </div>
+    <p>
+      A very technical examination of the world&#8217;s first numerical weather &#8220;prediction&#8221; – although in fact it was really a &#8220;postdiction&#8221;, taking detailed data and using it to compute a scenario that could be compared against a known ground truth. It was an incredible achievement anyway, performing manually and at low resolution the calculations now routinely performed by computers.<br><br>Richardson was the person who saw that this would be possible, realising that the physics and mathematics could be solved even though the computational capabilities didn&#8217;t exist. In this he foresaw the emergence of the modern power of data, where the existence of more and better data transforms both the way we do science and the sciene that we do. It&#8217;s something that should put him alongside Turing and Von Neumann as visionaries of what computation could&nbsp;achieve.
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 21 April,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
 </div>
 		</div>

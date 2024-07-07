@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaea97c7" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 05 Jul 2024 10:20:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfbf54c4" class="outline-2"&gt;
+&lt;h2 id="orgfbf54c4"&gt;Let over Lambda&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfbf54c4"&gt;
+&lt;p&gt;
+Doug Hoyte.  &lt;i&gt;&lt;a href="http://letoverlambda.com"&gt;Let over Lambda&lt;/a&gt;&lt;/i&gt;. HCSW and Hoytech. ISBN
+978-1-4357-1275-1. 2008.
+&lt;/p&gt;
+
+&lt;p&gt;
+A gloriously opinionated (in the best way) take on Lisp macro
+programming. The author treats Lisp – one of the first languages
+– as the ultimate, &lt;i&gt;final&lt;/i&gt; language to which all others can (and
+should) be translated, since they're simply special cases of Lisp
+forms. And he makes a surprisingly compelling case.
+&lt;/p&gt;
+
+&lt;p&gt;
+The material builds extensively on &lt;a href="/2024/07/05/on-lisp/"&gt;On Lisp&lt;/a&gt;, re-presenting the
+idea of &lt;i&gt;anaphoric&lt;/i&gt; macros (those that bind lexical variables for
+use in their bodies) and extending them with &lt;i&gt;pandoric&lt;/i&gt; macros
+that allow introspection into an otherwise closed lexical
+environment. A lot of these examples feel contrived as presented,
+but the techniques are anything but: powerful ways to build
+abstractions.
+&lt;/p&gt;
+
+&lt;p&gt;
+The finale is the implementation of Forth in Lisp, and then a
+reflection to allow Forth programs to define Lisp functions –
+converting a (transparent) threaded-interpreted structure into an
+(opaque) code block. It's a slightly non-standard Forth, but it's
+true to the basics and exposes issues like the implementations of
+interpretation, compilation, and tail recursion really well. It's
+only another step to explore Lisp &lt;i&gt;implemented&lt;/i&gt; in Forth through
+the medium of macro programming, which deserves a book itself.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/let-over-lambda/</guid><pubDate>Fri, 05 Jul 2024 10:19:07 GMT</pubDate></item><item><title>On Lisp</title><link>https://simondobson.org/2024/07/05/on-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaac5f5f" class="outline-2"&gt;
+&lt;h2 id="orgaac5f5f"&gt;On Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgaac5f5f"&gt;
+&lt;p&gt;
+Paul Graham.  &lt;i&gt;&lt;a href="http://www.paulgraham.com/onlisp.html"&gt;On Lisp: Advanced Techniques for Common Lisp&lt;/a&gt;&lt;/i&gt;. Prentice
+Hall. ISBN 0-13-030552-9. 1993.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+An ideal world is left as an exercise to the reader.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+One of the most famous advanced treatments of Lisp. Essentially
+it's a book in two parts. The first deals with the traditional
+advanced topics of functional programming such as identifying
+patterns that can be factored-out into higher-order functions and
+re-used. But the second, better-known, part deals with macro
+programming in extraordinary detail and with enormous creativity,
+including developing macros for continuations and several embedded
+languages.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/on-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:16:34 GMT</pubDate></item><item><title>Debugging Lisp</title><link>https://simondobson.org/2024/07/05/debugging-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb9a4deb" class="outline-2"&gt;
+&lt;h2 id="orgb9a4deb"&gt;Debugging Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb9a4deb"&gt;
+&lt;p&gt;
+&lt;a href="https://malisper.me/debugging-lisp-part-1-recompilation/"&gt;Debugging Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A four-part blog post series on debugging Lisp, covering:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Live recompilation of code from inside a debugging session,
+together with re-executing changed code from within a running
+stack trace&lt;/li&gt;
+&lt;li&gt;Inspecting objects and interacting with traces of function calls&lt;/li&gt;
+&lt;li&gt;Redefining classes, and how to ensure that existing instances
+are upgraded to be compatible with the new definition&lt;/li&gt;
+&lt;li&gt;Restarts, the neglected part of the condition system that
+controls how programs continue after encountering errors&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+The first two are essential, and show how &lt;i&gt;different&lt;/i&gt; Lisp
+programming is from using other languages. In fact it requires a
+considerable mental shift to re-acquire the right reflexes for
+dealing with errors and debugging in a fully interactive
+environment: well, it did for me, anyway. We're not used to
+interactivity in large development environments. There is seldom
+any need to close down a running Lisp session and start again, as
+everything can usually be changed and adapted within a session.
+This is very unlike the usual compile-edit-debug cycles we've
+become accustomed to.
+&lt;/p&gt;
+
+&lt;p&gt;
+The third post – on redefining classes – shows how one can
+upgrade a program that simply &lt;i&gt;has&lt;/i&gt; to keep running, because its
+live state upgrade can be programmed too.
+&lt;/p&gt;
+
+&lt;p&gt;
+The most significant part of the mental shift is to realise that
+the debugger is written in Lisp itself, and makes use of restarts
+and other features to provide the interface. This is a consequence
+of the degree of exposure of the Lisp run-time structures into to
+language itself, where they can be examined and manipulated using
+the full power of the language – and then be re-started or
+discarded as required.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item><item><title>Paradigms of artificial intelligence programming: Case studies in Common Lisp</title><link>https://simondobson.org/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaea97c7" class="outline-2"&gt;
 &lt;h2 id="orgaea97c7"&gt;Paradigms of artificial intelligence programming: Case studies in Common Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgaea97c7"&gt;
 &lt;p class="floater"&gt;
