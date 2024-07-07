@@ -181,7 +181,6 @@ FEEDS = {
         'template': 'goodreads.tmpl',
         'format': 'html',
         'lang': 'en',
-        'category': 'book-reviews',
         'tags': 'books, reviews',
         'metadata': {
             'title': 'title',

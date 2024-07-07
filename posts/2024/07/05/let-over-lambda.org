@@ -1,0 +1,39 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Let over Lambda
+.. slug: let-over-lambda
+.. date: 2024-07-05 11:19:07 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Let over Lambda
+
+  Doug Hoyte.  /[[http://letoverlambda.com][Let over Lambda]]/. HCSW and Hoytech. ISBN
+  978-1-4357-1275-1. 2008.
+
+  A gloriously opinionated (in the best way) take on Lisp macro
+  programming. The author treats Lisp -- one of the first languages
+  -- as the ultimate, /final/ language to which all others can (and
+  should) be translated, since they're simply special cases of Lisp
+  forms. And he makes a surprisingly compelling case.
+
+  The material builds extensively on [[link:/2024/07/05/on-lisp/][On Lisp]], re-presenting the
+  idea of /anaphoric/ macros (those that bind lexical variables for
+  use in their bodies) and extending them with /pandoric/ macros
+  that allow introspection into an otherwise closed lexical
+  environment. A lot of these examples feel contrived as presented,
+  but the techniques are anything but: powerful ways to build
+  abstractions.
+
+  The finale is the implementation of Forth in Lisp, and then a
+  reflection to allow Forth programs to define Lisp functions --
+  converting a (transparent) threaded-interpreted structure into an
+  (opaque) code block. It's a slightly non-standard Forth, but it's
+  true to the basics and exposes issues like the implementations of
+  interpretation, compilation, and tail recursion really well. It's
+  only another step to explore Lisp /implemented/ in Forth through
+  the medium of macro programming, which deserves a book itself.

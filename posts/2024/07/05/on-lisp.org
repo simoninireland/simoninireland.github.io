@@ -1,0 +1,29 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: On Lisp
+.. slug: on-lisp
+.. date: 2024-07-05 11:16:34 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* On Lisp
+
+  Paul Graham.  /[[http://www.paulgraham.com/onlisp.html][On Lisp: Advanced Techniques for Common Lisp]]/. Prentice
+  Hall. ISBN 0-13-030552-9. 1993.
+
+    #+begin_quote
+  An ideal world is left as an exercise to the reader.
+#+end_quote
+
+  One of the most famous advanced treatments of Lisp. Essentially
+  it's a book in two parts. The first deals with the traditional
+  advanced topics of functional programming such as identifying
+  patterns that can be factored-out into higher-order functions and
+  re-used. But the second, better-known, part deals with macro
+  programming in extraordinary detail and with enormous creativity,
+  including developing macros for continuations and several embedded
+  languages.

@@ -1,0 +1,50 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Debugging Lisp
+.. slug: debugging-lisp
+.. date: 2024-07-05 11:14:22 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Debugging Lisp
+
+  [[https://malisper.me/debugging-lisp-part-1-recompilation/][Debugging Lisp]]
+
+  A four-part blog post series on debugging Lisp, covering:
+
+  1. Live recompilation of code from inside a debugging session,
+     together with re-executing changed code from within a running
+     stack trace
+  2. Inspecting objects and interacting with traces of function calls
+  3. Redefining classes, and how to ensure that existing instances
+     are upgraded to be compatible with the new definition
+  4. Restarts, the neglected part of the condition system that
+     controls how programs continue after encountering errors
+
+
+  The first two are essential, and show how /different/ Lisp
+  programming is from using other languages. In fact it requires a
+  considerable mental shift to re-acquire the right reflexes for
+  dealing with errors and debugging in a fully interactive
+  environment: well, it did for me, anyway. We're not used to
+  interactivity in large development environments. There is seldom
+  any need to close down a running Lisp session and start again, as
+  everything can usually be changed and adapted within a session.
+  This is very unlike the usual compile-edit-debug cycles we've
+  become accustomed to.
+
+  The third post -- on redefining classes -- shows how one can
+  upgrade a program that simply /has/ to keep running, because its
+  live state upgrade can be programmed too.
+
+  The most significant part of the mental shift is to realise that
+  the debugger is written in Lisp itself, and makes use of restarts
+  and other features to provide the interface. This is a consequence
+  of the degree of exposure of the Lisp run-time structures into to
+  language itself, where they can be examined and manipulated using
+  the full power of the language -- and then be re-started or
+  discarded as required.
