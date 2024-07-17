@@ -34,6 +34,10 @@
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://simondobson.org/categories/apl.xml</loc>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://simondobson.org/categories/apple.xml</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
@@ -79,11 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/bonanza.xml</loc>
-  <lastmod>2024-07-07T14:31:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://simondobson.org/categories/bonanzabooks.xml</loc>
-  <lastmod>2024-07-07T14:29:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/book.xml</loc>
@@ -91,7 +91,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/books.xml</loc>
-  <lastmod>2024-07-07T14:31:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/c%2B%2B.xml</loc>
@@ -527,7 +527,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/programming.xml</loc>
-  <lastmod>2024-06-29T16:16:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectacoustic-birds.xml</loc>
@@ -539,7 +539,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectlisp-bibliography.xml</loc>
-  <lastmod>2024-07-05T10:20:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/publishing.xml</loc>
@@ -567,7 +567,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/reviews.xml</loc>
-  <lastmod>2024-07-07T14:31:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/risk.xml</loc>
@@ -707,7 +707,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/til.xml</loc>
-  <lastmod>2024-05-19T14:51:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/topology.xml</loc>
@@ -715,7 +715,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/tutorial.xml</loc>
-  <lastmod>2024-05-27T16:06:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/type-systems.xml</loc>
@@ -815,10 +815,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2024-07-07T14:31:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2024-07-07T14:31:00Z</lastmod>
+  <lastmod>2024-07-17T09:20:00Z</lastmod>
  </sitemap>
 </sitemapindex>

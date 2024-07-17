@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about apl)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/apl.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jul 2024 09:37:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge9df00b" class="outline-2"&gt;
+&lt;h2 id="orge9df00b"&gt;TIL: The most powerful one-line program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge9df00b"&gt;
+&lt;p&gt;
+Well, the most powerful I've found so far, anyway.
+&lt;/p&gt;
+
+&lt;p&gt;
+Given my current obsession with &lt;a href="/categories/lisp/"&gt;Lisp&lt;/a&gt; you might reasonably expect it
+to be in that language. But it isn't: it's in &lt;a href="https://en.wikipedia.org/wiki/APL_(programming_language)"&gt;APL&lt;/a&gt;, and it performs
+one complete generation of &lt;a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"&gt;Conway' Game of Life&lt;/a&gt; in one line of code:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  Life←{↑↑1 ⍵∨.∧3 4=+/,¯1 0 1∘.⊖¯1 0 1∘.⌽⊂⍵}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+…and does so inexplicably to anyone who doesn't know APL,
+obviously, but the &lt;a href="https://aplwiki.com/wiki/John_Scholes%27_Conway%27s_Game_of_Life"&gt;basic algorithm&lt;/a&gt; is simple:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Take an array with 1 in each occupied cell and 0 elsewhere&lt;/li&gt;
+&lt;li&gt;Build four new arrays by exchanging each element with its
+neighbour up, down, left, and right&lt;/li&gt;
+&lt;li&gt;Sum these arrays, which places the number of neighbours into each cell&lt;/li&gt;
+&lt;li&gt;Cut-off these values to be 1 if the cell has a value of 3 or 4,
+and 0 otherwise&lt;/li&gt;
+&lt;li&gt;Re-format the arrays back into the starting configuration&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+I checked it out using &lt;a href="https://www.gnu.org/software/apl/"&gt;GNU APL&lt;/a&gt; and it works fine.
+&lt;/p&gt;
+
+&lt;p&gt;
+I discovered this gem by accident, actually implemented &lt;a href="https://github.com/chmykh/apl-life"&gt;in APL in
+Forth&lt;/a&gt; where someone has developed APL as an embedded DSL within
+&lt;a href="https://en.wikipedia.org/wiki/Forth_(programming_language)"&gt;Forth&lt;/a&gt; (another language with which I have history). After a bit of
+digging I found a similar APL in Lisp, &lt;a href="https://github.com/phantomics/april"&gt;April&lt;/a&gt;, which clearly needs
+exploring.
+&lt;/p&gt;
+
+&lt;p&gt;
+In many ways APL and Lisp are parallel tracks within programming
+language evolution, taking a single data structure (lists or arrays)
+and providing powerful ways to manipulate them. Lisp of course has
+been extended with other data structures, including arrays, which
+makes the fusion of array- and list-based programming rather
+attractive.
+&lt;/p&gt;
+
+&lt;p&gt;
+I can't help asking myself what would have happened if APL hadn't
+fallen by the wayside. (I think this was inevitable, incidentally,
+once the syntax became fixed: any language that requires its own
+character set was always going to struggle.) We now have huge
+applications for array processing, from graphics to machine
+learning, and GPUs are from one perspective just APL accelerator
+co-processors. The ideas are still massively relevant.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item></channel></rss>

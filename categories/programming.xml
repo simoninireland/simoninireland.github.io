@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 29 Jun 2024 16:16:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jul 2024 09:37:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge9df00b" class="outline-2"&gt;
+&lt;h2 id="orge9df00b"&gt;TIL: The most powerful one-line program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge9df00b"&gt;
+&lt;p&gt;
+Well, the most powerful I've found so far, anyway.
+&lt;/p&gt;
+
+&lt;p&gt;
+Given my current obsession with &lt;a href="/categories/lisp/"&gt;Lisp&lt;/a&gt; you might reasonably expect it
+to be in that language. But it isn't: it's in &lt;a href="https://en.wikipedia.org/wiki/APL_(programming_language)"&gt;APL&lt;/a&gt;, and it performs
+one complete generation of &lt;a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"&gt;Conway' Game of Life&lt;/a&gt; in one line of code:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  Life←{↑↑1 ⍵∨.∧3 4=+/,¯1 0 1∘.⊖¯1 0 1∘.⌽⊂⍵}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+…and does so inexplicably to anyone who doesn't know APL,
+obviously, but the &lt;a href="https://aplwiki.com/wiki/John_Scholes%27_Conway%27s_Game_of_Life"&gt;basic algorithm&lt;/a&gt; is simple:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Take an array with 1 in each occupied cell and 0 elsewhere&lt;/li&gt;
+&lt;li&gt;Build four new arrays by exchanging each element with its
+neighbour up, down, left, and right&lt;/li&gt;
+&lt;li&gt;Sum these arrays, which places the number of neighbours into each cell&lt;/li&gt;
+&lt;li&gt;Cut-off these values to be 1 if the cell has a value of 3 or 4,
+and 0 otherwise&lt;/li&gt;
+&lt;li&gt;Re-format the arrays back into the starting configuration&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+I checked it out using &lt;a href="https://www.gnu.org/software/apl/"&gt;GNU APL&lt;/a&gt; and it works fine.
+&lt;/p&gt;
+
+&lt;p&gt;
+I discovered this gem by accident, actually implemented &lt;a href="https://github.com/chmykh/apl-life"&gt;in APL in
+Forth&lt;/a&gt; where someone has developed APL as an embedded DSL within
+&lt;a href="https://en.wikipedia.org/wiki/Forth_(programming_language)"&gt;Forth&lt;/a&gt; (another language with which I have history). After a bit of
+digging I found a similar APL in Lisp, &lt;a href="https://github.com/phantomics/april"&gt;April&lt;/a&gt;, which clearly needs
+exploring.
+&lt;/p&gt;
+
+&lt;p&gt;
+In many ways APL and Lisp are parallel tracks within programming
+language evolution, taking a single data structure (lists or arrays)
+and providing powerful ways to manipulate them. Lisp of course has
+been extended with other data structures, including arrays, which
+makes the fusion of array- and list-based programming rather
+attractive.
+&lt;/p&gt;
+
+&lt;p&gt;
+I can't help asking myself what would have happened if APL hadn't
+fallen by the wayside. (I think this was inevitable, incidentally,
+once the syntax became fixed: any language that requires its own
+character set was always going to struggle.) We now have huge
+applications for array processing, from graphics to machine
+learning, and GPUs are from one perspective just APL accelerator
+co-processors. The ideas are still massively relevant.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
 &lt;h2 id="orgf8dcbd0"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgf8dcbd0"&gt;
 &lt;p&gt;
@@ -819,20 +882,4 @@ Then, as programs get bigger and more complicated, problems start to emerge. Typ
 
 Having been discussing this in the context of Javascript, I then stumbled across &lt;a href="http://www.typescriptlang.org" target="_blank"&gt;TypeScript&lt;/a&gt;, a Javascript extension that allows type annotations. These aren't exactly a strong type system -- they're optional, for a start -- but definitely mark a change in the way Javascript would be used, as a system with defined type structure rather than as a type free-for-all. Since Javascript occurs in a lot of systems these days -- on the front-ends, but also increasingly server-side -- this is a welcome departure. I find it hard to believe that large, long-lived component-based systems can be built in a dependable fashion using only a dynamic approach to typing. It relies too much on programmers' willingness and ability to check &lt;em&gt;everything&lt;/em&gt;, &lt;em&gt;every time&lt;/em&gt;.
 
-Actually there &lt;em&gt;are&lt;/em&gt; strong arguments for the need for non-static run-time checks, most notably in distributed systems when you can't be sure the data you receive will be type-correct even if the compiler that generated the code thinks it is, since you generally don't have complete control over all the components and their evolutions. But this isn't an argument against strong typing in general: it still helps, even if there are small holes. Instead one perhaps needs to check types at the component boundaries so that, once admitted, you have confidence in their type-correctness. This in turn places demands on the transport protocols to be self-describing in terms of their payloads' types, and doing so supports other constructs (like type-driven computation) for free without sacrificing the benefits of the strong checks. Having some dynamism (and room for run-time failure) within a generally static seems like a decent compromise.&lt;/p&gt;</description><category>javascript</category><category>programming</category><category>type systems</category><guid>https://simondobson.org/2012/10/05/typewheel/</guid><pubDate>Fri, 05 Oct 2012 07:00:23 GMT</pubDate></item><item><title>Forth, 2^5 years ago</title><link>https://simondobson.org/2012/08/08/forth-32-years/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;2^5 years ago this month, &lt;em&gt;Byte&lt;/em&gt; magazine devoted an issue to the Forth language.
-
-&lt;!--more--&gt;
-
-Byte ("the small systems journal") volume 5 number 8, August 1980, was largely devoted to Forth. I only discovered this by accident, researching some background for a paper I'm writing on extensible virtual machines. What's even more remarkable is that you can &lt;a href="http://malus.exotica.org.uk/~buzz/byte/pdf/" target="_blank"&gt;download the issue -- along with a lot of others -- as a PDF&lt;/a&gt;.
-
-That the premier hobbyist/hacker magazine of its day would give over most of an entire issue to one language tells you something about the way people thought about programming their machines back then. There was a premium on compactness: one of the first adverts in this issue of Byte is for a Cromenco Z-2H with 64Kb of RAM and 11Mb of hard disc, and proudly claiming that it  "is under $10K".
-
-One article is a history of Forth, one is a tutorial, and two are deeply technical programming pieces aimed at people comfortable with the idea of writing their own software pretty much from scratch  -- and indeed, keen to get on with it. What's more, they could write software as good or better as that which they could buy (to the extent that there &lt;em&gt;was&lt;/em&gt; any hobbyist software to buy). That's not something we've been able to say for at least the last 2^4 years: hobbyist software hasn't competed with commercial offerings in most domains for a long time.
-
-I think there were a number of things going on. The simplicity of the machines was obviously a bonus: one could understand the hardware and software of a personal computer in its entirety, and contemplate re-writing it from the ground up as an individual or small group.
-
-Expectations were lower, but that works both ways: low expectations coupled with low-performance hardware can still lead to some impressive software. But it's certainly the case that one of the main barriers to software development from-the-ground-up these days is the need to interface with so many devices and processes in order to do anything of interest: any new system would need to talk to flash drives and the web, which probably means writing device drivers and a filing system. You can get round this using hardware packages, of course: Zigbee radios have simple programmer interfaces and encapsulate the software stack inside them.
-
-Another factor, though, was a difference in ambition. A hobbyist in the 1980's only had herself and her friends to impress (and be impressed by): the horizon was closer. I'm sure that led to a lot of re-definition and duplication that the internet would allow one to avoid somewhat, but in some senses it provided a better learning environment in which a sequence of problems needed solution from a programmer's own creativity and resources. That's a significantly different skill set than what's required today, where we place a value on compliance, compatibility and re-use at least as high as we place on creativity and innovation.
-
-I'm not advocating a return to the past -- although programming in Forth for sensor networks does give me a tremendous sense of pleasure that I haven't felt in programming for a long time, at least partially derived from the old-school nature of it all. However, I &lt;em&gt;would&lt;/em&gt; say that there's also value in this old-school style even today. The hackers who read Byte wouldn't settle for sub-standard tools: they wouldn't think twice about re-coding their compilers and operating systems (as well as their applications) if they were sub-standard. That power brings on a &lt;em&gt;sense&lt;/em&gt; of power -- the ability to change what's perceived to be wrong in something-- that's to be celebrated and encouraged even today, amongst programmers who sometimes seem to be constrained by their toolchains rather than freed by them.&lt;/p&gt;</description><category>forth</category><category>programming</category><guid>https://simondobson.org/2012/08/08/forth-32-years/</guid><pubDate>Wed, 08 Aug 2012 16:39:51 GMT</pubDate></item></channel></rss>
+Actually there &lt;em&gt;are&lt;/em&gt; strong arguments for the need for non-static run-time checks, most notably in distributed systems when you can't be sure the data you receive will be type-correct even if the compiler that generated the code thinks it is, since you generally don't have complete control over all the components and their evolutions. But this isn't an argument against strong typing in general: it still helps, even if there are small holes. Instead one perhaps needs to check types at the component boundaries so that, once admitted, you have confidence in their type-correctness. This in turn places demands on the transport protocols to be self-describing in terms of their payloads' types, and doing so supports other constructs (like type-driven computation) for free without sacrificing the benefits of the strong checks. Having some dynamism (and room for run-time failure) within a generally static seems like a decent compromise.&lt;/p&gt;</description><category>javascript</category><category>programming</category><category>type systems</category><guid>https://simondobson.org/2012/10/05/typewheel/</guid><pubDate>Fri, 05 Oct 2012 07:00:23 GMT</pubDate></item></channel></rss>

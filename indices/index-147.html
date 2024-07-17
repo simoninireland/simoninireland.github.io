@@ -52,6 +52,70 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/07/05/debugging-lisp/" rel="bookmark">Friday 5 July, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/07/05/debugging-lisp/">Debugging&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgb9a4deb" class="outline-2">
+<h2 id="orgb9a4deb">Debugging&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgb9a4deb">
+<p>
+<a href="https://malisper.me/debugging-lisp-part-1-recompilation/">Debugging&nbsp;Lisp</a>
+</p>
+
+<p>
+A four-part blog post series on debugging Lisp,&nbsp;covering:
+</p>
+
+<ol class="org-ol">
+<li>Live recompilation of code from inside a debugging session,
+together with re-executing changed code from within a running
+stack&nbsp;trace</li>
+<li>Inspecting objects and interacting with traces of function&nbsp;calls</li>
+<li>Redefining classes, and how to ensure that existing instances
+are upgraded to be compatible with the new&nbsp;definition</li>
+<li>Restarts, the neglected part of the condition system that
+controls how programs continue after encountering&nbsp;errors</li>
+</ol>
+<p>
+The first two are essential, and show how <i>different</i> Lisp
+programming is from using other languages. In fact it requires a
+considerable mental shift to re-acquire the right reflexes for
+dealing with errors and debugging in a fully interactive
+environment: well, it did for me, anyway. We&#8217;re not used to
+interactivity in large development environments. There is seldom
+any need to close down a running Lisp session and start again, as
+everything can usually be changed and adapted within a session.
+This is very unlike the usual compile-edit-debug cycles we&#8217;ve
+become accustomed&nbsp;to.
+</p>
+
+<p>
+The third post – on redefining classes – shows how one can
+upgrade a program that simply <i>has</i> to keep running, because its
+live state upgrade can be programmed&nbsp;too.
+</p>
+
+<p>
+The most significant part of the mental shift is to realise that
+the debugger is written in Lisp itself, and makes use of restarts
+and other features to provide the interface. This is a consequence
+of the degree of exposure of the Lisp run-time structures into to
+language itself, where they can be examined and manipulated using
+the full power of the language – and then be re-started or
+discarded as&nbsp;required.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/ultra-processed-people-the-science-behind-food-that-isnt-food/" rel="bookmark">Thursday 4 July, 2024</a>
 			</span>
 		    </div>
