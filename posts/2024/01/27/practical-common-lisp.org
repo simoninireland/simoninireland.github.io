@@ -32,5 +32,5 @@
   services, database, and binary file parsers: quite a long way
   removed from the examples in many introductory texts. It doesn't
   make much use of macro programming in these examples, which is a
-  shame, so follow with On Lisp or Let over Lambda once the
-  structure of the language is clear.
+  shame, so follow with [[link:/2024/07/05/on-lisp/][On Lisp]] or [[link:/2024/07/05/let-over-lambda/][Let over Lambda]] once the structure
+  of the language is clear.
