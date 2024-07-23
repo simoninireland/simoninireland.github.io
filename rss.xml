@@ -1,5 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 17 Jul 2024 09:37:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge9df00b" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Jul 2024 08:18:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c8dd92" class="outline-2"&gt;
+&lt;h2 id="org7c8dd92"&gt;The art of the metaobject protocol&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7c8dd92"&gt;
+&lt;p&gt;
+Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  &lt;i&gt;The Art of the
+Metaobject Protocol&lt;/i&gt;. MIT Press. 1991.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+What &lt;i&gt;is&lt;/i&gt; a meta-object protocol? – or indeed a meta-object? This
+book is perhaps the clearest exposition of these ideas.
+&lt;/p&gt;
+
+&lt;p&gt;
+In most modern object-oriented languages an object is an instance
+of a class. In keeping with using objects throughout, classes are
+often also objects (or can be thought of as such), but are more
+informatively thought of as &lt;b&gt;meta-objects&lt;/b&gt; that to facilitate the
+construction of "real" objects. The methods on classes can also be
+thought of as meta-objects defining the code executed by the
+objects when invoked.
+&lt;/p&gt;
+
+&lt;p&gt;
+The defining feature of CLOS is that these meta-objects are all
+just Lisp objects, but objects that exist "off-stage" (to use this
+book's very intuitive metaphor) and largely invisible to a basic
+user. But they're as available to a power user as any other
+objects: the "meta"-ness is a matter of design, not of
+implementation. The interactions between objects and meta-objects,
+for example which methods are called when invoked on a particular
+object, are defined by the meta-object protocol (MOP), which is
+itself defined in terms of methods on the meta-objects that shadow
+the objects themselves.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Meta-object &lt;i&gt;protocol&lt;/i&gt; uses a term common in a lot of the earlier
+object-oriented literature to mean a collection of functions:
+meta-object &lt;i&gt;API&lt;/i&gt; would be a more modern rendering, although the
+protocol includes the sequencing of API calls and their
+relationships.)
+&lt;/p&gt;
+
+&lt;p&gt;
+The goal of MOP programming is to let the programmer extend the
+programming language towards to application domain, by automating
+a lot of boilerplate code and providing the structures needed to
+re-structure or analyse the code the programmer actually needs to
+write. In this sense it's a continuation of the idea of macros as
+powerful and potentially very domain-specific language and
+compiler extensions. It's also a continuation of reifying
+underlying language mechanisms in the language itself where they
+can be re-specified and re-mixed.
+&lt;/p&gt;
+
+&lt;p&gt;
+The first part of the book explains MOPs by defining a slightly
+simplified version of CLOS ("Closette"). It assumes the reader
+knows some CLOS, for example from &lt;a href="/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/"&gt;Object-oriented
+programming on Common Lisp: A programmer's guide to CLOS&lt;/a&gt; (or
+there's a stand-alone introduction in Appendix A), but it &lt;i&gt;only&lt;/i&gt;
+assumes the knowledge level of a relative newcomer – and the
+features then defined in Closette are just those parts of CLOS
+that such a user would actually know and be comfortable with,
+which is a brilliant piece of pedagogy that simplifies without
+trivialising. It's really noticeable that Closette doesn't need
+any extensions to Common Lisp: it's defined directly in the
+language itself, which shows how powerful the underlying language
+is. (Full CLOS requires a bit of language support too, at least
+for efficiency.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Next come several examples of MOP usage, for example to re-define
+how classes store their slots, or how to add attributes to slots
+that can store metadata about their use or could be used to
+provide higher-level operations. There's also a long discussion
+about protocol design and how this has a massive impact on how
+easy a system is to use for the programmer.
+&lt;/p&gt;
+
+&lt;p&gt;
+The second part is a manual for the CLOS MOP, which is thorough
+and useful, but perhaps less exciting than the first part. The
+Common Lisp package &lt;a href="https://github.com/pcostanza/closer-mop"&gt;closer-mop&lt;/a&gt; provides this API as a
+portable compatibility layer for use in real programs.
+&lt;/p&gt;
+
+&lt;p&gt;
+There's also a discussion of practicalities like where awkward
+circularities occur and how to break them, which is actually a
+great example how to do good protocol/API design. In an example of
+&lt;a href="/2024/07/23/the-roots-of-lisp/"&gt;Paul Graham's dictum&lt;/a&gt; that modern languages evolve by mixing Lisp
+concepts into a different base, MOP ideas appear in lots of other
+languages, either for real (Smalltalk, at to a lesser extent
+&lt;a href="https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/"&gt;Python&lt;/a&gt;) or just for introspection (Java). Even someone not
+planning on writing Lisp would benefit from reading this book just
+to see the ideas in their full generality.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item><item><title>Object-oriented programming on Common Lisp: A programmer's guide to CLOS</title><link>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1c558c9" class="outline-2"&gt;
+&lt;h2 id="org1c558c9"&gt;Object-oriented programming on Common Lisp: A programmer's guide to CLOS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1c558c9"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/41/584da1-ef33-41dd-8091-43c3999f6451/clos.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Sonja Keene.  &lt;i&gt;Object-Oriented Programming in Common Lisp: A
+Programmer’s Guide to CLOS&lt;/i&gt;. Addison-Wesley. ISBN 0-201-17589-4. 1989.
+&lt;/p&gt;
+
+&lt;p&gt;
+The definitive practical guide to using the Common Lisp Object
+System (CLOS). It's written from a similar perspective to other
+object-oriented tutorials, which makes it very accessible for
+those who've had experience with something like Java or Python.
+However, CLOS &lt;i&gt;isn't&lt;/i&gt; just objects in Lisp, and &lt;i&gt;isn't&lt;/i&gt; in any sense
+just an object-oriented extension. It can take some time to change
+mindset enough to use it properly, and this book is a great guide
+to the core differences.
+&lt;/p&gt;
+
+&lt;p&gt;
+Firstly, it follows a completely different model of how to
+associate functions with data. Instead CLOS uses "generic"
+functions, where the exact code called is dispatched dynamically
+based on the types of any or all parameters: so it's perfectly
+possible to have several definitions of the &lt;i&gt;same&lt;/i&gt; generic function
+operating on objects of the &lt;i&gt;same&lt;/i&gt; class, but taking arguments of
+&lt;i&gt;different&lt;/i&gt; types. This &lt;i&gt;multiple dispatch&lt;/i&gt; is a lot more flexible.
+&lt;/p&gt;
+
+&lt;p&gt;
+The second point actually follows from this. CLOS' generic
+functions can be defined to &lt;i&gt;any&lt;/i&gt; Lisp types: in fact they're not
+statically associated with classes at all, and can operate on &lt;i&gt;any&lt;/i&gt;
+types (classes or not) across the type hierarchy. This makes it
+closer to Haskell's type classes than to Smalltalk's (or Java's)
+virtual methods, which are strongly bound to classes.
+&lt;/p&gt;
+
+&lt;p&gt;
+Thirdly, CLOS methods can be combined in a range of interesting
+ways, not simply by overriding previous definitions – and indeed
+you can define your own if you need to. And like Smalltalk
+(but unlike Java) CLOS classes have "metaclasses" that can
+re-define their basic functions. &lt;a href="/2024/07/23/the-art-of-the-metaobject-protocol"&gt;The art of the metaobject protocol&lt;/a&gt;
+is a better source for this level of detail.
+&lt;/p&gt;
+
+&lt;p&gt;
+The examples in the book delve into these features by means of
+sensibly-sized challenges that can be used to illustrate both
+basic design and implementation. and more advanced ideas like
+re-defining classes on the fly.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
+&lt;h2 id="org0318c4d"&gt;The roots of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0318c4d"&gt;
+&lt;p&gt;
+&lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+(Only has an PostScript version, but a PDF is available
+&lt;a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf"&gt;here&lt;/a&gt;.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Re-visits McCarthy's discoveries (or inventions, depending on
+your point of view), translating the &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;earliest work&lt;/a&gt; into modern
+Lisp notation.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+It's worth understanding what McCarthy discovered, not just as a
+landmark in the history of computers, but as a model for what
+programming is tending to become in our own time. It seems to me that
+there have been two really clean, consistent models of programming so
+far: the C model and the Lisp model. These two seem points of high
+ground, with swampy lowlands between them. As computers have grown
+more powerful, the new languages being developed have been moving
+steadily toward the Lisp model. A popular recipe for new programming
+languages in the past 20 years has been to take the C model of
+computing and add to it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage collection.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Does a great job of making the central insights accessible,
+including re-phrasing the meta-circular Lisp interpreter so as to
+be executable in modern Common Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge9df00b" class="outline-2"&gt;
 &lt;h2 id="orge9df00b"&gt;TIL: The most powerful one-line program in the world&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge9df00b"&gt;
 &lt;p&gt;
@@ -221,325 +421,4 @@ discarded as required.
 	  Finished Thursday 4 July, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6565805510?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/ultra-processed-people-the-science-behind-food-that-isnt-food/</guid><pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate></item><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
-&lt;h2 id="orgf8dcbd0"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf8dcbd0"&gt;
-&lt;p&gt;
-I recently had a use case where I wanted to associate a constant
-value with a class &lt;i&gt;and&lt;/i&gt; its instances – but I needed to be able to
-get the value without having an instance to hand. This turns out
-to be solvable in CLOS.
-&lt;/p&gt;
-
-&lt;p&gt;
-In languages like Java you can associate class variables with
-classes, which can then be accessed without having an instance of
-the class. CLOS also has class-allocated slots, for example:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defclass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;instance-slot&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:initform&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:allocation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:class&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:initform&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:documentation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"A class with instance- and class-allocated slots."&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-An instance of &lt;code&gt;A&lt;/code&gt; has two slots: &lt;code&gt;instance-slot&lt;/code&gt; stored per-instance,
-and &lt;code&gt;class-slot&lt;/code&gt; stored only once and shared amongst all instances.
-This is close to Java's notion of class variables, but one still
-needs an instance against which to call the method. (Seibel makes
-this point in &lt;a href="https://gigamonkeys.com/book/object-reorientation-classes"&gt;chapter 17 of "Practical Common Lisp"&lt;/a&gt;.)
-&lt;/p&gt;
-
-&lt;p&gt;
-One could just create a basic object and retrieve the slot:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;slot-value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-instance&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'A&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'class-slot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-but that's inelegant and could potentially trigger a lot of
-unnecessary execution (and errors) if there are constructors
-(overridden &lt;code&gt;initialize-instance&lt;/code&gt; methods) for &lt;code&gt;A&lt;/code&gt;. One could use the
-metaobject protocol to introspect on the slot, but that's quite
-involved and still allows the slot to be changed, which isn't part
-of this use case.
-&lt;/p&gt;
-
-&lt;p&gt;
-What I really want is to be able to define a generic function such
-as &lt;code&gt;class-slot&lt;/code&gt; – but specialised against the &lt;i&gt;class&lt;/i&gt; &lt;code&gt;A&lt;/code&gt; rather than
-against the &lt;i&gt;instances&lt;/i&gt; of &lt;code&gt;A&lt;/code&gt;. I thought this would need a metaclass
-to define the method on, but it turned out that generic functions
-are powerful enough on their own.
-&lt;/p&gt;
-
-&lt;p&gt;
-The trick is to first define a generic method:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defgeneric&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;classname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="s"&gt;"Access the class slot on class."&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-As the argument name suggests, we're planning on passing a class
-name to this method, not an instance. To set the value for &lt;code&gt;A&lt;/code&gt;, we
-specialise the method as working on exactly the class A:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;classname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;eql&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'A&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The &lt;code&gt;eql&lt;/code&gt; specialiser selects this method only when exactly this
-object is passed in – that is to say, the name of &lt;code&gt;A&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-But what if we have an &lt;i&gt;instance&lt;/i&gt; of &lt;code&gt;A&lt;/code&gt;? The same generic function
-can still be used, but instead we specialise it against objects
-of class &lt;code&gt;A&lt;/code&gt; in the usual way:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;class-slot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;class-name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;class-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-If we now pass an instance of &lt;code&gt;A&lt;/code&gt;, we extract its class name and then
-re-call the &lt;i&gt;same&lt;/i&gt; generic function, passing it the class name
-instead of the object itself (which it doesn't need, because the
-slot value is independent of the actual object). This will select
-the correct specialisation and return the slot value.
-&lt;/p&gt;
-
-&lt;p&gt;
-This approach works if we generate sub-classes of &lt;code&gt;A&lt;/code&gt;: we just use
-&lt;code&gt;eql&lt;/code&gt; to specialise the generic function to the class we're
-interested in. It also works fine with packages, since the
-undecorated symbol passed to the specialiser will be expanded
-correctly according to what symbols are in scope. However, the
-value is &lt;i&gt;only&lt;/i&gt; associated with a single class, and isn't inherited.
-That's not a massive limitation for my current use case, but would
-be in general, I think.
-&lt;/p&gt;
-
-&lt;p&gt;
-This approach critically relies on an easily-forgotten property of
-Lisp: &lt;i&gt;values&lt;/i&gt; have types, but &lt;i&gt;variables&lt;/i&gt; don't, and we can
-specialise the &lt;i&gt;same&lt;/i&gt; generic function against &lt;i&gt;any&lt;/i&gt; value &lt;i&gt;or&lt;/i&gt; type.
-The pattern makes use of this to avoid actually storing the value
-of &lt;code&gt;class-slot&lt;/code&gt; anywhere, which as a side effect avoids the problem
-of someone accidentally assigning a new value to it. It's an
-example of how powerful generic functions are: more so than the
-method tables and messages found in most O-O languages. And it's
-sufficiently structured that it's crying-out for a couple of
-macros to define these kinds of class slots.
-&lt;/p&gt;
-
-&lt;p&gt;
-UPDATED 2024-06-29: Fixed the typo in the class definition to use
-&lt;code&gt;:initform&lt;/code&gt; and not &lt;code&gt;:initarg&lt;/code&gt;. Thanks to &lt;a href="https://framapiaf.org/@vindarel"&gt;@vindarel&lt;/a&gt; for pointing this
-out to me.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>Sandworm: A New Era of Cyberwar and the Hunt for the Kremlin's Most Dangerous Hackers</title><link>https://simondobson.org/goodreads/sandworm-a-new-era-of-cyberwar-and-the-hunt-for-the-kremlins-most-dangerous-hackers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567555830l/41436213._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Andy Greenberg
-	  (2019)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A history of cybersecurity with an emphasis on attacks against critical infrastructure.&lt;br&gt;&lt;br&gt;Rather than bomb a power plant or dam, why not have its own IT systems turn on it? That's the premise of a lot of modern cyberattacks, and they can be run with all the same sophistication as more conventional attacks against purely digital targets – but with the proviso that a lot of the targets don't think of themselves as IT organisations and haven't interalised the importance of their digital control systems. Since they don't emphasise security at board level, it gets neglected and becomes a weak spot that can be exploited from anywhere on the globe.&lt;br&gt;&lt;br&gt;The remedies aren't always trivial. Many attacks detailed in this book are almost incredibly elongated, involving the compromise of several servers and softwate packages on the way to the target. Keeping industrial control systems up-to-date can be difficult (or impossible): physical infrastructure exists on far longer timescales than the digital systems than control it. (I've had personal experience of laboratory equipment with control software that can &lt;i&gt;only&lt;/i&gt; run on Windows 95, which isn't being upgraded. Keeping that secure needs dedicated changes in the network architecture, and has a lot of knock-on consequences for efficiency and data management.)&lt;br&gt;&lt;br&gt;The value of such hacking for criminals is easy to understand, but it's also the ultimate technique of asymmetric warefare, letting an attacker deny responsibility and avoid counterattacks. Even the most powerful countries have an incentive to stop responses going kinetic, after all. But the asymmetry works both ways, with the US as one of the primary developers of sophisticated cyberweapons and so having an incentive not to push for international controls even while at the same time the US critical infrastructure is more vulnerable than others' to those weapons.&lt;br&gt;&lt;br&gt;Greenberg is a long-time student of cyberwarfare, and writes with a lot of insight into both the politics and the technology. He highlights the impacts of many short-sighted decisions made in the interests of national security advantage, culminating in the Shadow Brokers' release of a cache of NSA tools that form the basis for a new generation of cyberweapons. This is a great book to pair with &lt;a href="https://www.goodreads.com/book/show/49247043.This_Is_How_They_Tell_Me_the_World_Ends_The_Cyberweapons_Arms_Race" title="This Is How They Tell Me the World Ends The Cyberweapons Arms Race by Nicole Perlroth" rel="nofollow noopener"&gt;This Is How They Tell Me the World Ends: The Cyberweapons Arms Race&lt;/a&gt; for a broad-ranging and highly technically literate exploration of the new arms frontier.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Friday 28 June, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6337793870?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/sandworm-a-new-era-of-cyberwar-and-the-hunt-for-the-kremlins-most-dangerous-hackers/</guid><pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
-&lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1aec963"&gt;
-&lt;p&gt;
-Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
-compare C++ templates to Lisp macros.
-&lt;/p&gt;
-
-&lt;p&gt;
-Templates in C++ were designed as a way of generating typed versions
-of classes. The template declares some type variables that can be
-used as placeholders within a class declaration. When the template
-is instanciated and provided with actual type names, these are
-substituted for the type variables and the class is expanded. (It
-used to literally happen like this, so each use generated a
-completely new class. Modern compilers are smart enough to avoid the
-code repetition.) A classic example is a typed singly-linked list:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;typename&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-However, the template system also allows values to be used in
-templates instead of (or as well as) type names. When these are
-encountered they are expanded at compile-time, and may cause further
-templates to be expanded. A classic example of this is to
-pre-compute some factorials:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-In this code the first clause defines a template that defines the
-usual recursive factorial calculation. The second clause bottoms-out
-this recursion by defining a specialised template that directly
-provides the factorial of zero. This can then be used in code such
-as:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-which outputs the factorial of 7 as one might expect – but with the
-factorial having been computed at compile-time and inserted into the
-code as a literal, so the calculation introduces no run-time calculation.
-&lt;/p&gt;
-
-&lt;p&gt;
-There are some stringent limitations on the ways in which templates
-can be expanded. They can't have mutable variables for a start
-(that's why we needed to use the recursive factorial algorithm).
-Weirdly this makes the template language a &lt;i&gt;functional programming
-sub-set&lt;/i&gt; of C++. Having said that, as with Lisp macros, it allows
-calculations that can be statically performed forward to be brought
-forward to compile-time. This makes it useful for building read-only
-tables, unrolling loops, and the like.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's &lt;a href="https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming"&gt;claimed&lt;/a&gt; that templates are now so akin to "normal" C++ that
-they incur less of a readability penalty. That's a subjective
-statement that may be true. But the template language &lt;i&gt;isn't&lt;/i&gt; C++.
-While one &lt;i&gt;can&lt;/i&gt; write programs in it, they're &lt;i&gt;nothing like&lt;/i&gt; the C++ one
-would normally write. The template language is Turing complete, but
-that just means one can encode any &lt;i&gt;computation&lt;/i&gt;, not that one can
-encode any &lt;i&gt;particular program&lt;/i&gt; – and most template programs will
-require massive re-writing from the code one would write normally
-for execution at run-time. Template macroprogramming is therefore a
-non-trivial programming task to undertake.
-&lt;/p&gt;
-
-&lt;p&gt;
-Again as with Rust &lt;i&gt;versus&lt;/i&gt; Lisp, C++ templates are an extension to
-the language rather than a core part of it, although they're now
-used quite extensively in the standard library for generic typing.
-Also as with Rust, use of templates is semantically and
-syntactically distinct from "normal" C++ code or syntax, and it's
-this that causes the programming load.
-&lt;/p&gt;
-
-&lt;p&gt;
-A Lisp macro for the factorial computation, by contrast, looks
-&lt;i&gt;almost exactly&lt;/i&gt; like a normal factorial function that can access the
-entire language, both when defined and when used:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;labels&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-The choice of macro or function (&lt;code&gt;defmacro&lt;/code&gt; or &lt;code&gt;defun&lt;/code&gt;) has no further
-&lt;i&gt;syntactic&lt;/i&gt; implications for the rest of the program, and no
-restrictions on the code that can be used within the definition; we
-could re-write the to use iteration, mutable variables, or any other
-code, and it would simply be executed at compile-time. The whole
-language is there, all the time. We can show this by taking a
-factorial function written in "normal" Lisp and macro-ifying it to
-be computed at compile-time:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"Compute the factorial of M."&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-More importantly, Lisp (and indeed Rust) macro can abstract over
-syntax as well as classes and values, and so allow the language to
-be extended with new first-class-at-compile-time structures.
-Templates are restricted to instanciating templates written with
-a fixed syntax; in Lisp the syntax has to be "Lisp-like", although
-that's a very light restriction; and in Rust a macro can use any
-syntax that Rust can tokenise.
-&lt;/p&gt;
-
-&lt;p&gt;
-While C++ templates are sometimes described as macroprogramming (or
-metaprogramming), they're addressing a substantially different use
-case to that addressed by Lisp or Rust macros, and doing so within a
-more restricted computational and syntactic envelope.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/ultra-processed-people-the-science-behind-food-that-isnt-food/</guid><pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate></item></channel></rss>

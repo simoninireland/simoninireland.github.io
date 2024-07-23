@@ -1006,12 +1006,24 @@
   <lastmod>2024-07-17T09:20:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</loc>
+  <lastmod>2024-07-23T08:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</loc>
+  <lastmod>2024-07-23T08:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2024/07/23/the-roots-of-lisp/</loc>
+  <lastmod>2024-07-23T08:00:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-07-17T09:20:00Z</lastmod>
+  <lastmod>2024-07-23T08:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2024-07-17T09:20:00Z</lastmod>
+  <lastmod>2024-07-23T08:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1468,6 +1480,10 @@
  <url>
   <loc>https://simondobson.org/categories/onewire/</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/oo/</loc>
+  <lastmod>2024-07-23T08:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/open-access/</loc>
@@ -3887,7 +3903,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/</loc>
-  <lastmod>2024-07-07T14:20:00Z</lastmod>
+  <lastmod>2024-07-23T08:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-1.html</loc>
@@ -4103,7 +4119,11 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-147.html</loc>
-  <lastmod>2024-07-17T09:20:00Z</lastmod>
+  <lastmod>2024-07-23T08:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/indices/index-148.html</loc>
+  <lastmod>2024-07-23T08:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-15.html</loc>

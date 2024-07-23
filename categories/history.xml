@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sun, 19 May 2024 14:51:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org68fffef" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Jul 2024 08:02:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
+&lt;h2 id="org0318c4d"&gt;The roots of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0318c4d"&gt;
+&lt;p&gt;
+&lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+(Only has an PostScript version, but a PDF is available
+&lt;a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf"&gt;here&lt;/a&gt;.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Re-visits McCarthy's discoveries (or inventions, depending on
+your point of view), translating the &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;earliest work&lt;/a&gt; into modern
+Lisp notation.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+It's worth understanding what McCarthy discovered, not just as a
+landmark in the history of computers, but as a model for what
+programming is tending to become in our own time. It seems to me that
+there have been two really clean, consistent models of programming so
+far: the C model and the Lisp model. These two seem points of high
+ground, with swampy lowlands between them. As computers have grown
+more powerful, the new languages being developed have been moving
+steadily toward the Lisp model. A popular recipe for new programming
+languages in the past 20 years has been to take the C model of
+computing and add to it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage collection.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Does a great job of making the central insights accessible,
+including re-phrasing the meta-circular Lisp interpreter so as to
+be executable in modern Common Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org68fffef" class="outline-2"&gt;
 &lt;h2 id="org68fffef"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org68fffef"&gt;
 &lt;p&gt;
