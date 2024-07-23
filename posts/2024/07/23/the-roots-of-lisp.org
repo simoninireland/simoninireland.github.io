@@ -1,0 +1,40 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The roots of Lisp
+.. slug: the-roots-of-lisp
+.. date: 2024-07-23 09:00:41 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The roots of Lisp
+
+    http://www.paulgraham.com/rootsoflisp.html
+
+    (Only has an PostScript version, but a PDF is available
+    [[https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf][here]].)
+
+    Re-visits McCarthy's discoveries (or inventions, depending on
+    your point of view), translating the [[link:/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/][earliest work]] into modern
+    Lisp notation.
+
+    #+begin_quote
+It's worth understanding what McCarthy discovered, not just as a
+landmark in the history of computers, but as a model for what
+programming is tending to become in our own time. It seems to me that
+there have been two really clean, consistent models of programming so
+far: the C model and the Lisp model. These two seem points of high
+ground, with swampy lowlands between them. As computers have grown
+more powerful, the new languages being developed have been moving
+steadily toward the Lisp model. A popular recipe for new programming
+languages in the past 20 years has been to take the C model of
+computing and add to it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage collection.
+#+end_quote
+
+     Does a great job of making the central insights accessible,
+     including re-phrasing the meta-circular Lisp interpreter so as to
+     be executable in modern Common Lisp.

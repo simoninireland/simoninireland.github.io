@@ -71,6 +71,25 @@ of many more modern languages.
    :reverse:
 
 
+Object-oriented programming
+---------------------------
+
+Lisp is usually thought of as a functional language with imperative
+features, but it would be just as correct to say it's an
+object-oriented language with functional features. And the object
+model is, like much else in Lisp, is amazingly powerful in a way that
+provides the concepts in their most general form, ready to be
+specialised to particular needs. Learning CLOS therefore teaches you a
+lot about object-oriented programming in other languages too.
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, oo
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
+
 Applications
 ------------
 

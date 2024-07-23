@@ -1,0 +1,92 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The art of the metaobject protocol
+.. slug: the-art-of-the-metaobject-protocol
+.. date: 2024-07-23 09:13:16 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, oo
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The art of the metaobject protocol
+
+    Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  /The Art of the
+    Metaobject Protocol/. MIT Press. 1991.
+
+
+    What /is/ a meta-object protocol? -- or indeed a meta-object? This
+    book is perhaps the clearest exposition of these ideas.
+
+    In most modern object-oriented languages an object is an instance
+    of a class. In keeping with using objects throughout, classes are
+    often also objects (or can be thought of as such), but are more
+    informatively thought of as *meta-objects* that to facilitate the
+    construction of "real" objects. The methods on classes can also be
+    thought of as meta-objects defining the code executed by the
+    objects when invoked.
+
+    The defining feature of CLOS is that these meta-objects are all
+    just Lisp objects, but objects that exist "off-stage" (to use this
+    book's very intuitive metaphor) and largely invisible to a basic
+    user. But they're as available to a power user as any other
+    objects: the "meta"-ness is a matter of design, not of
+    implementation. The interactions between objects and meta-objects,
+    for example which methods are called when invoked on a particular
+    object, are defined by the meta-object protocol (MOP), which is
+    itself defined in terms of methods on the meta-objects that shadow
+    the objects themselves.
+
+    (Meta-object /protocol/ uses a term common in a lot of the earlier
+    object-oriented literature to mean a collection of functions:
+    meta-object /API/ would be a more modern rendering, although the
+    protocol includes the sequencing of API calls and their
+    relationships.)
+
+    The goal of MOP programming is to let the programmer extend the
+    programming language towards to application domain, by automating
+    a lot of boilerplate code and providing the structures needed to
+    re-structure or analyse the code the programmer actually needs to
+    write. In this sense it's a continuation of the idea of macros as
+    powerful and potentially very domain-specific language and
+    compiler extensions. It's also a continuation of reifying
+    underlying language mechanisms in the language itself where they
+    can be re-specified and re-mixed.
+
+    The first part of the book explains MOPs by defining a slightly
+    simplified version of CLOS ("Closette"). It assumes the reader
+    knows some CLOS, for example from [[link:/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/][Object-oriented
+    programming on Common Lisp: A programmer's guide to CLOS]] (or
+    there's a stand-alone introduction in Appendix A), but it /only/
+    assumes the knowledge level of a relative newcomer -- and the
+    features then defined in Closette are just those parts of CLOS
+    that such a user would actually know and be comfortable with,
+    which is a brilliant piece of pedagogy that simplifies without
+    trivialising. It's really noticeable that Closette doesn't need
+    any extensions to Common Lisp: it's defined directly in the
+    language itself, which shows how powerful the underlying language
+    is. (Full CLOS requires a bit of language support too, at least
+    for efficiency.)
+
+    Next come several examples of MOP usage, for example to re-define
+    how classes store their slots, or how to add attributes to slots
+    that can store metadata about their use or could be used to
+    provide higher-level operations. There's also a long discussion
+    about protocol design and how this has a massive impact on how
+    easy a system is to use for the programmer.
+
+    The second part is a manual for the CLOS MOP, which is thorough
+    and useful, but perhaps less exciting than the first part. The
+    Common Lisp package [[https://github.com/pcostanza/closer-mop][closer-mop]] provides this API as a
+    portable compatibility layer for use in real programs.
+
+    There's also a discussion of practicalities like where awkward
+    circularities occur and how to break them, which is actually a
+    great example how to do good protocol/API design. In an example of
+    [[link:/2024/07/23/the-roots-of-lisp/][Paul Graham's dictum]] that modern languages evolve by mixing Lisp
+    concepts into a different base, MOP ideas appear in lots of other
+    languages, either for real (Smalltalk, at to a lesser extent
+    [[https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/][Python]]) or just for introspection (Java). Even someone not
+    planning on writing Lisp would benefit from reading this book just
+    to see the ideas in their full generality.
