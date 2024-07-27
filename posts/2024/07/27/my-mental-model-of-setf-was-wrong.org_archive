@@ -1,0 +1,101 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/sd80/programming/simoninireland.github.io/posts/2024/07/27/my-mental-model-of-setf-was-wrong.org
+
+
+* Can we build our own ~setf~-like macros?
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2024-07-27 Sat 14:37
+  :ARCHIVE_FILE: ~/programming/simoninireland.github.io/posts/2024/07/27/my-mental-model-of-setf-was-wrong.org
+  :ARCHIVE_OLPATH: My mental model of setf was wrong
+  :ARCHIVE_CATEGORY: my-mental-model-of-setf-was-wrong
+  :END:
+
+     Yes: ~setf~ is entirely constructable within "ordinary" Lisp.
+
+     There are two parts to the construction. Firstly, we need the
+     name of the method that underlies a particular selector. It /looks/
+     like a list -- but it's actually a symbol, constructed by ~setf~
+     from the locator.
+
+     We can build our own functions with names like this, although not
+     using ~defun~.
+
+     #+begin_src lisp :results output :exports both
+(defvar *weird-name* (make-symbol "(1 2 3)"))
+
+(setf (symbol-function *weird-name*)
+      (lambda (a)
+	(print (format nil "We did *weird-name* on ~s" a))))
+
+(funcall *weird-name* "a string")
+     #+end_src
+
+#+RESULTS:
+:
+: "We did *weird-name* on \"a string\""
+
+     This defines a function and attaches it to a symbol (whose
+     print-name looks like a list), and -- critically -- whose name
+     can't be accidentally typed and re-used, because the Lisp reader
+     won't accept it as a function name symbol. (We can't use ~defun~
+     because it won't parse ~(1 2 3)~ as a symbol name.)
+
+     For ~setf~, the style of name used for the methods implementing the
+     different choices is ~(setf /selector/)~ -- as a symbol, /not/ a list,
+     remember -- where /selector/ is the symbol at the head of locator
+     list.
+
+     For the second part of the construction, ~setf~ takes the locator,
+     synthesises the function name symbol using the selector, and
+     calls a generic function with this name, passing the new value
+     and the rest of the locator as arguments.
+
+     So to define a new construct ~our-setf~ we might do something like:
+
+     #+begin_src lisp
+(defmacro our-setf (locator new-value)
+  "Unpack LOCATOR and pass NEW-VALUE to the appropriate generic function."
+  (let* ((selector (car locator))
+	 (our-setf-function-name (make-symbol (format nil "(oursetf ~a)" selector))))
+    `(apply (symbol-function ,our-setf-function-name) (cons ,new-value ,@(cdr locator)))))
+     #+end_src
+
+     When called as something like ~(our-setf (head '(1 2 3)) 0)~ the
+     macro will code to call a method ~(our-setf head)~ (as a symbol),
+     passing it (~0 '~(1 2 3))~ as arguments and allowing the machinery of
+     generic functions to determine which method is actually called.
+     We define these methods of the form ~(our-setf head)~ and specialise
+     them as required.
+
+     (It's actually a bit more complicated than this because we need
+     to define a generic function for ~(our-setf head)~. We can't do
+     this with ~defgeneric~, for broadly the same reasons as why we
+     couldn't use ~defun~ above, so we have to go backstage and
+     programmatically define the generic function. But the idea
+     remains the same.)
+
+     -----
+
+     After all this, my mental model of ~setf~ is a lot clearer -- and,
+     I hope, closer the reality at least. It combines a highly
+     structured use of macros, synthesised function names, and generic
+     functions -- and no special machinery at all.
+
+     However, there's some subtlety at play too, not obvious at first
+     acquaintance. We don't want our synthesised function names to
+     accidentally capture the names of user-supplied code. It's
+     possible that using a naming style like ~setf-car~ would do just
+     this, and a program happens to define a function with this name.
+     But the names ~setf~ synthesises aren't recognised by ~defun~ and
+     ~defgeneric~, and so can't easily cause capturing -- although they
+     /are/ recognised by ~defmethod~, which lets us define the specialised
+     methods "as normal" even though the other parts of the process
+     have to happen backstage.
+
+     This shows the power of macros and generic functions. It also
+     shows how deeply the latter are embedded into Lisp. They're
+     usually thought of as part of CLOS, but they actually have little
+     explicit relationship to class and objects at all, and have been
+     woven all through Lisp to build flexible code structures.

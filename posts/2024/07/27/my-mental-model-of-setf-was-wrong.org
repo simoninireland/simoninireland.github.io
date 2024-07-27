@@ -1,0 +1,237 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: My mental model of setf was wrong
+.. slug: my-mental-model-of-setf-was-wrong
+.. date: 2024-07-27 14:29:18 UTC+01:00
+.. tags: lisp, programming, macroprgramming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* My mental model of setf was wrong
+
+    I realised recently that I've been thinking about ~setf~ all wrong.
+
+    Lisp lets programs define new ~setf~ forms for assignment. The most
+    common example is from CLOS, where a class like this:
+
+    #+begin_src lisp
+(defclass A ()
+  ((var
+    :accessor a-var)))
+    #+end_src
+
+     will give rise to a class and two functions, ~a-var~ to read the
+     value of the ~var~ slot on an instance of ~A~, and a ~setf~ target used
+     as ~(setf (a-var instance) 24)~ to set the ~var~ slot of ~instance~.
+
+     It's natural to read that like as executing ~(a-var instance)~ to
+     retrieve a location, and ~setf~ using this location to assign to.
+     The documentation reinforces this view, talking about
+     "generalised places" as the targets for ~setf~ to store things. My
+     mental model was strengthened by idioms like ~(setf (car pair) 23)~
+     to set the car of a pair or list, and ~(setf (cdr pair) '(1 2 3)~
+     to set the cdr. The first argument is a /locator/ expression
+     returning the place to update, and the second argument is the /new
+     value/ to put there.
+
+     Natural. But wrong.
+
+     -----
+
+     The thing I missed is that ~setf~ is a /macro/: it can access the
+     /structure/ of its arguments but not their /values/. You can't write
+     code like this:
+
+     #+begin_src lisp
+(let* ((l (list 1 2 3))
+       (h (car l)))
+  (setf h 23))
+     #+end_src
+
+     and expect the ~car~ of ~l~ to be updated, which would make sense if
+     ~setf~ were working on a location, because ~h~ would be that
+     location. But it isn't.
+
+     What actually happens is that the ~setf~ macro looks, at compile
+     time, at the structure of its first (locator) argument, and uses
+     that to dispatch to a method. Using the slot accessor above, the
+     ~setf~ form expands to something like:
+
+     #+begin_src lisp
+(defmethod (setf a-var) (v (a A))
+  (setf (slot-value a 'a-var) a))
+     #+end_src
+
+     This is a method specialised twice: on the type of an argument
+     (~A~), and the /selector/ used to within the locator (~a-var~). It's
+     definition expands to /another/ ~setf~, this time specialised against
+     ~slot-value~ and an instance of ~standard-object~. Specialising on the
+     selector explains why we need that selector to be present
+     syntactically at compile time.
+
+     My mistake was thinking that the similarity between access form
+     and ~setf~ form was necessary and functional -- and it isn't
+     either. This has some interesting consequences.
+
+** The selector is entirely arbitrary
+
+     If we don't like using ~car~ to indicate the head of a list -- and
+     some people don't -- we could in principle define a new
+     specialisation such as:
+
+     #+begin_src lisp
+(defmethod (setf head) (v (l list))
+  (rplaca l v))
+     #+end_src
+
+     and use it as ~(setf (head l) 45)~ /even though ~head~ isn't a
+     defined function/. All we need is a selector symbol.
+
+** There can be more arguments
+
+     Ever since I first encountered them I wondered why the lambda
+     lists for new ~setf~ specialisations was so strange: the new value
+     and /then/ the arguments -- but not the selector -- of the place to
+     be updated? Once you get a better mental model, the reason
+     becomes obvious: there can be /multiple/ arguments to the ~setf~
+     locator, possibly actually a variable number, alongside the
+     selector, so we need to be able to find the new value reliably.
+     The easiest way is to put it at the front of the lambda list.
+
+     There's actually a common example of this sitting in plain sight
+     that I'd missed. You access the elements of a Lisp array using
+     the ~aref~ function, which takes the array and the index, such as
+     (~aref a 23)~. The corresponding ~setf~ form looks like ~(setf (aref
+     a 23) 0)~, with the locator taking several arguments like the
+     function. /But it isn't calling the function/: it's decomposing a
+     pattern that /looks exactly like/ the function call for
+     convenience, and which passes several arguments to the
+     specialised method that will look something like:
+
+     #+begin_src lisp
+(defmethod (setf aref) (v (a array) (i integer))
+  ...)
+     #+end_src
+
+     The new value is reliably in the first argument position, with
+     the rest of the locator arguments after it.
+
+** You can specialise by value too
+
+     Since the ~setf~ forms are just methods, you could if you wanted to
+     specialise them on the type of the new value as well as on the
+     locator. As a trivial example:
+
+     #+begin_src lisp :results output :exports both
+(defmethod (setf assign-head) ((v integer) (l list))
+  (format t "Assigned an integer ~s" v)
+  (setf (car l) v))
+
+(defmethod (setf assign-head) ((s string) (l list))
+  (format t "Assigned a string ~s" s)
+  (setf (car l) s))
+
+(setf (assign-head '(1 2 3)) "zero")
+     #+end_src
+
+#+RESULTS:
+: Assigned a string "zero"
+
+     Obviously there are better ways to do this, but it's a good
+     example of the flexibility that comes from ~setf~ not really being
+     all that special a form at all: just a creative use of the power
+     of generic functions.
+
+** Can we build our own ~setf~-like macros?
+
+     Yes: ~setf~ is entirely constructable within "ordinary" Lisp.
+
+     There are two parts to the construction. Firstly, we need the
+     name of the method that underlies a particular selector. It /looks/
+     like a list -- but it's actually a symbol, constructed by ~setf~
+     from the locator.
+
+     We can build our own functions with names like this, although not
+     using ~defun~.
+
+     #+begin_src lisp :results output :exports both
+(defvar *weird-name* (make-symbol "(1 2 3)"))
+
+(setf (symbol-function *weird-name*)
+      (lambda (a)
+	(print (format nil "We did *weird-name* on ~s" a))))
+
+(funcall *weird-name* "a string")
+     #+end_src
+
+#+RESULTS:
+:
+: "We did *weird-name* on \"a string\""
+
+     This defines a function and attaches it to a symbol (whose
+     print-name looks like a list), and -- critically -- whose name
+     can't be accidentally typed and re-used, because the Lisp reader
+     won't accept it as a function name symbol. (We can't use ~defun~
+     because it won't parse ~(1 2 3)~ as a symbol name.)
+
+     For ~setf~, the style of name used for the methods implementing the
+     different choices is ~(setf selector)~ -- as a symbol, /not/ a list,
+     remember -- where /selector/ is the symbol at the head of locator
+     list.
+
+     For the second part of the construction, ~setf~ takes the locator,
+     synthesises the function name symbol using the selector, and
+     calls a generic function with this name, passing the new value
+     and the rest of the locator as arguments.
+
+     So to define a new construct ~our-setf~ we might do something like:
+
+     #+begin_src lisp
+(defmacro our-setf (locator new-value)
+  (let* ((selector (car locator))
+	 (our-setf-function-name (make-symbol (format nil "(our-setf ~a)"
+						      selector))))
+    `(apply (symbol-function ,our-setf-function-name)
+	    (cons ,new-value ,@(cdr locator)))))
+     #+end_src
+
+     When called as something like ~(our-setf (head '(1 2 3)) 0)~ the
+     macro will code to call a method ~(our-setf head)~ (as a symbol),
+     passing it (~0 '(1 2 3))~ as arguments and allowing the machinery of
+     generic functions to determine which method is actually called.
+     We define these methods of the form ~(our-setf head)~ and specialise
+     them as required.
+
+     (It's actually a bit more complicated than this because we need
+     to define a generic function for ~(our-setf head)~. We can't do
+     this with ~defgeneric~, for broadly the same reasons as why we
+     couldn't use ~defun~ above, so we have to go backstage and
+     programmatically define the generic function. But the idea
+     remains the same.)
+
+     -----
+
+     After all this, my mental model of ~setf~ is a lot clearer -- and,
+     I hope, closer the reality at least. It combines a highly
+     structured use of macros, synthesised function names, and generic
+     functions -- and no special machinery at all.
+
+     However, there's some subtlety at play too, not obvious at first
+     acquaintance. We don't want our synthesised function names to
+     accidentally capture the names of user-supplied code. It's
+     possible that using a naming style like ~setf-car~ would do just
+     this, and a program happens to define a function with this name.
+     But the names ~setf~ synthesises aren't recognised by ~defun~ and
+     ~defgeneric~, and so can't easily cause capturing -- although they
+     /are/ recognised by ~defmethod~, which lets us define the specialised
+     methods "as normal" even though the other parts of the process
+     have to happen backstage.
+
+     This shows the power of macros and generic functions. It also
+     shows how deeply the latter are embedded into Lisp. They're
+     usually thought of as part of CLOS, but they actually have little
+     explicit relationship to class and objects at all, and have been
+     woven all through Lisp to build flexible code structures.
