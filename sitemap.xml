@@ -1018,12 +1018,16 @@
   <lastmod>2024-07-23T08:00:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</loc>
+  <lastmod>2024-07-27T13:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-07-23T08:13:00Z</lastmod>
+  <lastmod>2024-07-27T13:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2024-07-23T08:03:00Z</lastmod>
+  <lastmod>2024-07-27T13:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1424,6 +1428,10 @@
  <url>
   <loc>https://simondobson.org/categories/machine-learning/</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/macroprgramming/</loc>
+  <lastmod>2024-07-27T13:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/macroprogramming/</loc>
@@ -4123,7 +4131,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-148.html</loc>
-  <lastmod>2024-07-23T08:13:00Z</lastmod>
+  <lastmod>2024-07-27T13:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-15.html</loc>
