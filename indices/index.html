@@ -58,9 +58,9 @@
 		    <h1><a href="../2024/07/27/my-mental-model-of-setf-was-wrong/">My mental model of setf was&nbsp;wrong</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org504d000" class="outline-2">
-<h2 id="org504d000">My mental model of setf was&nbsp;wrong</h2>
-<div class="outline-text-2" id="text-org504d000">
+			<div id="outline-container-org22360d3" class="outline-2">
+<h2 id="org22360d3">My mental model of setf was&nbsp;wrong</h2>
+<div class="outline-text-2" id="text-org22360d3">
 <p>
 I realised recently that I&#8217;ve been thinking&nbsp;about <code>setf</code> all&nbsp;wrong.
 </p>
@@ -138,9 +138,9 @@ My mistake was thinking that the similarity between access form&nbsp;and <code>s
 either. This has some interesting&nbsp;consequences.
 </p>
 </div>
-<div id="outline-container-org2b324bc" class="outline-3">
-<h3 id="org2b324bc">The selector is entirely&nbsp;arbitrary</h3>
-<div class="outline-text-3" id="text-org2b324bc">
+<div id="outline-container-org1031bae" class="outline-3">
+<h3 id="org1031bae">The selector is entirely&nbsp;arbitrary</h3>
+<div class="outline-text-3" id="text-org1031bae">
 <p>
 If we don&#8217;t like&nbsp;using <code>car</code> to indicate the head of a list – and
 some people don&#8217;t – we could in principle define a new
@@ -157,9 +157,9 @@ defined function</i>. All we need is a selector&nbsp;symbol.
 </p>
 </div>
 </div>
-<div id="outline-container-org5f4f27b" class="outline-3">
-<h3 id="org5f4f27b">There can be more&nbsp;arguments</h3>
-<div class="outline-text-3" id="text-org5f4f27b">
+<div id="outline-container-org9e8cd6f" class="outline-3">
+<h3 id="org9e8cd6f">There can be more&nbsp;arguments</h3>
+<div class="outline-text-3" id="text-org9e8cd6f">
 <p>
 Ever since I first encountered them I wondered why the lambda
 lists for&nbsp;new <code>setf</code> specialisations was so strange: the new value
@@ -191,9 +191,9 @@ the rest of the locator arguments after&nbsp;it.
 </p>
 </div>
 </div>
-<div id="outline-container-orge90fedf" class="outline-3">
-<h3 id="orge90fedf">You can specialise by value&nbsp;too</h3>
-<div class="outline-text-3" id="text-orge90fedf">
+<div id="outline-container-org637adf2" class="outline-3">
+<h3 id="org637adf2">You can specialise by value&nbsp;too</h3>
+<div class="outline-text-3" id="text-org637adf2">
 <p>
 Since&nbsp;the <code>setf</code> forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -224,9 +224,9 @@ of generic&nbsp;functions.
 </p>
 </div>
 </div>
-<div id="outline-container-org0f02cb0" class="outline-3">
-<h3 id="org0f02cb0">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
-<div class="outline-text-3" id="text-org0f02cb0">
+<div id="outline-container-orge971bd2" class="outline-3">
+<h3 id="orge971bd2">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
+<div class="outline-text-3" id="text-orge971bd2">
 <p>
 Yes: <code>setf</code> is entirely constructable within &#8220;ordinary&#8221;&nbsp;Lisp.
 </p>
