@@ -65,12 +65,12 @@
   (setf (slot-value a 'a-var) a))
      #+end_src
 
-     This is a method specialised twice: on the type of an argument
-     (~A~), and the /selector/ used to within the locator (~a-var~). It's
-     definition expands to /another/ ~setf~, this time specialised against
-     ~slot-value~ and an instance of ~standard-object~. Specialising on the
-     selector explains why we need that selector to be present
-     syntactically at compile time.
+     This is a method with two pieces of selection: specialised on the
+     type of an argument (~A~), and named with the /selector/ used to
+     within the locator (~a-var~). It's definition expands to /another/
+     ~setf~, this time specialised against ~slot-value~ and an instance of
+     ~standard-object~. Specialising on the selector explains why we
+     need that selector to be present syntactically at compile time.
 
      My mistake was thinking that the similarity between access form
      and ~setf~ form was necessary and functional -- and it isn't
@@ -150,9 +150,7 @@
      Yes: ~setf~ is entirely constructable within "ordinary" Lisp.
 
      There are two parts to the construction. Firstly, we need the
-     name of the method that underlies a particular selector. It /looks/
-     like a list -- but it's actually a symbol, constructed by ~setf~
-     from the locator.
+     name of the method that underlies a particular selector.
 
      We can build our own functions with names like this, although not
      using ~defun~.
@@ -171,16 +169,12 @@
 :
 : "We did *weird-name* on \"a string\""
 
-     This defines a function and attaches it to a symbol (whose
-     print-name looks like a list), and -- critically -- whose name
-     can't be accidentally typed and re-used, because the Lisp reader
-     won't accept it as a function name symbol. (We can't use ~defun~
-     because it won't parse ~(1 2 3)~ as a symbol name.)
-
      For ~setf~, the style of name used for the methods implementing the
-     different choices is ~(setf selector)~ -- as a symbol, /not/ a list,
-     remember -- where /selector/ is the symbol at the head of locator
-     list.
+     different choices is ~(setf selector)~ -- a function named by a
+     list -- where /selector/ is the symbol at the head of locator list.
+     (Some Lisps construct a symbol from the list elements, rather
+     than using it directly. I'm not sure what, if anything, the
+     Common Lisp language definition says about how this should work.)
 
      For the second part of the construction, ~setf~ takes the locator,
      synthesises the function name symbol using the selector, and
@@ -206,11 +200,9 @@
      them as required.
 
      (It's actually a bit more complicated than this because we need
-     to define a generic function for ~(our-setf head)~. We can't do
-     this with ~defgeneric~, for broadly the same reasons as why we
-     couldn't use ~defun~ above, so we have to go backstage and
-     programmatically define the generic function. But the idea
-     remains the same.)
+     to define a generic function for ~(our-setf head)~. We have to go
+     backstage and programmatically define the generic function. But
+     the idea remains the same.)
 
      -----
 
@@ -224,14 +216,20 @@
      accidentally capture the names of user-supplied code. It's
      possible that using a naming style like ~setf-car~ would do just
      this, and a program happens to define a function with this name.
-     But the names ~setf~ synthesises aren't recognised by ~defun~ and
-     ~defgeneric~, and so can't easily cause capturing -- although they
-     /are/ recognised by ~defmethod~, which lets us define the specialised
-     methods "as normal" even though the other parts of the process
-     have to happen backstage.
+     But the names ~setf~ synthesises are /lists/, unlikely to be captured
+     accidentally, which lets us define the specialised methods "as
+     normal" even though some of the other parts of the process have
+     to happen backstage.
 
      This shows the power of macros and generic functions. It also
      shows how deeply the latter are embedded into Lisp. They're
      usually thought of as part of CLOS, but they actually have little
      explicit relationship to class and objects at all, and have been
      woven all through Lisp to build flexible code structures.
+
+     UPDATED 2023-07-30: I incorrectly said originally that one
+     couldn't use forms like ~(defun (setf abc) ...)~: you can, just as
+     with ~defmethod~ and ~defgeneric~, and name a function using a list.
+     Thanks for Hacker News contributor [[https://phoe.github.io][phoe-krk]] for correcting me. I
+     was also slightly loose in my use of /specialisation/, which I've
+     tightened up.
