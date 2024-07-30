@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 27 Jul 2024 13:47:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org22360d3" class="outline-2"&gt;
-&lt;h2 id="org22360d3"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org22360d3"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 30 Jul 2024 16:24:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org146b5ad" class="outline-2"&gt;
+&lt;h2 id="org146b5ad"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org146b5ad"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -69,12 +69,12 @@ that to dispatch to a method. Using the slot accessor above, the
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-This is a method specialised twice: on the type of an argument
-(&lt;code&gt;A&lt;/code&gt;), and the &lt;i&gt;selector&lt;/i&gt; used to within the locator (&lt;code&gt;a-var&lt;/code&gt;). It's
-definition expands to &lt;i&gt;another&lt;/i&gt; &lt;code&gt;setf&lt;/code&gt;, this time specialised against
-&lt;code&gt;slot-value&lt;/code&gt; and an instance of &lt;code&gt;standard-object&lt;/code&gt;. Specialising on the
-selector explains why we need that selector to be present
-syntactically at compile time.
+This is a method with two pieces of selection: specialised on the
+type of an argument (&lt;code&gt;A&lt;/code&gt;), and named with the &lt;i&gt;selector&lt;/i&gt; used to
+within the locator (&lt;code&gt;a-var&lt;/code&gt;). It's definition expands to &lt;i&gt;another&lt;/i&gt;
+&lt;code&gt;setf&lt;/code&gt;, this time specialised against &lt;code&gt;slot-value&lt;/code&gt; and an instance of
+&lt;code&gt;standard-object&lt;/code&gt;. Specialising on the selector explains why we
+need that selector to be present syntactically at compile time.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -83,9 +83,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org1031bae" class="outline-3"&gt;
-&lt;h3 id="org1031bae"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org1031bae"&gt;
+&lt;div id="outline-container-org894d678" class="outline-3"&gt;
+&lt;h3 id="org894d678"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org894d678"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -102,9 +102,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org9e8cd6f" class="outline-3"&gt;
-&lt;h3 id="org9e8cd6f"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org9e8cd6f"&gt;
+&lt;div id="outline-container-orgcc53069" class="outline-3"&gt;
+&lt;h3 id="orgcc53069"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgcc53069"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -138,9 +138,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org637adf2" class="outline-3"&gt;
-&lt;h3 id="org637adf2"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org637adf2"&gt;
+&lt;div id="outline-container-org39c4b54" class="outline-3"&gt;
+&lt;h3 id="org39c4b54"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org39c4b54"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -171,18 +171,16 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orge971bd2" class="outline-3"&gt;
-&lt;h3 id="orge971bd2"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orge971bd2"&gt;
+&lt;div id="outline-container-org53c7be2" class="outline-3"&gt;
+&lt;h3 id="org53c7be2"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org53c7be2"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
 
 &lt;p&gt;
 There are two parts to the construction. Firstly, we need the
-name of the method that underlies a particular selector. It &lt;i&gt;looks&lt;/i&gt;
-like a list – but it's actually a symbol, constructed by &lt;code&gt;setf&lt;/code&gt;
-from the locator.
+name of the method that underlies a particular selector.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -206,18 +204,12 @@ using &lt;code&gt;defun&lt;/code&gt;.
 
 
 &lt;p&gt;
-This defines a function and attaches it to a symbol (whose
-print-name looks like a list), and – critically – whose name
-can't be accidentally typed and re-used, because the Lisp reader
-won't accept it as a function name symbol. (We can't use &lt;code&gt;defun&lt;/code&gt;
-because it won't parse &lt;code&gt;(1 2 3)&lt;/code&gt; as a symbol name.)
-&lt;/p&gt;
-
-&lt;p&gt;
 For &lt;code&gt;setf&lt;/code&gt;, the style of name used for the methods implementing the
-different choices is &lt;code&gt;(setf selector)&lt;/code&gt; – as a symbol, &lt;i&gt;not&lt;/i&gt; a list,
-remember – where &lt;i&gt;selector&lt;/i&gt; is the symbol at the head of locator
-list.
+different choices is &lt;code&gt;(setf selector)&lt;/code&gt; – a function named by a
+list – where &lt;i&gt;selector&lt;/i&gt; is the symbol at the head of locator list.
+(Some Lisps construct a symbol from the list elements, rather
+than using it directly. I'm not sure what, if anything, the
+Common Lisp language definition says about how this should work.)
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -250,11 +242,9 @@ them as required.
 
 &lt;p&gt;
 (It's actually a bit more complicated than this because we need
-to define a generic function for &lt;code&gt;(our-setf head)&lt;/code&gt;. We can't do
-this with &lt;code&gt;defgeneric&lt;/code&gt;, for broadly the same reasons as why we
-couldn't use &lt;code&gt;defun&lt;/code&gt; above, so we have to go backstage and
-programmatically define the generic function. But the idea
-remains the same.)
+to define a generic function for &lt;code&gt;(our-setf head)&lt;/code&gt;. We have to go
+backstage and programmatically define the generic function. But
+the idea remains the same.)
 &lt;/p&gt;
 
 &lt;hr&gt;
@@ -272,11 +262,10 @@ acquaintance. We don't want our synthesised function names to
 accidentally capture the names of user-supplied code. It's
 possible that using a naming style like &lt;code&gt;setf-car&lt;/code&gt; would do just
 this, and a program happens to define a function with this name.
-But the names &lt;code&gt;setf&lt;/code&gt; synthesises aren't recognised by &lt;code&gt;defun&lt;/code&gt; and
-&lt;code&gt;defgeneric&lt;/code&gt;, and so can't easily cause capturing – although they
-&lt;i&gt;are&lt;/i&gt; recognised by &lt;code&gt;defmethod&lt;/code&gt;, which lets us define the specialised
-methods "as normal" even though the other parts of the process
-have to happen backstage.
+But the names &lt;code&gt;setf&lt;/code&gt; synthesises are &lt;i&gt;lists&lt;/i&gt;, unlikely to be captured
+accidentally, which lets us define the specialised methods "as
+normal" even though some of the other parts of the process have
+to happen backstage.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -285,6 +274,15 @@ shows how deeply the latter are embedded into Lisp. They're
 usually thought of as part of CLOS, but they actually have little
 explicit relationship to class and objects at all, and have been
 woven all through Lisp to build flexible code structures.
+&lt;/p&gt;
+
+&lt;p&gt;
+UPDATED 2023-07-30: I incorrectly said originally that one
+couldn't use forms like &lt;code&gt;(defun (setf abc) ...)&lt;/code&gt;: you can, just as
+with &lt;code&gt;defmethod&lt;/code&gt; and &lt;code&gt;defgeneric&lt;/code&gt;, and name a function using a list.
+Thanks for Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
+was also slightly loose in my use of &lt;i&gt;specialisation&lt;/i&gt;, which I've
+tightened up.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org22360d3" class="outline-2">
-<h2 id="org22360d3">My mental model of setf was&nbsp;wrong</h2>
-<div class="outline-text-2" id="text-org22360d3">
+		<div id="outline-container-org146b5ad" class="outline-2">
+<h2 id="org146b5ad">My mental model of setf was&nbsp;wrong</h2>
+<div class="outline-text-2" id="text-org146b5ad">
 <p>
 I realised recently that I&#8217;ve been thinking&nbsp;about <code>setf</code> all&nbsp;wrong.
 </p>
@@ -141,11 +141,12 @@ that to dispatch to a method. Using the slot accessor above,&nbsp;the
 </pre></div>
 
 <p>
-This is a method specialised twice: on the type of an argument&nbsp;(<code>A</code>), and the <i>selector</i> used to within the locator&nbsp;(<code>a-var</code>). It&#8217;s
-definition expands to <i>another</i> <code>setf</code>, this time specialised&nbsp;against
-<code>slot-value</code> and an instance&nbsp;of <code>standard-object</code>. Specialising on the
-selector explains why we need that selector to be present
-syntactically at compile&nbsp;time.
+This is a method with two pieces of selection: specialised on the
+type of an argument&nbsp;(<code>A</code>), and named with the <i>selector</i> used to
+within the locator&nbsp;(<code>a-var</code>). It&#8217;s definition expands to <i>another</i>
+<code>setf</code>, this time specialised&nbsp;against <code>slot-value</code> and an instance&nbsp;of
+<code>standard-object</code>. Specialising on the selector explains why we
+need that selector to be present syntactically at compile&nbsp;time.
 </p>
 
 <p>
@@ -153,9 +154,9 @@ My mistake was thinking that the similarity between access form&nbsp;and <code>s
 either. This has some interesting&nbsp;consequences.
 </p>
 </div>
-<div id="outline-container-org1031bae" class="outline-3">
-<h3 id="org1031bae">The selector is entirely&nbsp;arbitrary</h3>
-<div class="outline-text-3" id="text-org1031bae">
+<div id="outline-container-org894d678" class="outline-3">
+<h3 id="org894d678">The selector is entirely&nbsp;arbitrary</h3>
+<div class="outline-text-3" id="text-org894d678">
 <p>
 If we don&#8217;t like&nbsp;using <code>car</code> to indicate the head of a list – and
 some people don&#8217;t – we could in principle define a new
@@ -172,9 +173,9 @@ defined function</i>. All we need is a selector&nbsp;symbol.
 </p>
 </div>
 </div>
-<div id="outline-container-org9e8cd6f" class="outline-3">
-<h3 id="org9e8cd6f">There can be more&nbsp;arguments</h3>
-<div class="outline-text-3" id="text-org9e8cd6f">
+<div id="outline-container-orgcc53069" class="outline-3">
+<h3 id="orgcc53069">There can be more&nbsp;arguments</h3>
+<div class="outline-text-3" id="text-orgcc53069">
 <p>
 Ever since I first encountered them I wondered why the lambda
 lists for&nbsp;new <code>setf</code> specialisations was so strange: the new value
@@ -206,9 +207,9 @@ the rest of the locator arguments after&nbsp;it.
 </p>
 </div>
 </div>
-<div id="outline-container-org637adf2" class="outline-3">
-<h3 id="org637adf2">You can specialise by value&nbsp;too</h3>
-<div class="outline-text-3" id="text-org637adf2">
+<div id="outline-container-org39c4b54" class="outline-3">
+<h3 id="org39c4b54">You can specialise by value&nbsp;too</h3>
+<div class="outline-text-3" id="text-org39c4b54">
 <p>
 Since&nbsp;the <code>setf</code> forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -239,18 +240,16 @@ of generic&nbsp;functions.
 </p>
 </div>
 </div>
-<div id="outline-container-orge971bd2" class="outline-3">
-<h3 id="orge971bd2">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
-<div class="outline-text-3" id="text-orge971bd2">
+<div id="outline-container-org53c7be2" class="outline-3">
+<h3 id="org53c7be2">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
+<div class="outline-text-3" id="text-org53c7be2">
 <p>
 Yes: <code>setf</code> is entirely constructable within &#8220;ordinary&#8221;&nbsp;Lisp.
 </p>
 
 <p>
 There are two parts to the construction. Firstly, we need the
-name of the method that underlies a particular selector. It <i>looks</i>
-like a list – but it&#8217;s actually a symbol, constructed&nbsp;by <code>setf</code>
-from the&nbsp;locator.
+name of the method that underlies a particular&nbsp;selector.
 </p>
 
 <p>
@@ -273,17 +272,12 @@ We can build our own functions with names like this, although not&nbsp;using <co
 
 
 <p>
-This defines a function and attaches it to a symbol (whose
-print-name looks like a list), and – critically – whose name
-can&#8217;t be accidentally typed and re-used, because the Lisp reader
-won&#8217;t accept it as a function name symbol. (We can&#8217;t&nbsp;use <code>defun</code>
-because it won&#8217;t&nbsp;parse <code>(1 2 3)</code> as a symbol&nbsp;name.)
-</p>
-
-<p>
 For <code>setf</code>, the style of name used for the methods implementing the
-different choices&nbsp;is <code>(setf selector)</code> – as a symbol, <i>not</i> a list,
-remember – where <i>selector</i> is the symbol at the head of locator&nbsp;list.
+different choices&nbsp;is <code>(setf selector)</code> – a function named by a
+list – where <i>selector</i> is the symbol at the head of locator list.
+(Some Lisps construct a symbol from the list elements, rather
+than using it directly. I&#8217;m not sure what, if anything, the
+Common Lisp language definition says about how this should&nbsp;work.)
 </p>
 
 <p>
@@ -316,11 +310,9 @@ them as&nbsp;required.
 
 <p>
 (It&#8217;s actually a bit more complicated than this because we need
-to define a generic function&nbsp;for <code>(our-setf head)</code>. We can&#8217;t do
-this&nbsp;with <code>defgeneric</code>, for broadly the same reasons as why we
-couldn&#8217;t&nbsp;use <code>defun</code> above, so we have to go backstage and
-programmatically define the generic function. But the idea
-remains the&nbsp;same.)
+to define a generic function&nbsp;for <code>(our-setf head)</code>. We have to go
+backstage and programmatically define the generic function. But
+the idea remains the&nbsp;same.)
 </p>
 
 <hr>
@@ -337,11 +329,10 @@ acquaintance. We don&#8217;t want our synthesised function names to
 accidentally capture the names of user-supplied code. It&#8217;s
 possible that using a naming style&nbsp;like <code>setf-car</code> would do just
 this, and a program happens to define a function with this name.
-But the&nbsp;names <code>setf</code> synthesises aren&#8217;t recognised&nbsp;by <code>defun</code> and
-<code>defgeneric</code>, and so can&#8217;t easily cause capturing – although they
-<i>are</i> recognised&nbsp;by <code>defmethod</code>, which lets us define the specialised
-methods &#8220;as normal&#8221; even though the other parts of the process
-have to happen&nbsp;backstage.
+But the&nbsp;names <code>setf</code> synthesises are <i>lists</i>, unlikely to be captured
+accidentally, which lets us define the specialised methods &#8220;as
+normal&#8221; even though some of the other parts of the process have
+to happen&nbsp;backstage.
 </p>
 
 <p>
@@ -350,6 +341,14 @@ shows how deeply the latter are embedded into Lisp. They&#8217;re
 usually thought of as part of <span class="caps">CLOS</span>, but they actually have little
 explicit relationship to class and objects at all, and have been
 woven all through Lisp to build flexible code&nbsp;structures.
+</p>
+
+<p>
+<span class="caps">UPDATED</span> 2023-07-30: I incorrectly said originally that one
+couldn&#8217;t use forms&nbsp;like <code>(defun (setf abc) ...)</code>: you can, just as&nbsp;with <code>defmethod</code> and <code>defgeneric</code>, and name a function using a list.
+Thanks for Hacker News contributor <a href="https://phoe.github.io">phoe-krk</a> for correcting me. I
+was also slightly loose in my use of <i>specialisation</i>, which I&#8217;ve
+tightened&nbsp;up.
 </p>
 </div>
 </div>

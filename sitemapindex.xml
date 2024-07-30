@@ -399,19 +399,15 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/lisp.xml</loc>
-  <lastmod>2024-07-27T13:29:00Z</lastmod>
+  <lastmod>2024-07-30T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/machine-learning.xml</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/macroprgramming.xml</loc>
-  <lastmod>2024-07-27T13:29:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://simondobson.org/categories/macroprogramming.xml</loc>
-  <lastmod>2024-06-21T10:40:00Z</lastmod>
+  <lastmod>2024-07-30T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/making.xml</loc>
@@ -535,7 +531,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/programming.xml</loc>
-  <lastmod>2024-07-27T13:29:00Z</lastmod>
+  <lastmod>2024-07-30T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectacoustic-birds.xml</loc>
@@ -823,10 +819,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2024-07-27T13:29:00Z</lastmod>
+  <lastmod>2024-07-30T16:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2024-07-27T13:29:00Z</lastmod>
+  <lastmod>2024-07-30T16:24:00Z</lastmod>
  </sitemap>
 </sitemapindex>
