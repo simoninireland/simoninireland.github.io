@@ -7,19 +7,17 @@
 ** Submitted and under review
 
 #+begin: sd/bibliography :key category :value submitted
-<<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /Revisiting the Application of Machine Learning Approaches to Predicting Aqueous Solubility/. Submitted to the Journal of Chemical Information and Modeling.
+<<citeproc_bib_item_1>>Berné Nortier and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
 
-<<citeproc_bib_item_2>>Berné Nortier and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
-
-<<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
-
-<<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
 ** 2024
 
-<<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/why-care-about-sheaves.pdf][Why You Should Care About Sheaves]]/. In /8th UK Systems Research Challenges Workshop/. Co Durham, UK. 2024.
+<<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /[[https://doi.org/https://doi.org/10.1021/acsomega.4c06163][Revisiting the Application of Machine Learning Approaches in Predicting Aqueous Solubility]]/. ACS Omega. 2024. To appear.
+
+<<citeproc_bib_item_2>>Simon Dobson.  /[[https://simondobson.org/softcopy/why-care-about-sheaves.pdf][Why You Should Care About Sheaves]]/. In /8th UK Systems Research Challenges Workshop/. Co Durham, UK. 2024.
 
 ** 2023
 
@@ -45,9 +43,11 @@
 
 <<citeproc_bib_item_7>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
 
-<<citeproc_bib_item_8>>Simon Dobson.  /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
+<<citeproc_bib_item_8>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://arxiv.org/abs/2210.02528v1][Mixing Patterns in Graphs with Higher-Order Structure]]/. Technical report arXiv:2210.02528. arXiv. 2022.
 
-<<citeproc_bib_item_9>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
+<<citeproc_bib_item_9>>Simon Dobson.  /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
+
+<<citeproc_bib_item_10>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
 
 ** 2021
 

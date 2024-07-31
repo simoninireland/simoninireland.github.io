@@ -7,13 +7,9 @@
 ** Submitted and under review
 
 #+begin: sd/bibliography :key category :value submitted
-<<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /Revisiting the Application of Machine Learning Approaches to Predicting Aqueous Solubility/. Submitted to the Journal of Chemical Information and Modeling.
+<<citeproc_bib_item_1>>Berné Nortier and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
 
-<<citeproc_bib_item_2>>Berné Nortier and Simon Dobson.  /An Approach to Analysing Sensor Placement and Its Effects/. Submitted to Proceedings of the Royal Society A.
-
-<<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /Mixing Patterns in Graphs with Higher-Order Structure/. Submitted to Physical Review E.
-
-<<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Submitted to Physical Review E.
 #+end:
 
 ** Books
@@ -25,149 +21,151 @@
 ** Journals
 
 #+begin: sd/bibliography :key category :value journal
-<<citeproc_bib_item_1>>Martin Schiemer, Lei Fang, Simon Dobson, and Juan Ye.  /[[https://doi.org/10.1016/j.pmcj.2023.101817][Online Continual Learning for Human Activity Recognition]]/. Pervasive and Mobile Computing *93*. 2023.
+<<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /[[https://doi.org/https://doi.org/10.1021/acsomega.4c06163][Revisiting the Application of Machine Learning Approaches in Predicting Aqueous Solubility]]/. ACS Omega. 2024. To appear.
 
-<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.107.054303][Belief Propagation on Networks with Cliques and Chordless Cycles]]/. Physical Review E *107*. 2023.
+<<citeproc_bib_item_2>>Martin Schiemer, Lei Fang, Simon Dobson, and Juan Ye.  /[[https://doi.org/10.1016/j.pmcj.2023.101817][Online Continual Learning for Human Activity Recognition]]/. Pervasive and Mobile Computing *93*. 2023.
 
-<<citeproc_bib_item_3>>Simon Dobson.  /[[https://doi.org/10.21105/joss.03764][epyc: Computational Experiment Management in Python]]/. Journal of Open-Source Software *7*. 2022.
+<<citeproc_bib_item_3>>Peter Mann and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.107.054303][Belief Propagation on Networks with Cliques and Chordless Cycles]]/. Physical Review E *107*. 2023.
 
-<<citeproc_bib_item_4>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
+<<citeproc_bib_item_4>>Simon Dobson.  /[[https://doi.org/10.21105/joss.03764][epyc: Computational Experiment Management in Python]]/. Journal of Open-Source Software *7*. 2022.
 
-<<citeproc_bib_item_5>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
+<<citeproc_bib_item_5>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
 
-<<citeproc_bib_item_6>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.104.024303][Symbiotic and Antagonistic Disease Dynamics on Clustered Networks Using Bond Percolation]]/. Physical Review E *104*. 2021.
+<<citeproc_bib_item_6>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
 
-<<citeproc_bib_item_7>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.012313][Percolation in Random Graphs with Higher-Order Clustering]]/. Physical Review E *103*. 2021.
+<<citeproc_bib_item_7>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.104.024303][Symbiotic and Antagonistic Disease Dynamics on Clustered Networks Using Bond Percolation]]/. Physical Review E *104*. 2021.
 
-<<citeproc_bib_item_8>>Peter Mann, V. Anne Smith, John Mitchell, Christopher Jefferson, and Simon Dobson.  /[[https:/doi.org/10.1103/PhysRevE.104.024304][Exact Formula for Bond Percolation on Cliques]]/. Physical Review E *104*. 2021.
+<<citeproc_bib_item_8>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.012313][Percolation in Random Graphs with Higher-Order Clustering]]/. Physical Review E *103*. 2021.
 
-<<citeproc_bib_item_9>>Andrea Rosales Sanabria, Franco Zambonelli, Simon Dobson, and Juan Ye.  /[[https://doi.org/10.1016/j.pmcj.2021.101477][ContrasGAN: Unsupervised Domain Adaptation in Human Activity Recognition via Adversarial and Contrastive Learning]]/. Pervasive and Mobile Computing *78*. 2021.
+<<citeproc_bib_item_9>>Peter Mann, V. Anne Smith, John Mitchell, Christopher Jefferson, and Simon Dobson.  /[[https:/doi.org/10.1103/PhysRevE.104.024304][Exact Formula for Bond Percolation on Cliques]]/. Physical Review E *104*. 2021.
 
-<<citeproc_bib_item_10>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.062308][Two-Pathogen Model with Competition on Clustered Networks]]/. Physical Review E *103*. 2021.
+<<citeproc_bib_item_10>>Andrea Rosales Sanabria, Franco Zambonelli, Simon Dobson, and Juan Ye.  /[[https://doi.org/10.1016/j.pmcj.2021.101477][ContrasGAN: Unsupervised Domain Adaptation in Human Activity Recognition via Adversarial and Contrastive Learning]]/. Pervasive and Mobile Computing *78*. 2021.
 
-<<citeproc_bib_item_11>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.042307][Co-Operative Co-Infection Dynamics on Clustered Networks]]/. Physical Review E *103*. 2021.
+<<citeproc_bib_item_11>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.062308][Two-Pathogen Model with Competition on Clustered Networks]]/. Physical Review E *103*. 2021.
 
-<<citeproc_bib_item_12>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.012309][Random Graphs with Arbitrary Clustering and Their Applications]]/. Physical Review E *103*. 2021.
+<<citeproc_bib_item_12>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.042307][Co-Operative Co-Infection Dynamics on Clustered Networks]]/. Physical Review E *103*. 2021.
 
-<<citeproc_bib_item_13>>Juan Ye and Simon Dobson.  /[[https://dx.doi.org//10.1145/3368272][Xlearn: Learning Activity Labels across Heterogeneous Datasets]]/. IEEE Transactions on Intelligent Systems and Technology *11*, pp.1–28. 2020.
+<<citeproc_bib_item_13>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.103.012309][Random Graphs with Arbitrary Clustering and Their Applications]]/. Physical Review E *103*. 2021.
 
-<<citeproc_bib_item_14>>Michael Pitcher, Ruth Bowness, Simon Dobson, Raluca Eftimie, and Stephen Gillespie.  /[[https://dx.doi.org//10.1101/2019.12.12.871269 ][Modelling the Effects of Environmental Heterogeneity within the Lung on the Tuberculosis Lifecycle]]/. Journal of Theoretical Biology *506*. 2020.
+<<citeproc_bib_item_14>>Juan Ye and Simon Dobson.  /[[https://dx.doi.org//10.1145/3368272][Xlearn: Learning Activity Labels across Heterogeneous Datasets]]/. IEEE Transactions on Intelligent Systems and Technology *11*, pp.1–28. 2020.
 
-<<citeproc_bib_item_15>>Michael Pitcher, Simon Dobson, Tom Kelsey, Mark Chaplain, Derek Sloan, Stephen Gillespie, and Ruth Bowness.  /[[https://doi.org/10.5588/ijtld.20.0107][How Mechanistic in Silico Modelling Can Improve Our Understanding of TB Disease and Treatment]]/. International Journal of Tuberculosis and Lung Disease *24*. 2020.
+<<citeproc_bib_item_15>>Michael Pitcher, Ruth Bowness, Simon Dobson, Raluca Eftimie, and Stephen Gillespie.  /[[https://dx.doi.org//10.1101/2019.12.12.871269 ][Modelling the Effects of Environmental Heterogeneity within the Lung on the Tuberculosis Lifecycle]]/. Journal of Theoretical Biology *506*. 2020.
 
-<<citeproc_bib_item_16>>Antonio Bucchiarone, Mirko D’Angelo, Danilo Pianini, Giacomo Cabri, Marina De Sanctis, Mirko Viroli, Roberto Casadei, and Simon Dobson.  /[[http://dx.doi.org/10.1109/MTS.2020.3012324][On the Social Implications of Collective Adaptive Systems]]/. IEEE Technology and Society Magazine *39*, pp.36–46. 2020.
+<<citeproc_bib_item_16>>Michael Pitcher, Simon Dobson, Tom Kelsey, Mark Chaplain, Derek Sloan, Stephen Gillespie, and Ruth Bowness.  /[[https://doi.org/10.5588/ijtld.20.0107][How Mechanistic in Silico Modelling Can Improve Our Understanding of TB Disease and Treatment]]/. International Journal of Tuberculosis and Lung Disease *24*. 2020.
 
-<<citeproc_bib_item_17>>Lei Fang, Juan Ye, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TKDE.2019.2905207][Discovery and Recognition of Emerging Human Activities Using a Hierarchical Mixture of Directional Statistical Models]]/. IEEE Transactions on Knowledge and Data Engineering *32*, pp.1304–1316. 2020.
+<<citeproc_bib_item_17>>Antonio Bucchiarone, Mirko D’Angelo, Danilo Pianini, Giacomo Cabri, Marina De Sanctis, Mirko Viroli, Roberto Casadei, and Simon Dobson.  /[[http://dx.doi.org/10.1109/MTS.2020.3012324][On the Social Implications of Collective Adaptive Systems]]/. IEEE Technology and Society Magazine *39*, pp.36–46. 2020.
 
-<<citeproc_bib_item_18>>Andrea Rosales Sanabria, Thomas Kelsey, Simon Dobson, and Juan Ye.  /[[https://dx.doi.org//10.3233/AIS-190541][Representation Learning for Minority and Subtle Activities in a Smart Home Environment]]/. Journal of Ambient Intelligence and Smart Environments *11*, pp.495–513. 2019.
+<<citeproc_bib_item_18>>Lei Fang, Juan Ye, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TKDE.2019.2905207][Discovery and Recognition of Emerging Human Activities Using a Hierarchical Mixture of Directional Statistical Models]]/. IEEE Transactions on Knowledge and Data Engineering *32*, pp.1304–1316. 2020.
 
-<<citeproc_bib_item_19>>Juan Ye, Simon Dobson, and Franco Zambonelli.  /[[https://dx.doi.org//10.1109/MPRV.2019.2913933][Lifelong Learning in Sensor-Based Human Activity Recognition]]/. IEEE Pervasive Computing *18*. 2019.
+<<citeproc_bib_item_19>>Andrea Rosales Sanabria, Thomas Kelsey, Simon Dobson, and Juan Ye.  /[[https://dx.doi.org//10.3233/AIS-190541][Representation Learning for Minority and Subtle Activities in a Smart Home Environment]]/. Journal of Ambient Intelligence and Smart Environments *11*, pp.495–513. 2019.
 
-<<citeproc_bib_item_20>>Simon Dobson, David Hutchison, Andreas Mauthe, Alberto Schaefer-Filho, Paul Smith, and James PG Sterbenz.  /[[https://dx.doi.org//10.1109/JPROC.2019.2894512][Self-Organisation and Resilience for Networked Systems: Design Principles and Open Research Issues]]/. Proceedings of the IEEE *107*, pp.819–834. 2019.
+<<citeproc_bib_item_20>>Juan Ye, Simon Dobson, and Franco Zambonelli.  /[[https://dx.doi.org//10.1109/MPRV.2019.2913933][Lifelong Learning in Sensor-Based Human Activity Recognition]]/. IEEE Pervasive Computing *18*. 2019.
 
-<<citeproc_bib_item_21>>Michael Pitcher, Ruth Bowness, Simon Dobson, and Stephen Gillespie.  /[[https://dx.doi.org//10.1007/s41109-018-0091-2][A Spatially Heterogeneous Network-Based Metapopulation Model Applied to the Simulation of a Pulmonary Tuberculosis Infection]]/. Applied Network Science *3*. 2018.
+<<citeproc_bib_item_21>>Simon Dobson, David Hutchison, Andreas Mauthe, Alberto Schaefer-Filho, Paul Smith, and James PG Sterbenz.  /[[https://dx.doi.org//10.1109/JPROC.2019.2894512][Self-Organisation and Resilience for Networked Systems: Design Principles and Open Research Issues]]/. Proceedings of the IEEE *107*, pp.819–834. 2019.
 
-<<citeproc_bib_item_22>>Simon Dobson, Matteo Golfarelli, Simone Graziani, and Stefano Rizzi.  /[[https://dx.doi.org//10.1109/JSEN.2018.2861327][A Reference Architecture and Model for Sensor Data Warehousing]]/. IEEE Sensors Journal *18*. 2018.
+<<citeproc_bib_item_22>>Michael Pitcher, Ruth Bowness, Simon Dobson, and Stephen Gillespie.  /[[https://dx.doi.org//10.1007/s41109-018-0091-2][A Spatially Heterogeneous Network-Based Metapopulation Model Applied to the Simulation of a Pulmonary Tuberculosis Infection]]/. Applied Network Science *3*. 2018.
 
-<<citeproc_bib_item_23>>Muffy Calder, Simon Dobson, Michael Fisher, and Julie McCann.  /[[https://dx.doi.org//10.3390/computers7040062][Making Sense of the World: Framing Models for Trustworthy Sensor-Driven Systems]]/. Computers *7*. 2018. Special issue on the ’The Emergence of the internet of things: connecting anything, anywhere?’.
+<<citeproc_bib_item_23>>Simon Dobson, Matteo Golfarelli, Simone Graziani, and Stefano Rizzi.  /[[https://dx.doi.org//10.1109/JSEN.2018.2861327][A Reference Architecture and Model for Sensor Data Warehousing]]/. IEEE Sensors Journal *18*. 2018.
 
-<<citeproc_bib_item_24>>Simon Dobson, Mirko Viroli, José Luis Fernandez-Marquez, Franco Zambonelli, Graeme Stevenson, Giovanna di Marzo Serugendo, Sara Montagna, Danilo Pianini, Juan Ye, Gabriella Castelli, and Alberto Rosi.  /[[https://dx.doi.org//10.1017/S0269888916000199][Spatial Awareness in Pervasive Ecosystems]]/. The Knowledge Engineering Review *31*, pp.343–366. 2016.
+<<citeproc_bib_item_24>>Muffy Calder, Simon Dobson, Michael Fisher, and Julie McCann.  /[[https://dx.doi.org//10.3390/computers7040062][Making Sense of the World: Framing Models for Trustworthy Sensor-Driven Systems]]/. Computers *7*. 2018. Special issue on the ’The Emergence of the internet of things: connecting anything, anywhere?’.
 
-<<citeproc_bib_item_25>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2016.06.012][Detecting Abnormal Events on Binary Sensors in Smart Home Environments]]/. Pervasive and Mobile Computing *33*, pp.32–49. 2016.
+<<citeproc_bib_item_25>>Simon Dobson, Mirko Viroli, José Luis Fernandez-Marquez, Franco Zambonelli, Graeme Stevenson, Giovanna di Marzo Serugendo, Sara Montagna, Danilo Pianini, Juan Ye, Gabriella Castelli, and Alberto Rosi.  /[[https://dx.doi.org//10.1017/S0269888916000199][Spatial Awareness in Pervasive Ecosystems]]/. The Knowledge Engineering Review *31*, pp.343–366. 2016.
 
-<<citeproc_bib_item_26>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.02.003][KCAR: A Knowledge-Driven Approach for Concurrent Activity Recognition]]/. Pervasive and Mobile Computing *19*, pp.47–70. May 2015.
+<<citeproc_bib_item_26>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2016.06.012][Detecting Abnormal Events on Binary Sensors in Smart Home Environments]]/. Pervasive and Mobile Computing *33*, pp.32–49. 2016.
 
-<<citeproc_bib_item_27>>Chris Schneider, Adam Barker, and Simon Dobson.  /[[https://dx.doi.org//10.4108/sas.1.1.e3][Evaluating Unsupervised Fault Detection in Self-Healing Systems Using Stochastic Primitives]]/. EAI Endorsed Transactions on Self-Adaptive Systems *15*. 2015.
+<<citeproc_bib_item_27>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.02.003][KCAR: A Knowledge-Driven Approach for Concurrent Activity Recognition]]/. Pervasive and Mobile Computing *19*, pp.47–70. May 2015.
 
-<<citeproc_bib_item_28>>Franco Zambonelli, Andrea Omicini, Bernhard Anzengruber, Gabriella Castelli, Francesco DeAngelis, Giovanna di Marzo Serugendo, Simon Dobson, José-Luis Fernandez Marquez, Alois Ferscha, Marco Mamei, Stefano Mariani, Ambra Molesini, Sara Montagna, Jussi Nieminen, Danilo Pianini, Alberto Rosi, Graeme Stevenson, Mirko Viroli, and Juan Ye.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.12.002][Developing Pervasive Multiagent Systems with Nature-Inspired Co-Ordination]]/. Pervasive and Mobile Computing *17*, pp.236–252. 2015.
+<<citeproc_bib_item_28>>Chris Schneider, Adam Barker, and Simon Dobson.  /[[https://dx.doi.org//10.4108/sas.1.1.e3][Evaluating Unsupervised Fault Detection in Self-Healing Systems Using Stochastic Primitives]]/. EAI Endorsed Transactions on Self-Adaptive Systems *15*. 2015.
 
-<<citeproc_bib_item_29>>Juan Ye, Stamatia Dasiopoulou, Graeme Stevenson, Georgios Meditskos, Efstratios Kontopoulos, Ioannis Kompatsiaris, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.12.009][Semantic Web Technologies in Pervasive Computing: A Survey and Research Roadmap]]/. Pervasive and Mobile Computing *23*, pp.1–25. 2015.
+<<citeproc_bib_item_29>>Franco Zambonelli, Andrea Omicini, Bernhard Anzengruber, Gabriella Castelli, Francesco DeAngelis, Giovanna di Marzo Serugendo, Simon Dobson, José-Luis Fernandez Marquez, Alois Ferscha, Marco Mamei, Stefano Mariani, Ambra Molesini, Sara Montagna, Jussi Nieminen, Danilo Pianini, Alberto Rosi, Graeme Stevenson, Mirko Viroli, and Juan Ye.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.12.002][Developing Pervasive Multiagent Systems with Nature-Inspired Co-Ordination]]/. Pervasive and Mobile Computing *17*, pp.236–252. 2015.
 
-<<citeproc_bib_item_30>>Emanuele Strano, Saray Shai, Simon Dobson, and Marc Barthélemy.  /[[https://dx.doi.org//10.1098/rsif.2015.0651][Multiplex Networks in Metropolitan Areas: Generic Features and Local Effects]]/. Journal of the Royal Society Interface *12*. 2015.
+<<citeproc_bib_item_30>>Juan Ye, Stamatia Dasiopoulou, Graeme Stevenson, Georgios Meditskos, Efstratios Kontopoulos, Ioannis Kompatsiaris, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2014.12.009][Semantic Web Technologies in Pervasive Computing: A Survey and Research Roadmap]]/. Pervasive and Mobile Computing *23*, pp.1–25. 2015.
 
-<<citeproc_bib_item_31>>Saray Shai, Dror Kenett, Yoed Kenett, Miriam Faust, Simon Dobson, and Shlomo Havlin.  /[[https://dx.doi.org//10.1103/PhysRevE.92.062805][Critical Tipping Point Distinguishing Two Types of Transitions in Modular Network Structures]]/. Physical Review E *92*. 2015.
+<<citeproc_bib_item_31>>Emanuele Strano, Saray Shai, Simon Dobson, and Marc Barthélemy.  /[[https://dx.doi.org//10.1098/rsif.2015.0651][Multiplex Networks in Metropolitan Areas: Generic Features and Local Effects]]/. Journal of the Royal Society Interface *12*. 2015.
 
-<<citeproc_bib_item_32>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org///10.1145/2662870][USMART: An Unsupervised Semantic Mining Activity Recognition Technique]]/. ACM Transactions on Intelligent Interaction Systems *4*. 2014.
+<<citeproc_bib_item_32>>Saray Shai, Dror Kenett, Yoed Kenett, Miriam Faust, Simon Dobson, and Shlomo Havlin.  /[[https://dx.doi.org//10.1103/PhysRevE.92.062805][Critical Tipping Point Distinguishing Two Types of Transitions in Modular Network Structures]]/. Physical Review E *92*. 2015.
 
-<<citeproc_bib_item_33>>Abu Raihan M. Kamal, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2530526][Failure Detection in Wireless Sensor Networks: A Sequence Based Dynamic Approach]]/. ACM Transactions on Sensor Networks *10*. 2014.
+<<citeproc_bib_item_33>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org///10.1145/2662870][USMART: An Unsupervised Semantic Mining Activity Recognition Technique]]/. ACM Transactions on Intelligent Interaction Systems *4*. 2014.
 
-<<citeproc_bib_item_34>>Chris Schneider, Adam Barker, and Simon Dobson.  /[[https://dx.doi.org//10.1002/spe.2250][A Survey of Self-Healing Systems Frameworks]]/. SOFTWARE: Practice and Experience. 2014.
+<<citeproc_bib_item_34>>Abu Raihan M. Kamal, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2530526][Failure Detection in Wireless Sensor Networks: A Sequence Based Dynamic Approach]]/. ACM Transactions on Sensor Networks *10*. 2014.
 
-<<citeproc_bib_item_35>>Savas Konur, Michael Fisher, Simon Dobson, and Stephen Knox.  /[[https://dx.doi.org//10.1007/s00165-013-0277-4][Formal Verification of a Pervasive Messaging System]]/. Formal Aspects of Computing *26*, pp.677–694. 2014.
+<<citeproc_bib_item_35>>Chris Schneider, Adam Barker, and Simon Dobson.  /[[https://dx.doi.org//10.1002/spe.2250][A Survey of Self-Healing Systems Frameworks]]/. SOFTWARE: Practice and Experience. 2014.
 
-<<citeproc_bib_item_36>>M.A. Razzaque and Simon Dobson.  /[[https://dx.doi.org//10.3390/s140202822][Energy Efficient Sensing in Wireless Sensor Networks Using Compressed Sensing]]/. Sensors *14*, pp.2822–2859. 2014.
+<<citeproc_bib_item_36>>Savas Konur, Michael Fisher, Simon Dobson, and Stephen Knox.  /[[https://dx.doi.org//10.1007/s00165-013-0277-4][Formal Verification of a Pervasive Messaging System]]/. Formal Aspects of Computing *26*, pp.677–694. 2014.
 
-<<citeproc_bib_item_37>>Abu Raihan M. Kamal, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2422966.2422976][Packet-Level Attestation (PLA): a Framework for in-Network Sensor-Data Reliability]]/. ACM Transactions on Sensor Networks *9*. 2013.
+<<citeproc_bib_item_37>>M.A. Razzaque and Simon Dobson.  /[[https://dx.doi.org//10.3390/s140202822][Energy Efficient Sensing in Wireless Sensor Networks Using Compressed Sensing]]/. Sensors *14*, pp.2822–2859. 2014.
 
-<<citeproc_bib_item_38>>Saray Shai and Simon Dobson.  /[[https://dx.doi.org//10.1103/PhysRevE.87.042812][Coupled Adaptive Complex Networks]]/. Physical Review E *87*. 2013.
+<<citeproc_bib_item_38>>Abu Raihan M. Kamal, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2422966.2422976][Packet-Level Attestation (PLA): a Framework for in-Network Sensor-Data Reliability]]/. ACM Transactions on Sensor Networks *9*. 2013.
 
-<<citeproc_bib_item_39>>M.A. Razzaque, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2528948][Compression in Wireless Sensor Networks: A Survey and Comparative Evaluation]]/. ACM Transactions on Sensor Networks *10*. 2013.
+<<citeproc_bib_item_39>>Saray Shai and Simon Dobson.  /[[https://dx.doi.org//10.1103/PhysRevE.87.042812][Coupled Adaptive Complex Networks]]/. Physical Review E *87*. 2013.
 
-<<citeproc_bib_item_40>>MA Razzaque, Simon Dobson, and Kieran Delaney.  /[[https://dx.doi.org//10.1504/IJCNDS.2013.057721][Augmented Materials: Spatially Embedded Sensor Networks]]/. International Journal of Networks and Distributed Systems *11*, pp.453–477. 2013.
+<<citeproc_bib_item_40>>M.A. Razzaque, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2528948][Compression in Wireless Sensor Networks: A Survey and Comparative Evaluation]]/. ACM Transactions on Sensor Networks *10*. 2013.
 
-<<citeproc_bib_item_41>>Juan Ye, Simon Dobson, and Susan McKeever.  /[[https://dx.doi.org//10.1016/j.pmcj.2011.01.004][Situation Identification Techniques in Pervasive Computing: A Review]]/. Pervasive and Mobile Computing *8*, pp.36–66. 2012.
+<<citeproc_bib_item_41>>MA Razzaque, Simon Dobson, and Kieran Delaney.  /[[https://dx.doi.org//10.1504/IJCNDS.2013.057721][Augmented Materials: Spatially Embedded Sensor Networks]]/. International Journal of Networks and Distributed Systems *11*, pp.453–477. 2013.
 
-<<citeproc_bib_item_42>>Saray Shai and Simon Dobson.  /[[https://dx.doi.org//10.1103/PhysRevE.86.066120][Effect of Resource Constraints on Intersimilar Coupled Networks]]/. Physical Review E *86*. 2012.
+<<citeproc_bib_item_42>>Juan Ye, Simon Dobson, and Susan McKeever.  /[[https://dx.doi.org//10.1016/j.pmcj.2011.01.004][Situation Identification Techniques in Pervasive Computing: A Review]]/. Pervasive and Mobile Computing *8*, pp.36–66. 2012.
 
-<<citeproc_bib_item_43>>Mohamed Saad, Chris Bleakley, Tarig Ballal, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TIM.2011.2181911][High-Accuracy Reference-Free Ultrasonic Location Estimation]]/. IEEE Transactions on Instrumentation and Measurement *61*, pp.1561–1570. 2012.
+<<citeproc_bib_item_43>>Saray Shai and Simon Dobson.  /[[https://dx.doi.org//10.1103/PhysRevE.86.066120][Effect of Resource Constraints on Intersimilar Coupled Networks]]/. Physical Review E *86*. 2012.
 
-<<citeproc_bib_item_44>>Juan Ye, Graeme Stevenson, Simon Dobson, Michael O’Grady, and Gregory O’Hare.  /[[https://dx.doi.org//10.1007/s12652-012-0148-5][Perceiving and Interpreting Smart Home Datasets with $PI$]]/. Journal of Ambient Intelligence and Humanized Computing *4*, pp.717–729. 2012.
+<<citeproc_bib_item_44>>Mohamed Saad, Chris Bleakley, Tarig Ballal, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TIM.2011.2181911][High-Accuracy Reference-Free Ultrasonic Location Estimation]]/. IEEE Transactions on Instrumentation and Measurement *61*, pp.1561–1570. 2012.
 
-<<citeproc_bib_item_45>>Klaas Thoelen, Danny Hughes, Nelson Matthys, Lei Fang, Simon Dobson, Yizhou Qiang, Wei Bai, Ka Lok Man, Sheng-Uei Guan, Davy Preuveneers, Sam Michiels, Christophe Huygens, and Wouter Joosen.  /[[https://dx.doi.org//10.1007/s13174-012-0064-0][A Reconfigurable Component Model with Semantic Type System for Dynamic WSN Applications]]/. Journal of Internet Services and Applications *3*, pp.277–290. 2012.
+<<citeproc_bib_item_45>>Juan Ye, Graeme Stevenson, Simon Dobson, Michael O’Grady, and Gregory O’Hare.  /[[https://dx.doi.org//10.1007/s12652-012-0148-5][Perceiving and Interpreting Smart Home Datasets with $PI$]]/. Journal of Ambient Intelligence and Humanized Computing *4*, pp.717–729. 2012.
 
-<<citeproc_bib_item_46>>Alan Dearle and Simon Dobson.  /[[https://dx.doi.org//10.1007/s13174-011-0052-9][Mission-Oriented Middleware for Sensor-Driven Scientific Systems]]/. Journal of Internet Services and Applications *3*, pp.133–139. 2012.
+<<citeproc_bib_item_46>>Klaas Thoelen, Danny Hughes, Nelson Matthys, Lei Fang, Simon Dobson, Yizhou Qiang, Wei Bai, Ka Lok Man, Sheng-Uei Guan, Davy Preuveneers, Sam Michiels, Christophe Huygens, and Wouter Joosen.  /[[https://dx.doi.org//10.1007/s13174-012-0064-0][A Reconfigurable Component Model with Semantic Type System for Dynamic WSN Applications]]/. Journal of Internet Services and Applications *3*, pp.277–290. 2012.
 
-<<citeproc_bib_item_47>>Emerson Loureiro, Paddy Nixon, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2168260.2168274][Decentralized and Optimal Control of Shared Resource Pools]]/. ACM Transactions on Autonomous and Adaptive Systems *7*. 2012.
+<<citeproc_bib_item_47>>Alan Dearle and Simon Dobson.  /[[https://dx.doi.org//10.1007/s13174-011-0052-9][Mission-Oriented Middleware for Sensor-Driven Scientific Systems]]/. Journal of Internet Services and Applications *3*, pp.133–139. 2012.
 
-<<citeproc_bib_item_48>>Mohamed Saad, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TIM.2011.2128950][Robust High Accuracy Ultrasonic Range Measurement System]]/. IEEE Transactions on Instrumentation and Measurement *60*, pp.3334–3341. 2011.
+<<citeproc_bib_item_48>>Emerson Loureiro, Paddy Nixon, and Simon Dobson.  /[[https://dx.doi.org//10.1145/2168260.2168274][Decentralized and Optimal Control of Shared Resource Pools]]/. ACM Transactions on Autonomous and Adaptive Systems *7*. 2012.
 
-<<citeproc_bib_item_49>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2011.02.002][A Top-Level Ontology for Smart Environments]]/. Pervasive and Mobile Computing *7*, pp.359–378. 2011.
+<<citeproc_bib_item_49>>Mohamed Saad, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.1109/TIM.2011.2128950][Robust High Accuracy Ultrasonic Range Measurement System]]/. IEEE Transactions on Instrumentation and Measurement *60*, pp.3334–3341. 2011.
 
-<<citeproc_bib_item_50>>Franco Zambonelli, Gabrialla Castelli, Laura Ferrari, Marco Mamei, Alberto Rosi, Giovanna di Marzo Serugendo, Matteo Risoldi, Akla-Esso Tchao, Simon Dobson, Graeme Stevenson, Juan Ye, Elena Nardini, Andrea Omicini, Sara Montagna, Mirko Viroli, Alois Ferscha, Sascha Maschek, and Bernhard Wally.  /[[https://dx.doi.org//10.1016/j.procs.2011.09.006][Self-Aware Pervasive Service Ecosystems]]/. Procedia Computer Science *7*, pp.197–199. 2011.
+<<citeproc_bib_item_50>>Juan Ye, Graeme Stevenson, and Simon Dobson.  /[[https://dx.doi.org//10.1016/j.pmcj.2011.02.002][A Top-Level Ontology for Smart Environments]]/. Pervasive and Mobile Computing *7*, pp.359–378. 2011.
 
-<<citeproc_bib_item_51>>Juan Ye and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2009-0082][Exploring Semantics in Activity Recognition Using Context Lattices]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.389–407. 2010.
+<<citeproc_bib_item_51>>Franco Zambonelli, Gabrialla Castelli, Laura Ferrari, Marco Mamei, Alberto Rosi, Giovanna di Marzo Serugendo, Matteo Risoldi, Akla-Esso Tchao, Simon Dobson, Graeme Stevenson, Juan Ye, Elena Nardini, Andrea Omicini, Sara Montagna, Mirko Viroli, Alois Ferscha, Sascha Maschek, and Bernhard Wally.  /[[https://dx.doi.org//10.1016/j.procs.2011.09.006][Self-Aware Pervasive Service Ecosystems]]/. Procedia Computer Science *7*, pp.197–199. 2011.
 
-<<citeproc_bib_item_52>>Adrian K. Clear, Thomas Holland, Simon Dobson, Aaron Quigley, Ross Shannon, and Paddy Nixon.  /[[https://dx.doi.org//10.1016/j.pmcj.2010.04.002][Situvis: A Sensor Data Analysis and Abstraction Tool for Pervasive Computing Systems]]/. Pervasive and Mobile Computing *6*, pp.575–589. 2010.
+<<citeproc_bib_item_52>>Juan Ye and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2009-0082][Exploring Semantics in Activity Recognition Using Context Lattices]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.389–407. 2010.
 
-<<citeproc_bib_item_53>>Graeme Stevenson, Juan Ye, Simon Dobson, and Paddy Nixon.  /[[https://dx.doi.org//10.1109/MPRV.2009.90][LOC8: A Location Model and Extensible Framework for Programming with Location]]/. IEEE Pervasive Computing *9*, pp.28–37. 2010.
+<<citeproc_bib_item_53>>Adrian K. Clear, Thomas Holland, Simon Dobson, Aaron Quigley, Ross Shannon, and Paddy Nixon.  /[[https://dx.doi.org//10.1016/j.pmcj.2010.04.002][Situvis: A Sensor Data Analysis and Abstraction Tool for Pervasive Computing Systems]]/. Pervasive and Mobile Computing *6*, pp.575–589. 2010.
 
-<<citeproc_bib_item_54>>Simon Dobson, Roy Sterritt, Paddy Nixon, and Mike Hinchey.  /[[https://dx.doi.org///10.1109/MC.2010.14][Fulfilling the Vision of Autonomic Computing]]/. IEEE Computer *43*, pp.35–41. 2010.
+<<citeproc_bib_item_54>>Graeme Stevenson, Juan Ye, Simon Dobson, and Paddy Nixon.  /[[https://dx.doi.org//10.1109/MPRV.2009.90][LOC8: A Location Model and Extensible Framework for Programming with Location]]/. IEEE Pervasive Computing *9*, pp.28–37. 2010.
 
-<<citeproc_bib_item_55>>Susan McKeever, Juan Ye, Lorcan Coyle, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2010-0071][Activity Recognition Using Temporal Evidence Theory]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.253–269. 2010.
+<<citeproc_bib_item_55>>Simon Dobson, Roy Sterritt, Paddy Nixon, and Mike Hinchey.  /[[https://dx.doi.org///10.1109/MC.2010.14][Fulfilling the Vision of Autonomic Computing]]/. IEEE Computer *43*, pp.35–41. 2010.
 
-<<citeproc_bib_item_56>>Michael Collins, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/aslan-09.pdf][Securing Wireless Sensor Networks: Introducing ASLAN – a Secure, Lightweight Architecture for WSNs]]/. International Journal on Advances in Networks and Services *2*, pp.679–685. May 2009.
+<<citeproc_bib_item_56>>Susan McKeever, Juan Ye, Lorcan Coyle, Chris Bleakley, and Simon Dobson.  /[[https://dx.doi.org//10.3233/AIS-2010-0071][Activity Recognition Using Temporal Evidence Theory]]/. Journal of Ambient Intelligence and Smart Environments *2*, pp.253–269. 2010.
 
-<<citeproc_bib_item_57>>Michael Collins, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/ijitst-08.pdf][A Lightweight Secure Architecture for Wireless Sensor Networks]]/. International Journal of Internet Technology and Secured Transactions *2*. 2009.
+<<citeproc_bib_item_57>>Michael Collins, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/aslan-09.pdf][Securing Wireless Sensor Networks: Introducing ASLAN – a Secure, Lightweight Architecture for WSNs]]/. International Journal on Advances in Networks and Services *2*, pp.679–685. May 2009.
 
-<<citeproc_bib_item_58>>John Strassner, Sven van der Meer, Declan O’Sullivan, and Simon Dobson.  /[[https://dx.doi.org//10.1007/s10922-009-9126-4][The Use of Context-Aware Policies and Ontologies to Facilitate Business-Aware Network Management]]/. Journal of Network and Systems Management *17*, pp.255–284. 2009.
+<<citeproc_bib_item_58>>Michael Collins, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/ijitst-08.pdf][A Lightweight Secure Architecture for Wireless Sensor Networks]]/. International Journal of Internet Technology and Secured Transactions *2*. 2009.
 
-<<citeproc_bib_item_59>>Brendan Sheehan, Aaron Quigley, Benoit Gaudin, and Simon Dobson.  /[[http://www.biomedcentral.com/1471-2105/9/468/abstract][A Relation Based Measure of Semantic Similarity for Gene Ontology Annotations]]/. BMC Bioinformatics Journal *9*. 2008.
+<<citeproc_bib_item_59>>John Strassner, Sven van der Meer, Declan O’Sullivan, and Simon Dobson.  /[[https://dx.doi.org//10.1007/s10922-009-9126-4][The Use of Context-Aware Policies and Ontologies to Facilitate Business-Aware Network Management]]/. Journal of Network and Systems Management *17*, pp.255–284. 2009.
 
-<<citeproc_bib_item_60>>Stephen Knox, Adrian K. Clear, Ross Shannon, Lorcan Coyle, Simon Dobson, Aaron Quigley, and Paddy Nixon.  /Scatterbox: Mobile Message Management/. Revue d’Intelligence Artificielle *22*, pp.549–568. 2008.
+<<citeproc_bib_item_60>>Brendan Sheehan, Aaron Quigley, Benoit Gaudin, and Simon Dobson.  /[[http://www.biomedcentral.com/1471-2105/9/468/abstract][A Relation Based Measure of Semantic Similarity for Gene Ontology Annotations]]/. BMC Bioinformatics Journal *9*. 2008.
 
-<<citeproc_bib_item_61>>Juan Ye, Lorcan Coyle, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/ria-08a.pdf][Representing and Manipulating Situation Hierarchies Using Situation Lattices]]/. Revue d’Intelligence Artificielle *22*, pp.647–667. 2008.
+<<citeproc_bib_item_61>>Stephen Knox, Adrian K. Clear, Ross Shannon, Lorcan Coyle, Simon Dobson, Aaron Quigley, and Paddy Nixon.  /Scatterbox: Mobile Message Management/. Revue d’Intelligence Artificielle *22*, pp.549–568. 2008.
 
-<<citeproc_bib_item_62>>Simon Dobson.  /An Adaptive Systems Perspective on Network Calculus, with Applications to Autonomic Control/. International Journal of Autonomous and Adaptive Communications Systems *1*, pp.332–341. 2008.
+<<citeproc_bib_item_62>>Juan Ye, Lorcan Coyle, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/ria-08a.pdf][Representing and Manipulating Situation Hierarchies Using Situation Lattices]]/. Revue d’Intelligence Artificielle *22*, pp.647–667. 2008.
 
-<<citeproc_bib_item_63>>Juan Ye, Lorcan Coyle, Simon Dobson, and Paddy Nixon.  /[[https://dx.doi.org//10.1017/S0269888907001208][Ontology-Based Models in Pervasive Computing Systems]]/. The Knowledge Engineering Review *22*, pp.315–347. 2007.
+<<citeproc_bib_item_63>>Simon Dobson.  /An Adaptive Systems Perspective on Network Calculus, with Applications to Autonomic Control/. International Journal of Autonomous and Adaptive Communications Systems *1*, pp.332–341. 2008.
 
-<<citeproc_bib_item_64>>Simon Dobson, Lorcan Coyle, and Paddy Nixon.  /[[https://simondobson.org/softcopy/tcaas-hybrid-06.pdf][Hybridising Events and Knowledge as a Basis for Building Autonomic Systems]]/. IEEE TCAAS Letters. 2007.
+<<citeproc_bib_item_64>>Juan Ye, Lorcan Coyle, Simon Dobson, and Paddy Nixon.  /[[https://dx.doi.org//10.1017/S0269888907001208][Ontology-Based Models in Pervasive Computing Systems]]/. The Knowledge Engineering Review *22*, pp.315–347. 2007.
 
-<<citeproc_bib_item_65>>M.A. Razzaque, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/jnsm-crosslayer-07.pdf][Cross-Layer Architectures for Autonomic Communications]]/. Journal of Network and Systems Management *15*, pp.13–27. 2007.
+<<citeproc_bib_item_65>>Simon Dobson, Lorcan Coyle, and Paddy Nixon.  /[[https://simondobson.org/softcopy/tcaas-hybrid-06.pdf][Hybridising Events and Knowledge as a Basis for Building Autonomic Systems]]/. IEEE TCAAS Letters. 2007.
 
-<<citeproc_bib_item_66>>M.A. Razzaque, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/tcaas-qoc-06.pdf][Classification and Modeling of the Quality of Contextual Information]]/. IEEE TCAAS Letters. 2007.
+<<citeproc_bib_item_66>>M.A. Razzaque, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/jnsm-crosslayer-07.pdf][Cross-Layer Architectures for Autonomic Communications]]/. Journal of Network and Systems Management *15*, pp.13–27. 2007.
 
-<<citeproc_bib_item_67>>Lorcan Coyle, Steve Neely, Graeme Stevenson, Mark Sullivan, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/smart-homes-ijarm-06.pdf][Sensor Fusion-Based Middleware for Smart Homes]]/. International Journal of Assistive Robotics and Mechatronics *8*, pp.53–60. 2007.
+<<citeproc_bib_item_67>>M.A. Razzaque, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/tcaas-qoc-06.pdf][Classification and Modeling of the Quality of Contextual Information]]/. IEEE TCAAS Letters. 2007.
 
-<<citeproc_bib_item_68>>Steve Neely, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/aot-survey-06.pdf][Adaptive Middleware for Autonomic Systems]]/. Annals of Telecommunications *61*, pp.1099–1118. 2006.
+<<citeproc_bib_item_68>>Lorcan Coyle, Steve Neely, Graeme Stevenson, Mark Sullivan, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/smart-homes-ijarm-06.pdf][Sensor Fusion-Based Middleware for Smart Homes]]/. International Journal of Assistive Robotics and Mechatronics *8*, pp.53–60. 2007.
 
-<<citeproc_bib_item_69>>Simon Dobson, Spyros Denazis, Antonio Fernández, Dominique Gaïti, Erol Gelenbe, Fabio Massacci, Paddy Nixon, Fabrice Saffre, Nikita Schmidt, and Franco Zambonelli.  /[[https://dx.doi.org//10.1145/1186778.1186782][A Survey of Autonomic Communications]]/. ACM Transactions on Autonomous and Adaptive Systems *1*, pp.223–259. 2006.
+<<citeproc_bib_item_69>>Steve Neely, Simon Dobson, and Paddy Nixon.  /[[https://simondobson.org/softcopy/aot-survey-06.pdf][Adaptive Middleware for Autonomic Systems]]/. Annals of Telecommunications *61*, pp.1099–1118. 2006.
 
-<<citeproc_bib_item_70>>Joëlle Coutaz, James Crowley, Simon Dobson, and David Garlan.  /[[https://dx.doi.org//10.1145/1047671.1047703][Context Is Key]]/. Communications of the ACM *48*, pp.49–53. 2005.
+<<citeproc_bib_item_70>>Simon Dobson, Spyros Denazis, Antonio Fernández, Dominique Gaïti, Erol Gelenbe, Fabio Massacci, Paddy Nixon, Fabrice Saffre, Nikita Schmidt, and Franco Zambonelli.  /[[https://dx.doi.org//10.1145/1186778.1186782][A Survey of Autonomic Communications]]/. ACM Transactions on Autonomous and Adaptive Systems *1*, pp.223–259. 2006.
 
-<<citeproc_bib_item_71>>Don Goodeve, Simon Dobson, Jonathan Nash, John Davy, Peter Dew, Mourad Kara, and Chris Wadsworth.  /[[https://simondobson.org/softcopy/JPDC-98.pdf][Towards a Model for Shared Data Abstraction with Performance]]/. Journal of Parallel and Distributed Computing *49*, pp.156–167. 1998.
+<<citeproc_bib_item_71>>Joëlle Coutaz, James Crowley, Simon Dobson, and David Garlan.  /[[https://dx.doi.org//10.1145/1047671.1047703][Context Is Key]]/. Communications of the ACM *48*, pp.49–53. 2005.
 
-<<citeproc_bib_item_72>>Simon Dobson and Victoria Burrill.  /[[https://dx.doi.org//10.1016/0169-7552(95)00012-V][Lightweight Databases]]/. Computer Networks and ISDN Systems *27*, pp.1009–1015. 1995.
+<<citeproc_bib_item_72>>Don Goodeve, Simon Dobson, Jonathan Nash, John Davy, Peter Dew, Mourad Kara, and Chris Wadsworth.  /[[https://simondobson.org/softcopy/JPDC-98.pdf][Towards a Model for Shared Data Abstraction with Performance]]/. Journal of Parallel and Distributed Computing *49*, pp.156–167. 1998.
+
+<<citeproc_bib_item_73>>Simon Dobson and Victoria Burrill.  /[[https://dx.doi.org//10.1016/0169-7552(95)00012-V][Lightweight Databases]]/. Computer Networks and ISDN Systems *27*, pp.1009–1015. 1995.
 #+end:
 
 ** Major conferences
@@ -553,41 +551,43 @@
 ** Technical reports
 
 #+begin: sd/bibliography :key category :value "technical report"
-<<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2004-05.pdf][Where’s Waldo? or, a Taxonomy for Thinking About Location in Pervasive Computing]]/. Technical report TCD-CS-2004-05. Department of Computer Science, Trinity College Dublin. 2004.
+<<citeproc_bib_item_1>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://arxiv.org/abs/2210.02528v1][Mixing Patterns in Graphs with Higher-Order Structure]]/. Technical report arXiv:2210.02528. arXiv. 2022.
 
-<<citeproc_bib_item_2>>Howard Kim and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2001-49.pdf][An Improved Approach to Geographically Locating Web Clients]]/. Technical report TCD-CS-2001-49. Department of Computer Science, Trinity College Dublin. 2004.
+<<citeproc_bib_item_2>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2004-05.pdf][Where’s Waldo? or, a Taxonomy for Thinking About Location in Pervasive Computing]]/. Technical report TCD-CS-2004-05. Department of Computer Science, Trinity College Dublin. 2004.
 
-<<citeproc_bib_item_3>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-11.pdf][As Strong as Possible Mobility: An Architecture for Stateful Object Migration on the Internet]]/. Technical report TCD-CS-2000-11. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_3>>Howard Kim and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2001-49.pdf][An Improved Approach to Geographically Locating Web Clients]]/. Technical report TCD-CS-2001-49. Department of Computer Science, Trinity College Dublin. 2004.
 
-<<citeproc_bib_item_4>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-13.pdf][A Review of Mobility Systems]]/. Technical report TCD-CS-2000-13. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_4>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-11.pdf][As Strong as Possible Mobility: An Architecture for Stateful Object Migration on the Internet]]/. Technical report TCD-CS-2000-11. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_5>>Linda Farragher and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-22.pdf][Java Decaffeinated: Experiences Building a Programming Language from Components]]/. Technical report TCD-CS-2000-22. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_5>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-13.pdf][A Review of Mobility Systems]]/. Technical report TCD-CS-2000-13. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_6>>Simon Dobson.  /[[https://simondobson.org/softcopy/ions-tr-1999.pdf][What’s in an Ion?]]/ Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_6>>Linda Farragher and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-22.pdf][Java Decaffeinated: Experiences Building a Programming Language from Components]]/. Technical report TCD-CS-2000-22. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_7>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1999-03.pdf][A Managed Architecture for Mobile Distributed Systems]]/. Technical report TCD-CS-1999-03. Department of Computer Science, Trinity College Dublin. 1999.
+<<citeproc_bib_item_7>>Simon Dobson.  /[[https://simondobson.org/softcopy/ions-tr-1999.pdf][What’s in an Ion?]]/ Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_8>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-20.ps][A First Taste of Vanilla]]/. Technical report TCD-CS-1998-20. Department of Computer Science, Trinity College Dublin. 1998.
+<<citeproc_bib_item_8>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1999-03.pdf][A Managed Architecture for Mobile Distributed Systems]]/. Technical report TCD-CS-1999-03. Department of Computer Science, Trinity College Dublin. 1999.
 
-<<citeproc_bib_item_9>>Simon Dobson.  /The O2 Programming Language/. Department of Computer Science, Trinity College Dublin. 1998. Reference manual for the Vanilla implementation of Abadí and Cardelli’s O2 language.
+<<citeproc_bib_item_9>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-20.ps][A First Taste of Vanilla]]/. Technical report TCD-CS-1998-20. Department of Computer Science, Trinity College Dublin. 1998.
 
-<<citeproc_bib_item_10>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-19.ps][Modular Parsers]]/. Technical report TCD-CS-1998-19. Department of Computer Science, Trinity College Dublin. 1998.
+<<citeproc_bib_item_10>>Simon Dobson.  /The O2 Programming Language/. Department of Computer Science, Trinity College Dublin. 1998. Reference manual for the Vanilla implementation of Abadí and Cardelli’s O2 language.
 
-<<citeproc_bib_item_11>>Chris Tofts, Don Goodeve, and Simon Dobson.  /[[https://simondobson.org/softcopy/YCS-98-307.pdf][Abstraction and Implementation of a Lightweight Distributed Termination Protocol]]/. Technical report YCS-98-307. Department of Computer Science, University of York. 1998.
+<<citeproc_bib_item_11>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-19.ps][Modular Parsers]]/. Technical report TCD-CS-1998-19. Department of Computer Science, Trinity College Dublin. 1998.
 
-<<citeproc_bib_item_12>>Simon Dobson.  /A Common Object Model for Large Experimental Systems: A Proposal/. Rutherford Appleton Laboratory. 1997.
+<<citeproc_bib_item_12>>Chris Tofts, Don Goodeve, and Simon Dobson.  /[[https://simondobson.org/softcopy/YCS-98-307.pdf][Abstraction and Implementation of a Lightweight Distributed Termination Protocol]]/. Technical report YCS-98-307. Department of Computer Science, University of York. 1998.
 
-<<citeproc_bib_item_13>>Simon Dobson.  /[[https://simondobson.org/softcopy/bulk-data-types.pdf][An Introduction to the Theories of Bulk Data Types]]/. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_13>>Simon Dobson.  /A Common Object Model for Large Experimental Systems: A Proposal/. Rutherford Appleton Laboratory. 1997.
 
-<<citeproc_bib_item_14>>Simon Dobson, Victoria Burrill, and Julian Gallop.  /[[https://simondobson.org/softcopy/semantic-markup-94.pdf][Semantic Mark-up of Generalised Documents]]/. Technical report WWW/01/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_14>>Simon Dobson.  /[[https://simondobson.org/softcopy/bulk-data-types.pdf][An Introduction to the Theories of Bulk Data Types]]/. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_15>>Simon Dobson and Victoria Burrill.  /[[https://simondobson.org/softcopy/preliminary-markup-94.pdf][Preliminary Results from the Database Markup of Hyperdocuments]]/. Technical report WWW/03/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_15>>Simon Dobson, Victoria Burrill, and Julian Gallop.  /[[https://simondobson.org/softcopy/semantic-markup-94.pdf][Semantic Mark-up of Generalised Documents]]/. Technical report WWW/01/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_16>>Simon Dobson and Victoria Burrill.  /Lightweight Data Mark-up/. Technical report WWW/04/94. Rutherford Appleton laboratory. 1994.
+<<citeproc_bib_item_16>>Simon Dobson and Victoria Burrill.  /[[https://simondobson.org/softcopy/preliminary-markup-94.pdf][Preliminary Results from the Database Markup of Hyperdocuments]]/. Technical report WWW/03/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_17>>Simon Dobson.  /[[https://simondobson.org/softcopy/hyper-94.pdf][Data and Hypermodels Are Isomorphic: Manipulating Hyperdocuments at a Logical Level]]/. Technical report WWW/02/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_17>>Simon Dobson and Victoria Burrill.  /Lightweight Data Mark-up/. Technical report WWW/04/94. Rutherford Appleton laboratory. 1994.
 
-<<citeproc_bib_item_18>>Simon Dobson.  /Writing Compilers Using ML/. Technical report PPG/99/93. Rutherford Appleton Laboratory. 1993.
+<<citeproc_bib_item_18>>Simon Dobson.  /[[https://simondobson.org/softcopy/hyper-94.pdf][Data and Hypermodels Are Isomorphic: Manipulating Hyperdocuments at a Logical Level]]/. Technical report WWW/02/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_19>>Simon Dobson.  /[[https://simondobson.org/softcopy/thesis-final.pdf][An Approach to Scalable Parallel Programming]]/. Technical report YCST/93/03. Department of Computer Science, University of York. 1993.
+<<citeproc_bib_item_19>>Simon Dobson.  /Writing Compilers Using ML/. Technical report PPG/99/93. Rutherford Appleton Laboratory. 1993.
+
+<<citeproc_bib_item_20>>Simon Dobson.  /[[https://simondobson.org/softcopy/thesis-final.pdf][An Approach to Scalable Parallel Programming]]/. Technical report YCST/93/03. Department of Computer Science, University of York. 1993.
 #+end:

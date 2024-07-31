@@ -190,6 +190,9 @@ within the buffer that is current when this function is called, or be passed
 in CSL-STYLE-LOCALE in a form extrcated by `org-collect-keywords'. See
 `org-ref-process-buffer' for details."
   (with-temp-buffer
+    ;; buffer needs to be in org mode for org parsing to work
+    (org-mode)
+
     ;; insert the style and locale from the calling buffer, if present
     (let ((csl-styles (assoc "CSL-STYLE" csl-style-locale)))
       (if csl-styles
