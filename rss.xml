@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 31 Jul 2024 16:32:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org146b5ad" class="outline-2"&gt;
-&lt;h2 id="org146b5ad"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org146b5ad"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:31:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
+&lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org003e69b"&gt;
+&lt;p&gt;
+Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
+ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+A response to the criticisms of McCarthy's semantics for Common
+Lisp that it didn't specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too "lawyerly" for engineering.
+&lt;/p&gt;
+
+&lt;p&gt;
+The approach is to define the special forms in terms of other
+constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special forms.
+&lt;/p&gt;
+
+&lt;p&gt;
+It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme's. However there's also an argument
+pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
+information that can be useful for compilers looking to optimise.
+It's a deep exploration of the underpinnings of the language from
+both theoretical and practical perspectives.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
+&lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A tongue-in-cheek – but still excellent – comicbook-style
+introduction to Lisp programming. (There's also a version
+&lt;a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html"&gt;specifically for Emacs Lisp&lt;/a&gt;.) It's structured around building an
+adventure-style game, which as well as being a classic also offers
+lots of opportunities for exploring different data structures and
+algorithms: one can easily imagine expanding it to include (for
+example) an AI second player or autonomous non-player characters
+and gradually building a really complicated application from a
+standing start.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org304e782" class="outline-2"&gt;
+&lt;h2 id="org304e782"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org304e782"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -83,9 +136,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org894d678" class="outline-3"&gt;
-&lt;h3 id="org894d678"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org894d678"&gt;
+&lt;div id="outline-container-org598a20d" class="outline-3"&gt;
+&lt;h3 id="org598a20d"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org598a20d"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -102,9 +155,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcc53069" class="outline-3"&gt;
-&lt;h3 id="orgcc53069"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcc53069"&gt;
+&lt;div id="outline-container-orgd341b0f" class="outline-3"&gt;
+&lt;h3 id="orgd341b0f"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd341b0f"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -138,9 +191,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org39c4b54" class="outline-3"&gt;
-&lt;h3 id="org39c4b54"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org39c4b54"&gt;
+&lt;div id="outline-container-orgd7988ba" class="outline-3"&gt;
+&lt;h3 id="orgd7988ba"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd7988ba"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -171,9 +224,9 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org53c7be2" class="outline-3"&gt;
-&lt;h3 id="org53c7be2"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org53c7be2"&gt;
+&lt;div id="outline-container-orgb382c77" class="outline-3"&gt;
+&lt;h3 id="orgb382c77"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb382c77"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
@@ -280,7 +333,7 @@ woven all through Lisp to build flexible code structures.
 UPDATED 2023-07-30: I incorrectly said originally that one
 couldn't use forms like &lt;code&gt;(defun (setf abc) ...)&lt;/code&gt;: you can, just as
 with &lt;code&gt;defmethod&lt;/code&gt; and &lt;code&gt;defgeneric&lt;/code&gt;, and name a function using a list.
-Thanks for Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
+Thanks to Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
 was also slightly loose in my use of &lt;i&gt;specialisation&lt;/i&gt;, which I've
 tightened up.
 &lt;/p&gt;
@@ -616,81 +669,4 @@ only another step to explore Lisp &lt;i&gt;implemented&lt;/i&gt; in Forth throug
 the medium of macro programming, which deserves a book itself.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/let-over-lambda/</guid><pubDate>Fri, 05 Jul 2024 10:19:07 GMT</pubDate></item><item><title>On Lisp</title><link>https://simondobson.org/2024/07/05/on-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgaac5f5f" class="outline-2"&gt;
-&lt;h2 id="orgaac5f5f"&gt;On Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgaac5f5f"&gt;
-&lt;p&gt;
-Paul Graham.  &lt;i&gt;&lt;a href="http://www.paulgraham.com/onlisp.html"&gt;On Lisp: Advanced Techniques for Common Lisp&lt;/a&gt;&lt;/i&gt;. Prentice
-Hall. ISBN 0-13-030552-9. 1993.
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-An ideal world is left as an exercise to the reader.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-One of the most famous advanced treatments of Lisp. Essentially
-it's a book in two parts. The first deals with the traditional
-advanced topics of functional programming such as identifying
-patterns that can be factored-out into higher-order functions and
-re-used. But the second, better-known, part deals with macro
-programming in extraordinary detail and with enormous creativity,
-including developing macros for continuations and several embedded
-languages.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/on-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:16:34 GMT</pubDate></item><item><title>Debugging Lisp</title><link>https://simondobson.org/2024/07/05/debugging-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb9a4deb" class="outline-2"&gt;
-&lt;h2 id="orgb9a4deb"&gt;Debugging Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb9a4deb"&gt;
-&lt;p&gt;
-&lt;a href="https://malisper.me/debugging-lisp-part-1-recompilation/"&gt;Debugging Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A four-part blog post series on debugging Lisp, covering:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;Live recompilation of code from inside a debugging session,
-together with re-executing changed code from within a running
-stack trace&lt;/li&gt;
-&lt;li&gt;Inspecting objects and interacting with traces of function calls&lt;/li&gt;
-&lt;li&gt;Redefining classes, and how to ensure that existing instances
-are upgraded to be compatible with the new definition&lt;/li&gt;
-&lt;li&gt;Restarts, the neglected part of the condition system that
-controls how programs continue after encountering errors&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;p&gt;
-The first two are essential, and show how &lt;i&gt;different&lt;/i&gt; Lisp
-programming is from using other languages. In fact it requires a
-considerable mental shift to re-acquire the right reflexes for
-dealing with errors and debugging in a fully interactive
-environment: well, it did for me, anyway. We're not used to
-interactivity in large development environments. There is seldom
-any need to close down a running Lisp session and start again, as
-everything can usually be changed and adapted within a session.
-This is very unlike the usual compile-edit-debug cycles we've
-become accustomed to.
-&lt;/p&gt;
-
-&lt;p&gt;
-The third post – on redefining classes – shows how one can
-upgrade a program that simply &lt;i&gt;has&lt;/i&gt; to keep running, because its
-live state upgrade can be programmed too.
-&lt;/p&gt;
-
-&lt;p&gt;
-The most significant part of the mental shift is to realise that
-the debugger is written in Lisp itself, and makes use of restarts
-and other features to provide the interface. This is a consequence
-of the degree of exposure of the Lisp run-time structures into to
-language itself, where they can be examined and manipulated using
-the full power of the language – and then be re-started or
-discarded as required.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/let-over-lambda/</guid><pubDate>Fri, 05 Jul 2024 10:19:07 GMT</pubDate></item></channel></rss>

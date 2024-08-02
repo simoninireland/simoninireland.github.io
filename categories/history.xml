@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Jul 2024 08:02:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:31:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
+&lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org003e69b"&gt;
+&lt;p&gt;
+Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
+ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+A response to the criticisms of McCarthy's semantics for Common
+Lisp that it didn't specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too "lawyerly" for engineering.
+&lt;/p&gt;
+
+&lt;p&gt;
+The approach is to define the special forms in terms of other
+constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special forms.
+&lt;/p&gt;
+
+&lt;p&gt;
+It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme's. However there's also an argument
+pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
+information that can be useful for compilers looking to optimise.
+It's a deep exploration of the underpinnings of the language from
+both theoretical and practical perspectives.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
 &lt;h2 id="org0318c4d"&gt;The roots of Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org0318c4d"&gt;
 &lt;p&gt;

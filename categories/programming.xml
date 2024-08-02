@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 30 Jul 2024 16:24:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org146b5ad" class="outline-2"&gt;
-&lt;h2 id="org146b5ad"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org146b5ad"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:25:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org304e782" class="outline-2"&gt;
+&lt;h2 id="org304e782"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org304e782"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -83,9 +83,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org894d678" class="outline-3"&gt;
-&lt;h3 id="org894d678"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org894d678"&gt;
+&lt;div id="outline-container-org598a20d" class="outline-3"&gt;
+&lt;h3 id="org598a20d"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org598a20d"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -102,9 +102,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcc53069" class="outline-3"&gt;
-&lt;h3 id="orgcc53069"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcc53069"&gt;
+&lt;div id="outline-container-orgd341b0f" class="outline-3"&gt;
+&lt;h3 id="orgd341b0f"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd341b0f"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -138,9 +138,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org39c4b54" class="outline-3"&gt;
-&lt;h3 id="org39c4b54"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org39c4b54"&gt;
+&lt;div id="outline-container-orgd7988ba" class="outline-3"&gt;
+&lt;h3 id="orgd7988ba"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd7988ba"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -171,9 +171,9 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org53c7be2" class="outline-3"&gt;
-&lt;h3 id="org53c7be2"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org53c7be2"&gt;
+&lt;div id="outline-container-orgb382c77" class="outline-3"&gt;
+&lt;h3 id="orgb382c77"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb382c77"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
@@ -280,7 +280,7 @@ woven all through Lisp to build flexible code structures.
 UPDATED 2023-07-30: I incorrectly said originally that one
 couldn't use forms like &lt;code&gt;(defun (setf abc) ...)&lt;/code&gt;: you can, just as
 with &lt;code&gt;defmethod&lt;/code&gt; and &lt;code&gt;defgeneric&lt;/code&gt;, and name a function using a list.
-Thanks for Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
+Thanks to Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
 was also slightly loose in my use of &lt;i&gt;specialisation&lt;/i&gt;, which I've
 tightened up.
 &lt;/p&gt;

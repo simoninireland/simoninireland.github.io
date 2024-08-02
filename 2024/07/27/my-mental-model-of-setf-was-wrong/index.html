@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org146b5ad" class="outline-2">
-<h2 id="org146b5ad">My mental model of setf was&nbsp;wrong</h2>
-<div class="outline-text-2" id="text-org146b5ad">
+		<div id="outline-container-org304e782" class="outline-2">
+<h2 id="org304e782">My mental model of setf was&nbsp;wrong</h2>
+<div class="outline-text-2" id="text-org304e782">
 <p>
 I realised recently that I&#8217;ve been thinking&nbsp;about <code>setf</code> all&nbsp;wrong.
 </p>
@@ -154,9 +154,9 @@ My mistake was thinking that the similarity between access form&nbsp;and <code>s
 either. This has some interesting&nbsp;consequences.
 </p>
 </div>
-<div id="outline-container-org894d678" class="outline-3">
-<h3 id="org894d678">The selector is entirely&nbsp;arbitrary</h3>
-<div class="outline-text-3" id="text-org894d678">
+<div id="outline-container-org598a20d" class="outline-3">
+<h3 id="org598a20d">The selector is entirely&nbsp;arbitrary</h3>
+<div class="outline-text-3" id="text-org598a20d">
 <p>
 If we don&#8217;t like&nbsp;using <code>car</code> to indicate the head of a list – and
 some people don&#8217;t – we could in principle define a new
@@ -173,9 +173,9 @@ defined function</i>. All we need is a selector&nbsp;symbol.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcc53069" class="outline-3">
-<h3 id="orgcc53069">There can be more&nbsp;arguments</h3>
-<div class="outline-text-3" id="text-orgcc53069">
+<div id="outline-container-orgd341b0f" class="outline-3">
+<h3 id="orgd341b0f">There can be more&nbsp;arguments</h3>
+<div class="outline-text-3" id="text-orgd341b0f">
 <p>
 Ever since I first encountered them I wondered why the lambda
 lists for&nbsp;new <code>setf</code> specialisations was so strange: the new value
@@ -207,9 +207,9 @@ the rest of the locator arguments after&nbsp;it.
 </p>
 </div>
 </div>
-<div id="outline-container-org39c4b54" class="outline-3">
-<h3 id="org39c4b54">You can specialise by value&nbsp;too</h3>
-<div class="outline-text-3" id="text-org39c4b54">
+<div id="outline-container-orgd7988ba" class="outline-3">
+<h3 id="orgd7988ba">You can specialise by value&nbsp;too</h3>
+<div class="outline-text-3" id="text-orgd7988ba">
 <p>
 Since&nbsp;the <code>setf</code> forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -240,9 +240,9 @@ of generic&nbsp;functions.
 </p>
 </div>
 </div>
-<div id="outline-container-org53c7be2" class="outline-3">
-<h3 id="org53c7be2">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
-<div class="outline-text-3" id="text-org53c7be2">
+<div id="outline-container-orgb382c77" class="outline-3">
+<h3 id="orgb382c77">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
+<div class="outline-text-3" id="text-orgb382c77">
 <p>
 Yes: <code>setf</code> is entirely constructable within &#8220;ordinary&#8221;&nbsp;Lisp.
 </p>
@@ -346,7 +346,7 @@ woven all through Lisp to build flexible code&nbsp;structures.
 <p>
 <span class="caps">UPDATED</span> 2023-07-30: I incorrectly said originally that one
 couldn&#8217;t use forms&nbsp;like <code>(defun (setf abc) ...)</code>: you can, just as&nbsp;with <code>defmethod</code> and <code>defgeneric</code>, and name a function using a list.
-Thanks for Hacker News contributor <a href="https://phoe.github.io">phoe-krk</a> for correcting me. I
+Thanks to Hacker News contributor <a href="https://phoe.github.io">phoe-krk</a> for correcting me. I
 was also slightly loose in my use of <i>specialisation</i>, which I&#8217;ve
 tightened&nbsp;up.
 </p>
@@ -389,6 +389,11 @@ tightened&nbsp;up.
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
 	    <a href="../../23/the-art-of-the-metaobject-protocol/" rel="prev">
 		<span class="meta-nav">Older Post</span>The art of the metaobject protocol
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../08/02/casting-spels-in-lisp/" rel="next">
+		<span class="meta-nav">Newer Post</span>Casting SPELs in Lisp
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

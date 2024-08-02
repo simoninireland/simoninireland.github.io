@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 30 Jul 2024 16:24:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org146b5ad" class="outline-2"&gt;
-&lt;h2 id="org146b5ad"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org146b5ad"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:31:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
+&lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org003e69b"&gt;
+&lt;p&gt;
+Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
+ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+A response to the criticisms of McCarthy's semantics for Common
+Lisp that it didn't specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too "lawyerly" for engineering.
+&lt;/p&gt;
+
+&lt;p&gt;
+The approach is to define the special forms in terms of other
+constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special forms.
+&lt;/p&gt;
+
+&lt;p&gt;
+It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme's. However there's also an argument
+pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
+information that can be useful for compilers looking to optimise.
+It's a deep exploration of the underpinnings of the language from
+both theoretical and practical perspectives.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
+&lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A tongue-in-cheek – but still excellent – comicbook-style
+introduction to Lisp programming. (There's also a version
+&lt;a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html"&gt;specifically for Emacs Lisp&lt;/a&gt;.) It's structured around building an
+adventure-style game, which as well as being a classic also offers
+lots of opportunities for exploring different data structures and
+algorithms: one can easily imagine expanding it to include (for
+example) an AI second player or autonomous non-player characters
+and gradually building a really complicated application from a
+standing start.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org304e782" class="outline-2"&gt;
+&lt;h2 id="org304e782"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org304e782"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -83,9 +136,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org894d678" class="outline-3"&gt;
-&lt;h3 id="org894d678"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org894d678"&gt;
+&lt;div id="outline-container-org598a20d" class="outline-3"&gt;
+&lt;h3 id="org598a20d"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org598a20d"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -102,9 +155,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgcc53069" class="outline-3"&gt;
-&lt;h3 id="orgcc53069"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgcc53069"&gt;
+&lt;div id="outline-container-orgd341b0f" class="outline-3"&gt;
+&lt;h3 id="orgd341b0f"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd341b0f"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -138,9 +191,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org39c4b54" class="outline-3"&gt;
-&lt;h3 id="org39c4b54"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org39c4b54"&gt;
+&lt;div id="outline-container-orgd7988ba" class="outline-3"&gt;
+&lt;h3 id="orgd7988ba"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd7988ba"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -171,9 +224,9 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org53c7be2" class="outline-3"&gt;
-&lt;h3 id="org53c7be2"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org53c7be2"&gt;
+&lt;div id="outline-container-orgb382c77" class="outline-3"&gt;
+&lt;h3 id="orgb382c77"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb382c77"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
@@ -280,7 +333,7 @@ woven all through Lisp to build flexible code structures.
 UPDATED 2023-07-30: I incorrectly said originally that one
 couldn't use forms like &lt;code&gt;(defun (setf abc) ...)&lt;/code&gt;: you can, just as
 with &lt;code&gt;defmethod&lt;/code&gt; and &lt;code&gt;defgeneric&lt;/code&gt;, and name a function using a list.
-Thanks for Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
+Thanks to Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
 was also slightly loose in my use of &lt;i&gt;specialisation&lt;/i&gt;, which I've
 tightened up.
 &lt;/p&gt;
@@ -728,267 +781,4 @@ UPDATED 2024-06-29: Fixed the typo in the class definition to use
 out to me.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
-&lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1aec963"&gt;
-&lt;p&gt;
-Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
-compare C++ templates to Lisp macros.
-&lt;/p&gt;
-
-&lt;p&gt;
-Templates in C++ were designed as a way of generating typed versions
-of classes. The template declares some type variables that can be
-used as placeholders within a class declaration. When the template
-is instanciated and provided with actual type names, these are
-substituted for the type variables and the class is expanded. (It
-used to literally happen like this, so each use generated a
-completely new class. Modern compilers are smart enough to avoid the
-code repetition.) A classic example is a typed singly-linked list:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;typename&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;List&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;next&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-However, the template system also allows values to be used in
-templates instead of (or as well as) type names. When these are
-encountered they are expanded at compile-time, and may cause further
-templates to be expanded. A classic example of this is to
-pre-compute some factorials:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-In this code the first clause defines a template that defines the
-usual recursive factorial calculation. The second clause bottoms-out
-this recursion by defining a specialised template that directly
-provides the factorial of zero. This can then be used in code such
-as:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;unsigned&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;template&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;};&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;::&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-which outputs the factorial of 7 as one might expect – but with the
-factorial having been computed at compile-time and inserted into the
-code as a literal, so the calculation introduces no run-time calculation.
-&lt;/p&gt;
-
-&lt;p&gt;
-There are some stringent limitations on the ways in which templates
-can be expanded. They can't have mutable variables for a start
-(that's why we needed to use the recursive factorial algorithm).
-Weirdly this makes the template language a &lt;i&gt;functional programming
-sub-set&lt;/i&gt; of C++. Having said that, as with Lisp macros, it allows
-calculations that can be statically performed forward to be brought
-forward to compile-time. This makes it useful for building read-only
-tables, unrolling loops, and the like.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's &lt;a href="https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming"&gt;claimed&lt;/a&gt; that templates are now so akin to "normal" C++ that
-they incur less of a readability penalty. That's a subjective
-statement that may be true. But the template language &lt;i&gt;isn't&lt;/i&gt; C++.
-While one &lt;i&gt;can&lt;/i&gt; write programs in it, they're &lt;i&gt;nothing like&lt;/i&gt; the C++ one
-would normally write. The template language is Turing complete, but
-that just means one can encode any &lt;i&gt;computation&lt;/i&gt;, not that one can
-encode any &lt;i&gt;particular program&lt;/i&gt; – and most template programs will
-require massive re-writing from the code one would write normally
-for execution at run-time. Template macroprogramming is therefore a
-non-trivial programming task to undertake.
-&lt;/p&gt;
-
-&lt;p&gt;
-Again as with Rust &lt;i&gt;versus&lt;/i&gt; Lisp, C++ templates are an extension to
-the language rather than a core part of it, although they're now
-used quite extensively in the standard library for generic typing.
-Also as with Rust, use of templates is semantically and
-syntactically distinct from "normal" C++ code or syntax, and it's
-this that causes the programming load.
-&lt;/p&gt;
-
-&lt;p&gt;
-A Lisp macro for the factorial computation, by contrast, looks
-&lt;i&gt;almost exactly&lt;/i&gt; like a normal factorial function that can access the
-entire language, both when defined and when used:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;labels&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))))))&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-The choice of macro or function (&lt;code&gt;defmacro&lt;/code&gt; or &lt;code&gt;defun&lt;/code&gt;) has no further
-&lt;i&gt;syntactic&lt;/i&gt; implications for the rest of the program, and no
-restrictions on the code that can be used within the definition; we
-could re-write the to use iteration, mutable variables, or any other
-code, and it would simply be executed at compile-time. The whole
-language is there, all the time. We can show this by taking a
-factorial function written in "normal" Lisp and macro-ifying it to
-be computed at compile-time:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s"&gt;"Compute the factorial of M."&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;1-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;`,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fact&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;princ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;factorial&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-5040
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-More importantly, Lisp (and indeed Rust) macro can abstract over
-syntax as well as classes and values, and so allow the language to
-be extended with new first-class-at-compile-time structures.
-Templates are restricted to instanciating templates written with
-a fixed syntax; in Lisp the syntax has to be "Lisp-like", although
-that's a very light restriction; and in Rust a macro can use any
-syntax that Rust can tokenise.
-&lt;/p&gt;
-
-&lt;p&gt;
-While C++ templates are sometimes described as macroprogramming (or
-metaprogramming), they're addressing a substantially different use
-case to that addressed by Lisp or Rust macros, and doing so within a
-more restricted computational and syntactic envelope.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
-&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
-&lt;p&gt;
-I was talking with one of my colleagues the other day about
-programming languages, and we ended up comparing macros in Rust and
-Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-Rust has a couple of &lt;a href="https://doc.rust-lang.org/reference/procedural-macros.html"&gt;couple of different kinds&lt;/a&gt; of macros:
-&lt;b&gt;declarative&lt;/b&gt; macros that pattern-match on arguments to emit code; and
-&lt;b&gt;procedural&lt;/b&gt; macros that perform more general code-to-code
-transformations. Lisp has only one kind that operates from code to
-code.
-&lt;/p&gt;
-
-&lt;p&gt;
-Both approaches are &lt;i&gt;far&lt;/i&gt; more powerful than the macros in C and C++,
-which are basically just string expanders. Indeed, one definition of
-macroprogramming is that it's writing code that returns code, and
-there's a reasonable argument that C's "macros" are programs that
-return &lt;i&gt;strings&lt;/i&gt; and therefore aren't macros at all. But that's just
-bring pedantic.
-&lt;/p&gt;
-
-&lt;p&gt;
-The Rust operations seem quite awkward, at least from a Lisp
-perspective. They're invoked in a way that's syntactically different
-to ordinary code, so it's always possible to see in the source code
-where procedural code generation is occurring. Perhaps that's not an
-entirely bad thing, as it makes it obvious when compile-time
-computation occurs – although one might also argue that a true
-language extension or DSL should be so seamless that you don't &lt;i&gt;need&lt;/i&gt;
-to see it.
-&lt;/p&gt;
-
-&lt;p&gt;
-I think a more basic difference is in how Rust needs to handle
-code-type arguments. A macro is a function from code to code, so it
-needs to represent its code arguments in a way that the macros
-(which is also code) can manipulate. Lisp's &lt;a href="https://en.wikipedia.org/wiki/Homoiconicity"&gt;homoiconicity&lt;/a&gt; makes this
-trivial: code is a list, just like non-code, and can ba manipulated
-as such. Rust doesn't have this, so code needs to be passed to
-macros as a token stream that's been parsed from the program text.
-That's a reasonable solution to the problem, but it does mean that
-to write macros you need to understand how Rust is tokenised. You
-also get a token stream, not an abstract syntax tree (AST), which
-means that manipulating complex code is more difficult: essentially
-you need to re-create as much of the AST as you need and traverse it
-within the macro body. There's a standard library that does this for
-Rust's own syntax, which simplifies matters somewhat but still means
-that writing macros exposes the programmer to the underlying
-representations. Hopefully they won't change, as that would break a
-lot of macros.
-&lt;/p&gt;
-
-&lt;p&gt;
-By contrast, Lisp macros only require an understanding of Lisp
-itself, not of its internals, and can operate on the entire detailed
-structure of the code arguments. It's a striking example of the
-power of homoiconicity.
-&lt;/p&gt;
-
-&lt;p&gt;
-An approach closer to that of Rust is also available, in Common Lisp
-anyway, in the form of &lt;b&gt;reader macros&lt;/b&gt; that modify the Lisp reader to
-allow access to the character stream as the source code is being
-read. I think I've only ever encountered read macros for providing
-new styles of literals, or variants of strings that benefit from
-being treated slightly differently at read-time: they're an unusual
-use case, anyway, and Lisp makes the more usual case of macros
-manipulating Lisp code a lot simpler, without exposing the
-programmer to parsing.
-&lt;/p&gt;
-
-&lt;p&gt;
-I suspect the main difference between the two languages' approaches
-is that macros are &lt;b&gt;additional&lt;/b&gt; to Rust but &lt;b&gt;inherent&lt;/b&gt; to Lisp. None of
-the core of Rust uses macros: they're for extensions. By contrast,
-even common operations like &lt;code&gt;defun&lt;/code&gt; in Lisp are actually macros that
-expand to the simpler core operations. This perhaps explains the
-Rust designers' decision to make macros syntactically distinct.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item></channel></rss>

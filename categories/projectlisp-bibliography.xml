@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Jul 2024 08:18:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c8dd92" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:31:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
+&lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org003e69b"&gt;
+&lt;p&gt;
+Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
+ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+A response to the criticisms of McCarthy's semantics for Common
+Lisp that it didn't specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too "lawyerly" for engineering.
+&lt;/p&gt;
+
+&lt;p&gt;
+The approach is to define the special forms in terms of other
+constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special forms.
+&lt;/p&gt;
+
+&lt;p&gt;
+It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme's. However there's also an argument
+pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
+information that can be useful for compilers looking to optimise.
+It's a deep exploration of the underpinnings of the language from
+both theoretical and practical perspectives.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
+&lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A tongue-in-cheek – but still excellent – comicbook-style
+introduction to Lisp programming. (There's also a version
+&lt;a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html"&gt;specifically for Emacs Lisp&lt;/a&gt;.) It's structured around building an
+adventure-style game, which as well as being a classic also offers
+lots of opportunities for exploring different data structures and
+algorithms: one can easily imagine expanding it to include (for
+example) an AI second player or autonomous non-player characters
+and gradually building a really complicated application from a
+standing start.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c8dd92" class="outline-2"&gt;
 &lt;h2 id="org7c8dd92"&gt;The art of the metaobject protocol&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org7c8dd92"&gt;
 &lt;p&gt;
@@ -346,78 +399,4 @@ would probably be built-in and included directly in an
 introduction.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b914c8" class="outline-2"&gt;
-&lt;h2 id="org1b914c8"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b914c8"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/7a/bd1498-3024-4f11-91a7-97f3e99084d7/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Mark Watson.  &lt;i&gt;&lt;a href="https://leanpub.com/lovinglisp"&gt;Loving Common Lisp, or the Savvy Programmer’s Secret
-Weapon&lt;/a&gt;&lt;/i&gt;. Leanpub. 2023.
-&lt;/p&gt;
-
-&lt;p&gt;
-While pitched as a way of sharing the author's enthusiasm for Lisp
-(which really shines through), this book is really a deep
-demonstration in using Lisp in modern applications – from web
-APIs and the semantic web to deep learning, large language models,
-and chatbots.
-&lt;/p&gt;
-
-&lt;p&gt;
-In some ways, like many other Lisp books, it's really two books in
-one. The first chapters are introductory – and to be perfectly
-honest could be dispensed with, as they're inadequate as a proper
-introduction and there are far better introductions out there. The
-later chapters focus on applications, and provide the real value.
-One could criticise them as often tying-together tools in other
-languages, with the Lisp code basically being glue; but that's a
-very effective way of leveraging all the code and services out
-there, and is an important technique for Lisp programmers too.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</guid><pubDate>Tue, 02 Apr 2024 15:57:38 GMT</pubDate></item><item><title>Lisp in space</title><link>https://simondobson.org/2024/04/02/lisp-in-space/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5458425" class="outline-2"&gt;
-&lt;h2 id="org5458425"&gt;Lisp in space&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org5458425"&gt;
-&lt;p&gt;
-&lt;a href="https://corecursive.com/lisp-in-space-with-ron-garret/"&gt;Lisp in space&lt;/a&gt; (podcast, 38 minutes)
-&lt;/p&gt;
-
-&lt;p&gt;
-An interview on the Corecursive podcast with Ron Garret.
-&lt;/p&gt;
-
-&lt;p&gt;
-In 1988 (when, for context, I was in the second year of my BSc)
-Garret started working on autonomous navigation software for
-&lt;a href="https://en.wikipedia.org/wiki/Sojourner_(rover)"&gt;Sojourner&lt;/a&gt;, NASA's first Mars rover, which flew in 1997. He used Lisp
-to do planning, essentially developing an entire domain-specific
-language for autonomous vehicles. The project was never flown, as
-NASA opted for a far less ambitious approach to driving to rovers –
-a decision that Garret now considers to have been the correct one.
-&lt;/p&gt;
-
-&lt;p&gt;
-But that isn't the end of the story, because Garret then went on
-to develop an autonomous Remote Agent controller for the &lt;a href="https://en.wikipedia.org/wiki/Deep_Space_1"&gt;Deep
-Space 1&lt;/a&gt; technology demonstration mission that performed asteroid
-and comet fly-bys. Without spoiling to story, the spacecraft flies
-with a full Lisp system onboard, and Garret gets to interact with
-its REPL at a distance of 30 light-minutes &lt;i&gt;via&lt;/i&gt; the Deep Space
-Network – surely the longest latency of any REPL session ever!
-&lt;/p&gt;
-
-&lt;p&gt;
-It's an fascinating insight into both the potentials of Lisp and
-the political difficulties that using a non-standard development
-language can engender.
-&lt;/p&gt;
-
-&lt;p&gt;
-UPDATE 2024-05-16: Ron also wrote a &lt;a href="https://flownet.com/gat/jpl-lisp.html"&gt;short essay&lt;/a&gt; about his
-experiences.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/04/02/lisp-in-space/</guid><pubDate>Tue, 02 Apr 2024 15:32:56 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item></channel></rss>
