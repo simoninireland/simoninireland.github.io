@@ -18,7 +18,7 @@
 <<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/introduction-to-epidemics/][Epidemic Modelling – Some Notes, Maths, and Code]]/. Independent Publishing Network. ISBN 978-183853-565-0. 2020.
 #+end:
 
-** Journals
+** Journal articles
 
 #+begin: sd/bibliography :key category :value journal
 <<citeproc_bib_item_1>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /[[https://doi.org/https://doi.org/10.1021/acsomega.4c06163][Revisiting the Application of Machine Learning Approaches in Predicting Aqueous Solubility]]/. ACS Omega. 2024. To appear.

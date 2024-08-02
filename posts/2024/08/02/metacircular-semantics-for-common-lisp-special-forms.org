@@ -1,0 +1,36 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Metacircular Semantics for Common Lisp Special Forms
+.. slug: metacircular-semantics-for-common-lisp-special-forms
+.. date: 2024-08-02 11:29:45 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, history, semantics
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Metacircular Semantics for Common Lisp Special Forms
+
+  Henry G. Baker. /[[https://doi.org/10.1145/382126.382662][Metacircular Semantics for Common Lisp Special Forms]]/.
+  ACM SIGPLAN Lisp Pointers *V*, pp.11–20. 1992.
+
+  A response to the criticisms of McCarthy's semantics for Common
+  Lisp that it didn't specify the behaviours of special forms, and
+  of the standardisation process of adopting prose definitions that
+  are too "lawyerly" for engineering.
+
+  The approach is to define the special forms in terms of other
+  constructions, for example ~if~ in terms of nested lambda
+  abstractions to prevent execution of the unwanted branch. This is
+  both useful for understanding and a way of minimising the number
+  of under-defined special forms.
+
+  It suggests treating ~catch~ / ~throw~ as basic, both because other
+  control-transfer forms can be expressed sing them and because it
+  emphasises the interactions that preclude Common Lisp having
+  continuations like Scheme's. However there's also an argument
+  pursued that some other structures (like ~values~) provide extra
+  information that can be useful for compilers looking to optimise.
+  It's a deep exploration of the underpinnings of the language from
+  both theoretical and practical perspectives.

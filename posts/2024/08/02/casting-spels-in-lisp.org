@@ -1,0 +1,25 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Casting SPELs in Lisp
+.. slug: casting-spels-in-lisp
+.. date: 2024-08-02 11:25:53 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Casting SPELs in Lisp
+
+  https://www.lisperati.com/casting.html
+
+  A tongue-in-cheek -- but still excellent -- comicbook-style
+  introduction to Lisp programming. (There's also a version
+  [[https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html][specifically for Emacs Lisp]].) It's structured around building an
+  adventure-style game, which as well as being a classic also offers
+  lots of opportunities for exploring different data structures and
+  algorithms: one can easily imagine expanding it to include (for
+  example) an AI second player or autonomous non-player characters
+  and gradually building a really complicated application from a
+  standing start.

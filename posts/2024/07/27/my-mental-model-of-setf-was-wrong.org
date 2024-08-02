@@ -230,6 +230,6 @@
      UPDATED 2023-07-30: I incorrectly said originally that one
      couldn't use forms like ~(defun (setf abc) ...)~: you can, just as
      with ~defmethod~ and ~defgeneric~, and name a function using a list.
-     Thanks for Hacker News contributor [[https://phoe.github.io][phoe-krk]] for correcting me. I
+     Thanks to Hacker News contributor [[https://phoe.github.io][phoe-krk]] for correcting me. I
      was also slightly loose in my use of /specialisation/, which I've
      tightened up.
