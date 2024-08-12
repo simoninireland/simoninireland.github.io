@@ -52,6 +52,36 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../goodreads/the-world-according-to-colour/" rel="bookmark">Sunday 11 August, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/the-world-according-to-colour/">The World According to&nbsp;Colour</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623144261l/56155215._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	James     Fox&nbsp;(2022)
+      </h2>
+    </div>
+    <p>
+      A book using colour as a way to access a range of other topics, without ever losing focus.<br><br>Some of the choices will probably be controversial, such as the emergence of &#8220;whiteness&#8221; as a racial classification, even though supported plentifully by evidence. There are plenty of other less challenging anecdotes, though. Why do we usually consider there that there are <i>seven</i> colours? – at least in part because of Newton&#8217;s religious and alchemical ideas that led him to want to tie colour to the notes on the musical scale<br><br>I most enjoyed the chapter on purple, mainly because it focused on the significant technological change that synthetic aniline dyes brought into culture, changing the relative abundances of various colours and changing the ways in which they were perceived as signifiers of wealth and&nbsp;status.
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 11 August,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6565806725?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/build-an-unorthodox-guide-to-making-things-worth-making/" rel="bookmark">Saturday 3 August, 2024</a>
 			</span>
 		    </div>
@@ -184,299 +214,6 @@ example) an <span class="caps">AI</span> second player or autonomous non-player 
 and gradually building a really complicated application from a
 standing&nbsp;start.
 </p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/07/27/my-mental-model-of-setf-was-wrong/" rel="bookmark">Saturday 27 July, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/07/27/my-mental-model-of-setf-was-wrong/">My mental model of setf was&nbsp;wrong</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org304e782" class="outline-2">
-<h2 id="org304e782">My mental model of setf was&nbsp;wrong</h2>
-<div class="outline-text-2" id="text-org304e782">
-<p>
-I realised recently that I&#8217;ve been thinking&nbsp;about <code>setf</code> all&nbsp;wrong.
-</p>
-
-<p>
-Lisp lets programs define&nbsp;new <code>setf</code> forms for assignment. The most
-common example is from <span class="caps">CLOS</span>, where a class like&nbsp;this:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">    </span><span class="p">(</span><span class="nb">defclass</span><span class="w"> </span><span class="nv">A</span><span class="w"> </span><span class="p">()</span>
-<span class="w">      </span><span class="p">((</span><span class="nv">var</span>
-<span class="w">        </span><span class="ss">:accessor</span><span class="w"> </span><span class="nv">a-var</span><span class="p">)))</span>
-</pre></div>
-
-<p>
-will give rise to a class and two&nbsp;functions, <code>a-var</code> to read the
-value of&nbsp;the <code>var</code> slot on an instance&nbsp;of <code>A</code>, and&nbsp;a <code>setf</code> target used&nbsp;as <code>(setf (a-var instance) 24)</code> to set&nbsp;the <code>var</code> slot&nbsp;of <code>instance</code>.
-</p>
-
-<p>
-It&#8217;s natural to read that like as&nbsp;executing <code>(a-var instance)</code> to
-retrieve a location,&nbsp;and <code>setf</code> using this location to assign to.
-The documentation reinforces this view, talking about
-&#8220;generalised places&#8221; as the targets&nbsp;for <code>setf</code> to store things. My
-mental model was strengthened by idioms&nbsp;like <code>(setf (car pair) 23)</code>
-to set the car of a pair or list,&nbsp;and <code>(setf (cdr pair) '(1 2 3)</code>
-to set the cdr. The first argument is a <i>locator</i> expression
-returning the place to update, and the second argument is the <i>new
-value</i> to put&nbsp;there.
-</p>
-
-<p>
-Natural. But&nbsp;wrong.
-</p>
-
-<hr>
-<p>
-The thing I missed is&nbsp;that <code>setf</code> is a <i>macro</i>: it can access the
-<i>structure</i> of its arguments but not their <i>values</i>. You can&#8217;t write
-code like&nbsp;this:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="k">let*</span><span class="w"> </span><span class="p">((</span><span class="nv">l</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-<span class="w">            </span><span class="p">(</span><span class="nv">h</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">l</span><span class="p">)))</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nv">h</span><span class="w"> </span><span class="mi">23</span><span class="p">))</span>
-</pre></div>
-
-<p>
-and expect&nbsp;the <code>car</code> of <code>l</code> to be updated, which would make sense&nbsp;if
-<code>setf</code> were working on a location,&nbsp;because <code>h</code> would be that
-location. But it&nbsp;isn&#8217;t.
-</p>
-
-<p>
-What actually happens is that&nbsp;the <code>setf</code> macro looks, at compile
-time, at the structure of its first (locator) argument, and uses
-that to dispatch to a method. Using the slot accessor above,&nbsp;the
-<code>setf</code> form expands to something&nbsp;like:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nv">a-var</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">v</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="nv">A</span><span class="p">))</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nb">slot-value</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="ss">'a-var</span><span class="p">)</span><span class="w"> </span><span class="nv">a</span><span class="p">))</span>
-</pre></div>
-
-<p>
-This is a method with two pieces of selection: specialised on the
-type of an argument&nbsp;(<code>A</code>), and named with the <i>selector</i> used to
-within the locator&nbsp;(<code>a-var</code>). It&#8217;s definition expands to <i>another</i>
-<code>setf</code>, this time specialised&nbsp;against <code>slot-value</code> and an instance&nbsp;of
-<code>standard-object</code>. Specialising on the selector explains why we
-need that selector to be present syntactically at compile&nbsp;time.
-</p>
-
-<p>
-My mistake was thinking that the similarity between access form&nbsp;and <code>setf</code> form was necessary and functional – and it isn&#8217;t
-either. This has some interesting&nbsp;consequences.
-</p>
-</div>
-<div id="outline-container-org598a20d" class="outline-3">
-<h3 id="org598a20d">The selector is entirely&nbsp;arbitrary</h3>
-<div class="outline-text-3" id="text-org598a20d">
-<p>
-If we don&#8217;t like&nbsp;using <code>car</code> to indicate the head of a list – and
-some people don&#8217;t – we could in principle define a new
-specialisation such&nbsp;as:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nv">head</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">v</span><span class="w"> </span><span class="p">(</span><span class="nv">l</span><span class="w"> </span><span class="nb">list</span><span class="p">))</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">rplaca</span><span class="w"> </span><span class="nv">l</span><span class="w"> </span><span class="nv">v</span><span class="p">))</span>
-</pre></div>
-
-<p>
-and use it&nbsp;as <code>(setf (head l) 45)</code> <i>even&nbsp;though <code>head</code> isn&#8217;t a
-defined function</i>. All we need is a selector&nbsp;symbol.
-</p>
-</div>
-</div>
-<div id="outline-container-orgd341b0f" class="outline-3">
-<h3 id="orgd341b0f">There can be more&nbsp;arguments</h3>
-<div class="outline-text-3" id="text-orgd341b0f">
-<p>
-Ever since I first encountered them I wondered why the lambda
-lists for&nbsp;new <code>setf</code> specialisations was so strange: the new value
-and <i>then</i> the arguments – but not the selector – of the place to
-be updated? Once you get a better mental model, the reason
-becomes obvious: there can be <i>multiple</i> arguments to&nbsp;the <code>setf</code>
-locator, possibly actually a variable number, alongside the
-selector, so we need to be able to find the new value reliably.
-The easiest way is to put it at the front of the lambda&nbsp;list.
-</p>
-
-<p>
-There&#8217;s actually a common example of this sitting in plain sight
-that I&#8217;d missed. You access the elements of a Lisp array using&nbsp;the <code>aref</code> function, which takes the array and the index, such as&nbsp;(<code>aref a 23)</code>. The&nbsp;corresponding <code>setf</code> form looks&nbsp;like <code>(setf (aref
-     a 23) 0)</code>, with the locator taking several arguments like the
-function. <i>But it isn&#8217;t calling the function</i>: it&#8217;s decomposing a
-pattern that <i>looks exactly like</i> the function call for
-convenience, and which passes several arguments to the
-specialised method that will look something&nbsp;like:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nb">aref</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">v</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="nc">array</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">i</span><span class="w"> </span><span class="nc">integer</span><span class="p">))</span>
-<span class="w">       </span><span class="o">...</span><span class="p">)</span>
-</pre></div>
-
-<p>
-The new value is reliably in the first argument position, with
-the rest of the locator arguments after&nbsp;it.
-</p>
-</div>
-</div>
-<div id="outline-container-orgd7988ba" class="outline-3">
-<h3 id="orgd7988ba">You can specialise by value&nbsp;too</h3>
-<div class="outline-text-3" id="text-orgd7988ba">
-<p>
-Since&nbsp;the <code>setf</code> forms are just methods, you could if you wanted to
-specialise them on the type of the new value as well as on the
-locator. As a trivial&nbsp;example:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nv">assign-head</span><span class="p">)</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">integer</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">l</span><span class="w"> </span><span class="nb">list</span><span class="p">))</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="no">t</span><span class="w"> </span><span class="s">"Assigned an integer ~s"</span><span class="w"> </span><span class="nv">v</span><span class="p">)</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">l</span><span class="p">)</span><span class="w"> </span><span class="nv">v</span><span class="p">))</span>
-
-<span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="nv">assign-head</span><span class="p">)</span><span class="w"> </span><span class="p">((</span><span class="nv">s</span><span class="w"> </span><span class="nb">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">l</span><span class="w"> </span><span class="nb">list</span><span class="p">))</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="no">t</span><span class="w"> </span><span class="s">"Assigned a string ~s"</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
-<span class="w">       </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">l</span><span class="p">)</span><span class="w"> </span><span class="nv">s</span><span class="p">))</span>
-
-<span class="w">     </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nv">assign-head</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="s">"zero"</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-Assigned a string "zero"
-</pre>
-
-
-<p>
-Obviously there are better ways to do this, but it&#8217;s a good
-example of the flexibility that comes&nbsp;from <code>setf</code> not really being
-all that special a form at all: just a creative use of the power
-of generic&nbsp;functions.
-</p>
-</div>
-</div>
-<div id="outline-container-orgb382c77" class="outline-3">
-<h3 id="orgb382c77">Can we build our&nbsp;own <code>setf</code>-like&nbsp;macros?</h3>
-<div class="outline-text-3" id="text-orgb382c77">
-<p>
-Yes: <code>setf</code> is entirely constructable within &#8220;ordinary&#8221;&nbsp;Lisp.
-</p>
-
-<p>
-There are two parts to the construction. Firstly, we need the
-name of the method that underlies a particular&nbsp;selector.
-</p>
-
-<p>
-We can build our own functions with names like this, although not&nbsp;using <code>defun</code>.
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="vg">*weird-name*</span><span class="w"> </span><span class="p">(</span><span class="nb">make-symbol</span><span class="w"> </span><span class="s">"(1 2 3)"</span><span class="p">))</span>
-
-<span class="w">     </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nb">symbol-function</span><span class="w"> </span><span class="vg">*weird-name*</span><span class="p">)</span>
-<span class="w">           </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="p">)</span>
-<span class="w">             </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="no">nil</span><span class="w"> </span><span class="s">"We did *weird-name* on ~s"</span><span class="w"> </span><span class="nv">a</span><span class="p">))))</span>
-
-<span class="w">     </span><span class="p">(</span><span class="nb">funcall</span><span class="w"> </span><span class="vg">*weird-name*</span><span class="w"> </span><span class="s">"a string"</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-
-"We did *weird-name* on \"a string\""
-</pre>
-
-
-<p>
-For <code>setf</code>, the style of name used for the methods implementing the
-different choices&nbsp;is <code>(setf selector)</code> – a function named by a
-list – where <i>selector</i> is the symbol at the head of locator list.
-(Some Lisps construct a symbol from the list elements, rather
-than using it directly. I&#8217;m not sure what, if anything, the
-Common Lisp language definition says about how this should&nbsp;work.)
-</p>
-
-<p>
-For the second part of the&nbsp;construction, <code>setf</code> takes the locator,
-synthesises the function name symbol using the selector, and
-calls a generic function with this name, passing the new value
-and the rest of the locator as&nbsp;arguments.
-</p>
-
-<p>
-So to define a new&nbsp;construct <code>our-setf</code> we might do something&nbsp;like:
-</p>
-
-<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmacro</span><span class="w"> </span><span class="nv">our-setf</span><span class="w"> </span><span class="p">(</span><span class="nv">locator</span><span class="w"> </span><span class="nv">new-value</span><span class="p">)</span>
-<span class="w">       </span><span class="p">(</span><span class="k">let*</span><span class="w"> </span><span class="p">((</span><span class="nv">selector</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">locator</span><span class="p">))</span>
-<span class="w">              </span><span class="p">(</span><span class="nv">our-setf-function-name</span><span class="w"> </span><span class="p">(</span><span class="nb">make-symbol</span><span class="w"> </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="no">nil</span><span class="w"> </span><span class="s">"(our-setf ~a)"</span>
-<span class="w">                                                           </span><span class="nv">selector</span><span class="p">))))</span>
-<span class="w">         </span><span class="o">`</span><span class="p">(</span><span class="nb">apply</span><span class="w"> </span><span class="p">(</span><span class="nb">symbol-function</span><span class="w"> </span><span class="o">,</span><span class="nv">our-setf-function-name</span><span class="p">)</span>
-<span class="w">                 </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="o">,</span><span class="nv">new-value</span><span class="w"> </span><span class="o">,@</span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">locator</span><span class="p">)))))</span>
-</pre></div>
-
-<p>
-When called as something&nbsp;like <code>(our-setf (head '(1 2 3)) 0)</code> the
-macro will code to call a&nbsp;method <code>(our-setf head)</code> (as a symbol),
-passing it&nbsp;(<code>0 '(1 2 3))</code> as arguments and allowing the machinery of
-generic functions to determine which method is actually called.
-We define these methods of the&nbsp;form <code>(our-setf head)</code> and specialise
-them as&nbsp;required.
-</p>
-
-<p>
-(It&#8217;s actually a bit more complicated than this because we need
-to define a generic function&nbsp;for <code>(our-setf head)</code>. We have to go
-backstage and programmatically define the generic function. But
-the idea remains the&nbsp;same.)
-</p>
-
-<hr>
-<p>
-After all this, my mental model&nbsp;of <code>setf</code> is a lot clearer – and,
-I hope, closer the reality at least. It combines a highly
-structured use of macros, synthesised function names, and generic
-functions – and no special machinery at&nbsp;all.
-</p>
-
-<p>
-However, there&#8217;s some subtlety at play too, not obvious at first
-acquaintance. We don&#8217;t want our synthesised function names to
-accidentally capture the names of user-supplied code. It&#8217;s
-possible that using a naming style&nbsp;like <code>setf-car</code> would do just
-this, and a program happens to define a function with this name.
-But the&nbsp;names <code>setf</code> synthesises are <i>lists</i>, unlikely to be captured
-accidentally, which lets us define the specialised methods &#8220;as
-normal&#8221; even though some of the other parts of the process have
-to happen&nbsp;backstage.
-</p>
-
-<p>
-This shows the power of macros and generic functions. It also
-shows how deeply the latter are embedded into Lisp. They&#8217;re
-usually thought of as part of <span class="caps">CLOS</span>, but they actually have little
-explicit relationship to class and objects at all, and have been
-woven all through Lisp to build flexible code&nbsp;structures.
-</p>
-
-<p>
-<span class="caps">UPDATED</span> 2023-07-30: I incorrectly said originally that one
-couldn&#8217;t use forms&nbsp;like <code>(defun (setf abc) ...)</code>: you can, just as&nbsp;with <code>defmethod</code> and <code>defgeneric</code>, and name a function using a list.
-Thanks to Hacker News contributor <a href="https://phoe.github.io">phoe-krk</a> for correcting me. I
-was also slightly loose in my use of <i>specialisation</i>, which I&#8217;ve
-tightened&nbsp;up.
-</p>
-</div>
 </div>
 </div>
 		</div>

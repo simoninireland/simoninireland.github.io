@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 03 Aug 2024 18:58:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Build: An Unorthodox Guide to Making Things Worth Making</title><link>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 12 Aug 2024 16:32:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The World According to Colour</title><link>https://simondobson.org/goodreads/the-world-according-to-colour/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623144261l/56155215._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	James     Fox
+	  (2022)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A book using colour as a way to access a range of other topics, without ever losing focus.&lt;br&gt;&lt;br&gt;Some of the choices will probably be controversial, such as the emergence of "whiteness" as a racial classification, even though supported plentifully by evidence. There are plenty of other less challenging anecdotes, though. Why do we usually consider there that there are &lt;i&gt;seven&lt;/i&gt; colours? – at least in part because of Newton's religious and alchemical ideas that led him to want to tie colour to the notes on the musical scale&lt;br&gt;&lt;br&gt;I most enjoyed the chapter on purple, mainly because it focused on the significant technological change that synthetic aniline dyes brought into culture, changing the relative abundances of various colours and changing the ways in which they were perceived as signifiers of wealth and status.
+      &lt;/p&gt;&lt;p&gt;
+	4/5.
+	  Finished Sunday 11 August, 2024.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6565806725?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-world-according-to-colour/</guid><pubDate>Sun, 11 Aug 2024 00:00:00 GMT</pubDate></item><item><title>Build: An Unorthodox Guide to Making Things Worth Making</title><link>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1652120231l/59696349._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -631,19 +646,4 @@ learning, and GPUs are from one perspective just APL accelerator
 co-processors. The ideas are still massively relevant.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item><item><title>Notes on Complexity: A Scientific Theory of Connection, Consciousness, and Being</title><link>https://simondobson.org/goodreads/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673876917l/62686859._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Neil Theise
-	  (2023)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      I'd heard a lot about this book, and expected a lot from it. Theise isn't the first writer get lost in quantum weirdness, and he won't be the last.&lt;br&gt;&lt;br&gt;The first half is a tour of complexity science, focusing on where the boundaries of complex systems lie: the "quenched disorder" threshold between static order and complete disorder, and the existence of emergent phase changes in systems constructed from lots of simple interactions. Lovelock's "daisyworld" is a great example of this, and Theise is very strong on assigning credit where it is due (Lynn Margulis' contributions are often overlooked). It's an approach that could be taken a lot further.&lt;br&gt;&lt;br&gt;But then it all goes wrong, lost in the mazes of quantum theory and its superficial compatibilities with various kinds of mysticism. But there are lots of different mystic systems, and choosing to focus on three that have been selected for their similarities with a naive interpretation of quantum mechanics tells us precisely nothing about reality: there are plenty of others that are entirely incompatible (including most mainstream religions), which suggests it's at least possible for mysticism and science to coincide by chance. And it's a category error to then try to reason &lt;i&gt;back&lt;/i&gt; from the mystic to the scientific in an attemot to "explain" complexity.&lt;br&gt;&lt;br&gt;This absolutely &lt;i&gt;isn't&lt;/i&gt; what it claims to be – a scientific theory of consciousness and connectedness – because it commits the fundamental error of being selective with the data. Just because we can't (yet) explain quantum entanglement and decoherence doesn't mean that panpsychism has anything to tell us about reality. This sort of "reconciliation" of science ("western") and mysticism ("eastern") isn't new, isn't informative, and (to my mind) does both a disservice.
-      &lt;/p&gt;&lt;p&gt;
-	1/5.
-	  Finished Wednesday 17 July, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/5814381629?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/notes-on-complexity-a-scientific-theory-of-connection-consciousness-and-being/</guid><pubDate>Wed, 17 Jul 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item></channel></rss>
