@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 05 Jul 2024 10:20:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfbf54c4" class="outline-2"&gt;
-&lt;h2 id="orgfbf54c4"&gt;Let over Lambda&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgfbf54c4"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:33:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged90f8a" class="outline-2"&gt;
+&lt;h2 id="orged90f8a"&gt;Let over Lambda&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged90f8a"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/4d/e4b9aa-2377-42e7-a3e1-aa66a129c7ee/lol.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
 &lt;p&gt;
 Doug Hoyte.  &lt;i&gt;&lt;a href="http://letoverlambda.com"&gt;Let over Lambda&lt;/a&gt;&lt;/i&gt;. HCSW and Hoytech. ISBN
 978-1-4357-1275-1. 2008.

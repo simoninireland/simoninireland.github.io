@@ -52,6 +52,87 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/08/02/metacircular-semantics-for-common-lisp-special-forms/" rel="bookmark">Friday 2 August, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/08/02/metacircular-semantics-for-common-lisp-special-forms/">Metacircular Semantics for Common Lisp Special&nbsp;Forms</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org003e69b" class="outline-2">
+<h2 id="org003e69b">Metacircular Semantics for Common Lisp Special&nbsp;Forms</h2>
+<div class="outline-text-2" id="text-org003e69b">
+<p>
+Henry G. Baker. <i><a href="https://doi.org/10.1145/382126.382662">Metacircular Semantics for Common Lisp Special Forms</a></i>.
+<span class="caps">ACM</span> <span class="caps">SIGPLAN</span> Lisp Pointers <b>V</b>, pp.11–20.&nbsp;1992.
+</p>
+
+<p>
+A response to the criticisms of McCarthy&#8217;s semantics for Common
+Lisp that it didn&#8217;t specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too &#8220;lawyerly&#8221; for&nbsp;engineering.
+</p>
+
+<p>
+The approach is to define the special forms in terms of other
+constructions, for&nbsp;example <code>if</code> in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special&nbsp;forms.
+</p>
+
+<p>
+It suggests&nbsp;treating <code>catch</code> / <code>throw</code> as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme&#8217;s. However there&#8217;s also an argument
+pursued that some other structures&nbsp;(like <code>values</code>) provide extra
+information that can be useful for compilers looking to optimise.
+It&#8217;s a deep exploration of the underpinnings of the language from
+both theoretical and practical&nbsp;perspectives.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/08/02/casting-spels-in-lisp/" rel="bookmark">Friday 2 August, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/08/02/casting-spels-in-lisp/">Casting SPELs in&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org8bdeee5" class="outline-2">
+<h2 id="org8bdeee5">Casting SPELs in&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-org8bdeee5">
+<p>
+<a href="https://www.lisperati.com/casting.html">https://www.lisperati.com/casting.html</a>
+</p>
+
+<p>
+A tongue-in-cheek – but still excellent – comicbook-style
+introduction to Lisp programming. (There&#8217;s also a version
+<a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html">specifically for Emacs Lisp</a>.) It&#8217;s structured around building an
+adventure-style game, which as well as being a classic also offers
+lots of opportunities for exploring different data structures and
+algorithms: one can easily imagine expanding it to include (for
+example) an <span class="caps">AI</span> second player or autonomous non-player characters
+and gradually building a really complicated application from a
+standing&nbsp;start.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/07/27/my-mental-model-of-setf-was-wrong/" rel="bookmark">Saturday 27 July, 2024</a>
 			</span>
 		    </div>
@@ -351,9 +432,12 @@ tightened&nbsp;up.
 		    <h1><a href="../2024/07/23/the-art-of-the-metaobject-protocol/">The art of the metaobject&nbsp;protocol</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org7c8dd92" class="outline-2">
-<h2 id="org7c8dd92">The art of the metaobject&nbsp;protocol</h2>
-<div class="outline-text-2" id="text-org7c8dd92">
+			<div id="outline-container-org1b63828" class="outline-2">
+<h2 id="org1b63828">The art of the metaobject&nbsp;protocol</h2>
+<div class="outline-text-2" id="text-org1b63828">
+<p width="300" class="floater">
+<img src="../attachments/70/6116bf-244d-4faa-a1d7-2797a2d76223/aotmop.jpg" alt="nil"></p>
+
 <p>
 Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  <i>The Art of the
 Metaobject Protocol</i>. <span class="caps">MIT</span> Press.&nbsp;1991.
@@ -533,7 +617,7 @@ re-defining classes on the&nbsp;fly.
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
 	    <div class="next">
-		<a href="." rel="next">
+		<a href="index-150.html" rel="next">
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about oo)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/oo.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Jul 2024 08:18:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c8dd92" class="outline-2"&gt;
-&lt;h2 id="org7c8dd92"&gt;The art of the metaobject protocol&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7c8dd92"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about oo)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/oo.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:31:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b63828" class="outline-2"&gt;
+&lt;h2 id="org1b63828"&gt;The art of the metaobject protocol&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1b63828"&gt;
+&lt;p width="300" class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/70/6116bf-244d-4faa-a1d7-2797a2d76223/aotmop.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
 &lt;p&gt;
 Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  &lt;i&gt;The Art of the
 Metaobject Protocol&lt;/i&gt;. MIT Press. 1991.
