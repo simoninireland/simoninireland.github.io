@@ -10,7 +10,14 @@
 .. type: text
 
 #+END_COMMENT
-* The art of the metaobject protocol
+* The art of the metaobject protocol                                 :ATTACH:
+  :PROPERTIES:
+  :ID:       706116bf-244d-4faa-a1d7-2797a2d76223
+  :END:
+
+  #+attr_org: :width 300
+  #+attr_html: :width 300 :class floater
+  [[attachment:aotmop.jpg]]
 
     Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  /The Art of the
     Metaobject Protocol/. MIT Press. 1991.
