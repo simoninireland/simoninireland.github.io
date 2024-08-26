@@ -1,6 +1,12 @@
 An annotated Lisp bibliography
 ==============================
 
+.. raw:: html
+
+   <div class="title-block subscribe">
+      <a href="/categories/projectlisp-bibliography.xml"> <i class="fa fa-rss"></i> Subscribe to new posts in this series</a>
+   </div>
+
 Lisp is a "forever" language that's still going reasonably strong
 despite also being an ancestor to much of modern programming language
 design. It defines both a programming style and a mode of thinking
@@ -33,8 +39,6 @@ URLs wherever possible.
 Some caveats: This is very much a work in progress, has significant
 gaps, and is a collection of my opinions, *not* a peer-reviewed
 survey. Having said that, I hope it's useful.
-
-You can subscribe to new posts in this series `here </categories/projectlisp-bibliography.xml>`_.
 
 
 Introductions
