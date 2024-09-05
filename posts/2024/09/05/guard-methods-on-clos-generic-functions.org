@@ -1,0 +1,342 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Guard methods on CLOS generic functions
+.. slug: guard-methods-on-clos-generic-functions
+.. date: 2024-09-05 15:36:23 UTC+01:00
+.. tags: lisp, programming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Guard methods on CLOS generic functions
+
+  There are times when one wants to be able to guard a method's
+  execution. A typical case is for callbacks, where we only want the
+  callback to run under certain circumstances -- but it's easier to
+  write the callbacks themselves as though they'll /always/ be called.
+
+  Object-oriented programs typically use a pattern for this: they
+  split the function into two methods, one for the guard and one for
+  the action being guarded. A sub-class can then override the guard
+  independently of the action, and some sub-classes may override
+  both guard and action.
+
+  This splitting seems a little awkward, though, and there are times
+  when I'd prefer to have everything (guard and action) defined as
+  part of the one method. Fortunately there's a Lisp-ier solution
+  involving defining a new method combination to get exactly this
+  behaviour.
+
+** Standard method combination
+
+     CLOS, unlike most languages, allows a programmer to control how
+     methods are combined in terms of overriding. The "standard"
+     combination allows for ~:before~, ~:after~, and ~:around~ methods as
+     well as undecorated "primary" methods.
+
+     When a generic function is called, the list of applicable primary
+     methods is determined based on the types of arguments. most
+     specific method first[fn:most-specific-first].
+
+     The same process is performed for all applicable ~:before~ methods,
+     and then again for applicable ~:after~ methods, and then /again/ for
+     ~:around~ methods. The ~:after~ and ~:around~ are always ordered most
+     specific first, while the ~:before~ methods are always ordered
+     least-specific first.
+
+     Once these lists have been constructed, the "effective" method
+     that results is called. If there are ~:around~ methods, they are
+     called in order. An ~:around~ method may, as part of its body, call
+     ~call-next-method~ to invoke the next-most-specific ~:around~ method
+     -- or may not.
+
+     If a call to ~call-next-method~ has no more ~:around~ methods to call
+     -- or of there were no ~:around~ methods defined -- all the ~:before~
+     methods are run and their return values discarded. Then the
+     primary methods are run in the same manner as ~:around~ methods,
+     with any calls to ~call-next-method~ calling the next primary
+     method. After the primary methods have returned, all the ~:after~
+     methods are run and their return values discarded. The result of
+     the method call is the result returned from the primary methods.
+     The process is roughly like:
+
+     #+begin_src lisp
+(if arounds
+    (call-method (car arounds) (cdr arounds)))
+
+(prog1
+    (progn
+      (call-methods befores)
+      (call-method (car primaries) (cdr primaries)))
+  (call-methods afters))
+     #+end_src
+
+     In this code, ~call-method~ calls its first method argument, and
+     any call to ~call-next-method~ calls the next method in the list.
+     ~call-methods~ calls all the methods in a list of methods,
+     discarding their return values.
+
+     Contrast that with Java or Python, where methods on more-specific
+     classes override those on less-specific, and have the option to
+     call up to the superclass method. Essentially this makes all
+     methods similar to ~:around~, and there's no real equivalent of
+     ~:before~ and ~:after~.
+
+** Other method combinations
+
+   The above is referred to as /standard method combination/, implying
+   the existence of /non-standard/ combination. CLOS lets the
+   programmer define new combinations, and indeed defines a few
+   itself. For our purposes the most important alternative method
+   combination is ~and~, which runs all primary methods within an ~and~
+   form treating all methods as predicates. There are only primary
+   methods allowed.
+
+** Guards as method combination
+
+   For our use case, we want to be able to return values from primary
+   methods, and allow ~:around~, ~:before~ and ~:after~ methods. However, we
+   /also/ want to have some methods act as predicates that guard the
+   execution of the effective method thus formed. We want to be able
+   to add guard methods that are always run first, regardless of their
+   specificity, and then run the effective method only if /all/ the guards
+   are satisfied. The net result is that all parts of the generic
+   function are provided as methods on it, but some can now be boolean
+   guards that act as gatekeepers on the rest of the methods.
+   Naturally we want the guards to be selected for specificity
+   alongside the other methods, letting the CLOS machinery pick /all/
+   the functionality that's appropriate to a particular method call.
+
+** Why this isn't just ~:around~
+
+     It might sound like we can get this behaviour using ~:around~
+     methods that perform guarding. But we can't -- quite.
+
+     Suppose we define a primary method:
+
+     #+begin_src lisp :results none
+(defmethod example ((v integer))
+  (* v 2))
+     #+end_src
+
+     We can write a guard quite happily as an ~:around~ method:
+
+     #+begin_src lisp :results none
+(defmethod example :around ((v number))
+  (when (> v 10)
+    (call-next-method)))
+     #+end_src
+
+     This method will only allow the method to proceed when the
+     condition holds, otherwise it returns ~nil~.
+
+     #+begin_src lisp :results raw
+(list (example 26) (example 2))
+     #+end_src
+
+#+RESULTS:
+(52 NIL)
+
+     So far so good.
+
+     However, the problem is that CLOS orders the ~:around~ methods
+     most specific first. Suppose we have another ~:around~ method
+     specialised against a more specific type:
+
+     #+begin_src lisp :results none
+(defmethod example :around ((v integer))
+  (if (= v 5)
+      (+ v 1)
+      (call-next-method)))
+     #+end_src
+
+     When this method is called with an integer this method gets run
+     before the previous guard:
+
+     #+begin_src lisp :results raw
+(example 5)
+     #+end_src
+
+#+RESULTS:
+6
+
+     and we get a non-nil result, despite the guard method indicating
+     that we shouldn't. If we provide an argument that doesn't trigger
+     the first ~:around~ method, then we can get caught by the guard:
+
+     #+begin_src lisp :results raw
+(example 6)
+     #+end_src
+
+#+RESULTS:
+NIL
+
+     This is of course perfectly sensible behaviour in many cases.
+     However, it does mean that the "guards" we're supplying are
+     executed as /part/ of the effective method rather than /before/ it,
+     and therefore can't guarantee that the method is properly guarded
+     by /all/ the guards, regardless of their specialisation. Another
+     way of looking at this is that a later, more specialised, "guard"
+     can override one set by an earlier, less specialised, method,
+     which again may not be what's desired.
+
+** A ~guarded~ method combination
+
+     Fortunately we can get the behaviour we want by defining a new
+     method combination, ~guarded~. A ~guarded~ generic function accepts
+     five method qualifiers:
+
+     - undecorated primary methods;
+     - ~:before~ and ~:after~ methods that run before and after the
+       primary methods;
+     - ~:around~ methods that run around the ~:before~-primary-~:after~
+       combination; and
+     - ~:if~ methods that act as guards, running before any ~:around~
+       methods to determine whether /any/ of the "functional" methods
+       are run or not
+
+
+     We first need a helper function[fn:call-methods] to construct the
+     code to run the chain of ~:before~ and ~:after~ methods while
+     discarding their return values.
+
+     #+begin_src lisp :results none
+(defun call-methods (methods)
+  "Return `call-method' forms for all METHODS."
+  (mapcar #'(lambda (m)
+	      `(call-method ,m))
+	  methods))
+     #+end_src
+
+     We can then use the macro ~define-method-combination~ to define our
+     new method combination.
+
+     #+begin_src lisp :results none
+(define-method-combination guarded (&optional (order :most-specific-first))
+  ((arounds (:around))
+   (ifs (:if))
+   (befores (:before))
+   (primaries () :order order :required t)
+   (afters (:after)))
+
+  (let* ((before-form (call-methods befores))
+	 (after-form (call-methods afters))
+	 (primary-form `(call-method ,(car primaries) ,(cdr primaries)))
+	 (core-form (if (or befores afters (cdr primaries))
+			`(prog1
+			     (progn
+			       ,@before-form
+			       ,primary-form)
+			   ,@after-form)
+
+			`(call-method ,(car primaries))))
+	 (around-form (if arounds
+			  `(call-method ,(car arounds)
+					(,@(cdr arounds)
+					 (make-method ,core-form)))
+
+			  core-form)))
+
+    (if ifs
+	`(if (and ,@(call-methods ifs))
+	     ,around-form)
+
+	around-form)))
+     #+end_src
+
+     The macro is described in detail in the [[https://novaspec.org/cl/f_define-method-combination][hyperspec]], but its
+     behaviour is quite simple. The list of forms (~arounds~ and so on)
+     define variables that extract the methods that have the given
+     decorations -- so ~arounds~ gets a list of ~:around~ methods,
+     ~primaries~ gets the undecorated (primary) methods, and so on. In
+     particular, ~ifs~ gets any methods decorated with ~:if~: these are
+     the guards.
+
+     The body of the macro constructs the code needed to build the
+     methods' behaviours. The ~let*~ defines the code for the different
+     parts. ~core-form~ is slightly optimised in the case when there is
+     only one primary method; otherwise it runs the ~:before~ methods
+     and then the primary method, captures the result of the latter,
+     then runs the ~:after~ methods, and then returns its result. (This
+     is the first time I've ever used ~prog1~ for real: now I know why
+     it exists.) If there are ~:around~ methods, ~around-form~ wraps up a
+     list consisting of the ~:around~ methods and a method constructed
+     from ~core-form~, letting it be run as the result of the final
+     ~call-next-method~ call.
+
+     The body of the ~let*~ wraps-up ~around-form~ within an ~if~ whose
+     condition is the conjunction of all the ~:if~ methods. Only if all
+     these methods return true (well, not ~nil~ in the usual Lisp style)
+     will the code of ~around-form~ be executed. Again the code is
+     optimised for the case where there are no guards, in which case
+     we just get ~around-form~.
+
+     Notice that ~define-method-combination~ returns /code/, like all
+     macros: it doesn't execute the methods itself. This is a hint as
+     to what happens off-stage: CLOS uses the method combination at
+     compile time to construct effective methods which can then be
+     cached to minimise the performance hit from all the flexibility
+     provided by method combination.
+
+     Now we can re-do our example from above:
+
+     #+begin_src lisp :results raw
+;; a generic function defined to use our new method combination
+(defgeneric guarded-example (v)
+  (:method-combination guarded))
+
+;; the functionality, split into two methods
+(defmethod guarded-example ((v integer))
+  (* v 2))
+
+(defmethod guarded-example :around ((v integer))
+  (if (= v 5)
+      (+ v 1)
+      (call-next-method)))
+
+;; this guard used to be :around and is now :if
+(defmethod guarded-example :if ((v number))
+  (> v 10))
+
+(list (guarded-example 26) (guarded-example 2) (guarded-example 5))
+     #+end_src
+
+#+RESULTS:
+(52 NIL NIL)
+
+     The guard now stops execution of the effective method if its
+     condition isn't met -- and if it /is/ met, passes control through
+     to the complete method stack. This happens regardless of where
+     the guard is specialised in terms of the class hierarchy: the
+     guards run before any "functional" code. (That ~:before~ and ~:after~
+     methods work too, and multiple guards, and that the combination
+     works when applied to class hierarchies, are left as exercises to
+     the reader.)
+
+** Critique
+
+   You may object to this solution on the grounds that it introduces
+   a weird asymmetry into methods: some as functional and some as
+   guards, with different return types. Maybe you prefer to keep
+   guards in separate methods using the usual object-oriented
+   pattern. That's entirely reasonable. But I think there are
+   sufficient cases where this kind of guarding makes sense to have
+   it as a pattern, especially as it has no effect unless explicitly
+   selected for a generic function.
+
+   I have to say I'm amazed how /little/ code is needed: around 30
+   lines, including the helper function. It shows off the power of
+   CLOS, and how it's possible to change even the basic underlying
+   structures of the object system with relative ease. But it also
+   shows how Lisp opens-up the space of programming styles, things
+   that benefit from being policies that can be changed, rather than
+   hard-coding one particular choice.
+
+[fn:most-specific-first] This is also programmable when required, for
+example to run methods least-specific-first.
+
+[fn:call-methods] I got the idea for this function from
+[[https://github.com/sellout/method-combination-utilities][method-combination-utilities]], and included it literally to avoid
+creating another dependency.
