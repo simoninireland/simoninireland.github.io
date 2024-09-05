@@ -1,5 +1,416 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:33:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Himmler Brothers: A German Family History</title><link>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 05 Sep 2024 14:48:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Guard methods on CLOS generic functions</title><link>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdad2bf2" class="outline-2"&gt;
+&lt;h2 id="orgdad2bf2"&gt;Guard methods on CLOS generic functions&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgdad2bf2"&gt;
+&lt;p&gt;
+There are times when one wants to be able to guard a method's
+execution. A typical case is for callbacks, where we only want the
+callback to run under certain circumstances – but it's easier to
+write the callbacks themselves as though they'll &lt;i&gt;always&lt;/i&gt; be called.
+&lt;/p&gt;
+
+&lt;p&gt;
+Object-oriented programs typically use a pattern for this: they
+split the function into two methods, one for the guard and one for
+the action being guarded. A sub-class can then override the guard
+independently of the action, and some sub-classes may override
+both guard and action.
+&lt;/p&gt;
+
+&lt;p&gt;
+This splitting seems a little awkward, though, and there are times
+when I'd prefer to have everything (guard and action) defined as
+part of the one method. Fortunately there's a Lisp-ier solution
+involving defining a new method combination to get exactly this
+behaviour.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc6422b3" class="outline-3"&gt;
+&lt;h3 id="orgc6422b3"&gt;Standard method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc6422b3"&gt;
+&lt;p&gt;
+CLOS, unlike most languages, allows a programmer to control how
+methods are combined in terms of overriding. The "standard"
+combination allows for &lt;code&gt;:before&lt;/code&gt;, &lt;code&gt;:after&lt;/code&gt;, and &lt;code&gt;:around&lt;/code&gt; methods as
+well as undecorated "primary" methods.
+&lt;/p&gt;
+
+&lt;p&gt;
+When a generic function is called, the list of applicable primary
+methods is determined based on the types of arguments. most
+specific method first&lt;sup&gt;&lt;a id="fnr.most-specific-first" class="footref" href="https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/#fn.most-specific-first" role="doc-backlink"&gt;1&lt;/a&gt;&lt;/sup&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+The same process is performed for all applicable &lt;code&gt;:before&lt;/code&gt; methods,
+and then again for applicable &lt;code&gt;:after&lt;/code&gt; methods, and then &lt;i&gt;again&lt;/i&gt; for
+&lt;code&gt;:around&lt;/code&gt; methods. The &lt;code&gt;:after&lt;/code&gt; and &lt;code&gt;:around&lt;/code&gt; are always ordered most
+specific first, while the &lt;code&gt;:before&lt;/code&gt; methods are always ordered
+least-specific first.
+&lt;/p&gt;
+
+&lt;p&gt;
+Once these lists have been constructed, the "effective" method
+that results is called. If there are &lt;code&gt;:around&lt;/code&gt; methods, they are
+called in order. An &lt;code&gt;:around&lt;/code&gt; method may, as part of its body, call
+&lt;code&gt;call-next-method&lt;/code&gt; to invoke the next-most-specific &lt;code&gt;:around&lt;/code&gt; method
+– or may not.
+&lt;/p&gt;
+
+&lt;p&gt;
+If a call to &lt;code&gt;call-next-method&lt;/code&gt; has no more &lt;code&gt;:around&lt;/code&gt; methods to call
+– or of there were no &lt;code&gt;:around&lt;/code&gt; methods defined – all the &lt;code&gt;:before&lt;/code&gt;
+methods are run and their return values discarded. Then the
+primary methods are run in the same manner as &lt;code&gt;:around&lt;/code&gt; methods,
+with any calls to &lt;code&gt;call-next-method&lt;/code&gt; calling the next primary
+method. After the primary methods have returned, all the &lt;code&gt;:after&lt;/code&gt;
+methods are run and their return values discarded. The result of
+the method call is the result returned from the primary methods.
+The process is roughly like:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;
+&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;prog1&lt;/span&gt;
+&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;progn&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;befores&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;afters&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+In this code, &lt;code&gt;call-method&lt;/code&gt; calls its first method argument, and
+any call to &lt;code&gt;call-next-method&lt;/code&gt; calls the next method in the list.
+&lt;code&gt;call-methods&lt;/code&gt; calls all the methods in a list of methods,
+discarding their return values.
+&lt;/p&gt;
+
+&lt;p&gt;
+Contrast that with Java or Python, where methods on more-specific
+classes override those on less-specific, and have the option to
+call up to the superclass method. Essentially this makes all
+methods similar to &lt;code&gt;:around&lt;/code&gt;, and there's no real equivalent of
+&lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga578c83" class="outline-3"&gt;
+&lt;h3 id="orga578c83"&gt;Other method combinations&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga578c83"&gt;
+&lt;p&gt;
+The above is referred to as &lt;i&gt;standard method combination&lt;/i&gt;, implying
+the existence of &lt;i&gt;non-standard&lt;/i&gt; combination. CLOS lets the
+programmer define new combinations, and indeed defines a few
+itself. For our purposes the most important alternative method
+combination is &lt;code&gt;and&lt;/code&gt;, which runs all primary methods within an &lt;code&gt;and&lt;/code&gt;
+form treating all methods as predicates. There are only primary
+methods allowed.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org85cc730" class="outline-3"&gt;
+&lt;h3 id="org85cc730"&gt;Guards as method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org85cc730"&gt;
+&lt;p&gt;
+For our use case, we want to be able to return values from primary
+methods, and allow &lt;code&gt;:around&lt;/code&gt;, &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; methods. However, we
+&lt;i&gt;also&lt;/i&gt; want to have some methods act as predicates that guard the
+execution of the effective method thus formed. We want to be able
+to add guard methods that are always run first, regardless of their
+specificity, and then run the effective method only if &lt;i&gt;all&lt;/i&gt; the guards
+are satisfied. The net result is that all parts of the generic
+function are provided as methods on it, but some can now be boolean
+guards that act as gatekeepers on the rest of the methods.
+Naturally we want the guards to be selected for specificity
+alongside the other methods, letting the CLOS machinery pick &lt;i&gt;all&lt;/i&gt;
+the functionality that's appropriate to a particular method call.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2b8a7b0" class="outline-3"&gt;
+&lt;h3 id="org2b8a7b0"&gt;Why this isn't just &lt;code&gt;:around&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2b8a7b0"&gt;
+&lt;p&gt;
+It might sound like we can get this behaviour using &lt;code&gt;:around&lt;/code&gt;
+methods that perform guarding. But we can't – quite.
+&lt;/p&gt;
+
+&lt;p&gt;
+Suppose we define a primary method:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We can write a guard quite happily as an &lt;code&gt;:around&lt;/code&gt; method:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:around&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;number&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-next-method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This method will only allow the method to proceed when the
+condition holds, otherwise it returns &lt;code&gt;nil&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+(52 NIL)
+&lt;/p&gt;
+
+&lt;p&gt;
+So far so good.
+&lt;/p&gt;
+
+&lt;p&gt;
+However, the problem is that CLOS orders the &lt;code&gt;:around&lt;/code&gt; methods
+most specific first. Suppose we have another &lt;code&gt;:around&lt;/code&gt; method
+specialised against a more specific type:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:around&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-next-method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+When this method is called with an integer this method gets run
+before the previous guard:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+6
+&lt;/p&gt;
+
+&lt;p&gt;
+and we get a non-nil result, despite the guard method indicating
+that we shouldn't. If we provide an argument that doesn't trigger
+the first &lt;code&gt;:around&lt;/code&gt; method, then we can get caught by the guard:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+NIL
+&lt;/p&gt;
+
+&lt;p&gt;
+This is of course perfectly sensible behaviour in many cases.
+However, it does mean that the "guards" we're supplying are
+executed as &lt;i&gt;part&lt;/i&gt; of the effective method rather than &lt;i&gt;before&lt;/i&gt; it,
+and therefore can't guarantee that the method is properly guarded
+by &lt;i&gt;all&lt;/i&gt; the guards, regardless of their specialisation. Another
+way of looking at this is that a later, more specialised, "guard"
+can override one set by an earlier, less specialised, method,
+which again may not be what's desired.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org88504e4" class="outline-3"&gt;
+&lt;h3 id="org88504e4"&gt;A &lt;code&gt;guarded&lt;/code&gt; method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org88504e4"&gt;
+&lt;p&gt;
+Fortunately we can get the behaviour we want by defining a new
+method combination, &lt;code&gt;guarded&lt;/code&gt;. A &lt;code&gt;guarded&lt;/code&gt; generic function accepts
+five method qualifiers:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;undecorated primary methods;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; methods that run before and after the
+primary methods;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:around&lt;/code&gt; methods that run around the &lt;code&gt;:before&lt;/code&gt;-primary-&lt;code&gt;:after&lt;/code&gt;
+combination; and&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:if&lt;/code&gt; methods that act as guards, running before any &lt;code&gt;:around&lt;/code&gt;
+methods to determine whether &lt;i&gt;any&lt;/i&gt; of the "functional" methods
+are run or not&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+We first need a helper function&lt;sup&gt;&lt;a id="fnr.call-methods" class="footref" href="https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/#fn.call-methods" role="doc-backlink"&gt;2&lt;/a&gt;&lt;/sup&gt; to construct the
+code to run the chain of &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; methods while
+discarding their return values.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;methods&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="s"&gt;"Return `call-method' forms for all METHODS."&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;mapcar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;#'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                   &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;               &lt;/span&gt;&lt;span class="nv"&gt;methods&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We can then use the macro &lt;code&gt;define-method-combination&lt;/code&gt; to define our
+new method combination.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;define-method-combination&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;&amp;amp;optional&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;order&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:most-specific-first&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:around&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ifs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:if&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;befores&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:before&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:order&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;order&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:required&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;afters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:after&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;before-form&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;befores&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;after-form&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;afters&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;primary-form&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;core-form&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;befores&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;afters&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;                             &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;prog1&lt;/span&gt;
+&lt;span class="w"&gt;                                  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;progn&lt;/span&gt;
+&lt;span class="w"&gt;                                    &lt;/span&gt;&lt;span class="o"&gt;,@&lt;/span&gt;&lt;span class="nv"&gt;before-form&lt;/span&gt;
+&lt;span class="w"&gt;                                    &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;primary-form&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                                &lt;/span&gt;&lt;span class="o"&gt;,@&lt;/span&gt;&lt;span class="nv"&gt;after-form&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;                             &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;primaries&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;around-form&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;
+&lt;span class="w"&gt;                               &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                                             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;,@&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;arounds&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                                              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-method&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;core-form&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;                               &lt;/span&gt;&lt;span class="nv"&gt;core-form&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ifs&lt;/span&gt;
+&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,@&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;call-methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ifs&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;                  &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;around-form&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="nv"&gt;around-form&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The macro is described in detail in the &lt;a href="https://novaspec.org/cl/f_define-method-combination"&gt;hyperspec&lt;/a&gt;, but its
+behaviour is quite simple. The list of forms (&lt;code&gt;arounds&lt;/code&gt; and so on)
+define variables that extract the methods that have the given
+decorations – so &lt;code&gt;arounds&lt;/code&gt; gets a list of &lt;code&gt;:around&lt;/code&gt; methods,
+&lt;code&gt;primaries&lt;/code&gt; gets the undecorated (primary) methods, and so on. In
+particular, &lt;code&gt;ifs&lt;/code&gt; gets any methods decorated with &lt;code&gt;:if&lt;/code&gt;: these are
+the guards.
+&lt;/p&gt;
+
+&lt;p&gt;
+The body of the macro constructs the code needed to build the
+methods' behaviours. The &lt;code&gt;let*&lt;/code&gt; defines the code for the different
+parts. &lt;code&gt;core-form&lt;/code&gt; is slightly optimised in the case when there is
+only one primary method; otherwise it runs the &lt;code&gt;:before&lt;/code&gt; methods
+and then the primary method, captures the result of the latter,
+then runs the &lt;code&gt;:after&lt;/code&gt; methods, and then returns its result. (This
+is the first time I've ever used &lt;code&gt;prog1&lt;/code&gt; for real: now I know why
+it exists.) If there are &lt;code&gt;:around&lt;/code&gt; methods, &lt;code&gt;around-form&lt;/code&gt; wraps up a
+list consisting of the &lt;code&gt;:around&lt;/code&gt; methods and a method constructed
+from &lt;code&gt;core-form&lt;/code&gt;, letting it be run as the result of the final
+&lt;code&gt;call-next-method&lt;/code&gt; call.
+&lt;/p&gt;
+
+&lt;p&gt;
+The body of the &lt;code&gt;let*&lt;/code&gt; wraps-up &lt;code&gt;around-form&lt;/code&gt; within an &lt;code&gt;if&lt;/code&gt; whose
+condition is the conjunction of all the &lt;code&gt;:if&lt;/code&gt; methods. Only if all
+these methods return true (well, not &lt;code&gt;nil&lt;/code&gt; in the usual Lisp style)
+will the code of &lt;code&gt;around-form&lt;/code&gt; be executed. Again the code is
+optimised for the case where there are no guards, in which case
+we just get &lt;code&gt;around-form&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+Notice that &lt;code&gt;define-method-combination&lt;/code&gt; returns &lt;i&gt;code&lt;/i&gt;, like all
+macros: it doesn't execute the methods itself. This is a hint as
+to what happens off-stage: CLOS uses the method combination at
+compile time to construct effective methods which can then be
+cached to minimise the performance hit from all the flexibility
+provided by method combination.
+&lt;/p&gt;
+
+&lt;p&gt;
+Now we can re-do our example from above:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="c1"&gt;;; a generic function defined to use our new method combination&lt;/span&gt;
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defgeneric&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:method-combination&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="c1"&gt;;; the functionality, split into two methods&lt;/span&gt;
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:around&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;call-next-method&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="c1"&gt;;; this guard used to be :around and is now :if&lt;/span&gt;
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;number&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;guarded-example&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+(52 NIL NIL)
+&lt;/p&gt;
+
+&lt;p&gt;
+The guard now stops execution of the effective method if its
+condition isn't met – and if it &lt;i&gt;is&lt;/i&gt; met, passes control through
+to the complete method stack. This happens regardless of where
+the guard is specialised in terms of the class hierarchy: the
+guards run before any "functional" code. (That &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt;
+methods work too, and multiple guards, and that the combination
+works when applied to class hierarchies, are left as exercises to
+the reader.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org53c5ffd" class="outline-3"&gt;
+&lt;h3 id="org53c5ffd"&gt;Critique&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org53c5ffd"&gt;
+&lt;p&gt;
+You may object to this solution on the grounds that it introduces
+a weird asymmetry into methods: some as functional and some as
+guards, with different return types. Maybe you prefer to keep
+guards in separate methods using the usual object-oriented
+pattern. That's entirely reasonable. But I think there are
+sufficient cases where this kind of guarding makes sense to have
+it as a pattern, especially as it has no effect unless explicitly
+selected for a generic function.
+&lt;/p&gt;
+
+&lt;p&gt;
+I have to say I'm amazed how &lt;i&gt;little&lt;/i&gt; code is needed: around 30
+lines, including the helper function. It shows off the power of
+CLOS, and how it's possible to change even the basic underlying
+structures of the object system with relative ease. But it also
+shows how Lisp opens-up the space of programming styles, things
+that benefit from being policies that can be changed, rather than
+hard-coding one particular choice.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.most-specific-first" class="footnum" href="https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/#fnr.most-specific-first" role="doc-backlink"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara" role="doc-footnote"&gt;&lt;p class="footpara"&gt;
+This is also programmable when required, for
+example to run methods least-specific-first.
+&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.call-methods" class="footnum" href="https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/#fnr.call-methods" role="doc-backlink"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara" role="doc-footnote"&gt;&lt;p class="footpara"&gt;
+I got the idea for this function from
+&lt;a href="https://github.com/sellout/method-combination-utilities"&gt;method-combination-utilities&lt;/a&gt;, and included it literally to avoid
+creating another dependency.
+&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</guid><pubDate>Thu, 05 Sep 2024 14:36:23 GMT</pubDate></item><item><title>The Himmler Brothers: A German Family History</title><link>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328831850l/1629056._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -428,110 +839,4 @@ tightened up.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b63828" class="outline-2"&gt;
-&lt;h2 id="org1b63828"&gt;The art of the metaobject protocol&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b63828"&gt;
-&lt;p width="300" class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/70/6116bf-244d-4faa-a1d7-2797a2d76223/aotmop.jpg" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Gregor Kiczales, Jim des Rivières, and Daniel Bobrow.  &lt;i&gt;The Art of the
-Metaobject Protocol&lt;/i&gt;. MIT Press. 1991.
-&lt;/p&gt;
-
-
-&lt;p&gt;
-What &lt;i&gt;is&lt;/i&gt; a meta-object protocol? – or indeed a meta-object? This
-book is perhaps the clearest exposition of these ideas.
-&lt;/p&gt;
-
-&lt;p&gt;
-In most modern object-oriented languages an object is an instance
-of a class. In keeping with using objects throughout, classes are
-often also objects (or can be thought of as such), but are more
-informatively thought of as &lt;b&gt;meta-objects&lt;/b&gt; that to facilitate the
-construction of "real" objects. The methods on classes can also be
-thought of as meta-objects defining the code executed by the
-objects when invoked.
-&lt;/p&gt;
-
-&lt;p&gt;
-The defining feature of CLOS is that these meta-objects are all
-just Lisp objects, but objects that exist "off-stage" (to use this
-book's very intuitive metaphor) and largely invisible to a basic
-user. But they're as available to a power user as any other
-objects: the "meta"-ness is a matter of design, not of
-implementation. The interactions between objects and meta-objects,
-for example which methods are called when invoked on a particular
-object, are defined by the meta-object protocol (MOP), which is
-itself defined in terms of methods on the meta-objects that shadow
-the objects themselves.
-&lt;/p&gt;
-
-&lt;p&gt;
-(Meta-object &lt;i&gt;protocol&lt;/i&gt; uses a term common in a lot of the earlier
-object-oriented literature to mean a collection of functions:
-meta-object &lt;i&gt;API&lt;/i&gt; would be a more modern rendering, although the
-protocol includes the sequencing of API calls and their
-relationships.)
-&lt;/p&gt;
-
-&lt;p&gt;
-The goal of MOP programming is to let the programmer extend the
-programming language towards to application domain, by automating
-a lot of boilerplate code and providing the structures needed to
-re-structure or analyse the code the programmer actually needs to
-write. In this sense it's a continuation of the idea of macros as
-powerful and potentially very domain-specific language and
-compiler extensions. It's also a continuation of reifying
-underlying language mechanisms in the language itself where they
-can be re-specified and re-mixed.
-&lt;/p&gt;
-
-&lt;p&gt;
-The first part of the book explains MOPs by defining a slightly
-simplified version of CLOS ("Closette"). It assumes the reader
-knows some CLOS, for example from &lt;a href="/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/"&gt;Object-oriented
-programming on Common Lisp: A programmer's guide to CLOS&lt;/a&gt; (or
-there's a stand-alone introduction in Appendix A), but it &lt;i&gt;only&lt;/i&gt;
-assumes the knowledge level of a relative newcomer – and the
-features then defined in Closette are just those parts of CLOS
-that such a user would actually know and be comfortable with,
-which is a brilliant piece of pedagogy that simplifies without
-trivialising. It's really noticeable that Closette doesn't need
-any extensions to Common Lisp: it's defined directly in the
-language itself, which shows how powerful the underlying language
-is. (Full CLOS requires a bit of language support too, at least
-for efficiency.)
-&lt;/p&gt;
-
-&lt;p&gt;
-Next come several examples of MOP usage, for example to re-define
-how classes store their slots, or how to add attributes to slots
-that can store metadata about their use or could be used to
-provide higher-level operations. There's also a long discussion
-about protocol design and how this has a massive impact on how
-easy a system is to use for the programmer.
-&lt;/p&gt;
-
-&lt;p&gt;
-The second part is a manual for the CLOS MOP, which is thorough
-and useful, but perhaps less exciting than the first part. The
-Common Lisp package &lt;a href="https://github.com/pcostanza/closer-mop"&gt;closer-mop&lt;/a&gt; provides this API as a
-portable compatibility layer for use in real programs.
-&lt;/p&gt;
-
-&lt;p&gt;
-There's also a discussion of practicalities like where awkward
-circularities occur and how to break them, which is actually a
-great example how to do good protocol/API design. In an example of
-&lt;a href="/2024/07/23/the-roots-of-lisp/"&gt;Paul Graham's dictum&lt;/a&gt; that modern languages evolve by mixing Lisp
-concepts into a different base, MOP ideas appear in lots of other
-languages, either for real (Smalltalk, at to a lesser extent
-&lt;a href="https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/"&gt;Python&lt;/a&gt;) or just for introspection (Java). Even someone not
-planning on writing Lisp would benefit from reading this book just
-to see the ideas in their full generality.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item></channel></rss>

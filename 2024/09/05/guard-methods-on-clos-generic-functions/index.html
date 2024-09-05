@@ -3,30 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simon Dobson</title>
+<title>Guard methods on CLOS generic functions | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
-	    src:url(../assets/fonts/libretto-icons.eot);
-	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
-	    url(../assets/fonts/libretto-icons.woff) format("woff"),
-	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
-	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
 	    font-weight: normal;
 	    font-style: normal;
 	}
     </style>
-<link rel="icon" href="../images/favicon.png" sizes="16x16">
-<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
-<link rel="stylesheet" href="../assets/css/libretto_styles.css">
-<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
-<link rel="stylesheet" href="../assets/css/code.css">
-<link rel="stylesheet" href="../assets/css/nikola_rst.css">
-<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body>
     <!-- Navigation bar -->
@@ -39,26 +52,28 @@
 		<span class="mobile-site-title">Simon Dobson</span>
 	    </div>
 	    <ul class="menu">
-<li><a href="../index.html">Home</a></li>
-		    <li><a href="../personal/">About&nbsp;me</a></li>
-		    <li><a href="../research/">Research</a></li>
-		    <li><a href="../development/projects/">Software</a></li>
-		    <li><a href="../writing/">Writing</a></li>
-		    <li><a href="../personal/contact/">Contact</a></li>
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
 		<li>
-<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
 	    </li>
-</ul></nav></header><div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/09/05/guard-methods-on-clos-generic-functions/" rel="bookmark">Thursday 5 September, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/09/05/guard-methods-on-clos-generic-functions/">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgdad2bf2" class="outline-2">
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Thursday 5 September, 2024</a>
+	    </span>
+	</div>
+	<h1>Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-orgdad2bf2" class="outline-2">
 <h2 id="orgdad2bf2">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</h2>
 <div class="outline-text-2" id="text-orgdad2bf2">
 <p>
@@ -96,7 +111,7 @@ well as undecorated &#8220;primary&#8221;&nbsp;methods.
 <p>
 When a generic function is called, the list of applicable primary
 methods is determined based on the types of arguments. most
-specific method first<sup><a id="fnr.most-specific-first" class="footref" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fn.most-specific-first" role="doc-backlink">1</a></sup>.
+specific method first<sup><a id="fnr.most-specific-first" class="footref" href="#fn.most-specific-first" role="doc-backlink">1</a></sup>.
 </p>
 
 <p>
@@ -297,7 +312,7 @@ methods to determine whether <i>any</i> of the &#8220;functional&#8221; methods
 are run or&nbsp;not</li>
 </ul>
 <p>
-We first need a helper function<sup><a id="fnr.call-methods" class="footref" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fn.call-methods" role="doc-backlink">2</a></sup> to construct the
+We first need a helper function<sup><a id="fnr.call-methods" class="footref" href="#fn.call-methods" role="doc-backlink">2</a></sup> to construct the
 code to run the chain&nbsp;of <code>:before</code> and <code>:after</code> methods while
 discarding their return&nbsp;values.
 </p>
@@ -455,14 +470,14 @@ hard-coding one particular&nbsp;choice.
 <div id="text-footnotes">
 
 <div class="footdef">
-<sup><a id="fn.most-specific-first" class="footnum" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fnr.most-specific-first" role="doc-backlink">1</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
+<sup><a id="fn.most-specific-first" class="footnum" href="#fnr.most-specific-first" role="doc-backlink">1</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
 This is also programmable when required, for
 example to run methods&nbsp;least-specific-first.
 </p></div>
 </div>
 
 <div class="footdef">
-<sup><a id="fn.call-methods" class="footnum" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fnr.call-methods" role="doc-backlink">2</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
+<sup><a id="fn.call-methods" class="footnum" href="#fnr.call-methods" role="doc-backlink">2</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
 I got the idea for this function from
 <a href="https://github.com/sellout/method-combination-utilities">method-combination-utilities</a>, and included it literally to avoid
 creating another&nbsp;dependency.
@@ -472,140 +487,48 @@ creating another&nbsp;dependency.
 
 </div>
 </div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/the-himmler-brothers-a-german-family-history/" rel="bookmark">Thursday 22 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/the-himmler-brothers-a-german-family-history/">The Himmler Brothers: A German Family&nbsp;History</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328831850l/1629056._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Katrin Himmler&nbsp;(2005)
-      </h2>
-    </div>
-    <p>
-      The family history of Heinrich Himmler and his two brothers Gebhard and Ernst, as told by his great-niece.<br><br>There&#8217;s a lot of fascinating backstory in this book, and it explains a lot. It portrays Heinrich Himmler as very much the product of a middle-class, socially ambitious family who pushed him relentlessly to succeed and only seemed really to embrace him after he achiveed visible success as a Reichstag deputy and then later as Reichsführer-<span class="caps">SS</span>. The author, Katrin, has access to lots of family papers and photographs that have never been explored before, as well as being able to talk informally to Heinrich&#8217;s brothers&#8217; children about their experiences. This makes this a profoundly personal exploration of Heinrich&#8217;s rise and fall.<br><br>That&#8217;s also its weakness, of course, of which Katrin herself is well aware: it was cleaerly not an easy book to write, and one led her to realise how much families re-write their own histories – understandbaly so in the light of what happened. It also means the the book as a whole concentrates on the domestic side of Heinrich&#8217;s life, which can be jarring: the period from him being a secretary to leading the <span class="caps">SS</span> is covered in less than a page. Overall, though, there&#8217;s a lot of keen insight provided into the making of a&nbsp;monster.
-      </p>
-<p>
-	4/5.
-	  Finished Thursday 22 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6782101538?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/prophet-song/" rel="bookmark">Tuesday 20 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/prophet-song/">Prophet&nbsp;Song</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706935399l/175740709._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Paul    Lynch&nbsp;(2023)
-      </h2>
-    </div>
-    <p>
-      A timely and troubling consideration of social breakdown.<br><br>The most notable thing about this novel is that it happens in Ireland: not &#8220;far away&#8221;, but in a European country that is nevertheless seen as collapsing through (it is hinted) a shift to the right taken by fully democrtic means, and a subsequent descent into authoritarianism. That&#8217;s a perfectly believable scenario for many countries.<br><br>Lynch writes in a stream-of-consciousness style that manages to be comprehensible while still retaining the slightly bewildered feeling of someone caught-up in event they don&#8217;t fully understand and can&#8217;t quite keep up with. There&#8217;s enough Irish vernacular and geographical detail to make the story hard-hitting for anyone who knows Dublin.<br><br>Some people desperately cling to processes that no longer have any meaning; there are huge numbers of forms to fill out despite them serving no purpose; there&#8217;s lots of bureaucracy used to drum people into compliance; and there&#8217;s lots of venality hiding behind the continuation of these processes to convert them into vehicles for personal gain. Rules tighten as order breaks down, and the same cast of chancers and bandits and people-smugglers emerge in Ireland as in other countries that have gone through this kind of trauma. And that I think is the main message of the book. The themes and characters emerging from social breakdown are universal, and a European country would go the same way as anywhere&nbsp;else.
-      </p>
-<p>
-	5/5.
-	  Finished Tuesday 20 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6042005187?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/fancy-bear-goes-phishing-the-dark-history-of-the-information-age-in-five-extraordinary-hacks/" rel="bookmark">Monday 19 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/fancy-bear-goes-phishing-the-dark-history-of-the-information-age-in-five-extraordinary-hacks/">Fancy Bear Goes Phishing: The Dark History of the Information Age, in Five Extraordinary&nbsp;Hacks</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678753650l/62039276._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Scott J. Shapiro&nbsp;(2023)
-      </h2>
-    </div>
-    <p>
-      A lawyer&#8217;s take on hacking. That&#8217;s both a compliment and a limitation.<br><br>The book presents itself as being a history of hacking. It kind of is, and covers some famous incidents in varying degrees of detail. It spends a lot of time making the underlying technology understandable to a non-technical reader, which is a major contribution. One could argue that it&#8217;s mis-named, in that it spends more time on the hacking of Paris Hilton&#8217;s cellphone and the evolution of the Mirai botnet than on Fancy Bear&#8217;s attack on the <span class="caps">US</span> Democrats., but it does place these attacks into a wider and useful context.<br><br>But the wider context is als0 a problem. Shapiro is a legal philosopher – and it shows. Firstly he annoyingly introduces terminology to distinguish between computer code (&#8220;downcode&#8221;) and social norms and the law (&#8220;upcode&#8221;), with &#8220;metacode&#8221; sitting in between. Is this distinction useful? – I don&#8217;t think so, since the whole point about &#8220;upcode&#8221; is that it&#8217;s <i>not</i> code but a set of political choices and norms. Secondly, he tries to draw a distinction between criminal use of computers and espionage, arguing that the former is illegal but that the latter is not – and from this tries to argue that <span class="caps">US</span> responses to state-directed hacking are hypocritical. Well, yes: is that a point worth making, and does it have any significance beyond the purely philosophical?<br><br>Thirdly, the book also has a somewhat rosy view of <span class="caps">US</span> behaviour which is (in my opinion) contradicted by the facts and by the arguments of other books – for example <a href="https://www.goodreads.com/book/show/49247043.This_Is_How_They_Tell_Me_the_World_Ends_The_Cyberweapons_Arms_Race" title="This Is How They Tell Me the World Ends The Cyberweapons Arms Race by Nicole Perlroth" rel="nofollow noopener">This Is How They Tell Me the World Ends: The Cyberweapons Arms Race</a>, which deals with the origins of cyberweapons.<br><br>There are also some annoying wild claims. Turing&#8217;s results absolutely <i>don&#8217;t</i> say that finding bugs in code is undecidible; this <i>doesn&#8217;t</i> stop us from radically improving our technological approaches to malware; we <i>don&#8217;t</i> think that problems are decidable because they&#8217;re all that we see; and a belief in the fundamental comprehensibility of the universe is <i>not</i> absurd. These weaken the presentation and detract from its undounbted strong&nbsp;points.
-      </p>
-<p>
-	3/5.
-	  Finished Monday 19 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5560128183?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/the-world-according-to-colour/" rel="bookmark">Sunday 11 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/the-world-according-to-colour/">The World According to&nbsp;Colour</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623144261l/56155215._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	James     Fox&nbsp;(2022)
-      </h2>
-    </div>
-    <p>
-      A book using colour as a way to access a range of other topics, without ever losing focus.<br><br>Some of the choices will probably be controversial, such as the emergence of &#8220;whiteness&#8221; as a racial classification, even though supported plentifully by evidence. There are plenty of other less challenging anecdotes, though. Why do we usually consider there that there are <i>seven</i> colours? – at least in part because of Newton&#8217;s religious and alchemical ideas that led him to want to tie colour to the notes on the musical scale<br><br>I most enjoyed the chapter on purple, mainly because it focused on the significant technological change that synthetic aniline dyes brought into culture, changing the relative abundances of various colours and changing the ways in which they were perceived as signifiers of wealth and&nbsp;status.
-      </p>
-<p>
-	4/5.
-	  Finished Sunday 11 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6565806725?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-    <!-- Lower Navigation links -->
-    <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-150.html" rel="prev">
-		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
-    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Guard%20methods%20on%20CLOS%20generic%20functions%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Guard%20methods%20on%20CLOS%20generic%20functions%20%23lisp%20%23programming&amp;url=https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/&amp;title=Guard%20methods%20on%20CLOS%20generic%20functions%20%23lisp%20%23programming" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Guard%20methods%20on%20CLOS%20generic%20functions&amp;body=https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../../goodreads/the-himmler-brothers-a-german-family-history/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Himmler Brothers: A German Family History
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
 	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
 	    </aside>
 </div>
-    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
 	    <p></p>
 	    <p>
 	      Built with free and open-source software.
