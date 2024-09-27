@@ -136,7 +136,7 @@ of which have influenced other languages' designs as well.
 
 .. post-list::
    :type: posts
-   :tags: project:lisp-bibliography, implementation-techiques
+   :tags: project:lisp-bibliography, implementation-techniques
    :template: series_post_list.tmpl
    :require_all_tags:
    :reverse:

@@ -1,4 +1,4 @@
-.. title: Simon Dobson's home page
+.. title: Simon Dobson's home on the web
 
 .. raw:: html
 
@@ -6,21 +6,21 @@
       <img src="/images/220317-0002-small.png" style= "border-radius: 50%;"/>
       <div style="padding-left: 20px;">
 	 <p>
-	   I'm a computer scientist interested in complex systems,
-	   where chains of cause and effect can be difficult to establish.
+	   I'm a computer scientist interested in complex and
+	   self-adaptive systems,  where chains of cause and effect
+	   can be difficult to establish.
 	 <p>
 	   In my <a href="/research/">research</a> I build the
-	   computational tools needed to study these
-	   systems at scale, which includes using simulators and cloud
-	   computing solutions; develop better ways to understand them
-	   using advanced analytical techniques; and work on
-	   integrating sensors to incorporate real-world, real-time
-	   data to build "digital twins".
+	   computational tools needed to study and simulate these
+	   systems at scale; develop better ways to understand them
+	   using advanced analytical techniques; and work on relating
+	   these techniques to engineering and rel-world sensing.
 	 <p>
 	   I <a href="/writing/">write</a> about various topics in
 	   science, computing, research practice, and books, and
 	   <a href="/development/projects/">develop software</a>
-	   in (mainly) Python and Lisp.
+	   in (mainly) <a href="/categories/python">Python</a> and
+	   <a href="/categories/lisp">Lisp</a>.
       </div>
    </div>
 

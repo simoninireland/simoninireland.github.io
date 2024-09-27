@@ -1,0 +1,23 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Purely functional data structures
+.. slug: purely-functional-data-structures
+.. date: 2024-09-27 16:12:14 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Purely functional data structures
+
+  Chris Okasaki. /Purely Functional Data Structures/. Cambridge
+  University Press. ISBN 978-051153-010-4. 1998.
+
+  Not a Lisp book /per se/, but a treatment of data structures from a
+  functional programming perspective. The code examples are in
+  Standard ML, but the ideas apply strongly to Lisp and Scheme.
+  Definitely a useful source for an alternative take on data
+  structuring that doesn't start from assumptions of imperative
+  programming and mutability.

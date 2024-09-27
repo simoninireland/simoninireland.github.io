@@ -1,0 +1,39 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp as the Maxwell's equations of software
+.. slug: lisp-as-the-maxwell1s-equations-of-software
+.. date: 2024-09-27 16:06:55 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, implementation-techniques
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp as the Maxwell's equations of software
+
+    [[https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/][Lisp as the Maxwell’s equations of software – DDI]]
+
+    A take on Lisp as the computational version of fundamental
+    equations in physics. The claim is that learning Lisp is a
+    foundational skill, and this page goes on to develop a
+    "TiddlyLisp" interpreter in Python. As you'd expect this isn't an
+    espcially practical Lisp: but it's remarkably functional, and I
+    suspect will demystify Lisp for programmers familiar with
+    interpreters for other languages.
+
+    See also a [[https://queue.acm.org/detail.cfm?id=1039523][conversation with Alan Kay]] where he uses the "Maxwell's
+    equations":
+
+    #+begin_quote
+    That was the big revelation to me when I was in graduate
+    school -- when I finally understood that the half page of code on the
+    bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+    were “Maxwell’s Equations of Software!” This is the whole world of
+    programming in a few lines that I can put my hand over.
+    #+end_quote
+
+    And in the second half of this article, the Lisp interpreter in
+    Python is translated into a Lisp interpreter in Lisp, which is a
+    very concrete way of showing how metacircularity can work
+    in [[link:/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/][McCarthy's original style]].
