@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:33:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc478829" class="outline-2"&gt;
+&lt;h2 id="orgc478829"&gt;Purely functional data structures&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc478829"&gt;
+&lt;p&gt;
+Chris Okasaki. &lt;i&gt;Purely Functional Data Structures&lt;/i&gt;. Cambridge
+University Press. ISBN 978-051153-010-4. 1998.
+&lt;/p&gt;
+
+&lt;p&gt;
+Not a Lisp book &lt;i&gt;per se&lt;/i&gt;, but a treatment of data structures from a
+functional programming perspective. The code examples are in
+Standard ML, but the ideas apply strongly to Lisp and Scheme.
+Definitely a useful source for an alternative take on data
+structuring that doesn't start from assumptions of imperative
+programming and mutability.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/purely-functional-data-structures/</guid><pubDate>Fri, 27 Sep 2024 15:12:14 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
+&lt;h2 id="org0a147a3"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0a147a3"&gt;
+&lt;p&gt;
+&lt;a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/"&gt;Lisp as the Maxwell’s equations of software – DDI&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A take on Lisp as the computational version of fundamental
+equations in physics. The claim is that learning Lisp is a
+foundational skill, and this page goes on to develop a
+"TiddlyLisp" interpreter in Python. As you'd expect this isn't an
+espcially practical Lisp: but it's remarkably functional, and I
+suspect will demystify Lisp for programmers familiar with
+interpreters for other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+See also a &lt;a href="https://queue.acm.org/detail.cfm?id=1039523"&gt;conversation with Alan Kay&lt;/a&gt; where he uses the "Maxwell's
+equations":
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+That was the big revelation to me when I was in graduate
+school – when I finally understood that the half page of code on the
+bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+were “Maxwell’s Equations of Software!” This is the whole world of
+programming in a few lines that I can put my hand over.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+And in the second half of this article, the Lisp interpreter in
+Python is translated into a Lisp interpreter in Lisp, which is a
+very concrete way of showing how metacircularity can work
+in &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;McCarthy's original style&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
 &lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org003e69b"&gt;
 &lt;p&gt;
@@ -374,37 +430,4 @@ the full power of the language – and then be re-started or
 discarded as required.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a991ba" class="outline-2"&gt;
-&lt;h2 id="org9a991ba"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org9a991ba"&gt;
-&lt;p&gt;
-&lt;a href="https://www.p-cos.net/lisp/guide.html"&gt;Pascal Costanza's Highly Opinionated Guide to Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Part introduction, part paean to the language's power, part study
-guide, while dipping into an eclectically-chosen subset of Lisp
-features that really illustrate what makes it different.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</guid><pubDate>Mon, 27 May 2024 16:04:50 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga7343e8" class="outline-2"&gt;
-&lt;h2 id="orga7343e8"&gt;A road to Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga7343e8"&gt;
-&lt;p&gt;
-&lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-This a really brief, yet really interesting, approach to
-introducing Lisp to someone. Interesting because it covers all the
-usual ground, but also has copious pointers to other material
-slightly-beyond-introductory ("Where to go from here"). It also
-links to material that's essential to modern practice, such as
-Lisp packages and systems, and the essential "standard libraries"
-such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
-things that are needed in practice and which in other languages
-would probably be built-in and included directly in an
-introduction.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item></channel></rss>

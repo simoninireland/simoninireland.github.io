@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The different energy footprints of different programming languages | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 27 September, 2024</a>
+	    </span>
+	</div>
+	<h1>The different energy footprints of different programming&nbsp;languages</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org37bf54e" class="outline-2">
+<h2 id="org37bf54e">The different energy footprints of different programming&nbsp;languages</h2>
+<div class="outline-text-2" id="text-org37bf54e">
+<p>
+I&#8217;ve recently been thinking about low-power computing, from <span class="caps">AI</span> and
+data centres down to sensors, as part of a new initiative the
+University is considering. It&#8217;s easy to forget the resource
+footprint of our computing systems – especially those that are &#8220;out
+of sight, out of mind&#8221; in the cloud – but there&#8217;s growing evidence
+that their growth threatens the renewable energy transition. Some of
+the figures for <span class="caps">AI</span> electricity and water usage are&nbsp;astonishing.
+</p>
+
+<p>
+One aspect of this is the effect of choice of programming language.
+I can across some work from 2017 on&nbsp;this:
+</p>
+
+<p>
+Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Cunha Jácome,
+João Paulo Fernandes, and João Saraiva. <i><a href="https://doi.org/10.1145/3136014.3136031">Energy Efficiency across
+Programming Languages: How Do Energy, Time, and Memory Relate?</a></i> In
+<i>Proceedings of the 10th <span class="caps">ACM</span> <span class="caps">SIGPLAN</span> International Conference on
+Software Language Engineering</i>.&nbsp;2017.
+</p>
+
+<p>
+The authors compare 13 benchmarks run in 27 different languages,
+with the benchmarks being chosen widely to avoid being biased by
+numeric performance. I was expecting some patterns: compiled
+languages doing better on performance, memory, and energy usage, for
+example. But I wasn&#8217;t expecting exactly <i>how</i> widely the figures
+diverged, or some of the&nbsp;details.
+</p>
+
+<p>
+The following table is from the paper, annotated by me. The figures
+are normalised against the best result in each category (so the top
+language has value 1, and so&nbsp;on).
+</p>
+
+<p width="80%" align="center">
+<img src="../../../../attachments/fb/debea0-0913-41c2-90bc-726153de8d28/pl-energy.png" alt="pl-energy.png"></p>
+
+<p>
+The two most-used languages for web application, Python and
+JavaScript, perform uniformly pretty badly: 75 times C&#8217;s energy
+usage, in Python&#8217;s case. But although JavaScript does substantially
+better on energy (only a factor of 4), TypeScript – which is
+usually thought of as JavaScript with type pre-processing –
+requires 21 times C&#8217;s energy, or 5 times JavaScript&#8217;s. Why is that?
+– I can&#8217;t think of a&nbsp;reason.
+</p>
+
+<p>
+But the real surprise was that &#8220;research&#8221; languages like Haskell and
+Lisp both hold up well: twice C&#8217;s energy, in Lisp&#8217;s case. I don&#8217;t
+think that would surprise modern Lisp programmers, who are used to
+their compilers&#8217; efficiencies – but it would surprise someone used
+only to the &#8220;hearsay&#8221; about Lisp. The same for Haskell, actually,
+whose modern compilers really leverage the extra structure. When you
+consider that both those languages are pretty much dependent on
+garbage collection and so are doing substantially <i>more</i> work than the
+equivalent C program, it&#8217;s&nbsp;impressive.
+</p>
+
+<p>
+(Also look in the table for Racket, consistently lower than Lisp
+despite their close similarities. I suspect this is a compiler
+optimisation issue more than anything&nbsp;else.)
+</p>
+
+<p>
+This work clearly isn&#8217;t complete or definitive. Clojure is entirely
+missing, as is Scala, and there will have been compiler improvements
+since 2017 for the languages with the most active developer
+communities. But it&#8217;s still quite sobering that the differences are
+<i>so</i> wide, and that we&#8217;ve chosen to push languages that exacerbate
+energy usage rather than managing&nbsp;it.
+</p>
+</div>
+</div>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="The%20different%20energy%20footprints%20of%20different%20programming%20languages%20%23haskell%20%23javascript%20%23lisp%20%23lowpower%20%23programming%20%23python&amp;url=https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20different%20energy%20footprints%20of%20different%20programming%20languages%20%23haskell%20%23javascript%20%23lisp%20%23lowpower%20%23programming%20%23python&amp;url=https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/&amp;title=The%20different%20energy%20footprints%20of%20different%20programming%20languages%20%23haskell%20%23javascript%20%23lisp%20%23lowpower%20%23programming%20%23python" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20different%20energy%20footprints%20of%20different%20programming%20languages&amp;body=https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/haskell/">haskell</a>
+		    <span>  </span>
+		<a href="../../../../categories/javascript/">javascript</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/low-power/">low power</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+		    <span>  </span>
+		<a href="../../../../categories/python/">python</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../purely-functional-data-structures/" rel="prev">
+		<span class="meta-nav">Older Post</span>Purely functional data structures
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

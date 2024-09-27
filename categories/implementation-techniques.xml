@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:09:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
+&lt;h2 id="org0a147a3"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0a147a3"&gt;
+&lt;p&gt;
+&lt;a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/"&gt;Lisp as the Maxwell’s equations of software – DDI&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A take on Lisp as the computational version of fundamental
+equations in physics. The claim is that learning Lisp is a
+foundational skill, and this page goes on to develop a
+"TiddlyLisp" interpreter in Python. As you'd expect this isn't an
+espcially practical Lisp: but it's remarkably functional, and I
+suspect will demystify Lisp for programmers familiar with
+interpreters for other languages.
+&lt;/p&gt;
+
+&lt;p&gt;
+See also a &lt;a href="https://queue.acm.org/detail.cfm?id=1039523"&gt;conversation with Alan Kay&lt;/a&gt; where he uses the "Maxwell's
+equations":
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+That was the big revelation to me when I was in graduate
+school – when I finally understood that the half page of code on the
+bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+were “Maxwell’s Equations of Software!” This is the whole world of
+programming in a few lines that I can put my hand over.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+And in the second half of this article, the Lisp interpreter in
+Python is translated into a Lisp interpreter in Lisp, which is a
+very concrete way of showing how metacircularity can work
+in &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;McCarthy's original style&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Anatomy of Lisp</title><link>https://simondobson.org/2024/03/06/anatomy-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga92f5bb" class="outline-2"&gt;
+&lt;h2 id="orga92f5bb"&gt;Anatomy of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga92f5bb"&gt;
+&lt;p&gt;
+John Allen.  &lt;a href="https://dl.acm.org/doi/book/10.5555/542865"&gt;&lt;i&gt;Anatomy of Lisp&lt;/i&gt;&lt;/a&gt;. McGraw-Hill. ISBN
+0-07-001115-X. 1978.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a hard book to characterise. It's simultaneously an
+introduction, a collection of advanced (for the time) programming
+techniques, and a guide to some very low-level implementation
+details. It contains a lot of the usual introductory material, but
+then delves into different representational choices for the basic
+data structures – lists, but also arrays and hash tables as well
+as Lisp code itself – and for the frames needed to represent
+function calls. It the tackles interpretation &lt;i&gt;versus&lt;/i&gt;
+compilation, and even topics such as cross-compilation and
+just-in-time or memoised compilation.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's impossible to read this book without thinking of &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt;, and
+indeed I think in many ways it's a direct precursor. (It's
+referenced a couple of times in SICP.) It has that same
+combination of high-level, semantics-driven programming combined
+with descriptions of underlying mechanisms. Where I think it
+mainly differs is that it mixes representations, using a more
+semantics-driven notation and explicit assembler instructions
+rather than sticking with Lisp variants for &lt;i&gt;everything&lt;/i&gt;. It's
+only when you see the two approaches side by side that you realise
+how &lt;i&gt;clear&lt;/i&gt; Lisp can be in radically different contexts..
+&lt;/p&gt;
+
+&lt;p&gt;
+Another important book was published in 1978: Kernighan and
+Ritchie's &lt;i&gt;&lt;a href="https://en.wikipedia.org/wiki/The_C_Programming_Language"&gt;The C programming language&lt;/a&gt;&lt;/i&gt;. The two books share a
+certain low-level focus, but come to very different conclusions
+about the correct approach to dynamic storage, as the following
+footnote by Allen (slightly edited for clarity) illustrates:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Experiments have been performed in which Lisp programmers were
+allowed to return "garbage" to the free-space list themselves. The
+results were disastrous: list structure thought to be garbage was
+returned to the free-space list even though the structure was
+still being used by other computations.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+C, of course, accepts this "disaster" as a natural consequence of
+manual allocation management. It encapsulates the different
+attitudes of the two contemporary language communities, though:
+one wanting a machine in which to think (and willing to use
+computing power to simplify tasks), and those wanting raw
+performance from limited hardware (and willing to complicate the
+programming task to get it).
+&lt;/p&gt;
+
+&lt;p&gt;
+Overall, Allen's book is a great attempt at an end-to-end
+discussion of Lisp all the way down to the metal. Many of the
+techniques are still relevant, at least as exemplars against
+later, more efficient, techniques should be judged.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Thanks to &lt;a href="https://mcjones.org/paul/"&gt;Paul McJones&lt;/a&gt; for pointing me to the free PDF of the book,
+which he was responsible for developing. See &lt;a href="https://mcjones.org/dustydecks/archives/2024/04/11/1249/"&gt;this post&lt;/a&gt; for a history
+of how this came about.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/06/anatomy-of-lisp/</guid><pubDate>Wed, 06 Mar 2024 18:38:17 GMT</pubDate></item></channel></rss>

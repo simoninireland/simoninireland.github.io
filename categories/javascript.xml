@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about javascript)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/javascript.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Representing samples</title><link>https://simondobson.org/2013/07/10/representing-samples/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about javascript)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/javascript.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:38:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
+&lt;h2 id="org37bf54e"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org37bf54e"&gt;
+&lt;p&gt;
+I've recently been thinking about low-power computing, from AI and
+data centres down to sensors, as part of a new initiative the
+University is considering. It's easy to forget the resource
+footprint of our computing systems – especially those that are "out
+of sight, out of mind" in the cloud – but there's growing evidence
+that their growth threatens the renewable energy transition. Some of
+the figures for AI electricity and water usage are astonishing.
+&lt;/p&gt;
+
+&lt;p&gt;
+One aspect of this is the effect of choice of programming language.
+I can across some work from 2017 on this:
+&lt;/p&gt;
+
+&lt;p&gt;
+Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Cunha Jácome,
+João Paulo Fernandes, and João Saraiva. &lt;i&gt;&lt;a href="https://doi.org/10.1145/3136014.3136031"&gt;Energy Efficiency across
+Programming Languages: How Do Energy, Time, and Memory Relate?&lt;/a&gt;&lt;/i&gt; In
+&lt;i&gt;Proceedings of the 10th ACM SIGPLAN International Conference on
+Software Language Engineering&lt;/i&gt;. 2017.
+&lt;/p&gt;
+
+&lt;p&gt;
+The authors compare 13 benchmarks run in 27 different languages,
+with the benchmarks being chosen widely to avoid being biased by
+numeric performance. I was expecting some patterns: compiled
+languages doing better on performance, memory, and energy usage, for
+example. But I wasn't expecting exactly &lt;i&gt;how&lt;/i&gt; widely the figures
+diverged, or some of the details.
+&lt;/p&gt;
+
+&lt;p&gt;
+The following table is from the paper, annotated by me. The figures
+are normalised against the best result in each category (so the top
+language has value 1, and so on).
+&lt;/p&gt;
+
+&lt;p width="80%" align="center"&gt;
+&lt;img src="https://simondobson.org/attachments/fb/debea0-0913-41c2-90bc-726153de8d28/pl-energy.png" alt="pl-energy.png"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The two most-used languages for web application, Python and
+JavaScript, perform uniformly pretty badly: 75 times C's energy
+usage, in Python's case. But although JavaScript does substantially
+better on energy (only a factor of 4), TypeScript – which is
+usually thought of as JavaScript with type pre-processing –
+requires 21 times C's energy, or 5 times JavaScript's. Why is that?
+– I can't think of a reason.
+&lt;/p&gt;
+
+&lt;p&gt;
+But the real surprise was that "research" languages like Haskell and
+Lisp both hold up well: twice C's energy, in Lisp's case. I don't
+think that would surprise modern Lisp programmers, who are used to
+their compilers' efficiencies – but it would surprise someone used
+only to the "hearsay" about Lisp. The same for Haskell, actually,
+whose modern compilers really leverage the extra structure. When you
+consider that both those languages are pretty much dependent on
+garbage collection and so are doing substantially &lt;i&gt;more&lt;/i&gt; work than the
+equivalent C program, it's impressive.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Also look in the table for Racket, consistently lower than Lisp
+despite their close similarities. I suspect this is a compiler
+optimisation issue more than anything else.)
+&lt;/p&gt;
+
+&lt;p&gt;
+This work clearly isn't complete or definitive. Clojure is entirely
+missing, as is Scala, and there will have been compiler improvements
+since 2017 for the languages with the most active developer
+communities. But it's still quite sobering that the differences are
+&lt;i&gt;so&lt;/i&gt; wide, and that we've chosen to push languages that exacerbate
+energy usage rather than managing it.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>haskell</category><category>javascript</category><category>lisp</category><category>low power</category><category>programming</category><category>python</category><guid>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</guid><pubDate>Fri, 27 Sep 2024 15:15:23 GMT</pubDate></item><item><title>Representing samples</title><link>https://simondobson.org/2013/07/10/representing-samples/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Any sensor network has to represent sampled data somehow. What would be the most friendly format for so doing?&lt;/p&gt;
 &lt;!--more--&gt;
 
 &lt;p&gt;Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as XML for data-based approaches.&lt;/p&gt;

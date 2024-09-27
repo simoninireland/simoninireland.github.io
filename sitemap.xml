@@ -1034,12 +1034,24 @@
   <lastmod>2024-09-05T14:36:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</loc>
+  <lastmod>2024-09-27T15:07:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2024/09/27/purely-functional-data-structures/</loc>
+  <lastmod>2024-09-27T15:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</loc>
+  <lastmod>2024-09-27T15:15:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2024-07-27T13:47:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1366,8 +1378,8 @@
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </url>
  <url>
-  <loc>https://simondobson.org/categories/implementation-techiques/</loc>
-  <lastmod>2024-05-08T15:57:00Z</lastmod>
+  <loc>https://simondobson.org/categories/implementation-techniques/</loc>
+  <lastmod>2024-09-27T15:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/innovation/</loc>
@@ -1436,6 +1448,10 @@
  <url>
   <loc>https://simondobson.org/categories/lisp/</loc>
   <lastmod>2024-05-08T15:57:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/categories/low-power/</loc>
+  <lastmod>2024-09-27T15:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/machine-learning/</loc>
@@ -4135,7 +4151,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-140.html</loc>
-  <lastmod>2024-07-07T14:20:00Z</lastmod>
+  <lastmod>2024-09-27T15:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-141.html</loc>
@@ -4179,7 +4195,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-150.html</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-16.html</loc>

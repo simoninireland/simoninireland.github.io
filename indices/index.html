@@ -52,6 +52,184 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/09/27/the-different-energy-footprints-of-different-programming-languages/" rel="bookmark">Friday 27 September, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/09/27/the-different-energy-footprints-of-different-programming-languages/">The different energy footprints of different programming&nbsp;languages</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org37bf54e" class="outline-2">
+<h2 id="org37bf54e">The different energy footprints of different programming&nbsp;languages</h2>
+<div class="outline-text-2" id="text-org37bf54e">
+<p>
+I&#8217;ve recently been thinking about low-power computing, from <span class="caps">AI</span> and
+data centres down to sensors, as part of a new initiative the
+University is considering. It&#8217;s easy to forget the resource
+footprint of our computing systems – especially those that are &#8220;out
+of sight, out of mind&#8221; in the cloud – but there&#8217;s growing evidence
+that their growth threatens the renewable energy transition. Some of
+the figures for <span class="caps">AI</span> electricity and water usage are&nbsp;astonishing.
+</p>
+
+<p>
+One aspect of this is the effect of choice of programming language.
+I can across some work from 2017 on&nbsp;this:
+</p>
+
+<p>
+Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Cunha Jácome,
+João Paulo Fernandes, and João Saraiva. <i><a href="https://doi.org/10.1145/3136014.3136031">Energy Efficiency across
+Programming Languages: How Do Energy, Time, and Memory Relate?</a></i> In
+<i>Proceedings of the 10th <span class="caps">ACM</span> <span class="caps">SIGPLAN</span> International Conference on
+Software Language Engineering</i>.&nbsp;2017.
+</p>
+
+<p>
+The authors compare 13 benchmarks run in 27 different languages,
+with the benchmarks being chosen widely to avoid being biased by
+numeric performance. I was expecting some patterns: compiled
+languages doing better on performance, memory, and energy usage, for
+example. But I wasn&#8217;t expecting exactly <i>how</i> widely the figures
+diverged, or some of the&nbsp;details.
+</p>
+
+<p>
+The following table is from the paper, annotated by me. The figures
+are normalised against the best result in each category (so the top
+language has value 1, and so&nbsp;on).
+</p>
+
+<p width="80%" align="center">
+<img src="../attachments/fb/debea0-0913-41c2-90bc-726153de8d28/pl-energy.png" alt="pl-energy.png"></p>
+
+<p>
+The two most-used languages for web application, Python and
+JavaScript, perform uniformly pretty badly: 75 times C&#8217;s energy
+usage, in Python&#8217;s case. But although JavaScript does substantially
+better on energy (only a factor of 4), TypeScript – which is
+usually thought of as JavaScript with type pre-processing –
+requires 21 times C&#8217;s energy, or 5 times JavaScript&#8217;s. Why is that?
+– I can&#8217;t think of a&nbsp;reason.
+</p>
+
+<p>
+But the real surprise was that &#8220;research&#8221; languages like Haskell and
+Lisp both hold up well: twice C&#8217;s energy, in Lisp&#8217;s case. I don&#8217;t
+think that would surprise modern Lisp programmers, who are used to
+their compilers&#8217; efficiencies – but it would surprise someone used
+only to the &#8220;hearsay&#8221; about Lisp. The same for Haskell, actually,
+whose modern compilers really leverage the extra structure. When you
+consider that both those languages are pretty much dependent on
+garbage collection and so are doing substantially <i>more</i> work than the
+equivalent C program, it&#8217;s&nbsp;impressive.
+</p>
+
+<p>
+(Also look in the table for Racket, consistently lower than Lisp
+despite their close similarities. I suspect this is a compiler
+optimisation issue more than anything&nbsp;else.)
+</p>
+
+<p>
+This work clearly isn&#8217;t complete or definitive. Clojure is entirely
+missing, as is Scala, and there will have been compiler improvements
+since 2017 for the languages with the most active developer
+communities. But it&#8217;s still quite sobering that the differences are
+<i>so</i> wide, and that we&#8217;ve chosen to push languages that exacerbate
+energy usage rather than managing&nbsp;it.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/09/27/purely-functional-data-structures/" rel="bookmark">Friday 27 September, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/09/27/purely-functional-data-structures/">Purely functional data&nbsp;structures</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgc478829" class="outline-2">
+<h2 id="orgc478829">Purely functional data&nbsp;structures</h2>
+<div class="outline-text-2" id="text-orgc478829">
+<p>
+Chris Okasaki. <i>Purely Functional Data Structures</i>. Cambridge
+University Press. <span class="caps">ISBN</span> 978-051153-010-4.&nbsp;1998.
+</p>
+
+<p>
+Not a Lisp book <i>per se</i>, but a treatment of data structures from a
+functional programming perspective. The code examples are in
+Standard <span class="caps">ML</span>, but the ideas apply strongly to Lisp and Scheme.
+Definitely a useful source for an alternative take on data
+structuring that doesn&#8217;t start from assumptions of imperative
+programming and&nbsp;mutability.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/09/27/lisp-as-the-maxwell1s-equations-of-software/" rel="bookmark">Friday 27 September, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/09/27/lisp-as-the-maxwell1s-equations-of-software/">Lisp as the Maxwell&#8217;s equations of&nbsp;software</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org0a147a3" class="outline-2">
+<h2 id="org0a147a3">Lisp as the Maxwell&#8217;s equations of&nbsp;software</h2>
+<div class="outline-text-2" id="text-org0a147a3">
+<p>
+<a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/">Lisp as the Maxwell’s equations of software –&nbsp;<span class="caps">DDI</span></a>
+</p>
+
+<p>
+A take on Lisp as the computational version of fundamental
+equations in physics. The claim is that learning Lisp is a
+foundational skill, and this page goes on to develop a
+&#8220;TiddlyLisp&#8221; interpreter in Python. As you&#8217;d expect this isn&#8217;t an
+espcially practical Lisp: but it&#8217;s remarkably functional, and I
+suspect will demystify Lisp for programmers familiar with
+interpreters for other&nbsp;languages.
+</p>
+
+<p>
+See also a <a href="https://queue.acm.org/detail.cfm?id=1039523">conversation with Alan Kay</a> where he uses the &#8220;Maxwell&#8217;s&nbsp;equations&#8221;:
+</p>
+
+<blockquote>
+<p>
+That was the big revelation to me when I was in graduate
+school – when I finally understood that the half page of code on the
+bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+were “Maxwell’s Equations of Software!” This is the whole world of
+programming in a few lines that I can put my hand&nbsp;over.
+</p>
+</blockquote>
+
+<p>
+And in the second half of this article, the Lisp interpreter in
+Python is translated into a Lisp interpreter in Lisp, which is a
+very concrete way of showing how metacircularity can work
+in <a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/">McCarthy&#8217;s original style</a>.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/09/05/guard-methods-on-clos-generic-functions/" rel="bookmark">Thursday 5 September, 2024</a>
 			</span>
 		    </div>
@@ -500,96 +678,6 @@ creating another&nbsp;dependency.
 	</p>
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/6782101538?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/prophet-song/" rel="bookmark">Tuesday 20 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/prophet-song/">Prophet&nbsp;Song</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706935399l/175740709._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Paul    Lynch&nbsp;(2023)
-      </h2>
-    </div>
-    <p>
-      A timely and troubling consideration of social breakdown.<br><br>The most notable thing about this novel is that it happens in Ireland: not &#8220;far away&#8221;, but in a European country that is nevertheless seen as collapsing through (it is hinted) a shift to the right taken by fully democrtic means, and a subsequent descent into authoritarianism. That&#8217;s a perfectly believable scenario for many countries.<br><br>Lynch writes in a stream-of-consciousness style that manages to be comprehensible while still retaining the slightly bewildered feeling of someone caught-up in event they don&#8217;t fully understand and can&#8217;t quite keep up with. There&#8217;s enough Irish vernacular and geographical detail to make the story hard-hitting for anyone who knows Dublin.<br><br>Some people desperately cling to processes that no longer have any meaning; there are huge numbers of forms to fill out despite them serving no purpose; there&#8217;s lots of bureaucracy used to drum people into compliance; and there&#8217;s lots of venality hiding behind the continuation of these processes to convert them into vehicles for personal gain. Rules tighten as order breaks down, and the same cast of chancers and bandits and people-smugglers emerge in Ireland as in other countries that have gone through this kind of trauma. And that I think is the main message of the book. The themes and characters emerging from social breakdown are universal, and a European country would go the same way as anywhere&nbsp;else.
-      </p>
-<p>
-	5/5.
-	  Finished Tuesday 20 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6042005187?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/fancy-bear-goes-phishing-the-dark-history-of-the-information-age-in-five-extraordinary-hacks/" rel="bookmark">Monday 19 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/fancy-bear-goes-phishing-the-dark-history-of-the-information-age-in-five-extraordinary-hacks/">Fancy Bear Goes Phishing: The Dark History of the Information Age, in Five Extraordinary&nbsp;Hacks</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678753650l/62039276._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Scott J. Shapiro&nbsp;(2023)
-      </h2>
-    </div>
-    <p>
-      A lawyer&#8217;s take on hacking. That&#8217;s both a compliment and a limitation.<br><br>The book presents itself as being a history of hacking. It kind of is, and covers some famous incidents in varying degrees of detail. It spends a lot of time making the underlying technology understandable to a non-technical reader, which is a major contribution. One could argue that it&#8217;s mis-named, in that it spends more time on the hacking of Paris Hilton&#8217;s cellphone and the evolution of the Mirai botnet than on Fancy Bear&#8217;s attack on the <span class="caps">US</span> Democrats., but it does place these attacks into a wider and useful context.<br><br>But the wider context is als0 a problem. Shapiro is a legal philosopher – and it shows. Firstly he annoyingly introduces terminology to distinguish between computer code (&#8220;downcode&#8221;) and social norms and the law (&#8220;upcode&#8221;), with &#8220;metacode&#8221; sitting in between. Is this distinction useful? – I don&#8217;t think so, since the whole point about &#8220;upcode&#8221; is that it&#8217;s <i>not</i> code but a set of political choices and norms. Secondly, he tries to draw a distinction between criminal use of computers and espionage, arguing that the former is illegal but that the latter is not – and from this tries to argue that <span class="caps">US</span> responses to state-directed hacking are hypocritical. Well, yes: is that a point worth making, and does it have any significance beyond the purely philosophical?<br><br>Thirdly, the book also has a somewhat rosy view of <span class="caps">US</span> behaviour which is (in my opinion) contradicted by the facts and by the arguments of other books – for example <a href="https://www.goodreads.com/book/show/49247043.This_Is_How_They_Tell_Me_the_World_Ends_The_Cyberweapons_Arms_Race" title="This Is How They Tell Me the World Ends The Cyberweapons Arms Race by Nicole Perlroth" rel="nofollow noopener">This Is How They Tell Me the World Ends: The Cyberweapons Arms Race</a>, which deals with the origins of cyberweapons.<br><br>There are also some annoying wild claims. Turing&#8217;s results absolutely <i>don&#8217;t</i> say that finding bugs in code is undecidible; this <i>doesn&#8217;t</i> stop us from radically improving our technological approaches to malware; we <i>don&#8217;t</i> think that problems are decidable because they&#8217;re all that we see; and a belief in the fundamental comprehensibility of the universe is <i>not</i> absurd. These weaken the presentation and detract from its undounbted strong&nbsp;points.
-      </p>
-<p>
-	3/5.
-	  Finished Monday 19 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/5560128183?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/the-world-according-to-colour/" rel="bookmark">Sunday 11 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/the-world-according-to-colour/">The World According to&nbsp;Colour</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623144261l/56155215._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	James     Fox&nbsp;(2022)
-      </h2>
-    </div>
-    <p>
-      A book using colour as a way to access a range of other topics, without ever losing focus.<br><br>Some of the choices will probably be controversial, such as the emergence of &#8220;whiteness&#8221; as a racial classification, even though supported plentifully by evidence. There are plenty of other less challenging anecdotes, though. Why do we usually consider there that there are <i>seven</i> colours? – at least in part because of Newton&#8217;s religious and alchemical ideas that led him to want to tie colour to the notes on the musical scale<br><br>I most enjoyed the chapter on purple, mainly because it focused on the significant technological change that synthetic aniline dyes brought into culture, changing the relative abundances of various colours and changing the ways in which they were perceived as signifiers of wealth and&nbsp;status.
-      </p>
-<p>
-	4/5.
-	  Finished Sunday 11 August,&nbsp;2024.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6565806725?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
 </div>
 		</div>

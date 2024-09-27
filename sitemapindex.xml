@@ -23,7 +23,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/advanced-tutorial.xml</loc>
-  <lastmod>2024-08-26T16:33:00Z</lastmod>
+  <lastmod>2024-09-27T15:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/algorithms.xml</loc>
@@ -307,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/haskell.xml</loc>
-  <lastmod>2024-05-08T15:57:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/healthcare.xml</loc>
@@ -330,8 +330,8 @@
   <lastmod>2024-05-08T15:57:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://simondobson.org/categories/implementation-techiques.xml</loc>
-  <lastmod>2024-05-19T14:51:00Z</lastmod>
+  <loc>https://simondobson.org/categories/implementation-techniques.xml</loc>
+  <lastmod>2024-09-27T15:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/innovation.xml</loc>
@@ -347,7 +347,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/javascript.xml</loc>
-  <lastmod>2024-05-08T15:57:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/jinja2.xml</loc>
@@ -399,7 +399,11 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/lisp.xml</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://simondobson.org/categories/low-power.xml</loc>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/machine-learning.xml</loc>
@@ -531,7 +535,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/programming.xml</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectacoustic-birds.xml</loc>
@@ -543,7 +547,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/projectlisp-bibliography.xml</loc>
-  <lastmod>2024-08-26T16:33:00Z</lastmod>
+  <lastmod>2024-09-27T15:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/publishing.xml</loc>
@@ -551,7 +555,7 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/python.xml</loc>
-  <lastmod>2024-05-19T14:51:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/categories/raspberry-pi.xml</loc>
@@ -819,10 +823,10 @@
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/rss.xml</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://simondobson.org/sitemap.xml</loc>
-  <lastmod>2024-09-05T14:36:00Z</lastmod>
+  <lastmod>2024-09-27T15:43:00Z</lastmod>
  </sitemap>
 </sitemapindex>

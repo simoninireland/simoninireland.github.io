@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:33:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged90f8a" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc478829" class="outline-2"&gt;
+&lt;h2 id="orgc478829"&gt;Purely functional data structures&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc478829"&gt;
+&lt;p&gt;
+Chris Okasaki. &lt;i&gt;Purely Functional Data Structures&lt;/i&gt;. Cambridge
+University Press. ISBN 978-051153-010-4. 1998.
+&lt;/p&gt;
+
+&lt;p&gt;
+Not a Lisp book &lt;i&gt;per se&lt;/i&gt;, but a treatment of data structures from a
+functional programming perspective. The code examples are in
+Standard ML, but the ideas apply strongly to Lisp and Scheme.
+Definitely a useful source for an alternative take on data
+structuring that doesn't start from assumptions of imperative
+programming and mutability.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/purely-functional-data-structures/</guid><pubDate>Fri, 27 Sep 2024 15:12:14 GMT</pubDate></item><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged90f8a" class="outline-2"&gt;
 &lt;h2 id="orged90f8a"&gt;Let over Lambda&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orged90f8a"&gt;
 &lt;p class="floater"&gt;

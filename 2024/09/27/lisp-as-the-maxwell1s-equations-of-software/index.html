@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anatomy of Lisp | Simon Dobson</title>
+<title>Lisp as the Maxwell's equations of software | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,88 +64,51 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Wednesday 6 March, 2024</a>
+		Posted on <a href="." rel="bookmark">Friday 27 September, 2024</a>
 	    </span>
 	</div>
-	<h1>Anatomy of&nbsp;Lisp</h1>
+	<h1>Lisp as the Maxwell&#8217;s equations of&nbsp;software</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orga92f5bb" class="outline-2">
-<h2 id="orga92f5bb">Anatomy of&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orga92f5bb">
+		<div id="outline-container-org0a147a3" class="outline-2">
+<h2 id="org0a147a3">Lisp as the Maxwell&#8217;s equations of&nbsp;software</h2>
+<div class="outline-text-2" id="text-org0a147a3">
 <p>
-John Allen.  <a href="https://dl.acm.org/doi/book/10.5555/542865"><i>Anatomy of Lisp</i></a>. McGraw-Hill. <span class="caps">ISBN</span>
-0-07-001115-X.&nbsp;1978.
+<a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/">Lisp as the Maxwell’s equations of software –&nbsp;<span class="caps">DDI</span></a>
 </p>
 
 <p>
-This is a hard book to characterise. It&#8217;s simultaneously an
-introduction, a collection of advanced (for the time) programming
-techniques, and a guide to some very low-level implementation
-details. It contains a lot of the usual introductory material, but
-then delves into different representational choices for the basic
-data structures – lists, but also arrays and hash tables as well
-as Lisp code itself – and for the frames needed to represent
-function calls. It the tackles interpretation <i>versus</i>
-compilation, and even topics such as cross-compilation and
-just-in-time or memoised&nbsp;compilation.
+A take on Lisp as the computational version of fundamental
+equations in physics. The claim is that learning Lisp is a
+foundational skill, and this page goes on to develop a
+&#8220;TiddlyLisp&#8221; interpreter in Python. As you&#8217;d expect this isn&#8217;t an
+espcially practical Lisp: but it&#8217;s remarkably functional, and I
+suspect will demystify Lisp for programmers familiar with
+interpreters for other&nbsp;languages.
 </p>
 
 <p>
-It&#8217;s impossible to read this book without thinking of <a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"><span class="caps">SICP</span></a>, and
-indeed I think in many ways it&#8217;s a direct precursor. (It&#8217;s
-referenced a couple of times in <span class="caps">SICP</span>.) It has that same
-combination of high-level, semantics-driven programming combined
-with descriptions of underlying mechanisms. Where I think it
-mainly differs is that it mixes representations, using a more
-semantics-driven notation and explicit assembler instructions
-rather than sticking with Lisp variants for <i>everything</i>. It&#8217;s
-only when you see the two approaches side by side that you realise
-how <i>clear</i> Lisp can be in radically different&nbsp;contexts..
-</p>
-
-<p>
-Another important book was published in 1978: Kernighan and
-Ritchie&#8217;s <i><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C programming language</a></i>. The two books share a
-certain low-level focus, but come to very different conclusions
-about the correct approach to dynamic storage, as the following
-footnote by Allen (slightly edited for clarity)&nbsp;illustrates:
+See also a <a href="https://queue.acm.org/detail.cfm?id=1039523">conversation with Alan Kay</a> where he uses the &#8220;Maxwell&#8217;s&nbsp;equations&#8221;:
 </p>
 
 <blockquote>
 <p>
-Experiments have been performed in which Lisp programmers were
-allowed to return &#8220;garbage&#8221; to the free-space list themselves. The
-results were disastrous: list structure thought to be garbage was
-returned to the free-space list even though the structure was
-still being used by other&nbsp;computations.
+That was the big revelation to me when I was in graduate
+school – when I finally understood that the half page of code on the
+bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+were “Maxwell’s Equations of Software!” This is the whole world of
+programming in a few lines that I can put my hand&nbsp;over.
 </p>
 </blockquote>
 
 <p>
-C, of course, accepts this &#8220;disaster&#8221; as a natural consequence of
-manual allocation management. It encapsulates the different
-attitudes of the two contemporary language communities, though:
-one wanting a machine in which to think (and willing to use
-computing power to simplify tasks), and those wanting raw
-performance from limited hardware (and willing to complicate the
-programming task to get&nbsp;it).
-</p>
-
-<p>
-Overall, Allen&#8217;s book is a great attempt at an end-to-end
-discussion of Lisp all the way down to the metal. Many of the
-techniques are still relevant, at least as exemplars against
-later, more efficient, techniques should be&nbsp;judged.
-</p>
-
-<p>
-(Thanks to <a href="https://mcjones.org/paul/">Paul McJones</a> for pointing me to the free <span class="caps">PDF</span> of the book,
-which he was responsible for developing. See <a href="https://mcjones.org/dustydecks/archives/2024/04/11/1249/">this post</a> for a history
-of how this came&nbsp;about.)
+And in the second half of this article, the Lisp interpreter in
+Python is translated into a Lisp interpreter in Lisp, which is a
+very concrete way of showing how metacircularity can work
+in <a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/">McCarthy&#8217;s original style</a>.
 </p>
 </div>
 </div>
@@ -163,12 +126,12 @@ of how this came&nbsp;about.)
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Anatomy%20of%20Lisp%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/anatomy-of-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Anatomy%20of%20Lisp%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/03/06/anatomy-of-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Lisp%20as%20the%20Maxwell%27s%20equations%20of%20software%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Lisp%20as%20the%20Maxwell%27s%20equations%20of%20software%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/03/06/anatomy-of-lisp/&amp;title=Anatomy%20of%20Lisp%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/03/06/anatomy-of-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Anatomy%20of%20Lisp&amp;body=https://simondobson.org/2024/03/06/anatomy-of-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/&amp;title=Lisp%20as%20the%20Maxwell%27s%20equations%20of%20software%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Lisp%20as%20the%20Maxwell's%20equations%20of%20software&amp;body=https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -187,13 +150,13 @@ of how this came&nbsp;about.)
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../04/til-web-site-carbon-ratings/" rel="prev">
-		<span class="meta-nav">Older Post</span><span class="caps">TIL</span>: Web site carbon ratings
+	    <a href="../../05/guard-methods-on-clos-generic-functions/" rel="prev">
+		<span class="meta-nav">Older Post</span>Guard methods on <span class="caps">CLOS</span> generic functions
 	    </a>
 	</div>
 	<div class="next">
-	    <a href="../the-common-lisp-condition-system/" rel="next">
-		<span class="meta-nav">Newer Post</span>The Common Lisp condition system
+	    <a href="../purely-functional-data-structures/" rel="next">
+		<span class="meta-nav">Newer Post</span>Purely functional data structures
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
