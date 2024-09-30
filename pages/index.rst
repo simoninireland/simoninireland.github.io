@@ -14,7 +14,7 @@
 	   computational tools needed to study and simulate these
 	   systems at scale; develop better ways to understand them
 	   using advanced analytical techniques; and work on relating
-	   these techniques to engineering and rel-world sensing.
+	   them to practical sensing and engineering.
 	 <p>
 	   I <a href="/writing/">write</a> about various topics in
 	   science, computing, research practice, and books, and
