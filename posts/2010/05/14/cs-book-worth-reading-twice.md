@@ -84,7 +84,7 @@ provides a framework for dealing precisely with notions of "how
 to."</blockquote>
 
 I've taken a view before about <a
-href="/2010/04/computer-microscope/">computers being the new
+href="/2010/04/01/computer-microscope/">computers being the new
 microscopes</a>, opening-up new science on their own as well as
 facilitating existing approaches. The "how to" aspect of computer
 science re-appears everywhere in this: in describing the behaviours of
