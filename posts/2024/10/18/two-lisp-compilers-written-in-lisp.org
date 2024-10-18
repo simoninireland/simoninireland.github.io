@@ -1,0 +1,30 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Two Lisp compilers written in Lisp
+.. slug: two-lisp-compilers-written-in-lisp
+.. date: 2024-10-18 10:24:36 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, implementation-techniques
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Two Lisp compilers written in Lisp
+
+  [[http://www.ulisp.com/show?4W2I][A Lisp compiler to ARM written in Lisp]]
+
+  [[http://www.ulisp.com/show?4Y20=][A Lisp compiler to RISC-V written in Lisp]]
+
+  Two native-code compilers written in the [[http://www.ulisp.com/show?3J][uLisp]] dialect that targets
+  microcontroller-class machines. Both use a combination of stack
+  and register allocation to get efficiency -- and they're /very/
+  efficient, with the compiled versions sometimes being 100x faster
+  than the interpreted code.
+
+  These are not complete ports, and indeed not on a complete or
+  standard underlying Lisp implementation. But it's still fascinating
+  to see how /simple/ it is, built as a recursive-descent tree-walker
+  that emits assembler directly. With careful initial design even a
+  compiler with no optimisation pathways can still get great speed-up
+  over an interpreter.

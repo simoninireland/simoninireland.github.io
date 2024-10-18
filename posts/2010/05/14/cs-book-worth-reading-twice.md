@@ -111,3 +111,8 @@ computer science that it's worth reading twice (or more). SICP is to
 computer science what Feynman's <em>Lectures on Physics</em> are to
 physics: an accessible distillation of the essence of the subject
 that's stood the test of time.
+
+UPDATED 27Jan2024: This book also <a
+href="/2024/01/27/structure-and-interpretation-of-computer-programs/">appears</a>
+in my <a href="/development/annotated-lisp-bibliography/">annotated
+Lisp bibliography</a>
