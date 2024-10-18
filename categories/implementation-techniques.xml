@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:09:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:25:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
+&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4Y20="&gt;A Lisp compiler to RISC-V written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Two native-code compilers written in the &lt;a href="http://www.ulisp.com/show?3J"&gt;uLisp&lt;/a&gt; dialect that targets
+microcontroller-class machines. Both use a combination of stack
+and register allocation to get efficiency – and they're &lt;i&gt;very&lt;/i&gt;
+efficient, with the compiled versions sometimes being 100x faster
+than the interpreted code.
+&lt;/p&gt;
+
+&lt;p&gt;
+These are not complete ports, and indeed not on a complete or
+standard underlying Lisp implementation. But it's still fascinating
+to see how &lt;i&gt;simple&lt;/i&gt; it is, built as a recursive-descent tree-walker
+that emits assembler directly. With careful initial design even a
+compiler with no optimisation pathways can still get great speed-up
+over an interpreter.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
 &lt;h2 id="org0a147a3"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org0a147a3"&gt;
 &lt;p&gt;

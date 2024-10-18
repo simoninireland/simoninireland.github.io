@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc478829" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:25:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
+&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4Y20="&gt;A Lisp compiler to RISC-V written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Two native-code compilers written in the &lt;a href="http://www.ulisp.com/show?3J"&gt;uLisp&lt;/a&gt; dialect that targets
+microcontroller-class machines. Both use a combination of stack
+and register allocation to get efficiency – and they're &lt;i&gt;very&lt;/i&gt;
+efficient, with the compiled versions sometimes being 100x faster
+than the interpreted code.
+&lt;/p&gt;
+
+&lt;p&gt;
+These are not complete ports, and indeed not on a complete or
+standard underlying Lisp implementation. But it's still fascinating
+to see how &lt;i&gt;simple&lt;/i&gt; it is, built as a recursive-descent tree-walker
+that emits assembler directly. With careful initial design even a
+compiler with no optimisation pathways can still get great speed-up
+over an interpreter.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc478829" class="outline-2"&gt;
 &lt;h2 id="orgc478829"&gt;Purely functional data structures&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgc478829"&gt;
 &lt;p&gt;
@@ -378,56 +406,4 @@ including developing macros for continuations and several embedded
 languages.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/on-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:16:34 GMT</pubDate></item><item><title>Debugging Lisp</title><link>https://simondobson.org/2024/07/05/debugging-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb9a4deb" class="outline-2"&gt;
-&lt;h2 id="orgb9a4deb"&gt;Debugging Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb9a4deb"&gt;
-&lt;p&gt;
-&lt;a href="https://malisper.me/debugging-lisp-part-1-recompilation/"&gt;Debugging Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A four-part blog post series on debugging Lisp, covering:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;Live recompilation of code from inside a debugging session,
-together with re-executing changed code from within a running
-stack trace&lt;/li&gt;
-&lt;li&gt;Inspecting objects and interacting with traces of function calls&lt;/li&gt;
-&lt;li&gt;Redefining classes, and how to ensure that existing instances
-are upgraded to be compatible with the new definition&lt;/li&gt;
-&lt;li&gt;Restarts, the neglected part of the condition system that
-controls how programs continue after encountering errors&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;p&gt;
-The first two are essential, and show how &lt;i&gt;different&lt;/i&gt; Lisp
-programming is from using other languages. In fact it requires a
-considerable mental shift to re-acquire the right reflexes for
-dealing with errors and debugging in a fully interactive
-environment: well, it did for me, anyway. We're not used to
-interactivity in large development environments. There is seldom
-any need to close down a running Lisp session and start again, as
-everything can usually be changed and adapted within a session.
-This is very unlike the usual compile-edit-debug cycles we've
-become accustomed to.
-&lt;/p&gt;
-
-&lt;p&gt;
-The third post – on redefining classes – shows how one can
-upgrade a program that simply &lt;i&gt;has&lt;/i&gt; to keep running, because its
-live state upgrade can be programmed too.
-&lt;/p&gt;
-
-&lt;p&gt;
-The most significant part of the mental shift is to realise that
-the debugger is written in Lisp itself, and makes use of restarts
-and other features to provide the interface. This is a consequence
-of the degree of exposure of the Lisp run-time structures into to
-language itself, where they can be examined and manipulated using
-the full power of the language – and then be re-started or
-discarded as required.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/debugging-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:14:22 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/on-lisp/</guid><pubDate>Fri, 05 Jul 2024 10:16:34 GMT</pubDate></item></channel></rss>

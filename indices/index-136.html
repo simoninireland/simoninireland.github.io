@@ -52,48 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/01/02/til-the-first-ever-com-domain/" rel="bookmark">Tuesday 2 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/01/02/til-the-first-ever-com-domain/"><span class="caps">TIL</span>: The first ever .com&nbsp;domain</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org77cb165" class="outline-2">
-<h2 id="org77cb165"><span class="caps">TIL</span>: The first ever .com&nbsp;domain</h2>
-<div class="outline-text-2" id="text-org77cb165">
-<p>
-Today I learned that the first .com internet domain registered on
-the internet was <a href="https://symbolics.com">https://symbolics.com</a> and belonged to Symbolics, a
-company that made Lisp&nbsp;machines.
-</p>
-
-<p>
-It doesn&#8217;t relate to Lisp any more, of course. It&#8217;s been sold to
-someone who &#8220;helps entrepreneurs and investors acquire high-end
-domain names&#8221;, which seems about as meta as things can get: the
-first-ever .com domain name now points a company focused on
-acquiring domain&nbsp;names.
-</p>
-
-<p>
-Symbolics itself has a storied history, spinning-out from the <span class="caps">MIT</span> <span class="caps">AI</span>
-lab to sell hardware dedicated to running Lisp: one of <i>two</i> such
-start-ups actually. The <a href="https://en.wikipedia.org/wiki/Symbolics">Wikipedia page</a> is a good place to&nbsp;start.
-</p>
-
-<p>
-Incidentally, the rest of the top-ten first .com domains can be
-found <a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains">here</a>.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/01/01/making-small-changes-to-lots-of-files/" rel="bookmark">Monday 1 January, 2024</a>
 			</span>
 		    </div>
@@ -962,6 +920,60 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/5998737768?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/" rel="bookmark">Saturday 23 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../2023/12/23/programmatically-editing-a-file-from-emacs-lisp/">Programmatically editing a file from Emacs&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgd80b53d" class="outline-2">
+<h2 id="orgd80b53d">Programmatically editing a file from Emacs&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgd80b53d">
+<p>
+This is something I frequently want to do: open a named file, work
+on it programmatically using Lisp code, and save it back – all
+without user intervention. Like a lot of things in Emacs, it&#8217;s
+easy once you know&nbsp;how.
+</p>
+
+<p>
+The trick is to create a new, named, buffer for the file to get
+its contents. This is done&nbsp;with <code>find-file-noselect</code> as opposed to
+the more&nbsp;usual <code>find-file</code> that&#8217;s usually bound&nbsp;to <code>C-x C-f</code>, and
+as its name suggests finds (opens) the file without bringing it to
+the user&#8217;s attention. For&nbsp;example,
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="c1">;; open the file in its own buffer</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">with-current-buffer</span><span class="w"> </span><span class="p">(</span><span class="nf">find-file-noselect</span><span class="w"> </span><span class="nv">fn</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; work on it as required, as the current buffer</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">goto-char</span><span class="w"> </span><span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">search-forward</span><span class="w"> </span><span class="s">"#+END_COMMENT"</span><span class="w"> </span><span class="nv">nil</span><span class="w"> </span><span class="nv">t</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">beginning-of-line</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">delete-region</span><span class="w"> </span><span class="p">(</span><span class="nf">point</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">newline</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c1">;; save the results back</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">save-buffer</span><span class="p">))</span>
+</pre></div>
+
+<p>
+(This example comes from my Emacs interface to the Nikola static
+site builder used to maintain this site.) The code fragment
+leaves the current buffer unchanged as far as the user (and the
+rest of the code) is concerned, and so doesn&#8217;t need to be
+protected&nbsp;by <code>save-excursion</code> or the&nbsp;like.
+</p>
+</div>
 </div>
 		</div>
 	    </article>

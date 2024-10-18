@@ -52,54 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/08/02/metacircular-semantics-for-common-lisp-special-forms/" rel="bookmark">Friday 2 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/08/02/metacircular-semantics-for-common-lisp-special-forms/">Metacircular Semantics for Common Lisp Special&nbsp;Forms</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org003e69b" class="outline-2">
-<h2 id="org003e69b">Metacircular Semantics for Common Lisp Special&nbsp;Forms</h2>
-<div class="outline-text-2" id="text-org003e69b">
-<p>
-Henry G. Baker. <i><a href="https://doi.org/10.1145/382126.382662">Metacircular Semantics for Common Lisp Special Forms</a></i>.
-<span class="caps">ACM</span> <span class="caps">SIGPLAN</span> Lisp Pointers <b>V</b>, pp.11–20.&nbsp;1992.
-</p>
-
-<p>
-A response to the criticisms of McCarthy&#8217;s semantics for Common
-Lisp that it didn&#8217;t specify the behaviours of special forms, and
-of the standardisation process of adopting prose definitions that
-are too &#8220;lawyerly&#8221; for&nbsp;engineering.
-</p>
-
-<p>
-The approach is to define the special forms in terms of other
-constructions, for&nbsp;example <code>if</code> in terms of nested lambda
-abstractions to prevent execution of the unwanted branch. This is
-both useful for understanding and a way of minimising the number
-of under-defined special&nbsp;forms.
-</p>
-
-<p>
-It suggests&nbsp;treating <code>catch</code> / <code>throw</code> as basic, both because other
-control-transfer forms can be expressed sing them and because it
-emphasises the interactions that preclude Common Lisp having
-continuations like Scheme&#8217;s. However there&#8217;s also an argument
-pursued that some other structures&nbsp;(like <code>values</code>) provide extra
-information that can be useful for compilers looking to optimise.
-It&#8217;s a deep exploration of the underpinnings of the language from
-both theoretical and practical&nbsp;perspectives.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/08/02/casting-spels-in-lisp/" rel="bookmark">Friday 2 August, 2024</a>
 			</span>
 		    </div>
@@ -605,6 +557,60 @@ The examples in the book delve into these features by means of
 sensibly-sized challenges that can be used to illustrate both
 basic design and implementation. and more advanced ideas like
 re-defining classes on the&nbsp;fly.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/07/23/the-roots-of-lisp/" rel="bookmark">Tuesday 23 July, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/07/23/the-roots-of-lisp/">The roots of&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org0318c4d" class="outline-2">
+<h2 id="org0318c4d">The roots of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-org0318c4d">
+<p>
+<a href="http://www.paulgraham.com/rootsoflisp.html">http://www.paulgraham.com/rootsoflisp.html</a>
+</p>
+
+<p>
+(Only has an PostScript version, but a <span class="caps">PDF</span> is available
+<a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf">here</a>.)
+</p>
+
+<p>
+Re-visits McCarthy&#8217;s discoveries (or inventions, depending on
+your point of view), translating the <a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/">earliest work</a> into modern
+Lisp&nbsp;notation.
+</p>
+
+<blockquote>
+<p>
+It&#8217;s worth understanding what McCarthy discovered, not just as a
+landmark in the history of computers, but as a model for what
+programming is tending to become in our own time. It seems to me that
+there have been two really clean, consistent models of programming so
+far: the C model and the Lisp model. These two seem points of high
+ground, with swampy lowlands between them. As computers have grown
+more powerful, the new languages being developed have been moving
+steadily toward the Lisp model. A popular recipe for new programming
+languages in the past 20 years has been to take the C model of
+computing and add to it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage&nbsp;collection.
+</p>
+</blockquote>
+
+<p>
+Does a great job of making the central insights accessible,
+including re-phrasing the meta-circular Lisp interpreter so as to
+be executable in modern Common&nbsp;Lisp.
 </p>
 </div>
 </div>

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 27 Sep 2024 15:38:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:29:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
+&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4Y20="&gt;A Lisp compiler to RISC-V written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Two native-code compilers written in the &lt;a href="http://www.ulisp.com/show?3J"&gt;uLisp&lt;/a&gt; dialect that targets
+microcontroller-class machines. Both use a combination of stack
+and register allocation to get efficiency – and they're &lt;i&gt;very&lt;/i&gt;
+efficient, with the compiled versions sometimes being 100x faster
+than the interpreted code.
+&lt;/p&gt;
+
+&lt;p&gt;
+These are not complete ports, and indeed not on a complete or
+standard underlying Lisp implementation. But it's still fascinating
+to see how &lt;i&gt;simple&lt;/i&gt; it is, built as a recursive-descent tree-walker
+that emits assembler directly. With careful initial design even a
+compiler with no optimisation pathways can still get great speed-up
+over an interpreter.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
 &lt;h2 id="org37bf54e"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org37bf54e"&gt;
 &lt;p&gt;
@@ -1052,44 +1080,4 @@ basic design and implementation. and more advanced ideas like
 re-defining classes on the fly.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
-&lt;h2 id="org0318c4d"&gt;The roots of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0318c4d"&gt;
-&lt;p&gt;
-&lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-(Only has an PostScript version, but a PDF is available
-&lt;a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf"&gt;here&lt;/a&gt;.)
-&lt;/p&gt;
-
-&lt;p&gt;
-Re-visits McCarthy's discoveries (or inventions, depending on
-your point of view), translating the &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;earliest work&lt;/a&gt; into modern
-Lisp notation.
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-It's worth understanding what McCarthy discovered, not just as a
-landmark in the history of computers, but as a model for what
-programming is tending to become in our own time. It seems to me that
-there have been two really clean, consistent models of programming so
-far: the C model and the Lisp model. These two seem points of high
-ground, with swampy lowlands between them. As computers have grown
-more powerful, the new languages being developed have been moving
-steadily toward the Lisp model. A popular recipe for new programming
-languages in the past 20 years has been to take the C model of
-computing and add to it, piecemeal, parts taken from the Lisp model,
-like runtime typing and garbage collection.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Does a great job of making the central insights accessible,
-including re-phrasing the meta-circular Lisp interpreter so as to
-be executable in modern Common Lisp.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item></channel></rss>

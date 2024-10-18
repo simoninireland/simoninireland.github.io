@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Oct 2024 07:54:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:30:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
+&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="http://www.ulisp.com/show?4Y20="&gt;A Lisp compiler to RISC-V written in Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Two native-code compilers written in the &lt;a href="http://www.ulisp.com/show?3J"&gt;uLisp&lt;/a&gt; dialect that targets
+microcontroller-class machines. Both use a combination of stack
+and register allocation to get efficiency – and they're &lt;i&gt;very&lt;/i&gt;
+efficient, with the compiled versions sometimes being 100x faster
+than the interpreted code.
+&lt;/p&gt;
+
+&lt;p&gt;
+These are not complete ports, and indeed not on a complete or
+standard underlying Lisp implementation. But it's still fascinating
+to see how &lt;i&gt;simple&lt;/i&gt; it is, built as a recursive-descent tree-walker
+that emits assembler directly. With careful initial design even a
+compiler with no optimisation pathways can still get great speed-up
+over an interpreter.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
 &lt;h2 id="org37bf54e"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org37bf54e"&gt;
 &lt;p&gt;
@@ -565,7 +593,7 @@ creating another dependency.
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6782101538?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
   &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</guid><pubDate>Thu, 22 Aug 2024 00:00:00 GMT</pubDate></item><item><title>Prophet Song</title><link>https://simondobson.org/goodreads/prophet-song/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706935399l/175740709._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1726520473l/175740709._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
 	Paul    Lynch
 	  (2023)
@@ -622,19 +650,4 @@ creating another dependency.
 	  Finished Saturday 3 August, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6567722144?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</guid><pubDate>Sat, 03 Aug 2024 00:00:00 GMT</pubDate></item><item><title>SS-GB</title><link>https://simondobson.org/goodreads/ss-gb/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1689536758l/63326204._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Len Deighton
-	  (1979)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      An alternative history that has aged well. The premise is quite common: what if Nazi Germany had invaded Britain in the Spring of 1941, and succeeded? The plot revolves around rescuing the King and retrieving atomic secrets, both to be sent to America.&lt;br&gt;&lt;br&gt;But it's the politics of a Nazi occupation that clearly most fascinated Deighton, because he build a labyrinth of plots and counter-plots between Army, SS, British Resistance, and American isolationism. These internecine struggles are actually quite familiar from the actual history of Nazi occupations, so it's quite fascinating to see them transplanted to a fictional Britain. It's so well done that it's a shame it isn't part of a series (of which Deighton wrote several).
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Saturday 3 August, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6432286432?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/ss-gb/</guid><pubDate>Sat, 03 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</guid><pubDate>Sat, 03 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>
