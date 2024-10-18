@@ -32,6 +32,33 @@
 
 (package-initialize)
 
+;; We nee to use the latest version of org in order to use
+;; the latest version of org-ref. To make this happen, we
+;; use straight.el as package manager
+
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+
+;; Load straight.el as package manager
+(defvar bootstrap-version)
+
+(let ((bootstrap-file (expand-file-name "straight/repos/straight.el/bootstrap.el"
+					(or (bound-and-true-p straight-base-dir)
+					    user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+	(url-retrieve-synchronously
+	 "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	 'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+
+  (load bootstrap-file nil 'nomessage))
+
+;; Load org, rather than necessarily using the built-in version
+(straight-use-package 'org)
+
 (require 'org)
 (require 'org-ref)
 (require 'sd-parsebib)
@@ -47,3 +74,11 @@
       (org-update-all-dblocks)
       (write-file fn)
       (kill-buffer buf))))
+
+
+(defun sd/update-dblocks-in-file (fn)
+  "Update all the dblocks in FN and store the updates back to it."
+  (with-current-buffer (find-file-noselect fn)
+    (org-mode)
+    (org-update-all-dblocks)
+    (save-buffer)))

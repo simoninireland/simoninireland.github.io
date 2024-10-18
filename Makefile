@@ -113,6 +113,7 @@ upgrade-files:
 
 upgrade-dblocks: env
 	$(EMACS) -l "sd-update-dblocks.el" \
+	--eval "(setq enable-local-variables :all)" \
 	$(foreach b, $(BIBFILES), --eval "(add-to-list 'bibtex-completion-bibliography (expand-file-name \"$b\"))") \
 	$(foreach f, $(DB_REFRESH_FILES), --eval "(sd/update-dblocks-in-file (expand-file-name \"$f\"))")
 
