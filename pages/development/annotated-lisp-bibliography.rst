@@ -17,7 +17,7 @@ its this focus on having a programming model for each abstraction
 layer that's the key to differentiating Lisp programming. It's an idea
 that's influenced me profoundly and led me to become, and remain, a
 Lisp programmer -- firstly to `extend and adapt my Emacs environment
-<link:categories/emacs/>`_, and increasingly as a basis for new
+<link:/categories/emacs/>`_, and increasingly as a basis for new
 projects (even though most of my academic work needs to stay in
 Python).
 

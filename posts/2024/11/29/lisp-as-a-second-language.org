@@ -1,0 +1,35 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp as a second language
+.. slug: lisp-as-a-second-language
+.. date: 2024-11-29 15:01:40 UTC
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp as a second language
+
+  Peter Desain.  /[[https://hdl.handle.net/2066/74778][Lisp as a Second Language: Functional Aspects]]/.
+  Perspectives on New Music *20*, pp.192–222. 1990.
+
+  In some ways this article should come under "applications", as
+  it's mainly concerned with using Lisp to represent and manipulate
+  music. Indeed, it presents a system that can be used to perform
+  all sorts of common transformations of the tones and timing of a
+  piece. It's easy to see how the resulting system could be used to
+  compose and then to drive instruments, for example through a MIDI
+  interface.
+
+  The music perspective is however secondary to the goal of teaching
+  and showcasing Lisp through the medium of a realistic example of
+  symbolic programming. It covers a lot of ground, starting with
+  lists and functions and including first-class functions and
+  combinators as means of implementing the musical structures. It's
+  a great piece of pedagogy that treats the application and the
+  language as closely linked, and not shying-away from some quite
+  advanced techniques that have clear applications in the domain. It
+  would be great to see this used as a basis for actual musical
+  composition and performance.
