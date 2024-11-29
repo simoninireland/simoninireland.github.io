@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:30:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 15:02:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0936ec5" class="outline-2"&gt;
+&lt;h2 id="org0936ec5"&gt;Lisp as a second language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0936ec5"&gt;
+&lt;p&gt;
+Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
+Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+In some ways this article should come under "applications", as
+it's mainly concerned with using Lisp to represent and manipulate
+music. Indeed, it presents a system that can be used to perform
+all sorts of common transformations of the tones and timing of a
+piece. It's easy to see how the resulting system could be used to
+compose and then to drive instruments, for example through a MIDI
+interface.
+&lt;/p&gt;
+
+&lt;p&gt;
+The music perspective is however secondary to the goal of teaching
+and showcasing Lisp through the medium of a realistic example of
+symbolic programming. It covers a lot of ground, starting with
+lists and functions and including first-class functions and
+combinators as means of implementing the musical structures. It's
+a great piece of pedagogy that treats the application and the
+language as closely linked, and not shying-away from some quite
+advanced techniques that have clear applications in the domain. It
+would be great to see this used as a basis for actual musical
+composition and performance.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
 &lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
 &lt;p&gt;
@@ -636,18 +667,4 @@ creating another dependency.
 	  Finished Sunday 11 August, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6565806725?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-world-according-to-colour/</guid><pubDate>Sun, 11 Aug 2024 00:00:00 GMT</pubDate></item><item><title>Build: An Unorthodox Guide to Making Things Worth Making</title><link>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1652120231l/59696349._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Tony Fadell
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      Twenty-five years ago, more or less, I ran a start-up company. I wish books like this had existed back then to help me understand what start-ups need to do.&lt;br&gt;&lt;br&gt;Fadell has perhaps the best pedigree imaginable, including being involved both in massive successes (the iPod, the iPhone, the Nest thermostat) and crashing failures (General Magic), and the best thing about this book is his willingness to share them, warts and all. He's clearly come to a place in his life where he regards everything as a learning opportunity and a teaching opportunity, rather than needing to project a particular image of himself.&lt;br&gt;&lt;br&gt;The business advice is fascinating, even for someone who doesn't intend to start a company: there's plenty to learn about organisation structures and politics. I suspect it'd be absolute gold for anyone thinking of making hardware devices for the modern software-dominated world, though. Fadell has a clear understanding of what's needed to make a physical product succeed, and his emphases on story-telling and understanding the customer's journey as a route to success are compelling. &lt;br&gt;&lt;br&gt;There's also a lot of insight into some of the major companies and personalities he's met along the way. He's positive about Apple, clear-eyed about Steve Jobs' strengths and weaknesses – and clearly quite shell-shocked by his exposure to Google as not what he was expecting them to be.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Saturday 3 August, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6567722144?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/build-an-unorthodox-guide-to-making-things-worth-making/</guid><pubDate>Sat, 03 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-world-according-to-colour/</guid><pubDate>Sun, 11 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:26:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 15:02:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0936ec5" class="outline-2"&gt;
+&lt;h2 id="org0936ec5"&gt;Lisp as a second language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0936ec5"&gt;
+&lt;p&gt;
+Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
+Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+In some ways this article should come under "applications", as
+it's mainly concerned with using Lisp to represent and manipulate
+music. Indeed, it presents a system that can be used to perform
+all sorts of common transformations of the tones and timing of a
+piece. It's easy to see how the resulting system could be used to
+compose and then to drive instruments, for example through a MIDI
+interface.
+&lt;/p&gt;
+
+&lt;p&gt;
+The music perspective is however secondary to the goal of teaching
+and showcasing Lisp through the medium of a realistic example of
+symbolic programming. It covers a lot of ground, starting with
+lists and functions and including first-class functions and
+combinators as means of implementing the musical structures. It's
+a great piece of pedagogy that treats the application and the
+language as closely linked, and not shying-away from some quite
+advanced techniques that have clear applications in the domain. It
+would be great to see this used as a basis for actual musical
+composition and performance.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
 &lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
 &lt;p&gt;

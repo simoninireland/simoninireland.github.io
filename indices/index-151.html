@@ -52,6 +52,433 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/09/05/guard-methods-on-clos-generic-functions/" rel="bookmark">Thursday 5 September, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/09/05/guard-methods-on-clos-generic-functions/">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgdad2bf2" class="outline-2">
+<h2 id="orgdad2bf2">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</h2>
+<div class="outline-text-2" id="text-orgdad2bf2">
+<p>
+There are times when one wants to be able to guard a method&#8217;s
+execution. A typical case is for callbacks, where we only want the
+callback to run under certain circumstances – but it&#8217;s easier to
+write the callbacks themselves as though they&#8217;ll <i>always</i> be&nbsp;called.
+</p>
+
+<p>
+Object-oriented programs typically use a pattern for this: they
+split the function into two methods, one for the guard and one for
+the action being guarded. A sub-class can then override the guard
+independently of the action, and some sub-classes may override
+both guard and&nbsp;action.
+</p>
+
+<p>
+This splitting seems a little awkward, though, and there are times
+when I&#8217;d prefer to have everything (guard and action) defined as
+part of the one method. Fortunately there&#8217;s a Lisp-ier solution
+involving defining a new method combination to get exactly this&nbsp;behaviour.
+</p>
+</div>
+<div id="outline-container-orgc6422b3" class="outline-3">
+<h3 id="orgc6422b3">Standard method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-orgc6422b3">
+<p>
+<span class="caps">CLOS</span>, unlike most languages, allows a programmer to control how
+methods are combined in terms of overriding. The &#8220;standard&#8221;
+combination allows&nbsp;for <code>:before</code>, <code>:after</code>,&nbsp;and <code>:around</code> methods as
+well as undecorated &#8220;primary&#8221;&nbsp;methods.
+</p>
+
+<p>
+When a generic function is called, the list of applicable primary
+methods is determined based on the types of arguments. most
+specific method first<sup><a id="fnr.most-specific-first" class="footref" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fn.most-specific-first" role="doc-backlink">1</a></sup>.
+</p>
+
+<p>
+The same process is performed for all&nbsp;applicable <code>:before</code> methods,
+and then again for&nbsp;applicable <code>:after</code> methods, and then <i>again</i>&nbsp;for
+<code>:around</code> methods.&nbsp;The <code>:after</code> and <code>:around</code> are always ordered most
+specific first, while&nbsp;the <code>:before</code> methods are always ordered
+least-specific&nbsp;first.
+</p>
+
+<p>
+Once these lists have been constructed, the &#8220;effective&#8221; method
+that results is called. If there&nbsp;are <code>:around</code> methods, they are
+called in order.&nbsp;An <code>:around</code> method may, as part of its body,&nbsp;call
+<code>call-next-method</code> to invoke the&nbsp;next-most-specific <code>:around</code> method
+– or may&nbsp;not.
+</p>
+
+<p>
+If a call&nbsp;to <code>call-next-method</code> has no&nbsp;more <code>:around</code> methods to call
+– or of there were&nbsp;no <code>:around</code> methods defined – all&nbsp;the <code>:before</code>
+methods are run and their return values discarded. Then the
+primary methods are run in the same manner&nbsp;as <code>:around</code> methods,
+with any calls&nbsp;to <code>call-next-method</code> calling the next primary
+method. After the primary methods have returned, all&nbsp;the <code>:after</code>
+methods are run and their return values discarded. The result of
+the method call is the result returned from the primary methods.
+The process is roughly&nbsp;like:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">arounds</span>
+<span class="w">         </span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">arounds</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">arounds</span><span class="p">)))</span>
+
+<span class="w">     </span><span class="p">(</span><span class="nb">prog1</span>
+<span class="w">         </span><span class="p">(</span><span class="k">progn</span>
+<span class="w">           </span><span class="p">(</span><span class="nv">call-methods</span><span class="w"> </span><span class="nv">befores</span><span class="p">)</span>
+<span class="w">           </span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">primaries</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">primaries</span><span class="p">)))</span>
+<span class="w">       </span><span class="p">(</span><span class="nv">call-methods</span><span class="w"> </span><span class="nv">afters</span><span class="p">))</span>
+</pre></div>
+
+<p>
+In this&nbsp;code, <code>call-method</code> calls its first method argument, and
+any call&nbsp;to <code>call-next-method</code> calls the next method in the&nbsp;list.
+<code>call-methods</code> calls all the methods in a list of methods,
+discarding their return&nbsp;values.
+</p>
+
+<p>
+Contrast that with Java or Python, where methods on more-specific
+classes override those on less-specific, and have the option to
+call up to the superclass method. Essentially this makes all
+methods similar&nbsp;to <code>:around</code>, and there&#8217;s no real equivalent&nbsp;of
+<code>:before</code> and <code>:after</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orga578c83" class="outline-3">
+<h3 id="orga578c83">Other method&nbsp;combinations</h3>
+<div class="outline-text-3" id="text-orga578c83">
+<p>
+The above is referred to as <i>standard method combination</i>, implying
+the existence of <i>non-standard</i> combination. <span class="caps">CLOS</span> lets the
+programmer define new combinations, and indeed defines a few
+itself. For our purposes the most important alternative method
+combination&nbsp;is <code>and</code>, which runs all primary methods within&nbsp;an <code>and</code>
+form treating all methods as predicates. There are only primary
+methods&nbsp;allowed.
+</p>
+</div>
+</div>
+<div id="outline-container-org85cc730" class="outline-3">
+<h3 id="org85cc730">Guards as method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-org85cc730">
+<p>
+For our use case, we want to be able to return values from primary
+methods, and&nbsp;allow <code>:around</code>, <code>:before</code> and <code>:after</code> methods. However, we
+<i>also</i> want to have some methods act as predicates that guard the
+execution of the effective method thus formed. We want to be able
+to add guard methods that are always run first, regardless of their
+specificity, and then run the effective method only if <i>all</i> the guards
+are satisfied. The net result is that all parts of the generic
+function are provided as methods on it, but some can now be boolean
+guards that act as gatekeepers on the rest of the methods.
+Naturally we want the guards to be selected for specificity
+alongside the other methods, letting the <span class="caps">CLOS</span> machinery pick <i>all</i>
+the functionality that&#8217;s appropriate to a particular method&nbsp;call.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b8a7b0" class="outline-3">
+<h3 id="org2b8a7b0">Why this isn&#8217;t&nbsp;just <code>:around</code>
+</h3>
+<div class="outline-text-3" id="text-org2b8a7b0">
+<p>
+It might sound like we can get this behaviour&nbsp;using <code>:around</code>
+methods that perform guarding. But we can&#8217;t –&nbsp;quite.
+</p>
+
+<p>
+Suppose we define a primary&nbsp;method:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">example</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">integer</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+<p>
+We can write a guard quite happily as&nbsp;an <code>:around</code> method:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">example</span><span class="w"> </span><span class="ss">:around</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">number</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">         </span><span class="p">(</span><span class="nb">call-next-method</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+This method will only allow the method to proceed when the
+condition holds, otherwise it&nbsp;returns <code>nil</code>.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="p">(</span><span class="nv">example</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">example</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+<p>
+(52&nbsp;<span class="caps">NIL</span>)
+</p>
+
+<p>
+So far so&nbsp;good.
+</p>
+
+<p>
+However, the problem is that <span class="caps">CLOS</span> orders&nbsp;the <code>:around</code> methods
+most specific first. Suppose we have&nbsp;another <code>:around</code> method
+specialised against a more specific&nbsp;type:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">example</span><span class="w"> </span><span class="ss">:around</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">integer</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">           </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">           </span><span class="p">(</span><span class="nb">call-next-method</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+When this method is called with an integer this method gets run
+before the previous&nbsp;guard:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nv">example</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+<p>
+6
+</p>
+
+<p>
+and we get a non-nil result, despite the guard method indicating
+that we shouldn&#8217;t. If we provide an argument that doesn&#8217;t trigger
+the&nbsp;first <code>:around</code> method, then we can get caught by the&nbsp;guard:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nv">example</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+<p>
+<span class="caps">NIL</span>
+</p>
+
+<p>
+This is of course perfectly sensible behaviour in many cases.
+However, it does mean that the &#8220;guards&#8221; we&#8217;re supplying are
+executed as <i>part</i> of the effective method rather than <i>before</i> it,
+and therefore can&#8217;t guarantee that the method is properly guarded
+by <i>all</i> the guards, regardless of their specialisation. Another
+way of looking at this is that a later, more specialised, &#8220;guard&#8221;
+can override one set by an earlier, less specialised, method,
+which again may not be what&#8217;s&nbsp;desired.
+</p>
+</div>
+</div>
+<div id="outline-container-org88504e4" class="outline-3">
+<h3 id="org88504e4">A <code>guarded</code> method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-org88504e4">
+<p>
+Fortunately we can get the behaviour we want by defining a new
+method&nbsp;combination, <code>guarded</code>.&nbsp;A <code>guarded</code> generic function accepts
+five method&nbsp;qualifiers:
+</p>
+
+<ul class="org-ul">
+<li>undecorated primary&nbsp;methods;</li>
+<li>
+<code>:before</code> and <code>:after</code> methods that run before and after the
+primary&nbsp;methods;</li>
+<li>
+<code>:around</code> methods that run around&nbsp;the <code>:before</code>-primary-<code>:after</code>
+combination;&nbsp;and</li>
+<li>
+<code>:if</code> methods that act as guards, running before&nbsp;any <code>:around</code>
+methods to determine whether <i>any</i> of the &#8220;functional&#8221; methods
+are run or&nbsp;not</li>
+</ul>
+<p>
+We first need a helper function<sup><a id="fnr.call-methods" class="footref" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fn.call-methods" role="doc-backlink">2</a></sup> to construct the
+code to run the chain&nbsp;of <code>:before</code> and <code>:after</code> methods while
+discarding their return&nbsp;values.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">call-methods</span><span class="w"> </span><span class="p">(</span><span class="nv">methods</span><span class="p">)</span>
+<span class="w">       </span><span class="s">"Return `call-method' forms for all METHODS."</span>
+<span class="w">       </span><span class="p">(</span><span class="nb">mapcar</span><span class="w"> </span><span class="nf">#'</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nv">m</span><span class="p">)</span>
+<span class="w">                   </span><span class="o">`</span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="o">,</span><span class="nv">m</span><span class="p">))</span>
+<span class="w">               </span><span class="nv">methods</span><span class="p">))</span>
+</pre></div>
+
+<p>
+We can then use the&nbsp;macro <code>define-method-combination</code> to define our
+new method&nbsp;combination.
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="p">(</span><span class="nb">define-method-combination</span><span class="w"> </span><span class="nv">guarded</span><span class="w"> </span><span class="p">(</span><span class="k">&amp;optional</span><span class="w"> </span><span class="p">(</span><span class="nv">order</span><span class="w"> </span><span class="ss">:most-specific-first</span><span class="p">))</span>
+<span class="w">       </span><span class="p">((</span><span class="nv">arounds</span><span class="w"> </span><span class="p">(</span><span class="ss">:around</span><span class="p">))</span>
+<span class="w">        </span><span class="p">(</span><span class="nv">ifs</span><span class="w"> </span><span class="p">(</span><span class="ss">:if</span><span class="p">))</span>
+<span class="w">        </span><span class="p">(</span><span class="nv">befores</span><span class="w"> </span><span class="p">(</span><span class="ss">:before</span><span class="p">))</span>
+<span class="w">        </span><span class="p">(</span><span class="nv">primaries</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="ss">:order</span><span class="w"> </span><span class="nv">order</span><span class="w"> </span><span class="ss">:required</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="nv">afters</span><span class="w"> </span><span class="p">(</span><span class="ss">:after</span><span class="p">)))</span>
+
+<span class="w">       </span><span class="p">(</span><span class="k">let*</span><span class="w"> </span><span class="p">((</span><span class="nv">before-form</span><span class="w"> </span><span class="p">(</span><span class="nv">call-methods</span><span class="w"> </span><span class="nv">befores</span><span class="p">))</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">after-form</span><span class="w"> </span><span class="p">(</span><span class="nv">call-methods</span><span class="w"> </span><span class="nv">afters</span><span class="p">))</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">primary-form</span><span class="w"> </span><span class="o">`</span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="o">,</span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">primaries</span><span class="p">)</span><span class="w"> </span><span class="o">,</span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">primaries</span><span class="p">)))</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">core-form</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">or</span><span class="w"> </span><span class="nv">befores</span><span class="w"> </span><span class="nv">afters</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">primaries</span><span class="p">))</span>
+<span class="w">                             </span><span class="o">`</span><span class="p">(</span><span class="nb">prog1</span>
+<span class="w">                                  </span><span class="p">(</span><span class="k">progn</span>
+<span class="w">                                    </span><span class="o">,@</span><span class="nv">before-form</span>
+<span class="w">                                    </span><span class="o">,</span><span class="nv">primary-form</span><span class="p">)</span>
+<span class="w">                                </span><span class="o">,@</span><span class="nv">after-form</span><span class="p">)</span>
+
+<span class="w">                             </span><span class="o">`</span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="o">,</span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">primaries</span><span class="p">))))</span>
+<span class="w">              </span><span class="p">(</span><span class="nv">around-form</span><span class="w"> </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">arounds</span>
+<span class="w">                               </span><span class="o">`</span><span class="p">(</span><span class="nb">call-method</span><span class="w"> </span><span class="o">,</span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">arounds</span><span class="p">)</span>
+<span class="w">                                             </span><span class="p">(</span><span class="o">,@</span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">arounds</span><span class="p">)</span>
+<span class="w">                                              </span><span class="p">(</span><span class="nb">make-method</span><span class="w"> </span><span class="o">,</span><span class="nv">core-form</span><span class="p">)))</span>
+
+<span class="w">                               </span><span class="nv">core-form</span><span class="p">)))</span>
+
+<span class="w">         </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">ifs</span>
+<span class="w">             </span><span class="o">`</span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">and</span><span class="w"> </span><span class="o">,@</span><span class="p">(</span><span class="nv">call-methods</span><span class="w"> </span><span class="nv">ifs</span><span class="p">))</span>
+<span class="w">                  </span><span class="o">,</span><span class="nv">around-form</span><span class="p">)</span>
+
+<span class="w">             </span><span class="nv">around-form</span><span class="p">)))</span>
+</pre></div>
+
+<p>
+The macro is described in detail in the <a href="https://novaspec.org/cl/f_define-method-combination">hyperspec</a>, but its
+behaviour is quite simple. The list of forms&nbsp;(<code>arounds</code> and so on)
+define variables that extract the methods that have the given
+decorations –&nbsp;so <code>arounds</code> gets a list&nbsp;of <code>:around</code> methods,
+<code>primaries</code> gets the undecorated (primary) methods, and so on. In&nbsp;particular, <code>ifs</code> gets any methods decorated&nbsp;with <code>:if</code>: these are
+the&nbsp;guards.
+</p>
+
+<p>
+The body of the macro constructs the code needed to build the
+methods&#8217; behaviours.&nbsp;The <code>let*</code> defines the code for the different&nbsp;parts. <code>core-form</code> is slightly optimised in the case when there is
+only one primary method; otherwise it runs&nbsp;the <code>:before</code> methods
+and then the primary method, captures the result of the latter,
+then runs&nbsp;the <code>:after</code> methods, and then returns its result. (This
+is the first time I&#8217;ve ever&nbsp;used <code>prog1</code> for real: now I know why
+it exists.) If there&nbsp;are <code>:around</code> methods, <code>around-form</code> wraps up a
+list consisting of&nbsp;the <code>:around</code> methods and a method constructed&nbsp;from <code>core-form</code>, letting it be run as the result of the&nbsp;final
+<code>call-next-method</code> call.
+</p>
+
+<p>
+The body of&nbsp;the <code>let*</code> wraps-up <code>around-form</code> within&nbsp;an <code>if</code> whose
+condition is the conjunction of all&nbsp;the <code>:if</code> methods. Only if all
+these methods return true (well,&nbsp;not <code>nil</code> in the usual Lisp style)
+will the code&nbsp;of <code>around-form</code> be executed. Again the code is
+optimised for the case where there are no guards, in which case
+we just&nbsp;get <code>around-form</code>.
+</p>
+
+<p>
+Notice&nbsp;that <code>define-method-combination</code> returns <i>code</i>, like all
+macros: it doesn&#8217;t execute the methods itself. This is a hint as
+to what happens off-stage: <span class="caps">CLOS</span> uses the method combination at
+compile time to construct effective methods which can then be
+cached to minimise the performance hit from all the flexibility
+provided by method&nbsp;combination.
+</p>
+
+<p>
+Now we can re-do our example from&nbsp;above:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">     </span><span class="c1">;; a generic function defined to use our new method combination</span>
+<span class="w">     </span><span class="p">(</span><span class="nb">defgeneric</span><span class="w"> </span><span class="nv">guarded-example</span><span class="w"> </span><span class="p">(</span><span class="nv">v</span><span class="p">)</span>
+<span class="w">       </span><span class="p">(</span><span class="ss">:method-combination</span><span class="w"> </span><span class="nv">guarded</span><span class="p">))</span>
+
+<span class="w">     </span><span class="c1">;; the functionality, split into two methods</span>
+<span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">guarded-example</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">integer</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+
+<span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">guarded-example</span><span class="w"> </span><span class="ss">:around</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">integer</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">           </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">           </span><span class="p">(</span><span class="nb">call-next-method</span><span class="p">)))</span>
+
+<span class="w">     </span><span class="c1">;; this guard used to be :around and is now :if</span>
+<span class="w">     </span><span class="p">(</span><span class="nb">defmethod</span><span class="w"> </span><span class="nv">guarded-example</span><span class="w"> </span><span class="ss">:if</span><span class="w"> </span><span class="p">((</span><span class="nv">v</span><span class="w"> </span><span class="nc">number</span><span class="p">))</span>
+<span class="w">       </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
+
+<span class="w">     </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="p">(</span><span class="nv">guarded-example</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">guarded-example</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">guarded-example</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+<p>
+(52 <span class="caps">NIL</span>&nbsp;<span class="caps">NIL</span>)
+</p>
+
+<p>
+The guard now stops execution of the effective method if its
+condition isn&#8217;t met – and if it <i>is</i> met, passes control through
+to the complete method stack. This happens regardless of where
+the guard is specialised in terms of the class hierarchy: the
+guards run before any &#8220;functional&#8221; code.&nbsp;(That <code>:before</code> and <code>:after</code>
+methods work too, and multiple guards, and that the combination
+works when applied to class hierarchies, are left as exercises to
+the&nbsp;reader.)
+</p>
+</div>
+</div>
+<div id="outline-container-org53c5ffd" class="outline-3">
+<h3 id="org53c5ffd">Critique</h3>
+<div class="outline-text-3" id="text-org53c5ffd">
+<p>
+You may object to this solution on the grounds that it introduces
+a weird asymmetry into methods: some as functional and some as
+guards, with different return types. Maybe you prefer to keep
+guards in separate methods using the usual object-oriented
+pattern. That&#8217;s entirely reasonable. But I think there are
+sufficient cases where this kind of guarding makes sense to have
+it as a pattern, especially as it has no effect unless explicitly
+selected for a generic&nbsp;function.
+</p>
+
+<p>
+I have to say I&#8217;m amazed how <i>little</i> code is needed: around 30
+lines, including the helper function. It shows off the power of
+<span class="caps">CLOS</span>, and how it&#8217;s possible to change even the basic underlying
+structures of the object system with relative ease. But it also
+shows how Lisp opens-up the space of programming styles, things
+that benefit from being policies that can be changed, rather than
+hard-coding one particular&nbsp;choice.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.most-specific-first" class="footnum" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fnr.most-specific-first" role="doc-backlink">1</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
+This is also programmable when required, for
+example to run methods&nbsp;least-specific-first.
+</p></div>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.call-methods" class="footnum" href="../2024/09/05/guard-methods-on-clos-generic-functions/#fnr.call-methods" role="doc-backlink">2</a></sup><div class="footpara" role="doc-footnote"><p class="footpara">
+I got the idea for this function from
+<a href="https://github.com/sellout/method-combination-utilities">method-combination-utilities</a>, and included it literally to avoid
+creating another&nbsp;dependency.
+</p></div>
+</div>
+
+
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/the-himmler-brothers-a-german-family-history/" rel="bookmark">Thursday 22 August, 2024</a>
 			</span>
 		    </div>
