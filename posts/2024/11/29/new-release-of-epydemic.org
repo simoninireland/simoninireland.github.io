@@ -1,0 +1,109 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: New release of epydemic
+.. slug: new-release-of-epydemic
+.. date: 2024-11-29 16:35:46 UTC
+.. tags: epydemic,software, network science
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* New release of epydemic
+
+  It's been a while -- about 15 months since v.1.13.1 -- but today I
+  finally released v.1.14.1 of ~epydemic~, a library for epidemic (and)
+  other simulation over complex networks.
+
+  This release include several bug-fixes and two major changes.
+
+** Better Newman-Ziff percolation
+
+   The Newman-Ziff algorithm for bond and site percolation is widely
+   used. The version that's been in ~epydemic~ for a while emphasise
+   speed over everything. However, in the course of some work by one
+   of my MSc students on how grids of different dimensions respond to
+   random failure, we discovered that we needed to be able to do some
+   more flexible operations. In particular, we wanted to sample things
+   other than just the size of the largest connected component, and
+   wanted to be able to dig into to exactly how the network was
+   deforming.
+
+   The problem was that this information wasn't readily available. It
+   /was/ encoded within the algorithm's data structure, but it wasn't
+   being reflected as an evolving network that was easy to get at. So
+   we upgraded the algorithm to build a working copy of the network as
+   it was constructed, so that it could be interrogated by
+   normal ~networkx~ operations within the sampling process. This adds
+   some time penalty, but it's acceptable slowdown for the extra
+   capability.
+
+** Multiple process instances
+
+   ~epydemic~ defines different epidemic processes (and indeed
+   non-disease processes like pulse-coupled oscillators). Until now
+   these have been usable alone in a simulation, but not together: one
+   couldn't run /two/ diseases in the /same/ simulation over the /same/
+   population simultaneously. Doing so is obviously very desirable,
+   especially if you want to explore co-infecting diseases.
+
+   Co-infection is a difficult problem. As a first step we've added
+   multiple process instances which can have their own parameters and
+   results -- or can share parameters if required. This involves
+   assigning distinct names to each instance, and then optionally
+   using them to decorate parameter/result names.
+
+   This is fiddly if done manually, so we also added some methods on
+   the ~Process~ class to get and set parameters and results using any
+   instance name on the calling process. For example:
+
+   #+begin_src python
+
+    params = dict()
+
+    # network
+    N = 10000
+    kmean = 100
+    params[ERNetwork.N] = N
+    params[ERNetwork.KMEAN] = kmean
+
+    # first infection
+    p1 = SIR("Disease1")
+    p1.setParameters(params,
+		     {SIR.P_INFECT: 0.1,
+		      SIR.P_INFECTED: 5.0 / N
+		      })
+
+    # second infection
+    p2 = SIR("Disease2")
+    p2.setParameters(params,
+		     {SIR.P_INFECT: 0.3,
+		      SIR.P_INFECTED: 5.0 / N
+		      })
+
+    # common removal rate
+    params[SIR.P_REMOVE] = 0.005
+
+    # run the processes together
+    ps = ProcessSequence([p1, p2])
+    e = StochasticDynamics(ps, ERNetwork())
+    rc = e.set(params).run(fatal=True)
+   #+end_src
+
+   The ~setParameters~ call sets the parameters decorated with the name
+   of the process, if it has one. There are other operations for
+   extracting the parameters, and for interacting with experimental
+   results without getting into the details of decoration.
+
+   See [[https://pypi.org/project/epydemic/][the project documentation]] for more details, as well as an
+   updated tutorial and a cookbook recipe for co-infection (which is
+   based around the code above). The [[https://github.com/simoninireland/epydemic][Github repo]] is also available. To
+   upgrade, just run:
+
+   #+begin_src python
+pip install --upgrade epydemic
+   #+end_src
+
+   or delete and re-build any virtual environments.
