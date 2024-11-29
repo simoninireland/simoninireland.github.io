@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New release of epydemic | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 29 November, 2024</a>
+	    </span>
+	</div>
+	<h1>New release of&nbsp;epydemic</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org7aa5b80" class="outline-2">
+<h2 id="org7aa5b80">New release of&nbsp;epydemic</h2>
+<div class="outline-text-2" id="text-org7aa5b80">
+<p>
+It&#8217;s been a while – about 15 months since v.1.13.1 – but today I
+finally released v.1.14.1&nbsp;of <code>epydemic</code>, a library for epidemic (and)
+other simulation over complex&nbsp;networks.
+</p>
+
+<p>
+This release include several bug-fixes and two major&nbsp;changes.
+</p>
+</div>
+
+<div id="outline-container-org998dee1" class="outline-3">
+<h3 id="org998dee1">Better Newman-Ziff&nbsp;percolation</h3>
+<div class="outline-text-3" id="text-org998dee1">
+<p>
+The Newman-Ziff algorithm for bond and site percolation is widely
+used. The version that&#8217;s been&nbsp;in <code>epydemic</code> for a while emphasise
+speed over everything. However, in the course of some work by one
+of my MSc students on how grids of different dimensions respond to
+random failure, we discovered that we needed to be able to do some
+more flexible operations. In particular, we wanted to sample things
+other than just the size of the largest connected component, and
+wanted to be able to dig into to exactly how the network was&nbsp;deforming.
+</p>
+
+<p>
+The problem was that this information wasn&#8217;t readily available. It
+<i>was</i> encoded within the algorithm&#8217;s data structure, but it wasn&#8217;t
+being reflected as an evolving network that was easy to get at. So
+we upgraded the algorithm to build a working copy of the network as
+it was constructed, so that it could be interrogated by&nbsp;normal <code>networkx</code> operations within the sampling process. This adds
+some time penalty, but it&#8217;s acceptable slowdown for the extra&nbsp;capability.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8635453" class="outline-3">
+<h3 id="org8635453">Multiple process&nbsp;instances</h3>
+<div class="outline-text-3" id="text-org8635453">
+<p>
+<code>epydemic</code> defines different epidemic processes (and indeed
+non-disease processes like pulse-coupled oscillators). Until now
+these have been usable alone in a simulation, but not together: one
+couldn&#8217;t run <i>two</i> diseases in the <i>same</i> simulation over the <i>same</i>
+population simultaneously. Doing so is obviously very desirable,
+especially if you want to explore co-infecting&nbsp;diseases.
+</p>
+
+<p>
+Co-infection is a difficult problem. As a first step we&#8217;ve added
+multiple process instances which can have their own parameters and
+results – or can share parameters if required. This involves
+assigning distinct names to each instance, and then optionally
+using them to decorate parameter/result&nbsp;names.
+</p>
+
+<p>
+This is fiddly if done manually, so we also added some methods on&nbsp;the <code>Process</code> class to get and set parameters and results using any
+instance name on the calling process. For&nbsp;example:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+   <span class="c1"># network</span>
+   <span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+   <span class="n">kmean</span> <span class="o">=</span> <span class="mi">100</span>
+   <span class="n">params</span><span class="p">[</span><span class="n">ERNetwork</span><span class="o">.</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">N</span>
+   <span class="n">params</span><span class="p">[</span><span class="n">ERNetwork</span><span class="o">.</span><span class="n">KMEAN</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmean</span>
+
+   <span class="c1"># first infection</span>
+   <span class="n">p1</span> <span class="o">=</span> <span class="n">SIR</span><span class="p">(</span><span class="s2">"Disease1"</span><span class="p">)</span>
+   <span class="n">p1</span><span class="o">.</span><span class="n">setParameters</span><span class="p">(</span><span class="n">params</span><span class="p">,</span>
+                    <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                     <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
+                     <span class="p">})</span>
+
+   <span class="c1"># second infection</span>
+   <span class="n">p2</span> <span class="o">=</span> <span class="n">SIR</span><span class="p">(</span><span class="s2">"Disease2"</span><span class="p">)</span>
+   <span class="n">p2</span><span class="o">.</span><span class="n">setParameters</span><span class="p">(</span><span class="n">params</span><span class="p">,</span>
+                    <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+                     <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
+                     <span class="p">})</span>
+
+   <span class="c1"># common removal rate</span>
+   <span class="n">params</span><span class="p">[</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_REMOVE</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.005</span>
+
+   <span class="c1"># run the processes together</span>
+   <span class="n">ps</span> <span class="o">=</span> <span class="n">ProcessSequence</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">])</span>
+   <span class="n">e</span> <span class="o">=</span> <span class="n">StochasticDynamics</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">ERNetwork</span><span class="p">())</span>
+   <span class="n">rc</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fatal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+<p>
+The <code>setParameters</code> call sets the parameters decorated with the name
+of the process, if it has one. There are other operations for
+extracting the parameters, and for interacting with experimental
+results without getting into the details of&nbsp;decoration.
+</p>
+
+<p>
+See <a href="https://pypi.org/project/epydemic/">the project documentation</a> for more details, as well as an
+updated tutorial and a cookbook recipe for co-infection (which is
+based around the code above). The <a href="https://github.com/simoninireland/epydemic">Github repo</a> is also available. To
+upgrade, just&nbsp;run:
+</p>
+
+<div class="highlight"><pre><span></span>   <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">epydemic</span>
+</pre></div>
+
+<p>
+or delete and re-build any virtual&nbsp;environments.
+</p>
+</div>
+</div>
+</div>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="New%20release%20of%20epydemic%20%23epydemic%20%23networkscience%20%23software&amp;url=https://simondobson.org/2024/11/29/new-release-of-epydemic/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=New%20release%20of%20epydemic%20%23epydemic%20%23networkscience%20%23software&amp;url=https://simondobson.org/2024/11/29/new-release-of-epydemic/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/11/29/new-release-of-epydemic/&amp;title=New%20release%20of%20epydemic%20%23epydemic%20%23networkscience%20%23software" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/11/29/new-release-of-epydemic/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=New%20release%20of%20epydemic&amp;body=https://simondobson.org/2024/11/29/new-release-of-epydemic/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/epydemic/">epydemic</a>
+		    <span>  </span>
+		<a href="../../../../categories/network-science/">network science</a>
+		    <span>  </span>
+		<a href="../../../../categories/software/">software</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../lisp-as-a-second-language/" rel="prev">
+		<span class="meta-nav">Older Post</span>Lisp as a second language
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

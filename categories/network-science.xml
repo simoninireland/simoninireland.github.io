@@ -1,5 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about network science)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/network-science.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 08 May 2024 15:57:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Complex networks, complex processes</title><link>https://simondobson.org/2015/02/13/book/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;I'm writing a book on my sabbatical. Or trying to, anyway. So I thought I'd publicise the fact so people can hassle me to keep at it.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about network science)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/network-science.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 16:50:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New release of epydemic</title><link>https://simondobson.org/2024/11/29/new-release-of-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7aa5b80" class="outline-2"&gt;
+&lt;h2 id="org7aa5b80"&gt;New release of epydemic&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7aa5b80"&gt;
+&lt;p&gt;
+It's been a while – about 15 months since v.1.13.1 – but today I
+finally released v.1.14.1 of &lt;code&gt;epydemic&lt;/code&gt;, a library for epidemic (and)
+other simulation over complex networks.
+&lt;/p&gt;
+
+&lt;p&gt;
+This release include several bug-fixes and two major changes.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org998dee1" class="outline-3"&gt;
+&lt;h3 id="org998dee1"&gt;Better Newman-Ziff percolation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org998dee1"&gt;
+&lt;p&gt;
+The Newman-Ziff algorithm for bond and site percolation is widely
+used. The version that's been in &lt;code&gt;epydemic&lt;/code&gt; for a while emphasise
+speed over everything. However, in the course of some work by one
+of my MSc students on how grids of different dimensions respond to
+random failure, we discovered that we needed to be able to do some
+more flexible operations. In particular, we wanted to sample things
+other than just the size of the largest connected component, and
+wanted to be able to dig into to exactly how the network was
+deforming.
+&lt;/p&gt;
+
+&lt;p&gt;
+The problem was that this information wasn't readily available. It
+&lt;i&gt;was&lt;/i&gt; encoded within the algorithm's data structure, but it wasn't
+being reflected as an evolving network that was easy to get at. So
+we upgraded the algorithm to build a working copy of the network as
+it was constructed, so that it could be interrogated by
+normal &lt;code&gt;networkx&lt;/code&gt; operations within the sampling process. This adds
+some time penalty, but it's acceptable slowdown for the extra
+capability.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8635453" class="outline-3"&gt;
+&lt;h3 id="org8635453"&gt;Multiple process instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8635453"&gt;
+&lt;p&gt;
+&lt;code&gt;epydemic&lt;/code&gt; defines different epidemic processes (and indeed
+non-disease processes like pulse-coupled oscillators). Until now
+these have been usable alone in a simulation, but not together: one
+couldn't run &lt;i&gt;two&lt;/i&gt; diseases in the &lt;i&gt;same&lt;/i&gt; simulation over the &lt;i&gt;same&lt;/i&gt;
+population simultaneously. Doing so is obviously very desirable,
+especially if you want to explore co-infecting diseases.
+&lt;/p&gt;
+
+&lt;p&gt;
+Co-infection is a difficult problem. As a first step we've added
+multiple process instances which can have their own parameters and
+results – or can share parameters if required. This involves
+assigning distinct names to each instance, and then optionally
+using them to decorate parameter/result names.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is fiddly if done manually, so we also added some methods on
+the &lt;code&gt;Process&lt;/code&gt; class to get and set parameters and results using any
+instance name on the calling process. For example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# network&lt;/span&gt;
+   &lt;span class="n"&gt;N&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt;
+   &lt;span class="n"&gt;kmean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+   &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ERNetwork&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+   &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ERNetwork&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;KMEAN&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;kmean&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# first infection&lt;/span&gt;
+   &lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Disease1"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setParameters&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                     &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+                     &lt;span class="p"&gt;})&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# second infection&lt;/span&gt;
+   &lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Disease2"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setParameters&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                     &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+                     &lt;span class="p"&gt;})&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# common removal rate&lt;/span&gt;
+   &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_REMOVE&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.005&lt;/span&gt;
+
+   &lt;span class="c1"&gt;# run the processes together&lt;/span&gt;
+   &lt;span class="n"&gt;ps&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ProcessSequence&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+   &lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StochasticDynamics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ps&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ERNetwork&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+   &lt;span class="n"&gt;rc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fatal&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The &lt;code&gt;setParameters&lt;/code&gt; call sets the parameters decorated with the name
+of the process, if it has one. There are other operations for
+extracting the parameters, and for interacting with experimental
+results without getting into the details of decoration.
+&lt;/p&gt;
+
+&lt;p&gt;
+See &lt;a href="https://pypi.org/project/epydemic/"&gt;the project documentation&lt;/a&gt; for more details, as well as an
+updated tutorial and a cookbook recipe for co-infection (which is
+based around the code above). The &lt;a href="https://github.com/simoninireland/epydemic"&gt;Github repo&lt;/a&gt; is also available. To
+upgrade, just run:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;epydemic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+or delete and re-build any virtual environments.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>epydemic</category><category>network science</category><category>software</category><guid>https://simondobson.org/2024/11/29/new-release-of-epydemic/</guid><pubDate>Fri, 29 Nov 2024 16:35:46 GMT</pubDate></item><item><title>Complex networks, complex processes</title><link>https://simondobson.org/2015/02/13/book/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;I'm writing a book on my sabbatical. Or trying to, anyway. So I thought I'd publicise the fact so people can hassle me to keep at it.
 
 &lt;!--more--&gt;
 
