@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 15:02:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0936ec5" class="outline-2"&gt;
-&lt;h2 id="org0936ec5"&gt;Lisp as a second language&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0936ec5"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
+&lt;h2 id="org0e5ab39"&gt;Lisp as a second language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0e5ab39"&gt;
 &lt;p&gt;
 Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
 Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
@@ -30,9 +30,9 @@ would be great to see this used as a basis for actual musical
 composition and performance.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
-&lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org49f0e11" class="outline-2"&gt;
+&lt;h2 id="org49f0e11"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org49f0e11"&gt;
 &lt;p&gt;
 &lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
 &lt;/p&gt;
@@ -49,9 +49,9 @@ and gradually building a really complicated application from a
 standing start.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga7343e8" class="outline-2"&gt;
-&lt;h2 id="orga7343e8"&gt;A road to Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga7343e8"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org353c80d" class="outline-2"&gt;
+&lt;h2 id="org353c80d"&gt;A road to Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org353c80d"&gt;
 &lt;p&gt;
 &lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
 &lt;/p&gt;
@@ -69,9 +69,9 @@ would probably be built-in and included directly in an
 introduction.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc629a4a" class="outline-2"&gt;
-&lt;h2 id="orgc629a4a"&gt;LISPcraft&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc629a4a"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgcc8e5b0" class="outline-2"&gt;
+&lt;h2 id="orgcc8e5b0"&gt;LISPcraft&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc8e5b0"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;
@@ -113,9 +113,9 @@ Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
 978-039395544-6. 1986.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1e3e7eb" class="outline-2"&gt;
-&lt;h2 id="org1e3e7eb"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1e3e7eb"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org34abf93" class="outline-2"&gt;
+&lt;h2 id="org34abf93"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org34abf93"&gt;
 &lt;p&gt;
 &lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
 &lt;/p&gt;
@@ -128,9 +128,9 @@ Includes macros and CLOS. Quite an achievement to make it all so
 readable.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0879960" class="outline-2"&gt;
-&lt;h2 id="org0879960"&gt;Practical Common Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0879960"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org855ebb4" class="outline-2"&gt;
+&lt;h2 id="org855ebb4"&gt;Practical Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org855ebb4"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/b8/4b7fa7-83e9-4756-8ede-1c3cdeaeafef/screenshot.png" alt="nil"&gt;
 &lt;/p&gt;

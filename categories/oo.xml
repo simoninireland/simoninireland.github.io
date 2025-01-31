@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about oo)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/oo.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Mon, 26 Aug 2024 16:31:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b63828" class="outline-2"&gt;
-&lt;h2 id="org1b63828"&gt;The art of the metaobject protocol&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b63828"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about oo)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/oo.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org248eeff" class="outline-2"&gt;
+&lt;h2 id="org248eeff"&gt;The art of the metaobject protocol&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org248eeff"&gt;
 &lt;p width="300" class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/70/6116bf-244d-4faa-a1d7-2797a2d76223/aotmop.jpg" alt="nil"&gt;
 &lt;/p&gt;
@@ -105,9 +105,9 @@ planning on writing Lisp would benefit from reading this book just
 to see the ideas in their full generality.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item><item><title>Object-oriented programming on Common Lisp: A programmer's guide to CLOS</title><link>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1c558c9" class="outline-2"&gt;
-&lt;h2 id="org1c558c9"&gt;Object-oriented programming on Common Lisp: A programmer's guide to CLOS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1c558c9"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item><item><title>Object-oriented programming on Common Lisp: A programmer's guide to CLOS</title><link>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org950d6dd" class="outline-2"&gt;
+&lt;h2 id="org950d6dd"&gt;Object-oriented programming on Common Lisp: A programmer's guide to CLOS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org950d6dd"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/41/584da1-ef33-41dd-8091-43c3999f6451/clos.jpg" alt="nil"&gt;
 &lt;/p&gt;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about macroprogramming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/macroprogramming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 02 Aug 2024 10:25:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org304e782" class="outline-2"&gt;
-&lt;h2 id="org304e782"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org304e782"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about macroprogramming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/macroprogramming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746ce25" class="outline-2"&gt;
+&lt;h2 id="org746ce25"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org746ce25"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -83,9 +83,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org598a20d" class="outline-3"&gt;
-&lt;h3 id="org598a20d"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org598a20d"&gt;
+&lt;div id="outline-container-orga0748bc" class="outline-3"&gt;
+&lt;h3 id="orga0748bc"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga0748bc"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -102,9 +102,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd341b0f" class="outline-3"&gt;
-&lt;h3 id="orgd341b0f"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd341b0f"&gt;
+&lt;div id="outline-container-orgfed8ee6" class="outline-3"&gt;
+&lt;h3 id="orgfed8ee6"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfed8ee6"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -138,9 +138,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd7988ba" class="outline-3"&gt;
-&lt;h3 id="orgd7988ba"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd7988ba"&gt;
+&lt;div id="outline-container-org3b55f9a" class="outline-3"&gt;
+&lt;h3 id="org3b55f9a"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3b55f9a"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -171,9 +171,9 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb382c77" class="outline-3"&gt;
-&lt;h3 id="orgb382c77"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb382c77"&gt;
+&lt;div id="outline-container-org71a9600" class="outline-3"&gt;
+&lt;h3 id="org71a9600"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org71a9600"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
@@ -286,9 +286,9 @@ tightened up.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
-&lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1aec963"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4731511" class="outline-2"&gt;
+&lt;h2 id="org4731511"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4731511"&gt;
 &lt;p&gt;
 Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
 compare C++ templates to Lisp macros.
@@ -464,9 +464,9 @@ case to that addressed by Lisp or Rust macros, and doing so within a
 more restricted computational and syntactic envelope.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
-&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
+&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1a3254d" class="outline-2"&gt;
+&lt;h2 id="org1a3254d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a3254d"&gt;
 &lt;p&gt;
 I was talking with one of my colleagues the other day about
 programming languages, and we ended up comparing macros in Rust and

@@ -105,31 +105,31 @@ far, but getting support for Python 3.6 and later proved&nbsp;possible.</p>
 <h3>Basic type annotations as they are&nbsp;intended</h3>
 <p>We should of course start with the features we want. Type annotations
 can be attached to method declarations and object&nbsp;attributes:</p>
-<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
     <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my name'</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">v</span>
 
-    <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
 </pre></div>
 
 <p>Hopefully self-explanatory, and note that it doesn&#8217;t need any special
 imports. If we were to extend things a little, for example to use
 lists or dicts, then we need some more&nbsp;machinery:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
 
-<span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="p">:</span>
     <span class="n">names</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">values</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">def</span> <span class="nf">addPair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">addPair</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
         <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">v</span>
 
-    <span class="k">def</span> <span class="nf">asDict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">asDict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
         <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
             <span class="n">d</span><span class="p">[</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -142,8 +142,8 @@ before execution that, for&nbsp;example <code>(b.asDict())[1]</code> is&nbsp;typ
 <h3>Self&nbsp;types</h3>
 <p>How about a method that returns an instance&nbsp;of <code>self</code> (or similar)?
 The obvious approach&nbsp;is:</p>
-<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
@@ -151,10 +151,10 @@ The obvious approach&nbsp;is:</p>
 definition. This is such a natural thing, though, that it&#8217;s going to
 be supported in future versions and, from Python 3.8, is available as
 an import from&nbsp;the <code>__future__</code> module:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>    <span class="c1"># now typechecks</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">C</span><span class="p">:</span>    <span class="c1"># now typechecks</span>
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
@@ -172,9 +172,9 @@ discovered that there are three&nbsp;exceptions.</p>
 <p><strong>1. <code>Final[]</code> (and other)&nbsp;types</strong></p>
 <p>Suppose you have an attribute that you want to be constant.&nbsp;The
 <code>Final[]</code> type constructor lets you denote&nbsp;this:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
 
-<span class="k">class</span> <span class="nc">D</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">D</span>
     <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
 </pre></div>
 
@@ -182,14 +182,14 @@ discovered that there are three&nbsp;exceptions.</p>
 running this code on Python 3.7 (for example) will fail. However,
 there&#8217;s another&nbsp;module, <code>typing_extensions</code>, that backports many new
 features which can be imported if&nbsp;needed:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">import</span> <span class="nn">sys</span>
+<div class="code"><pre class="code literal-block"><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Final</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-    <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Final</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Final</span>
 
-<span class="k">class</span> <span class="nc">D</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">D</span>
     <span class="n">VERSION</span> <span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1.2.1'</span>
 </pre></div>
 
@@ -209,7 +209,7 @@ versions for which it&nbsp;applied:</p>
 
 <p>For <code>setup.py</code> we similarly include it as an &#8220;extra&#8221; requirement,
 guarded by the&nbsp;version:</p>
-<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'README.rst'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">longDescription</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -240,8 +240,8 @@ more general objects. So to annotate self types portably, replace&nbsp;the
 <div class="code"><pre class="code literal-block"><span class="c1"># Too far into the future...</span>
 <span class="c1">#from __future__ import annotations</span>
 
-<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'C'</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">meAgain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'C'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 
@@ -252,7 +252,7 @@ within the&nbsp;code.</p>
 <p>Type annotations were introduced in Python 3.5, but annotations for
 <em>variables</em> only came in with Python 3.6. So code of this form will
 fail with a syntax error when run on Python&nbsp;3.5:</p>
-<div class="code"><pre class="code literal-block"><span class="k">class</span> <span class="nc">E</span><span class="p">:</span>
+<div class="code"><pre class="code literal-block"><span class="k">class</span><span class="w"> </span><span class="nc">E</span><span class="p">:</span>
     <span class="n">v</span> <span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'my value'</span>
 </pre></div>
 
@@ -330,7 +330,7 @@ a Pythonic&nbsp;idea.</p>
 	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
 	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
 	      unless otherwise&nbsp;noted.
 	    </p>

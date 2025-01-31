@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:29:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org37bf54e" class="outline-2"&gt;
-&lt;h2 id="org37bf54e"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org37bf54e"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb8af6ca" class="outline-2"&gt;
+&lt;h2 id="orgb8af6ca"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb8af6ca"&gt;
 &lt;p&gt;
 I've recently been thinking about low-power computing, from AI and
 data centres down to sensors, as part of a new initiative the
@@ -81,9 +81,9 @@ communities. But it's still quite sobering that the differences are
 energy usage rather than managing it.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>haskell</category><category>javascript</category><category>lisp</category><category>low power</category><category>programming</category><category>python</category><guid>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</guid><pubDate>Fri, 27 Sep 2024 15:15:23 GMT</pubDate></item><item><title>Guard methods on CLOS generic functions</title><link>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdad2bf2" class="outline-2"&gt;
-&lt;h2 id="orgdad2bf2"&gt;Guard methods on CLOS generic functions&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdad2bf2"&gt;
+&lt;/div&gt;</description><category>haskell</category><category>javascript</category><category>lisp</category><category>low power</category><category>programming</category><category>python</category><guid>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</guid><pubDate>Fri, 27 Sep 2024 15:15:23 GMT</pubDate></item><item><title>Guard methods on CLOS generic functions</title><link>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5f0970d" class="outline-2"&gt;
+&lt;h2 id="org5f0970d"&gt;Guard methods on CLOS generic functions&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5f0970d"&gt;
 &lt;p&gt;
 There are times when one wants to be able to guard a method's
 execution. A typical case is for callbacks, where we only want the
@@ -107,9 +107,9 @@ involving defining a new method combination to get exactly this
 behaviour.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgc6422b3" class="outline-3"&gt;
-&lt;h3 id="orgc6422b3"&gt;Standard method combination&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc6422b3"&gt;
+&lt;div id="outline-container-orgb956012" class="outline-3"&gt;
+&lt;h3 id="orgb956012"&gt;Standard method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb956012"&gt;
 &lt;p&gt;
 CLOS, unlike most languages, allows a programmer to control how
 methods are combined in terms of overriding. The "standard"
@@ -177,9 +177,9 @@ methods similar to &lt;code&gt;:around&lt;/code&gt;, and there's no real equival
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orga578c83" class="outline-3"&gt;
-&lt;h3 id="orga578c83"&gt;Other method combinations&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga578c83"&gt;
+&lt;div id="outline-container-orgeb7f77e" class="outline-3"&gt;
+&lt;h3 id="orgeb7f77e"&gt;Other method combinations&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgeb7f77e"&gt;
 &lt;p&gt;
 The above is referred to as &lt;i&gt;standard method combination&lt;/i&gt;, implying
 the existence of &lt;i&gt;non-standard&lt;/i&gt; combination. CLOS lets the
@@ -191,9 +191,9 @@ methods allowed.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org85cc730" class="outline-3"&gt;
-&lt;h3 id="org85cc730"&gt;Guards as method combination&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org85cc730"&gt;
+&lt;div id="outline-container-orgf506076" class="outline-3"&gt;
+&lt;h3 id="orgf506076"&gt;Guards as method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf506076"&gt;
 &lt;p&gt;
 For our use case, we want to be able to return values from primary
 methods, and allow &lt;code&gt;:around&lt;/code&gt;, &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; methods. However, we
@@ -210,9 +210,9 @@ the functionality that's appropriate to a particular method call.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org2b8a7b0" class="outline-3"&gt;
-&lt;h3 id="org2b8a7b0"&gt;Why this isn't just &lt;code&gt;:around&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org2b8a7b0"&gt;
+&lt;div id="outline-container-org8335913" class="outline-3"&gt;
+&lt;h3 id="org8335913"&gt;Why this isn't just &lt;code&gt;:around&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8335913"&gt;
 &lt;p&gt;
 It might sound like we can get this behaviour using &lt;code&gt;:around&lt;/code&gt;
 methods that perform guarding. But we can't – quite.
@@ -297,9 +297,9 @@ which again may not be what's desired.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org88504e4" class="outline-3"&gt;
-&lt;h3 id="org88504e4"&gt;A &lt;code&gt;guarded&lt;/code&gt; method combination&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org88504e4"&gt;
+&lt;div id="outline-container-org1a26b34" class="outline-3"&gt;
+&lt;h3 id="org1a26b34"&gt;A &lt;code&gt;guarded&lt;/code&gt; method combination&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1a26b34"&gt;
 &lt;p&gt;
 Fortunately we can get the behaviour we want by defining a new
 method combination, &lt;code&gt;guarded&lt;/code&gt;. A &lt;code&gt;guarded&lt;/code&gt; generic function accepts
@@ -449,9 +449,9 @@ the reader.)
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org53c5ffd" class="outline-3"&gt;
-&lt;h3 id="org53c5ffd"&gt;Critique&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org53c5ffd"&gt;
+&lt;div id="outline-container-org0bd74b1" class="outline-3"&gt;
+&lt;h3 id="org0bd74b1"&gt;Critique&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0bd74b1"&gt;
 &lt;p&gt;
 You may object to this solution on the grounds that it introduces
 a weird asymmetry into methods: some as functional and some as
@@ -492,9 +492,9 @@ creating another dependency.
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</guid><pubDate>Thu, 05 Sep 2024 14:36:23 GMT</pubDate></item><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org304e782" class="outline-2"&gt;
-&lt;h2 id="org304e782"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org304e782"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</guid><pubDate>Thu, 05 Sep 2024 14:36:23 GMT</pubDate></item><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746ce25" class="outline-2"&gt;
+&lt;h2 id="org746ce25"&gt;My mental model of setf was wrong&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org746ce25"&gt;
 &lt;p&gt;
 I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
 &lt;/p&gt;
@@ -576,9 +576,9 @@ and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it i
 either. This has some interesting consequences.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-org598a20d" class="outline-3"&gt;
-&lt;h3 id="org598a20d"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org598a20d"&gt;
+&lt;div id="outline-container-orga0748bc" class="outline-3"&gt;
+&lt;h3 id="orga0748bc"&gt;The selector is entirely arbitrary&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga0748bc"&gt;
 &lt;p&gt;
 If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
 some people don't – we could in principle define a new
@@ -595,9 +595,9 @@ defined function&lt;/i&gt;. All we need is a selector symbol.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd341b0f" class="outline-3"&gt;
-&lt;h3 id="orgd341b0f"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd341b0f"&gt;
+&lt;div id="outline-container-orgfed8ee6" class="outline-3"&gt;
+&lt;h3 id="orgfed8ee6"&gt;There can be more arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfed8ee6"&gt;
 &lt;p&gt;
 Ever since I first encountered them I wondered why the lambda
 lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
@@ -631,9 +631,9 @@ the rest of the locator arguments after it.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgd7988ba" class="outline-3"&gt;
-&lt;h3 id="orgd7988ba"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgd7988ba"&gt;
+&lt;div id="outline-container-org3b55f9a" class="outline-3"&gt;
+&lt;h3 id="org3b55f9a"&gt;You can specialise by value too&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3b55f9a"&gt;
 &lt;p&gt;
 Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
 specialise them on the type of the new value as well as on the
@@ -664,9 +664,9 @@ of generic functions.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-orgb382c77" class="outline-3"&gt;
-&lt;h3 id="orgb382c77"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb382c77"&gt;
+&lt;div id="outline-container-org71a9600" class="outline-3"&gt;
+&lt;h3 id="org71a9600"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org71a9600"&gt;
 &lt;p&gt;
 Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
 &lt;/p&gt;
@@ -779,9 +779,9 @@ tightened up.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge9df00b" class="outline-2"&gt;
-&lt;h2 id="orge9df00b"&gt;TIL: The most powerful one-line program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge9df00b"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item><item><title>TIL: The most powerful one-line program in the world</title><link>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3b371cb" class="outline-2"&gt;
+&lt;h2 id="org3b371cb"&gt;TIL: The most powerful one-line program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3b371cb"&gt;
 &lt;p&gt;
 Well, the most powerful I've found so far, anyway.
 &lt;/p&gt;
@@ -842,9 +842,9 @@ learning, and GPUs are from one perspective just APL accelerator
 co-processors. The ideas are still massively relevant.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf8dcbd0" class="outline-2"&gt;
-&lt;h2 id="orgf8dcbd0"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf8dcbd0"&gt;
+&lt;/div&gt;</description><category>apl</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/07/17/til-the-most-powerful-one-line-program-in-the-world/</guid><pubDate>Wed, 17 Jul 2024 09:20:53 GMT</pubDate></item><item><title>Class slots that work with classes and instances in CLOS</title><link>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7e6b1bc" class="outline-2"&gt;
+&lt;h2 id="org7e6b1bc"&gt;Class slots that work with classes and instances in CLOS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7e6b1bc"&gt;
 &lt;p&gt;
 I recently had a use case where I wanted to associate a constant
 value with a class &lt;i&gt;and&lt;/i&gt; its instances – but I needed to be able to
@@ -970,9 +970,9 @@ UPDATED 2024-06-29: Fixed the typo in the class definition to use
 out to me.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1aec963" class="outline-2"&gt;
-&lt;h2 id="org1aec963"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1aec963"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/06/28/class-slots-that-work-with-classes-and-instances-in-clos/</guid><pubDate>Fri, 28 Jun 2024 16:17:41 GMT</pubDate></item><item><title>C++ template macroprogramming versus Lisp macros</title><link>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4731511" class="outline-2"&gt;
+&lt;h2 id="org4731511"&gt;C++ template macroprogramming &lt;i&gt;versus&lt;/i&gt; Lisp macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4731511"&gt;
 &lt;p&gt;
 Following on from &lt;a href="/2024/06/14/lisp-macros-versus-rust-macros/"&gt;Lisp macros versus Rust macros&lt;/a&gt;, I also want to
 compare C++ templates to Lisp macros.
@@ -1148,9 +1148,9 @@ case to that addressed by Lisp or Rust macros, and doing so within a
 more restricted computational and syntactic envelope.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf513c0d" class="outline-2"&gt;
-&lt;h2 id="orgf513c0d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf513c0d"&gt;
+&lt;/div&gt;</description><category>c++</category><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/</guid><pubDate>Fri, 21 Jun 2024 10:22:54 GMT</pubDate></item><item><title>Lisp macros versus Rust macros</title><link>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1a3254d" class="outline-2"&gt;
+&lt;h2 id="org1a3254d"&gt;Lisp macros &lt;i&gt;versus&lt;/i&gt; Rust macros&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a3254d"&gt;
 &lt;p&gt;
 I was talking with one of my colleagues the other day about
 programming languages, and we ended up comparing macros in Rust and
@@ -1233,9 +1233,9 @@ expand to the simpler core operations. This perhaps explains the
 Rust designers' decision to make macros syntactically distinct.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org69b2fff" class="outline-2"&gt;
-&lt;h2 id="org69b2fff"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org69b2fff"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><category>rust</category><guid>https://simondobson.org/2024/06/14/lisp-macros-versus-rust-macros/</guid><pubDate>Fri, 14 Jun 2024 13:23:46 GMT</pubDate></item><item><title>TIL: The loudest Lisp program in the world</title><link>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8b56563" class="outline-2"&gt;
+&lt;h2 id="org8b56563"&gt;TIL: The loudest Lisp program in the world&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8b56563"&gt;
 &lt;p&gt;
 Today I learned about a program that generates the sounds that help
 people navigate as they exit long tunnels when an emergency such as
@@ -1273,9 +1273,9 @@ handling of industrial control and robust communications.
 It's a great read.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgdde4712" class="outline-2"&gt;
-&lt;h2 id="orgdde4712"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgdde4712"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><category>til</category><guid>https://simondobson.org/2024/05/03/til-the-loudest-lisp-program-in-the-world/</guid><pubDate>Fri, 03 May 2024 08:50:16 GMT</pubDate></item><item><title>Trying to refute some criticisms of Lisp</title><link>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07aef6f" class="outline-2"&gt;
+&lt;h2 id="org07aef6f"&gt;Trying to refute some criticisms of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07aef6f"&gt;
 &lt;p&gt;
 I recently had a discussion with someone on Mastodon about Lisp and
 its perceived (by them) deficiencies as a language. There were some
@@ -1304,10 +1304,9 @@ typing&lt;/li&gt;
 These points are tied together, but let's try to unpack them.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org56a728c" class="outline-3"&gt;
-&lt;h3 id="org56a728c"&gt;Design&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org56a728c"&gt;
+&lt;div id="outline-container-orgb1bf96f" class="outline-3"&gt;
+&lt;h3 id="orgb1bf96f"&gt;Design&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb1bf96f"&gt;
 &lt;p&gt;
 Let's start with design. Lisp is over half a century old. I'd argue
 it was exceptionally well-designed – when it was designed. It
@@ -1325,11 +1324,9 @@ software would be being written in Haskell.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-
-&lt;div id="outline-container-orgfd9b92c" class="outline-3"&gt;
-&lt;h3 id="orgfd9b92c"&gt;Typing and features&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfd9b92c"&gt;
+&lt;div id="outline-container-org7a388c4" class="outline-3"&gt;
+&lt;h3 id="org7a388c4"&gt;Typing and features&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7a388c4"&gt;
 &lt;p&gt;
 And the lack of modern types isn't really as clear-cut as it
 appears. The argument about the &lt;i&gt;lack&lt;/i&gt; of features in Lisp also
@@ -1370,11 +1367,9 @@ limited in comparison.)
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-
-&lt;div id="outline-container-orgc66afe3" class="outline-3"&gt;
-&lt;h3 id="orgc66afe3"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgc66afe3"&gt;
+&lt;div id="outline-container-org48e7b33" class="outline-3"&gt;
+&lt;h3 id="org48e7b33"&gt;The persistence of hardware 1: Stupid operation names&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org48e7b33"&gt;
 &lt;p&gt;
 The complaints about &lt;code&gt;car&lt;/code&gt; and &lt;code&gt;cdr&lt;/code&gt; are long established: they
 were originally derived from &lt;a href="https://en.wikipedia.org/wiki/CAR_and_CDR"&gt;machine-language instructions on the
@@ -1411,10 +1406,9 @@ and seldom used: barely anyone would mind if they were removed.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org876f83b" class="outline-3"&gt;
-&lt;h3 id="org876f83b"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org876f83b"&gt;
+&lt;div id="outline-container-org28c35e0" class="outline-3"&gt;
+&lt;h3 id="org28c35e0"&gt;The persistence of hardware 2: It happens a lot&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org28c35e0"&gt;
 &lt;p&gt;
 The suggestion that Lisp has hardware holdovers that should be
 removed also neglects these holdovers in other languages.
@@ -1438,10 +1432,9 @@ as far as I know.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-orgb28ab00" class="outline-3"&gt;
-&lt;h3 id="orgb28ab00"&gt;The different choices&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgb28ab00"&gt;
+&lt;div id="outline-container-org66fb961" class="outline-3"&gt;
+&lt;h3 id="org66fb961"&gt;The different choices&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org66fb961"&gt;
 &lt;p&gt;
 For the sake of argument, let's turn the argument around and ask:
 give that early Lisps had proper macros, arbitrary-precision
@@ -1485,9 +1478,9 @@ choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge3e69f6" class="outline-2"&gt;
-&lt;h2 id="orge3e69f6"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge3e69f6"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2c7df6e" class="outline-2"&gt;
+&lt;h2 id="org2c7df6e"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2c7df6e"&gt;
 &lt;p&gt;
 A horribly dangerous but occasionally useful Lisp technique.
 &lt;/p&gt;

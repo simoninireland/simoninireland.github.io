@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org7aa5b80" class="outline-2">
-<h2 id="org7aa5b80">New release of&nbsp;epydemic</h2>
-<div class="outline-text-2" id="text-org7aa5b80">
+		<div id="outline-container-org0c1efed" class="outline-2">
+<h2 id="org0c1efed">New release of&nbsp;epydemic</h2>
+<div class="outline-text-2" id="text-org0c1efed">
 <p>
 It&#8217;s been a while – about 15 months since v.1.13.1 – but today I
 finally released v.1.14.1&nbsp;of <code>epydemic</code>, a library for epidemic (and)
@@ -86,10 +86,9 @@ other simulation over complex&nbsp;networks.
 This release include several bug-fixes and two major&nbsp;changes.
 </p>
 </div>
-
-<div id="outline-container-org998dee1" class="outline-3">
-<h3 id="org998dee1">Better Newman-Ziff&nbsp;percolation</h3>
-<div class="outline-text-3" id="text-org998dee1">
+<div id="outline-container-orgb28d1d3" class="outline-3">
+<h3 id="orgb28d1d3">Better Newman-Ziff&nbsp;percolation</h3>
+<div class="outline-text-3" id="text-orgb28d1d3">
 <p>
 The Newman-Ziff algorithm for bond and site percolation is widely
 used. The version that&#8217;s been&nbsp;in <code>epydemic</code> for a while emphasise
@@ -111,10 +110,9 @@ some time penalty, but it&#8217;s acceptable slowdown for the extra&nbsp;capabil
 </p>
 </div>
 </div>
-
-<div id="outline-container-org8635453" class="outline-3">
-<h3 id="org8635453">Multiple process&nbsp;instances</h3>
-<div class="outline-text-3" id="text-org8635453">
+<div id="outline-container-org88cc177" class="outline-3">
+<h3 id="org88cc177">Multiple process&nbsp;instances</h3>
+<div class="outline-text-3" id="text-org88cc177">
 <p>
 <code>epydemic</code> defines different epidemic processes (and indeed
 non-disease processes like pulse-coupled oscillators). Until now
@@ -148,16 +146,16 @@ instance name on the calling process. For&nbsp;example:
    <span class="c1"># first infection</span>
    <span class="n">p1</span> <span class="o">=</span> <span class="n">SIR</span><span class="p">(</span><span class="s2">"Disease1"</span><span class="p">)</span>
    <span class="n">p1</span><span class="o">.</span><span class="n">setParameters</span><span class="p">(</span><span class="n">params</span><span class="p">,</span>
-                    <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
-                     <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
-                     <span class="p">})</span>
+                        <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+                         <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
+                         <span class="p">})</span>
 
    <span class="c1"># second infection</span>
    <span class="n">p2</span> <span class="o">=</span> <span class="n">SIR</span><span class="p">(</span><span class="s2">"Disease2"</span><span class="p">)</span>
    <span class="n">p2</span><span class="o">.</span><span class="n">setParameters</span><span class="p">(</span><span class="n">params</span><span class="p">,</span>
-                    <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
-                     <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
-                     <span class="p">})</span>
+                        <span class="p">{</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECT</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+                         <span class="n">SIR</span><span class="o">.</span><span class="n">P_INFECTED</span><span class="p">:</span> <span class="mf">5.0</span> <span class="o">/</span> <span class="n">N</span>
+                         <span class="p">})</span>
 
    <span class="c1"># common removal rate</span>
    <span class="n">params</span><span class="p">[</span><span class="n">SIR</span><span class="o">.</span><span class="n">P_REMOVE</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.005</span>
@@ -229,6 +227,11 @@ or delete and re-build any virtual&nbsp;environments.
 		<span class="meta-nav">Older Post</span>Lisp as a second language
 	    </a>
 	</div>
+	<div class="next">
+	    <a href="../../../../2025/01/31/lisp-style-and-design/" rel="next">
+		<span class="meta-nav">Newer Post</span>Lisp: Style and design
+	    </a>
+	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
 	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
 		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
@@ -242,7 +245,7 @@ or delete and re-build any virtual&nbsp;environments.
 	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
 	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
 	      unless otherwise&nbsp;noted.
 	    </p>

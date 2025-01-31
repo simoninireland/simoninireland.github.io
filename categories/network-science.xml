@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about network science)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/network-science.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 16:50:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New release of epydemic</title><link>https://simondobson.org/2024/11/29/new-release-of-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7aa5b80" class="outline-2"&gt;
-&lt;h2 id="org7aa5b80"&gt;New release of epydemic&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7aa5b80"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about network science)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/network-science.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New release of epydemic</title><link>https://simondobson.org/2024/11/29/new-release-of-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0c1efed" class="outline-2"&gt;
+&lt;h2 id="org0c1efed"&gt;New release of epydemic&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0c1efed"&gt;
 &lt;p&gt;
 It's been a while – about 15 months since v.1.13.1 – but today I
 finally released v.1.14.1 of &lt;code&gt;epydemic&lt;/code&gt;, a library for epidemic (and)
@@ -12,10 +12,9 @@ other simulation over complex networks.
 This release include several bug-fixes and two major changes.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org998dee1" class="outline-3"&gt;
-&lt;h3 id="org998dee1"&gt;Better Newman-Ziff percolation&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org998dee1"&gt;
+&lt;div id="outline-container-orgb28d1d3" class="outline-3"&gt;
+&lt;h3 id="orgb28d1d3"&gt;Better Newman-Ziff percolation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb28d1d3"&gt;
 &lt;p&gt;
 The Newman-Ziff algorithm for bond and site percolation is widely
 used. The version that's been in &lt;code&gt;epydemic&lt;/code&gt; for a while emphasise
@@ -40,10 +39,9 @@ capability.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-org8635453" class="outline-3"&gt;
-&lt;h3 id="org8635453"&gt;Multiple process instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org8635453"&gt;
+&lt;div id="outline-container-org88cc177" class="outline-3"&gt;
+&lt;h3 id="org88cc177"&gt;Multiple process instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org88cc177"&gt;
 &lt;p&gt;
 &lt;code&gt;epydemic&lt;/code&gt; defines different epidemic processes (and indeed
 non-disease processes like pulse-coupled oscillators). Until now
@@ -78,16 +76,16 @@ instance name on the calling process. For example:
    &lt;span class="c1"&gt;# first infection&lt;/span&gt;
    &lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Disease1"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
    &lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setParameters&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-                     &lt;span class="p"&gt;})&lt;/span&gt;
+                        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                         &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+                         &lt;span class="p"&gt;})&lt;/span&gt;
 
    &lt;span class="c1"&gt;# second infection&lt;/span&gt;
    &lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Disease2"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
    &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setParameters&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
-                     &lt;span class="p"&gt;})&lt;/span&gt;
+                        &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECT&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                         &lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_INFECTED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;
+                         &lt;span class="p"&gt;})&lt;/span&gt;
 
    &lt;span class="c1"&gt;# common removal rate&lt;/span&gt;
    &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SIR&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;P_REMOVE&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.005&lt;/span&gt;

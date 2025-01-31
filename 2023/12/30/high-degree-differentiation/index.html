@@ -147,17 +147,17 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">cmath</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">networkx</span>
-<span class="kn">import</span> <span class="nn">scipy.misc</span>
-<span class="kn">import</span> <span class="nn">mpmath</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cmath</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.misc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mpmath</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"./book.mplstyle"</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -168,7 +168,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nk_g</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nk_g</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Given a network g, return a function that returns the number of</span>
 <span class="sd">    nodes of a particular degree.</span>
 <span class="sd">    </span>
@@ -181,7 +181,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
         <span class="k">else</span><span class="p">:</span>
             <span class="n">degrees</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     
-    <span class="k">def</span> <span class="nf">nk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">'''Return the number of nodes with degree k.</span>
 <span class="sd">        </span>
 <span class="sd">        :param k: the degree</span>
@@ -212,7 +212,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pk_g</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pk_g</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Given a network, return a function that gives the fraction of</span>
 <span class="sd">    nodes with a given degree. This is also the probability that a</span>
 <span class="sd">    node chosen from the network at random will have degree k.</span>
@@ -221,7 +221,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <span class="sd">    :returns: a function from degree to fraction'''</span>
     <span class="n">nk</span> <span class="o">=</span> <span class="n">nk_g</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
     
-    <span class="k">def</span> <span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">'''Return the fraction of nodes of degree k.</span>
 <span class="sd">        </span>
 <span class="sd">        :param k: the degree</span>
@@ -248,13 +248,13 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pk_ER</span><span class="p">(</span><span class="n">kmean</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pk_ER</span><span class="p">(</span><span class="n">kmean</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Return a function that computes p_k for a given k on an ER network.</span>
 <span class="sd">    </span>
 <span class="sd">    :param kmean: the mean degree of the network</span>
 <span class="sd">    :returns: a function from degree to probability'''</span>
     
-    <span class="k">def</span> <span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">'''Return the probability of choosing a node of degree k.</span>
 <span class="sd">        </span>
 <span class="sd">        :param k: the degree</span>
@@ -337,13 +337,13 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">G0_ER</span><span class="p">(</span><span class="n">kmean</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">G0_ER</span><span class="p">(</span><span class="n">kmean</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Return the degree generating function for an ER network with mean degree kmean.</span>
 <span class="sd">    </span>
 <span class="sd">    :param kmean: the mean degree</span>
 <span class="sd">    :returns: the generating function'''</span>
     
-    <span class="k">def</span> <span class="nf">G0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">G0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">cmath</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">kmean</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">G0</span>
@@ -366,7 +366,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pk_scipy</span><span class="p">(</span><span class="n">gf</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pk_scipy</span><span class="p">(</span><span class="n">gf</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Construct a function to extract the probability of finding a node</span>
 <span class="sd">    with given degree by numerically differentiating the degree generating</span>
 <span class="sd">    function using `scipy`.</span>
@@ -375,10 +375,10 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <span class="sd">    :returns: the degree probability function'''</span>
     
     <span class="c1"># we need the real part of the generating funcxtion</span>
-    <span class="k">def</span> <span class="nf">gf_real</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gf_real</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">gf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
     
-    <span class="k">def</span> <span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">gf_real</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">,</span>
                                      <span class="n">dx</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span>
                                      <span class="n">order</span><span class="o">=</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
@@ -452,7 +452,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pk_PLC</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pk_PLC</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Return a function that computes p_k for a powerlaw network</span>
 <span class="sd">    with the given exponent and cutoff.</span>
 <span class="sd">    </span>
@@ -464,7 +464,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
     <span class="c1"># despite the possibility of polylog being complex</span>
     <span class="n">C</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">polylog</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">cutoff</span><span class="p">)))</span><span class="o">.</span><span class="n">real</span>
     
-    <span class="k">def</span> <span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">'''Return the probability of choosing a node of degree k &gt;= 1.</span>
 <span class="sd">        </span>
 <span class="sd">        :param k: the degree</span>
@@ -473,7 +473,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
     
     <span class="k">return</span> <span class="n">pk</span>
 
-<span class="k">def</span> <span class="nf">G0_PLC</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">G0_PLC</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Return the generating function for a powerlaw distribution with the</span>
 <span class="sd">    given exponent and cutoff.</span>
 <span class="sd">    </span>
@@ -481,7 +481,7 @@ p_4 = \frac{1}{4!} \bigg( \frac{d}{dx} \bigg)^4 G_0(x) \, \bigg|_{x = 0}&nbsp;$$
 <span class="sd">    :param cutoff: the cutoff</span>
 <span class="sd">    :returns: the generating function'''</span>
     
-    <span class="k">def</span> <span class="nf">G0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">G0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">polylog</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">cutoff</span><span class="p">))</span> <span class="o">/</span> <span class="n">mpmath</span><span class="o">.</span><span class="n">polylog</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="n">cutoff</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">G0</span>
@@ -696,7 +696,7 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">differentiate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">differentiate</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Compute the n'th derivative of f at z using a Cauchy contour</span>
 <span class="sd">    integral around a circle of radius r in the complex plane.</span>
 
@@ -734,7 +734,7 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pk_cauchy</span><span class="p">(</span><span class="n">gf</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pk_cauchy</span><span class="p">(</span><span class="n">gf</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''Construct a function to extract the probability of finding a node</span>
 <span class="sd">    with given degree by numerically differentiating the degree generating</span>
 <span class="sd">    function using Cauchy's formula.</span>
@@ -742,7 +742,7 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 <span class="sd">    :param gf: the generating function</span>
 <span class="sd">    :returns: the degree probability function'''</span>
     
-    <span class="k">def</span> <span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pk</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">complex</span><span class="p">(</span><span class="n">differentiate</span><span class="p">(</span><span class="n">gf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span><span class="o">.</span><span class="n">real</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
         
     <span class="k">return</span> <span class="n">pk</span>
@@ -861,7 +861,7 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
 	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
 	      unless otherwise&nbsp;noted.
 	    </p>

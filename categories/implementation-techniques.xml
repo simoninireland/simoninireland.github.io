@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 18 Oct 2024 09:25:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
-&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1478a92" class="outline-2"&gt;
+&lt;h2 id="org1478a92"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1478a92"&gt;
 &lt;p&gt;
 &lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
 &lt;/p&gt;
@@ -27,9 +27,9 @@ compiler with no optimisation pathways can still get great speed-up
 over an interpreter.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
-&lt;h2 id="org0a147a3"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a147a3"&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbfd6534" class="outline-2"&gt;
+&lt;h2 id="orgbfd6534"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbfd6534"&gt;
 &lt;p&gt;
 &lt;a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/"&gt;Lisp as the Maxwell’s equations of software – DDI&lt;/a&gt;
 &lt;/p&gt;
@@ -66,9 +66,9 @@ very concrete way of showing how metacircularity can work
 in &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;McCarthy's original style&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Anatomy of Lisp</title><link>https://simondobson.org/2024/03/06/anatomy-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orga92f5bb" class="outline-2"&gt;
-&lt;h2 id="orga92f5bb"&gt;Anatomy of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orga92f5bb"&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Anatomy of Lisp</title><link>https://simondobson.org/2024/03/06/anatomy-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgee91675" class="outline-2"&gt;
+&lt;h2 id="orgee91675"&gt;Anatomy of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgee91675"&gt;
 &lt;p&gt;
 John Allen.  &lt;a href="https://dl.acm.org/doi/book/10.5555/542865"&gt;&lt;i&gt;Anatomy of Lisp&lt;/i&gt;&lt;/a&gt;. McGraw-Hill. ISBN
 0-07-001115-X. 1978.

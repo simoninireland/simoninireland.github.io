@@ -73,10 +73,10 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org7294f75" class="outline-2">
-<h2 id="org7294f75">Local email from Office365 using <span class="caps">OAUTH2</span>&nbsp;with <code>mbsync</code>
+		<div id="outline-container-org3446328" class="outline-2">
+<h2 id="org3446328">Local email from Office365 using <span class="caps">OAUTH2</span>&nbsp;with <code>mbsync</code>
 </h2>
-<div class="outline-text-2" id="text-org7294f75">
+<div class="outline-text-2" id="text-org3446328">
 <p>
 I decided recently I wanted to have a more controlled email setup,
 with a local archive rather than relying on remote servers
@@ -106,11 +106,9 @@ In case it&#8217;s not obvious by now, this is a hacker set-up that
 requires quite a lot of technical manual&nbsp;configuration.
 </p>
 </div>
-
-
-<div id="outline-container-orgb059a36" class="outline-3">
-<h3 id="orgb059a36">How the internet email architecture&nbsp;works</h3>
-<div class="outline-text-3" id="text-orgb059a36">
+<div id="outline-container-org9a29061" class="outline-3">
+<h3 id="org9a29061">How the internet email architecture&nbsp;works</h3>
+<div class="outline-text-3" id="text-org9a29061">
 <p>
 The old-school approach to email involves several elements, each
 potentially provided by a different&nbsp;tool:
@@ -157,10 +155,9 @@ authorise access to the various email&nbsp;services.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org0a62459" class="outline-3">
-<h3 id="org0a62459">Outline&nbsp;solution</h3>
-<div class="outline-text-3" id="text-org0a62459">
+<div id="outline-container-org6b375b4" class="outline-3">
+<h3 id="org6b375b4">Outline&nbsp;solution</h3>
+<div class="outline-text-3" id="text-org6b375b4">
 <p>
 In outline the solution is as&nbsp;follows:
 </p>
@@ -174,10 +171,9 @@ In outline the solution is as&nbsp;follows:
 </ol>
 </div>
 </div>
-
-<div id="outline-container-org0bb0244" class="outline-3">
-<h3 id="org0bb0244">Packages</h3>
-<div class="outline-text-3" id="text-org0bb0244">
+<div id="outline-container-org4bd0d0f" class="outline-3">
+<h3 id="org4bd0d0f">Packages</h3>
+<div class="outline-text-3" id="text-org4bd0d0f">
 <p>
 Under Arch Linux we need&nbsp;the <code>isync</code> package for synchronisation
 and&nbsp;the <code>cyrus-sasl-xoauth2</code> provider for <span class="caps">OAUTH</span>&nbsp;authentication.
@@ -195,10 +191,9 @@ names. Note that the actual synchronisation tool is&nbsp;called
 </p>
 </div>
 </div>
-
-<div id="outline-container-org2fd104e" class="outline-3">
-<h3 id="org2fd104e"><span class="caps">OAUTH2</span> flow&nbsp;management</h3>
-<div class="outline-text-3" id="text-org2fd104e">
+<div id="outline-container-org4958b61" class="outline-3">
+<h3 id="org4958b61"><span class="caps">OAUTH2</span> flow&nbsp;management</h3>
+<div class="outline-text-3" id="text-org4958b61">
 <p>
 We want to use <span class="caps">OAUTH2</span> to authenticate an <span class="caps">IMAP</span> transaction, so that
 no additional passwords are needed. To this we need a script to
@@ -333,11 +328,10 @@ can basically just&nbsp;use <code>cat</code> to store and retrieve the token&nbs
 </p>
 </div>
 </div>
-
-<div id="outline-container-org932544d" class="outline-3">
-<h3 id="org932544d">
+<div id="outline-container-org1509042" class="outline-3">
+<h3 id="org1509042">
 <code>mbsync</code> for&nbsp;Office365</h3>
-<div class="outline-text-3" id="text-org932544d">
+<div class="outline-text-3" id="text-org1509042">
 <p>
 We now have <span class="caps">OAUTH2</span> tokens for accessing Office365, which we can
 integrate with our&nbsp;<span class="caps">MDA</span>. <code>mbsync</code> has four main&nbsp;concepts:
@@ -398,10 +392,9 @@ to create this before&nbsp;sync-ing.
 </pre></div>
 </div>
 </div>
-
-<div id="outline-container-org1037926" class="outline-3">
-<h3 id="org1037926">Sync&#8217;ing the&nbsp;email</h3>
-<div class="outline-text-3" id="text-org1037926">
+<div id="outline-container-org56bcc39" class="outline-3">
+<h3 id="org56bcc39">Sync&#8217;ing the&nbsp;email</h3>
+<div class="outline-text-3" id="text-org56bcc39">
 <p>
 For a full sync of all maildirs just&nbsp;run:
 </p>
@@ -426,10 +419,9 @@ example, as long as the access token was held unencrypted (see&nbsp;above).
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgccd1eae" class="outline-3">
-<h3 id="orgccd1eae">Indexing&nbsp;email</h3>
-<div class="outline-text-3" id="text-orgccd1eae">
+<div id="outline-container-orgff2e9ce" class="outline-3">
+<h3 id="orgff2e9ce">Indexing&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgff2e9ce">
 <p>
 You&#8217;ll almost certainly now want to index your newly-downloaded
 trove of messages. There are two common tools for&nbsp;this <code>mu</code> and
@@ -457,10 +449,9 @@ index these&nbsp;differently.
 </pre></div>
 </div>
 </div>
-
-<div id="outline-container-orgda3528a" class="outline-3">
-<h3 id="orgda3528a">Sending&nbsp;email</h3>
-<div class="outline-text-3" id="text-orgda3528a">
+<div id="outline-container-orgc07cd37" class="outline-3">
+<h3 id="orgc07cd37">Sending&nbsp;email</h3>
+<div class="outline-text-3" id="text-orgc07cd37">
 <p>
 All of the above sets up the <span class="caps">MDA</span> to <i>get</i> mail: we now need to be
 able to <i>send</i> mail. Fortunately we&#8217;ve already done most of the
@@ -505,10 +496,9 @@ exactly the same script as we used&nbsp;above.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgda3e098" class="outline-3">
-<h3 id="orgda3e098">Reading and writing&nbsp;email</h3>
-<div class="outline-text-3" id="text-orgda3e098">
+<div id="outline-container-org02d64c6" class="outline-3">
+<h3 id="org02d64c6">Reading and writing&nbsp;email</h3>
+<div class="outline-text-3" id="text-org02d64c6">
 <p>
 Finally we&#8217;re ready to read email. I&#8217;ll leave this to you: there
 are lots of text-based email clients around, notably <a href="http://www.mutt.org/"><code>mutt</code></a> that we
@@ -525,10 +515,9 @@ be pointed at the right directories and&nbsp;accounts.
 </p>
 </div>
 </div>
-
-<div id="outline-container-orgf18c32e" class="outline-3">
-<h3 id="orgf18c32e">Accessing Gmail using&nbsp;<span class="caps">OAUTH2</span></h3>
-<div class="outline-text-3" id="text-orgf18c32e">
+<div id="outline-container-orge2798f0" class="outline-3">
+<h3 id="orge2798f0">Accessing Gmail using&nbsp;<span class="caps">OAUTH2</span></h3>
+<div class="outline-text-3" id="text-orge2798f0">
 <p>
 Gmail lets one use &#8220;app passwords&#8221; for accessing using <span class="caps">IMAP</span>, but
 also supports <span class="caps">OAUTH2</span>, which is obviously more secure. The same
@@ -553,10 +542,9 @@ and similarly in the configurations&nbsp;of <code>mbsync</code> and <code>msmtp<
 </p>
 </div>
 </div>
-
-<div id="outline-container-org2915031" class="outline-3">
-<h3 id="org2915031">Conclusion</h3>
-<div class="outline-text-3" id="text-org2915031">
+<div id="outline-container-org2ceecfe" class="outline-3">
+<h3 id="org2ceecfe">Conclusion</h3>
+<div class="outline-text-3" id="text-org2ceecfe">
 <p>
 If you&#8217;re still with me: congratulations, but you must <i>really</i>
 want to read your email&nbsp;old-school!
@@ -575,10 +563,9 @@ simplify email processing. Those are matters for another time,&nbsp;though.
 </p>
 </div>
 </div>
-
-<div id="outline-container-org9d9ceb6" class="outline-3">
-<h3 id="org9d9ceb6">Resources</h3>
-<div class="outline-text-3" id="text-org9d9ceb6">
+<div id="outline-container-org218b15b" class="outline-3">
+<h3 id="org218b15b">Resources</h3>
+<div class="outline-text-3" id="text-org218b15b">
 <p>
 There are many resources on&nbsp;using <code>mbsync</code>, <code>mu</code>, <code>mu4e</code>, and the
 rest on the web. I found these covered all the topics in great
@@ -659,7 +646,7 @@ Microsoft Azure that often isn&#8217;t possible for corporate&nbsp;email</li>
 	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
 	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
 	      unless otherwise&nbsp;noted.
 	    </p>

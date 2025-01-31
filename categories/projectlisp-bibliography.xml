@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 29 Nov 2024 15:02:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0936ec5" class="outline-2"&gt;
-&lt;h2 id="org0936ec5"&gt;Lisp as a second language&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0936ec5"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 08:32:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
+&lt;h2 id="org07a794e"&gt;Lisp: Style and design&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org07a794e"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/da/4751c9-60cc-4acc-bfd3-ad7d50aa536a/lisp-style-design.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Molly Miller and Eric Benson. &lt;i&gt;Lisp: Style and Design&lt;/i&gt;. Digital Press.
+ISBN 978-0135384220. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+A book that would serve as a primer for someone tackling a
+significant piece of programming for the first time.
+&lt;/p&gt;
+
+&lt;p&gt;
+The style is a bit stiff and occasionally slightly patronising,
+definitely positioned as being from senior to junior programmers.
+The depth of the material is variable: I found the treatment of
+macros quite superficial, not helped by the examples generating
+questionable code. It also places relatively little emphasis on
+CLOS and generic functions, which would get more space in a more
+modern treatment..
+&lt;/p&gt;
+
+&lt;p&gt;
+The best chapters are those on debugging and (especially)
+performance engineering, which dig into the interactive tools
+generally available within Lisp and give a good end-to-end
+description of the use of &lt;code&gt;declare&lt;/code&gt; forms to aid compiler
+optimisations.
+&lt;/p&gt;
+
+&lt;p&gt;
+But again the book's age shows. It predates the obsessive
+relationship that many modern programmers have with unit testing
+and test automation, treating testing as an interactive activity
+alongside debugging rather than as a core and permanent part of
+program development and maintenance.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/lisp-style-and-design/</guid><pubDate>Fri, 31 Jan 2025 08:27:35 GMT</pubDate></item><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
+&lt;h2 id="org0e5ab39"&gt;Lisp as a second language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0e5ab39"&gt;
 &lt;p&gt;
 Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
 Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
@@ -30,9 +73,9 @@ would be great to see this used as a basis for actual musical
 composition and performance.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc407bcc" class="outline-2"&gt;
-&lt;h2 id="orgc407bcc"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc407bcc"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1478a92" class="outline-2"&gt;
+&lt;h2 id="org1478a92"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1478a92"&gt;
 &lt;p&gt;
 &lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
 &lt;/p&gt;
@@ -58,9 +101,9 @@ compiler with no optimisation pathways can still get great speed-up
 over an interpreter.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgc478829" class="outline-2"&gt;
-&lt;h2 id="orgc478829"&gt;Purely functional data structures&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgc478829"&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge75e26b" class="outline-2"&gt;
+&lt;h2 id="orge75e26b"&gt;Purely functional data structures&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge75e26b"&gt;
 &lt;p&gt;
 Chris Okasaki. &lt;i&gt;Purely Functional Data Structures&lt;/i&gt;. Cambridge
 University Press. ISBN 978-051153-010-4. 1998.
@@ -75,9 +118,9 @@ structuring that doesn't start from assumptions of imperative
 programming and mutability.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/purely-functional-data-structures/</guid><pubDate>Fri, 27 Sep 2024 15:12:14 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0a147a3" class="outline-2"&gt;
-&lt;h2 id="org0a147a3"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0a147a3"&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/purely-functional-data-structures/</guid><pubDate>Fri, 27 Sep 2024 15:12:14 GMT</pubDate></item><item><title>Lisp as the Maxwell's equations of software</title><link>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbfd6534" class="outline-2"&gt;
+&lt;h2 id="orgbfd6534"&gt;Lisp as the Maxwell's equations of software&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbfd6534"&gt;
 &lt;p&gt;
 &lt;a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/"&gt;Lisp as the Maxwell’s equations of software – DDI&lt;/a&gt;
 &lt;/p&gt;
@@ -114,9 +157,9 @@ very concrete way of showing how metacircularity can work
 in &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;McCarthy's original style&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org003e69b" class="outline-2"&gt;
-&lt;h2 id="org003e69b"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org003e69b"&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org298cb35" class="outline-2"&gt;
+&lt;h2 id="org298cb35"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org298cb35"&gt;
 &lt;p&gt;
 Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
 ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
@@ -148,9 +191,9 @@ It's a deep exploration of the underpinnings of the language from
 both theoretical and practical perspectives.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org8bdeee5" class="outline-2"&gt;
-&lt;h2 id="org8bdeee5"&gt;Casting SPELs in Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org8bdeee5"&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org49f0e11" class="outline-2"&gt;
+&lt;h2 id="org49f0e11"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org49f0e11"&gt;
 &lt;p&gt;
 &lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
 &lt;/p&gt;
@@ -167,9 +210,9 @@ and gradually building a really complicated application from a
 standing start.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1b63828" class="outline-2"&gt;
-&lt;h2 id="org1b63828"&gt;The art of the metaobject protocol&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1b63828"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>The art of the metaobject protocol</title><link>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org248eeff" class="outline-2"&gt;
+&lt;h2 id="org248eeff"&gt;The art of the metaobject protocol&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org248eeff"&gt;
 &lt;p width="300" class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/70/6116bf-244d-4faa-a1d7-2797a2d76223/aotmop.jpg" alt="nil"&gt;
 &lt;/p&gt;
@@ -273,9 +316,9 @@ planning on writing Lisp would benefit from reading this book just
 to see the ideas in their full generality.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item><item><title>Object-oriented programming on Common Lisp: A programmer's guide to CLOS</title><link>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1c558c9" class="outline-2"&gt;
-&lt;h2 id="org1c558c9"&gt;Object-oriented programming on Common Lisp: A programmer's guide to CLOS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1c558c9"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-art-of-the-metaobject-protocol/</guid><pubDate>Tue, 23 Jul 2024 08:13:16 GMT</pubDate></item><item><title>Object-oriented programming on Common Lisp: A programmer's guide to CLOS</title><link>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org950d6dd" class="outline-2"&gt;
+&lt;h2 id="org950d6dd"&gt;Object-oriented programming on Common Lisp: A programmer's guide to CLOS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org950d6dd"&gt;
 &lt;p class="floater"&gt;
 &lt;img src="https://simondobson.org/attachments/41/584da1-ef33-41dd-8091-43c3999f6451/clos.jpg" alt="nil"&gt;
 &lt;/p&gt;
@@ -331,9 +374,9 @@ basic design and implementation. and more advanced ideas like
 re-defining classes on the fly.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0318c4d" class="outline-2"&gt;
-&lt;h2 id="org0318c4d"&gt;The roots of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0318c4d"&gt;
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0029935" class="outline-2"&gt;
+&lt;h2 id="org0029935"&gt;The roots of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0029935"&gt;
 &lt;p&gt;
 &lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
 &lt;/p&gt;
@@ -371,45 +414,4 @@ including re-phrasing the meta-circular Lisp interpreter so as to
 be executable in modern Common Lisp.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item><item><title>Let over Lambda</title><link>https://simondobson.org/2024/07/05/let-over-lambda/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged90f8a" class="outline-2"&gt;
-&lt;h2 id="orged90f8a"&gt;Let over Lambda&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orged90f8a"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/4d/e4b9aa-2377-42e7-a3e1-aa66a129c7ee/lol.jpg" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Doug Hoyte.  &lt;i&gt;&lt;a href="http://letoverlambda.com"&gt;Let over Lambda&lt;/a&gt;&lt;/i&gt;. HCSW and Hoytech. ISBN
-978-1-4357-1275-1. 2008.
-&lt;/p&gt;
-
-&lt;p&gt;
-A gloriously opinionated (in the best way) take on Lisp macro
-programming. The author treats Lisp – one of the first languages
-– as the ultimate, &lt;i&gt;final&lt;/i&gt; language to which all others can (and
-should) be translated, since they're simply special cases of Lisp
-forms. And he makes a surprisingly compelling case.
-&lt;/p&gt;
-
-&lt;p&gt;
-The material builds extensively on &lt;a href="/2024/07/05/on-lisp/"&gt;On Lisp&lt;/a&gt;, re-presenting the
-idea of &lt;i&gt;anaphoric&lt;/i&gt; macros (those that bind lexical variables for
-use in their bodies) and extending them with &lt;i&gt;pandoric&lt;/i&gt; macros
-that allow introspection into an otherwise closed lexical
-environment. A lot of these examples feel contrived as presented,
-but the techniques are anything but: powerful ways to build
-abstractions.
-&lt;/p&gt;
-
-&lt;p&gt;
-The finale is the implementation of Forth in Lisp, and then a
-reflection to allow Forth programs to define Lisp functions –
-converting a (transparent) threaded-interpreted structure into an
-(opaque) code block. It's a slightly non-standard Forth, but it's
-true to the basics and exposes issues like the implementations of
-interpretation, compilation, and tail recursion really well. It's
-only another step to explore Lisp &lt;i&gt;implemented&lt;/i&gt; in Forth through
-the medium of macro programming, which deserves a book itself.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/05/let-over-lambda/</guid><pubDate>Fri, 05 Jul 2024 10:19:07 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item></channel></rss>

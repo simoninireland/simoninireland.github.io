@@ -58,9 +58,9 @@
 		    <h1><a href="../2024/09/27/lisp-as-the-maxwell1s-equations-of-software/">Lisp as the Maxwell&#8217;s equations of&nbsp;software</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-org0a147a3" class="outline-2">
-<h2 id="org0a147a3">Lisp as the Maxwell&#8217;s equations of&nbsp;software</h2>
-<div class="outline-text-2" id="text-org0a147a3">
+			<div id="outline-container-orgbfd6534" class="outline-2">
+<h2 id="orgbfd6534">Lisp as the Maxwell&#8217;s equations of&nbsp;software</h2>
+<div class="outline-text-2" id="text-orgbfd6534">
 <p>
 <a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/">Lisp as the Maxwell’s equations of software –&nbsp;<span class="caps">DDI</span></a>
 </p>
@@ -110,9 +110,9 @@ in <a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-co
 		    <h1><a href="../2024/09/05/guard-methods-on-clos-generic-functions/">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</a></h1>
 		</div>
 		<div class="entry-content">
-			<div id="outline-container-orgdad2bf2" class="outline-2">
-<h2 id="orgdad2bf2">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</h2>
-<div class="outline-text-2" id="text-orgdad2bf2">
+			<div id="outline-container-org5f0970d" class="outline-2">
+<h2 id="org5f0970d">Guard methods on <span class="caps">CLOS</span> generic&nbsp;functions</h2>
+<div class="outline-text-2" id="text-org5f0970d">
 <p>
 There are times when one wants to be able to guard a method&#8217;s
 execution. A typical case is for callbacks, where we only want the
@@ -135,9 +135,9 @@ part of the one method. Fortunately there&#8217;s a Lisp-ier solution
 involving defining a new method combination to get exactly this&nbsp;behaviour.
 </p>
 </div>
-<div id="outline-container-orgc6422b3" class="outline-3">
-<h3 id="orgc6422b3">Standard method&nbsp;combination</h3>
-<div class="outline-text-3" id="text-orgc6422b3">
+<div id="outline-container-orgb956012" class="outline-3">
+<h3 id="orgb956012">Standard method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-orgb956012">
 <p>
 <span class="caps">CLOS</span>, unlike most languages, allows a programmer to control how
 methods are combined in terms of overriding. The &#8220;standard&#8221;
@@ -205,9 +205,9 @@ methods similar&nbsp;to <code>:around</code>, and there&#8217;s no real equivale
 </p>
 </div>
 </div>
-<div id="outline-container-orga578c83" class="outline-3">
-<h3 id="orga578c83">Other method&nbsp;combinations</h3>
-<div class="outline-text-3" id="text-orga578c83">
+<div id="outline-container-orgeb7f77e" class="outline-3">
+<h3 id="orgeb7f77e">Other method&nbsp;combinations</h3>
+<div class="outline-text-3" id="text-orgeb7f77e">
 <p>
 The above is referred to as <i>standard method combination</i>, implying
 the existence of <i>non-standard</i> combination. <span class="caps">CLOS</span> lets the
@@ -219,9 +219,9 @@ methods&nbsp;allowed.
 </p>
 </div>
 </div>
-<div id="outline-container-org85cc730" class="outline-3">
-<h3 id="org85cc730">Guards as method&nbsp;combination</h3>
-<div class="outline-text-3" id="text-org85cc730">
+<div id="outline-container-orgf506076" class="outline-3">
+<h3 id="orgf506076">Guards as method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-orgf506076">
 <p>
 For our use case, we want to be able to return values from primary
 methods, and&nbsp;allow <code>:around</code>, <code>:before</code> and <code>:after</code> methods. However, we
@@ -238,10 +238,10 @@ the functionality that&#8217;s appropriate to a particular method&nbsp;call.
 </p>
 </div>
 </div>
-<div id="outline-container-org2b8a7b0" class="outline-3">
-<h3 id="org2b8a7b0">Why this isn&#8217;t&nbsp;just <code>:around</code>
+<div id="outline-container-org8335913" class="outline-3">
+<h3 id="org8335913">Why this isn&#8217;t&nbsp;just <code>:around</code>
 </h3>
-<div class="outline-text-3" id="text-org2b8a7b0">
+<div class="outline-text-3" id="text-org8335913">
 <p>
 It might sound like we can get this behaviour&nbsp;using <code>:around</code>
 methods that perform guarding. But we can&#8217;t –&nbsp;quite.
@@ -326,9 +326,9 @@ which again may not be what&#8217;s&nbsp;desired.
 </p>
 </div>
 </div>
-<div id="outline-container-org88504e4" class="outline-3">
-<h3 id="org88504e4">A <code>guarded</code> method&nbsp;combination</h3>
-<div class="outline-text-3" id="text-org88504e4">
+<div id="outline-container-org1a26b34" class="outline-3">
+<h3 id="org1a26b34">A <code>guarded</code> method&nbsp;combination</h3>
+<div class="outline-text-3" id="text-org1a26b34">
 <p>
 Fortunately we can get the behaviour we want by defining a new
 method&nbsp;combination, <code>guarded</code>.&nbsp;A <code>guarded</code> generic function accepts
@@ -476,9 +476,9 @@ the&nbsp;reader.)
 </p>
 </div>
 </div>
-<div id="outline-container-org53c5ffd" class="outline-3">
-<h3 id="org53c5ffd">Critique</h3>
-<div class="outline-text-3" id="text-org53c5ffd">
+<div id="outline-container-org0bd74b1" class="outline-3">
+<h3 id="org0bd74b1">Critique</h3>
+<div class="outline-text-3" id="text-org0bd74b1">
 <p>
 You may object to this solution on the grounds that it introduces
 a weird asymmetry into methods: some as functional and some as
@@ -623,7 +623,7 @@ creating another&nbsp;dependency.
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
 	    <div class="next">
-		<a href="." rel="next">
+		<a href="index-152.html" rel="next">
 		    <span class="meta-nav">Newer Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
@@ -639,7 +639,7 @@ creating another&nbsp;dependency.
 	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
 	    </p>
 	    <p>
-	      All content Copyright © 2010–2024 Simon Dobson and licensed under
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
 	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
 	      unless otherwise&nbsp;noted.
 	    </p>
