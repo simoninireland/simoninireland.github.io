@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 08:32:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 09:22:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tutorial on good Lisp programming style</title><link>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8f4b3" class="outline-2"&gt;
+&lt;h2 id="org5e8f4b3"&gt;Tutorial on good Lisp programming style&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5e8f4b3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf"&gt;https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;i&gt;Expression + Understanding = Communication&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A great discussion of &lt;i&gt;style&lt;/i&gt;, perhaps the most elusive programming
+skill. Illustrated across all the levels of abstraction that one
+finds in Lisp: of data, functions, control, and syntax (the last
+being essentially unique to Lisp macros). The discussion of
+control abstraction deals extensively with catch/throw and other
+primitives in the condition system that are dealt with at greater
+length in &lt;a href="/2024/03/06/the-common-lisp-condition-system/"&gt;The Common Lisp condition system&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+The extended example (starting on page 71) of how to simplify
+logical expressions is amazingly clear, and really shows the
+progression from simple functions to embedded languages targeting
+specific tasks and making them easy to describe and extend to new
+applications: something that lies at the heart of the Lisp
+experience.
+&lt;/p&gt;
+
+&lt;p&gt;
+Much of the advice is actually language-agnostic, even though the
+concrete examples are in Lisp. Norvig, of course, is the author of
+&lt;a href="/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/"&gt;Paradigms of artificial intelligence programming&lt;/a&gt;, and has made
+enormous contributions to the theory and practice of Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</guid><pubDate>Fri, 31 Jan 2025 09:21:02 GMT</pubDate></item><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
 &lt;h2 id="org07a794e"&gt;Lisp: Style and design&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org07a794e"&gt;
 &lt;p class="floater"&gt;
@@ -784,19 +821,4 @@ creating another dependency.
 	  Finished Thursday 22 August, 2024.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6782101538?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</guid><pubDate>Thu, 22 Aug 2024 00:00:00 GMT</pubDate></item><item><title>Prophet Song</title><link>https://simondobson.org/goodreads/prophet-song/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1726520473l/175740709._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Paul    Lynch
-	  (2023)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A timely and troubling consideration of social breakdown.&lt;br&gt;&lt;br&gt;The most notable thing about this novel is that it happens in Ireland: not "far away", but in a European country that is nevertheless seen as collapsing through (it is hinted) a shift to the right taken by fully democrtic means, and a subsequent descent into authoritarianism. That's a perfectly believable scenario for many countries.&lt;br&gt;&lt;br&gt;Lynch writes in a stream-of-consciousness style that manages to be comprehensible while still retaining the slightly bewildered feeling of someone caught-up in event they don't fully understand and can't quite keep up with. There's enough Irish vernacular and geographical detail to make the story hard-hitting for anyone who knows Dublin.&lt;br&gt;&lt;br&gt;Some people desperately cling to processes that no longer have any meaning; there are huge numbers of forms to fill out despite them serving no purpose; there's lots of bureaucracy used to drum people into compliance; and there's lots of venality hiding behind the continuation of these processes to convert them into vehicles for personal gain. Rules tighten as order breaks down, and the same cast of chancers and bandits and people-smugglers emerge in Ireland as in other countries that have gone through this kind of trauma. And that I think is the main message of the book. The themes and characters emerging from social breakdown are universal, and a European country would go the same way as anywhere else.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Tuesday 20 August, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6042005187?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/prophet-song/</guid><pubDate>Tue, 20 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</guid><pubDate>Thu, 22 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 08:32:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 09:22:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tutorial on good Lisp programming style</title><link>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8f4b3" class="outline-2"&gt;
+&lt;h2 id="org5e8f4b3"&gt;Tutorial on good Lisp programming style&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5e8f4b3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf"&gt;https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;i&gt;Expression + Understanding = Communication&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A great discussion of &lt;i&gt;style&lt;/i&gt;, perhaps the most elusive programming
+skill. Illustrated across all the levels of abstraction that one
+finds in Lisp: of data, functions, control, and syntax (the last
+being essentially unique to Lisp macros). The discussion of
+control abstraction deals extensively with catch/throw and other
+primitives in the condition system that are dealt with at greater
+length in &lt;a href="/2024/03/06/the-common-lisp-condition-system/"&gt;The Common Lisp condition system&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+The extended example (starting on page 71) of how to simplify
+logical expressions is amazingly clear, and really shows the
+progression from simple functions to embedded languages targeting
+specific tasks and making them easy to describe and extend to new
+applications: something that lies at the heart of the Lisp
+experience.
+&lt;/p&gt;
+
+&lt;p&gt;
+Much of the advice is actually language-agnostic, even though the
+concrete examples are in Lisp. Norvig, of course, is the author of
+&lt;a href="/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/"&gt;Paradigms of artificial intelligence programming&lt;/a&gt;, and has made
+enormous contributions to the theory and practice of Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</guid><pubDate>Fri, 31 Jan 2025 09:21:02 GMT</pubDate></item><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
 &lt;h2 id="org07a794e"&gt;Lisp: Style and design&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org07a794e"&gt;
 &lt;p class="floater"&gt;
@@ -374,44 +411,4 @@ basic design and implementation. and more advanced ideas like
 re-defining classes on the fly.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0029935" class="outline-2"&gt;
-&lt;h2 id="org0029935"&gt;The roots of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0029935"&gt;
-&lt;p&gt;
-&lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-(Only has an PostScript version, but a PDF is available
-&lt;a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf"&gt;here&lt;/a&gt;.)
-&lt;/p&gt;
-
-&lt;p&gt;
-Re-visits McCarthy's discoveries (or inventions, depending on
-your point of view), translating the &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;earliest work&lt;/a&gt; into modern
-Lisp notation.
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-It's worth understanding what McCarthy discovered, not just as a
-landmark in the history of computers, but as a model for what
-programming is tending to become in our own time. It seems to me that
-there have been two really clean, consistent models of programming so
-far: the C model and the Lisp model. These two seem points of high
-ground, with swampy lowlands between them. As computers have grown
-more powerful, the new languages being developed have been moving
-steadily toward the Lisp model. A popular recipe for new programming
-languages in the past 20 years has been to take the C model of
-computing and add to it, piecemeal, parts taken from the Lisp model,
-like runtime typing and garbage collection.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Does a great job of making the central insights accessible,
-including re-phrasing the meta-circular Lisp interpreter so as to
-be executable in modern Common Lisp.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>oo</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/object-oriented-programming-on-common-lisp-a-programmer1s-guide-to-clos/</guid><pubDate>Tue, 23 Jul 2024 08:03:11 GMT</pubDate></item></channel></rss>

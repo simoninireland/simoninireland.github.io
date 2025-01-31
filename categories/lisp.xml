@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 08:32:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 09:22:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tutorial on good Lisp programming style</title><link>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8f4b3" class="outline-2"&gt;
+&lt;h2 id="org5e8f4b3"&gt;Tutorial on good Lisp programming style&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5e8f4b3"&gt;
+&lt;p&gt;
+&lt;a href="https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf"&gt;https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;i&gt;Expression + Understanding = Communication&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A great discussion of &lt;i&gt;style&lt;/i&gt;, perhaps the most elusive programming
+skill. Illustrated across all the levels of abstraction that one
+finds in Lisp: of data, functions, control, and syntax (the last
+being essentially unique to Lisp macros). The discussion of
+control abstraction deals extensively with catch/throw and other
+primitives in the condition system that are dealt with at greater
+length in &lt;a href="/2024/03/06/the-common-lisp-condition-system/"&gt;The Common Lisp condition system&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+The extended example (starting on page 71) of how to simplify
+logical expressions is amazingly clear, and really shows the
+progression from simple functions to embedded languages targeting
+specific tasks and making them easy to describe and extend to new
+applications: something that lies at the heart of the Lisp
+experience.
+&lt;/p&gt;
+
+&lt;p&gt;
+Much of the advice is actually language-agnostic, even though the
+concrete examples are in Lisp. Norvig, of course, is the author of
+&lt;a href="/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/"&gt;Paradigms of artificial intelligence programming&lt;/a&gt;, and has made
+enormous contributions to the theory and practice of Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</guid><pubDate>Fri, 31 Jan 2025 09:21:02 GMT</pubDate></item><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
 &lt;h2 id="org07a794e"&gt;Lisp: Style and design&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org07a794e"&gt;
 &lt;p class="floater"&gt;
@@ -703,291 +740,4 @@ and gradually building a really complicated application from a
 standing start.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>My mental model of setf was wrong</title><link>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org746ce25" class="outline-2"&gt;
-&lt;h2 id="org746ce25"&gt;My mental model of setf was wrong&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org746ce25"&gt;
-&lt;p&gt;
-I realised recently that I've been thinking about &lt;code&gt;setf&lt;/code&gt; all wrong.
-&lt;/p&gt;
-
-&lt;p&gt;
-Lisp lets programs define new &lt;code&gt;setf&lt;/code&gt; forms for assignment. The most
-common example is from CLOS, where a class like this:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defclass&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;var&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="ss"&gt;:accessor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a-var&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-will give rise to a class and two functions, &lt;code&gt;a-var&lt;/code&gt; to read the
-value of the &lt;code&gt;var&lt;/code&gt; slot on an instance of &lt;code&gt;A&lt;/code&gt;, and a &lt;code&gt;setf&lt;/code&gt; target used
-as &lt;code&gt;(setf (a-var instance) 24)&lt;/code&gt; to set the &lt;code&gt;var&lt;/code&gt; slot of &lt;code&gt;instance&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's natural to read that like as executing &lt;code&gt;(a-var instance)&lt;/code&gt; to
-retrieve a location, and &lt;code&gt;setf&lt;/code&gt; using this location to assign to.
-The documentation reinforces this view, talking about
-"generalised places" as the targets for &lt;code&gt;setf&lt;/code&gt; to store things. My
-mental model was strengthened by idioms like &lt;code&gt;(setf (car pair) 23)&lt;/code&gt;
-to set the car of a pair or list, and &lt;code&gt;(setf (cdr pair) '(1 2 3)&lt;/code&gt;
-to set the cdr. The first argument is a &lt;i&gt;locator&lt;/i&gt; expression
-returning the place to update, and the second argument is the &lt;i&gt;new
-value&lt;/i&gt; to put there.
-&lt;/p&gt;
-
-&lt;p&gt;
-Natural. But wrong.
-&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;
-The thing I missed is that &lt;code&gt;setf&lt;/code&gt; is a &lt;i&gt;macro&lt;/i&gt;: it can access the
-&lt;i&gt;structure&lt;/i&gt; of its arguments but not their &lt;i&gt;values&lt;/i&gt;. You can't write
-code like this:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;h&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;h&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-and expect the &lt;code&gt;car&lt;/code&gt; of &lt;code&gt;l&lt;/code&gt; to be updated, which would make sense if
-&lt;code&gt;setf&lt;/code&gt; were working on a location, because &lt;code&gt;h&lt;/code&gt; would be that
-location. But it isn't.
-&lt;/p&gt;
-
-&lt;p&gt;
-What actually happens is that the &lt;code&gt;setf&lt;/code&gt; macro looks, at compile
-time, at the structure of its first (locator) argument, and uses
-that to dispatch to a method. Using the slot accessor above, the
-&lt;code&gt;setf&lt;/code&gt; form expands to something like:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a-var&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;slot-value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'a-var&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-This is a method with two pieces of selection: specialised on the
-type of an argument (&lt;code&gt;A&lt;/code&gt;), and named with the &lt;i&gt;selector&lt;/i&gt; used to
-within the locator (&lt;code&gt;a-var&lt;/code&gt;). It's definition expands to &lt;i&gt;another&lt;/i&gt;
-&lt;code&gt;setf&lt;/code&gt;, this time specialised against &lt;code&gt;slot-value&lt;/code&gt; and an instance of
-&lt;code&gt;standard-object&lt;/code&gt;. Specialising on the selector explains why we
-need that selector to be present syntactically at compile time.
-&lt;/p&gt;
-
-&lt;p&gt;
-My mistake was thinking that the similarity between access form
-and &lt;code&gt;setf&lt;/code&gt; form was necessary and functional – and it isn't
-either. This has some interesting consequences.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orga0748bc" class="outline-3"&gt;
-&lt;h3 id="orga0748bc"&gt;The selector is entirely arbitrary&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orga0748bc"&gt;
-&lt;p&gt;
-If we don't like using &lt;code&gt;car&lt;/code&gt; to indicate the head of a list – and
-some people don't – we could in principle define a new
-specialisation such as:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;head&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;rplaca&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-and use it as &lt;code&gt;(setf (head l) 45)&lt;/code&gt; &lt;i&gt;even though &lt;code&gt;head&lt;/code&gt; isn't a
-defined function&lt;/i&gt;. All we need is a selector symbol.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-orgfed8ee6" class="outline-3"&gt;
-&lt;h3 id="orgfed8ee6"&gt;There can be more arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgfed8ee6"&gt;
-&lt;p&gt;
-Ever since I first encountered them I wondered why the lambda
-lists for new &lt;code&gt;setf&lt;/code&gt; specialisations was so strange: the new value
-and &lt;i&gt;then&lt;/i&gt; the arguments – but not the selector – of the place to
-be updated? Once you get a better mental model, the reason
-becomes obvious: there can be &lt;i&gt;multiple&lt;/i&gt; arguments to the &lt;code&gt;setf&lt;/code&gt;
-locator, possibly actually a variable number, alongside the
-selector, so we need to be able to find the new value reliably.
-The easiest way is to put it at the front of the lambda list.
-&lt;/p&gt;
-
-&lt;p&gt;
-There's actually a common example of this sitting in plain sight
-that I'd missed. You access the elements of a Lisp array using
-the &lt;code&gt;aref&lt;/code&gt; function, which takes the array and the index, such as
-(&lt;code&gt;aref a 23)&lt;/code&gt;. The corresponding &lt;code&gt;setf&lt;/code&gt; form looks like &lt;code&gt;(setf (aref
-     a 23) 0)&lt;/code&gt;, with the locator taking several arguments like the
-function. &lt;i&gt;But it isn't calling the function&lt;/i&gt;: it's decomposing a
-pattern that &lt;i&gt;looks exactly like&lt;/i&gt; the function call for
-convenience, and which passes several arguments to the
-specialised method that will look something like:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;aref&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;array&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-The new value is reliably in the first argument position, with
-the rest of the locator arguments after it.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org3b55f9a" class="outline-3"&gt;
-&lt;h3 id="org3b55f9a"&gt;You can specialise by value too&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org3b55f9a"&gt;
-&lt;p&gt;
-Since the &lt;code&gt;setf&lt;/code&gt; forms are just methods, you could if you wanted to
-specialise them on the type of the new value as well as on the
-locator. As a trivial example:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;assign-head&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Assigned an integer ~s"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmethod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;assign-head&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;string&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Assigned a string ~s"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;assign-head&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"zero"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-Assigned a string "zero"
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Obviously there are better ways to do this, but it's a good
-example of the flexibility that comes from &lt;code&gt;setf&lt;/code&gt; not really being
-all that special a form at all: just a creative use of the power
-of generic functions.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-org71a9600" class="outline-3"&gt;
-&lt;h3 id="org71a9600"&gt;Can we build our own &lt;code&gt;setf&lt;/code&gt;-like macros?&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-org71a9600"&gt;
-&lt;p&gt;
-Yes: &lt;code&gt;setf&lt;/code&gt; is entirely constructable within "ordinary" Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-There are two parts to the construction. Firstly, we need the
-name of the method that underlies a particular selector.
-&lt;/p&gt;
-
-&lt;p&gt;
-We can build our own functions with names like this, although not
-using &lt;code&gt;defun&lt;/code&gt;.
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defvar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="vg"&gt;*weird-name*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-symbol&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"(1 2 3)"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="vg"&gt;*weird-name*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;           &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"We did *weird-name* on ~s"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-
-&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="vg"&gt;*weird-name*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"a string"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-
-"We did *weird-name* on \"a string\""
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-For &lt;code&gt;setf&lt;/code&gt;, the style of name used for the methods implementing the
-different choices is &lt;code&gt;(setf selector)&lt;/code&gt; – a function named by a
-list – where &lt;i&gt;selector&lt;/i&gt; is the symbol at the head of locator list.
-(Some Lisps construct a symbol from the list elements, rather
-than using it directly. I'm not sure what, if anything, the
-Common Lisp language definition says about how this should work.)
-&lt;/p&gt;
-
-&lt;p&gt;
-For the second part of the construction, &lt;code&gt;setf&lt;/code&gt; takes the locator,
-synthesises the function name symbol using the selector, and
-calls a generic function with this name, passing the new value
-and the rest of the locator as arguments.
-&lt;/p&gt;
-
-&lt;p&gt;
-So to define a new construct &lt;code&gt;our-setf&lt;/code&gt; we might do something like:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defmacro&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;our-setf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;locator&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;new-value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;selector&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;car&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;locator&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;our-setf-function-name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-symbol&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"(our-setf ~a)"&lt;/span&gt;
-&lt;span class="w"&gt;                                                           &lt;/span&gt;&lt;span class="nv"&gt;selector&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;         &lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;apply&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;our-setf-function-name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;                 &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cons&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;new-value&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;,@&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cdr&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;locator&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-When called as something like &lt;code&gt;(our-setf (head '(1 2 3)) 0)&lt;/code&gt; the
-macro will code to call a method &lt;code&gt;(our-setf head)&lt;/code&gt; (as a symbol),
-passing it (&lt;code&gt;0 '(1 2 3))&lt;/code&gt; as arguments and allowing the machinery of
-generic functions to determine which method is actually called.
-We define these methods of the form &lt;code&gt;(our-setf head)&lt;/code&gt; and specialise
-them as required.
-&lt;/p&gt;
-
-&lt;p&gt;
-(It's actually a bit more complicated than this because we need
-to define a generic function for &lt;code&gt;(our-setf head)&lt;/code&gt;. We have to go
-backstage and programmatically define the generic function. But
-the idea remains the same.)
-&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;
-After all this, my mental model of &lt;code&gt;setf&lt;/code&gt; is a lot clearer – and,
-I hope, closer the reality at least. It combines a highly
-structured use of macros, synthesised function names, and generic
-functions – and no special machinery at all.
-&lt;/p&gt;
-
-&lt;p&gt;
-However, there's some subtlety at play too, not obvious at first
-acquaintance. We don't want our synthesised function names to
-accidentally capture the names of user-supplied code. It's
-possible that using a naming style like &lt;code&gt;setf-car&lt;/code&gt; would do just
-this, and a program happens to define a function with this name.
-But the names &lt;code&gt;setf&lt;/code&gt; synthesises are &lt;i&gt;lists&lt;/i&gt;, unlikely to be captured
-accidentally, which lets us define the specialised methods "as
-normal" even though some of the other parts of the process have
-to happen backstage.
-&lt;/p&gt;
-
-&lt;p&gt;
-This shows the power of macros and generic functions. It also
-shows how deeply the latter are embedded into Lisp. They're
-usually thought of as part of CLOS, but they actually have little
-explicit relationship to class and objects at all, and have been
-woven all through Lisp to build flexible code structures.
-&lt;/p&gt;
-
-&lt;p&gt;
-UPDATED 2023-07-30: I incorrectly said originally that one
-couldn't use forms like &lt;code&gt;(defun (setf abc) ...)&lt;/code&gt;: you can, just as
-with &lt;code&gt;defmethod&lt;/code&gt; and &lt;code&gt;defgeneric&lt;/code&gt;, and name a function using a list.
-Thanks to Hacker News contributor &lt;a href="https://phoe.github.io"&gt;phoe-krk&lt;/a&gt; for correcting me. I
-was also slightly loose in my use of &lt;i&gt;specialisation&lt;/i&gt;, which I've
-tightened up.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>macroprogramming</category><category>programming</category><guid>https://simondobson.org/2024/07/27/my-mental-model-of-setf-was-wrong/</guid><pubDate>Sat, 27 Jul 2024 13:29:18 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item></channel></rss>

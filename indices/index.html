@@ -52,6 +52,56 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2025/01/31/tutorial-on-good-lisp-programming-style/" rel="bookmark">Friday 31 January, 2025</a>
+			</span>
+		    </div>
+		    <h1><a href="../2025/01/31/tutorial-on-good-lisp-programming-style/">Tutorial on good Lisp programming&nbsp;style</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org5e8f4b3" class="outline-2">
+<h2 id="org5e8f4b3">Tutorial on good Lisp programming&nbsp;style</h2>
+<div class="outline-text-2" id="text-org5e8f4b3">
+<p>
+<a href="https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf">https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf</a>
+</p>
+
+<p>
+<i>Expression + Understanding =&nbsp;Communication</i>
+</p>
+
+<p>
+A great discussion of <i>style</i>, perhaps the most elusive programming
+skill. Illustrated across all the levels of abstraction that one
+finds in Lisp: of data, functions, control, and syntax (the last
+being essentially unique to Lisp macros). The discussion of
+control abstraction deals extensively with catch/throw and other
+primitives in the condition system that are dealt with at greater
+length in <a href="/2024/03/06/the-common-lisp-condition-system/">The Common Lisp condition system</a>.
+</p>
+
+<p>
+The extended example (starting on page 71) of how to simplify
+logical expressions is amazingly clear, and really shows the
+progression from simple functions to embedded languages targeting
+specific tasks and making them easy to describe and extend to new
+applications: something that lies at the heart of the Lisp&nbsp;experience.
+</p>
+
+<p>
+Much of the advice is actually language-agnostic, even though the
+concrete examples are in Lisp. Norvig, of course, is the author of
+<a href="/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/">Paradigms of artificial intelligence programming</a>, and has made
+enormous contributions to the theory and practice of&nbsp;Lisp.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2025/01/31/lisp-style-and-design/" rel="bookmark">Friday 31 January, 2025</a>
 			</span>
 		    </div>
@@ -312,101 +362,6 @@ to see how <i>simple</i> it is, built as a recursive-descent tree-walker
 that emits assembler directly. With careful initial design even a
 compiler with no optimisation pathways can still get great speed-up
 over an&nbsp;interpreter.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/09/27/the-different-energy-footprints-of-different-programming-languages/" rel="bookmark">Friday 27 September, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/09/27/the-different-energy-footprints-of-different-programming-languages/">The different energy footprints of different programming&nbsp;languages</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgb8af6ca" class="outline-2">
-<h2 id="orgb8af6ca">The different energy footprints of different programming&nbsp;languages</h2>
-<div class="outline-text-2" id="text-orgb8af6ca">
-<p>
-I&#8217;ve recently been thinking about low-power computing, from <span class="caps">AI</span> and
-data centres down to sensors, as part of a new initiative the
-University is considering. It&#8217;s easy to forget the resource
-footprint of our computing systems – especially those that are &#8220;out
-of sight, out of mind&#8221; in the cloud – but there&#8217;s growing evidence
-that their growth threatens the renewable energy transition. Some of
-the figures for <span class="caps">AI</span> electricity and water usage are&nbsp;astonishing.
-</p>
-
-<p>
-One aspect of this is the effect of choice of programming language.
-I can across some work from 2017 on&nbsp;this:
-</p>
-
-<p>
-Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Cunha Jácome,
-João Paulo Fernandes, and João Saraiva. <i><a href="https://doi.org/10.1145/3136014.3136031">Energy Efficiency across
-Programming Languages: How Do Energy, Time, and Memory Relate?</a></i> In
-<i>Proceedings of the 10th <span class="caps">ACM</span> <span class="caps">SIGPLAN</span> International Conference on
-Software Language Engineering</i>.&nbsp;2017.
-</p>
-
-<p>
-The authors compare 13 benchmarks run in 27 different languages,
-with the benchmarks being chosen widely to avoid being biased by
-numeric performance. I was expecting some patterns: compiled
-languages doing better on performance, memory, and energy usage, for
-example. But I wasn&#8217;t expecting exactly <i>how</i> widely the figures
-diverged, or some of the&nbsp;details.
-</p>
-
-<p>
-The following table is from the paper, annotated by me. The figures
-are normalised against the best result in each category (so the top
-language has value 1, and so&nbsp;on).
-</p>
-
-<p width="80%" align="center">
-<img src="../attachments/fb/debea0-0913-41c2-90bc-726153de8d28/pl-energy.png" alt="pl-energy.png"></p>
-
-<p>
-The two most-used languages for web application, Python and
-JavaScript, perform uniformly pretty badly: 75 times C&#8217;s energy
-usage, in Python&#8217;s case. But although JavaScript does substantially
-better on energy (only a factor of 4), TypeScript – which is
-usually thought of as JavaScript with type pre-processing –
-requires 21 times C&#8217;s energy, or 5 times JavaScript&#8217;s. Why is that?
-– I can&#8217;t think of a&nbsp;reason.
-</p>
-
-<p>
-But the real surprise was that &#8220;research&#8221; languages like Haskell and
-Lisp both hold up well: twice C&#8217;s energy, in Lisp&#8217;s case. I don&#8217;t
-think that would surprise modern Lisp programmers, who are used to
-their compilers&#8217; efficiencies – but it would surprise someone used
-only to the &#8220;hearsay&#8221; about Lisp. The same for Haskell, actually,
-whose modern compilers really leverage the extra structure. When you
-consider that both those languages are pretty much dependent on
-garbage collection and so are doing substantially <i>more</i> work than the
-equivalent C program, it&#8217;s&nbsp;impressive.
-</p>
-
-<p>
-(Also look in the table for Racket, consistently lower than Lisp
-despite their close similarities. I suspect this is a compiler
-optimisation issue more than anything&nbsp;else.)
-</p>
-
-<p>
-This work clearly isn&#8217;t complete or definitive. Clojure is entirely
-missing, as is Scala, and there will have been compiler improvements
-since 2017 for the languages with the most active developer
-communities. But it&#8217;s still quite sobering that the differences are
-<i>so</i> wide, and that we&#8217;ve chosen to push languages that exacerbate
-energy usage rather than managing&nbsp;it.
 </p>
 </div>
 </div>

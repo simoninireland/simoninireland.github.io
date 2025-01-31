@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lisp: Style and design | Simon Dobson</title>
+<title>Tutorial on good Lisp programming style | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -67,51 +67,46 @@ MathJax.Hub.Config({
 		Posted on <a href="." rel="bookmark">Friday 31 January, 2025</a>
 	    </span>
 	</div>
-	<h1>Lisp: Style and&nbsp;design</h1>
+	<h1>Tutorial on good Lisp programming&nbsp;style</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org07a794e" class="outline-2">
-<h2 id="org07a794e">Lisp: Style and&nbsp;design</h2>
-<div class="outline-text-2" id="text-org07a794e">
-<p class="floater">
-<img src="../../../../attachments/da/4751c9-60cc-4acc-bfd3-ad7d50aa536a/lisp-style-design.jpg" alt="nil"></p>
-
+		<div id="outline-container-org5e8f4b3" class="outline-2">
+<h2 id="org5e8f4b3">Tutorial on good Lisp programming&nbsp;style</h2>
+<div class="outline-text-2" id="text-org5e8f4b3">
 <p>
-Molly Miller and Eric Benson. <i>Lisp: Style and Design</i>. Digital Press.
-<span class="caps">ISBN</span> 978-0135384220.&nbsp;1990.
+<a href="https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf">https://www.cs.umd.edu/%7Enau/cmsc421/norvig-lisp-style.pdf</a>
 </p>
 
 <p>
-A book that would serve as a primer for someone tackling a
-significant piece of programming for the first&nbsp;time.
+<i>Expression + Understanding =&nbsp;Communication</i>
 </p>
 
 <p>
-The style is a bit stiff and occasionally slightly patronising,
-definitely positioned as being from senior to junior programmers.
-The depth of the material is variable: I found the treatment of
-macros quite superficial, not helped by the examples generating
-questionable code. It also places relatively little emphasis on
-<span class="caps">CLOS</span> and generic functions, which would get more space in a more
-modern&nbsp;treatment..
+A great discussion of <i>style</i>, perhaps the most elusive programming
+skill. Illustrated across all the levels of abstraction that one
+finds in Lisp: of data, functions, control, and syntax (the last
+being essentially unique to Lisp macros). The discussion of
+control abstraction deals extensively with catch/throw and other
+primitives in the condition system that are dealt with at greater
+length in <a href="/2024/03/06/the-common-lisp-condition-system/">The Common Lisp condition system</a>.
 </p>
 
 <p>
-The best chapters are those on debugging and (especially)
-performance engineering, which dig into the interactive tools
-generally available within Lisp and give a good end-to-end
-description of the use&nbsp;of <code>declare</code> forms to aid compiler&nbsp;optimisations.
+The extended example (starting on page 71) of how to simplify
+logical expressions is amazingly clear, and really shows the
+progression from simple functions to embedded languages targeting
+specific tasks and making them easy to describe and extend to new
+applications: something that lies at the heart of the Lisp&nbsp;experience.
 </p>
 
 <p>
-But again the book&#8217;s age shows. It predates the obsessive
-relationship that many modern programmers have with unit testing
-and test automation, treating testing as an interactive activity
-alongside debugging rather than as a core and permanent part of
-program development and&nbsp;maintenance.
+Much of the advice is actually language-agnostic, even though the
+concrete examples are in Lisp. Norvig, of course, is the author of
+<a href="/2024/03/07/paradigms-of-artificial-intelligence-programming-case-studies-in-common-lisp/">Paradigms of artificial intelligence programming</a>, and has made
+enormous contributions to the theory and practice of&nbsp;Lisp.
 </p>
 </div>
 </div>
@@ -129,12 +124,12 @@ program development and&nbsp;maintenance.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Lisp%3A%20Style%20and%20design%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide&amp;url=https://simondobson.org/2025/01/31/lisp-style-and-design/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Lisp%3A%20Style%20and%20design%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide&amp;url=https://simondobson.org/2025/01/31/lisp-style-and-design/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Tutorial%20on%20good%20Lisp%20programming%20style%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide&amp;url=https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Tutorial%20on%20good%20Lisp%20programming%20style%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide&amp;url=https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2025/01/31/lisp-style-and-design/&amp;title=Lisp%3A%20Style%20and%20design%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2025/01/31/lisp-style-and-design/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Lisp:%20Style%20and%20design&amp;body=https://simondobson.org/2025/01/31/lisp-style-and-design/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/&amp;title=Tutorial%20on%20good%20Lisp%20programming%20style%20%23lisp%20%23project%3Alisp-bibliography%20%23style-guide" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Tutorial%20on%20good%20Lisp%20programming%20style&amp;body=https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -153,13 +148,8 @@ program development and&nbsp;maintenance.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../../2024/11/29/new-release-of-epydemic/" rel="prev">
-		<span class="meta-nav">Older Post</span>New release of epydemic
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../tutorial-on-good-lisp-programming-style/" rel="next">
-		<span class="meta-nav">Newer Post</span>Tutorial on good Lisp programming style
+	    <a href="../lisp-style-and-design/" rel="prev">
+		<span class="meta-nav">Older Post</span>Lisp: Style and design
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
