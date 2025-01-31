@@ -1,0 +1,46 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp: Style and design
+.. slug: lisp-style-and-design
+.. date: 2025-01-31 08:27:35 UTC
+.. tags: project:lisp-bibliography, lisp, style-guide
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp: Style and design                                             :ATTACH:
+  :PROPERTIES:
+  :ID:       da4751c9-60cc-4acc-bfd3-ad7d50aa536a
+  :END:
+
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:lisp-style-design.jpg]]
+
+  Molly Miller and Eric Benson. /Lisp: Style and Design/. Digital Press.
+  ISBN 978-0135384220. 1990.
+
+  A book that would serve as a primer for someone tackling a
+  significant piece of programming for the first time.
+
+  The style is a bit stiff and occasionally slightly patronising,
+  definitely positioned as being from senior to junior programmers.
+  The depth of the material is variable: I found the treatment of
+  macros quite superficial, not helped by the examples generating
+  questionable code. It also places relatively little emphasis on
+  CLOS and generic functions, which would get more space in a more
+  modern treatment..
+
+  The best chapters are those on debugging and (especially)
+  performance engineering, which dig into the interactive tools
+  generally available within Lisp and give a good end-to-end
+  description of the use of ~declare~ forms to aid compiler
+  optimisations.
+
+  But again the book's age shows. It predates the obsessive
+  relationship that many modern programmers have with unit testing
+  and test automation, treating testing as an interactive activity
+  alongside debugging rather than as a core and permanent part of
+  program development and maintenance.

@@ -2,6 +2,6 @@ Nikola[extras]
 pybtex
 feedparser
 dateparser
-gensim
-stop_words
+#gensim
+#stop_words
 typogrify

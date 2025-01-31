@@ -94,6 +94,22 @@ lot about object-oriented programming in other languages too.
    :reverse:
 
 
+Style guides
+------------
+
+For any language there's a layer of learning beyond just the language
+itself, focusing on idioms, layout, decomposition, and the general
+style of programming that's been found to be most productive. As
+befits a multi-paradigm language, opinions on what constitutes good
+Lisp style can vary.
+
+.. post-list::
+   :type: posts
+   :tags: project:lisp-bibliography, style-guide
+   :template: series_post_list.tmpl
+   :require_all_tags:
+   :reverse:
+
 Applications
 ------------
 
