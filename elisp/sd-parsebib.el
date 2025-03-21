@@ -61,7 +61,7 @@ of nil if there was no entry found."
   (catch 'result
     (while t
       (let* ((pt (point))
-	     (type (parsebib-find-next-item pt)))
+	     (type (parsebib-find-next-item)))
 	(cond ((null type)
 	       (throw 'result nil))
 	      ((sd/parsebib--point-on-line pt)
@@ -86,7 +86,7 @@ an entry. Point is left unchanged across this function."
 	    ((member item '("string" "preamble" "comment"))
 	     nil)
 	    (t
-	     (parsebib-read-entry item))))))
+	     (parsebib-read-entry))))))
 
 
 ;; ---------- Look for values in any field ----------
