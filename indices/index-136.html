@@ -52,77 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/01/01/making-small-changes-to-lots-of-files/" rel="bookmark">Monday 1 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/01/01/making-small-changes-to-lots-of-files/">Making small changes to lots of&nbsp;files</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-orgfd33e58" class="outline-2">
-<h2 id="orgfd33e58">Making small changes to lots of&nbsp;files</h2>
-<div class="outline-text-2" id="text-orgfd33e58">
-<p>
-I recently had to make tiny changes to a large number of files
-spread nested through a directory structure. This turns out to be a
-lot easier than I expected with&nbsp;Emacs.
-</p>
-
-<p>
-My use case was actually this blog. It&#8217;s been on the go for a while
-in several different formats, and over the years I&#8217;ve used tags to
-drive different presentations – for example articles tagged &#8216;news&#8217;
-ended up on the front page. I no longer do this, which meant a lot
-of redundant tags to be got rid of, mainly in&nbsp;Nikola&#8217;s <code>.meta</code>
-metadata files but also embedded&nbsp;into <code>.md</code> markdown&nbsp;and <code>.rst</code>
-restructured&nbsp;text..
-</p>
-
-<p>
-My plan was to use&nbsp;Emacs&#8217; <code>rgrep</code> command to recursively traverse
-the directory structure of posts to find the tags I wanted to
-remove. This would give me&nbsp;a <code>grep</code>-mode buffer that hyperlinks to
-the files (and lines) needing changing, which I could then click
-through to get to where each change needed to be made.
-Straightforward, but time-consuming and error-prone when there were
-about 150 files to be changed. Clearly a problem in need of a better&nbsp;solution.
-</p>
-
-<p>
-I then discovered the <a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"><code>wgrep</code></a>&nbsp;(&#8220;writable <code>grep</code><span class="dquo">&#8220;</span>) package. This
-makes&nbsp;the <code>grep</code>-mode buffer editable, with changes being
-written-back to the underlying files. <i>Exactly</i> what I&nbsp;needed.
-</p>
-
-<p>
-Once I&#8217;d&nbsp;installed <code>wgrep</code>, the workflow is ridiculously&nbsp;easy:
-</p>
-
-<ol class="org-ol">
-<li>Using <code>rgrep</code> gets&nbsp;a <code>grep</code>-mode&nbsp;buffer</li>
-<li>
-<code>C-c C-p</code> makes the buffer&nbsp;editable</li>
-<li>Changing the lines. In my case I could&nbsp;use <code>string-replace</code> to
-remove the tags I wanted rid of. More complicated cases might&nbsp;need <code>regexp-replace</code> or even manual&nbsp;editing</li>
-<li>
-<code>C-x C-s</code> writes the changes back&nbsp;out</li>
-</ol>
-<p>
-(There are several other keybindings&nbsp;that <code>wgrep</code> makes
-available,&nbsp;notably <code>C-c C-k</code> to discard all&nbsp;changes.)
-</p>
-
-<p>
-That&#8217;s it! A job that I expected to take an hour took about 3&nbsp;minutes.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../goodreads/they-called-it-passchendaele/" rel="bookmark">Sunday 31 December, 2023</a>
 			</span>
 		    </div>
@@ -907,7 +836,7 @@ f^{(n)}(z) = \frac{n!}{2 \pi} \int_0^{2 \pi} \frac{f(r e^{i \theta} + z)}{(r e^{
 			<div>
     <div>
       <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680592896l/123204511._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Marcus du&nbsp;Sautoy
+	Marcus du Sautoy&nbsp;(2023)
       </h2>
     </div>
     <p>
@@ -974,6 +903,36 @@ rest of the code) is concerned, and so doesn&#8217;t need to be
 protected&nbsp;by <code>save-excursion</code> or the&nbsp;like.
 </p>
 </div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/estates-an-intimate-history/" rel="bookmark">Tuesday 19 December, 2023</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/estates-an-intimate-history/">Estates: An Intimate&nbsp;History</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328840856l/912517._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Lynsey Hanley&nbsp;(2007)
+      </h2>
+    </div>
+    <p>
+      A social history of segregated housing in Britain, how thw dream of a more equal approach died, and the consequences for those who lived through it.<br><br>Mass social (or council) housing was intended, in the immediate aftermath of the Second World War, to act as a social glue by mixing all sorts of people together so as to break down the walls of class that blighted British society. It failed: Aneurin Bevin&#8217;s vision was diluted, as were the building standards, resulting in housing that was both inferior to private stock and immediately identifiable as such, making it stigmatic to live there. The result has been to enhance the blight, erecting what Hanley refers to as &#8220;a wall in the head&#8221; of people whose self-image is poisoned by poor housing, poor neighbours, and poor (or indeed non-existent) services.<br><br>The wall in the head exists in many forms, and one doesn&#8217;t have to have grown up on a council estate to have one. But however tall it is, the wall is easy to build when young and hard to climb when older, and it&#8217;ll affect you all your life in some way or other. Housing and class have a lot to do with forming the wall.<br><br>It&#8217;s impossible to miss the connection with <a href="https://www.goodreads.com/book/show/25489625.Between_the_World_and_Me" title="Between the World and Me by Ta-Nehisi Coates" rel="nofollow noopener">Between the World and Me</a>, not least because of the catchy and often-repeated phrasing. <a href="https://www.goodreads.com/author/show/1214964.Ta_Nehisi_Coates" title="Ta-Nehisi Coates" rel="nofollow noopener">Ta-Nehisi Coates</a> was more concerned with physical violence rather than social class, but the parallels are there: different people from different circumstances have completely different perceptions of the country in which they live and what it&#8217;s supposed to do for them. I see this all the time with different student cohorts. It&#8217;s to some extent a matter of expectations of others, but also of the ability to see opportunities beyond the present. An inward-looking social environment absolutely stunts people&#8217;s vision of what&#8217;s possible for them.<br><br>The book ends on quite q positive note: the willingness of housing providers to renovate (rather than simply dispose of) social housing stock, and the availability of cash to do so. Whether this is sufficient is an open question, and certainly we still see developers skirting-round the requirement to provide &#8220;affordable&#8221; housing, in some cases literally walling-off the social from the private units, just as happened with the first estates built in the&nbsp;1940s.
+      </p>
+<p>
+	4/5.
+	  Finished Tuesday 19 December,&nbsp;2023.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6013200590?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
 </div>
 		</div>
 	    </article>

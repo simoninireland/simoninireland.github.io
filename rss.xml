@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2025 09:22:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Tutorial on good Lisp programming style</title><link>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8f4b3" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 20 Mar 2025 15:51:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Korea: A New History of South and North</title><link>https://simondobson.org/goodreads/korea-a-new-history-of-south-and-north/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682203389l/62834771._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Victor D. Cha
+	  (2023)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      The modern history of a nation that's been to some extent marginalised by wider geopolitics. It begins with domination by Japan in the late 19th century, which continued until the end of the Second World War – only to be replaced by domination through "trusteeship" by the US and others, which itself was a direct precursor to the partition of the nation, a vicious war, and a long and convoluted evolution of two very different political and economic outcomes.&lt;br&gt;&lt;br&gt;There are times when it feels a little superficial: the Korean War gets only a few pages. But that's a consequence of the breadth of coverage, and especially the time spent analysing the politics as they evolve through repression (in the North) and authoritarianism becoming dictatorship and finally vibrant and raucous democracy (in the South).&lt;br&gt;&lt;br&gt;The fact that both authors are Korea specialists (and in one case ethnically Korean) certainly helps. They have seen close-up the evolution of both Koreas' places in the world, and their personal observations and anecdotes bring the story alive without being distracting.&lt;br&gt;&lt;br&gt;The last chapter is a detailed analysis of when and whether any re-unification of the pennisula will happen. It's a balanced and well-informed view, albeit one that's too sanguine with respect to the expectation of continued US support and engagement: the recent (as I write) events in Ukraine don't give confidence in whether the US would act as an honest broker in any crisis. But it remains a clear and well-reasoned (if largely non-committal) analysis of where Krean history may go next.
+      &lt;/p&gt;&lt;p&gt;
+	4/5.
+	  Finished Sunday 9 March, 2025.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7034830867?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><guid>https://simondobson.org/goodreads/korea-a-new-history-of-south-and-north/</guid><pubDate>Sun, 09 Mar 2025 00:00:00 GMT</pubDate></item><item><title>Tutorial on good Lisp programming style</title><link>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5e8f4b3" class="outline-2"&gt;
 &lt;h2 id="org5e8f4b3"&gt;Tutorial on good Lisp programming style&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org5e8f4b3"&gt;
 &lt;p&gt;
@@ -806,19 +821,4 @@ creating another dependency.
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</guid><pubDate>Thu, 05 Sep 2024 14:36:23 GMT</pubDate></item><item><title>The Himmler Brothers: A German Family History</title><link>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328831850l/1629056._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Katrin Himmler
-	  (2005)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      The family history of Heinrich Himmler and his two brothers Gebhard and Ernst, as told by his great-niece.&lt;br&gt;&lt;br&gt;There's a lot of fascinating backstory in this book, and it explains a lot. It portrays Heinrich Himmler as very much the product of a middle-class, socially ambitious family who pushed him relentlessly to succeed and only seemed really to embrace him after he achiveed visible success as a Reichstag deputy and then later as Reichsführer-SS. The author, Katrin, has access to lots of family papers and photographs that have never been explored before, as well as being able to talk informally to Heinrich's brothers' children about their experiences. This makes this a profoundly personal exploration of Heinrich's rise and fall.&lt;br&gt;&lt;br&gt;That's also its weakness, of course, of which Katrin herself is well aware: it was cleaerly not an easy book to write, and one led her to realise how much families re-write their own histories – understandbaly so in the light of what happened. It also means the the book as a whole concentrates on the domestic side of Heinrich's life, which can be jarring: the period from him being a secretary to leading the SS is covered in less than a page. Overall, though, there's a lot of keen insight provided into the making of a monster.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Thursday 22 August, 2024.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6782101538?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-himmler-brothers-a-german-family-history/</guid><pubDate>Thu, 22 Aug 2024 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/09/05/guard-methods-on-clos-generic-functions/</guid><pubDate>Thu, 05 Sep 2024 14:36:23 GMT</pubDate></item></channel></rss>

@@ -52,39 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/08/02/casting-spels-in-lisp/" rel="bookmark">Friday 2 August, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/08/02/casting-spels-in-lisp/">Casting SPELs in&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org49f0e11" class="outline-2">
-<h2 id="org49f0e11">Casting SPELs in&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-org49f0e11">
-<p>
-<a href="https://www.lisperati.com/casting.html">https://www.lisperati.com/casting.html</a>
-</p>
-
-<p>
-A tongue-in-cheek – but still excellent – comicbook-style
-introduction to Lisp programming. (There&#8217;s also a version
-<a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html">specifically for Emacs Lisp</a>.) It&#8217;s structured around building an
-adventure-style game, which as well as being a classic also offers
-lots of opportunities for exploring different data structures and
-algorithms: one can easily imagine expanding it to include (for
-example) an <span class="caps">AI</span> second player or autonomous non-player characters
-and gradually building a really complicated application from a
-standing&nbsp;start.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../2024/07/27/my-mental-model-of-setf-was-wrong/" rel="bookmark">Saturday 27 July, 2024</a>
 			</span>
 		    </div>
@@ -611,6 +578,79 @@ like runtime typing and garbage&nbsp;collection.
 Does a great job of making the central insights accessible,
 including re-phrasing the meta-circular Lisp interpreter so as to
 be executable in modern Common&nbsp;Lisp.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/07/17/til-the-most-powerful-one-line-program-in-the-world/" rel="bookmark">Wednesday 17 July, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/07/17/til-the-most-powerful-one-line-program-in-the-world/"><span class="caps">TIL</span>: The most powerful one-line program in the&nbsp;world</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org3b371cb" class="outline-2">
+<h2 id="org3b371cb"><span class="caps">TIL</span>: The most powerful one-line program in the&nbsp;world</h2>
+<div class="outline-text-2" id="text-org3b371cb">
+<p>
+Well, the most powerful I&#8217;ve found so far,&nbsp;anyway.
+</p>
+
+<p>
+Given my current obsession with <a href="/categories/lisp/">Lisp</a> you might reasonably expect it
+to be in that language. But it isn&#8217;t: it&#8217;s in <a href="https://en.wikipedia.org/wiki/APL_(programming_language)"><span class="caps">APL</span></a>, and it performs
+one complete generation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway&#8217; Game of Life</a> in one line of&nbsp;code:
+</p>
+
+<div class="highlight"><pre><span></span>  Life←{↑↑1 ⍵∨.∧3 4=+/,¯1 0 1∘.⊖¯1 0 1∘.⌽⊂⍵}
+</pre></div>
+
+<p>
+…and does so inexplicably to anyone who doesn&#8217;t know <span class="caps">APL</span>,
+obviously, but the <a href="https://aplwiki.com/wiki/John_Scholes%27_Conway%27s_Game_of_Life">basic algorithm</a> is&nbsp;simple:
+</p>
+
+<ol class="org-ol">
+<li>Take an array with 1 in each occupied cell and 0&nbsp;elsewhere</li>
+<li>Build four new arrays by exchanging each element with its
+neighbour up, down, left, and&nbsp;right</li>
+<li>Sum these arrays, which places the number of neighbours into each&nbsp;cell</li>
+<li>Cut-off these values to be 1 if the cell has a value of 3 or 4,
+and 0&nbsp;otherwise</li>
+<li>Re-format the arrays back into the starting&nbsp;configuration</li>
+</ol>
+<p>
+I checked it out using <a href="https://www.gnu.org/software/apl/"><span class="caps">GNU</span> <span class="caps">APL</span></a> and it works&nbsp;fine.
+</p>
+
+<p>
+I discovered this gem by accident, actually implemented <a href="https://github.com/chmykh/apl-life">in <span class="caps">APL</span> in
+Forth</a> where someone has developed <span class="caps">APL</span> as an embedded <span class="caps">DSL</span> within
+<a href="https://en.wikipedia.org/wiki/Forth_(programming_language)">Forth</a> (another language with which I have history). After a bit of
+digging I found a similar <span class="caps">APL</span> in Lisp, <a href="https://github.com/phantomics/april">April</a>, which clearly needs&nbsp;exploring.
+</p>
+
+<p>
+In many ways <span class="caps">APL</span> and Lisp are parallel tracks within programming
+language evolution, taking a single data structure (lists or arrays)
+and providing powerful ways to manipulate them. Lisp of course has
+been extended with other data structures, including arrays, which
+makes the fusion of array- and list-based programming rather&nbsp;attractive.
+</p>
+
+<p>
+I can&#8217;t help asking myself what would have happened if <span class="caps">APL</span> hadn&#8217;t
+fallen by the wayside. (I think this was inevitable, incidentally,
+once the syntax became fixed: any language that requires its own
+character set was always going to struggle.) We now have huge
+applications for array processing, from graphics to machine
+learning, and GPUs are from one perspective just <span class="caps">APL</span> accelerator
+co-processors. The ideas are still massively&nbsp;relevant.
 </p>
 </div>
 </div>

@@ -52,6 +52,48 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/10/18/two-lisp-compilers-written-in-lisp/" rel="bookmark">Friday 18 October, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/10/18/two-lisp-compilers-written-in-lisp/">Two Lisp compilers written in&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org1478a92" class="outline-2">
+<h2 id="org1478a92">Two Lisp compilers written in&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-org1478a92">
+<p>
+<a href="http://www.ulisp.com/show?4W2I">A Lisp compiler to <span class="caps">ARM</span> written in&nbsp;Lisp</a>
+</p>
+
+<p>
+<a href="http://www.ulisp.com/show?4Y20=">A Lisp compiler to <span class="caps">RISC</span>-V written in&nbsp;Lisp</a>
+</p>
+
+<p>
+Two native-code compilers written in the <a href="http://www.ulisp.com/show?3J">uLisp</a> dialect that targets
+microcontroller-class machines. Both use a combination of stack
+and register allocation to get efficiency – and they&#8217;re <i>very</i>
+efficient, with the compiled versions sometimes being 100x faster
+than the interpreted&nbsp;code.
+</p>
+
+<p>
+These are not complete ports, and indeed not on a complete or
+standard underlying Lisp implementation. But it&#8217;s still fascinating
+to see how <i>simple</i> it is, built as a recursive-descent tree-walker
+that emits assembler directly. With careful initial design even a
+compiler with no optimisation pathways can still get great speed-up
+over an&nbsp;interpreter.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/09/27/the-different-energy-footprints-of-different-programming-languages/" rel="bookmark">Friday 27 September, 2024</a>
 			</span>
 		    </div>
@@ -168,6 +210,58 @@ Standard <span class="caps">ML</span>, but the ideas apply strongly to Lisp and 
 Definitely a useful source for an alternative take on data
 structuring that doesn&#8217;t start from assumptions of imperative
 programming and&nbsp;mutability.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/09/27/lisp-as-the-maxwell1s-equations-of-software/" rel="bookmark">Friday 27 September, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/09/27/lisp-as-the-maxwell1s-equations-of-software/">Lisp as the Maxwell&#8217;s equations of&nbsp;software</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbfd6534" class="outline-2">
+<h2 id="orgbfd6534">Lisp as the Maxwell&#8217;s equations of&nbsp;software</h2>
+<div class="outline-text-2" id="text-orgbfd6534">
+<p>
+<a href="https://michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/">Lisp as the Maxwell’s equations of software –&nbsp;<span class="caps">DDI</span></a>
+</p>
+
+<p>
+A take on Lisp as the computational version of fundamental
+equations in physics. The claim is that learning Lisp is a
+foundational skill, and this page goes on to develop a
+&#8220;TiddlyLisp&#8221; interpreter in Python. As you&#8217;d expect this isn&#8217;t an
+espcially practical Lisp: but it&#8217;s remarkably functional, and I
+suspect will demystify Lisp for programmers familiar with
+interpreters for other&nbsp;languages.
+</p>
+
+<p>
+See also a <a href="https://queue.acm.org/detail.cfm?id=1039523">conversation with Alan Kay</a> where he uses the &#8220;Maxwell&#8217;s&nbsp;equations&#8221;:
+</p>
+
+<blockquote>
+<p>
+That was the big revelation to me when I was in graduate
+school – when I finally understood that the half page of code on the
+bottom of page 13 of the Lisp 1.5 manual was Lisp in itself. These
+were “Maxwell’s Equations of Software!” This is the whole world of
+programming in a few lines that I can put my hand&nbsp;over.
+</p>
+</blockquote>
+
+<p>
+And in the second half of this article, the Lisp interpreter in
+Python is translated into a Lisp interpreter in Lisp, which is a
+very concrete way of showing how metacircularity can work
+in <a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/">McCarthy&#8217;s original style</a>.
 </p>
 </div>
 </div>

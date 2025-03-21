@@ -52,39 +52,6 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
-			    Posted on <a href="../2024/05/27/a-road-to-common-lisp/" rel="bookmark">Monday 27 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/27/a-road-to-common-lisp/">A road to Common&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org353c80d" class="outline-2">
-<h2 id="org353c80d">A road to Common&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-org353c80d">
-<p>
-<a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/">A Road to Common&nbsp;Lisp</a>
-</p>
-
-<p>
-This a really brief, yet really interesting, approach to
-introducing Lisp to someone. Interesting because it covers all the
-usual ground, but also has copious pointers to other material
-slightly-beyond-introductory (&#8220;Where to go from here&#8221;). It also
-links to material that&#8217;s essential to modern practice, such as
-Lisp packages and systems, and the essential &#8220;standard libraries&#8221;
-such as Alexandria, Bordeaux, <span class="caps">CL</span>-<span class="caps">PPCRE</span>, usocket, and the like: the
-things that are needed in practice and which in other languages
-would probably be built-in and included directly in an&nbsp;introduction.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
 			    Posted on <a href="../goodreads/a-mathematicians-apology/" rel="bookmark">Friday 24 May, 2024</a>
 			</span>
 		    </div>
@@ -281,6 +248,60 @@ which is quite tricky code to write and to make efficient. Testing
 the system actually involved us thinking more deeply about the
 effectiveness of unit testing for stochastic code, which then led to
 a <a href="/softcopy/stochastic-testing-21.pdf">presentation at <span class="caps">UK</span> Systems in 2021</a> explaining the problems we&#8217;d&nbsp;had.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/" rel="bookmark">Friday 3 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org8b56563" class="outline-2">
+<h2 id="org8b56563"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</h2>
+<div class="outline-text-2" id="text-org8b56563">
+<p>
+Today I learned about a program that generates the sounds that help
+people navigate as they exit long tunnels when an emergency such as
+a fire has destroyed the&nbsp;visibility.
+</p>
+
+<p>
+<a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/">The World&#8217;s Loudest Lisp Program to the&nbsp;Rescue</a>
+</p>
+
+<p>
+This describes the challenges of building a software system that has
+to work unmonitored once deployed, for years, as well as
+withstanding a fairly rugged environment where, for example, the
+installedc hardware will be periodically sprayed with a
+high-pressure hose as the walls get cleaned. Overall the system is
+soft real-time, but has to cope with component failure, network
+partitions, consensus, and all the usual distributed systems
+challenges, while be guaranteed to work when&nbsp;needed.
+</p>
+
+<p>
+The developers built the system in Common Lisp, which wouldn&#8217;t be
+the normal go-to choice for an embedded system. But their argument
+was that they could better handle complex and changing requirements
+by retaining a high level of abstraction, and that development was
+overall far faster than using C. Modern Common Lisp compilers are so
+efficient that there&#8217;s no significant performance hit at deployment.
+They made use of complicated components like planners (for which
+Lisp is an ideal choice), and built a set of macros to wrap-up the
+handling of industrial control and robust&nbsp;communications.
+</p>
+
+<p>
+It&#8217;s a great&nbsp;read.
 </p>
 </div>
 </div>
