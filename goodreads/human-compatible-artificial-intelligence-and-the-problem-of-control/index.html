@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Compatible: Artificial Intelligence and the Problem of Control | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../assets/fonts/libretto-icons.eot);
+	    src:url(../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../assets/css/code.css">
+<link rel="stylesheet" href="../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../index.html">Home</a></li>
+		    <li><a href="../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../research/">Research</a></li>
+		    <li><a href="../../development/projects/">Software</a></li>
+		    <li><a href="../../writing/">Writing</a></li>
+		    <li><a href="../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Thursday 16 January, 2025</a>
+	    </span>
+	</div>
+	<h1>Human Compatible: Artificial Intelligence and the Problem of&nbsp;Control</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1561637199l/44767248._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Stuart Russell&nbsp;(2019)
+      </h2>
+    </div>
+    <p>
+      A book that tries to address the emergence and implications of artificial intelligence.<br><br>(I should preface what I&#8217;m going to say by noting Brand&#8217;s enormous contributions to <span class="caps">AI</span> research and teaching. He knows massively more about these systems than I do.)<br><br>Computer scientists often avoid the term &#8220;<span class="caps">AI</span>&#8221; because it&#8217;s so broad and encompasses a huge range of approaches, from constraint-solving and pattern-matching to speech recognition and the sorts of &#8220;chatbot&#8221; technology that is the common face of modern <span class="caps">AI</span> – technically referred to as Large Language Models or LLMs, that have been trained on text scraped from the internet and can perform impressive feats of conversation.<br><br>There&#8217;s a problem when discussing <span class="caps">AI</span> that you have to be very careful about, and that&#8217;s the tendency to anthropomorphise. It&#8217;s almost impossble not to use terms that imply agency: &#8220;think&#8221;, &#8220;understand&#8221;, &#8220;learn&#8221;, &#8220;know&#8221;, &#8220;decide&#8221;, and so on. <span class="caps">AI</span> researchers use these words with very technical senses that are analogous to their usual meanings – but that aren&#8217;t the same, and that&#8217;s where things get misleading. When a person &#8220;summarises&#8221; some information, we mean that they pick out what they think is most important from the text; when an <span class="caps">LLM</span> does the same thing, it picks out the words that are statistically most clustered within the text and its training data. Are these two processes the same? They certainly don&#8217;t <i>sound</i> the same, and they often produce radically different &#8220;summaries&#8221;, because the human summariser is working from a far richer knowledge base and using different means to assess importance, often including what they know about the intended audience. It&#8217;s doing this well that&#8217;s usually taken as one of the hallmarks of intelligence. These are statistical techniques that cleave to the mean, which implies they will always <i>by design</i> produce middling answers. An amazingly insightful and creative answer is by definition unlikely, and so will be avoided <i>by design</i>.<br><br>There are other problems too. Machine learning, the science that underlies LLMs, is usually based on training from huge volumes of data. This permits impressive feats, such as being able to spot anomalies in cancer images better (in some cases) and more consistently than trained doctors. But that&#8217;s a weakness too: the idea that <i>the future will be like the past</i>, meaning that anything not in the training set runs the risk of being ignored as noise. The LLMs&#8217; training data from the internet is <i>text</i>, not validated <i>knowledge</i> in any sense. And remember that repetition increases likelihood for an <span class="caps">LLM</span>, including repeatition of nonsense. <br><br>This lies at the heart of the problem of hallucination, where AIs confidently produce startlingly incorrect text. Why is this? Because text is all they have to work with: there is no model of the world as it is, and therefore no ability to correct. The most modern LLMs are now attempting to correct this, so far with little success. <br><br>So are we seeing intelligence from LLMs? We&#8217;re seeing something that <i>presents</i> like <i>some parts of</i> such intelligence. From this the industry has extrapolated that we are, for example, about to see models demonstrating &#8220;PhD level&#8221; ability – &#8220;soon&#8221;, but there never seems to be a demonstration. One characteristic of LLMs is that they don&#8217;t spontaneously do <i>anything</i>: they wait until prompted, and then reply. Does that sound like intelligent behaviour? – no planning, no forethought, no imagination? I work with a lot of PhD-level people, and <i>none of them</i> behave this way.<br><br>Some will object that there&#8217;s lots going on in industrial labs that we don&#8217;t see. Quite possibly. Maybe the insiders are seeing things that we outsiders don&#8217;t. But the common characteristic of the systems we outsiders <i>do</i> see is systems that can perform well on certain well-prescribed and -bounded tasks, but which then fail catastrophically when used in less constrained domains. <br><br>I am a materialist: I don&#8217;t believe that there&#8217;s anything supernatural about intelligence (however one defines it), or anything privileged about running an intelligent process on a biological (rather than a silicon) substrate. But this book strikes me as another over-hyped, somewhat confused and confusing contribution to our understanding of what <span class="caps">AI</span> is. It focuses on some entirely hypothetical potential harms (intelligent autonomous machines) while largely ignoring the very real current harms of bias, accuracy, and increasing economic and digital&nbsp;disparities.
+      </p>
+<p>
+	2/5.
+	  Finished Thursday 16 January,&nbsp;2025.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6713917719?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Human%20Compatible%3A%20Artificial%20Intelligence%20and%20the%20Problem%20of%20Control%20%23bonanza%20%23books%20%23reviews&amp;url=https://simondobson.org/goodreads/human-compatible-artificial-intelligence-and-the-problem-of-control/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Human%20Compatible%3A%20Artificial%20Intelligence%20and%20the%20Problem%20of%20Control%20%23bonanza%20%23books%20%23reviews&amp;url=https://simondobson.org/goodreads/human-compatible-artificial-intelligence-and-the-problem-of-control/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/goodreads/human-compatible-artificial-intelligence-and-the-problem-of-control/&amp;title=Human%20Compatible%3A%20Artificial%20Intelligence%20and%20the%20Problem%20of%20Control%20%23bonanza%20%23books%20%23reviews" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/goodreads/human-compatible-artificial-intelligence-and-the-problem-of-control/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Human%20Compatible:%20Artificial%20Intelligence%20and%20the%20Problem%20of%20Control&amp;body=https://simondobson.org/goodreads/human-compatible-artificial-intelligence-and-the-problem-of-control/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../categories/bonanza/">bonanza</a>
+		    <span>  </span>
+		<a href="../../categories/books/">books</a>
+		    <span>  </span>
+		<a href="../../categories/reviews/">reviews</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../mordew-cities-of-the-weft-1/" rel="prev">
+		<span class="meta-nav">Older Post</span>Mordew (Cities of the Weft, #1)
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../2025/01/31/lisp-style-and-design/" rel="next">
+		<span class="meta-nav">Newer Post</span>Lisp: Style and design
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>
