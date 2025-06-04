@@ -23,7 +23,7 @@
 ** Journal articles
 
 #+begin: sd/bibliography :key category :value journal
-<<citeproc_bib_item_1>>Peter Mann and Simon Dobson.  /Alternative Expression of Message Passing on Networks/. Physical Review E. 2025. Accepted for publication.
+<<citeproc_bib_item_1>>Peter Mann and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.111.06430][Alternative Expression of Message Passing on Networks]]/. Physical Review E *111*. 2025.
 
 <<citeproc_bib_item_2>>Tianyuan Zheng, John Mitchell, and Simon Dobson.  /[[https://doi.org/https://doi.org/10.1021/acsomega.4c06163][Revisiting the Application of Machine Learning Approaches in Predicting Aqueous Solubility]]/. ACS Omega *9*. 2024.
 
