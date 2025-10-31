@@ -52,6 +52,31 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/07/26/radio-survey/" rel="bookmark">Friday 26 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/26/radio-survey/">Radio&nbsp;survey</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>A simple radio survey establishes the ranges that the radios can&nbsp;manage.</p>
+<!--more-->
+
+<p>The 2mW XBee radios we&#8217;ve got have a nominal range of 100m &#8212; but that&#8217;s in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There&#8217;s a reasonable chance that these obstacles will reduce the real range&nbsp;significantly.</p>
+<p><img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="../images/citizen-sensing/sensor-enclosure.jpg"></p>
+<p>A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station &#8212; something as simple as possible, like sending a single packet with a count every ten seconds &#8212; and keep careful track of the return values coming back from the radio library. We then use the only output device we have &#8212; an <span class="caps">LED</span> &#8212; to indicate the success or failure of each operation, preferably with an indication of <em>why</em> it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we&#8217;ve reached the edge of the effective&nbsp;range.</p>
+<p>With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect <em>via</em> the first, automatically. That&#8217;s the theory,&nbsp;anyway&#8230;</p>
+<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an <span class="caps">ATJV1</span> command issued to it. The easiest way to do this is at set-up, <a href="../2013/07/02/xctu/" target="_blank">through the advanced settings in X-<span class="caps">CTU</span></a>.)</p>
+<p>The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30&#8212;40m &#8212; somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10&#8212;20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no&nbsp;effort.</p>
+<p>This is somewhat disappointing, but that&#8217;s what this project is all about: the practicalities of sensor networking with cheap&nbsp;hardware.</p>
+<p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the&nbsp;enclosure.</p>
+<p>It&#8217;s also worth noting that the radio segment is horrendously hard to debug with only a single <span class="caps">LED</span> for signalling. Adding more LEDs might help, but it&#8217;s still a very poor debugging interface, even compared to printing status messages to the <span class="caps">USB</span>&nbsp;port.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/07/25/sleepy-sketches/" rel="bookmark">Thursday 25 July, 2013</a>
 			</span>
 		    </div>
@@ -226,29 +251,6 @@ will then cause a system&nbsp;reset.</p>
 <p>Mathematicians don&#8217;t see networks this way, because they want to make precisely the global statements that the general approach precludes &#8212; and so don&#8217;t allow arbitrary functions into the mix. Instead they use functions that aggregate cleanly, like fixed-probability infection rates, about which one <em>can</em> make global statements. One way to look at this is that well-behaved functions allow one to make global statements about their aggregate behaviour without having to perform any computation <em>per se</em>: they remain within an envelope whose global properties are known. A mathematician who used an ill-behaved function would be unable to perform analysis, <em>and that&#8217;s precisely what they&#8217;re interested in doing</em>, even though by doing so they exclude a range of possible network behaviours.In fact, it&#8217;s worse than that: the range of behaviours excluded is infinite, and contains a lot of networks that seem potentially very interesting, for example those whose behaviours depend on some transmitted value, or one computed from values spread by the&nbsp;process.</p>
 <p>So a mathematician&#8217;s (at least as represented in most of the complex systems literature) interest in a problem is lost at precisely the point that a computer scientist&#8217;s interest kicks in: where the question is about behaviour of arbitrary computations. The question this leads to is, what model do real-world networks follow more closely? Are they composed of simple, well-behaved spreading processes? Or do they more resemble arbitrary functions hanging off a network of relationships, whose properties can only be discovered numerically? And what effect does the avoidance of arbitrary computation have on the choice of problems to which scientists apply themselves? Perhaps the way forward here is to try to find the boundary of the complexity of functions that remain analytic when used as part of a network dynamics, to get the best of both worlds: global statements about large categories of networks, without needing numerical simulation of individual&nbsp;cases.</p>
 <p>Such a classification would have useful consequences for general computer science as well. A lot of the problems in systems design come from the arbitrariness of code and its interactions, and from the fact that we&#8217;re uncomfortable restricting that generality <em>a priori</em> because we don&#8217;t know what the consequences will be for the re-usability and extensibility of the systems being designed. A more nuanced understanding of behavioural envelopes might&nbsp;help.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2013/07/10/representing-samples/" rel="bookmark">Wednesday 10 July, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../2013/07/10/representing-samples/">Representing&nbsp;samples</a></h1>
-		</div>
-		<div class="entry-content">
-			<p>Any sensor network has to represent sampled data somehow. What would be the most friendly format for so&nbsp;doing?</p>
-<!--more-->
-
-<p>Re-usable software has to take an extensible view of how to represent data, since the exact data that will be represented may change over time. There are several approaches that are often taken, ranging from abstract classes and interfaces (for code-based solutions) to formats such as <span class="caps">XML</span> for data-based&nbsp;approaches.</p>
-<p>Neither of these is ideal for a sensor network, for a number of&nbsp;reasons.</p>
-<p>A typical sensor network architecture will use different languages one the sensors and the base station, with the former prioritising efficiency and compactness and the latter emphasising connectivity to the internet and interfacing with standard tools. Typically we find C or C++ on the sensors and Java, JavaScript, Processing, or some other language on the base station. (Sometimes C or C++ too, although that&#8217;s increasingly rare for new applications.) It&#8217;s therefore tricky to use a language-based approach to defining data, as two <em>different</em> versions of the <em>same</em> structure would have to be defined and &#8212; more importantly &#8212; kept synchronised across&nbsp;changes.</p>
-<p>That suggests a data-based approach, but these tend to fall foul of the need for a compact and efficient encoding sensor-side. Storing, generating, and manipulating <span class="caps">XML</span> or <span class="caps">RDF</span>, for example, would typically be too complex and too memory-intensive for a sensor. These formats also aren&#8217;t really suitable for in-memory processing &#8212; unsurprisingly, as they were designed as transfer encodings, not primary data representations. Even though they might be attractive, not least for their friendliness to web interactions and the Semantic Web, they aren&#8217;t really usable&nbsp;directly.</p>
-<p>There are some compromise positions, however. <a href="http://www.json.org" target="_blank"><span class="caps">JSON</span></a> is a data notation derived initially from JavaScript (and usable directly within it) but which is sufficiently neutral to be used as an exchange format in several web-based systems. <span class="caps">JSON</span> essentially lets a user form objects with named fields, whose values can be strings, numbers, arrays, or other objects. (Note that this doesn&#8217;t include code-valued fields, which is how <span class="caps">JSON</span> stays language-neutral: it can&#8217;t encode computations, closures, or other programmatic&nbsp;features.)</p>
-<p><span class="caps">JSON</span>&#8217;s simplicity and commonality have raised the possibility of using it as a universal transport encoding: simpler than <span class="caps">XML</span>, but capable of integration with <span class="caps">RDF</span>, ontologies, and the Semantic Web if desired. There are several initiatives in this direction: one I came across recently is <a href="http://json-ld.org/" target="_blank"><span class="caps">JSON</span>-<span class="caps">LD</span></a> (<span class="caps">JSON</span> for Linked Data) that seeks to integrate <span class="caps">JSON</span> records directly into the <a href="http://linkeddata.org/" target="_blank">linked open data world</a>.</p>
-<p>This raises the possibility of using <span class="caps">JSON</span> to define the format of sensor data samples, sample collections (datasets), and the like, and linking those descriptions directly to ontological descriptions of their contents and meaning. There are some problems with this, of course. Foremost, <span class="caps">JSON</span> isn&#8217;t very compact, and so would require more storage and wireless bandwidth than a binary format. However, one approach might be to define samples <em>etc</em> in <span class="caps">JSON</span> format and then either use them directly (server-side) or compile them to something more static but more efficient for use sensor-side and for exchange. This would retain the openness but without losing&nbsp;performance.</p>
 		</div>
 	    </article>
 </div>

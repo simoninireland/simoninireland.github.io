@@ -52,6 +52,25 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/07/03/xbee-arduino/" rel="bookmark">Wednesday 3 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/03/xbee-arduino/">The xbee-arduino&nbsp;library</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>A library for using XBee radios with&nbsp;Arduinos.</p>
+<!--more-->
+
+<p>The XBee radio operates in <a href="../2013/07/01/xbee/" target="_blank">two modes</a>: transparent or text-based, and <span class="caps">API</span> or binary-based. The latter (<span class="caps">API</span> mode) is generally considered more suitable for computer-to-computer interactions, as it&#8217;s faster and simpler for computers to manipulate. However, using an XBee in this mode requires additional&nbsp;software.</p>
+<p>The <a href="https://code.google.com/p/xbee-arduino/" target="_blank">xbee-arduino library</a> provides Arduino functions to access the <span class="caps">API</span> mode functionality of the various XBee radio modules. The library is quite low-level, but does provide access to all the necessary functions like issuing <span class="caps">AT</span> commands to control the modem and sensing and receiving packets of data to other radios in the mesh&nbsp;network.</p>
+<p>To use the library you download the latest version from the web page and unpack it into the <tt>libraries/</tt> directory of your Arduino <span class="caps">IDE</span>. You also need to make sure that the radios you use have the <a href="../2013/07/02/xctu/" target="_blank"><span class="caps">API</span> function set installed using X-<span class="caps">CTU</span></a>, as the library only makes sense for radios in <span class="caps">API</span> mode. You also have to set the &#8220;<span class="caps">AP</span>&#8221; parameter to 2 when writing the&nbsp;firmware.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/07/02/xctu/" rel="bookmark">Tuesday 2 July, 2013</a>
 			</span>
 		    </div>
@@ -153,36 +172,6 @@ There are also variations of Arduinos that take XBee modules directly, as well a
 <p><img alt="Arduino prototyping shield" src="../images/citizen-sensing/2013-06-28-18.31.43.jpg"></p>
 <p>The &#8220;bare&#8221; version has a small area for soldering-up in the middle of the shield. I decided to make a slightly more re-usable version with a small breadboard so I could experiment with the electronics without soldering.  The <a href="https://www.sparkfun.com/tutorials/181" target="_blank">assembly</a> is very easy, although the board is of course very cramped. The &#8220;helping hands&#8221;  were&nbsp;invaluable.</p>
 <p>Several lessons learned: I need a finer bit for my soldering iron, a smaller pair of side-cutters for trimming the wires, and my soldering skills are truly appallingly rusty. The shield has a couple of places where it can take additional headers (for controlling the LEDs and using the spare button that&#8217;s not being used for reset, and to bring the <span class="caps">ICSP</span> connectors through) which it would be useful to&nbsp;have.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/approaching-zero-the-extraordinary-underworld-of-hackers-phreakers-virus-writers-and-keyboard-criminals/" rel="bookmark">Sunday 23 June, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/approaching-zero-the-extraordinary-underworld-of-hackers-phreakers-virus-writers-and-keyboard-criminals/">Approaching Zero: The Extraordinary Underworld of Hackers, Phreakers, Virus Writers, and Keyboard&nbsp;Criminals</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1289074849l/1347682._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Paul Mungo&nbsp;(1993)
-      </h2>
-    </div>
-    <p>
-      
-      </p>
-<p>
-	3/5.
-	  Finished Sunday 23 June,&nbsp;2013.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/629930343?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
 		</div>
 	    </article>
 </div>

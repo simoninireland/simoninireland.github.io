@@ -52,6 +52,61 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/03/14/the-lisp-machine/" rel="bookmark">Thursday 14 March, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/03/14/the-lisp-machine/">The Lisp&nbsp;machine</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org09cdc89" class="outline-2">
+<h2 id="org09cdc89">The Lisp&nbsp;machine</h2>
+<div class="outline-text-2" id="text-org09cdc89">
+<p>
+Richard Greenblatt.  <i><a href="https://dspace.mit.edu/bitstream/handle/1721.1/41114/AI_WP_079.pdf">The Lisp Machine</a></i>. Working
+paper 79. <span class="caps">MIT</span> <span class="caps">AI</span> Laboratory.&nbsp;1974.
+</p>
+
+<p>
+A description of the architecture later built and sold by&nbsp;<span class="caps">LMI</span>.
+</p>
+
+<p>
+A visionary description of a machine to run Lisp at a
+&#8220;non-prohibitive cost&#8221; of $70,000 per system. (The web tells me
+that this is the equivalent of <a href="https://www.in2013dollars.com/us/inflation/1974?amount=70000">$440,000</a> in 2024.) A completely
+integrated system based on a Cons processor and using a <span class="caps">PDP</span>-11 as
+a console. A relocating, compacting, garbage collector with
+invisible forwarding pointers. Non-linear spaghetti stacks to
+support advanced programming&nbsp;constructs.
+</p>
+
+<p>
+One of the many notable facets of this design is one of its
+proposals (the &#8220;frame pushdown list&#8221;) to avoid excessive conses
+and garbage collection overhead by maintaining lists of blocks of
+particular sizes. It uses this approach to manage the creation of
+call stack frames; modern Python implementations use this scheme
+throughout to avoid heap fragmentation through allocating and
+re-allocating blocks of different sizes. (Lisp has this feature
+generally, of course, with its use of fixed-size cons&nbsp;cells.)
+</p>
+
+<p>
+It&#8217;s also fascinating to see that, even at this early stage,
+hardware design was being seen as an exercise in refinement to
+maintain software-level abstractions even as features were being
+pushed into hardware – while still providing optimised
+implementations that were invisible to the&nbsp;programmer.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/03/10/lisp-for-the-web/" rel="bookmark">Sunday 10 March, 2024</a>
 			</span>
 		    </div>
@@ -215,44 +270,6 @@ depth, dealing with the effects of garbage collection (and how to
 program effectively in its presence), the effects of different
 representations, low-level optimisation and disassembly, and all
 the approaches one needs to use Lisp in real, scalable&nbsp;practice.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/03/06/common-lisp-recipes-a-problem-solution-approach/" rel="bookmark">Wednesday 6 March, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/03/06/common-lisp-recipes-a-problem-solution-approach/">Common Lisp recipes: A problem-solution&nbsp;approach</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org0ecd4dc" class="outline-2">
-<h2 id="org0ecd4dc">Common Lisp recipes: A problem-solution&nbsp;approach</h2>
-<div class="outline-text-2" id="text-org0ecd4dc">
-<p class="floater">
-<img src="../attachments/2e/6e47a1-73a8-4ac5-a703-1f6ab0a2262b/screenshot.png" alt="nil"></p>
-
-<p>
-Edmund Weitz.  <i><a href="https://doi.org/10.1007/978-1-4842-1176-2">Common Lisp Recipes: A Problem-Solution Approach</a></i>.
-Apress.&nbsp;2016.
-</p>
-
-<p>
-An extensive list of recipes for using common data structures,
-how the differ in Lisp from the equivalents in other languages,
-and what novel features Lisp has to offer. A great place to start
-when moving away from being a beginner, and for dipping into in
-search of&nbsp;solutions.
-</p>
-
-<p>
-It&#8217;s probably strongest on the &#8220;gotchas&#8221; and dangers that Lisp
-presents, but also has a lot to say about coding style and code&nbsp;optimisation.
 </p>
 </div>
 </div>

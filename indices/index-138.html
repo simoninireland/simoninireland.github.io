@@ -52,6 +52,59 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/02/02/common-lisp-the-language/" rel="bookmark">Friday 2 February, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/02/02/common-lisp-the-language/">Common Lisp: the&nbsp;language</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbab84a5" class="outline-2">
+<h2 id="orgbab84a5">Common Lisp: the&nbsp;language</h2>
+<div class="outline-text-2" id="text-orgbab84a5">
+<p class="floater">
+<img src="../attachments/20/46d76e-4b50-4cf1-866c-7515d6fd427f/screenshot.png" alt="nil"></p>
+
+<p>
+Guy Steele.  <i><a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html">Common Lisp: The Language</a></i>. Digital Press. <span class="caps">ISBN</span>
+1-55558-041-6.&nbsp;1990.
+</p>
+
+<p>
+The reference manual for Common Lisp, also <a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html">available online in its
+entirety</a>. This is very much a reference manual and not a
+tutorial, but having said that it&#8217;s a lot more accessible than
+many such&nbsp;documents.
+</p>
+
+<p>
+It&#8217;s remarkable that Common Lisp&#8217;s standard has been stable for
+over thirty years, despite enormous advances in Lisp practices in
+that time. It shows the care that went into the original
+standardisation process, but also the effects of some detailed
+technical choices and (especially) the use of macros in preference
+to new core&nbsp;mechanisms.
+</p>
+
+<p>
+However, it has to be said that the standard also fixed in place
+certain choices that now seem questionable. It&#8217;s a matter of
+opinion, of course, but personally I think the questionable set
+includes at least: multiple-value returns and binds, which are
+unnecessary when you can return lists and destructure them and
+that impinge on the minimalism of the core language; and allowing
+symbols to be bound simultaneously to values and functions, which
+unnecessarily treats the two differently (and for which reason it
+was removed from&nbsp;Scheme).
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/01/27/structure-and-interpretation-of-computer-programs/" rel="bookmark">Saturday 27 January, 2024</a>
 			</span>
 		    </div>
@@ -198,167 +251,6 @@ content rather than being influenced by search engine optimisation
 Of course this also need management, and feedle is a curated source:
 you have to submit your <span class="caps">RSS</span> feed to it for review and (hopefully)
 inclusion. I&#8217;ve done that for <a href="https://simon.dobson.org/rss.xml">this site&#8217;s feed</a>.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" rel="bookmark">Monday 22 January, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/">Locally overriding a function throughout a dynamic&nbsp;extent</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org2c7df6e" class="outline-2">
-<h2 id="org2c7df6e">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
-<div class="outline-text-2" id="text-org2c7df6e">
-<p>
-A horribly dangerous but occasionally useful Lisp&nbsp;technique.
-</p>
-
-<p>
-My use case is as&nbsp;follows. <code>ebib</code> has a command to copy a
-formatted reference to the kill ring,&nbsp;using
-<code>citar-citeproc-format-reference</code> to actually do the formatting.
-This means it&#8217;s easy to change the style of the formatted
-reference.&nbsp;However, <code>citar-citeproc-format-reference</code>  itself&nbsp;uses
-<code>citar-render-bib</code> with a plain-text formatter. This is a sensible
-default, but since I&#8217;m almost always copying references into
-org-more documents, it loses a lot of information: it&#8217;d be better
-to use the org formatter, but there&#8217;s no argument to specify&nbsp;it.
-</p>
-
-<p>
-Clearly the correct solution is to&nbsp;change
-<code>citar-citeproc-format-reference</code> to take a key or optional
-argument to specify the formatter, but that involves changing
-someone else&#8217;s code. The hacker solution is to change the&nbsp;call
-<code>(citeproc-render-bib proc 'plain)</code> to <code>(citeproc-render-bib proc
-  'org)</code>, but without re-writing the entire surrounding function to
-keep the change just to the case where I need&nbsp;it.
-</p>
-
-<p>
-One way to do this would be to define a&nbsp;variant
-<code>citeproc-render-bib</code> that ignores its second argument (the
-formatter) and always&nbsp;uses <code>'org</code> instead, and then substitute
-this variant for the original – but <i>only</i> in the dynamic extent
-of a <i>particular</i> call&nbsp;to <code>citar-citeproc-format-reference</code>. In
-most languages this would be impossible – but not in Emacs&nbsp;Lisp.
-</p>
-
-<p>
-The solution is to&nbsp;use <code>cl-letf</code>, which overrides the values of
-general places for the duration of its body forms and restores the
-original value on exit (normal or otherwise). The important point
-is that the change occurs across the <i>extent</i> of the body – the
-body and all the code called from the body – and not merely in
-the <i>scope</i> of the body, which would only affect calls made there&nbsp;directly.
-</p>
-
-<p>
-For example, consider in the&nbsp;following:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
-
-<span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-<p>
-Which when called&nbsp;gives:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span>
-</pre></div>
-
-<pre class="example">
-36
-</pre>
-
-
-<p>
-If we want to override the default value (10) that&#8217;s passed&nbsp;to <code>f</code>
-and instead use 25, we can define a new version that ignores the
-second argument and uses our preferred default, and then
-temporarily override the definition&nbsp;of <code>f</code> in the calling
-environment. If we want to use the original in the overriding
-definition we need to grab it first. This&nbsp;gives:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">cl-letf</span><span class="w"> </span><span class="p">(((</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">				    </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)))</span>
-</pre></div>
-
-<pre class="example">
-51
-</pre>
-
-
-<p>
-What&#8217;s going on?&nbsp;The <code>cl-letf</code> macro is&nbsp;like <code>let</code> but works with
-general places (as&nbsp;in <code>setf</code>). It sets the places in its argument
-list for the duration of its body, and then restores them on exit,
-regardless of whether that exit is normal or <i>via</i> a&nbsp;condition.
-</p>
-
-<p>
-The <code>(symbol-function 'f)</code> form returns the place that stores the
-function associated with&nbsp;symbol <code>f</code>. We use it twice: once to
-capture this function so we can use it later, and once to identify
-the place where we store our new variant function. This new binding
-is then used for all calls made from the body of&nbsp;the <code>cl-letf</code>,
-regardless of depth, so the call&nbsp;to <code>first</code> makes use of our variant
-definition&nbsp;of <code>f</code> rather than the original – but with the original
-then being used in the variant in our&nbsp;case!
-</p>
-
-<p>
-If we&#8217;d&nbsp;used <code>let</code> or <code>cl-flet</code> instead&nbsp;of <code>cl-letf</code> we wouldn&#8217;t
-have got the behaviour we&#8217;re looking&nbsp;for:
-</p>
-
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
-<span class="w">  </span><span class="p">(</span><span class="nf">cl-flet</span><span class="w"> </span><span class="p">((</span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
-<span class="w">	      </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">))</span>
-</pre></div>
-
-<pre class="example">
-36
-</pre>
-
-
-<p>
-Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
-so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
-affected – not calls from calls. This is a great illustration of
-the difference between the closely-related concepts of (static,
-lexical) scope and (dynamic, run-time) extent,&nbsp;incidentally.
-</p>
-
-<p>
-I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
-macro to wrap it up. It&#8217;s also inconceivable that it&#8217;s thread- or
-co-routine-safe, although I haven&#8217;t&nbsp;checked.
-</p>
-
-<p>
-Part of the horribleness comes from the fact that the redefinition
-is made for the entire dynamic extent of the body forms, which
-means <i>all</i> instances of the overridden function will use the
-overridden value. There might be more than you think! But for
-well-understood code it&#8217;s sometimes useful, avoiding duplicating
-code to make tiny&nbsp;changes.
 </p>
 </div>
 </div>

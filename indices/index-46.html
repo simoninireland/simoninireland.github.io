@@ -52,6 +52,91 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2013/08/02/xbee-sleeping/" rel="bookmark">Friday 2 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/08/02/xbee-sleeping/">XBee&nbsp;sleeping</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield&nbsp;slightly.</p>
+<!--more-->
+
+<p>Our <a href="../2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current &#8212; something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in&nbsp;use.</p>
+<p>Since XBees work as a <a href="../2013/07/02/mesh-network/">mesh network</a>, it&#8217;s clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long &#8212; since when asleep the radio can&#8217;t route packets, and so the network starts to break down. But that&#8217;s a higher-level concern: for the moment, we&#8217;ll focus on the mechanics of getting the XBee to&nbsp;sleep.</p>
+<p><img alt="Pins relating to XBee sleep mode" src="../images/citizen-sensing/sleep-pin.jpg"></p>
+<p>The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V (&#8220;high&#8221; or &#8220;asserted&#8221;) causes the radio to sleep; setting it to 0V (&#8220;low&#8221; or &#8220;deasserted&#8221;) wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="../2013/07/23/arduino-watchdog/">Arduino&#8217;s sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the&nbsp;Arduino.</p>
+<p>Also note I/O line 7, pin 12 (in green): we&#8217;ll come back to this&nbsp;later.</p>
+<p>We&#8217;ll deal with the hardware part first, and then the&nbsp;software.</p>
+<h3>Getting access to the sleep&nbsp;pin</h3>
+
+<p>The XBee shield doesn&#8217;t connect the sleep pin to anything by default, so to control it we have to connect it. There are several ways we could do this, with the simplest being to solder a wire from the pan on pin 9 to an appropriate header on the shield, which is then connected to a digital pin on the Arduino. For simplicity we&#8217;ll start with a wire that&#8217;s long enough to reach <em>any</em> header: we&#8217;ll actually plug it into the header for the Arduino&#8217;s D7&nbsp;pin.</p>
+<p>There&#8217;s a slight concern about voltage levels in this approach, as the
+Arduino operates at 5V while the XBee uses 3.3V. Experimentally this
+doesn&#8217;t seem to make a difference; for a production system we&#8217;d
+probably want to create a resistor network to drop the voltage to that
+needed by the radio, to avoid any risk of damage. We&#8217;d also probably
+want to solder a header to XBee pin 9&#8217;s pad to make it easier to
+connect the&nbsp;wiring.</p>
+<h3>Setting the sleep&nbsp;mode</h3>
+
+<p>The XBee&#8217;s sleep mode is controlled by a single <span class="caps">AT</span> command called (unsurprisingly) <span class="caps">SM</span>. The default (<span class="caps">SM</span> 0) is for the radio to be on all the time; <span class="caps">SM</span> 1 selects the pin-sleep mode described above, and is the one we&#8217;ll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio&#8217;s timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in&nbsp;control.)</p>
+<p>Setting the sleep mode is simply a matter of <a href="../2013/08/02/at-commands-2">issuing the appropriate <span class="caps">AT</span> command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly&nbsp;first.</p>
+<p>The first issue concerns the setting of the XBee&#8217;s sleep pin. If we
+select pin-sleep mode with the pin high, the XBee will sleep
+immediately, which might not be what we intended. So if we&#8217;ve
+connected the sleep pin to D7, we need to set things up so that the
+pin is low to keep the radio awake, and then select its sleep&nbsp;mode:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// Xbee sleep pin on D7</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>(Some early mistakes showed that &#8212; contrary to what might be expected &#8212; the sleep pin defaults to high (send radio to sleep) rather than low. So this step is&nbsp;important.)</p>
+<p>The next issue concerns the rather intricate behaviour of the XBee&#8217;s other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it&#8217;s asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield&#8217;s designers have connected this pin to the Arduino&#8217;s reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. <a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank">Some posts suggest</a> that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn&#8217;t: we simply need to disable the output of this pin, using another <span class="caps">AT</span>&nbsp;command:</p>
+<div class="code"><pre class="code literal-block"><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+<p>This disables the XBee&#8217;s D7 line (not to be confused with the Arduino&#8217;s D7 line, which we&#8217;ve attached to the XBee&#8217;s sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this <em>did</em> take quite a while to work out, since you&nbsp;ask&#8230;)</p>
+<p>We can now put all this together to place the XBee into <span class="caps">SM</span> 1  and let the Arduino sleep it at&nbsp;will:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#define LED 13</span>
+<span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// XBee sleep pin on D7</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">            </span><span class="c1">// LED signal</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">   </span><span class="n">radio</span><span class="p">.</span><span class="n">setSerial</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">atCommand</span><span class="p">(</span><span class="s">"SM"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// AT commands failed, flash frantically</span>
+<span class="w">      </span><span class="p">...</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note that we&#8217;ve used local <span class="caps">AT</span> commands to set the radio&#8217;s mode. It&#8217;s
+also possible to do this <a href="../2013/07/xctu/">statically using
+X-<span class="caps">CTU</span></a>.</p>
+<h3>Results</h3>
+
+<p><img alt="XBee with sleep control" src="../images/citizen-sensing/xbee-sleep.jpg"></p>
+<p>The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the&nbsp;radio.</p>
+<p>Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range &#8212; far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some&nbsp;work).</p>
+<p>Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more&nbsp;exploration.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2013/08/02/at-commands-2/" rel="bookmark">Friday 2 August, 2013</a>
 			</span>
 		    </div>
@@ -261,31 +346,6 @@ method&nbsp;to <code>SleepySketch</code> itself:</p>
 <p>Simple sleepy sketches can now be created at set-up, by scheduling
 repeating actors, and we can define the various actors and re-use them
 in different scheduling situations without complicating their own&nbsp;code.</p>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2013/07/26/radio-survey/" rel="bookmark">Friday 26 July, 2013</a>
-			</span>
-		    </div>
-		    <h1><a href="../2013/07/26/radio-survey/">Radio&nbsp;survey</a></h1>
-		</div>
-		<div class="entry-content">
-			<p>A simple radio survey establishes the ranges that the radios can&nbsp;manage.</p>
-<!--more-->
-
-<p>The 2mW XBee radios we&#8217;ve got have a nominal range of 100m &#8212; but that&#8217;s in free air, with no obstructions like bushes, ditches, and houses, and not when enclosed in a plastic box to protect them from the elements. There&#8217;s a reasonable chance that these obstacles will reduce the real range&nbsp;significantly.</p>
-<p><img alt="Arduino, radio, batteries, and their enclosure in the field (literally)" src="../images/citizen-sensing/sensor-enclosure.jpg"></p>
-<p>A radio survey is fairly simple to accomplish. We load software that talks to a server on the base station &#8212; something as simple as possible, like sending a single packet with a count every ten seconds &#8212; and keep careful track of the return values coming back from the radio library. We then use the only output device we have &#8212; an <span class="caps">LED</span> &#8212; to indicate the success or failure of each operation, preferably with an indication of <em>why</em> it failed if it did. (Three flashes for unsuccessful transmission, five for no response received, and so forth.) We then walk away from the base station, watching the behaviour of the radio. When it starts to get errors, we&#8217;ve reached the edge of the effective&nbsp;range.</p>
-<p>With two sensor motes, we can also check wireless mesh networking. If we place the first mote in range of the base station, we should then be able to walk further and have the second mote connect <em>via</em> the first, automatically. That&#8217;s the theory,&nbsp;anyway&#8230;</p>
-<p>(One extra thing to improve robustness: if the radios lose connection or get power-cycled, they can end up on a different radio channel to the co-ordinator. To prevent this, the radio needs to have an <span class="caps">ATJV1</span> command issued to it. The easiest way to do this is at set-up, <a href="../2013/07/02/xctu/" target="_blank">through the advanced settings in X-<span class="caps">CTU</span></a>.)</p>
-<p>The results are fairly unsurprising. In an enclosure, in the field, with a base station inside a house (and so behind double glazing and suchlike) the effective range of the XBees is about 30&#8212;40m &#8212; somewhat less than half the nominal range, and not really sufficient to reach the chosen science site: another 10&#8212;20m would be fine. On the other hand, the XBees mesh together seamlessly: taking a node out of range and placing another between it and the base station connects the network with no&nbsp;effort.</p>
-<p>This is somewhat disappointing, but that&#8217;s what this project is all about: the practicalities of sensor networking with cheap&nbsp;hardware.</p>
-<p>There are several options to improve matters. A higher-powered radio would help: the 50mW XBee has a nominal range of 1km and so would be easily sufficient (and could probably be run at reduced transmission power). A router node halfway between base station and sensors could extend the network, and the cost of an additional non-sensing component. Better antennas on the 2mW radios might help too, especially if they could be placed outside the&nbsp;enclosure.</p>
-<p>It&#8217;s also worth noting that the radio segment is horrendously hard to debug with only a single <span class="caps">LED</span> for signalling. Adding more LEDs might help, but it&#8217;s still a very poor debugging interface, even compared to printing status messages to the <span class="caps">USB</span>&nbsp;port.</p>
 		</div>
 	    </article>
 </div>

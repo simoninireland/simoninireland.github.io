@@ -52,6 +52,197 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/" rel="bookmark">Friday 21 June, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/06/21/c%2B%2B-template-macroprogramming-versus-lisp-macros/">C++ template macroprogramming versus Lisp&nbsp;macros</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org4731511" class="outline-2">
+<h2 id="org4731511">C++ template macroprogramming <i>versus</i> Lisp&nbsp;macros</h2>
+<div class="outline-text-2" id="text-org4731511">
+<p>
+Following on from <a href="/2024/06/14/lisp-macros-versus-rust-macros/">Lisp macros versus Rust macros</a>, I also want to
+compare C++ templates to Lisp&nbsp;macros.
+</p>
+
+<p>
+Templates in C++ were designed as a way of generating typed versions
+of classes. The template declares some type variables that can be
+used as placeholders within a class declaration. When the template
+is instanciated and provided with actual type names, these are
+substituted for the type variables and the class is expanded. (It
+used to literally happen like this, so each use generated a
+completely new class. Modern compilers are smart enough to avoid the
+code repetition.) A classic example is a typed singly-linked&nbsp;list:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">A</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">List</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">List</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+</pre></div>
+
+<p>
+However, the template system also allows values to be used in
+templates instead of (or as well as) type names. When these are
+encountered they are expanded at compile-time, and may cause further
+templates to be expanded. A classic example of this is to
+pre-compute some&nbsp;factorials:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">factorial</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="o">&lt;</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;::</span><span class="n">value</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">factorial</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">};</span>
+</pre></div>
+
+<p>
+In this code the first clause defines a template that defines the
+usual recursive factorial calculation. The second clause bottoms-out
+this recursion by defining a specialised template that directly
+provides the factorial of zero. This can then be used in code such&nbsp;as:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">n</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">factorial</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="o">&lt;</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;::</span><span class="n">value</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">factorial</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">factorial</span><span class="o">&lt;</span><span class="mi">7</span><span class="o">&gt;::</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+
+<pre class="example">
+5040
+</pre>
+
+
+<p>
+which outputs the factorial of 7 as one might expect – but with the
+factorial having been computed at compile-time and inserted into the
+code as a literal, so the calculation introduces no run-time&nbsp;calculation.
+</p>
+
+<p>
+There are some stringent limitations on the ways in which templates
+can be expanded. They can&#8217;t have mutable variables for a start
+(that&#8217;s why we needed to use the recursive factorial algorithm).
+Weirdly this makes the template language a <i>functional programming
+sub-set</i> of C++. Having said that, as with Lisp macros, it allows
+calculations that can be statically performed forward to be brought
+forward to compile-time. This makes it useful for building read-only
+tables, unrolling loops, and the&nbsp;like.
+</p>
+
+<p>
+It&#8217;s <a href="https://en.wikipedia.org/wiki/Template_metaprogramming#Benefits_and_drawbacks_of_template_metaprogramming">claimed</a> that templates are now so akin to &#8220;normal&#8221; C++ that
+they incur less of a readability penalty. That&#8217;s a subjective
+statement that may be true. But the template language <i>isn&#8217;t</i> C++.
+While one <i>can</i> write programs in it, they&#8217;re <i>nothing like</i> the C++ one
+would normally write. The template language is Turing complete, but
+that just means one can encode any <i>computation</i>, not that one can
+encode any <i>particular program</i> – and most template programs will
+require massive re-writing from the code one would write normally
+for execution at run-time. Template macroprogramming is therefore a
+non-trivial programming task to&nbsp;undertake.
+</p>
+
+<p>
+Again as with Rust <i>versus</i> Lisp, C++ templates are an extension to
+the language rather than a core part of it, although they&#8217;re now
+used quite extensively in the standard library for generic typing.
+Also as with Rust, use of templates is semantically and
+syntactically distinct from &#8220;normal&#8221; C++ code or syntax, and it&#8217;s
+this that causes the programming&nbsp;load.
+</p>
+
+<p>
+A Lisp macro for the factorial computation, by contrast, looks
+<i>almost exactly</i> like a normal factorial function that can access the
+entire language, both when defined and when&nbsp;used:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">defmacro</span><span class="w"> </span><span class="nv">factorial</span><span class="w"> </span><span class="p">(</span><span class="nv">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">labels</span><span class="w"> </span><span class="p">((</span><span class="nv">fact</span><span class="w"> </span><span class="p">(</span><span class="nv">m</span><span class="p">)</span>
+<span class="w">               </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                   </span><span class="mi">1</span>
+<span class="w">                   </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="p">(</span><span class="nv">fact</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="nv">m</span><span class="p">))))))</span>
+<span class="w">      </span><span class="o">`,</span><span class="p">(</span><span class="nv">fact</span><span class="w"> </span><span class="nv">n</span><span class="p">)))</span>
+
+<span class="w">  </span><span class="p">(</span><span class="nb">princ</span><span class="w"> </span><span class="p">(</span><span class="nv">factorial</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+5040
+</pre>
+
+
+<p>
+The choice of macro or function&nbsp;(<code>defmacro</code> or <code>defun</code>) has no further
+<i>syntactic</i> implications for the rest of the program, and no
+restrictions on the code that can be used within the definition; we
+could re-write the to use iteration, mutable variables, or any other
+code, and it would simply be executed at compile-time. The whole
+language is there, all the time. We can show this by taking a
+factorial function written in &#8220;normal&#8221; Lisp and macro-ifying it to
+be computed at&nbsp;compile-time:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">fact</span><span class="w"> </span><span class="p">(</span><span class="nv">m</span><span class="p">)</span>
+<span class="w">    </span><span class="s">"Compute the factorial of M."</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="mi">1</span>
+<span class="w">        </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="p">(</span><span class="nv">fact</span><span class="w"> </span><span class="p">(</span><span class="nb">1-</span><span class="w"> </span><span class="nv">m</span><span class="p">)))))</span>
+
+<span class="w">  </span><span class="p">(</span><span class="nb">defmacro</span><span class="w"> </span><span class="nv">factorial</span><span class="w"> </span><span class="p">(</span><span class="nv">n</span><span class="p">)</span>
+<span class="w">    </span><span class="o">`,</span><span class="p">(</span><span class="nv">fact</span><span class="w"> </span><span class="nv">n</span><span class="p">))</span>
+
+<span class="w">  </span><span class="p">(</span><span class="nb">princ</span><span class="w"> </span><span class="p">(</span><span class="nv">factorial</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+5040
+</pre>
+
+
+<p>
+More importantly, Lisp (and indeed Rust) macro can abstract over
+syntax as well as classes and values, and so allow the language to
+be extended with new first-class-at-compile-time structures.
+Templates are restricted to instanciating templates written with
+a fixed syntax; in Lisp the syntax has to be &#8220;Lisp-like&#8221;, although
+that&#8217;s a very light restriction; and in Rust a macro can use any
+syntax that Rust can&nbsp;tokenise.
+</p>
+
+<p>
+While C++ templates are sometimes described as macroprogramming (or
+metaprogramming), they&#8217;re addressing a substantially different use
+case to that addressed by Lisp or Rust macros, and doing so within a
+more restricted computational and syntactic&nbsp;envelope.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2024/06/14/lisp-macros-versus-rust-macros/" rel="bookmark">Friday 14 June, 2024</a>
 			</span>
 		    </div>
@@ -423,39 +614,6 @@ start. The red <span class="caps">LED</span> stays lit while the time is&nbsp;un
 Part introduction, part paean to the language&#8217;s power, part study
 guide, while dipping into an eclectically-chosen subset of Lisp
 features that really illustrate what makes it&nbsp;different.
-</p>
-</div>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2024/05/27/a-road-to-common-lisp/" rel="bookmark">Monday 27 May, 2024</a>
-			</span>
-		    </div>
-		    <h1><a href="../2024/05/27/a-road-to-common-lisp/">A road to Common&nbsp;Lisp</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org353c80d" class="outline-2">
-<h2 id="org353c80d">A road to Common&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-org353c80d">
-<p>
-<a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/">A Road to Common&nbsp;Lisp</a>
-</p>
-
-<p>
-This a really brief, yet really interesting, approach to
-introducing Lisp to someone. Interesting because it covers all the
-usual ground, but also has copious pointers to other material
-slightly-beyond-introductory (&#8220;Where to go from here&#8221;). It also
-links to material that&#8217;s essential to modern practice, such as
-Lisp packages and systems, and the essential &#8220;standard libraries&#8221;
-such as Alexandria, Bordeaux, <span class="caps">CL</span>-<span class="caps">PPCRE</span>, usocket, and the like: the
-things that are needed in practice and which in other languages
-would probably be built-in and included directly in an&nbsp;introduction.
 </p>
 </div>
 </div>
