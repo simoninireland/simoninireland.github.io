@@ -196,8 +196,10 @@ making different Lisp machines: `Lisp Machines International
 Where it all started
 --------------------
 
-Some of the very earliest papers and books on Lisp, and the ideas that
-predate it.
+Some of the very earliest papers and books on Lisp and the ideas that
+predate it. Including some retrospectives by McCarthy and others on
+the ways in which the ideas developed, which doesn't always follow the
+straightforward track we might imagine!
 
 .. post-list::
    :type: posts
