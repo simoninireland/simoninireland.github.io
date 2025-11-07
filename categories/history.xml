@@ -1,5 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org298cb35" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Nov 2025 09:47:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
+&lt;h2 id="orgbb236cc"&gt;Early LISP history (1956–1959)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbb236cc"&gt;
+&lt;p&gt;
+Herbert Stoyan.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/800055.802047"&gt;Early Lisp History (1956–1959)&lt;/a&gt;&lt;/i&gt;. In &lt;i&gt;LFP ’84:
+Proceedings of the 1984 ACM Symposium on Lisp and Functional
+Programming&lt;/i&gt;, pp.299–310. 1984.
+&lt;/p&gt;
+
+&lt;p&gt;
+A study of Lisp's evolution from first proposal to practical
+implementation.
+&lt;/p&gt;
+
+&lt;p&gt;
+It begins with McCarthy's proposal (co-authored with Marvin
+Minsky, Nathaniel Rochester, and Claude Shannon, and dated 31
+August 1955) for a summer research project at Dartmouth College to
+"study the relationship of language to intelligence".
+&lt;/p&gt;
+
+&lt;p&gt;
+In a later (handwritten!) note McCarthy homed-in on the core
+challenges in this programme: the lack of a clear way to describe
+&lt;i&gt;procedures&lt;/i&gt; to each other (what &lt;a href="https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;Abelson and Sussman&lt;/a&gt; later refer to
+as &lt;i&gt;procedural epistemology&lt;/i&gt;), and the tight binding of programming
+systems at that time to specific machines, and hence their need to
+bow to engineering (rather than semantic) considerations. The
+language that became Lisp sought primarily to overcome these two
+challenges.
+&lt;/p&gt;
+
+&lt;p&gt;
+The journey proceeded by taking the list data structures developed
+by Allen Newell and Herb Simon as part of &lt;a href="https://en.wikipedia.org/wiki/Logic_Theorist"&gt;Logic Theorist&lt;/a&gt; and
+embedding them into FORTRAN (for which there was already a working
+compiler) – which also incidentally muddied the conceptual waters
+by trying to express list and list-functional concepts in a
+language built around numbers that barely allowed functions to be
+defined by the user at all. Indeed, McCarthy and others had
+long-running problems accepting that the list-processing functions
+&lt;i&gt;were&lt;/i&gt; functions, given that their result does not depend solely on
+their arguments when viewed at the lowest level. This shows how
+pernicious a low-level implementation can be. The final resulting
+language, the FORTRAN List Processing Language (FLPL), shared many
+programming approaches function names with what became Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+McCarthy went on to champion the functional approach, including
+the invention of conditional expressions (alongside or replacing
+conditional statements) and the power of the different kinds of
+function composition and higher-order functions. It's important to
+remember that McCarthy's driving interest remained in AI, not
+programming languages &lt;i&gt;per se&lt;/i&gt;:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Already in 1956 it was clear that one had to work with symbolic
+expressions to reach the goal of artificial intelligence.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Which is a fascinating piece of history in itself, as a large
+branch of modern AI concerning machine learning and large language
+models has explicit rejects this view in favour of sub-symbolic
+AI. Which approach is "correct" in whatever sense remains to be
+seen.
+&lt;/p&gt;
+
+&lt;p&gt;
+But it remains McCarthy's contributions to programming languages
+that stand out. As well as conditional expressions he can be
+credited with garbage collection, meta-circular interpretation,
+and clarifying the relationship between programming and proof:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+We should mention here that McCarthy at the same time conceived the
+idea of logic-oriented programming, that is, the idea of using logical
+formulae to express goals that a program should try to establish and
+of using the prover as programming language interpreter.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+(Although it's important to recognise that Newell and Simon's
+work, on logic as an application rather than as a general
+programming language, pre-dates McCarthy's.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</guid><pubDate>Fri, 07 Nov 2025 09:44:35 GMT</pubDate></item><item><title>The history of Lisp</title><link>https://simondobson.org/2025/11/07/the-history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org67a97ae" class="outline-2"&gt;
+&lt;h2 id="org67a97ae"&gt;The history of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org67a97ae"&gt;
+&lt;p&gt;
+Herbert Stoyan.  &lt;i&gt;&lt;a href="https://www.softwarepreservation.org/projects/LISP/book/Stoyan-Geschichte.pdf"&gt;The History of Lisp&lt;/a&gt;&lt;/i&gt;. 1980. Updated in the 1990s,
+translated into English 2023.
+&lt;/p&gt;
+
+&lt;p&gt;
+Includes a history of the route from PLANNER to CONNIVER, in which
+the former was criticised for being a theorem prover when a
+programming language was needed – an argument between two schools
+that's still going on today, as seen in the emergence of &lt;a href="https://lean-lang.org/"&gt;Lean&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/the-history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:49:57 GMT</pubDate></item><item><title>History of Lisp</title><link>https://simondobson.org/2025/11/07/history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd92a09b" class="outline-2"&gt;
+&lt;h2 id="orgd92a09b"&gt;History of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd92a09b"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html"&gt;History of Lisp&lt;/a&gt;&lt;/i&gt;. Artificial Intelligence
+Laboratory, Stanford University. 1979.
+&lt;/p&gt;
+
+&lt;p&gt;
+McCarthy's own take on the early history. It's quite brief, but is
+very careful to give broad credit to the others who were involved
+in the practical creation of the language.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's also got some great vignettes on &lt;i&gt;why&lt;/i&gt; certain features came
+about - for example garbage collection coming from the need to
+clean up intermediate structures when experimenting with symbolic
+differentiation. McCarthy acknowledges taking the notation for
+functions from Church, before admitting that he didn't understand
+the rest of &lt;i&gt;Calculi of lambda conversion&lt;/i&gt; and so wasn't tempted to
+add the more general aspects!
+&lt;/p&gt;
+
+&lt;p&gt;
+Perhaps the most fascinating part of the story is that it was
+originally so divorced from actual computers. The team had defined
+an &lt;code&gt;eval&lt;/code&gt; function for interpreting Lisp programs – in the process
+making the decision to represent the programs as lists – before
+realising that this could be made interactive to provide a running
+interpreter.
+&lt;/p&gt;
+
+&lt;p&gt;
+What did McCarthy think of his creation? He was conscious that it
+would have a lifetime:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+LISP will become obsolete when someone makes a more comprehensive
+language that dominates LISP practically and also gives a clear
+mathematical semantics to a more comprehensive set of features.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Haskell has a plausible claim to have accomplished the latter but
+this doesn't seem to have led domination in practice.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org298cb35" class="outline-2"&gt;
 &lt;h2 id="org298cb35"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org298cb35"&gt;
 &lt;p&gt;
@@ -202,20 +362,4 @@ I recently read &lt;em&gt;Hindenburg: the wooden titan&lt;/em&gt;, John Wheeler-
 
 And so on. The list of diseases includes things against which we are now routinely vaccinated (diphtheria, tuberculosis), those we haven't seen in the UK in my lifetime (typhus), and those most people would now brush-off with a course of antibiotics (flu, pneumonia). Except, of course, that at the time there was far less vaccination and no antibiotics at all, since &lt;a href="https://en.wikipedia.org/wiki/Penicillin" target="_blank"&gt;mass production didn't start until the 1940's&lt;/a&gt;.
 
-So as well as being an observation of a period in history from a point in time from which its significance was only poorly understood, this book is a time capsule from a period when diseases were a lot bigger and broader threat than they are now.&lt;/p&gt;</description><category>history</category><guid>https://simondobson.org/2012/05/08/library-book/</guid><pubDate>Tue, 08 May 2012 07:00:55 GMT</pubDate></item><item><title>The view of the internet, 15 years ago</title><link>https://simondobson.org/2010/11/08/internet-15-years-ago/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;I was just sent a link to an article from 1995 on how the internet is over-hyped. It's a fascinating read, not just in terms of the things it gets wrong but also of the ways in which the views expressed were plausible at the time.
-
-&lt;!--more--&gt;The article in question is "&lt;a href="http://www.newsweek.com/1995/02/26/the-internet-bah.html"&gt;The Internet? Bah!&lt;/a&gt;" by Clifford Stoll, and appeared in &lt;em&gt;Newsweek&lt;/em&gt; on 27 February 1995. For those whose memories of computer culture don't stretch back this far, Stoll has form. He was a system manager at Lawrence Berkeley laboratory in California during a serious attempt to crack US military computers -- one of the first examples of modern cyber-warfare. Rather than shut-out the crackers when he found them, he instead worked alongside a largely uncomprehending law enforcement community to help track them down, and brilliantly tells the story in his book &lt;a href="http://www.amazon.co.uk/Cuckoos-Egg-Tracking-Computer-Espionage/dp/1416507787"&gt;The cuckoo's egg&lt;/a&gt;. He then got concerned about the over-selling of computer technology for his next book, &lt;a href="http://www.amazon.co.uk/Silicon-Snake-Oil-Cliff-Stoll/dp/0330344420"&gt;Silicon snake oil&lt;/a&gt;. His &lt;em&gt;Newsweek &lt;/em&gt;article is in this latter vein.
-
-The crux of Stoll's argument is that the internet will never replace traditional off-line activities like shopping for books, accessing a newspaper and the like. The internet is simply
-&lt;/p&gt;&lt;blockquote&gt;...one big ocean of unedited data, without any pretense of completeness.  Lacking editors, reviewers or critics, the Internet has become a  wasteland of unfiltered data. You don't know what to ignore and what's  worth reading.&lt;/blockquote&gt;
-It's barely worth noting that many of these arguments have been invalidated by events. That's hardly surprising, and while a technologist of Stoll's standing should perhaps have been more wary about some of his predictions, the more important point is how the internet evolved to address points that, from a 1995 perspective, seem completely natural.
-
-Stoll's comments on electronic publishing are perhaps the most interesting:
-&lt;blockquote&gt;How about electronic publishing? Try reading a book on disc. At best,  it's an unpleasant chore: the myopic glow of a clunky computer replaces  the friendly pages of a book. And you can't tote that laptop to the  beach. Yet Nicholas Negroponte, director of the MIT Media Lab, predicts  that we'll soon buy books and newspapers straight over the Intenet. Uh,  sure.&lt;/blockquote&gt;
-And, of course, he's right: who &lt;em&gt;would&lt;/em&gt; want to read a book on a 1995 green-screen, or indeed on one of those then fairly new-fangled windowed displays? That's only changing now, where displays have similar resolution to paper as far as the eye is concerned, and when e-paper displays can be read in direct sunlight -- and when one can take an iPad or a Kindle to the beach, albeit rather carefully, and buy books not only straight over the internet but even completely untethered over the cellphone network. A similar argument can be made to take down the article's discussions about e-shopping for airline tickets and restaurant reservations, e-government and access to information, and so forth.
-
-But the fact remains that Stoll's analysis of the internet &lt;em&gt;circa&lt;/em&gt; 1995 wasn't too far off the mark. Where did things change? I suspect the clue is in the last paragraph:
-&lt;blockquote&gt;What's missing from this electronic wonderland? Human contact. ... Computers and  networks isolate us from one another.&lt;/blockquote&gt;
-Again, not an unreasonable view in 1995. No-one I can remember really suggested that social networks would flourish, and indeed come to almost &lt;em&gt;define&lt;/em&gt; the web and internet in the early 21st century. And that's rather surprising, given that the first "killer app" for the internet was e-mail, and not (as was expected) scientific data exchange: a social technology rapidly took off in a place where no such socialisation was expected. The surprise is that we were surprised again -- and I include myself in that surprise -- when the history of the internet clearly showed that it's users see it as a social enabler as much as, if not more than, as an information source.
-
-Clearly we shouldn't abandon the sorts of critical comments that Stoll was making, or worry that predictions about technology are almost always overtaken by events we had no idea were coming. But it does mean that whenever we hear comments on the social value of technology and the impact it will have on society -- as is happening over &lt;a href="https://simondobson.org/2010/06/smarter-internet/"&gt;internet reading&lt;/a&gt; and other technologies at the moment -- we should pause and think whether the negatives identified are somehow intrinsic, or whether they rest solely on the systems as currently deployed and conceived. We're familiar with the idea of a network effect. The strongest network effects are in the abilities of people to re-use and re-purpose technology beyond the bounds conceived of by its inventors. It's only really surprising when this &lt;em&gt;doesn't&lt;/em&gt; happen.</description><category>history</category><category>internet</category><category>society</category><guid>https://simondobson.org/2010/11/08/internet-15-years-ago/</guid><pubDate>Mon, 08 Nov 2010 14:00:54 GMT</pubDate></item></channel></rss>
+So as well as being an observation of a period in history from a point in time from which its significance was only poorly understood, this book is a time capsule from a period when diseases were a lot bigger and broader threat than they are now.&lt;/p&gt;</description><category>history</category><guid>https://simondobson.org/2012/05/08/library-book/</guid><pubDate>Tue, 08 May 2012 07:00:55 GMT</pubDate></item></channel></rss>

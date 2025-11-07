@@ -52,6 +52,203 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2025/11/07/early-lisp-history-11956-19591/" rel="bookmark">Friday 7 November, 2025</a>
+			</span>
+		    </div>
+		    <h1><a href="../2025/11/07/early-lisp-history-11956-19591/">Early <span class="caps">LISP</span> history&nbsp;1956&#8212;1959</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbb236cc" class="outline-2">
+<h2 id="orgbb236cc">Early <span class="caps">LISP</span> history&nbsp;(1956–1959)</h2>
+<div class="outline-text-2" id="text-orgbb236cc">
+<p>
+Herbert Stoyan.  <i><a href="https://doi.org/10.1145/800055.802047">Early Lisp History (1956–1959)</a></i>. In <i><span class="caps">LFP</span> ’84:
+Proceedings of the 1984 <span class="caps">ACM</span> Symposium on Lisp and Functional
+Programming</i>, pp.299–310.&nbsp;1984.
+</p>
+
+<p>
+A study of Lisp&#8217;s evolution from first proposal to practical&nbsp;implementation.
+</p>
+
+<p>
+It begins with McCarthy&#8217;s proposal (co-authored with Marvin
+Minsky, Nathaniel Rochester, and Claude Shannon, and dated 31
+August 1955) for a summer research project at Dartmouth College to
+&#8220;study the relationship of language to&nbsp;intelligence&#8221;.
+</p>
+
+<p>
+In a later (handwritten!) note McCarthy homed-in on the core
+challenges in this programme: the lack of a clear way to describe
+<i>procedures</i> to each other (what <a href="https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/">Abelson and Sussman</a> later refer to
+as <i>procedural epistemology</i>), and the tight binding of programming
+systems at that time to specific machines, and hence their need to
+bow to engineering (rather than semantic) considerations. The
+language that became Lisp sought primarily to overcome these two&nbsp;challenges.
+</p>
+
+<p>
+The journey proceeded by taking the list data structures developed
+by Allen Newell and Herb Simon as part of <a href="https://en.wikipedia.org/wiki/Logic_Theorist">Logic Theorist</a> and
+embedding them into <span class="caps">FORTRAN</span> (for which there was already a working
+compiler) – which also incidentally muddied the conceptual waters
+by trying to express list and list-functional concepts in a
+language built around numbers that barely allowed functions to be
+defined by the user at all. Indeed, McCarthy and others had
+long-running problems accepting that the list-processing functions
+<i>were</i> functions, given that their result does not depend solely on
+their arguments when viewed at the lowest level. This shows how
+pernicious a low-level implementation can be. The final resulting
+language, the <span class="caps">FORTRAN</span> List Processing Language (<span class="caps">FLPL</span>), shared many
+programming approaches function names with what became&nbsp;Lisp.
+</p>
+
+<p>
+McCarthy went on to champion the functional approach, including
+the invention of conditional expressions (alongside or replacing
+conditional statements) and the power of the different kinds of
+function composition and higher-order functions. It&#8217;s important to
+remember that McCarthy&#8217;s driving interest remained in <span class="caps">AI</span>, not
+programming languages <i>per se</i>:
+</p>
+
+<blockquote>
+<p>
+Already in 1956 it was clear that one had to work with symbolic
+expressions to reach the goal of artificial&nbsp;intelligence.
+</p>
+</blockquote>
+
+<p>
+Which is a fascinating piece of history in itself, as a large
+branch of modern <span class="caps">AI</span> concerning machine learning and large language
+models has explicit rejects this view in favour of sub-symbolic
+<span class="caps">AI</span>. Which approach is &#8220;correct&#8221; in whatever sense remains to be&nbsp;seen.
+</p>
+
+<p>
+But it remains McCarthy&#8217;s contributions to programming languages
+that stand out. As well as conditional expressions he can be
+credited with garbage collection, meta-circular interpretation,
+and clarifying the relationship between programming and&nbsp;proof:
+</p>
+
+<blockquote>
+<p>
+We should mention here that McCarthy at the same time conceived the
+idea of logic-oriented programming, that is, the idea of using logical
+formulae to express goals that a program should try to establish and
+of using the prover as programming language&nbsp;interpreter.
+</p>
+</blockquote>
+
+<p>
+(Although it&#8217;s important to recognise that Newell and Simon&#8217;s
+work, on logic as an application rather than as a general
+programming language, pre-dates&nbsp;McCarthy&#8217;s.)
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2025/11/07/the-history-of-lisp/" rel="bookmark">Friday 7 November, 2025</a>
+			</span>
+		    </div>
+		    <h1><a href="../2025/11/07/the-history-of-lisp/">The history of&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org67a97ae" class="outline-2">
+<h2 id="org67a97ae">The history of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-org67a97ae">
+<p>
+Herbert Stoyan.  <i><a href="https://www.softwarepreservation.org/projects/LISP/book/Stoyan-Geschichte.pdf">The History of Lisp</a></i>. 1980. Updated in the 1990s,
+translated into English&nbsp;2023.
+</p>
+
+<p>
+Includes a history of the route from <span class="caps">PLANNER</span> to <span class="caps">CONNIVER</span>, in which
+the former was criticised for being a theorem prover when a
+programming language was needed – an argument between two schools
+that&#8217;s still going on today, as seen in the emergence of <a href="https://lean-lang.org/">Lean</a>.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2025/11/07/history-of-lisp/" rel="bookmark">Friday 7 November, 2025</a>
+			</span>
+		    </div>
+		    <h1><a href="../2025/11/07/history-of-lisp/">History of&nbsp;Lisp</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgd92a09b" class="outline-2">
+<h2 id="orgd92a09b">History of&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgd92a09b">
+<p>
+John McCarthy.  <i><a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html">History of Lisp</a></i>. Artificial Intelligence
+Laboratory, Stanford University.&nbsp;1979.
+</p>
+
+<p>
+McCarthy&#8217;s own take on the early history. It&#8217;s quite brief, but is
+very careful to give broad credit to the others who were involved
+in the practical creation of the&nbsp;language.
+</p>
+
+<p>
+It&#8217;s also got some great vignettes on <i>why</i> certain features came
+about - for example garbage collection coming from the need to
+clean up intermediate structures when experimenting with symbolic
+differentiation. McCarthy acknowledges taking the notation for
+functions from Church, before admitting that he didn&#8217;t understand
+the rest of <i>Calculi of lambda conversion</i> and so wasn&#8217;t tempted to
+add the more general&nbsp;aspects!
+</p>
+
+<p>
+Perhaps the most fascinating part of the story is that it was
+originally so divorced from actual computers. The team had defined&nbsp;an <code>eval</code> function for interpreting Lisp programs – in the process
+making the decision to represent the programs as lists – before
+realising that this could be made interactive to provide a running&nbsp;interpreter.
+</p>
+
+<p>
+What did McCarthy think of his creation? He was conscious that it
+would have a&nbsp;lifetime:
+</p>
+
+<blockquote>
+<p>
+<span class="caps">LISP</span> will become obsolete when someone makes a more comprehensive
+language that dominates <span class="caps">LISP</span> practically and also gives a clear
+mathematical semantics to a more comprehensive set of&nbsp;features.
+</p>
+</blockquote>
+
+<p>
+Haskell has a plausible claim to have accomplished the latter but
+this doesn&#8217;t seem to have led domination in&nbsp;practice.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../goodreads/brave-new-world-and-brave-new-world-revisited/" rel="bookmark">Tuesday 7 October, 2025</a>
 			</span>
 		    </div>
@@ -108,99 +305,9 @@
 		</div>
 	    </article>
 </div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/" rel="bookmark">Saturday 20 September, 2025</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/">Sawdust Caesar: The Untold History of Mussolini and&nbsp;Fascism</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1245562266l/3788812._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	George Seldes&nbsp;(1935)
-      </h2>
-    </div>
-    <p>
-      <i><span class="dquo">&#8220;</span>All of Mussolini&#8217;s monuments will be monuments to the strength of a weakling.&#8221;</i><br><br>A journalist&#8217;s account of Mussolini&#8217;s rise to (and exercise of) power, written by someone who both lived through parts of it and had significant contacts with the man himself. Despite being written at a time when Fascism was still being somewhat celebrated, and even admired, it&#8217;s quite a scorching read that dismantles many of its pretensions with both observations and data. It would have provided a lot of ammunition to those wanting to avoid fascist takeovers in their ovn countries to read exactly how imaginary the claims of Fascist Italy were, no matter how dramatically and repeatedly proclaimed.<br><br>Surprising for a book of its kind and date (it was first published in 1935), Hitler is conspicuous by his absence, mentioned only in passing: there are far more comparisons with Napoleon. It shows how different history looks when lived forwards.<br><br>The title is interesting: Shirer uses a similar turn of phrase to describe Mussolini in <a href="https://www.goodreads.com/book/show/767171.The_Rise_and_Fall_of_the_Third_Reich_A_History_of_Nazi_Germany" title="The Rise and Fall of the Third Reich A History of Nazi Germany by William L. Shirer" rel="nofollow noopener">The Rise and Fall of the Third Reich: A History of Nazi Germany</a> (although he does not reference Seldes as a source). Mussolini&#8217;s will to power easily overrides any principles he may have had, which makes it hard to decide whether fascism itself had any principles or was simply the inflation of one man&#8217;s will: Mussolini seems to have been unclear about that himself, but resolving it may be key to understanding the modern trends towards authoritarian&nbsp;politics.
-      </p>
-<p>
-	4/5.
-	  Finished Saturday 20 September,&nbsp;2025.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6638300592?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/true-names-and-other-dangers/" rel="bookmark">Thursday 4 September, 2025</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/true-names-and-other-dangers/">True Names&#8230; and Other&nbsp;Dangers</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1330657262l/321005._SY160_.jpg" style="float: left; margin-right: 10px"><h2>
-	Vernor Vinge&nbsp;(1981)
-      </h2>
-    </div>
-    <p>
-      The lesser-known – now – precursor novel to cyberpunk.<br><br>A group of rebels engage in pranks and more serious data exfiltration using hallucinatory interfaces to computer-managed information spaces. If that sounds similar to <a href="https://www.goodreads.com/book/show/6088007.Neuromancer__Sprawl___1_" title="Neuromancer (Sprawl, #1) by William Gibson" rel="nofollow noopener">Neuromancer</a> then that&#8217;s because the parallels are unmistakeable. The two books appeared at roughly the same time, and initially <i>True names</i> seems to have been the more famous: certainly it attracted a lot of attention from some serious people in both tech and sci-fi. It&#8217;s interesting that <i>Neuromancer</i> emerged over the longer term as the more significant work: and I think that&#8217;s deserved, although <i>True names</i> remains a great read.<br><br>Both books address the issue of information overload and how it could be combatted by using broader-band neural interfaces rather than screens and keyboards. Gibson envisions a rather architectural metaphor, while Vinge goes for something more mythic and fantastical, a world whose practitioners form &#8220;covens&#8221; and interact with spells and monsters as a way to bring the available functionality into their limited view. It&#8217;s not something that&#8217;s actually emerged in what we now think of as cyberspace, which remains resolutely text-driven.<br><br>My edition of <i>True names</i> came with essays and an afterward by Marvin Minsky, one of the fathers of <span class="caps">AI</span>. The essays in the main haven&#8217;t aged well, but Minsky&#8217;s critique of procedural computing still has some&nbsp;bite.
-      </p>
-<p>
-	3/5.
-	  Finished Thursday 4 September,&nbsp;2025.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/6364671876?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../goodreads/darwin-comes-to-town-how-the-urban-jungle-drives-evolution/" rel="bookmark">Wednesday 27 August, 2025</a>
-			</span>
-		    </div>
-		    <h1><a href="../goodreads/darwin-comes-to-town-how-the-urban-jungle-drives-evolution/">Darwin Comes to Town: How the Urban Jungle Drives&nbsp;Evolution</a></h1>
-		</div>
-		<div class="entry-content">
-			<div>
-    <div>
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498791024l/34930832._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
-	Menno Schilthuizen&nbsp;(2018)
-      </h2>
-    </div>
-    <p>
-      A take on evolutionary biology that sees cities and human-created environments as a positive force on ecology, without in any way diminishing the effects of human-caused demage.<br><br>It&#8217;s an interesting perspective. Ecologists and the popular press often only see the damage, not the opportunity, of human construction, and regard species being forced from their &#8220;natural&#8221; habitats as always bad. Schilthuizen argues quite persuasively that habitat destruction has been mitigated by habitat <i>construction</i>, by creating urban landscapes in which (often other) species can thrive possibly more than they did before. This is especially true when we also consider &#8220;invasive&#8221; species transported from elsewhere, which find niches in their destination cities (often around their ports of entry). In some cases we find species that no longer have or inhabit a &#8220;natural&#8221; habitat at all.<br><br>And habitat destruction often isn&#8217;t as complete as it seems. Schilthuizen example is the mice of New York&#8217;s smaller parks, which form islands of isolation that in turn cause identifiable genetic differences between the inhabitants of the different tiny patches of land. Singapore similarly has tiny trats of native forest surrounded by city and cut-off from each other. He uses this carefully to argue that evolution requires neither great distinctions in environment nor wide reaches of time in which to operate in.<br><br>This is a careful book that doesn&#8217;t shy away from the difficult questions that evolution inevitably raises. Plenty of the cases discussed involve a complex mix of genetic evolution, epigenetic adaptation, individual learning, and group-based &#8220;culture&#8221; to change the animals&#8217; relationships with their environments. It&#8217;s good to take on this complexity head-on, and that makes this stand out as a great introduction and illustration of the wider powers of natural&nbsp;selection.
-      </p>
-<p>
-	4/5.
-	  Finished Wednesday 27 August,&nbsp;2025.
-	</p>
-<p>
-	  (Originally published on <a href="https://www.goodreads.com/review/show/7741007038?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
-  </p>
-</div>
-		</div>
-	    </article>
-</div>
     <!-- Lower Navigation links -->
     <nav class="site-content navigation-post" role="navigation"><div class="previous">
-		<a href="index-157.html" rel="prev">
+		<a href="index-158.html" rel="prev">
 		    <span class="meta-nav">Older Entries</span>		</a>
 	    </div>
     </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
