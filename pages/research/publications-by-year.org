@@ -15,9 +15,9 @@
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
 ** 2025
 
-<<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/sparse-matrices.pdf][Understanding How to Implement Sparse Matrix Operations Efficiently]]/. In /9th UK Systems Research Chellenges Workshop/. Co Durham, UK. 2025.
+<<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/sparse-matrices.pdf][Understanding How to Implement Sparse Matrix Operations Efficiently]]/. In /9th UK Systems Research Challenges Workshop/. Co Durham, UK. 2025.
 
-<<citeproc_bib_item_2>>Berné Nortier, Simon Dobson, and Federico Battiston.  /[[https://doi.org/10.1103/1mxy-3cnl][Higher-Order Shortest Paths in Hypergraphs]]/. Physical Review E. 2025. To appear.
+<<citeproc_bib_item_2>>Berné Nortier, Simon Dobson, and Federico Battiston.  /[[https://doi.org/10.1103/1mxy-3cnl][Higher-Order Shortest Paths in Hypergraphs]]/. Physical Review E *112*. 2025.
 
 <<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://doi.org/10.1088/2632-072X/ae16f7][Mixing Patterns in Graphs with Higher-Order Structure: The Role of Inter-Subgraph Correlations]]/. Journal of Physics: Complexity. 2025.
 

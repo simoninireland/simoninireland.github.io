@@ -1,0 +1,47 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: History of Lisp
+.. slug: history-of-lisp
+.. date: 2025-11-07 08:47:09 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* History of Lisp
+
+    John McCarthy.  /[[https://www-formal.stanford.edu/jmc/history/lisp/lisp.html][History of Lisp]]/. Artificial Intelligence
+    Laboratory, Stanford University. 1979.
+
+    McCarthy's own take on the early history. It's quite brief, but is
+    very careful to give broad credit to the others who were involved
+    in the practical creation of the language.
+
+    It's also got some great vignettes on /why/ certain features came
+    about - for example garbage collection coming from the need to
+    clean up intermediate structures when experimenting with symbolic
+    differentiation. McCarthy acknowledges taking the notation for
+    functions from Church, before admitting that he didn't understand
+    the rest of /Calculi of lambda conversion/ and so wasn't tempted to
+    add the more general aspects!
+
+    Perhaps the most fascinating part of the story is that it was
+    originally so divorced from actual computers. The team had defined
+    an ~eval~ function for interpreting Lisp programs -- in the process
+    making the decision to represent the programs as lists -- before
+    realising that this could be made interactive to provide a running
+    interpreter.
+
+    What did McCarthy think of his creation? He was conscious that it
+    would have a lifetime:
+
+    #+begin_quote
+LISP will become obsolete when someone makes a more comprehensive
+language that dominates LISP practically and also gives a clear
+mathematical semantics to a more comprehensive set of features.
+    #+end_quote
+
+    Haskell has a plausible claim to have accomplished the latter but
+    this doesn't seem to have led domination in practice.

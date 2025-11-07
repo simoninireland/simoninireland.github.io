@@ -1,0 +1,21 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The history of Lisp
+.. slug: the-history-of-lisp
+.. date: 2025-11-07 08:49:57 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The history of Lisp
+
+  Herbert Stoyan.  /[[https://www.softwarepreservation.org/projects/LISP/book/Stoyan-Geschichte.pdf][The History of Lisp]]/. 1980. Updated in the 1990s,
+  translated into English 2023.
+
+  Includes a history of the route from PLANNER to CONNIVER, in which
+  the former was criticised for being a theorem prover when a
+  programming language was needed -- an argument between two schools
+  that's still going on today, as seen in the emergence of [[https://lean-lang.org/][Lean]].

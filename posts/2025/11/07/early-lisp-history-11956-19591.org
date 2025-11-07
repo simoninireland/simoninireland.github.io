@@ -1,0 +1,82 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Early LISP history 1956--1959
+.. slug: early-lisp-history-11956-19591
+.. date: 2025-11-07 09:44:35 UTC
+.. tags: project:lisp-bibliography, lisp, history
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Early LISP history (1956--1959)
+
+    Herbert Stoyan.  /[[https://doi.org/10.1145/800055.802047][Early Lisp History (1956–1959)]]/. In /LFP ’84:
+    Proceedings of the 1984 ACM Symposium on Lisp and Functional
+    Programming/, pp.299–310. 1984.
+
+    A study of Lisp's evolution from first proposal to practical
+    implementation.
+
+    It begins with McCarthy's proposal (co-authored with Marvin
+    Minsky, Nathaniel Rochester, and Claude Shannon, and dated 31
+    August 1955) for a summer research project at Dartmouth College to
+    "study the relationship of language to intelligence".
+
+    In a later (handwritten!) note McCarthy homed-in on the core
+    challenges in this programme: the lack of a clear way to describe
+    /procedures/ to each other (what [[https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/][Abelson and Sussman]] later refer to
+    as /procedural epistemology/), and the tight binding of programming
+    systems at that time to specific machines, and hence their need to
+    bow to engineering (rather than semantic) considerations. The
+    language that became Lisp sought primarily to overcome these two
+    challenges.
+
+    The journey proceeded by taking the list data structures developed
+    by Allen Newell and Herb Simon as part of [[https://en.wikipedia.org/wiki/Logic_Theorist][Logic Theorist]] and
+    embedding them into FORTRAN (for which there was already a working
+    compiler) -- which also incidentally muddied the conceptual waters
+    by trying to express list and list-functional concepts in a
+    language built around numbers that barely allowed functions to be
+    defined by the user at all. Indeed, McCarthy and others had
+    long-running problems accepting that the list-processing functions
+    /were/ functions, given that their result does not depend solely on
+    their arguments when viewed at the lowest level. This shows how
+    pernicious a low-level implementation can be. The final resulting
+    language, the FORTRAN List Processing Language (FLPL), shared many
+    programming approaches function names with what became Lisp.
+
+    McCarthy went on to champion the functional approach, including
+    the invention of conditional expressions (alongside or replacing
+    conditional statements) and the power of the different kinds of
+    function composition and higher-order functions. It's important to
+    remember that McCarthy's driving interest remained in AI, not
+    programming languages /per se/:
+
+    #+begin_quote
+    Already in 1956 it was clear that one had to work with symbolic
+    expressions to reach the goal of artificial intelligence.
+#+end_quote
+
+    Which is a fascinating piece of history in itself, as a large
+    branch of modern AI concerning machine learning and large language
+    models has explicit rejects this view in favour of sub-symbolic
+    AI. Which approach is "correct" in whatever sense remains to be
+    seen.
+
+    But it remains McCarthy's contributions to programming languages
+    that stand out. As well as conditional expressions he can be
+    credited with garbage collection, meta-circular interpretation,
+    and clarifying the relationship between programming and proof:
+
+    #+begin_quote
+We should mention here that McCarthy at the same time conceived the
+idea of logic-oriented programming, that is, the idea of using logical
+formulae to express goals that a program should try to establish and
+of using the prover as programming language interpreter.
+    #+end_quote
+
+    (Although it's important to recognise that Newell and Simon's
+    work, on logic as an application rather than as a general
+    programming language, pre-dates McCarthy's.)
