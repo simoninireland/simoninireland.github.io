@@ -1,0 +1,45 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lisp from nothing
+.. slug: lisp-from-nothing
+.. date: 2025-11-26 10:06:12 UTC
+.. tags: project:lisp-bibliography, lisp, implementation-techniques
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lisp from nothing                                                  :ATTACH:
+  :PROPERTIES:
+  :ID:       c894f691-a88c-44ba-8366-02aa08aad82b
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2025-11-26 10:09:08
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Nils Holm.  /Lisp from Nothing/. Lulu Press. 2025.
+
+  This is a fascinating book that's very old-school -- and I mean
+  that in the best possible way. It does exactly what it says:
+  develops a Lisp interpreter (and then a compiler) from first
+  principles, bootstrapped on top of an existing Lisp or Scheme
+  against a runtime written in C, with all code provided.
+
+  It's more than this, though. There's a thorough discussion of the
+  differences between dynamic and lexical variable scope (and the
+  implications for both programming and implementation). There's a
+  digression into pure lambda calculus and the complexities that /it/
+  introduces. There's a basic mark/sweep garbage collector. There's
+  a brief history of Lisp and Lisp machines. And there's a
+  performance evaluation that digs into where the costs lie within
+  the system.
+
+  Overall this is a book that every implementor should read, if only
+  to see some other parts of the possible design space for Lisp
+  tooling. Many applications will want to occupy a different point
+  in that space, for example providing a richer compiler, or a
+  richer runtime. But there's a lot to learn from the simplicity of
+  the choices made here.

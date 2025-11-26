@@ -7,9 +7,7 @@
 ** Submitted and under review
 
 #+begin: sd/bibliography :key category :value submitted
-<<citeproc_bib_item_1>>Jiawei Luo, Di Wu, Simon Dobson, and Blesson Varghese.  /SparseLoom: Multi-DNN Inference of Sparse Models on Edge SoCs/. Submitted to MobiCom 2026.
-
-<<citeproc_bib_item_2>>Alison Johnston, Vincent Lostanien, Tiago Marques, Sophie Palmer, Bronte Stones, Simon Dobson, Steve Buckland, Holger Klinck, Olivier Metcalf, and Martin Cox.  /Distance Sampling with Acoustic Classification/. Submitted to Methods in Ecology and Evolution.
+<<citeproc_bib_item_1>>Jiawei Luo, Di Wu, Simon Dobson, and Blesson Varghese.  /SparseLoom: Multi-DNN Inference of Sparse Models on Edge SoCs/. Submitted to MobiSys 2026.
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
