@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Nov 2025 09:48:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 26 Nov 2025 10:11:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
+&lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Nils Holm.  &lt;i&gt;Lisp from Nothing&lt;/i&gt;. Lulu Press. 2025.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a fascinating book that's very old-school – and I mean
+that in the best possible way. It does exactly what it says:
+develops a Lisp interpreter (and then a compiler) from first
+principles, bootstrapped on top of an existing Lisp or Scheme
+against a runtime written in C, with all code provided.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's more than this, though. There's a thorough discussion of the
+differences between dynamic and lexical variable scope (and the
+implications for both programming and implementation). There's a
+digression into pure lambda calculus and the complexities that &lt;i&gt;it&lt;/i&gt;
+introduces. There's a basic mark/sweep garbage collector. There's
+a brief history of Lisp and Lisp machines. And there's a
+performance evaluation that digs into where the costs lie within
+the system.
+&lt;/p&gt;
+
+&lt;p&gt;
+Overall this is a book that every implementor should read, if only
+to see some other parts of the possible design space for Lisp
+tooling. Many applications will want to occupy a different point
+in that space, for example providing a richer compiler, or a
+richer runtime. But there's a lot to learn from the simplicity of
+the choices made here.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>The Book-Makers: A History of the Book in Eighteen Lives</title><link>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1705463614l/195430889._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Adam Smyth
+	  (2024)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A fascinating history of bookbinding and printing. You may have to be fanatical about your books and book technology to fully enjoy it – but I certainly did.&lt;br&gt;&lt;br&gt;There are plenty of vignettes and personalities on offer, alongside a deep understanding of the history that accepts the boundaries of what's knowable. The value we place on certain books shifts with time, with Shakespeare's First Folio simply being one amongst many when it is first printed. And the notion of canonical texts can be fluid, with several often entirely different editions of &lt;i&gt;Hamlet&lt;/i&gt; to choose from, as well as an active sub-culture of after-market book repurposing ending in modern zines and found-media works.&lt;br&gt;&lt;br&gt;The most fascinating aspect for me was the way that some books have been lost and are known only through commentaries on them that (perversely) survived – and some are known through having been cut-up and re-used as parts of the bindings of other books, for example to make covers essentially from &lt;i&gt;papier mâché&lt;/i&gt;, from which they have been recovered during re-binding.&lt;br&gt;&lt;br&gt;The style can be a bit annoying in places, a mispaced need for levity that comes across as far too heavy-handed and trite. But overall this is a great read, equally full of information and entertainment.
+      &lt;/p&gt;&lt;p&gt;
+	5/5.
+	  Finished Saturday 22 November, 2025.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6768865458?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item><item><title>The Knowledge: How to Rebuild Our World from Scratch</title><link>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393226489l/18114087._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Lewis Dartnell
+	  (2014)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      I'm hard-put to classify this book. On the one hand it's an engaging and valiant attempt to illustrate the crafts that would need to be retained (or rediscovered) after a civilisational collapse – or at least after &lt;i&gt;one kind of&lt;/i&gt; collapse such as a pandemic that leaves the infrastructure intact by decaying rather than pulverised. Dartnell seems to think a more fierce collapse would be unsurvivable, and so focuses on the more positive possibility.&lt;br&gt;&lt;br&gt;He traverses a lot of technologies, including for agriculture, building, transportation, clothing, chemistry, and communications. He (correctly in my view) identifies the scientific method itself as the most valuable technology to retain, and explores some of the ways in which modern society is contingent on specific historical accidents that a re-booting society need not copy.&lt;br&gt;&lt;br&gt;But it's also frustrating. As a scientist and engineer I wanted more detail: perhaps there's a need for another, "how to" manual alongside this book. And Dartnell seems to have a very cavalier attitude towards safety, mentioning and understating the dangers of (for example) lye once and then making use of it extensively, which is a recipe for disaster on the part of any practitioners. And the book is a little too broad, rather than focusing on the technologies of immediate relevance in the aftermath of disaster: should we really be thinking about building vacuum-tube electronics when even basic agriculture is such a challenge?&lt;br&gt;&lt;br&gt;Despite the positivity on display, reading this confirmed my thinking that a recovery after a disaster would be protracted, with no way to avoid a return to feudalism and warring bands. In that sense technology would be the least of the survivors' worries.
+      &lt;/p&gt;&lt;p&gt;
+	3/5.
+	  Finished Saturday 22 November, 2025.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7939944087?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
 &lt;h2 id="orgbb236cc"&gt;Early LISP history (1956–1959)&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgbb236cc"&gt;
 &lt;p&gt;
@@ -159,7 +228,22 @@ Haskell has a plausible claim to have accomplished the latter but
 this doesn't seem to have led domination in practice.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item><item><title>Brave New World and Brave New World Revisited</title><link>https://simondobson.org/goodreads/brave-new-world-and-brave-new-world-revisited/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item><item><title>The Passenger (The Passenger #1)</title><link>https://simondobson.org/goodreads/the-passenger-the-passenger-1/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1646843143l/60581087._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Cormac McCarthy
+	  (2022)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A book with wonderful writing by somehow missing something.&lt;br&gt;&lt;br&gt;And the writing really is superb. McCarthy can build a scene out of almost no words, even somewhere as unfamiliar as a New Orleans flophouse or a powerboat traversing the Caribbean. He can also build credible character backstories for those with even the least credible histories without it ever feeling contrived.&lt;br&gt;&lt;br&gt;But... The book is premised on a mystery, the finding by divers of a plane crashed at sea that's clearly been visited before they get there, with something of value having been removed. What was it? Why was it valuable? Why are there federal investigators chasing it? – and why do so many of the people involved wind up inexplicably dead? That's a fascinating set-up, and so it's deeply disapointing that it remains exactly that: a set-up, unexplained and unresolved. It's not that there's a lack of plot, it's simply that it leads nowhere, and that's a wasted opportunity for so gifted a writer.
+      &lt;/p&gt;&lt;p&gt;
+	2/5.
+	  Finished Wednesday 22 October, 2025.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6808789445?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-passenger-the-passenger-1/</guid><pubDate>Wed, 22 Oct 2025 00:00:00 GMT</pubDate></item><item><title>Brave New World and Brave New World Revisited</title><link>https://simondobson.org/goodreads/brave-new-world-and-brave-new-world-revisited/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331315450l/5479._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -204,63 +288,4 @@ this doesn't seem to have led domination in practice.
 	  Finished Saturday 20 September, 2025.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6638300592?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/</guid><pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate></item><item><title>True Names... and Other Dangers</title><link>https://simondobson.org/goodreads/true-names-and-other-dangers/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1330657262l/321005._SY160_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Vernor Vinge
-	  (1981)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      The lesser-known – now – precursor novel to cyberpunk.&lt;br&gt;&lt;br&gt;A group of rebels engage in pranks and more serious data exfiltration using hallucinatory interfaces to computer-managed information spaces. If that sounds similar to &lt;a href="https://www.goodreads.com/book/show/6088007.Neuromancer__Sprawl___1_" title="Neuromancer (Sprawl, #1) by William Gibson" rel="nofollow noopener"&gt;Neuromancer&lt;/a&gt; then that's because the parallels are unmistakeable. The two books appeared at roughly the same time, and initially &lt;i&gt;True names&lt;/i&gt; seems to have been the more famous: certainly it attracted a lot of attention from some serious people in both tech and sci-fi. It's interesting that &lt;i&gt;Neuromancer&lt;/i&gt; emerged over the longer term as the more significant work: and I think that's deserved, although &lt;i&gt;True names&lt;/i&gt; remains a great read.&lt;br&gt;&lt;br&gt;Both books address the issue of information overload and how it could be combatted by using broader-band neural interfaces rather than screens and keyboards. Gibson envisions a rather architectural metaphor, while Vinge goes for something more mythic and fantastical, a world whose practitioners form "covens" and interact with spells and monsters as a way to bring the available functionality into their limited view. It's not something that's actually emerged in what we now think of as cyberspace, which remains resolutely text-driven.&lt;br&gt;&lt;br&gt;My edition of &lt;i&gt;True names&lt;/i&gt; came with essays and an afterward by Marvin Minsky, one of the fathers of AI. The essays in the main haven't aged well, but Minsky's critique of procedural computing still has some bite.
-      &lt;/p&gt;&lt;p&gt;
-	3/5.
-	  Finished Thursday 4 September, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6364671876?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/true-names-and-other-dangers/</guid><pubDate>Thu, 04 Sep 2025 00:00:00 GMT</pubDate></item><item><title>Darwin Comes to Town: How the Urban Jungle Drives Evolution</title><link>https://simondobson.org/goodreads/darwin-comes-to-town-how-the-urban-jungle-drives-evolution/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498791024l/34930832._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Menno Schilthuizen
-	  (2018)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A take on evolutionary biology that sees cities and human-created environments as a positive force on ecology, without in any way diminishing the effects of human-caused demage.&lt;br&gt;&lt;br&gt;It's an interesting perspective. Ecologists and the popular press often only see the damage, not the opportunity, of human construction, and regard species being forced from their "natural" habitats as always bad. Schilthuizen argues quite persuasively that habitat destruction has been mitigated by habitat &lt;i&gt;construction&lt;/i&gt;, by creating urban landscapes in which (often other) species can thrive possibly more than they did before. This is especially true when we also consider "invasive" species transported from elsewhere, which find niches in their destination cities (often around their ports of entry). In some cases we find species that no longer have or inhabit a "natural" habitat at all.&lt;br&gt;&lt;br&gt;And habitat destruction often isn't as complete as it seems. Schilthuizen example is the mice of New York's smaller parks, which form islands of isolation that in turn cause identifiable genetic differences between the inhabitants of the different tiny patches of land. Singapore similarly has tiny trats of native forest surrounded by city and cut-off from each other. He uses this carefully to argue that evolution requires neither great distinctions in environment nor wide reaches of time in which to operate in.&lt;br&gt;&lt;br&gt;This is a careful book that doesn't shy away from the difficult questions that evolution inevitably raises. Plenty of the cases discussed involve a complex mix of genetic evolution, epigenetic adaptation, individual learning, and group-based "culture" to change the animals' relationships with their environments. It's good to take on this complexity head-on, and that makes this stand out as a great introduction and illustration of the wider powers of natural selection.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Wednesday 27 August, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7741007038?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/darwin-comes-to-town-how-the-urban-jungle-drives-evolution/</guid><pubDate>Wed, 27 Aug 2025 00:00:00 GMT</pubDate></item><item><title>The Hohenzollerns and the Nazis: A History of Collaboration</title><link>https://simondobson.org/goodreads/the-hohenzollerns-and-the-nazis-a-history-of-collaboration/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718980881l/212403637._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Stephan Malinowski
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      The Hohenzollerns are usually treated as bookmarks in histories of the two World Wars, with the Kaiser as an essential instigator of the First and laying the groundwork for the Second despite his defenestration. This book picks up his life in exile in the Netherlands as an increasingly anachronistic character unable to handle the need to explain himself even to his own most loyal followers.&lt;br&gt;&lt;br&gt;That loyalty and blindness extends to his descendants, who remain pretenders to leadership well into the Nazi period and attempt to ride the storm while simultaneously keeping a distance from it, unable to accept that they're no longer relevant or even respected except in the most superficial ways. It's as though they want to take credit for Nazi accomplishments and are untroubled by the atrocities as long as it offers the possibility of a return to the throne – and are similarly untroubled by the fact that that thronw would never actually be a real power centre. The Kaiser's emphasis on the forms over the functions of royalty have a long reach.&lt;br&gt;&lt;br&gt;The translation is little grating at times, fascinated by the word &lt;i&gt;caesura&lt;/i&gt;. But the pace is good and it deals well with the contradictions and (still continuing) attempts to rewrite family history to remove the taint of association with Hitler – while (coincidentally I'm sure) restoring family property.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Monday 18 August, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7241347979?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-hohenzollerns-and-the-nazis-a-history-of-collaboration/</guid><pubDate>Mon, 18 Aug 2025 00:00:00 GMT</pubDate></item><item><title>The Folio Book of Historical Mysteries</title><link>https://simondobson.org/goodreads/the-folio-book-of-historical-mysteries/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1295900979l/8816299._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Ian Pindar
-	  (2008)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      £5 well spent in a charity shop. This is a collection of essays on different historical mysteries. There's something for everyone: the building of Stonehenge, the abandonment of the &lt;i&gt;Mary Celeste&lt;/i&gt;, and (my personal favourite) the fate of the Princes in the Tower. Perhaps a book best dipped into.&lt;br&gt;&lt;br&gt;Some of the essays haven't aged well against subsequent scholarship. That's inevitable and doesn't detract from them as decent introductions to a wide range of happenings.
-      &lt;/p&gt;&lt;p&gt;
-	3/5.
-	  Finished Friday 1 August, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7751922437?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-folio-book-of-historical-mysteries/</guid><pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/</guid><pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate></item></channel></rss>

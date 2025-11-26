@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1478a92" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about implementation-techniques)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/implementation-techniques.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 26 Nov 2025 10:11:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
+&lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Nils Holm.  &lt;i&gt;Lisp from Nothing&lt;/i&gt;. Lulu Press. 2025.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a fascinating book that's very old-school – and I mean
+that in the best possible way. It does exactly what it says:
+develops a Lisp interpreter (and then a compiler) from first
+principles, bootstrapped on top of an existing Lisp or Scheme
+against a runtime written in C, with all code provided.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's more than this, though. There's a thorough discussion of the
+differences between dynamic and lexical variable scope (and the
+implications for both programming and implementation). There's a
+digression into pure lambda calculus and the complexities that &lt;i&gt;it&lt;/i&gt;
+introduces. There's a basic mark/sweep garbage collector. There's
+a brief history of Lisp and Lisp machines. And there's a
+performance evaluation that digs into where the costs lie within
+the system.
+&lt;/p&gt;
+
+&lt;p&gt;
+Overall this is a book that every implementor should read, if only
+to see some other parts of the possible design space for Lisp
+tooling. Many applications will want to occupy a different point
+in that space, for example providing a richer compiler, or a
+richer runtime. But there's a lot to learn from the simplicity of
+the choices made here.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1478a92" class="outline-2"&gt;
 &lt;h2 id="org1478a92"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org1478a92"&gt;
 &lt;p&gt;

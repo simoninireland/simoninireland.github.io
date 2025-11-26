@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Nov 2025 09:47:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 26 Nov 2025 10:11:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
+&lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Nils Holm.  &lt;i&gt;Lisp from Nothing&lt;/i&gt;. Lulu Press. 2025.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a fascinating book that's very old-school – and I mean
+that in the best possible way. It does exactly what it says:
+develops a Lisp interpreter (and then a compiler) from first
+principles, bootstrapped on top of an existing Lisp or Scheme
+against a runtime written in C, with all code provided.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's more than this, though. There's a thorough discussion of the
+differences between dynamic and lexical variable scope (and the
+implications for both programming and implementation). There's a
+digression into pure lambda calculus and the complexities that &lt;i&gt;it&lt;/i&gt;
+introduces. There's a basic mark/sweep garbage collector. There's
+a brief history of Lisp and Lisp machines. And there's a
+performance evaluation that digs into where the costs lie within
+the system.
+&lt;/p&gt;
+
+&lt;p&gt;
+Overall this is a book that every implementor should read, if only
+to see some other parts of the possible design space for Lisp
+tooling. Many applications will want to occupy a different point
+in that space, for example providing a richer compiler, or a
+richer runtime. But there's a lot to learn from the simplicity of
+the choices made here.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
 &lt;h2 id="orgbb236cc"&gt;Early LISP history (1956–1959)&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgbb236cc"&gt;
 &lt;p&gt;
@@ -354,38 +393,4 @@ very concrete way of showing how metacircularity can work
 in &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;McCarthy's original style&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org298cb35" class="outline-2"&gt;
-&lt;h2 id="org298cb35"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org298cb35"&gt;
-&lt;p&gt;
-Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
-ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
-&lt;/p&gt;
-
-&lt;p&gt;
-A response to the criticisms of McCarthy's semantics for Common
-Lisp that it didn't specify the behaviours of special forms, and
-of the standardisation process of adopting prose definitions that
-are too "lawyerly" for engineering.
-&lt;/p&gt;
-
-&lt;p&gt;
-The approach is to define the special forms in terms of other
-constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
-abstractions to prevent execution of the unwanted branch. This is
-both useful for understanding and a way of minimising the number
-of under-defined special forms.
-&lt;/p&gt;
-
-&lt;p&gt;
-It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
-control-transfer forms can be expressed sing them and because it
-emphasises the interactions that preclude Common Lisp having
-continuations like Scheme's. However there's also an argument
-pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
-information that can be useful for compilers looking to optimise.
-It's a deep exploration of the underpinnings of the language from
-both theoretical and practical perspectives.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/lisp-as-the-maxwell1s-equations-of-software/</guid><pubDate>Fri, 27 Sep 2024 15:06:55 GMT</pubDate></item></channel></rss>

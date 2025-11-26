@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History of Lisp | Simon Dobson</title>
+<title>Lisp from nothing | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,62 +64,51 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Friday 7 November, 2025</a>
+		Posted on <a href="." rel="bookmark">Wednesday 26 November, 2025</a>
 	    </span>
 	</div>
-	<h1>History of&nbsp;Lisp</h1>
+	<h1>Lisp from&nbsp;nothing</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgd92a09b" class="outline-2">
-<h2 id="orgd92a09b">History of&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orgd92a09b">
+		<div id="outline-container-orgb3d1ff4" class="outline-2">
+<h2 id="orgb3d1ff4">Lisp from&nbsp;nothing</h2>
+<div class="outline-text-2" id="text-orgb3d1ff4">
+<p class="floater">
+<img src="../../../../attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"></p>
+
 <p>
-John McCarthy.  <i><a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html">History of Lisp</a></i>. Artificial Intelligence
-Laboratory, Stanford University.&nbsp;1979.
+Nils Holm.  <i>Lisp from Nothing</i>. Lulu Press.&nbsp;2025.
 </p>
 
 <p>
-McCarthy&#8217;s own take on the early history. It&#8217;s quite brief, but is
-very careful to give broad credit to the others who were involved
-in the practical creation of the&nbsp;language.
+This is a fascinating book that&#8217;s very old-school – and I mean
+that in the best possible way. It does exactly what it says:
+develops a Lisp interpreter (and then a compiler) from first
+principles, bootstrapped on top of an existing Lisp or Scheme
+against a runtime written in C, with all code&nbsp;provided.
 </p>
 
 <p>
-It&#8217;s also got some great vignettes on <i>why</i> certain features came
-about - for example garbage collection coming from the need to
-clean up intermediate structures when experimenting with symbolic
-differentiation. McCarthy acknowledges taking the notation for
-functions from Church, before admitting that he didn&#8217;t understand
-the rest of <i>Calculi of lambda conversion</i> and so wasn&#8217;t tempted to
-add the more general&nbsp;aspects!
+It&#8217;s more than this, though. There&#8217;s a thorough discussion of the
+differences between dynamic and lexical variable scope (and the
+implications for both programming and implementation). There&#8217;s a
+digression into pure lambda calculus and the complexities that <i>it</i>
+introduces. There&#8217;s a basic mark/sweep garbage collector. There&#8217;s
+a brief history of Lisp and Lisp machines. And there&#8217;s a
+performance evaluation that digs into where the costs lie within
+the&nbsp;system.
 </p>
 
 <p>
-Perhaps the most fascinating part of the story is that it was
-originally so divorced from actual computers. The team had defined&nbsp;an <code>eval</code> function for interpreting Lisp programs – in the process
-making the decision to represent the programs as lists – before
-realising that this could be made interactive to provide a running&nbsp;interpreter.
-</p>
-
-<p>
-What did McCarthy think of his creation? He was conscious that it
-would have a&nbsp;lifetime:
-</p>
-
-<blockquote>
-<p>
-<span class="caps">LISP</span> will become obsolete when someone makes a more comprehensive
-language that dominates <span class="caps">LISP</span> practically and also gives a clear
-mathematical semantics to a more comprehensive set of&nbsp;features.
-</p>
-</blockquote>
-
-<p>
-Haskell has a plausible claim to have accomplished the latter but
-this doesn&#8217;t seem to have led domination in&nbsp;practice.
+Overall this is a book that every implementor should read, if only
+to see some other parts of the possible design space for Lisp
+tooling. Many applications will want to occupy a different point
+in that space, for example providing a richer compiler, or a
+richer runtime. But there&#8217;s a lot to learn from the simplicity of
+the choices made&nbsp;here.
 </p>
 </div>
 </div>
@@ -137,12 +126,12 @@ this doesn&#8217;t seem to have led domination in&nbsp;practice.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="History%20of%20Lisp%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/07/history-of-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=History%20of%20Lisp%20%23history%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/07/history-of-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/26/lisp-from-nothing/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/26/lisp-from-nothing/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2025/11/07/history-of-lisp/&amp;title=History%20of%20Lisp%20%23history%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2025/11/07/history-of-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=History%20of%20Lisp&amp;body=https://simondobson.org/2025/11/07/history-of-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2025/11/26/lisp-from-nothing/&amp;title=Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2025/11/26/lisp-from-nothing/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Lisp%20from%20nothing&amp;body=https://simondobson.org/2025/11/26/lisp-from-nothing/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -151,7 +140,7 @@ this doesn&#8217;t seem to have led domination in&nbsp;practice.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/history/">history</a>
+		<a href="../../../../categories/implementation-techniques/">implementation-techniques</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -161,13 +150,8 @@ this doesn&#8217;t seem to have led domination in&nbsp;practice.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../../goodreads/the-passenger-the-passenger-1/" rel="prev">
-		<span class="meta-nav">Older Post</span>The Passenger (The Passenger #1)
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../the-history-of-lisp/" rel="next">
-		<span class="meta-nav">Newer Post</span>The history of Lisp
+	    <a href="../../../../goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Book-Makers: A History of the Book in Eighteen Lives
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
