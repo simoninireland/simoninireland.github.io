@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Wed, 26 Nov 2025 10:11:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2026 14:03:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
+&lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7c86248"&gt;
+&lt;p&gt;
+&lt;a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/"&gt;Lush: my favorite small programming language&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A blog post all about &lt;a href="https://lush.sourceforge.net/"&gt;Lush&lt;/a&gt;, a small language that the authors
+present as a "Lisp Universal SHell" whose main features are its
+ability to integrate simply with underlying libraries with the
+interactivity of Lisp. And it's a full Lisp, with a compiler, a
+macro system, an object system, and (importantly for what comes
+next) high-performance arrays and tensors.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lush's main claim to interest is that its authors include Yann
+LeCun, Yoshua Bengio, and the other researchers who went on to
+have a massive influence on the resurgences of interest in deep
+learning neural networks. Indeed, the first version of the Torch
+package, which later became &lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;, was written in Lush. Lush's
+arrays make use of a sub-language modelled on APL that leverage
+Lush's ease with foreign functions to call into underlying C
+kernels for tensor operations.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a great example of how Lisp's claim to fame as a language
+for doing AI has continued into the "new" AI era of deep learning
+models. It also shows that, if you believe that Lisp's dynamism
+and flexibility are an advantage to you, there are no barriers to
+continuing to benefit from that even if you need to access a wider
+ecosystem of tools. It'd be interesting to understand the
+performance trade-offs in this: what is the performance of a Lush
+algorithm that makes extensive use of its array language, and
+how can this performance be maximised using higher-level language
+constructs of the sort Lisp encourages?
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
 &lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
 &lt;p class="floater"&gt;
@@ -273,19 +313,4 @@ this doesn't seem to have led domination in practice.
 	  Finished Sunday 5 October, 2025.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/303647008?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/neuromancer-sprawl-1/</guid><pubDate>Sun, 05 Oct 2025 17:35:53 GMT</pubDate></item><item><title>Sawdust Caesar: The Untold History of Mussolini and Fascism</title><link>https://simondobson.org/goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1245562266l/3788812._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	George Seldes
-	  (1935)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      &lt;i&gt;"All of Mussolini's monuments will be monuments to the strength of a weakling."&lt;/i&gt;&lt;br&gt;&lt;br&gt;A journalist's account of Mussolini's rise to (and exercise of) power, written by someone who both lived through parts of it and had significant contacts with the man himself. Despite being written at a time when Fascism was still being somewhat celebrated, and even admired, it's quite a scorching read that dismantles many of its pretensions with both observations and data. It would have provided a lot of ammunition to those wanting to avoid fascist takeovers in their ovn countries to read exactly how imaginary the claims of Fascist Italy were, no matter how dramatically and repeatedly proclaimed.&lt;br&gt;&lt;br&gt;Surprising for a book of its kind and date (it was first published in 1935), Hitler is conspicuous by his absence, mentioned only in passing: there are far more comparisons with Napoleon. It shows how different history looks when lived forwards.&lt;br&gt;&lt;br&gt;The title is interesting: Shirer uses a similar turn of phrase to describe Mussolini in &lt;a href="https://www.goodreads.com/book/show/767171.The_Rise_and_Fall_of_the_Third_Reich_A_History_of_Nazi_Germany" title="The Rise and Fall of the Third Reich A History of Nazi Germany by William L. Shirer" rel="nofollow noopener"&gt;The Rise and Fall of the Third Reich: A History of Nazi Germany&lt;/a&gt; (although he does not reference Seldes as a source). Mussolini's will to power easily overrides any principles he may have had, which makes it hard to decide whether fascism itself had any principles or was simply the inflation of one man's will: Mussolini seems to have been unclear about that himself, but resolving it may be key to understanding the modern trends towards authoritarian politics.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Saturday 20 September, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6638300592?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/sawdust-caesar-the-untold-history-of-mussolini-and-fascism/</guid><pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/neuromancer-sprawl-1/</guid><pubDate>Sun, 05 Oct 2025 17:35:53 GMT</pubDate></item></channel></rss>

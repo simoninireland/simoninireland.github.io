@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://simondobson.org/</loc>
-  <lastmod>2025-01-31T08:27:00Z</lastmod>
+  <lastmod>2026-04-30T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/2010/</loc>
@@ -1086,12 +1086,20 @@
   <lastmod>2025-11-26T10:06:00Z</lastmod>
  </url>
  <url>
+  <loc>https://simondobson.org/2026/</loc>
+  <lastmod>2026-04-30T14:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/2026/04/30/lush/</loc>
+  <lastmod>2026-04-30T14:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://simondobson.org/archive.html</loc>
-  <lastmod>2025-11-26T10:06:00Z</lastmod>
+  <lastmod>2026-04-30T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/</loc>
-  <lastmod>2025-11-26T10:06:00Z</lastmod>
+  <lastmod>2025-11-26T10:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/abstracts/</loc>
@@ -1420,10 +1428,6 @@
  <url>
   <loc>https://simondobson.org/categories/implementation-techniques/</loc>
   <lastmod>2025-01-23T17:16:00Z</lastmod>
- </url>
- <url>
-  <loc>https://simondobson.org/categories/implementation/</loc>
-  <lastmod>2025-11-26T10:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/categories/innovation/</loc>
@@ -1888,6 +1892,10 @@
  <url>
   <loc>https://simondobson.org/categories/xml/</loc>
   <lastmod>2025-01-23T17:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://simondobson.org/consulting/</loc>
+  <lastmod>2026-04-30T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/development/acoustic-birds/</loc>
@@ -4407,7 +4415,7 @@
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-159.html</loc>
-  <lastmod>2025-11-26T10:06:00Z</lastmod>
+  <lastmod>2026-04-30T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://simondobson.org/indices/index-16.html</loc>

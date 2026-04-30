@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lisp from nothing | Simon Dobson</title>
+<title>Lush | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,51 +64,53 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Wednesday 26 November, 2025</a>
+		Posted on <a href="." rel="bookmark">Thursday 30 April, 2026</a>
 	    </span>
 	</div>
-	<h1>Lisp from&nbsp;nothing</h1>
+	<h1>Lush</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgb3d1ff4" class="outline-2">
-<h2 id="orgb3d1ff4">Lisp from&nbsp;nothing</h2>
-<div class="outline-text-2" id="text-orgb3d1ff4">
-<p class="floater">
-<img src="../../../../attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"></p>
-
+		<div id="outline-container-org7c86248" class="outline-2">
+<h2 id="org7c86248">Lush</h2>
+<div class="outline-text-2" id="text-org7c86248">
 <p>
-Nils Holm.  <i>Lisp from Nothing</i>. Lulu Press.&nbsp;2025.
+<a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/">Lush: my favorite small programming&nbsp;language</a>
 </p>
 
 <p>
-This is a fascinating book that&#8217;s very old-school – and I mean
-that in the best possible way. It does exactly what it says:
-develops a Lisp interpreter (and then a compiler) from first
-principles, bootstrapped on top of an existing Lisp or Scheme
-against a runtime written in C, with all code&nbsp;provided.
+A blog post all about <a href="https://lush.sourceforge.net/">Lush</a>, a small language that the authors
+present as a &#8220;Lisp Universal SHell&#8221; whose main features are its
+ability to integrate simply with underlying libraries with the
+interactivity of Lisp. And it&#8217;s a full Lisp, with a compiler, a
+macro system, an object system, and (importantly for what comes
+next) high-performance arrays and&nbsp;tensors.
 </p>
 
 <p>
-It&#8217;s more than this, though. There&#8217;s a thorough discussion of the
-differences between dynamic and lexical variable scope (and the
-implications for both programming and implementation). There&#8217;s a
-digression into pure lambda calculus and the complexities that <i>it</i>
-introduces. There&#8217;s a basic mark/sweep garbage collector. There&#8217;s
-a brief history of Lisp and Lisp machines. And there&#8217;s a
-performance evaluation that digs into where the costs lie within
-the&nbsp;system.
+Lush&#8217;s main claim to interest is that its authors include Yann
+LeCun, Yoshua Bengio, and the other researchers who went on to
+have a massive influence on the resurgences of interest in deep
+learning neural networks. Indeed, the first version of the Torch
+package, which later became <a href="https://pytorch.org/">PyTorch</a>, was written in Lush. Lush&#8217;s
+arrays make use of a sub-language modelled on <span class="caps">APL</span> that leverage
+Lush&#8217;s ease with foreign functions to call into underlying C
+kernels for tensor&nbsp;operations.
 </p>
 
 <p>
-Overall this is a book that every implementor should read, if only
-to see some other parts of the possible design space for Lisp
-tooling. Many applications will want to occupy a different point
-in that space, for example providing a richer compiler, or a
-richer runtime. But there&#8217;s a lot to learn from the simplicity of
-the choices made&nbsp;here.
+This is a great example of how Lisp&#8217;s claim to fame as a language
+for doing <span class="caps">AI</span> has continued into the &#8220;new&#8221; <span class="caps">AI</span> era of deep learning
+models. It also shows that, if you believe that Lisp&#8217;s dynamism
+and flexibility are an advantage to you, there are no barriers to
+continuing to benefit from that even if you need to access a wider
+ecosystem of tools. It&#8217;d be interesting to understand the
+performance trade-offs in this: what is the performance of a Lush
+algorithm that makes extensive use of its array language, and
+how can this performance be maximised using higher-level language
+constructs of the sort Lisp&nbsp;encourages?
 </p>
 </div>
 </div>
@@ -126,12 +128,12 @@ the choices made&nbsp;here.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/26/lisp-from-nothing/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2025/11/26/lisp-from-nothing/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/04/30/lush/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/04/30/lush/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2025/11/26/lisp-from-nothing/&amp;title=Lisp%20from%20nothing%20%23implementation-techniques%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2025/11/26/lisp-from-nothing/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Lisp%20from%20nothing&amp;body=https://simondobson.org/2025/11/26/lisp-from-nothing/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/04/30/lush/&amp;title=Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/04/30/lush/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Lush&amp;body=https://simondobson.org/2026/04/30/lush/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -140,7 +142,7 @@ the choices made&nbsp;here.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/implementation-techniques/">implementation-techniques</a>
+		<a href="../../../../categories/language-reference/">language-reference</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -150,13 +152,8 @@ the choices made&nbsp;here.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../../goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/" rel="prev">
-		<span class="meta-nav">Older Post</span>The Book-Makers: A History of the Book in Eighteen Lives
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../../../2026/04/30/lush/" rel="next">
-		<span class="meta-nav">Newer Post</span>Lush
+	    <a href="../../../../2025/11/26/lisp-from-nothing/" rel="prev">
+		<span class="meta-nav">Older Post</span>Lisp from nothing
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
