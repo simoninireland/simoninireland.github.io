@@ -39,7 +39,7 @@ BIBFILES = ~/personal/dict/sd.bib
 # ---------- Tools ----------
 
 # Tools
-PYTHON = python3
+PYTHON = python3.13
 PIP = pip
 NIKOLA = nikola
 RM = rm -fr

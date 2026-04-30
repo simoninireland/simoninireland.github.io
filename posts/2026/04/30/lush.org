@@ -1,0 +1,42 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Lush
+.. slug: lush
+.. date: 2026-04-30 15:03:14 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, language-reference
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Lush
+
+  [[https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/][Lush: my favorite small programming language]]
+
+  A blog post all about [[https://lush.sourceforge.net/][Lush]], a small language that the authors
+  present as a "Lisp Universal SHell" whose main features are its
+  ability to integrate simply with underlying libraries with the
+  interactivity of Lisp. And it's a full Lisp, with a compiler, a
+  macro system, an object system, and (importantly for what comes
+  next) high-performance arrays and tensors.
+
+  Lush's main claim to interest is that its authors include Yann
+  LeCun, Yoshua Bengio, and the other researchers who went on to
+  have a massive influence on the resurgences of interest in deep
+  learning neural networks. Indeed, the first version of the Torch
+  package, which later became [[https://pytorch.org/][PyTorch]], was written in Lush. Lush's
+  arrays make use of a sub-language modelled on APL that leverage
+  Lush's ease with foreign functions to call into underlying C
+  kernels for tensor operations.
+
+  This is a great example of how Lisp's claim to fame as a language
+  for doing AI has continued into the "new" AI era of deep learning
+  models. It also shows that, if you believe that Lisp's dynamism
+  and flexibility are an advantage to you, there are no barriers to
+  continuing to benefit from that even if you need to access a wider
+  ecosystem of tools. It'd be interesting to understand the
+  performance trade-offs in this: what is the performance of a Lush
+  algorithm that makes extensive use of its array language, and
+  how can this performance be maximised using higher-level language
+  constructs of the sort Lisp encourages?
