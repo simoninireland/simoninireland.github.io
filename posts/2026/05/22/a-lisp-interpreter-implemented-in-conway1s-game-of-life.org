@@ -1,0 +1,30 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: A Lisp interpreter implemented in Conway's Game of Life
+.. slug: a-lisp-interpreter-implemented-in-conway1s-game-of-life
+.. date: 2026-05-22 12:47:12 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, applications
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* A Lisp interpreter implemented in Conway's Game of Life
+
+  [[https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html][A Lisp Interpreter Implemented in Conway’s Game of Life]]
+
+  I include this as an application rather than an implementation
+  technique because ... well ... it's far more interesting as an
+  example of cellular automata (CAs) than as a Lisp.
+
+  Having said that, there's something utterly compelling in watching
+  a CA run something this complicated. It basically implements a
+  Lisp machine core, and watching it execute is rather like watching
+  a real chip in action (even though the mechanisms are completely
+  different). You can /see/ memory being accessed. Its implementation
+  includes lexical closures, enough to build a simple object system.
+
+  The implementation uses the VarLife system as an abstraction layer
+  over the "raw" Conway rules. The compiled programs can be run on
+  the [[https://en.wikipedia.org/wiki/Golly_(program)][Golly]] CA emulator.

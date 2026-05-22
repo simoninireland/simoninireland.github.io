@@ -1,0 +1,28 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: The Common Lisp cookbook
+.. slug: the-common-lisp-cookbook
+.. date: 2026-05-22 12:45:13 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* The Common Lisp cookbook
+
+  https://lispcookbook.github.io/cl-cookbook/
+
+  Part tutorial and part recipe site for topics ranging from the
+  common (syntax, the ~loop~ macro), to the advanced (packages,
+  multi-threaded web application programming, building stand-alone
+  binaries). It's extremely thorough in terms of the patterns used
+  in real Lisp code.
+
+  I think the most useful aspect is that the recipes go well beyond
+  what's built-in to Lisp and tackle some of the common (and
+  not-so-common) packages: the chapter on arrays goes into a couple
+  of linear algebra packages, for example. It also has useful
+  chapters on development tasks like profiling and continuous
+  integration.
