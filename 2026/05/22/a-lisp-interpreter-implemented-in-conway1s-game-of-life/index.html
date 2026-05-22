@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lush | Simon Dobson</title>
+<title>A Lisp interpreter implemented in Conway's Game of Life | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,53 +64,41 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Thursday 30 April, 2026</a>
+		Posted on <a href="." rel="bookmark">Friday 22 May, 2026</a>
 	    </span>
 	</div>
-	<h1>Lush</h1>
+	<h1>A Lisp interpreter implemented in Conway&#8217;s Game of&nbsp;Life</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org7c86248" class="outline-2">
-<h2 id="org7c86248">Lush</h2>
-<div class="outline-text-2" id="text-org7c86248">
+		<div id="outline-container-org3d7d474" class="outline-2">
+<h2 id="org3d7d474">A Lisp interpreter implemented in Conway&#8217;s Game of&nbsp;Life</h2>
+<div class="outline-text-2" id="text-org3d7d474">
 <p>
-<a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/">Lush: my favorite small programming&nbsp;language</a>
+<a href="https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html">A Lisp Interpreter Implemented in Conway’s Game of&nbsp;Life</a>
 </p>
 
 <p>
-A blog post all about <a href="https://lush.sourceforge.net/">Lush</a>, a small language that the authors
-present as a &#8220;Lisp Universal SHell&#8221; whose main features are its
-ability to integrate simply with underlying libraries with the
-interactivity of Lisp. And it&#8217;s a full Lisp, with a compiler, a
-macro system, an object system, and (importantly for what comes
-next) high-performance arrays and&nbsp;tensors.
+I include this as an application rather than an implementation
+technique because … well … it&#8217;s far more interesting as an
+example of cellular automata (CAs) than as a&nbsp;Lisp.
 </p>
 
 <p>
-Lush&#8217;s main claim to interest is that its authors include Yann
-LeCun, Yoshua Bengio, and the other researchers who went on to
-have a massive influence on the resurgences of interest in deep
-learning neural networks. Indeed, the first version of the Torch
-package, which later became <a href="https://pytorch.org/">PyTorch</a>, was written in Lush. Lush&#8217;s
-arrays make use of a sub-language modelled on <span class="caps">APL</span> that leverage
-Lush&#8217;s ease with foreign functions to call into underlying C
-kernels for tensor&nbsp;operations.
+Having said that, there&#8217;s something utterly compelling in watching
+a <span class="caps">CA</span> run something this complicated. It basically implements a
+Lisp machine core, and watching it execute is rather like watching
+a real chip in action (even though the mechanisms are completely
+different). You can <i>see</i> memory being accessed. Its implementation
+includes lexical closures, enough to build a simple object&nbsp;system.
 </p>
 
 <p>
-This is a great example of how Lisp&#8217;s claim to fame as a language
-for doing <span class="caps">AI</span> has continued into the &#8220;new&#8221; <span class="caps">AI</span> era of deep learning
-models. It also shows that, if you believe that Lisp&#8217;s dynamism
-and flexibility are an advantage to you, there are no barriers to
-continuing to benefit from that even if you need to access a wider
-ecosystem of tools. It&#8217;d be interesting to understand the
-performance trade-offs in this: what is the performance of a Lush
-algorithm that makes extensive use of its array language, and
-how can this performance be maximised using higher-level language
-constructs of the sort Lisp&nbsp;encourages?
+The implementation uses the VarLife system as an abstraction layer
+over the &#8220;raw&#8221; Conway rules. The compiled programs can be run on
+the <a href="https://en.wikipedia.org/wiki/Golly_(program)">Golly</a> <span class="caps">CA</span>&nbsp;emulator.
 </p>
 </div>
 </div>
@@ -128,12 +116,12 @@ constructs of the sort Lisp&nbsp;encourages?
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/04/30/lush/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/04/30/lush/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="A%20Lisp%20interpreter%20implemented%20in%20Conway%27s%20Game%20of%20Life%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=A%20Lisp%20interpreter%20implemented%20in%20Conway%27s%20Game%20of%20Life%20%23applications%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/04/30/lush/&amp;title=Lush%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/04/30/lush/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Lush&amp;body=https://simondobson.org/2026/04/30/lush/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/&amp;title=A%20Lisp%20interpreter%20implemented%20in%20Conway%27s%20Game%20of%20Life%20%23applications%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=A%20Lisp%20interpreter%20implemented%20in%20Conway's%20Game%20of%20Life&amp;body=https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -142,7 +130,7 @@ constructs of the sort Lisp&nbsp;encourages?
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/language-reference/">language-reference</a>
+		<a href="../../../../categories/applications/">applications</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -152,13 +140,8 @@ constructs of the sort Lisp&nbsp;encourages?
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../../2025/11/26/lisp-from-nothing/" rel="prev">
-		<span class="meta-nav">Older Post</span>Lisp from nothing
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../../05/22/the-common-lisp-cookbook/" rel="next">
-		<span class="meta-nav">Newer Post</span>The Common Lisp cookbook
+	    <a href="../common-lisp-screenshots/" rel="prev">
+		<span class="meta-nav">Older Post</span>Common Lisp screenshots
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

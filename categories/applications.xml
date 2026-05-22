@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org06cbb50" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about applications)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/applications.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:47:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
+&lt;h2 id="org3d7d474"&gt;A Lisp interpreter implemented in Conway's Game of Life&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3d7d474"&gt;
+&lt;p&gt;
+&lt;a href="https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html"&gt;A Lisp Interpreter Implemented in Conway’s Game of Life&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+I include this as an application rather than an implementation
+technique because … well … it's far more interesting as an
+example of cellular automata (CAs) than as a Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+Having said that, there's something utterly compelling in watching
+a CA run something this complicated. It basically implements a
+Lisp machine core, and watching it execute is rather like watching
+a real chip in action (even though the mechanisms are completely
+different). You can &lt;i&gt;see&lt;/i&gt; memory being accessed. Its implementation
+includes lexical closures, enough to build a simple object system.
+&lt;/p&gt;
+
+&lt;p&gt;
+The implementation uses the VarLife system as an abstraction layer
+over the "raw" Conway rules. The compiled programs can be run on
+the &lt;a href="https://en.wikipedia.org/wiki/Golly_(program)"&gt;Golly&lt;/a&gt; CA emulator.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</guid><pubDate>Fri, 22 May 2026 11:47:12 GMT</pubDate></item><item><title>Common Lisp screenshots</title><link>https://simondobson.org/2026/05/22/common-lisp-screenshots/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org66d9b91" class="outline-2"&gt;
+&lt;h2 id="org66d9b91"&gt;Common Lisp screenshots&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org66d9b91"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisp-screenshots.org/"&gt;https://www.lisp-screenshots.org/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A collection of links to Common Lisp applications, including
+utilities, games, and full-blown science packages and web
+applications. Most have links to the applications' home pages.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/common-lisp-screenshots/</guid><pubDate>Fri, 22 May 2026 11:46:17 GMT</pubDate></item><item><title>Loving Common Lisp, or the savvy programmer's secret weapon</title><link>https://simondobson.org/2024/04/02/loving-common-lisp-or-the-savvy-programmers-secret-weapon/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org06cbb50" class="outline-2"&gt;
 &lt;h2 id="org06cbb50"&gt;Loving Common Lisp, or the savvy programmer's secret weapon&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org06cbb50"&gt;
 &lt;p class="floater"&gt;

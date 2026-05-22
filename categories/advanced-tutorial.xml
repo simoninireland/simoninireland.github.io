@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge75e26b" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:45:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Common Lisp cookbook</title><link>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf1d1f85" class="outline-2"&gt;
+&lt;h2 id="orgf1d1f85"&gt;The Common Lisp cookbook&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf1d1f85"&gt;
+&lt;p&gt;
+&lt;a href="https://lispcookbook.github.io/cl-cookbook/"&gt;https://lispcookbook.github.io/cl-cookbook/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Part tutorial and part recipe site for topics ranging from the
+common (syntax, the &lt;code&gt;loop&lt;/code&gt; macro), to the advanced (packages,
+multi-threaded web application programming, building stand-alone
+binaries). It's extremely thorough in terms of the patterns used
+in real Lisp code.
+&lt;/p&gt;
+
+&lt;p&gt;
+I think the most useful aspect is that the recipes go well beyond
+what's built-in to Lisp and tackle some of the common (and
+not-so-common) packages: the chapter on arrays goes into a couple
+of linear algebra packages, for example. It also has useful
+chapters on development tasks like profiling and continuous
+integration.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</guid><pubDate>Fri, 22 May 2026 11:45:13 GMT</pubDate></item><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge75e26b" class="outline-2"&gt;
 &lt;h2 id="orge75e26b"&gt;Purely functional data structures&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge75e26b"&gt;
 &lt;p&gt;

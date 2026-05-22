@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2026 14:03:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:47:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
+&lt;h2 id="org3d7d474"&gt;A Lisp interpreter implemented in Conway's Game of Life&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3d7d474"&gt;
+&lt;p&gt;
+&lt;a href="https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html"&gt;A Lisp Interpreter Implemented in Conway’s Game of Life&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+I include this as an application rather than an implementation
+technique because … well … it's far more interesting as an
+example of cellular automata (CAs) than as a Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+Having said that, there's something utterly compelling in watching
+a CA run something this complicated. It basically implements a
+Lisp machine core, and watching it execute is rather like watching
+a real chip in action (even though the mechanisms are completely
+different). You can &lt;i&gt;see&lt;/i&gt; memory being accessed. Its implementation
+includes lexical closures, enough to build a simple object system.
+&lt;/p&gt;
+
+&lt;p&gt;
+The implementation uses the VarLife system as an abstraction layer
+over the "raw" Conway rules. The compiled programs can be run on
+the &lt;a href="https://en.wikipedia.org/wiki/Golly_(program)"&gt;Golly&lt;/a&gt; CA emulator.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</guid><pubDate>Fri, 22 May 2026 11:47:12 GMT</pubDate></item><item><title>Common Lisp screenshots</title><link>https://simondobson.org/2026/05/22/common-lisp-screenshots/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org66d9b91" class="outline-2"&gt;
+&lt;h2 id="org66d9b91"&gt;Common Lisp screenshots&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org66d9b91"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisp-screenshots.org/"&gt;https://www.lisp-screenshots.org/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A collection of links to Common Lisp applications, including
+utilities, games, and full-blown science packages and web
+applications. Most have links to the applications' home pages.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/common-lisp-screenshots/</guid><pubDate>Fri, 22 May 2026 11:46:17 GMT</pubDate></item><item><title>The Common Lisp cookbook</title><link>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf1d1f85" class="outline-2"&gt;
+&lt;h2 id="orgf1d1f85"&gt;The Common Lisp cookbook&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf1d1f85"&gt;
+&lt;p&gt;
+&lt;a href="https://lispcookbook.github.io/cl-cookbook/"&gt;https://lispcookbook.github.io/cl-cookbook/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Part tutorial and part recipe site for topics ranging from the
+common (syntax, the &lt;code&gt;loop&lt;/code&gt; macro), to the advanced (packages,
+multi-threaded web application programming, building stand-alone
+binaries). It's extremely thorough in terms of the patterns used
+in real Lisp code.
+&lt;/p&gt;
+
+&lt;p&gt;
+I think the most useful aspect is that the recipes go well beyond
+what's built-in to Lisp and tackle some of the common (and
+not-so-common) packages: the chapter on arrays goes into a couple
+of linear algebra packages, for example. It also has useful
+chapters on development tasks like profiling and continuous
+integration.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</guid><pubDate>Fri, 22 May 2026 11:45:13 GMT</pubDate></item><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
 &lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org7c86248"&gt;
 &lt;p&gt;
@@ -318,80 +383,4 @@ alongside debugging rather than as a core and permanent part of
 program development and maintenance.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/lisp-style-and-design/</guid><pubDate>Fri, 31 Jan 2025 08:27:35 GMT</pubDate></item><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
-&lt;h2 id="org0e5ab39"&gt;Lisp as a second language&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org0e5ab39"&gt;
-&lt;p&gt;
-Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
-Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
-&lt;/p&gt;
-
-&lt;p&gt;
-In some ways this article should come under "applications", as
-it's mainly concerned with using Lisp to represent and manipulate
-music. Indeed, it presents a system that can be used to perform
-all sorts of common transformations of the tones and timing of a
-piece. It's easy to see how the resulting system could be used to
-compose and then to drive instruments, for example through a MIDI
-interface.
-&lt;/p&gt;
-
-&lt;p&gt;
-The music perspective is however secondary to the goal of teaching
-and showcasing Lisp through the medium of a realistic example of
-symbolic programming. It covers a lot of ground, starting with
-lists and functions and including first-class functions and
-combinators as means of implementing the musical structures. It's
-a great piece of pedagogy that treats the application and the
-language as closely linked, and not shying-away from some quite
-advanced techniques that have clear applications in the domain. It
-would be great to see this used as a basis for actual musical
-composition and performance.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Two Lisp compilers written in Lisp</title><link>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1478a92" class="outline-2"&gt;
-&lt;h2 id="org1478a92"&gt;Two Lisp compilers written in Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org1478a92"&gt;
-&lt;p&gt;
-&lt;a href="http://www.ulisp.com/show?4W2I"&gt;A Lisp compiler to ARM written in Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;a href="http://www.ulisp.com/show?4Y20="&gt;A Lisp compiler to RISC-V written in Lisp&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Two native-code compilers written in the &lt;a href="http://www.ulisp.com/show?3J"&gt;uLisp&lt;/a&gt; dialect that targets
-microcontroller-class machines. Both use a combination of stack
-and register allocation to get efficiency – and they're &lt;i&gt;very&lt;/i&gt;
-efficient, with the compiled versions sometimes being 100x faster
-than the interpreted code.
-&lt;/p&gt;
-
-&lt;p&gt;
-These are not complete ports, and indeed not on a complete or
-standard underlying Lisp implementation. But it's still fascinating
-to see how &lt;i&gt;simple&lt;/i&gt; it is, built as a recursive-descent tree-walker
-that emits assembler directly. With careful initial design even a
-compiler with no optimisation pathways can still get great speed-up
-over an interpreter.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/10/18/two-lisp-compilers-written-in-lisp/</guid><pubDate>Fri, 18 Oct 2024 09:24:36 GMT</pubDate></item><item><title>Purely functional data structures</title><link>https://simondobson.org/2024/09/27/purely-functional-data-structures/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge75e26b" class="outline-2"&gt;
-&lt;h2 id="orge75e26b"&gt;Purely functional data structures&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orge75e26b"&gt;
-&lt;p&gt;
-Chris Okasaki. &lt;i&gt;Purely Functional Data Structures&lt;/i&gt;. Cambridge
-University Press. ISBN 978-051153-010-4. 1998.
-&lt;/p&gt;
-
-&lt;p&gt;
-Not a Lisp book &lt;i&gt;per se&lt;/i&gt;, but a treatment of data structures from a
-functional programming perspective. The code examples are in
-Standard ML, but the ideas apply strongly to Lisp and Scheme.
-Definitely a useful source for an alternative take on data
-structuring that doesn't start from assumptions of imperative
-programming and mutability.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/09/27/purely-functional-data-structures/</guid><pubDate>Fri, 27 Sep 2024 15:12:14 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/lisp-style-and-design/</guid><pubDate>Fri, 31 Jan 2025 08:27:35 GMT</pubDate></item></channel></rss>
