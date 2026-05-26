@@ -209,8 +209,8 @@ straightforward track we might imagine!
    :reverse:
 
 
-Other resources
----------------
+Thanks and other resources
+--------------------------
 
 Only when I started pulling this series together did I really
 understand the extent of the Lisp literature and the wide range of
@@ -232,9 +232,9 @@ historical (and other) resources that already exist. These include:
   cover a huge breadth of Lisp implementations, their source code and
   documentation. (Thanks to `Paul <https://mcjones.org/paul/>`_
   himself for pointing me to this.)
-- Mastodon user `@vindarel <https://framapiaf.org/@vindarel>`_ for
-  sending me several links to their work, including the `Common Lisp
-  Cookbook </2026/05/22/the-common-lisp-cookbook/>`_.
 - The `Symbolics Lisp Machine Museum <https://smbx.org/>`_, a
   work-in-progress memorial for the hardware, software, and culture of
   Symbolics.
+- Mastodon user `@vindarel <https://framapiaf.org/@vindarel>`_ kindly
+  sent me several links to their work, including the `Common Lisp
+  Cookbook </2026/05/22/the-common-lisp-cookbook/>`_.
