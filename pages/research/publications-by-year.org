@@ -7,17 +7,25 @@
 ** Submitted and under review
 
 #+begin: sd/bibliography :key category :value submitted
-<<citeproc_bib_item_1>>Jiawei Luo, Di Wu, Simon Dobson, and Blesson Varghese.  /SparseLoom: Multi-DNN Inference of Sparse Models on Edge SoCs/. Submitted to MobiSys 2026.
+<<citeproc_bib_item_1>>Jiawei Luo, Di Wu, Simon Dobson, and Blesson Varghese.  /SparseLoom: Multi-DNN Inference of Sparse Models on Edge SoCs/. Submitted to IEEE Transactions on Mobile Computing.
+
+<<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Spacetime Message Passing for Endemic Diseases/. Submitted to Physical Review E.
+
+<<citeproc_bib_item_3>>Alison Johnston, Vincent Lostanlen, Tiago A. Marques, Oliver Metcalf, Danielle Harris, Sophie Palmer, Brontë Stones, Simon Dobson, Steve Buckland, Holger Klinck, and Martin Cox.  /Distance Sampling with Acoustic Classification Confidence Scores/. Submitted to the Journal of Agricultural, Biological and Environmental Statistics.
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
+** 2026
+
+<<citeproc_bib_item_1>>Simon Dobson.  /Engineering a TinyML System for Use off-Grid/. 2026. To appear at the 10th UK Systems Research Challenges workshop.
+
 ** 2025
 
 <<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/sparse-matrices.pdf][Understanding How to Implement Sparse Matrix Operations Efficiently]]/. In /9th UK Systems Research Challenges Workshop/. Co Durham, UK. 2025.
 
 <<citeproc_bib_item_2>>Berné Nortier, Simon Dobson, and Federico Battiston.  /[[https://doi.org/10.1103/1mxy-3cnl][Higher-Order Shortest Paths in Hypergraphs]]/. Physical Review E *112*. 2025.
 
-<<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://doi.org/10.1088/2632-072X/ae16f7][Mixing Patterns in Graphs with Higher-Order Structure: The Role of Inter-Subgraph Correlations]]/. Journal of Physics: Complexity. 2025.
+<<citeproc_bib_item_3>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://doi.org/10.1088/2632-072X/ae16f7][Mixing Patterns in Graphs with Higher-Order Structure: The Role of Inter-Subgraph Correlations]]/. Journal of Physics: Complexity *6*. 2025.
 
 <<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.111.06430][Alternative Expression of Message Passing on Networks]]/. Physical Review E *111*. 2025.
 
