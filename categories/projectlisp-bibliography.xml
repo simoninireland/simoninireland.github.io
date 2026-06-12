@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:47:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Jun 2026 09:00:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modern Common Lisp with FSet</title><link>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3fbef36" class="outline-2"&gt;
+&lt;h2 id="org3fbef36"&gt;Modern Common Lisp with FSet&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3fbef36"&gt;
+&lt;p&gt;
+&lt;a href="https://fset.common-lisp.dev/Modern-CL/Top_html/index.html"&gt;https://fset.common-lisp.dev/Modern-CL/Top_html/index.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A book-length description of a library, &lt;a href="https://github.com/slburson/fset"&gt;FSet&lt;/a&gt;, that provides
+functional collections for Lisp. By "functional collections" the
+author means collections – sets, trees, maps, and others – where
+update always produces a new collection rather than mutating the
+original collection in place. This is an attractive property for a
+language, and one that's hard to do efficiently. As with &lt;a href="/2024/09/27/purely-functional-data-structures/"&gt;Purely
+functional data structures&lt;/a&gt;, it provides a change of emphasis that
+makes for more referentially transparent code.
+&lt;/p&gt;
+
+&lt;p&gt;
+The book contains a lot of discussion about the library's
+rationale and design, which makes it useful as a reference for
+others designing large libraries (or new languages, which of course
+in Lisp can mean much the same thing). There's an equally
+important discussion about what's &lt;i&gt;not&lt;/i&gt; provided (for example lazy
+collections) which is really interesting by giving an example of
+when to stop with a codebase that could otherwise probably grow
+indefinitely.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</guid><pubDate>Fri, 12 Jun 2026 08:56:40 GMT</pubDate></item><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
 &lt;h2 id="org3d7d474"&gt;A Lisp interpreter implemented in Conway's Game of Life&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3d7d474"&gt;
 &lt;p&gt;
@@ -340,47 +369,4 @@ concrete examples are in Lisp. Norvig, of course, is the author of
 enormous contributions to the theory and practice of Lisp.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</guid><pubDate>Fri, 31 Jan 2025 09:21:02 GMT</pubDate></item><item><title>Lisp: Style and design</title><link>https://simondobson.org/2025/01/31/lisp-style-and-design/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org07a794e" class="outline-2"&gt;
-&lt;h2 id="org07a794e"&gt;Lisp: Style and design&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org07a794e"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/da/4751c9-60cc-4acc-bfd3-ad7d50aa536a/lisp-style-design.jpg" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Molly Miller and Eric Benson. &lt;i&gt;Lisp: Style and Design&lt;/i&gt;. Digital Press.
-ISBN 978-0135384220. 1990.
-&lt;/p&gt;
-
-&lt;p&gt;
-A book that would serve as a primer for someone tackling a
-significant piece of programming for the first time.
-&lt;/p&gt;
-
-&lt;p&gt;
-The style is a bit stiff and occasionally slightly patronising,
-definitely positioned as being from senior to junior programmers.
-The depth of the material is variable: I found the treatment of
-macros quite superficial, not helped by the examples generating
-questionable code. It also places relatively little emphasis on
-CLOS and generic functions, which would get more space in a more
-modern treatment..
-&lt;/p&gt;
-
-&lt;p&gt;
-The best chapters are those on debugging and (especially)
-performance engineering, which dig into the interactive tools
-generally available within Lisp and give a good end-to-end
-description of the use of &lt;code&gt;declare&lt;/code&gt; forms to aid compiler
-optimisations.
-&lt;/p&gt;
-
-&lt;p&gt;
-But again the book's age shows. It predates the obsessive
-relationship that many modern programmers have with unit testing
-and test automation, treating testing as an interactive activity
-alongside debugging rather than as a core and permanent part of
-program development and maintenance.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/lisp-style-and-design/</guid><pubDate>Fri, 31 Jan 2025 08:27:35 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>style-guide</category><guid>https://simondobson.org/2025/01/31/tutorial-on-good-lisp-programming-style/</guid><pubDate>Fri, 31 Jan 2025 09:21:02 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:45:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Common Lisp cookbook</title><link>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf1d1f85" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about advanced-tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/advanced-tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Jun 2026 09:00:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modern Common Lisp with FSet</title><link>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3fbef36" class="outline-2"&gt;
+&lt;h2 id="org3fbef36"&gt;Modern Common Lisp with FSet&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3fbef36"&gt;
+&lt;p&gt;
+&lt;a href="https://fset.common-lisp.dev/Modern-CL/Top_html/index.html"&gt;https://fset.common-lisp.dev/Modern-CL/Top_html/index.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A book-length description of a library, &lt;a href="https://github.com/slburson/fset"&gt;FSet&lt;/a&gt;, that provides
+functional collections for Lisp. By "functional collections" the
+author means collections – sets, trees, maps, and others – where
+update always produces a new collection rather than mutating the
+original collection in place. This is an attractive property for a
+language, and one that's hard to do efficiently. As with &lt;a href="/2024/09/27/purely-functional-data-structures/"&gt;Purely
+functional data structures&lt;/a&gt;, it provides a change of emphasis that
+makes for more referentially transparent code.
+&lt;/p&gt;
+
+&lt;p&gt;
+The book contains a lot of discussion about the library's
+rationale and design, which makes it useful as a reference for
+others designing large libraries (or new languages, which of course
+in Lisp can mean much the same thing). There's an equally
+important discussion about what's &lt;i&gt;not&lt;/i&gt; provided (for example lazy
+collections) which is really interesting by giving an example of
+when to stop with a codebase that could otherwise probably grow
+indefinitely.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</guid><pubDate>Fri, 12 Jun 2026 08:56:40 GMT</pubDate></item><item><title>The Common Lisp cookbook</title><link>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf1d1f85" class="outline-2"&gt;
 &lt;h2 id="orgf1d1f85"&gt;The Common Lisp cookbook&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgf1d1f85"&gt;
 &lt;p&gt;

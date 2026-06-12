@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 22 May 2026 11:47:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 12 Jun 2026 09:02:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modern Common Lisp with FSet</title><link>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3fbef36" class="outline-2"&gt;
+&lt;h2 id="org3fbef36"&gt;Modern Common Lisp with FSet&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3fbef36"&gt;
+&lt;p&gt;
+&lt;a href="https://fset.common-lisp.dev/Modern-CL/Top_html/index.html"&gt;https://fset.common-lisp.dev/Modern-CL/Top_html/index.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A book-length description of a library, &lt;a href="https://github.com/slburson/fset"&gt;FSet&lt;/a&gt;, that provides
+functional collections for Lisp. By "functional collections" the
+author means collections – sets, trees, maps, and others – where
+update always produces a new collection rather than mutating the
+original collection in place. This is an attractive property for a
+language, and one that's hard to do efficiently. As with &lt;a href="/2024/09/27/purely-functional-data-structures/"&gt;Purely
+functional data structures&lt;/a&gt;, it provides a change of emphasis that
+makes for more referentially transparent code.
+&lt;/p&gt;
+
+&lt;p&gt;
+The book contains a lot of discussion about the library's
+rationale and design, which makes it useful as a reference for
+others designing large libraries (or new languages, which of course
+in Lisp can mean much the same thing). There's an equally
+important discussion about what's &lt;i&gt;not&lt;/i&gt; provided (for example lazy
+collections) which is really interesting by giving an example of
+when to stop with a codebase that could otherwise probably grow
+indefinitely.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</guid><pubDate>Fri, 12 Jun 2026 08:56:40 GMT</pubDate></item><item><title>Made in America</title><link>https://simondobson.org/goodreads/made-in-america/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1768450017l/246596797._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Edward Stourton
+	  (2026)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A view of Donald Trump's presidency through the lens of American history.&lt;br&gt;&lt;br&gt;Stourton's premise arises from surprise: when people frequently describe Trump as an anomaly and a unique threat to democracy, is that actually true? – or were there precedents? He sets out to show that many of Trump's ideas are deeply embedded in American history, arising repeatedly in similar guises.&lt;br&gt;&lt;br&gt;Many of the connections have been made before, notably with President Andrew Jackson's view that politics comes before, and must sometimes supercede, the law. But Stourton has a journalist's ear for subtle echoes, and surprisingly (to me) includes Franklin Delano Roosevelt in the same sequence of presidents willing to ignore or circumvent the established readings of the law and constitution as he pushed the New Deal forward.&lt;br&gt;&lt;br&gt;I found strongest arguments to be those about religion. To the question of how religious voters support a clearly irreligious president so fervently, Stourton reaches back almost to the foundation of America, to the early Puritan colony of Massachusetts, where the theme of religious liberty didn't mean what we might expect today. The Puritans left England to seek liberty for themselves, but once established in their own realm proceeded to reproduce the intolerance they themselves had fled. The later Madisonian view that religion belongs to the private sphere, untouched by and untouching of the state, therefore sits alongside a completely contrary view that the state should have a controlling religious faction and orthodoxy – and the latter view seems to have recently become dominant, much to the surprise of outside observers but perhaps not as historically anomalous as it at first appears.&lt;br&gt;&lt;br&gt;In the epilogue Stourton returns to the often surprising differences between American and European (and especially British) views. It raises the question: was the post-war consensus on human rights and peaceful co-existence actually sincere, based in an idea of progress? – or was it adopted purely as a response to the shocks of the war? Has it simply taken eighty years for the old power politics to re-emerge, and were we foolish to think it might be otherwise? I hope not.
+      &lt;/p&gt;&lt;p&gt;
+	4/5.
+	  Finished Sunday 7 June, 2026.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/8225761519?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/made-in-america/</guid><pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate></item><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
 &lt;h2 id="org3d7d474"&gt;A Lisp interpreter implemented in Conway's Game of Life&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org3d7d474"&gt;
 &lt;p&gt;
@@ -104,7 +148,22 @@ how can this performance be maximised using higher-level language
 constructs of the sort Lisp encourages?
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item><item><title>The Signal and the Noise: The Art and Science of Prediction</title><link>https://simondobson.org/goodreads/the-signal-and-the-noise-the-art-and-science-of-prediction/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645793058l/17874847._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Nate Silver
+	  (2012)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      An essential book for anyone concerned with "big data" or any aspect of science of forecasting. Silver casts an experienced (and somewhat jaundiced) eye over a range of commonly-encountered forecasts, including politics (his own main area), poker, finance, and climate change. In each area he manages both to convince that forecasts can be made to good effect -- and to demolish many of the current practices one finds in these areas. On the way he discusses Bayesian statistics, the psychology of a good forecaster (be a "fox," not a "hedgehog"), how to spot bias, and gives some critical advice that would be of useful to anyone looking to apply such techniques. Should be required reading for all science PhD students.
+      &lt;/p&gt;&lt;p&gt;
+	5/5.
+	  Finished Tuesday 17 February, 2026.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/651003528?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-signal-and-the-noise-the-art-and-science-of-prediction/</guid><pubDate>Tue, 17 Feb 2026 11:01:38 GMT</pubDate></item><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
 &lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
 &lt;p class="floater"&gt;
@@ -143,22 +202,7 @@ richer runtime. But there's a lot to learn from the simplicity of
 the choices made here.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>The Book-Makers: A History of the Book in Eighteen Lives</title><link>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1705463614l/195430889._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Adam Smyth
-	  (2024)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A fascinating history of bookbinding and printing. You may have to be fanatical about your books and book technology to fully enjoy it – but I certainly did.&lt;br&gt;&lt;br&gt;There are plenty of vignettes and personalities on offer, alongside a deep understanding of the history that accepts the boundaries of what's knowable. The value we place on certain books shifts with time, with Shakespeare's First Folio simply being one amongst many when it is first printed. And the notion of canonical texts can be fluid, with several often entirely different editions of &lt;i&gt;Hamlet&lt;/i&gt; to choose from, as well as an active sub-culture of after-market book repurposing ending in modern zines and found-media works.&lt;br&gt;&lt;br&gt;The most fascinating aspect for me was the way that some books have been lost and are known only through commentaries on them that (perversely) survived – and some are known through having been cut-up and re-used as parts of the bindings of other books, for example to make covers essentially from &lt;i&gt;papier mâché&lt;/i&gt;, from which they have been recovered during re-binding.&lt;br&gt;&lt;br&gt;The style can be a bit annoying in places, a mispaced need for levity that comes across as far too heavy-handed and trite. But overall this is a great read, equally full of information and entertainment.
-      &lt;/p&gt;&lt;p&gt;
-	5/5.
-	  Finished Saturday 22 November, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6768865458?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item><item><title>The Knowledge: How to Rebuild Our World from Scratch</title><link>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>The Knowledge: How to Rebuild Our World from Scratch</title><link>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
     &lt;div&gt;
       &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393226489l/18114087._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
       &lt;h2&gt;
@@ -173,164 +217,19 @@ the choices made here.
 	  Finished Saturday 22 November, 2025.
 	&lt;/p&gt;&lt;p&gt;
 	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7939944087?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
-&lt;h2 id="orgbb236cc"&gt;Early LISP history (1956–1959)&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgbb236cc"&gt;
-&lt;p&gt;
-Herbert Stoyan.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/800055.802047"&gt;Early Lisp History (1956–1959)&lt;/a&gt;&lt;/i&gt;. In &lt;i&gt;LFP ’84:
-Proceedings of the 1984 ACM Symposium on Lisp and Functional
-Programming&lt;/i&gt;, pp.299–310. 1984.
-&lt;/p&gt;
-
-&lt;p&gt;
-A study of Lisp's evolution from first proposal to practical
-implementation.
-&lt;/p&gt;
-
-&lt;p&gt;
-It begins with McCarthy's proposal (co-authored with Marvin
-Minsky, Nathaniel Rochester, and Claude Shannon, and dated 31
-August 1955) for a summer research project at Dartmouth College to
-"study the relationship of language to intelligence".
-&lt;/p&gt;
-
-&lt;p&gt;
-In a later (handwritten!) note McCarthy homed-in on the core
-challenges in this programme: the lack of a clear way to describe
-&lt;i&gt;procedures&lt;/i&gt; to each other (what &lt;a href="https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;Abelson and Sussman&lt;/a&gt; later refer to
-as &lt;i&gt;procedural epistemology&lt;/i&gt;), and the tight binding of programming
-systems at that time to specific machines, and hence their need to
-bow to engineering (rather than semantic) considerations. The
-language that became Lisp sought primarily to overcome these two
-challenges.
-&lt;/p&gt;
-
-&lt;p&gt;
-The journey proceeded by taking the list data structures developed
-by Allen Newell and Herb Simon as part of &lt;a href="https://en.wikipedia.org/wiki/Logic_Theorist"&gt;Logic Theorist&lt;/a&gt; and
-embedding them into FORTRAN (for which there was already a working
-compiler) – which also incidentally muddied the conceptual waters
-by trying to express list and list-functional concepts in a
-language built around numbers that barely allowed functions to be
-defined by the user at all. Indeed, McCarthy and others had
-long-running problems accepting that the list-processing functions
-&lt;i&gt;were&lt;/i&gt; functions, given that their result does not depend solely on
-their arguments when viewed at the lowest level. This shows how
-pernicious a low-level implementation can be. The final resulting
-language, the FORTRAN List Processing Language (FLPL), shared many
-programming approaches function names with what became Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-McCarthy went on to champion the functional approach, including
-the invention of conditional expressions (alongside or replacing
-conditional statements) and the power of the different kinds of
-function composition and higher-order functions. It's important to
-remember that McCarthy's driving interest remained in AI, not
-programming languages &lt;i&gt;per se&lt;/i&gt;:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-Already in 1956 it was clear that one had to work with symbolic
-expressions to reach the goal of artificial intelligence.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Which is a fascinating piece of history in itself, as a large
-branch of modern AI concerning machine learning and large language
-models has explicit rejects this view in favour of sub-symbolic
-AI. Which approach is "correct" in whatever sense remains to be
-seen.
-&lt;/p&gt;
-
-&lt;p&gt;
-But it remains McCarthy's contributions to programming languages
-that stand out. As well as conditional expressions he can be
-credited with garbage collection, meta-circular interpretation,
-and clarifying the relationship between programming and proof:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-We should mention here that McCarthy at the same time conceived the
-idea of logic-oriented programming, that is, the idea of using logical
-formulae to express goals that a program should try to establish and
-of using the prover as programming language interpreter.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-(Although it's important to recognise that Newell and Simon's
-work, on logic as an application rather than as a general
-programming language, pre-dates McCarthy's.)
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</guid><pubDate>Fri, 07 Nov 2025 09:44:35 GMT</pubDate></item><item><title>The history of Lisp</title><link>https://simondobson.org/2025/11/07/the-history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org67a97ae" class="outline-2"&gt;
-&lt;h2 id="org67a97ae"&gt;The history of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org67a97ae"&gt;
-&lt;p&gt;
-Herbert Stoyan.  &lt;i&gt;&lt;a href="https://www.softwarepreservation.org/projects/LISP/book/Stoyan-Geschichte.pdf"&gt;The History of Lisp&lt;/a&gt;&lt;/i&gt;. 1980. Updated in the 1990s,
-translated into English 2023.
-&lt;/p&gt;
-
-&lt;p&gt;
-Includes a history of the route from PLANNER to CONNIVER, in which
-the former was criticised for being a theorem prover when a
-programming language was needed – an argument between two schools
-that's still going on today, as seen in the emergence of &lt;a href="https://lean-lang.org/"&gt;Lean&lt;/a&gt;.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/the-history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:49:57 GMT</pubDate></item><item><title>History of Lisp</title><link>https://simondobson.org/2025/11/07/history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd92a09b" class="outline-2"&gt;
-&lt;h2 id="orgd92a09b"&gt;History of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd92a09b"&gt;
-&lt;p&gt;
-John McCarthy.  &lt;i&gt;&lt;a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html"&gt;History of Lisp&lt;/a&gt;&lt;/i&gt;. Artificial Intelligence
-Laboratory, Stanford University. 1979.
-&lt;/p&gt;
-
-&lt;p&gt;
-McCarthy's own take on the early history. It's quite brief, but is
-very careful to give broad credit to the others who were involved
-in the practical creation of the language.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's also got some great vignettes on &lt;i&gt;why&lt;/i&gt; certain features came
-about - for example garbage collection coming from the need to
-clean up intermediate structures when experimenting with symbolic
-differentiation. McCarthy acknowledges taking the notation for
-functions from Church, before admitting that he didn't understand
-the rest of &lt;i&gt;Calculi of lambda conversion&lt;/i&gt; and so wasn't tempted to
-add the more general aspects!
-&lt;/p&gt;
-
-&lt;p&gt;
-Perhaps the most fascinating part of the story is that it was
-originally so divorced from actual computers. The team had defined
-an &lt;code&gt;eval&lt;/code&gt; function for interpreting Lisp programs – in the process
-making the decision to represent the programs as lists – before
-realising that this could be made interactive to provide a running
-interpreter.
-&lt;/p&gt;
-
-&lt;p&gt;
-What did McCarthy think of his creation? He was conscious that it
-would have a lifetime:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-LISP will become obsolete when someone makes a more comprehensive
-language that dominates LISP practically and also gives a clear
-mathematical semantics to a more comprehensive set of features.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Haskell has a plausible claim to have accomplished the latter but
-this doesn't seem to have led domination in practice.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item></channel></rss>
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item><item><title>The Book-Makers: A History of the Book in Eighteen Lives</title><link>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1705463614l/195430889._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Adam Smyth
+	  (2024)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A fascinating history of bookbinding and printing. You may have to be fanatical about your books and book technology to fully enjoy it – but I certainly did.&lt;br&gt;&lt;br&gt;There are plenty of vignettes and personalities on offer, alongside a deep understanding of the history that accepts the boundaries of what's knowable. The value we place on certain books shifts with time, with Shakespeare's First Folio simply being one amongst many when it is first printed. And the notion of canonical texts can be fluid, with several often entirely different editions of &lt;i&gt;Hamlet&lt;/i&gt; to choose from, as well as an active sub-culture of after-market book repurposing ending in modern zines and found-media works.&lt;br&gt;&lt;br&gt;The most fascinating aspect for me was the way that some books have been lost and are known only through commentaries on them that (perversely) survived – and some are known through having been cut-up and re-used as parts of the bindings of other books, for example to make covers essentially from &lt;i&gt;papier mâché&lt;/i&gt;, from which they have been recovered during re-binding.&lt;br&gt;&lt;br&gt;The style can be a bit annoying in places, a mispaced need for levity that comes across as far too heavy-handed and trite. But overall this is a great read, equally full of information and entertainment.
+      &lt;/p&gt;&lt;p&gt;
+	5/5.
+	  Finished Thursday 13 November, 2025.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/6768865458?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-book-makers-a-history-of-the-book-in-eighteen-lives/</guid><pubDate>Thu, 13 Nov 2025 00:00:00 GMT</pubDate></item></channel></rss>
