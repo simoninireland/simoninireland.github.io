@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Common Lisp with FSet | Simon Dobson</title>
+<title>Programming algorithms in Lisp | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,41 +64,47 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Friday 12 June, 2026</a>
+		Posted on <a href="." rel="bookmark">Saturday 13 June, 2026</a>
 	    </span>
 	</div>
-	<h1>Modern Common Lisp with&nbsp;FSet</h1>
+	<h1>Programming algorithms in&nbsp;Lisp</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org3fbef36" class="outline-2">
-<h2 id="org3fbef36">Modern Common Lisp with&nbsp;FSet</h2>
-<div class="outline-text-2" id="text-org3fbef36">
+		<div id="outline-container-orgbcdd817" class="outline-2">
+<h2 id="orgbcdd817">Programming algorithms in&nbsp;Lisp</h2>
+<div class="outline-text-2" id="text-orgbcdd817">
+<p class="floater">
+<img src="../../../../attachments/ef/0a5cf2-5145-45d5-bee1-da969fcbc18b/pail.jpg" alt="nil"></p>
+
 <p>
-<a href="https://fset.common-lisp.dev/Modern-CL/Top_html/index.html">https://fset.common-lisp.dev/Modern-<span class="caps">CL</span>/Top_html/index.html</a>
+Vsevolod Domkin.  <i><a href="https://doi.org/10.1007/978-1-4842-6428-7">Programming Algorithms in Lisp</a></i>. Apress.&nbsp;2021.
 </p>
 
 <p>
-A book-length description of a library, <a href="https://github.com/slburson/fset">FSet</a>, that provides
-functional collections for Lisp. By &#8220;functional collections&#8221; the
-author means collections – sets, trees, maps, and others – where
-update always produces a new collection rather than mutating the
-original collection in place. This is an attractive property for a
-language, and one that&#8217;s hard to do efficiently. As with <a href="/2024/09/27/purely-functional-data-structures/">Purely
-functional data structures</a>, it provides a change of emphasis that
-makes for more referentially transparent&nbsp;code.
+This is exactly what it sounds like: an algorithms textbook that
+uses Lisp as its implementation language. It has the strengths and
+weaknesses of all such textbooks: it shows programmers, especially
+new programmers, how to write algorithms that are both correct and
+efficient, and the places where incorrectness and inefficiency
+will hide; and in doing this it tempts them to write algorithms
+that are already implemented in libraries, when they should really
+seek out and re-use the already-developed and -debugged&nbsp;code.
 </p>
 
 <p>
-The book contains a lot of discussion about the library&#8217;s
-rationale and design, which makes it useful as a reference for
-others designing large libraries (or new languages, which of course
-in Lisp can mean much the same thing). There&#8217;s an equally
-important discussion about what&#8217;s <i>not</i> provided (for example lazy
-collections) which is really interesting by giving an example of
-when to stop with a codebase that could otherwise probably grow&nbsp;indefinitely.
+But of course there are always new algorithms that <i>don&#8217;t</i> have an
+existing library and therefore <i>need</i> to be written from scratch. This
+book is excellent preparation for that. It would give a new-ish
+programmer the confidence to tackle a challenging algorithm design
+and implementation job. It ranges well away from the common
+algorithms, to cover things like approximation and (especially
+importantly) parallelism and lock-free data structures, and I can
+imagine it providing templates that could be used as starting points
+for a huge range of new algorithms. Just remember not to re-invent
+the&nbsp;wheel.
 </p>
 </div>
 </div>
@@ -116,12 +122,12 @@ when to stop with a codebase that could otherwise probably grow&nbsp;indefinitel
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Modern%20Common%20Lisp%20with%20FSet%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Modern%20Common%20Lisp%20with%20FSet%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/&amp;title=Modern%20Common%20Lisp%20with%20FSet%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Modern%20Common%20Lisp%20with%20FSet&amp;body=https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/&amp;title=Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Programming%20algorithms%20in%20Lisp&amp;body=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -140,13 +146,8 @@ when to stop with a codebase that could otherwise probably grow&nbsp;indefinitel
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../../goodreads/made-in-america/" rel="prev">
-		<span class="meta-nav">Older Post</span>Made in America
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../13/programming-algorithms-in-lisp/" rel="next">
-		<span class="meta-nav">Newer Post</span>Programming algorithms in Lisp
+	    <a href="../../12/modern-common-lisp-with-fset/" rel="prev">
+		<span class="meta-nav">Older Post</span>Modern Common Lisp with FSet
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
