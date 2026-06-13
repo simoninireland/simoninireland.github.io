@@ -1,0 +1,43 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Programming algorithms in Lisp
+.. slug: programming-algorithms-in-lisp
+.. date: 2026-06-13 12:15:03 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, advanced-tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Programming algorithms in Lisp                                     :ATTACH:
+  :PROPERTIES:
+  :ID:       ef0a5cf2-5145-45d5-bee1-da969fcbc18b
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2026-06-13 12:16:54
+  #+attr_org: :width 100
+  #+attr_html: :class floater
+  [[attachment:pail.jpg]]
+
+  Vsevolod Domkin.  /[[https://doi.org/10.1007/978-1-4842-6428-7][Programming Algorithms in Lisp]]/. Apress. 2021.
+
+  This is exactly what it sounds like: an algorithms textbook that
+  uses Lisp as its implementation language. It has the strengths and
+  weaknesses of all such textbooks: it shows programmers, especially
+  new programmers, how to write algorithms that are both correct and
+  efficient, and the places where incorrectness and inefficiency
+  will hide; and in doing this it tempts them to write algorithms
+  that are already implemented in libraries, when they should really
+  seek out and re-use the already-developed and -debugged code.
+
+  But of course there are always new algorithms that /don't/ have an
+  existing library and therefore /need/ to be written from scratch. This
+  book is excellent preparation for that. It would give a new-ish
+  programmer the confidence to tackle a challenging algorithm design
+  and implementation job. It ranges well away from the common
+  algorithms, to cover things like approximation and (especially
+  importantly) parallelism and lock-free data structures, and I can
+  imagine it providing templates that could be used as starting points
+  for a huge range of new algorithms. Just remember not to re-invent
+  the wheel.
