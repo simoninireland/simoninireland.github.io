@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programming algorithms in Lisp | Simon Dobson</title>
+<title>The Lisp curse | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,47 +64,57 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Saturday 13 June, 2026</a>
+		Posted on <a href="." rel="bookmark">Thursday 18 June, 2026</a>
 	    </span>
 	</div>
-	<h1>Programming algorithms in&nbsp;Lisp</h1>
+	<h1>The Lisp&nbsp;curse</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgbcdd817" class="outline-2">
-<h2 id="orgbcdd817">Programming algorithms in&nbsp;Lisp</h2>
-<div class="outline-text-2" id="text-orgbcdd817">
-<p class="floater">
-<img src="../../../../attachments/ef/0a5cf2-5145-45d5-bee1-da969fcbc18b/pail.jpg" alt="nil"></p>
+		<div id="outline-container-orgef71109" class="outline-2">
+<h2 id="orgef71109">The Lisp&nbsp;curse</h2>
+<div class="outline-text-2" id="text-orgef71109">
+<p>
+<a href="https://www.winestockwebdesign.com/Essays/Lisp_Curse.html">https://www.winestockwebdesign.com/Essays/Lisp_Curse.html</a>
+</p>
+
+<blockquote>
+<p>
+The power of Lisp is its own worst&nbsp;enemy.
+</p>
+</blockquote>
 
 <p>
-Vsevolod Domkin.  <i><a href="https://doi.org/10.1007/978-1-4842-6428-7">Programming Algorithms in Lisp</a></i>. Apress.&nbsp;2021.
+An interesting essay on the &#8220;Lisp curse&#8221;, the idea that Lisp&#8217;s
+power can sometimes be a <i>disadvantage</i> for developers. The core
+idea expressed as a question: how hard is it to add
+object-oriented features to a language? In the C world it&#8217;s
+happened twice, giving rise to C++ and Objective-C, an no-one
+would even <i>think</i> about defining their own. In the Lisp world, by
+contrast, building that style of object-oriented extension is a
+weekend&#8217;s work (assuming we didn&#8217;t already have <span class="caps">CLOS</span>, which is in
+many ways superior anyway). The point is that it&#8217;s relatively easy
+to build even complex features as libraries, meaning there&#8217;s less
+reason to standardise, and this leads to a proliferation of
+mutually incompatible designs that solve 80% of the problem – but
+all a <i>different</i> 80%. This then makes interoperability&nbsp;difficult.
 </p>
 
 <p>
-This is exactly what it sounds like: an algorithms textbook that
-uses Lisp as its implementation language. It has the strengths and
-weaknesses of all such textbooks: it shows programmers, especially
-new programmers, how to write algorithms that are both correct and
-efficient, and the places where incorrectness and inefficiency
-will hide; and in doing this it tempts them to write algorithms
-that are already implemented in libraries, when they should really
-seek out and re-use the already-developed and -debugged&nbsp;code.
+In fact the essay goes farther, to argue that the sorts of people
+who write Lisp tend not to be the sorts of people of work well in
+the political and compromise-driven world of standardisation. I&#8217;m
+not sure how true that is, given the stability of the Common Lisp
+standard itself since its adoption in 1994, but it&#8217;s an
+interesting reflection on how increased language expressiveness
+need not automatically be a&nbsp;strength.
 </p>
 
 <p>
-But of course there are always new algorithms that <i>don&#8217;t</i> have an
-existing library and therefore <i>need</i> to be written from scratch. This
-book is excellent preparation for that. It would give a new-ish
-programmer the confidence to tackle a challenging algorithm design
-and implementation job. It ranges well away from the common
-algorithms, to cover things like approximation and (especially
-importantly) parallelism and lock-free data structures, and I can
-imagine it providing templates that could be used as starting points
-for a huge range of new algorithms. Just remember not to re-invent
-the&nbsp;wheel.
+(Some of the links in the article are now broken, or point to what
+looks like an <span class="caps">AI</span> link&nbsp;farm.)
 </p>
 </div>
 </div>
@@ -122,12 +132,12 @@ the&nbsp;wheel.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/18/the-lisp-curse/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/18/the-lisp-curse/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/&amp;title=Programming%20algorithms%20in%20Lisp%20%23advanced-tutorial%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=Programming%20algorithms%20in%20Lisp&amp;body=https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/06/18/the-lisp-curse/&amp;title=The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/06/18/the-lisp-curse/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20Lisp%20curse&amp;body=https://simondobson.org/2026/06/18/the-lisp-curse/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -136,7 +146,7 @@ the&nbsp;wheel.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/advanced-tutorial/">advanced-tutorial</a>
+		<a href="../../../../categories/experience/">experience</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -146,13 +156,8 @@ the&nbsp;wheel.
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../12/modern-common-lisp-with-fset/" rel="prev">
-		<span class="meta-nav">Older Post</span>Modern Common Lisp with FSet
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../18/the-lisp-curse/" rel="next">
-		<span class="meta-nav">Newer Post</span>The Lisp curse
+	    <a href="../../13/programming-algorithms-in-lisp/" rel="prev">
+		<span class="meta-nav">Older Post</span>Programming algorithms in Lisp
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">

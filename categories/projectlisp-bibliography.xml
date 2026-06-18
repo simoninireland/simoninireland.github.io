@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 13 Jun 2026 11:20:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programming algorithms in Lisp</title><link>https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcdd817" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about project:lisp-bibliography)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/projectlisp-bibliography.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 18 Jun 2026 09:07:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Lisp curse</title><link>https://simondobson.org/2026/06/18/the-lisp-curse/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgef71109" class="outline-2"&gt;
+&lt;h2 id="orgef71109"&gt;The Lisp curse&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgef71109"&gt;
+&lt;p&gt;
+&lt;a href="https://www.winestockwebdesign.com/Essays/Lisp_Curse.html"&gt;https://www.winestockwebdesign.com/Essays/Lisp_Curse.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+The power of Lisp is its own worst enemy.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+An interesting essay on the "Lisp curse", the idea that Lisp's
+power can sometimes be a &lt;i&gt;disadvantage&lt;/i&gt; for developers. The core
+idea expressed as a question: how hard is it to add
+object-oriented features to a language? In the C world it's
+happened twice, giving rise to C++ and Objective-C, an no-one
+would even &lt;i&gt;think&lt;/i&gt; about defining their own. In the Lisp world, by
+contrast, building that style of object-oriented extension is a
+weekend's work (assuming we didn't already have CLOS, which is in
+many ways superior anyway). The point is that it's relatively easy
+to build even complex features as libraries, meaning there's less
+reason to standardise, and this leads to a proliferation of
+mutually incompatible designs that solve 80% of the problem – but
+all a &lt;i&gt;different&lt;/i&gt; 80%. This then makes interoperability difficult.
+&lt;/p&gt;
+
+&lt;p&gt;
+In fact the essay goes farther, to argue that the sorts of people
+who write Lisp tend not to be the sorts of people of work well in
+the political and compromise-driven world of standardisation. I'm
+not sure how true that is, given the stability of the Common Lisp
+standard itself since its adoption in 1994, but it's an
+interesting reflection on how increased language expressiveness
+need not automatically be a strength.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Some of the links in the article are now broken, or point to what
+looks like an AI link farm.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/18/the-lisp-curse/</guid><pubDate>Thu, 18 Jun 2026 09:07:24 GMT</pubDate></item><item><title>Programming algorithms in Lisp</title><link>https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcdd817" class="outline-2"&gt;
 &lt;h2 id="orgbcdd817"&gt;Programming algorithms in Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgbcdd817"&gt;
 &lt;p class="floater"&gt;
@@ -316,55 +360,4 @@ programming language was needed – an argument between two schools
 that's still going on today, as seen in the emergence of &lt;a href="https://lean-lang.org/"&gt;Lean&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/the-history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:49:57 GMT</pubDate></item><item><title>History of Lisp</title><link>https://simondobson.org/2025/11/07/history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd92a09b" class="outline-2"&gt;
-&lt;h2 id="orgd92a09b"&gt;History of Lisp&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgd92a09b"&gt;
-&lt;p&gt;
-John McCarthy.  &lt;i&gt;&lt;a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html"&gt;History of Lisp&lt;/a&gt;&lt;/i&gt;. Artificial Intelligence
-Laboratory, Stanford University. 1979.
-&lt;/p&gt;
-
-&lt;p&gt;
-McCarthy's own take on the early history. It's quite brief, but is
-very careful to give broad credit to the others who were involved
-in the practical creation of the language.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's also got some great vignettes on &lt;i&gt;why&lt;/i&gt; certain features came
-about - for example garbage collection coming from the need to
-clean up intermediate structures when experimenting with symbolic
-differentiation. McCarthy acknowledges taking the notation for
-functions from Church, before admitting that he didn't understand
-the rest of &lt;i&gt;Calculi of lambda conversion&lt;/i&gt; and so wasn't tempted to
-add the more general aspects!
-&lt;/p&gt;
-
-&lt;p&gt;
-Perhaps the most fascinating part of the story is that it was
-originally so divorced from actual computers. The team had defined
-an &lt;code&gt;eval&lt;/code&gt; function for interpreting Lisp programs – in the process
-making the decision to represent the programs as lists – before
-realising that this could be made interactive to provide a running
-interpreter.
-&lt;/p&gt;
-
-&lt;p&gt;
-What did McCarthy think of his creation? He was conscious that it
-would have a lifetime:
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;
-LISP will become obsolete when someone makes a more comprehensive
-language that dominates LISP practically and also gives a clear
-mathematical semantics to a more comprehensive set of features.
-&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;
-Haskell has a plausible claim to have accomplished the latter but
-this doesn't seem to have led domination in practice.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/the-history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:49:57 GMT</pubDate></item></channel></rss>

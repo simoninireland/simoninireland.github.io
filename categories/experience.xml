@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about experience)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/experience.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgcb6da93" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about experience)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/experience.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 18 Jun 2026 09:07:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Lisp curse</title><link>https://simondobson.org/2026/06/18/the-lisp-curse/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgef71109" class="outline-2"&gt;
+&lt;h2 id="orgef71109"&gt;The Lisp curse&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgef71109"&gt;
+&lt;p&gt;
+&lt;a href="https://www.winestockwebdesign.com/Essays/Lisp_Curse.html"&gt;https://www.winestockwebdesign.com/Essays/Lisp_Curse.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+The power of Lisp is its own worst enemy.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+An interesting essay on the "Lisp curse", the idea that Lisp's
+power can sometimes be a &lt;i&gt;disadvantage&lt;/i&gt; for developers. The core
+idea expressed as a question: how hard is it to add
+object-oriented features to a language? In the C world it's
+happened twice, giving rise to C++ and Objective-C, an no-one
+would even &lt;i&gt;think&lt;/i&gt; about defining their own. In the Lisp world, by
+contrast, building that style of object-oriented extension is a
+weekend's work (assuming we didn't already have CLOS, which is in
+many ways superior anyway). The point is that it's relatively easy
+to build even complex features as libraries, meaning there's less
+reason to standardise, and this leads to a proliferation of
+mutually incompatible designs that solve 80% of the problem – but
+all a &lt;i&gt;different&lt;/i&gt; 80%. This then makes interoperability difficult.
+&lt;/p&gt;
+
+&lt;p&gt;
+In fact the essay goes farther, to argue that the sorts of people
+who write Lisp tend not to be the sorts of people of work well in
+the political and compromise-driven world of standardisation. I'm
+not sure how true that is, given the stability of the Common Lisp
+standard itself since its adoption in 1994, but it's an
+interesting reflection on how increased language expressiveness
+need not automatically be a strength.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Some of the links in the article are now broken, or point to what
+looks like an AI link farm.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/18/the-lisp-curse/</guid><pubDate>Thu, 18 Jun 2026 09:07:24 GMT</pubDate></item><item><title>Pascal Costanza's highly opinionated guide to Lisp</title><link>https://simondobson.org/2024/05/27/pascal-costanza1s-highly-opinionated-guide-to-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgcb6da93" class="outline-2"&gt;
 &lt;h2 id="orgcb6da93"&gt;Pascal Costanza's highly opinionated guide to Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgcb6da93"&gt;
 &lt;p&gt;

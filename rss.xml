@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Sat, 13 Jun 2026 11:20:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Programming algorithms in Lisp</title><link>https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcdd817" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 18 Jun 2026 09:07:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The Lisp curse</title><link>https://simondobson.org/2026/06/18/the-lisp-curse/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgef71109" class="outline-2"&gt;
+&lt;h2 id="orgef71109"&gt;The Lisp curse&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgef71109"&gt;
+&lt;p&gt;
+&lt;a href="https://www.winestockwebdesign.com/Essays/Lisp_Curse.html"&gt;https://www.winestockwebdesign.com/Essays/Lisp_Curse.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+The power of Lisp is its own worst enemy.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+An interesting essay on the "Lisp curse", the idea that Lisp's
+power can sometimes be a &lt;i&gt;disadvantage&lt;/i&gt; for developers. The core
+idea expressed as a question: how hard is it to add
+object-oriented features to a language? In the C world it's
+happened twice, giving rise to C++ and Objective-C, an no-one
+would even &lt;i&gt;think&lt;/i&gt; about defining their own. In the Lisp world, by
+contrast, building that style of object-oriented extension is a
+weekend's work (assuming we didn't already have CLOS, which is in
+many ways superior anyway). The point is that it's relatively easy
+to build even complex features as libraries, meaning there's less
+reason to standardise, and this leads to a proliferation of
+mutually incompatible designs that solve 80% of the problem – but
+all a &lt;i&gt;different&lt;/i&gt; 80%. This then makes interoperability difficult.
+&lt;/p&gt;
+
+&lt;p&gt;
+In fact the essay goes farther, to argue that the sorts of people
+who write Lisp tend not to be the sorts of people of work well in
+the political and compromise-driven world of standardisation. I'm
+not sure how true that is, given the stability of the Common Lisp
+standard itself since its adoption in 1994, but it's an
+interesting reflection on how increased language expressiveness
+need not automatically be a strength.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Some of the links in the article are now broken, or point to what
+looks like an AI link farm.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>experience</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/18/the-lisp-curse/</guid><pubDate>Thu, 18 Jun 2026 09:07:24 GMT</pubDate></item><item><title>Programming algorithms in Lisp</title><link>https://simondobson.org/2026/06/13/programming-algorithms-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbcdd817" class="outline-2"&gt;
 &lt;h2 id="orgbcdd817"&gt;Programming algorithms in Lisp&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgbcdd817"&gt;
 &lt;p class="floater"&gt;
@@ -237,19 +281,4 @@ richer runtime. But there's a lot to learn from the simplicity of
 the choices made here.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item><item><title>The Knowledge: How to Rebuild Our World from Scratch</title><link>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393226489l/18114087._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Lewis Dartnell
-	  (2014)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      I'm hard-put to classify this book. On the one hand it's an engaging and valiant attempt to illustrate the crafts that would need to be retained (or rediscovered) after a civilisational collapse – or at least after &lt;i&gt;one kind of&lt;/i&gt; collapse such as a pandemic that leaves the infrastructure intact by decaying rather than pulverised. Dartnell seems to think a more fierce collapse would be unsurvivable, and so focuses on the more positive possibility.&lt;br&gt;&lt;br&gt;He traverses a lot of technologies, including for agriculture, building, transportation, clothing, chemistry, and communications. He (correctly in my view) identifies the scientific method itself as the most valuable technology to retain, and explores some of the ways in which modern society is contingent on specific historical accidents that a re-booting society need not copy.&lt;br&gt;&lt;br&gt;But it's also frustrating. As a scientist and engineer I wanted more detail: perhaps there's a need for another, "how to" manual alongside this book. And Dartnell seems to have a very cavalier attitude towards safety, mentioning and understating the dangers of (for example) lye once and then making use of it extensively, which is a recipe for disaster on the part of any practitioners. And the book is a little too broad, rather than focusing on the technologies of immediate relevance in the aftermath of disaster: should we really be thinking about building vacuum-tube electronics when even basic agriculture is such a challenge?&lt;br&gt;&lt;br&gt;Despite the positivity on display, reading this confirmed my thinking that a recovery after a disaster would be protracted, with no way to avoid a return to feudalism and warring bands. In that sense technology would be the least of the survivors' worries.
-      &lt;/p&gt;&lt;p&gt;
-	3/5.
-	  Finished Saturday 22 November, 2025.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/7939944087?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/the-knowledge-how-to-rebuild-our-world-from-scratch/</guid><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item></channel></rss>
