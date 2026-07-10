@@ -1,0 +1,50 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: A programmable programming language
+.. slug: a-programmable-programming-language
+.. date: 2026-07-10 15:44:09 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, language-reference
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* A programmable programming language
+
+    Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+    Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+    Tobin-Hochstadt.  /[[https://doi.org/10.1145/3127323][A Programmable Programming Language]]/.
+    Communications of the ACM *61*, pp.62–71. 2018.
+
+    Lisp has been described as a "programmable programming language":
+    the fact that Lisp code is valid Lisp data and can be manipulated
+    as such, coupled with macros, makes it easy to construct new Lisp
+    variants in Lisp, and to combine them with "real" Lisp in
+    interesting ways.
+
+    Racket is a Lisp that takes this to its logical conclusion, making
+    domain-specific sub-languages into first-class objects that can be
+    freely interleaved within programs and can be matched to the
+    "natural" expression of the target domain. The languages don't
+    even have to be Lisp-like.
+
+#+begin_quote
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching
+terms.
+    #+end_quote
+
+    Racket languages are formed of two parts: a *reader* that turns
+    strings into properly bracketed S-expressions, and an *expander*
+    that turns these expressions into "real" Racket (or some other
+    Racket-defined language).
+
+    This flexibility adds a whole new level to Lisp programming. For
+    example, it allows languages that don't readily translate to Lisp
+    style to be implemented and integrated into Lisp. This may simply
+    be for user convenience, or may have some deeper semantic
+    structure. Racket also defines clean interfaces between languages,
+    which is what allows them to be combined. It's a deeper version
+    of the usual Lisp multi-paradigm approach, reaching out beyond
+    macros working on Lisp syntax.
