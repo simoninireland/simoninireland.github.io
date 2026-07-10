@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about language-reference)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/language-reference.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 30 Apr 2026 14:03:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about language-reference)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/language-reference.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 10 Jul 2026 14:45:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A programmable programming language</title><link>https://simondobson.org/2026/07/10/a-programmable-programming-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org90d39a3" class="outline-2"&gt;
+&lt;h2 id="org90d39a3"&gt;A programmable programming language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org90d39a3"&gt;
+&lt;p&gt;
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/3127323"&gt;A Programmable Programming Language&lt;/a&gt;&lt;/i&gt;.
+Communications of the ACM &lt;b&gt;61&lt;/b&gt;, pp.62–71. 2018.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp has been described as a "programmable programming language":
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with "real" Lisp in
+interesting ways.
+&lt;/p&gt;
+
+&lt;p&gt;
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+"natural" expression of the target domain. The languages don't
+even have to be Lisp-like.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching
+terms.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Racket languages are formed of two parts: a &lt;b&gt;reader&lt;/b&gt; that turns
+strings into properly bracketed S-expressions, and an &lt;b&gt;expander&lt;/b&gt;
+that turns these expressions into "real" Racket (or some other
+Racket-defined language).
+&lt;/p&gt;
+
+&lt;p&gt;
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don't readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It's a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp syntax.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/07/10/a-programmable-programming-language/</guid><pubDate>Fri, 10 Jul 2026 14:44:09 GMT</pubDate></item><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
 &lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org7c86248"&gt;
 &lt;p&gt;

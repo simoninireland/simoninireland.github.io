@@ -52,6 +52,71 @@
 	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
 		    <div class="entry-meta">
 			<span class="posted-on">
+			    Posted on <a href="../2026/07/10/a-programmable-programming-language/" rel="bookmark">Friday 10 July, 2026</a>
+			</span>
+		    </div>
+		    <h1><a href="../2026/07/10/a-programmable-programming-language/">A programmable programming&nbsp;language</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org90d39a3" class="outline-2">
+<h2 id="org90d39a3">A programmable programming&nbsp;language</h2>
+<div class="outline-text-2" id="text-org90d39a3">
+<p>
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  <i><a href="https://doi.org/10.1145/3127323">A Programmable Programming Language</a></i>.
+Communications of the <span class="caps">ACM</span> <b>61</b>, pp.62–71.&nbsp;2018.
+</p>
+
+<p>
+Lisp has been described as a &#8220;programmable programming language&#8221;:
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with &#8220;real&#8221; Lisp in
+interesting&nbsp;ways.
+</p>
+
+<p>
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+&#8220;natural&#8221; expression of the target domain. The languages don&#8217;t
+even have to be&nbsp;Lisp-like.
+</p>
+
+<blockquote>
+<p>
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching&nbsp;terms.
+</p>
+</blockquote>
+
+<p>
+Racket languages are formed of two parts: a <b>reader</b> that turns
+strings into properly bracketed S-expressions, and an <b>expander</b>
+that turns these expressions into &#8220;real&#8221; Racket (or some other
+Racket-defined&nbsp;language).
+</p>
+
+<p>
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don&#8217;t readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It&#8217;s a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp&nbsp;syntax.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
 			    Posted on <a href="../2026/06/18/the-lisp-curse/" rel="bookmark">Thursday 18 June, 2026</a>
 			</span>
 		    </div>
@@ -222,48 +287,6 @@ when to stop with a codebase that could otherwise probably grow&nbsp;indefinitel
 <p>
 	  (Originally published on <a href="https://www.goodreads.com/review/show/8225761519?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
   </p>
-</div>
-		</div>
-	    </article>
-</div>
-	<div class="site-content">
-	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
-		    <div class="entry-meta">
-			<span class="posted-on">
-			    Posted on <a href="../2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/" rel="bookmark">Friday 22 May, 2026</a>
-			</span>
-		    </div>
-		    <h1><a href="../2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/">A Lisp interpreter implemented in Conway&#8217;s Game of&nbsp;Life</a></h1>
-		</div>
-		<div class="entry-content">
-			<div id="outline-container-org3d7d474" class="outline-2">
-<h2 id="org3d7d474">A Lisp interpreter implemented in Conway&#8217;s Game of&nbsp;Life</h2>
-<div class="outline-text-2" id="text-org3d7d474">
-<p>
-<a href="https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html">A Lisp Interpreter Implemented in Conway’s Game of&nbsp;Life</a>
-</p>
-
-<p>
-I include this as an application rather than an implementation
-technique because … well … it&#8217;s far more interesting as an
-example of cellular automata (CAs) than as a&nbsp;Lisp.
-</p>
-
-<p>
-Having said that, there&#8217;s something utterly compelling in watching
-a <span class="caps">CA</span> run something this complicated. It basically implements a
-Lisp machine core, and watching it execute is rather like watching
-a real chip in action (even though the mechanisms are completely
-different). You can <i>see</i> memory being accessed. Its implementation
-includes lexical closures, enough to build a simple object&nbsp;system.
-</p>
-
-<p>
-The implementation uses the VarLife system as an abstraction layer
-over the &#8220;raw&#8221; Conway rules. The compiled programs can be run on
-the <a href="https://en.wikipedia.org/wiki/Golly_(program)">Golly</a> <span class="caps">CA</span>&nbsp;emulator.
-</p>
-</div>
 </div>
 		</div>
 	    </article>

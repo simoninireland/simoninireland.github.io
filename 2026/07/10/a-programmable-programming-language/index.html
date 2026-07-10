@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Lisp curse | Simon Dobson</title>
+<title>A programmable programming language | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,57 +64,64 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Thursday 18 June, 2026</a>
+		Posted on <a href="." rel="bookmark">Friday 10 July, 2026</a>
 	    </span>
 	</div>
-	<h1>The Lisp&nbsp;curse</h1>
+	<h1>A programmable programming&nbsp;language</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-orgef71109" class="outline-2">
-<h2 id="orgef71109">The Lisp&nbsp;curse</h2>
-<div class="outline-text-2" id="text-orgef71109">
+		<div id="outline-container-org90d39a3" class="outline-2">
+<h2 id="org90d39a3">A programmable programming&nbsp;language</h2>
+<div class="outline-text-2" id="text-org90d39a3">
 <p>
-<a href="https://www.winestockwebdesign.com/Essays/Lisp_Curse.html">https://www.winestockwebdesign.com/Essays/Lisp_Curse.html</a>
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  <i><a href="https://doi.org/10.1145/3127323">A Programmable Programming Language</a></i>.
+Communications of the <span class="caps">ACM</span> <b>61</b>, pp.62–71.&nbsp;2018.
+</p>
+
+<p>
+Lisp has been described as a &#8220;programmable programming language&#8221;:
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with &#8220;real&#8221; Lisp in
+interesting&nbsp;ways.
+</p>
+
+<p>
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+&#8220;natural&#8221; expression of the target domain. The languages don&#8217;t
+even have to be&nbsp;Lisp-like.
 </p>
 
 <blockquote>
 <p>
-The power of Lisp is its own worst&nbsp;enemy.
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching&nbsp;terms.
 </p>
 </blockquote>
 
 <p>
-An interesting essay on the &#8220;Lisp curse&#8221;, the idea that Lisp&#8217;s
-power can sometimes be a <i>disadvantage</i> for developers. The core
-idea expressed as a question: how hard is it to add
-object-oriented features to a language? In the C world it&#8217;s
-happened twice, giving rise to C++ and Objective-C, an no-one
-would even <i>think</i> about defining their own. In the Lisp world, by
-contrast, building that style of object-oriented extension is a
-weekend&#8217;s work (assuming we didn&#8217;t already have <span class="caps">CLOS</span>, which is in
-many ways superior anyway). The point is that it&#8217;s relatively easy
-to build even complex features as libraries, meaning there&#8217;s less
-reason to standardise, and this leads to a proliferation of
-mutually incompatible designs that solve 80% of the problem – but
-all a <i>different</i> 80%. This then makes interoperability&nbsp;difficult.
+Racket languages are formed of two parts: a <b>reader</b> that turns
+strings into properly bracketed S-expressions, and an <b>expander</b>
+that turns these expressions into &#8220;real&#8221; Racket (or some other
+Racket-defined&nbsp;language).
 </p>
 
 <p>
-In fact the essay goes farther, to argue that the sorts of people
-who write Lisp tend not to be the sorts of people of work well in
-the political and compromise-driven world of standardisation. I&#8217;m
-not sure how true that is, given the stability of the Common Lisp
-standard itself since its adoption in 1994, but it&#8217;s an
-interesting reflection on how increased language expressiveness
-need not automatically be a&nbsp;strength.
-</p>
-
-<p>
-(Some of the links in the article are now broken, or point to what
-looks like an <span class="caps">AI</span> link&nbsp;farm.)
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don&#8217;t readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It&#8217;s a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp&nbsp;syntax.
 </p>
 </div>
 </div>
@@ -132,12 +139,12 @@ looks like an <span class="caps">AI</span> link&nbsp;farm.)
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/18/the-lisp-curse/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/06/18/the-lisp-curse/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/06/18/the-lisp-curse/&amp;title=The%20Lisp%20curse%20%23experience%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/06/18/the-lisp-curse/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=The%20Lisp%20curse&amp;body=https://simondobson.org/2026/06/18/the-lisp-curse/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;title=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=A%20programmable%20programming%20language&amp;body=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -146,7 +153,7 @@ looks like an <span class="caps">AI</span> link&nbsp;farm.)
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/experience/">experience</a>
+		<a href="../../../../categories/language-reference/">language-reference</a>
 		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
@@ -156,13 +163,8 @@ looks like an <span class="caps">AI</span> link&nbsp;farm.)
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../13/programming-algorithms-in-lisp/" rel="prev">
-		<span class="meta-nav">Older Post</span>Programming algorithms in Lisp
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../../07/10/a-programmable-programming-language/" rel="next">
-		<span class="meta-nav">Newer Post</span>A programmable programming language
+	    <a href="../../../06/18/the-lisp-curse/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Lisp curse
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
