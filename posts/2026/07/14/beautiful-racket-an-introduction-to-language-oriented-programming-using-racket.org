@@ -1,0 +1,53 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Beautiful Racket: An introduction to language-oriented programming using Racket
+.. slug: beautiful-racket-an-introduction-to-language-oriented-programming-using-racket
+.. date: 2026-07-14 08:07:51 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* Beautiful Racket: An introduction to language-oriented programming using Racket :ATTACH:
+  :PROPERTIES:
+  :ID:       e37de938-c600-4d44-ae6d-02798869a00b
+  :END:
+
+  #+DOWNLOADED: screenshot @ 2026-07-14 08:09:46
+  #+attr_org: :width 350
+  #+attr_html: :class floater
+  [[attachment:screenshot.png]]
+
+  Matthew Butterick.  /[[https://beautifulracket.com/][Beautiful Racket: An Introduction to
+  Language-Oriented Programming Using Racket]]/. 2024.
+
+  [[https://racket-lang.org/][Racket]] positions itself as a "programmable programming
+  language" -- more so than Lisp's usual claim to this title -- which
+  makes it attractive for exploring multi-paradigm and multi-language
+  programming.
+
+  Racket's main claim to a niche is allowing a programmer to define
+  new domain-specific languages (DSLs), not necessarily Lisp-like,
+  that can be combined together to let a program be expressed in the
+  "most appropriate" form for the problem. This books is structured
+  around exactly this idea, defining a succession of languages of
+  increasing sophistication to demonstrate Racket's capabilities.
+  Each language has a "reader" to convert strings into Lisp
+  S-expressions and an "expander" to translate these forms into
+  Racket (or another Racket-defined language). The examples include
+  a simple stack-based calculator, an embedded JSON parser, and a
+  Basic interpreter that exercises the power of a full parser.
+
+  The description of Racket itself is very thorough, to the extent
+  that this book could be treated as a language definition itself,
+  complementing the [[link:/2026/07/10/a-programmable-programming-language/][article]] about it. Certainly it provides the most
+  accessible way to learn the language and explore what it means to
+  explore "language-oriented" programming.
+
+  It's possible to define DSLs in Common Lisp or Scheme without
+  Racket's extra functionality, and in many cases that will be
+  sufficient -- especially when the DSL is a Lisp itself. But there
+  will certainly be applications for which Racket is absolutely the
+  right tool.
