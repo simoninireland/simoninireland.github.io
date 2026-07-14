@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 14 Jul 2026 07:17:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
+&lt;h2 id="orge66a136"&gt;Beautiful Racket: An introduction to language-oriented programming using Racket&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge66a136"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/e3/7de938-c600-4d44-ae6d-02798869a00b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Matthew Butterick.  &lt;i&gt;&lt;a href="https://beautifulracket.com/"&gt;Beautiful Racket: An Introduction to
+Language-Oriented Programming Using Racket&lt;/a&gt;&lt;/i&gt;. 2024.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://racket-lang.org/"&gt;Racket&lt;/a&gt; positions itself as a "programmable programming
+language" – more so than Lisp's usual claim to this title – which
+makes it attractive for exploring multi-paradigm and multi-language
+programming.
+&lt;/p&gt;
+
+&lt;p&gt;
+Racket's main claim to a niche is allowing a programmer to define
+new domain-specific languages (DSLs), not necessarily Lisp-like,
+that can be combined together to let a program be expressed in the
+"most appropriate" form for the problem. This books is structured
+around exactly this idea, defining a succession of languages of
+increasing sophistication to demonstrate Racket's capabilities.
+Each language has a "reader" to convert strings into Lisp
+S-expressions and an "expander" to translate these forms into
+Racket (or another Racket-defined language). The examples include
+a simple stack-based calculator, an embedded JSON parser, and a
+Basic interpreter that exercises the power of a full parser.
+&lt;/p&gt;
+
+&lt;p&gt;
+The description of Racket itself is very thorough, to the extent
+that this book could be treated as a language definition itself,
+complementing the &lt;a href="/2026/07/10/a-programmable-programming-language/"&gt;article&lt;/a&gt; about it. Certainly it provides the most
+accessible way to learn the language and explore what it means to
+explore "language-oriented" programming.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's possible to define DSLs in Common Lisp or Scheme without
+Racket's extra functionality, and in many cases that will be
+sufficient – especially when the DSL is a Lisp itself. But there
+will certainly be applications for which Racket is absolutely the
+right tool.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</guid><pubDate>Tue, 14 Jul 2026 07:07:51 GMT</pubDate></item><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
 &lt;h2 id="org0e5ab39"&gt;Lisp as a second language&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org0e5ab39"&gt;
 &lt;p&gt;

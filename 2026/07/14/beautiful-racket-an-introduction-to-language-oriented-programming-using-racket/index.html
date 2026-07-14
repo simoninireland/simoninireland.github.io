@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A programmable programming language | Simon Dobson</title>
+<title>Beautiful Racket: An introduction to language-oriented programming using Racket | Simon Dobson</title>
 <style>
 	@font-face {
 	    font-family: "libretto-icons";
@@ -64,64 +64,60 @@ MathJax.Hub.Config({
 </ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
 	<div class="entry-meta">
 	    <span class="posted-on">
-		Posted on <a href="." rel="bookmark">Friday 10 July, 2026</a>
+		Posted on <a href="." rel="bookmark">Tuesday 14 July, 2026</a>
 	    </span>
 	</div>
-	<h1>A programmable programming&nbsp;language</h1>
+	<h1>Beautiful Racket: An introduction to language-oriented programming using&nbsp;Racket</h1>
     </div>
 
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org90d39a3" class="outline-2">
-<h2 id="org90d39a3">A programmable programming&nbsp;language</h2>
-<div class="outline-text-2" id="text-org90d39a3">
+		<div id="outline-container-orge66a136" class="outline-2">
+<h2 id="orge66a136">Beautiful Racket: An introduction to language-oriented programming using&nbsp;Racket</h2>
+<div class="outline-text-2" id="text-orge66a136">
+<p class="floater">
+<img src="../../../../attachments/e3/7de938-c600-4d44-ae6d-02798869a00b/screenshot.png" alt="nil"></p>
+
 <p>
-Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
-Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
-Tobin-Hochstadt.  <i><a href="https://doi.org/10.1145/3127323">A Programmable Programming Language</a></i>.
-Communications of the <span class="caps">ACM</span> <b>61</b>, pp.62–71.&nbsp;2018.
+Matthew Butterick.  <i><a href="https://beautifulracket.com/">Beautiful Racket: An Introduction to
+Language-Oriented Programming Using Racket</a></i>.&nbsp;2024.
 </p>
 
 <p>
-Lisp has been described as a &#8220;programmable programming language&#8221;:
-the fact that Lisp code is valid Lisp data and can be manipulated
-as such, coupled with macros, makes it easy to construct new Lisp
-variants in Lisp, and to combine them with &#8220;real&#8221; Lisp in
-interesting&nbsp;ways.
+<a href="https://racket-lang.org/">Racket</a> positions itself as a &#8220;programmable programming
+language&#8221; – more so than Lisp&#8217;s usual claim to this title – which
+makes it attractive for exploring multi-paradigm and multi-language&nbsp;programming.
 </p>
 
 <p>
-Racket is a Lisp that takes this to its logical conclusion, making
-domain-specific sub-languages into first-class objects that can be
-freely interleaved within programs and can be matched to the
-&#8220;natural&#8221; expression of the target domain. The languages don&#8217;t
-even have to be&nbsp;Lisp-like.
-</p>
-
-<blockquote>
-<p>
-In the ideal world, software developers would analyze each problem in
-the language of its domain and then articulate solutions in matching&nbsp;terms.
-</p>
-</blockquote>
-
-<p>
-Racket languages are formed of two parts: a <b>reader</b> that turns
-strings into properly bracketed S-expressions, and an <b>expander</b>
-that turns these expressions into &#8220;real&#8221; Racket (or some other
-Racket-defined&nbsp;language).
+Racket&#8217;s main claim to a niche is allowing a programmer to define
+new domain-specific languages (DSLs), not necessarily Lisp-like,
+that can be combined together to let a program be expressed in the
+&#8220;most appropriate&#8221; form for the problem. This books is structured
+around exactly this idea, defining a succession of languages of
+increasing sophistication to demonstrate Racket&#8217;s capabilities.
+Each language has a &#8220;reader&#8221; to convert strings into Lisp
+S-expressions and an &#8220;expander&#8221; to translate these forms into
+Racket (or another Racket-defined language). The examples include
+a simple stack-based calculator, an embedded <span class="caps">JSON</span> parser, and a
+Basic interpreter that exercises the power of a full&nbsp;parser.
 </p>
 
 <p>
-This flexibility adds a whole new level to Lisp programming. For
-example, it allows languages that don&#8217;t readily translate to Lisp
-style to be implemented and integrated into Lisp. This may simply
-be for user convenience, or may have some deeper semantic
-structure. Racket also defines clean interfaces between languages,
-which is what allows them to be combined. It&#8217;s a deeper version
-of the usual Lisp multi-paradigm approach, reaching out beyond
-macros working on Lisp&nbsp;syntax.
+The description of Racket itself is very thorough, to the extent
+that this book could be treated as a language definition itself,
+complementing the <a href="/2026/07/10/a-programmable-programming-language/">article</a> about it. Certainly it provides the most
+accessible way to learn the language and explore what it means to
+explore &#8220;language-oriented&#8221;&nbsp;programming.
+</p>
+
+<p>
+It&#8217;s possible to define DSLs in Common Lisp or Scheme without
+Racket&#8217;s extra functionality, and in many cases that will be
+sufficient – especially when the <span class="caps">DSL</span> is a Lisp itself. But there
+will certainly be applications for which Racket is absolutely the
+right&nbsp;tool.
 </p>
 </div>
 </div>
@@ -139,12 +135,12 @@ macros working on Lisp&nbsp;syntax.
   <div class="site-content">
     <div class="social">
       <ul>
-<li><a onclick="MastodonShare(this);" data-src="A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
-	<li><a href="https://twitter.com/share?text=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/" target="_blak"><span title="Share on Twitter"><i class="fab
+<li><a onclick="MastodonShare(this);" data-src="Beautiful%20Racket%3A%20An%20introduction%20to%20language-oriented%20programming%20using%20Racket%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial&amp;url=https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Beautiful%20Racket%3A%20An%20introduction%20to%20language-oriented%20programming%20using%20Racket%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial&amp;url=https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/" target="_blak"><span title="Share on Twitter"><i class="fab
 	fa-twitter"></i></span></a></li>
-	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;title=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
-	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
-	<li><a href="mailto:?subject=A%20programmable%20programming%20language&amp;body=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/&amp;title=Beautiful%20Racket%3A%20An%20introduction%20to%20language-oriented%20programming%20using%20Racket%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Beautiful%20Racket:%20An%20introduction%20to%20language-oriented%20programming%20using%20Racket&amp;body=https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
       </ul>
 </div>
   </div>
@@ -153,23 +149,18 @@ macros working on Lisp&nbsp;syntax.
     <div class="site-content navigation-post">
 	<div class="tag-head">Tags</div>
 	<div class="tag-list">
-		<a href="../../../../categories/language-reference/">language-reference</a>
-		    <span>  </span>
 		<a href="../../../../categories/lisp/">lisp</a>
 		    <span>  </span>
 		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+		    <span>  </span>
+		<a href="../../../../categories/tutorial/">tutorial</a>
 	</div>
     </div>
 
 	<!-- Post Navigation links -->
 <nav class="site-content navigation-post" role="navigation"><div class="previous">
-	    <a href="../../../06/18/the-lisp-curse/" rel="prev">
-		<span class="meta-nav">Older Post</span>The Lisp curse
-	    </a>
-	</div>
-	<div class="next">
-	    <a href="../../14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/" rel="next">
-		<span class="meta-nav">Newer Post</span>Beautiful Racket: An introduction to language-oriented programming using Racket
+	    <a href="../../10/a-programmable-programming-language/" rel="prev">
+		<span class="meta-nav">Older Post</span>A programmable programming language
 	    </a>
 	</div>
 </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
