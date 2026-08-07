@@ -73,9 +73,9 @@ MathJax.Hub.Config({
 	<!-- Page Content -->
     <div class="site-content" role="main">
 	<article class="format-standard libretto-long-form"><div class="entry-content">
-		<div id="outline-container-org11c1948" class="outline-2">
-<h2 id="org11c1948">Unexpected (to me) behaviour in Lisp&nbsp;sub-typing</h2>
-<div class="outline-text-2" id="text-org11c1948">
+		<div id="outline-container-org34c1854" class="outline-2">
+<h2 id="org34c1854">Unexpected (to me) behaviour in Lisp&nbsp;sub-typing</h2>
+<div class="outline-text-2" id="text-org34c1854">
 <p>
 I just encountered some unexpected behaviour in how Common Lisp (or
 at least <a href="https://sbcl.org"><span class="caps">SBCL</span></a>) handles array&nbsp;sub-typing.
@@ -226,7 +226,37 @@ and&nbsp;also:
 
 <p>
 I can&#8217;t find this behaviour detailed in the manuals (or anywhere
-else) though. Perhaps it&#8217;s only an artefact of&nbsp;optimisation.
+else) though. However, it seems to be related to the <i>upgraded array
+element type</i>. When an array is created, the implementation is
+allowed to use a different type to the one specified in its
+representation, which must be a supertype of the type requested. For
+types&nbsp;like <code>integer</code> and <code>unsigned-byte</code> this&nbsp;is <code>t</code>, the top type in the&nbsp;lattice:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">upgraded-array-element-type</span><span class="w"> </span><span class="ss">'unsigned-byte</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+T
+</pre>
+
+
+<p>
+But for the &#8220;constrained&#8221; types the upgraded type is the type&nbsp;itself:
+</p>
+
+<div class="highlight"><pre><span></span><span class="w">  </span><span class="p">(</span><span class="nb">upgraded-array-element-type</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="kt">unsigned-byte</span><span class="w"> </span><span class="mi">16</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+(UNSIGNED-BYTE 16)
+</pre>
+
+
+<p>
+This suggests to me that the compiler (<span class="caps">SBCL</span>) is indeed optimising
+the representation and then also performing more detailed
+type-checking for&nbsp;elements.
 </p>
 </div>
 </div>

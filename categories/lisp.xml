@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 10:15:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unexpected behaviour in Lisp sub-typing</title><link>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org11c1948" class="outline-2"&gt;
-&lt;h2 id="org11c1948"&gt;Unexpected (to me) behaviour in Lisp sub-typing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org11c1948"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 10:45:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unexpected (to me) behaviour in Lisp sub-typing</title><link>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org34c1854" class="outline-2"&gt;
+&lt;h2 id="org34c1854"&gt;Unexpected (to me) behaviour in Lisp sub-typing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org34c1854"&gt;
 &lt;p&gt;
 I just encountered some unexpected behaviour in how Common Lisp (or
 at least &lt;a href="https://sbcl.org"&gt;SBCL&lt;/a&gt;) handles array sub-typing.
@@ -154,7 +154,38 @@ and also:
 
 &lt;p&gt;
 I can't find this behaviour detailed in the manuals (or anywhere
-else) though. Perhaps it's only an artefact of optimisation.
+else) though. However, it seems to be related to the &lt;i&gt;upgraded array
+element type&lt;/i&gt;. When an array is created, the implementation is
+allowed to use a different type to the one specified in its
+representation, which must be a supertype of the type requested. For
+types like &lt;code&gt;integer&lt;/code&gt; and &lt;code&gt;unsigned-byte&lt;/code&gt; this is &lt;code&gt;t&lt;/code&gt;, the top type in the lattice:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;upgraded-array-element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'unsigned-byte&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+T
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+But for the "constrained" types the upgraded type is the type
+itself:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;upgraded-array-element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(UNSIGNED-BYTE 16)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+This suggests to me that the compiler (SBCL) is indeed optimising
+the representation and then also performing more detailed
+type-checking for elements.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</guid><pubDate>Fri, 07 Aug 2026 09:27:05 GMT</pubDate></item><item><title>A road to Lisp -- Which Lisp?</title><link>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4511ed2" class="outline-2"&gt;
