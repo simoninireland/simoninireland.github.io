@@ -1,5 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 14 Jul 2026 07:17:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson</title><link>https://simondobson.org/</link><description>Aut tace aut loquere meliora silentio</description><atom:link href="https://simondobson.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 10:15:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unexpected behaviour in Lisp sub-typing</title><link>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org11c1948" class="outline-2"&gt;
+&lt;h2 id="org11c1948"&gt;Unexpected (to me) behaviour in Lisp sub-typing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org11c1948"&gt;
+&lt;p&gt;
+I just encountered some unexpected behaviour in how Common Lisp (or
+at least &lt;a href="https://sbcl.org"&gt;SBCL&lt;/a&gt;) handles array sub-typing.
+&lt;/p&gt;
+
+&lt;p&gt;
+Suppose you have a structure declaration like this:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We can create instances of this struct by providing an initial
+value, and it will be type-checked.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #(1 2 3))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+We can also omit the argument and get the default specified in the
+declaration:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So far so good. But suppose we now specialise the &lt;code&gt;simple-array&lt;/code&gt; type
+against a type such as &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; (the type of unsigned
+16-bit integers).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;B&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This generates an error, as does using the default value.
+&lt;/p&gt;
+
+&lt;p&gt;
+Why is this? I eventually tracked the problem down to the fact that
+the expression &lt;code&gt;#1A()&lt;/code&gt; is given type &lt;code&gt;(simple-vector 0)&lt;/code&gt; while the
+expression &lt;code&gt;#1A(1 2 3)&lt;/code&gt; is given type &lt;code&gt;(simple-vector 3)&lt;/code&gt;, and neither
+of these are sub-types of &lt;code&gt;(simple-array (unsigned-byte 16))&lt;/code&gt;:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 0)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 3)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-vector&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+T
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So the typing works for &lt;code&gt;integer&lt;/code&gt; (and indeed for &lt;code&gt;number&lt;/code&gt; and &lt;code&gt;float&lt;/code&gt;)
+but not for the constrained types like &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; –
+although it &lt;i&gt;does&lt;/i&gt; work for &lt;code&gt;unsigned-byte&lt;/code&gt; (with no width).
+&lt;/p&gt;
+
+&lt;p&gt;
+Interestingly the tests fail for empty arrays as well:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I assume that the behaviour is because the compiler is at liberty to
+optimise the storage of arrays with specific types, and doing so
+makes it awkward to compare against types like &lt;code&gt;simple-vector&lt;/code&gt; that
+don't contain their element type. This would also explain why the
+check succeeds for types like &lt;code&gt;integer&lt;/code&gt;, whose values are stored
+boxed and so can represented uniformly.
+&lt;/p&gt;
+
+&lt;p&gt;
+There's a simple way around this, of course, once you know what the
+problem is: make the type of the value explicit rather than relying
+on the reader macro. For example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;C&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+and also:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:initial-contents&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;alexandria:iota&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #(0 1 2))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I can't find this behaviour detailed in the manuals (or anywhere
+else) though. Perhaps it's only an artefact of optimisation.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</guid><pubDate>Fri, 07 Aug 2026 09:27:05 GMT</pubDate></item><item><title>A road to Lisp -- Which Lisp?</title><link>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4511ed2" class="outline-2"&gt;
+&lt;h2 id="org4511ed2"&gt;A road to Lisp: Which Lisp?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4511ed2"&gt;
+&lt;p&gt;
+&lt;a href="https://scotto.me/blog/2026-07-17-which-lisp/"&gt;A Road to Lisp: Which Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A blog post reviewing four dialects of Lisp that a beginner
+wanting to start with Lisp can choose: Common Lisp, Clojure,
+Racket, and ELisp. The author, Elia Scotto, interestingly doesn't
+include Scheme, although he does present Racket as a Scheme
+dialect (which of course it is).
+&lt;/p&gt;
+
+&lt;p&gt;
+Does the choice too make initially matter?
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Dialect matters, but not as much as a beginner might think.
+Learning Lisp is about learning a new type of programming. &lt;b&gt;A new
+way of thinking about problems using code.&lt;/b&gt; You will learn the
+fundamental concepts with any dialect. Then, once you have learned
+one, it will be relatively easy to switch to another.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I think most Lisp devotees would agree with the sentiment that
+it's about a new relationship with code; I'm not totally convinced
+that Racket is a good place to start, given that it's essentially
+&lt;i&gt;several&lt;/i&gt; languages; and ELisp only makes sense if you are already a
+devoted Emacs user, otherwise the learning curve will be nearly
+vertical.
+&lt;/p&gt;
+
+&lt;p&gt;
+Scotto's conclusion is that Clojure is the safest first choice,
+giving you a modern syntax and full-stack environment with access
+to all the Java libraries, while Common Lisp gives you fast native
+compilation within a large, stable, and rock-solid ecosystem, and
+Racket is a good basis for language research.
+&lt;/p&gt;
+
+&lt;p&gt;
+For my own part I came to Scheme first when I was an
+undergraduate, then picked up ELisp when I started using Emacs,
+and then learned Common Lisp when I started wanting to write
+significant code – and there I've stayed with the latter two,
+quite happily. It's certainly the case that it's been easy to move
+between these dialects, modulo some differences that are purely
+syntactic. And it's certainly true that Lisp changed my
+relationship to code in a deep and persistent way.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</guid><pubDate>Fri, 07 Aug 2026 08:59:43 GMT</pubDate></item><item><title>Antwerp</title><link>https://simondobson.org/goodreads/antwerp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1616472225l/55877520._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Michael Pye
+	  (2021)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      Antwerp is, to the modern eye, a strange choice for an urban biography. But it's a place that can make a fair claim to having invented a lot of the modern world, notably the financialisation of trade and especially of art: the first place where one bought paintings from dealers rather than commissioning them from the studios. A place that tried valiantly to separate trade from religion, to protect its minorities and resist anti-Protestant edicts while still being rules from Spain, and to ride-out the waves of regulation and repression that washed around it. It was a bold experiment in trying to re-become a city-state, at a time when that simply wasn't possible any more. &lt;br&gt;&lt;br&gt;It's impossible to read this book and not feel its author's debt to Barbara Tuchman, both in the general style of writing and in the sharp eye for personal detail. There are a couple of quite detailed biographies, of an architect and a printer/publisher, each of which is both engaging gossipy and carefully chosen to show the changes that each man was essential in bringing in. In that way it's a very personal book that seeks to illustrate the history of the city by the histories of individuals, gleaned from a formidable amount of primary research: Pye seems to have read every letter, book, and bill relating to the period.&lt;br&gt;&lt;br&gt;I don't think it quite succeeds, despite the great writing and scholarship: the city's history seems confused and lost amid the detail, it's hard to follow the timeline and understand the sweep of the politics and the events shaping it. But it's still a superb read, packed full of anecdotes and the seeds or modernity.
+      &lt;/p&gt;&lt;p&gt;
+	3/5.
+	  Finished Saturday 1 August, 2026.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/8746370121?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/antwerp/</guid><pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate></item><item><title>Hothouse Earth: An Inhabitant's Guide</title><link>https://simondobson.org/goodreads/hothouse-earth-an-inhabitants-guide/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1658479574l/61336424._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Bill   McGuire
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A horror story, with the additional horror of being entirely backed by science.&lt;br&gt;&lt;br&gt;I'm writing during the 2026 summer heatwaves in the UK, and this was &lt;i&gt;really&lt;/i&gt; not the time to be reading this book. It lays bare the best estimates for changes caused by global heating to everything from diseases and food production to sea levels and increased earthquakes (caused by the land rebounding after the compression caused by ice is removed). The world envisaged is not entirely unlivable, but that's only a slight comfort given the tribulations to come.&lt;br&gt;&lt;br&gt;Had we acted on global heating at the time of the &lt;a href="https://en.wikipedia.org/wiki/Stern_Review" rel="nofollow noopener"&gt;Stern review&lt;/a&gt; of 2006 it might have been possible to avoid the worst at a reasonable economic cost. (McGuire, interestingly, doesn't mention Stern, whose conclusions have often been criticised for being understated in both risks and costs.) We're now in a position where we have to make much more expensive and difficult carbon reductions to avoid terrible harms, while &lt;i&gt;also&lt;/i&gt; having to incur massive costs to mitigate the harms that are already baked-in to the climate system.&lt;br&gt;&lt;br&gt;It's not a book that's entirely without hope: the last chapter paints two pictures of London later in the century under different emission reduction scenarios that highlight that a warmer world would be liveable (and even pleasant) – but only after actions that frankly seem beyond us as a civilisation. McGuire points to the hypocrisy of world leaders as the COP26 conference, promising cuts while permitting more drilling: As I'm writing, &lt;i&gt;more&lt;/i&gt; drilling permits are being issued by the new UK administration, and AI data centres are being proposed that will require local gas-fired power stations exceeding the current generation capacity of the entire UK electricity grid. It seems we still have to grasp the scale of changes required, with those changes growing the longer we wait.
+      &lt;/p&gt;&lt;p&gt;
+	5/5.
+	  Finished Saturday 18 July, 2026.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/8758459576?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/hothouse-earth-an-inhabitants-guide/</guid><pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate></item><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
 &lt;h2 id="orge66a136"&gt;Beautiful Racket: An introduction to language-oriented programming using Racket&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge66a136"&gt;
 &lt;p class="floater"&gt;
@@ -100,7 +344,22 @@ of the usual Lisp multi-paradigm approach, reaching out beyond
 macros working on Lisp syntax.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/07/10/a-programmable-programming-language/</guid><pubDate>Fri, 10 Jul 2026 14:44:09 GMT</pubDate></item><item><title>The Lisp curse</title><link>https://simondobson.org/2026/06/18/the-lisp-curse/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgef71109" class="outline-2"&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/07/10/a-programmable-programming-language/</guid><pubDate>Fri, 10 Jul 2026 14:44:09 GMT</pubDate></item><item><title>Stasiland: Stories from Behind the Berlin Wall</title><link>https://simondobson.org/goodreads/stasiland-stories-from-behind-the-berlin-wall/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
+    &lt;div&gt;
+      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385280143l/226369._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
+      &lt;h2&gt;
+	Anna Funder
+	  (2003)
+      &lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      A view of East Germany by a semi-outsider, an Australian living in the East. Perhaps this gives a better perspective.&lt;br&gt;&lt;br&gt;The Stasi come across in this book as the most dedicated and efficient secret police force imaginable. They want to known &lt;i&gt;everything&lt;/i&gt; – to the extent of imprisoning one of their own agents for &lt;i&gt;not&lt;/i&gt; reporting something that he &lt;i&gt;knew&lt;/i&gt; would get him into trouble – and co-opted a large fraction of the East German population to report on their friends and families, even when those reports served no purpose other than simply to &lt;i&gt;be&lt;/i&gt; reported.&lt;br&gt;&lt;br&gt;It's surprising how many former Stasi men (and they were all men) Funder managed to persuade to speak to her, and how open they were about some of the frankly amazing technology and tradecraft they employed. She is clearly a skilled journalist and a good listener, perhaps aided by her outsider status and fluent German.&lt;br&gt;&lt;br&gt;There are some comic incidents, as one would expect, notably the Stasi man who steals a cheap trinket when he retires and is then persistently investigated even though no-one cares about the object itself. And then when Germany re-unifies he is investigated &lt;i&gt;again&lt;/i&gt; by the authorities: once for the theft (which now concerns reunified Germany's state property) and then again for lying about the theft. Kafka would have approved.&lt;br&gt;&lt;br&gt;But the main story is one of persecution, where a single mistake – the details of which may never be apparent – can blight someone's entire life. It can make them unemployable, with the additional twist that they can't actually &lt;i&gt;be&lt;/i&gt; unemployed because that is considered a Western phenomenon that the state has declared does not exist in East Germany. The Party invents and publicises a new dance that's designed to eliminate all contact between dancers so as to avoid temptation. It's hard to imagine the level of false consciousness living under such a system required of everyone – and even harder to understand that some still yearn for its barren certainties.
+      &lt;/p&gt;&lt;p&gt;
+	4/5.
+	  Finished Monday 22 June, 2026.
+	&lt;/p&gt;&lt;p&gt;
+	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/8635314942?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
+  &lt;/p&gt;&lt;/div&gt;</description><category>bonanza</category><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/stasiland-stories-from-behind-the-berlin-wall/</guid><pubDate>Mon, 22 Jun 2026 00:00:00 GMT</pubDate></item><item><title>The Lisp curse</title><link>https://simondobson.org/2026/06/18/the-lisp-curse/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgef71109" class="outline-2"&gt;
 &lt;h2 id="orgef71109"&gt;The Lisp curse&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgef71109"&gt;
 &lt;p&gt;
@@ -208,124 +467,4 @@ when to stop with a codebase that could otherwise probably grow
 indefinitely.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</guid><pubDate>Fri, 12 Jun 2026 08:56:40 GMT</pubDate></item><item><title>Made in America</title><link>https://simondobson.org/goodreads/made-in-america/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;
-    &lt;div&gt;
-      &lt;img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1768450017l/246596797._SX98_.jpg" style="float: left; margin-right: 10px"&gt;
-      &lt;h2&gt;
-	Edward Stourton
-	  (2026)
-      &lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;p&gt;
-      A view of Donald Trump's presidency through the lens of American history.&lt;br&gt;&lt;br&gt;Stourton's premise arises from surprise: when people frequently describe Trump as an anomaly and a unique threat to democracy, is that actually true? – or were there precedents? He sets out to show that many of Trump's ideas are deeply embedded in American history, arising repeatedly in similar guises.&lt;br&gt;&lt;br&gt;Many of the connections have been made before, notably with President Andrew Jackson's view that politics comes before, and must sometimes supercede, the law. But Stourton has a journalist's ear for subtle echoes, and surprisingly (to me) includes Franklin Delano Roosevelt in the same sequence of presidents willing to ignore or circumvent the established readings of the law and constitution as he pushed the New Deal forward.&lt;br&gt;&lt;br&gt;I found strongest arguments to be those about religion. To the question of how religious voters support a clearly irreligious president so fervently, Stourton reaches back almost to the foundation of America, to the early Puritan colony of Massachusetts, where the theme of religious liberty didn't mean what we might expect today. The Puritans left England to seek liberty for themselves, but once established in their own realm proceeded to reproduce the intolerance they themselves had fled. The later Madisonian view that religion belongs to the private sphere, untouched by and untouching of the state, therefore sits alongside a completely contrary view that the state should have a controlling religious faction and orthodoxy – and the latter view seems to have recently become dominant, much to the surprise of outside observers but perhaps not as historically anomalous as it at first appears.&lt;br&gt;&lt;br&gt;In the epilogue Stourton returns to the often surprising differences between American and European (and especially British) views. It raises the question: was the post-war consensus on human rights and peaceful co-existence actually sincere, based in an idea of progress? – or was it adopted purely as a response to the shocks of the war? Has it simply taken eighty years for the old power politics to re-emerge, and were we foolish to think it might be otherwise? I hope not.
-      &lt;/p&gt;&lt;p&gt;
-	4/5.
-	  Finished Sunday 7 June, 2026.
-	&lt;/p&gt;&lt;p&gt;
-	  (Originally published on &lt;a href="https://www.goodreads.com/review/show/8225761519?utm_medium=api&amp;amp;utm_source=rss"&gt;Goodreads&lt;/a&gt;.)
-  &lt;/p&gt;&lt;/div&gt;</description><category>books</category><category>reviews</category><guid>https://simondobson.org/goodreads/made-in-america/</guid><pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate></item><item><title>A Lisp interpreter implemented in Conway's Game of Life</title><link>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org3d7d474" class="outline-2"&gt;
-&lt;h2 id="org3d7d474"&gt;A Lisp interpreter implemented in Conway's Game of Life&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org3d7d474"&gt;
-&lt;p&gt;
-&lt;a href="https://woodrush.github.io/blog/posts/2022-01-12-lisp-in-life.html"&gt;A Lisp Interpreter Implemented in Conway’s Game of Life&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-I include this as an application rather than an implementation
-technique because … well … it's far more interesting as an
-example of cellular automata (CAs) than as a Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-Having said that, there's something utterly compelling in watching
-a CA run something this complicated. It basically implements a
-Lisp machine core, and watching it execute is rather like watching
-a real chip in action (even though the mechanisms are completely
-different). You can &lt;i&gt;see&lt;/i&gt; memory being accessed. Its implementation
-includes lexical closures, enough to build a simple object system.
-&lt;/p&gt;
-
-&lt;p&gt;
-The implementation uses the VarLife system as an abstraction layer
-over the "raw" Conway rules. The compiled programs can be run on
-the &lt;a href="https://en.wikipedia.org/wiki/Golly_(program)"&gt;Golly&lt;/a&gt; CA emulator.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/a-lisp-interpreter-implemented-in-conway1s-game-of-life/</guid><pubDate>Fri, 22 May 2026 11:47:12 GMT</pubDate></item><item><title>Common Lisp screenshots</title><link>https://simondobson.org/2026/05/22/common-lisp-screenshots/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org66d9b91" class="outline-2"&gt;
-&lt;h2 id="org66d9b91"&gt;Common Lisp screenshots&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org66d9b91"&gt;
-&lt;p&gt;
-&lt;a href="https://www.lisp-screenshots.org/"&gt;https://www.lisp-screenshots.org/&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A collection of links to Common Lisp applications, including
-utilities, games, and full-blown science packages and web
-applications. Most have links to the applications' home pages.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>applications</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/common-lisp-screenshots/</guid><pubDate>Fri, 22 May 2026 11:46:17 GMT</pubDate></item><item><title>The Common Lisp cookbook</title><link>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgf1d1f85" class="outline-2"&gt;
-&lt;h2 id="orgf1d1f85"&gt;The Common Lisp cookbook&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgf1d1f85"&gt;
-&lt;p&gt;
-&lt;a href="https://lispcookbook.github.io/cl-cookbook/"&gt;https://lispcookbook.github.io/cl-cookbook/&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Part tutorial and part recipe site for topics ranging from the
-common (syntax, the &lt;code&gt;loop&lt;/code&gt; macro), to the advanced (packages,
-multi-threaded web application programming, building stand-alone
-binaries). It's extremely thorough in terms of the patterns used
-in real Lisp code.
-&lt;/p&gt;
-
-&lt;p&gt;
-I think the most useful aspect is that the recipes go well beyond
-what's built-in to Lisp and tackle some of the common (and
-not-so-common) packages: the chapter on arrays goes into a couple
-of linear algebra packages, for example. It also has useful
-chapters on development tasks like profiling and continuous
-integration.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</guid><pubDate>Fri, 22 May 2026 11:45:13 GMT</pubDate></item><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
-&lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7c86248"&gt;
-&lt;p&gt;
-&lt;a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/"&gt;Lush: my favorite small programming language&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A blog post all about &lt;a href="https://lush.sourceforge.net/"&gt;Lush&lt;/a&gt;, a small language that the authors
-present as a "Lisp Universal SHell" whose main features are its
-ability to integrate simply with underlying libraries with the
-interactivity of Lisp. And it's a full Lisp, with a compiler, a
-macro system, an object system, and (importantly for what comes
-next) high-performance arrays and tensors.
-&lt;/p&gt;
-
-&lt;p&gt;
-Lush's main claim to interest is that its authors include Yann
-LeCun, Yoshua Bengio, and the other researchers who went on to
-have a massive influence on the resurgences of interest in deep
-learning neural networks. Indeed, the first version of the Torch
-package, which later became &lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;, was written in Lush. Lush's
-arrays make use of a sub-language modelled on APL that leverage
-Lush's ease with foreign functions to call into underlying C
-kernels for tensor operations.
-&lt;/p&gt;
-
-&lt;p&gt;
-This is a great example of how Lisp's claim to fame as a language
-for doing AI has continued into the "new" AI era of deep learning
-models. It also shows that, if you believe that Lisp's dynamism
-and flexibility are an advantage to you, there are no barriers to
-continuing to benefit from that even if you need to access a wider
-ecosystem of tools. It'd be interesting to understand the
-performance trade-offs in this: what is the performance of a Lush
-algorithm that makes extensive use of its array language, and
-how can this performance be maximised using higher-level language
-constructs of the sort Lisp encourages?
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/06/12/modern-common-lisp-with-fset/</guid><pubDate>Fri, 12 Jun 2026 08:56:40 GMT</pubDate></item></channel></rss>

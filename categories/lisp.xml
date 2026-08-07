@@ -1,5 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Tue, 14 Jul 2026 07:17:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about lisp)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/lisp.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 10:15:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unexpected behaviour in Lisp sub-typing</title><link>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org11c1948" class="outline-2"&gt;
+&lt;h2 id="org11c1948"&gt;Unexpected (to me) behaviour in Lisp sub-typing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org11c1948"&gt;
+&lt;p&gt;
+I just encountered some unexpected behaviour in how Common Lisp (or
+at least &lt;a href="https://sbcl.org"&gt;SBCL&lt;/a&gt;) handles array sub-typing.
+&lt;/p&gt;
+
+&lt;p&gt;
+Suppose you have a structure declaration like this:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We can create instances of this struct by providing an initial
+value, and it will be type-checked.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #(1 2 3))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+We can also omit the argument and get the default specified in the
+declaration:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So far so good. But suppose we now specialise the &lt;code&gt;simple-array&lt;/code&gt; type
+against a type such as &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; (the type of unsigned
+16-bit integers).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;B&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This generates an error, as does using the default value.
+&lt;/p&gt;
+
+&lt;p&gt;
+Why is this? I eventually tracked the problem down to the fact that
+the expression &lt;code&gt;#1A()&lt;/code&gt; is given type &lt;code&gt;(simple-vector 0)&lt;/code&gt; while the
+expression &lt;code&gt;#1A(1 2 3)&lt;/code&gt; is given type &lt;code&gt;(simple-vector 3)&lt;/code&gt;, and neither
+of these are sub-types of &lt;code&gt;(simple-array (unsigned-byte 16))&lt;/code&gt;:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 0)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 3)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-vector&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+T
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So the typing works for &lt;code&gt;integer&lt;/code&gt; (and indeed for &lt;code&gt;number&lt;/code&gt; and &lt;code&gt;float&lt;/code&gt;)
+but not for the constrained types like &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; –
+although it &lt;i&gt;does&lt;/i&gt; work for &lt;code&gt;unsigned-byte&lt;/code&gt; (with no width).
+&lt;/p&gt;
+
+&lt;p&gt;
+Interestingly the tests fail for empty arrays as well:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I assume that the behaviour is because the compiler is at liberty to
+optimise the storage of arrays with specific types, and doing so
+makes it awkward to compare against types like &lt;code&gt;simple-vector&lt;/code&gt; that
+don't contain their element type. This would also explain why the
+check succeeds for types like &lt;code&gt;integer&lt;/code&gt;, whose values are stored
+boxed and so can represented uniformly.
+&lt;/p&gt;
+
+&lt;p&gt;
+There's a simple way around this, of course, once you know what the
+problem is: make the type of the value explicit rather than relying
+on the reader macro. For example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;C&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+and also:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:initial-contents&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;alexandria:iota&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #(0 1 2))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I can't find this behaviour detailed in the manuals (or anywhere
+else) though. Perhaps it's only an artefact of optimisation.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</guid><pubDate>Fri, 07 Aug 2026 09:27:05 GMT</pubDate></item><item><title>A road to Lisp -- Which Lisp?</title><link>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org4511ed2" class="outline-2"&gt;
+&lt;h2 id="org4511ed2"&gt;A road to Lisp: Which Lisp?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org4511ed2"&gt;
+&lt;p&gt;
+&lt;a href="https://scotto.me/blog/2026-07-17-which-lisp/"&gt;A Road to Lisp: Which Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A blog post reviewing four dialects of Lisp that a beginner
+wanting to start with Lisp can choose: Common Lisp, Clojure,
+Racket, and ELisp. The author, Elia Scotto, interestingly doesn't
+include Scheme, although he does present Racket as a Scheme
+dialect (which of course it is).
+&lt;/p&gt;
+
+&lt;p&gt;
+Does the choice too make initially matter?
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Dialect matters, but not as much as a beginner might think.
+Learning Lisp is about learning a new type of programming. &lt;b&gt;A new
+way of thinking about problems using code.&lt;/b&gt; You will learn the
+fundamental concepts with any dialect. Then, once you have learned
+one, it will be relatively easy to switch to another.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I think most Lisp devotees would agree with the sentiment that
+it's about a new relationship with code; I'm not totally convinced
+that Racket is a good place to start, given that it's essentially
+&lt;i&gt;several&lt;/i&gt; languages; and ELisp only makes sense if you are already a
+devoted Emacs user, otherwise the learning curve will be nearly
+vertical.
+&lt;/p&gt;
+
+&lt;p&gt;
+Scotto's conclusion is that Clojure is the safest first choice,
+giving you a modern syntax and full-stack environment with access
+to all the Java libraries, while Common Lisp gives you fast native
+compilation within a large, stable, and rock-solid ecosystem, and
+Racket is a good basis for language research.
+&lt;/p&gt;
+
+&lt;p&gt;
+For my own part I came to Scheme first when I was an
+undergraduate, then picked up ELisp when I started using Emacs,
+and then learned Common Lisp when I started wanting to write
+significant code – and there I've stayed with the latter two,
+quite happily. It's certainly the case that it's been easy to move
+between these dialects, modulo some differences that are purely
+syntactic. And it's certainly true that Lisp changed my
+relationship to code in a deep and persistent way.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</guid><pubDate>Fri, 07 Aug 2026 08:59:43 GMT</pubDate></item><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
 &lt;h2 id="orge66a136"&gt;Beautiful Racket: An introduction to language-oriented programming using Racket&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orge66a136"&gt;
 &lt;p class="floater"&gt;
@@ -273,83 +488,4 @@ chapters on development tasks like profiling and continuous
 integration.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</guid><pubDate>Fri, 22 May 2026 11:45:13 GMT</pubDate></item><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
-&lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org7c86248"&gt;
-&lt;p&gt;
-&lt;a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/"&gt;Lush: my favorite small programming language&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-A blog post all about &lt;a href="https://lush.sourceforge.net/"&gt;Lush&lt;/a&gt;, a small language that the authors
-present as a "Lisp Universal SHell" whose main features are its
-ability to integrate simply with underlying libraries with the
-interactivity of Lisp. And it's a full Lisp, with a compiler, a
-macro system, an object system, and (importantly for what comes
-next) high-performance arrays and tensors.
-&lt;/p&gt;
-
-&lt;p&gt;
-Lush's main claim to interest is that its authors include Yann
-LeCun, Yoshua Bengio, and the other researchers who went on to
-have a massive influence on the resurgences of interest in deep
-learning neural networks. Indeed, the first version of the Torch
-package, which later became &lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;, was written in Lush. Lush's
-arrays make use of a sub-language modelled on APL that leverage
-Lush's ease with foreign functions to call into underlying C
-kernels for tensor operations.
-&lt;/p&gt;
-
-&lt;p&gt;
-This is a great example of how Lisp's claim to fame as a language
-for doing AI has continued into the "new" AI era of deep learning
-models. It also shows that, if you believe that Lisp's dynamism
-and flexibility are an advantage to you, there are no barriers to
-continuing to benefit from that even if you need to access a wider
-ecosystem of tools. It'd be interesting to understand the
-performance trade-offs in this: what is the performance of a Lush
-algorithm that makes extensive use of its array language, and
-how can this performance be maximised using higher-level language
-constructs of the sort Lisp encourages?
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item><item><title>Lisp from nothing</title><link>https://simondobson.org/2025/11/26/lisp-from-nothing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb3d1ff4" class="outline-2"&gt;
-&lt;h2 id="orgb3d1ff4"&gt;Lisp from nothing&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb3d1ff4"&gt;
-&lt;p class="floater"&gt;
-&lt;img src="https://simondobson.org/attachments/c8/94f691-a88c-44ba-8366-02aa08aad82b/screenshot.png" alt="nil"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-Nils Holm.  &lt;i&gt;Lisp from Nothing&lt;/i&gt;. Lulu Press. 2025.
-&lt;/p&gt;
-
-&lt;p&gt;
-This is a fascinating book that's very old-school – and I mean
-that in the best possible way. It does exactly what it says:
-develops a Lisp interpreter (and then a compiler) from first
-principles, bootstrapped on top of an existing Lisp or Scheme
-against a runtime written in C, with all code provided.
-&lt;/p&gt;
-
-&lt;p&gt;
-It's more than this, though. There's a thorough discussion of the
-differences between dynamic and lexical variable scope (and the
-implications for both programming and implementation). There's a
-digression into pure lambda calculus and the complexities that &lt;i&gt;it&lt;/i&gt;
-introduces. There's a basic mark/sweep garbage collector. There's
-a brief history of Lisp and Lisp machines. And there's a
-performance evaluation that digs into where the costs lie within
-the system.
-&lt;/p&gt;
-
-&lt;p&gt;
-Overall this is a book that every implementor should read, if only
-to see some other parts of the possible design space for Lisp
-tooling. Many applications will want to occupy a different point
-in that space, for example providing a richer compiler, or a
-richer runtime. But there's a lot to learn from the simplicity of
-the choices made here.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>implementation-techniques</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/26/lisp-from-nothing/</guid><pubDate>Wed, 26 Nov 2025 10:06:12 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>advanced-tutorial</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/05/22/the-common-lisp-cookbook/</guid><pubDate>Fri, 22 May 2026 11:45:13 GMT</pubDate></item></channel></rss>

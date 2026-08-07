@@ -1,5 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb8af6ca" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about programming)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/programming.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 10:15:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unexpected behaviour in Lisp sub-typing</title><link>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org11c1948" class="outline-2"&gt;
+&lt;h2 id="org11c1948"&gt;Unexpected (to me) behaviour in Lisp sub-typing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org11c1948"&gt;
+&lt;p&gt;
+I just encountered some unexpected behaviour in how Common Lisp (or
+at least &lt;a href="https://sbcl.org"&gt;SBCL&lt;/a&gt;) handles array sub-typing.
+&lt;/p&gt;
+
+&lt;p&gt;
+Suppose you have a structure declaration like this:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;integer&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+We can create instances of this struct by providing an initial
+value, and it will be type-checked.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #(1 2 3))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+We can also omit the argument and get the default specified in the
+declaration:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(A :A #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So far so good. But suppose we now specialise the &lt;code&gt;simple-array&lt;/code&gt; type
+against a type such as &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; (the type of unsigned
+16-bit integers).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;B&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This generates an error, as does using the default value.
+&lt;/p&gt;
+
+&lt;p&gt;
+Why is this? I eventually tracked the problem down to the fact that
+the expression &lt;code&gt;#1A()&lt;/code&gt; is given type &lt;code&gt;(simple-vector 0)&lt;/code&gt; while the
+expression &lt;code&gt;#1A(1 2 3)&lt;/code&gt; is given type &lt;code&gt;(simple-vector 3)&lt;/code&gt;, and neither
+of these are sub-types of &lt;code&gt;(simple-array (unsigned-byte 16))&lt;/code&gt;:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 0)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type-of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+(SIMPLE-VECTOR 3)
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-vector&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+T
+&lt;/pre&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+So the typing works for &lt;code&gt;integer&lt;/code&gt; (and indeed for &lt;code&gt;number&lt;/code&gt; and &lt;code&gt;float&lt;/code&gt;)
+but not for the constrained types like &lt;code&gt;(unsigned-byte 16)&lt;/code&gt; –
+although it &lt;i&gt;does&lt;/i&gt; work for &lt;code&gt;unsigned-byte&lt;/code&gt; (with no width).
+&lt;/p&gt;
+
+&lt;p&gt;
+Interestingly the tests fail for empty arrays as well:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;typep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Other"&gt;#1A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+NIL
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I assume that the behaviour is because the compiler is at liberty to
+optimise the storage of arrays with specific types, and doing so
+makes it awkward to compare against types like &lt;code&gt;simple-vector&lt;/code&gt; that
+don't contain their element type. This would also explain why the
+check succeeds for types like &lt;code&gt;integer&lt;/code&gt;, whose values are stored
+boxed and so can represented uniformly.
+&lt;/p&gt;
+
+&lt;p&gt;
+There's a simple way around this, of course, once you know what the
+problem is: make the type of the value explicit rather than relying
+on the reader macro. For example:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defstruct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;C&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;simple-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #())
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+and also:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;make-c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;make-array&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:element-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;'&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;unsigned-byte&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:initial-contents&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;alexandria:iota&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre class="example"&gt;
+#S(C :C #(0 1 2))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+I can't find this behaviour detailed in the manuals (or anywhere
+else) though. Perhaps it's only an artefact of optimisation.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2026/08/07/strange-behaviour-in-lisp-sub-typing/</guid><pubDate>Fri, 07 Aug 2026 09:27:05 GMT</pubDate></item><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb8af6ca" class="outline-2"&gt;
 &lt;h2 id="orgb8af6ca"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-orgb8af6ca"&gt;
 &lt;p&gt;
@@ -1478,153 +1636,4 @@ choice&lt;/i&gt;, not a given, and one we can question and change as we wish.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item><item><title>Locally overriding a function throughout a dynamic extent</title><link>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2c7df6e" class="outline-2"&gt;
-&lt;h2 id="org2c7df6e"&gt;Locally overriding a function throughout a dynamic extent&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2c7df6e"&gt;
-&lt;p&gt;
-A horribly dangerous but occasionally useful Lisp technique.
-&lt;/p&gt;
-
-&lt;p&gt;
-My use case is as follows. &lt;code&gt;ebib&lt;/code&gt; has a command to copy a
-formatted reference to the kill ring, using
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to actually do the formatting.
-This means it's easy to change the style of the formatted
-reference. However, &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;  itself uses
-&lt;code&gt;citar-render-bib&lt;/code&gt; with a plain-text formatter. This is a sensible
-default, but since I'm almost always copying references into
-org-more documents, it loses a lot of information: it'd be better
-to use the org formatter, but there's no argument to specify it.
-&lt;/p&gt;
-
-&lt;p&gt;
-Clearly the correct solution is to change
-&lt;code&gt;citar-citeproc-format-reference&lt;/code&gt; to take a key or optional
-argument to specify the formatter, but that involves changing
-someone else's code. The hacker solution is to change the call
-&lt;code&gt;(citeproc-render-bib proc 'plain)&lt;/code&gt; to &lt;code&gt;(citeproc-render-bib proc
-  'org)&lt;/code&gt;, but without re-writing the entire surrounding function to
-keep the change just to the case where I need it.
-&lt;/p&gt;
-
-&lt;p&gt;
-One way to do this would be to define a variant
-&lt;code&gt;citeproc-render-bib&lt;/code&gt; that ignores its second argument (the
-formatter) and always uses &lt;code&gt;'org&lt;/code&gt; instead, and then substitute
-this variant for the original – but &lt;i&gt;only&lt;/i&gt; in the dynamic extent
-of a &lt;i&gt;particular&lt;/i&gt; call to &lt;code&gt;citar-citeproc-format-reference&lt;/code&gt;. In
-most languages this would be impossible – but not in Emacs Lisp.
-&lt;/p&gt;
-
-&lt;p&gt;
-The solution is to use &lt;code&gt;cl-letf&lt;/code&gt;, which overrides the values of
-general places for the duration of its body forms and restores the
-original value on exit (normal or otherwise). The important point
-is that the change occurs across the &lt;i&gt;extent&lt;/i&gt; of the body – the
-body and all the code called from the body – and not merely in
-the &lt;i&gt;scope&lt;/i&gt; of the body, which would only affect calls made there
-directly.
-&lt;/p&gt;
-
-&lt;p&gt;
-For example, consider in the following:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Which when called gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-If we want to override the default value (10) that's passed to &lt;code&gt;f&lt;/code&gt;
-and instead use 25, we can define a new version that ignores the
-second argument and uses our preferred default, and then
-temporarily override the definition of &lt;code&gt;f&lt;/code&gt; in the calling
-environment. If we want to use the original in the overriding
-definition we need to grab it first. This gives:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-letf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(((&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;				    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-51
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-What's going on? The &lt;code&gt;cl-letf&lt;/code&gt; macro is like &lt;code&gt;let&lt;/code&gt; but works with
-general places (as in &lt;code&gt;setf&lt;/code&gt;). It sets the places in its argument
-list for the duration of its body, and then restores them on exit,
-regardless of whether that exit is normal or &lt;i&gt;via&lt;/i&gt; a condition.
-&lt;/p&gt;
-
-&lt;p&gt;
-The &lt;code&gt;(symbol-function 'f)&lt;/code&gt; form returns the place that stores the
-function associated with symbol &lt;code&gt;f&lt;/code&gt;. We use it twice: once to
-capture this function so we can use it later, and once to identify
-the place where we store our new variant function. This new binding
-is then used for all calls made from the body of the &lt;code&gt;cl-letf&lt;/code&gt;,
-regardless of depth, so the call to &lt;code&gt;first&lt;/code&gt; makes use of our variant
-definition of &lt;code&gt;f&lt;/code&gt; rather than the original – but with the original
-then being used in the variant in our case!
-&lt;/p&gt;
-
-&lt;p&gt;
-If we'd used &lt;code&gt;let&lt;/code&gt; or &lt;code&gt;cl-flet&lt;/code&gt; instead of &lt;code&gt;cl-letf&lt;/code&gt; we wouldn't
-have got the behaviour we're looking for:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;symbol-function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;'f&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
-&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;cl-flet&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="w"&gt;	      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;origf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;first&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;pre class="example"&gt;
-36
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Why? Because &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;cl-flet&lt;/code&gt; work over the &lt;i&gt;scope&lt;/i&gt; of the body,
-so only calls to &lt;code&gt;f&lt;/code&gt; directly from the body of the assignment are
-affected – not calls from calls. This is a great illustration of
-the difference between the closely-related concepts of (static,
-lexical) scope and (dynamic, run-time) extent, incidentally.
-&lt;/p&gt;
-
-&lt;p&gt;
-I did say it was horrible :-). It's basically like adding
-temporary &lt;code&gt;:around&lt;/code&gt; advice, and could probably benefit from a
-macro to wrap it up. It's also inconceivable that it's thread- or
-co-routine-safe, although I haven't checked.
-&lt;/p&gt;
-
-&lt;p&gt;
-Part of the horribleness comes from the fact that the redefinition
-is made for the entire dynamic extent of the body forms, which
-means &lt;i&gt;all&lt;/i&gt; instances of the overridden function will use the
-overridden value. There might be more than you think! But for
-well-understood code it's sometimes useful, avoiding duplicating
-code to make tiny changes.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><category>emacs</category><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/</guid><pubDate>Mon, 22 Jan 2024 10:34:45 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>lisp</category><category>programming</category><guid>https://simondobson.org/2024/02/10/some-criticisms-of-lisp/</guid><pubDate>Sat, 10 Feb 2024 17:07:48 GMT</pubDate></item></channel></rss>

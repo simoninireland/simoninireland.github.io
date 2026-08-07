@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simon Dobson (old posts, page 163)</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		<li>
+<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2026/07/10/a-programmable-programming-language/" rel="bookmark">Friday 10 July, 2026</a>
+			</span>
+		    </div>
+		    <h1><a href="../2026/07/10/a-programmable-programming-language/">A programmable programming&nbsp;language</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org90d39a3" class="outline-2">
+<h2 id="org90d39a3">A programmable programming&nbsp;language</h2>
+<div class="outline-text-2" id="text-org90d39a3">
+<p>
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  <i><a href="https://doi.org/10.1145/3127323">A Programmable Programming Language</a></i>.
+Communications of the <span class="caps">ACM</span> <b>61</b>, pp.62–71.&nbsp;2018.
+</p>
+
+<p>
+Lisp has been described as a &#8220;programmable programming language&#8221;:
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with &#8220;real&#8221; Lisp in
+interesting&nbsp;ways.
+</p>
+
+<p>
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+&#8220;natural&#8221; expression of the target domain. The languages don&#8217;t
+even have to be&nbsp;Lisp-like.
+</p>
+
+<blockquote>
+<p>
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching&nbsp;terms.
+</p>
+</blockquote>
+
+<p>
+Racket languages are formed of two parts: a <b>reader</b> that turns
+strings into properly bracketed S-expressions, and an <b>expander</b>
+that turns these expressions into &#8220;real&#8221; Racket (or some other
+Racket-defined&nbsp;language).
+</p>
+
+<p>
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don&#8217;t readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It&#8217;s a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp&nbsp;syntax.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/stasiland-stories-from-behind-the-berlin-wall/" rel="bookmark">Monday 22 June, 2026</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/stasiland-stories-from-behind-the-berlin-wall/">Stasiland: Stories from Behind the Berlin&nbsp;Wall</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385280143l/226369._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Anna Funder&nbsp;(2003)
+      </h2>
+    </div>
+    <p>
+      A view of East Germany by a semi-outsider, an Australian living in the East. Perhaps this gives a better perspective.<br><br>The Stasi come across in this book as the most dedicated and efficient secret police force imaginable. They want to known <i>everything</i> – to the extent of imprisoning one of their own agents for <i>not</i> reporting something that he <i>knew</i> would get him into trouble – and co-opted a large fraction of the East German population to report on their friends and families, even when those reports served no purpose other than simply to <i>be</i> reported.<br><br>It&#8217;s surprising how many former Stasi men (and they were all men) Funder managed to persuade to speak to her, and how open they were about some of the frankly amazing technology and tradecraft they employed. She is clearly a skilled journalist and a good listener, perhaps aided by her outsider status and fluent German.<br><br>There are some comic incidents, as one would expect, notably the Stasi man who steals a cheap trinket when he retires and is then persistently investigated even though no-one cares about the object itself. And then when Germany re-unifies he is investigated <i>again</i> by the authorities: once for the theft (which now concerns reunified Germany&#8217;s state property) and then again for lying about the theft. Kafka would have approved.<br><br>But the main story is one of persecution, where a single mistake – the details of which may never be apparent – can blight someone&#8217;s entire life. It can make them unemployable, with the additional twist that they can&#8217;t actually <i>be</i> unemployed because that is considered a Western phenomenon that the state has declared does not exist in East Germany. The Party invents and publicises a new dance that&#8217;s designed to eliminate all contact between dancers so as to avoid temptation. It&#8217;s hard to imagine the level of false consciousness living under such a system required of everyone – and even harder to understand that some still yearn for its barren&nbsp;certainties.
+      </p>
+<p>
+	4/5.
+	  Finished Monday 22 June,&nbsp;2026.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/8635314942?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+    <!-- Lower Navigation links -->
+    <nav class="site-content navigation-post" role="navigation"><div class="previous">
+		<a href="index-162.html" rel="prev">
+		    <span class="meta-nav">Older Entries</span>		</a>
+	    </div>
+	    <div class="next">
+		<a href="." rel="next">
+		    <span class="meta-nav">Newer Entries</span>		</a>
+	    </div>
+    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2026 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>
