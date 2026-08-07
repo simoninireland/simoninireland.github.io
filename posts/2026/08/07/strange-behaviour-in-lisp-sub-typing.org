@@ -125,7 +125,7 @@
 
   and also:
 
-  #+begin_src lisp :result scalar  :exports both
+  #+begin_src lisp :results scalar  :exports both
 (make-c :c (make-array '(3) :element-type '(unsigned-byte 16) :initial-contents (alexandria:iota 3)))
   #+end_src
 
@@ -133,4 +133,29 @@
 : #S(C :C #(0 1 2))
 
   I can't find this behaviour detailed in the manuals (or anywhere
-  else) though. Perhaps it's only an artefact of optimisation.
+  else) though. However, it seems to be related to the /upgraded array
+  element type/. When an array is created, the implementation is
+  allowed to use a different type to the one specified in its
+  representation, which must be a supertype of the type requested. For
+  types like ~integer~ and ~unsigned-byte~ this is ~t~, the top type in the lattice:
+
+  #+begin_src lisp :results scalar :exports both
+(upgraded-array-element-type 'unsigned-byte)
+  #+end_src
+
+#+RESULTS:
+: T
+
+  But for the "constrained" types the upgraded type is the type
+  itself:
+
+  #+begin_src lisp :results scalar :exports both
+(upgraded-array-element-type '(unsigned-byte 16))
+  #+end_src
+
+#+RESULTS:
+: (UNSIGNED-BYTE 16)
+
+  This suggests to me that the compiler (SBCL) is indeed optimising
+  the representation and then also performing more detailed
+  type-checking for elements.
