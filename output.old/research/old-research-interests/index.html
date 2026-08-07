@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Older research interests | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../assets/fonts/libretto-icons.eot);
+	    src:url(../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../assets/css/code.css">
+<link rel="stylesheet" href="../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../index.html">Home</a></li>
+		    <li><a href="../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../">Research</a></li>
+		    <li><a href="../../development/projects/">Software</a></li>
+		    <li><a href="../../writing/">Writing</a></li>
+		    <li><a href="../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<h1>Older research&nbsp;interests</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>
+In the past I’ve worked on a range of areas. Some are still of
+interest; some not so much; and some are now much more in the
+mainstream than they were back in the&nbsp;day.
+</p>
+<div id="outline-container-org8fa3f44" class="outline-2">
+<h2 id="org8fa3f44">Programming&nbsp;languages</h2>
+<div class="outline-text-2" id="text-org8fa3f44">
+<p>
+<span class="caps">OK</span>, not so much of a past interest, it’s a current interest that I
+don’t have an active research programme in. In another sense, though,
+everything I do is about programming languages, or at least about ways
+to capture computational processes in a way that’s simple and
+accessible to people. At their broadest, programming languages are
+about allowing people to express their computational ideas easily, and
+that’s something that underpins all computer science&nbsp;research.
+</p>
+
+<p>
+I’ve developed a number of software systems in the past, including a
+system for prototyping programming language interpreters (<a href="/development/projects/vanilla/">Vanilla</a>) and
+a modern Forth compiler that we used for experiments in sensor network
+programming (<a href="/development/projects/attila">Attila</a>). Both are still available, and may even work on
+modern systems: your mileage may&nbsp;vary.
+</p>
+</div>
+</div>
+<div id="outline-container-orgecb75da" class="outline-2">
+<h2 id="orgecb75da">High-performance&nbsp;computing</h2>
+<div class="outline-text-2" id="text-orgecb75da">
+<p>
+My PhD concerned programming languages for scalable parallel
+programming approaches for <a href="https://en.wikipedia.org/wiki/Transputer">Transputers</a>, a 1980s processor family
+that combined processing with four network adaptors for talking to
+neighbouring Transputers. They were intended to be constructed as 2d
+arrays, computing in parallel and exchanging data with their
+neighbours. A great idea, but hard to program effectively. We
+explored data structures that expanded onto neighbouring machines
+naturally as they grew, while being processed in parallel. It was
+sort of a generalisation of what later became <a href="https://en.wikipedia.org/wiki/MapReduce">map-reduce</a>.
+</p>
+
+<p>
+(Despite being very innovative at the time, it proved impossible for
+the Transputer to keep up with the advancing speeds of more
+traditional processor architectures – not least because they also
+had to simultaneously speed-up the interconnect to keep the balance
+right. I can still remember when we acquired an <a href="https://en.wikipedia.org/wiki/IBM_RS/6000"><span class="caps">IBM</span> <span class="caps">RS</span>/6000</a>
+workstation and realised the extent to which it blew the performance
+of our 32-Transputer array out of the water, without needing any special
+programming&nbsp;techniques.)
+</p>
+
+<p>
+I did a postdoc that similarly looked at programming language
+solutions for high-performance computing, re-visiting the idea
+parallel computing based around data types as part of a project
+called <a href="https://www.chilton-computing.org.uk/cisd/literature/atlas/p005.htm#s5">TallShiP</a>. We managed to get these structures (&#8220;shared
+abstract data types&#8221; or SADTs) to perform efficiently on
+workstations and supercomputers by weakening the memory consistency
+model in type-specific&nbsp;ways.
+</p>
+</div>
+</div>
+<div id="outline-container-org0d0d6a6" class="outline-2">
+<h2 id="org0d0d6a6">Autonomic&nbsp;computing</h2>
+<div class="outline-text-2" id="text-org0d0d6a6">
+<p>
+Making large computer systems more manageable involves improving the
+ways in which they model and control their own behaviour in response
+to changing conditions. I worked a lot on whole-system models of
+adaptive behaviour, which eventually narrowed into an interest in
+managing sensor&nbsp;systems.
+</p>
+</div>
+</div>
+<div id="outline-container-orga8e88aa" class="outline-2">
+<h2 id="orga8e88aa">Pervasive&nbsp;computing</h2>
+<div class="outline-text-2" id="text-orga8e88aa">
+<p>
+Another topic that’s still of interest, although perhaps not in a
+mainstream way. I used to work on assisted living and other
+applications of pervasive systems; now I focus on situation
+recognition, which — while it’s a technique with deep applications in
+pervasive systems — is somewhat broader and can be applied to all
+aspects of data science and sensing. Essentially we don’t care where
+the data comes from when interpreting it, so we can look at the deeper
+algorithmic issues rather than just the&nbsp;applications.
+</p>
+</div>
+</div>
+<div id="outline-container-org98165f6" class="outline-2">
+<h2 id="org98165f6">Distributed and web&nbsp;systems</h2>
+<div class="outline-text-2" id="text-org98165f6">
+<p>
+I got into the web early, including putting up one of the first really
+large-scale web servers backed by a database and a content manager
+(before “content manager” was a thing). Many of the techniques we
+looked at back then (in the mid-1990’s) have since morphed into the
+mainstream, in radically different (and mainly better) forms to the
+ways we envisioned&nbsp;them.
+</p>
+</div>
+</div>
+	    </div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two papers on clustered networks | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Thursday 25 June, 2020</a>
+	    </span>
+	</div>
+	<h1>Two papers on clustered&nbsp;networks</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>We just put pre-prints of two new papers dealing with the analysis of
+clustered networks  onto&nbsp;arXiv.</p>
+<!-- TEASER_END -->
+
+<p>Its well-known that the topology of a network affects the way
+processes work over it: diseases spread more quickly when they occur
+in social networks that contain &#8220;hubs&#8221; with lots of social
+connections, for example. For a long time network science only
+considered the degree distribution of nodes - the number of contacts
+an individual has. But it turns out that the ways in which those contacts
+occur matter&nbsp;too.</p>
+<p>In particular, human contact networks exhibit a feature called
+<em>clustering</em>. The easiest way to understand this is that the, if you
+have two friends, they are more likely to be friends themselves than
+are two randomly-chosen individuals: lots of people have mutual
+friends. This happens at longer distances as well, when you consider
+two of your friends also having <em>another</em> mutual friend &#8212; but one
+who isn&#8217;t a friend of&nbsp;yours.</p>
+<p>Since infections often propagate through contacts, these structures
+change the way diseases move through a population. Specifically, they
+increase the probability of someone becoming infected, meaning that
+epidemics spread faster and become larger than you&#8217;d expect in systems
+that don&#8217;t have&nbsp;clustering.</p>
+<p><img alt="Phase transitions" src="../../../../images/posts/20200625-slcc.png"></p>
+<p>These two papers &#8212; mainly written by Peter Mann, and co-authored by
+Anne Smith, John Mitchell, and myself &#8212; look at the underlying
+mathematics of these clustered networks. We study both &#8220;weak&#8221; and
+&#8220;strong&#8221; clusters consisting of cycles of arbitrary length that may
+also have short-cuts across them. We derive a model that lets us
+predict the behaviour of percolation-type processes on these
+networks. There are some interesting phenomena on show, not least a
+suggestion us using the size of the second-largest component as a marker
+for phase changes in the largest (giant) component. We also look
+at how these results affect multiplex networks,
+of the kind one finds when two recognisably-distinct groups of people
+meet and&nbsp;mingle.</p>
+<p>Both papers are under review by <em>Physical Review E</em>.</p>
+<p></p>
+<p></p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Two%20papers%20on%20clustered%20networks%20%23complexnetworks%20%23paper&amp;url=https://simondobson.org/2020/06/25/two-papers-on-clustered-networks/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Two%20papers%20on%20clustered%20networks%20%23complexnetworks%20%23paper&amp;url=https://simondobson.org/2020/06/25/two-papers-on-clustered-networks/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2020/06/25/two-papers-on-clustered-networks/&amp;title=Two%20papers%20on%20clustered%20networks%20%23complexnetworks%20%23paper" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2020/06/25/two-papers-on-clustered-networks/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Two%20papers%20on%20clustered%20networks&amp;body=https://simondobson.org/2020/06/25/two-papers-on-clustered-networks/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/complex-networks/">complex networks</a>
+		    <span>  </span>
+		<a href="../../../../categories/paper/">paper</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../17/i-to-e-first/" rel="prev">
+		<span class="meta-nav">Older Post</span>First outing of &#8220;Epidemic modelling&#8221;
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../../goodreads/lord-of-light/" rel="next">
+		<span class="meta-nav">Newer Post</span>Lord of Light
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

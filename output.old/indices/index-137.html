@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simon Dobson (old posts, page 137)</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		<li>
+<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/" rel="bookmark">Monday 22 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/22/locally-overriding-a-function-throughout-a-dynamic-extent/">Locally overriding a function throughout a dynamic&nbsp;extent</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org2c7df6e" class="outline-2">
+<h2 id="org2c7df6e">Locally overriding a function throughout a dynamic&nbsp;extent</h2>
+<div class="outline-text-2" id="text-org2c7df6e">
+<p>
+A horribly dangerous but occasionally useful Lisp&nbsp;technique.
+</p>
+
+<p>
+My use case is as&nbsp;follows. <code>ebib</code> has a command to copy a
+formatted reference to the kill ring,&nbsp;using
+<code>citar-citeproc-format-reference</code> to actually do the formatting.
+This means it&#8217;s easy to change the style of the formatted
+reference.&nbsp;However, <code>citar-citeproc-format-reference</code>  itself&nbsp;uses
+<code>citar-render-bib</code> with a plain-text formatter. This is a sensible
+default, but since I&#8217;m almost always copying references into
+org-more documents, it loses a lot of information: it&#8217;d be better
+to use the org formatter, but there&#8217;s no argument to specify&nbsp;it.
+</p>
+
+<p>
+Clearly the correct solution is to&nbsp;change
+<code>citar-citeproc-format-reference</code> to take a key or optional
+argument to specify the formatter, but that involves changing
+someone else&#8217;s code. The hacker solution is to change the&nbsp;call
+<code>(citeproc-render-bib proc 'plain)</code> to <code>(citeproc-render-bib proc
+  'org)</code>, but without re-writing the entire surrounding function to
+keep the change just to the case where I need&nbsp;it.
+</p>
+
+<p>
+One way to do this would be to define a&nbsp;variant
+<code>citeproc-render-bib</code> that ignores its second argument (the
+formatter) and always&nbsp;uses <code>'org</code> instead, and then substitute
+this variant for the original – but <i>only</i> in the dynamic extent
+of a <i>particular</i> call&nbsp;to <code>citar-citeproc-format-reference</code>. In
+most languages this would be impossible – but not in Emacs&nbsp;Lisp.
+</p>
+
+<p>
+The solution is to&nbsp;use <code>cl-letf</code>, which overrides the values of
+general places for the duration of its body forms and restores the
+original value on exit (normal or otherwise). The important point
+is that the change occurs across the <i>extent</i> of the body – the
+body and all the code called from the body – and not merely in
+the <i>scope</i> of the body, which would only affect calls made there&nbsp;directly.
+</p>
+
+<p>
+For example, consider in the&nbsp;following:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">defun</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+<p>
+Which when called&nbsp;gives:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)</span>
+</pre></div>
+
+<pre class="example">
+36
+</pre>
+
+
+<p>
+If we want to override the default value (10) that&#8217;s passed&nbsp;to <code>f</code>
+and instead use 25, we can define a new version that ignores the
+second argument and uses our preferred default, and then
+temporarily override the definition&nbsp;of <code>f</code> in the calling
+environment. If we want to use the original in the overriding
+definition we need to grab it first. This&nbsp;gives:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">cl-letf</span><span class="w"> </span><span class="p">(((</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">				    </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">)))</span>
+</pre></div>
+
+<pre class="example">
+51
+</pre>
+
+
+<p>
+What&#8217;s going on?&nbsp;The <code>cl-letf</code> macro is&nbsp;like <code>let</code> but works with
+general places (as&nbsp;in <code>setf</code>). It sets the places in its argument
+list for the duration of its body, and then restores them on exit,
+regardless of whether that exit is normal or <i>via</i> a&nbsp;condition.
+</p>
+
+<p>
+The <code>(symbol-function 'f)</code> form returns the place that stores the
+function associated with&nbsp;symbol <code>f</code>. We use it twice: once to
+capture this function so we can use it later, and once to identify
+the place where we store our new variant function. This new binding
+is then used for all calls made from the body of&nbsp;the <code>cl-letf</code>,
+regardless of depth, so the call&nbsp;to <code>first</code> makes use of our variant
+definition&nbsp;of <code>f</code> rather than the original – but with the original
+then being used in the variant in our&nbsp;case!
+</p>
+
+<p>
+If we&#8217;d&nbsp;used <code>let</code> or <code>cl-flet</code> instead&nbsp;of <code>cl-letf</code> we wouldn&#8217;t
+have got the behaviour we&#8217;re looking&nbsp;for:
+</p>
+
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nf">origf</span><span class="w"> </span><span class="p">(</span><span class="nf">symbol-function</span><span class="w"> </span><span class="ss">'f</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">cl-flet</span><span class="w"> </span><span class="p">((</span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="nf">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+<span class="w">	      </span><span class="p">(</span><span class="nf">funcall</span><span class="w"> </span><span class="nv">origf</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">first</span><span class="w"> </span><span class="mi">26</span><span class="p">))</span>
+</pre></div>
+
+<pre class="example">
+36
+</pre>
+
+
+<p>
+Why?&nbsp;Because <code>let</code> and <code>cl-flet</code> work over the <i>scope</i> of the body,
+so only calls&nbsp;to <code>f</code> directly from the body of the assignment are
+affected – not calls from calls. This is a great illustration of
+the difference between the closely-related concepts of (static,
+lexical) scope and (dynamic, run-time) extent,&nbsp;incidentally.
+</p>
+
+<p>
+I did say it was horrible :-). It&#8217;s basically like adding&nbsp;temporary <code>:around</code> advice, and could probably benefit from a
+macro to wrap it up. It&#8217;s also inconceivable that it&#8217;s thread- or
+co-routine-safe, although I haven&#8217;t&nbsp;checked.
+</p>
+
+<p>
+Part of the horribleness comes from the fact that the redefinition
+is made for the entire dynamic extent of the body forms, which
+means <i>all</i> instances of the overridden function will use the
+overridden value. There might be more than you think! But for
+well-understood code it&#8217;s sometimes useful, avoiding duplicating
+code to make tiny&nbsp;changes.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/" rel="bookmark">Sunday 21 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/this-is-how-they-tell-me-the-world-ends-the-cyberweapons-arms-race/">This Is How They Tell Me the World Ends: The Cyberweapons Arms&nbsp;Race</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610927353l/49247043._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Nicole Perlroth&nbsp;(2021)
+      </h2>
+    </div>
+    <p>
+      A hugely detailed and deeply researched history of the market for &#8220;zero-day: exploits, the faults and technologies underlying computer viruses and ransomware. It&#8217;s a hugely complicated and technical field which Perlroth does an amazing job of making accessible to a non-technical audience. (I should probably say here that I teach computer security.)<br><br>Most of the book is a real page-turner, deeply embedded with the government agencies, companies, and hackers who compose the zero-day market. It&#8217;s scathing of the <span class="caps">US</span>&#8217; trying to play both sides of the street, developing and buying zero-days in order to collect intelligence while weakening the security of ordinary users in the process by not informing the software developers of the problems they&#8217;ve found. They clearly knew this was dangerous, and even developed a doctrine for us: &#8220;<span class="caps">NOBUS</span>&#8221;, bugs that &#8220;no-one but us&#8221; would be smart enough to find or develop. This idea goes wrong spectacularly, as other nations realise how cheaply they too can have cyberweapons programmes: ironically they&#8217;re encouraged by the deployment of the Stuxnet virus to damage the Iranian nuclear programme. The leaks of the <span class="caps">NSA</span>&#8217;s zero-day stockpile by the Shadow Brokers – an event that&#8217;s somewhat under-explored – and their later use in hacks against <span class="caps">US</span> elections, are payback for hubris.<br><br>Perlroth is scathing of the Trump presidency&#8217;s neglect of cybersecurity and unwillingness to sanction Russia for known attacks – in part because it might cast doubt on Trump&#8217;s legitimacy as an elected president, but also seemingly from willful blindness and a mistrust of the professionals (including the military) tasked with protecting <span class="caps">US</span> networks. She was writing during the pandemic and before Trump conceded the 2020 election (to the extent that he ever did), and so if anything she understated the impacts of disinformation spreading.<br><br>The conclusions are a little breathless, but well-intentioned and technically appropriate, if a little <span class="caps">US</span>-centric – and in fairness the <span class="caps">US</span> has at least attempted to set up a more transparent approach to managing cyberweapons, even though the approach is drastically compromised by the desire to keep intelligence-gathering capabilities. Cybersecurity is an area where offence and defence are closely intertwined, and there&#8217;s a strong argument that the costs to society of the former mandate a focus on the latter. We need to accept that many cyberweapons that are used (or leaked) can be reverse-engineered and re-used against their original developers with little real up-front financial investment.<br><br>There&#8217;s some editing. including a repeated mis-use of &#8220;affect&#8221; rather than &#8220;effect&#8221;, and a really disastrous throw-away reference to the book <i>Dune</i>, the description of which is almost entirely wrong: surely an editor should have picked that&nbsp;up?
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 21 January,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/4691376169?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/edible-economics-a-hungry-economist-explains-the-world/" rel="bookmark">Saturday 20 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/edible-economics-a-hungry-economist-explains-the-world/">Edible Economics: A Hungry Economist Explains the&nbsp;World</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1656314692l/61030740._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Ha-Joon Chang&nbsp;(2022)
+      </h2>
+    </div>
+    <p>
+      A book that combines food with economics? Not really.<br><br>I&#8217;m torn by this book. I enjoyed the food parts, especially the author&#8217;s anecdotes about his move to the <span class="caps">UK</span> from Korea, and how he&#8217;s observed the <span class="caps">UK</span>&#8217;s food scene change from incredibly insular and conservative to amazingly open and dynamic over the course of a couple of decades. It&#8217;s a change I also lived through and remember well.<br><br>I also enjoyed the economics. Chang is an eclectic collector of economic theories – all the more surprising because he&#8217;s an academic. He has an appropriate degree of scepticism for ideology and single explanation of complex questions, which is refreshing. He skewers some of the common myths, such as the &#8220;explanation&#8221; that poor countreis stay poor because their people don&#8217;t work hard enough, ingoring the massive structural factors in play. He&#8217;s equally scathing about the other &#8220;explanation&#8221; about the free-trade roots of the successes of the <span class="caps">US</span> and <span class="caps">UK</span> economies, given that they were actually massively protectionist during their main periods of growth. And he makes several policy suggestions for modern economies.<br><br>But&#8230;. as a book, I don&#8217;t think it works at all. The conceit of explaining economics through food remains just that: a conceit that&#8217;s not really threaded through the narrative in a meaningful way. The links are often just too tenuous. To give one example, a chapter that leads with anchovies ends up talking about natural-resource extraction economics using the example of bird guano – well, birds eat anchovies, so&#8230; Most of the chapters are basically diviided between food and economics with an often desperate attempt to tie them together. The economics is accessible, and a writer who can do that probably doesn&#8217;t need a gimmick to structure his&nbsp;work.
+      </p>
+<p>
+	3/5.
+	  Finished Saturday 20 January,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6013201080?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/10/til-the-first-scientist/" rel="bookmark">Wednesday 10 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/10/til-the-first-scientist/"><span class="caps">TIL</span>: The first&nbsp;scientist</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-orgbb71478" class="outline-2">
+<h2 id="orgbb71478"><span class="caps">TIL</span>: The first&nbsp;scientist</h2>
+<div class="outline-text-2" id="text-orgbb71478">
+<p>
+Today I learned that <a href="https://www.themarginalian.org/2020/10/20/mary-somerville/">the first person ever to be called a
+&#8220;scientist&#8221;</a> was the Scottish … erm, scientist <a href="https://en.wikipedia.org/wiki/Mary_Somerville">Mary Sommerville</a>
+(1780–1872), who made discoveries across several fields of
+mathematics, physics, and astronomy, and was one of the first two
+women admitted to membership of the Royal Astronomical&nbsp;Society.
+</p>
+
+<p>
+It was the fact that she was both a woman and a polymath that led to
+the need for a new word. She clearly wasn&#8217;t a &#8220;man of science&#8221;, as
+was the common description; nor did she fall into the accepted
+classes such as geologist or chemist, since she contributed to all
+these fields and more. So <a href="https://en.wikipedia.org/wiki/William_Whewell">William Whewell</a>, the Master of Trinity
+College, Cambridge, and the person who had introduced one of
+Sommerville&#8217;s books to the university&#8217;s maths curriculum, decided to
+unify all these specific classes into the new general category of
+<i>scientist</i>. (He also introduced the terms <i>physicist</i> and
+<i>linguistics</i>.)
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/01/02/til-the-first-ever-com-domain/" rel="bookmark">Tuesday 2 January, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/01/02/til-the-first-ever-com-domain/"><span class="caps">TIL</span>: The first ever .com&nbsp;domain</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org6e774fc" class="outline-2">
+<h2 id="org6e774fc"><span class="caps">TIL</span>: The first ever .com&nbsp;domain</h2>
+<div class="outline-text-2" id="text-org6e774fc">
+<p>
+Today I learned that the first .com internet domain registered on
+the internet was <a href="https://symbolics.com">https://symbolics.com</a> and belonged to Symbolics, a
+company that made Lisp&nbsp;machines.
+</p>
+
+<p>
+It doesn&#8217;t relate to Lisp any more, of course. It&#8217;s been sold to
+someone who &#8220;helps entrepreneurs and investors acquire high-end
+domain names&#8221;, which seems about as meta as things can get: the
+first-ever .com domain name now points a company focused on
+acquiring domain&nbsp;names.
+</p>
+
+<p>
+Symbolics itself has a storied history, spinning-out from the <span class="caps">MIT</span> <span class="caps">AI</span>
+lab to sell hardware dedicated to running Lisp: one of <i>two</i> such
+start-ups actually. The <a href="https://en.wikipedia.org/wiki/Symbolics">Wikipedia page</a> is a good place to&nbsp;start.
+</p>
+
+<p>
+Incidentally, the rest of the top-ten first .com domains can be
+found <a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains">here</a>.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+    <!-- Lower Navigation links -->
+    <nav class="site-content navigation-post" role="navigation"><div class="previous">
+		<a href="index-136.html" rel="prev">
+		    <span class="meta-nav">Older Entries</span>		</a>
+	    </div>
+	    <div class="next">
+		<a href="index-138.html" rel="next">
+		    <span class="meta-nav">Newer Entries</span>		</a>
+	    </div>
+    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

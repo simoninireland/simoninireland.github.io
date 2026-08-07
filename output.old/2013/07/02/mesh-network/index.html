@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesh networking | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Tuesday 2 July, 2013</a>
+	    </span>
+	</div>
+	<h1>Mesh&nbsp;networking</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>A mesh network is a way of setting up a communications system when there&#8217;s no fixed infrastructure available. They&#8217;re often used for communications in remote sites, and on sensor&nbsp;networks.</p>
+<!--more-->
+
+<p>If you&#8217;ve used wifi, you&#8217;ve used an <em>infrastructural</em> wireless network in which there is a dedicated router that talks to all the devices in its range (phones, tablets, laptops, wireless-enabled printers, &#8230;) and connects them to the internet. The devices don&#8217;t talk to each other directly: if they want to exchange information (to print a document, for example) they do <em>via</em> the&nbsp;router.</p>
+<p>Another kind of infrastructural network is the cellular telephone service. All calls go through the cell towers: if you call your friend, and she happens to be standing next to you, your phone still talks to the nearest cell tower which then talks to her phone &#8212; a round trip that might be a couple of kilometres! While this sounds a bit barmy, it simplifies the design of the network and the software needed to manage it, and is fine in situations where there is plenty of power and room for the&nbsp;infrastructure.</p>
+<p>By contrast to these large-scale systems, XBees provide <a href="https://en.wikipedia.org/wiki/Mesh_networking" target="_blank"><em>mesh</em> networking</a> in which the devices co-operate to route traffic from the sensor motes (using <em>router</em> radios) to the base station (running a <em>co-ordinator</em> radio). As well as generating and receiving messages, nodes in the network also co-operate in moving other nodes&#8217; traffic. There is no infrastructure &#8212; the nodes are both the users <em>and</em> the providers of the network &#8212; which means a mesh can be deployed in areas without any &#8220;official&#8221; network coverage, or to provide functions (like low power) that the infrastructure that <em>is</em> available can&#8217;t deliver. Each mesh network works on a particular network protocol, different to the ones used for wifi or cellular&nbsp;telephony.</p>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Mesh%20networking%20%23background%20%23making%20%23network%20%23project%3Aditch&amp;url=https://simondobson.org/2013/07/02/mesh-network/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Mesh%20networking%20%23background%20%23making%20%23network%20%23project%3Aditch&amp;url=https://simondobson.org/2013/07/02/mesh-network/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2013/07/02/mesh-network/&amp;title=Mesh%20networking%20%23background%20%23making%20%23network%20%23project%3Aditch" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/07/02/mesh-network/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Mesh%20networking&amp;body=https://simondobson.org/2013/07/02/mesh-network/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/background/">background</a>
+		    <span>  </span>
+		<a href="../../../../categories/making/">making</a>
+		    <span>  </span>
+		<a href="../../../../categories/network/">network</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectditch/">project:ditch</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../01/xbee/" rel="prev">
+		<span class="meta-nav">Older Post</span>XBee radios
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../xctu/" rel="next">
+		<span class="meta-nav">Newer Post</span>XBee firmware management with X-<span class="caps">CTU</span>
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

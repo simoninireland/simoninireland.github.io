@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisp as a second language | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 29 November, 2024</a>
+	    </span>
+	</div>
+	<h1>Lisp as a second&nbsp;language</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org0e5ab39" class="outline-2">
+<h2 id="org0e5ab39">Lisp as a second&nbsp;language</h2>
+<div class="outline-text-2" id="text-org0e5ab39">
+<p>
+Peter Desain.  <i><a href="https://hdl.handle.net/2066/74778">Lisp as a Second Language: Functional Aspects</a></i>.
+Perspectives on New Music <b>20</b>, pp.192–222.&nbsp;1990.
+</p>
+
+<p>
+In some ways this article should come under &#8220;applications&#8221;, as
+it&#8217;s mainly concerned with using Lisp to represent and manipulate
+music. Indeed, it presents a system that can be used to perform
+all sorts of common transformations of the tones and timing of a
+piece. It&#8217;s easy to see how the resulting system could be used to
+compose and then to drive instruments, for example through a <span class="caps">MIDI</span>&nbsp;interface.
+</p>
+
+<p>
+The music perspective is however secondary to the goal of teaching
+and showcasing Lisp through the medium of a realistic example of
+symbolic programming. It covers a lot of ground, starting with
+lists and functions and including first-class functions and
+combinators as means of implementing the musical structures. It&#8217;s
+a great piece of pedagogy that treats the application and the
+language as closely linked, and not shying-away from some quite
+advanced techniques that have clear applications in the domain. It
+would be great to see this used as a basis for actual musical
+composition and&nbsp;performance.
+</p>
+</div>
+</div>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/annotated-lisp-bibliography/">An annotated Lisp bibliography</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Lisp%20as%20a%20second%20language%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial&amp;url=https://simondobson.org/2024/11/29/lisp-as-a-second-language/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Lisp%20as%20a%20second%20language%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial&amp;url=https://simondobson.org/2024/11/29/lisp-as-a-second-language/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2024/11/29/lisp-as-a-second-language/&amp;title=Lisp%20as%20a%20second%20language%20%23lisp%20%23project%3Alisp-bibliography%20%23tutorial" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2024/11/29/lisp-as-a-second-language/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Lisp%20as%20a%20second%20language&amp;body=https://simondobson.org/2024/11/29/lisp-as-a-second-language/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+		    <span>  </span>
+		<a href="../../../../categories/tutorial/">tutorial</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../../goodreads/the-fund-ray-dalio-bridgewater-associates-and-the-unraveling-of-a-wall-street-legend/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Fund: Ray Dalio, Bridgewater Associates, and the Unraveling of a Wall Street Legend
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../new-release-of-epydemic/" rel="next">
+		<span class="meta-nav">Newer Post</span>New release of epydemic
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

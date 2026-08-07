@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressions of Pervasive 2010 | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 21 May, 2010</a>
+	    </span>
+	</div>
+	<h1>Impressions of Pervasive&nbsp;2010</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>I&#8217;ve spent this week at the <a href="http://www.pervasive2010.org">Pervasive 2010 conference</a> on pervasive computing, along with the <a href="http://www.pmmps.org">Programming Methods for Mobile and Pervasive Systems</a> workshop I co-arranged with <a href="http://www.dominicduggan.org/">Dominic Duggan</a>. Both events have been fascinating.
+
+<!--more-->The <span class="caps">PMMPS</span> workshop is something we&#8217;ve wanted to run for a while, bringing together the programming language and pervasive/mobile communities to see where languages  ought to go. We received a diverse set of submissions: keynotes from Roy Campbell and Aaron Quigley, talks covering topics including debugging, software processes, temporal aspects (me), context collectionvisual programming ang a lot more. Some threads emerge quite strongly, but I think they&#8217;ll have to wait for a later post after I&#8217;ve collected my thoughts a bit more.
+
+The main conference included many  papers so good that it seems a shame to single any out. The following are simply those that spoke most strongly to me:
+
+<strong>Panorama and Cascadia.</strong> The University of Washington presented work on a &#8220;complex&#8221; events system, combining lower-level raw events. Simple sensor events are noisy and often limited in their coverage. Cascadiais an event service that allows complex events to be defined over the raw event stream, using Bayesian particle filters to interpolate missing events or those from uncovered areas: so it&#8217;s possible in principle to inferentially  &#8220;sense&#8221; someone&#8217;s location even in places without explicit sensor coverage, using a model of the space being observed. This is something that could be generalised to other model-based sensor streams. The Panorama tool allows end-users to specify complex events by manipulating thresholds, which seems little unsatisfactory: there&#8217;s no principled way to determine the thresholds, and it still begs the question of how to program with the uncertain event stream. Still, I have to say this is the first complex event system I&#8217;ve seen that I actually believe could work.
+
+<strong>Eyecatcher.</strong> How do you stop people hiding from a camera, or playing-up to it? Work from Ochanomizu University in Japan places a small display on top of the camera, which can be used to present images to catch the subject&#8217;s attention and to suggest poses or actions. (Another version barks like a dog, to attract your pet&#8217;s attention.)I have to say this research is very Japanese, a very unusual but perceptive view of the world and the problems appropriate for research.
+
+<strong>Emotion modeling</strong>. Jennifer Healey from Intel described how to monitor and infer emotions from physiological data. The main problem is that there is no common language for describing emotions &#8212; &#8220;anxious&#8221; is good for some and bad for others &#8212; so getting ground truth is hard even given extensive logging.
+
+<strong>Indoor location tracking for non-experts</strong>. More University of Washington work, this time looking at an indoor location system simple enough to be used by non-experts such as rehabilitation therapists. They used powerline positioning, injecting different frequencies into a home&#8217;s power network and detecting the radiated signal using what are essentially <span class="caps">AM</span> radios. Interestingly one of the most important factors was the aesthetics of the sensors: people don&#8217;t want ugly boxes in their home.
+
+<strong>Transfer learning</strong>. Tim van Kasteren of the University of Amsterdam has generated one of the most useful smart-home data sets, used across the community (including by several of my students). He reported experiences with transfering machine-learned classifiers from one sensor network to another, by mapping the data into a new, synthetic feature space. He also used the known distribution of features from the first network to condition the learning algorithhm in the second, to improve convergence.
+
+<strong>Common Sense</strong>. Work from <span class="caps">UC</span> Berkeley on a platform for participative sensing: <a href="http://www.communitysensing.org/">CommonSense</a>. The idea is to place environmental sensors onto commodity mobile devices, and give them to street cleaners and others &#8220;out and about&#8221; in a community. The great thing about this is that is gives information on pollution and the like to the communities themselves, directly, rather than mediated through a (possibly indifferent or otherwise) State agency.
+
+<strong>Energy-aware data traffic management</strong>. I should add the disclaimer that is work by my colleague, Mirco Musolesi of the University of  St Andrews. Sensor nodes need to be careful about the energy they use to transmit data back to their base station. This work compares a range of strategies that trade-off the accuracy of returned data with the amount of traffic exchanged and so the impact on the nodoe&#8217;s battery. This is //really// important for environmental sensing, and makes me think about further modifying the models to account for what&#8217;s being sensed to trade-off information content as well.
+
+<strong>Tutorials</strong> <span class="caps">AJ</span> Brush did a wonderful tutorial on how to do user surveys. This is something we&#8217;ve done ourselves, and it was great to see the issues nailed-down &#8212; along with war stories of how to plan and conduct a survey for greatest validity and impact. Equally, John Krumm did a fantastic overview of signal processing, particle filters, hidden Markov models and the like that make the maths <em>far</em> more accessible than it normally is. Adrian Friday heroically took the graveyard slot with experiences and ideas about system support for pervasive systems.
+
+This is the first large conference I&#8217;ve attended for a while, for various reasons, and it&#8217;s been a great week both scientifically and socially. The organisers at the University of Helsinki deserve an enormous vote of thanks for their efforts. Pervasive next year will be in San Francisco, an I&#8217;ll definitely be there &#8212; hopefully with a paper to present&nbsp;:-)</p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Impressions%20of%20Pervasive%202010%20%23conference%20%23pervasivecomputing%20%23programming%20%23review&amp;url=https://simondobson.org/2010/05/21/impressions-pervasive-2010/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Impressions%20of%20Pervasive%202010%20%23conference%20%23pervasivecomputing%20%23programming%20%23review&amp;url=https://simondobson.org/2010/05/21/impressions-pervasive-2010/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2010/05/21/impressions-pervasive-2010/&amp;title=Impressions%20of%20Pervasive%202010%20%23conference%20%23pervasivecomputing%20%23programming%20%23review" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/05/21/impressions-pervasive-2010/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Impressions%20of%20Pervasive%202010&amp;body=https://simondobson.org/2010/05/21/impressions-pervasive-2010/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/conference/">conference</a>
+		    <span>  </span>
+		<a href="../../../../categories/pervasive-computing/">pervasive computing</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+		    <span>  </span>
+		<a href="../../../../categories/review/">review</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../14/cs-book-worth-reading-twice/" rel="prev">
+		<span class="meta-nav">Older Post</span>The only computer science book worth reading twice?
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../28/languages-extensible-vms/" rel="next">
+		<span class="meta-nav">Newer Post</span>Languages for extensible virtual machines
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: A road to Lisp -- Which Lisp?
+.. slug: a-road-to-lisp-which-lisp
+.. date: 2026-08-07 09:59:43 UTC+01:00
+.. tags: project:lisp-bibliography, lisp, tutorial
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+* A road to Lisp: Which Lisp?
+
+    [[https://scotto.me/blog/2026-07-17-which-lisp/][A Road to Lisp: Which Lisp]]
+
+    A blog post reviewing four dialects of Lisp that a beginner
+    wanting to start with Lisp can choose: Common Lisp, Clojure,
+    Racket, and ELisp. The author, Elia Scotto, interestingly doesn't
+    include Scheme, although he does present Racket as a Scheme
+    dialect (which of course it is).
+
+    Does the choice too make initially matter?
+
+    #+begin_quote
+    Dialect matters, but not as much as a beginner might think.
+    Learning Lisp is about learning a new type of programming. *A new
+    way of thinking about problems using code.* You will learn the
+    fundamental concepts with any dialect. Then, once you have learned
+    one, it will be relatively easy to switch to another.
+#+end_quote
+
+    I think most Lisp devotees would agree with the sentiment that
+    it's about a new relationship with code; I'm not totally convinced
+    that Racket is a good place to start, given that it's essentially
+    /several/ languages; and ELisp only makes sense if you are already a
+    devoted Emacs user, otherwise the learning curve will be nearly
+    vertical.
+
+    Scotto's conclusion is that Clojure is the safest first choice,
+    giving you a modern syntax and full-stack environment with access
+    to all the Java libraries, while Common Lisp gives you fast native
+    compilation within a large, stable, and rock-solid ecosystem, and
+    Racket is a good basis for language research.
+
+    For my own part I came to Scheme first when I was an
+    undergraduate, then picked up ELisp when I started using Emacs,
+    and then learned Common Lisp when I started wanting to write
+    significant code -- and there I've stayed with the latter two,
+    quite happily. It's certainly the case that it's been easy to move
+    between these dialects, modulo some differences that are purely
+    syntactic. And it's certainly true that Lisp changed my
+    relationship to code in a deep and persistent way.

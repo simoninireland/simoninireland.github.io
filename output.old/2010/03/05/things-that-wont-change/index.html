@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Things that won't change | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 5 March, 2010</a>
+	    </span>
+	</div>
+	<h1>Things that won&#8217;t&nbsp;change</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Technology always advances, and in most areas the rate of change is also increasing all the time. But there are some areas where technological changes either happen only slowly, or even go into reverse. Not something we&#8217;re used to in computer science, but it&#8217;s a feature of sensor network programming: what are the challenges that technology <em>won&#8217;t</em> solve for us?
+
+<!--more-->Moore&#8217;s law has been a defining feature of computers for the past decades. By and large computing power has doubled every 18 months at constant price; alternatively, the cost of a unit of computing power has halved in the same period. The effects of this on user experience have been plain to see.
+
+Within computer science, Moore&#8217;s law has had an effect on research directions too. In starting on a PhD a student can work on a problem that&#8217;d at the edge of the performance envelope of whatever class of machine she is targeting &#8212; cellphone, laptop, desktop or server &#8212; secure in the knowledge that, but the time she&#8217;s coming to an end, the power available to that machine class will have quadrupled. This doesn&#8217;t open-up <em>every</em> problem, of course &#8212; a four-times speed-up on an <span class="caps">NP</span>-hard search problem might still leave it largely intractable &#8212; but in fields such as middleware, software tools, language design and the like, it&#8217;s enough to overcome many issues.
+
+It&#8217;s therefore something of a shock to come to sensor networks and similar systems, because I suspect these systems aren&#8217;t subject to Moore&#8217;s law in the usual way.
+
+In some ways, the situation on such small systems is actually <em>better</em> than in desktops and enterprise computing. At the higher end, we&#8217;re already hitting at least the suspicion that the performance increases in individual cores will soon start to flatten out. Multicore processors allow us to keep increasing performance, but at the cost of vastly complicating the sorts of programming needed in order to keep all those cores occupied. Sensor motes are still single-core and typically aren&#8217;t using state-of-the-art processes at that, so there&#8217;s still plenty of room for manoeuvre.
+
+But it&#8217;s easy to forget that while the cash cost of a unit of processing power has decreased, the <em>power</em> cost of that unit hasn&#8217;t decreased by nearly as much (and may actually have increased). Those twice-as-powerful chips eighteen months on typically burn significantly more power than their predecessors. You only have to look at the size of heatsinks on chips to realise that there&#8217;s a <em>lot</em> of heat being dissipated.
+
+So for a sensor network, which is using a battery or scavenging for power,  increasing the processor power will almost certainly decrease lifetime, and that&#8217;s not a trade-off designers will accept. Battery, scavenging and renewable power sources like solar cells aren&#8217;t subject to Moore&#8217;s law: their growth curves are those of physics and traditional engineering, not those of <span class="caps">IT</span> systems. Ten years ago my cellphone went for three days without a charge; my new <span class="caps">HTC</span> Hero lasts no more than two days, even if I turn off the data services and wifi. The extra compute cost has a severe power cost.
+
+In many sensor applications, the trade-off will actually be in reverse. Given the choice, a designer might opt for two older, less capable but less power-hungry processors over one more powerful but more hungry. Two motes can provide more coverage, or more robustness, or both.
+
+But this exposes a real programming challenge, since it implies that we&#8217;re going to have to get used to building modern, open, adaptive software on machines whose capabilities are similar to those of a mid-1980&#8217;s vintage home computer &#8212; and which might in fact even <em>decrease</em> over time, since the driving forces are pushing for coverage, lifetime and redundant replication. The performance of a network in aggregate might still increase, of course, but that still means that we have to extract extra performance from co-ordinating distributed processors rather than from improving individual nodes. The history of distributed parallel processing should warn us not to be sanguine about <em>that</em> prospect.
+
+Actually, though, the challenge will do us good. Modern machines encourage sloppy over-engineering and over-generalisation &#8212; building frameworks for situations that we anticipate but which might never occur. Targeting small machines will change this, and instead encourage us to build software that&#8217;s fit for immediate purpose, <em>and</em> that&#8217;s build to be evolved and extended over time alongside changing requirements and constraints. This building evolution into the core of the system will make for better engineering in the long&nbsp;run.</p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Things%20that%20won%27t%20change%20%23moore%27slaw%20%23performance%20%23sensornetworks&amp;url=https://simondobson.org/2010/03/05/things-that-wont-change/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Things%20that%20won%27t%20change%20%23moore%27slaw%20%23performance%20%23sensornetworks&amp;url=https://simondobson.org/2010/03/05/things-that-wont-change/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2010/03/05/things-that-wont-change/&amp;title=Things%20that%20won%27t%20change%20%23moore%27slaw%20%23performance%20%23sensornetworks" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/03/05/things-that-wont-change/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Things%20that%20won't%20change&amp;body=https://simondobson.org/2010/03/05/things-that-wont-change/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/moores-law/">moore&#8217;s law</a>
+		    <span>  </span>
+		<a href="../../../../categories/performance/">performance</a>
+		    <span>  </span>
+		<a href="../../../../categories/sensor-networks/">sensor networks</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../02/26/216/" rel="prev">
+		<span class="meta-nav">Older Post</span>Programming with limited certainty
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../12/forth-for-sensors/" rel="next">
+		<span class="meta-nav">Newer Post</span>Forth for sensors?
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

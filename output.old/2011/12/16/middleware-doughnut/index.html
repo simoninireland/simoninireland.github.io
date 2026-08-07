@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The middleware doughnut | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 16 December, 2011</a>
+	    </span>
+	</div>
+	<h1>The middleware&nbsp;doughnut</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Where has the &#8220;middle&#8221; of middleware gone?
+
+<!--more-->
+
+This week I attended a couple of the workshops at the <a href="http://2011.middleware-conference.org/" target="_blank">Middleware conference</a>, the main venue for the research community working on systems integration middleware. In particular I was an invited speaker at the <a href="http://2011.middleware-conference.org/fome/fome2011" target="_blank">Future of Middleware (FoME) workshop</a>, which attracted a great bunch of people with views on where the field is going.
+
+Listening to all the talks, one of the things that jumped out was the diversity of concerns people were expressing. Those working at enterprise level were concerned with scaling-out systems to millions of users using cloud computing; at the other extreme were sensor networks people like me, worried about programming  low-powered sensor motes with at least a semblance of programming language support and software engineering process. That a group of people with this spread of interests can find useful things to talk about together says a lot about how broad a term middleware actually is.
+
+But if we compare this to years past, it was also clear that the concerns  asymmetrically affected the different groups. There were very few issues that really commanded broad interest. This led me to wonder: where has the &#8220;middle&#8221; gone from &#8220;middleware&#8221;?
+
+In the 1990s, middleware people (including me) were working with <a href="https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture" target="_blank"><span class="caps">CORBA</span></a> and the like. These systems were intended for broad application in integrating client and server components into single systems. In <span class="caps">CORBA</span>&#8217;s case this involved designing object-oriented domain models that could then be implemented using any chosen programming language and support interactions seamlessly, regardless of  implementation or distribution. <span class="caps">CORBA</span> provided (and indeed provides) a lot of supporting infrastructure, including dedicated wire protocols, a shared type system and object model, higher-level services, binding, call models and other groovy toys. It achieved enormous penetration into markets that value long-term interoperability and evolution, such as financial services. It also influenced a whole range of subsequent developments, including web services and service-oriented architectures that are, to some extent, defined by their similarity to, or differences with, <span class="caps">CORBA</span>. (For a discussion of these differences see Baker and Dobson. <a href="../../../../research/publications#Compare-SOA-DOA" target="_blank">Comparing service-oriented and distributed object architectures</a>. <span class="caps">LNCS</span> 3760. 2005.)
+
+As is pretty much apparent from this, <span class="caps">CORBA</span> sits resolutely in the middle of middleware. It is intended to integrate disparate systems and allow them to work together, and evolve somewhat separately, while managing the complexity of the overall architecture. It tries to avoid the problem, identified by Bertrand Meyer, that large systems exhibit non-linear behaviour in which the cost of making any change to them is proportional, not to the size of the change being made, but to the size of the system being changed. It doesn&#8217;t completely succeed in this, of course &#8212; no system does &#8212; but it provides a common centre around which to organise largely independent components.
+
+Another way of looking at <span class="caps">CORBA</span> is less flattering: that it was inherently compromised by conflicting, and in large part irreconcilable, goals. It was reasonably performant, but by no stretch of the imagination high-performance given the overheads of a complex and general-purpose wire format. It was reasonably portable, as long as one accepted the limits imposed by the single type system: no first-class functions or mobile code, for example. It was reasonably easy to port and to support new languages, but every new language binding did require considerable ingenuity both in terms of technical design and standardisation of interfaces.
+
+Sitting in the middle, in other words, was tricky and uncomfortable.
+
+The causes of, and justifications for, these compromises aren&#8217;t hard to find: what else can one do if one is trying to support the whole range of applications? Each piece of middleware sits at a particular point in the design space, trading-off performance against generality for example, or advanced typing against making bindings awkward or impossible for some languages.
+
+And it&#8217;s this generality that seemed to be missing from discussions of the future of middleware: no-one <em>intends</em> to support this range any more. Instead we&#8217;re seeing a division of the design space in which different application communities focus on one or two design dimensions that are undoubtedly the most important &#8212; and largely forget the rest. For Twitter, for example, the main design goal is lightweight interaction at clients so that Twitter clients are easy to writ. They have no concern whatever with typing or reliability: if tweets are lost, who cares? For the web services community &#8212; perhaps closest to the &#8220;spirit of the middle&#8221; &#8212; the issues are extensibility and use of standards, with no concern for protocols, performance or end-point complexity. It&#8217;s fairly easy to see that these design issues are simply too diverse to be spanned by a single middleware platform.
+
+I don&#8217;t think this necessarily spells the death of integrating middleware &#8212; and that&#8217;s just as well, given that we still have to integrate these systems <em>despite</em> their increasing heterogeneity. What it does do, though, is change the locus of innovation away from ever-larger, more complex and more general platforms towards more specialised platforms that can integrate as far as needed &#8212; and no further, so as not to over-burden applications or developers. Several speakers talked about using component-based approaches to build platforms as well as applications. In our talk we discussed similar ideas, removing the <em>a priori</em> assumptions underlying middleware platforms and focusing instead on how to optimise what hits the metal. (Dearle and Dobson. <a href="../../../../research/publications#FOME-11" target="_blank">Mission-oriented middleware for sensor-driven scientific systems</a>. Journal of Internet Services and Applications. 2011.) This will give rise to a whole range of further challenges &#8212; how do we guarantee the right features are available? How do we add (and remove) features on the fly? How do we find the features we need? &#8212;  that are radically different from those encountered for <span class="caps">CORBA</span> and similar systems. But the result will (hopefully) be to improve our ability to create, manage and evolve ever more sophisticated combinations of applications and  services, and make it easier to roll-out and scale-out the next generation of applications and scientific&nbsp;experiments.</p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="The%20middleware%20doughnut%20%23conference%20%23corba%20%23fome%20%23middleware%20%23sensornetworks%20%23webservices&amp;url=https://simondobson.org/2011/12/16/middleware-doughnut/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20middleware%20doughnut%20%23conference%20%23corba%20%23fome%20%23middleware%20%23sensornetworks%20%23webservices&amp;url=https://simondobson.org/2011/12/16/middleware-doughnut/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2011/12/16/middleware-doughnut/&amp;title=The%20middleware%20doughnut%20%23conference%20%23corba%20%23fome%20%23middleware%20%23sensornetworks%20%23webservices" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2011/12/16/middleware-doughnut/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20middleware%20doughnut&amp;body=https://simondobson.org/2011/12/16/middleware-doughnut/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/conference/">conference</a>
+		    <span>  </span>
+		<a href="../../../../categories/corba/">corba</a>
+		    <span>  </span>
+		<a href="../../../../categories/fome/">fome</a>
+		    <span>  </span>
+		<a href="../../../../categories/middleware/">middleware</a>
+		    <span>  </span>
+		<a href="../../../../categories/sensor-networks/">sensor networks</a>
+		    <span>  </span>
+		<a href="../../../../categories/web-services/">web services</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../11/25/inaugural/" rel="prev">
+		<span class="meta-nav">Older Post</span>Inaugural lecture
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../19/bsc-disdis/" rel="next">
+		<span class="meta-nav">Newer Post</span>British Computer Society Distinguished Dissertations competition
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

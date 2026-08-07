@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simon Dobson (old posts, page 46)</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		<li>
+<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/08/02/xbee-sleeping/" rel="bookmark">Friday 2 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/08/02/xbee-sleeping/">XBee&nbsp;sleeping</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Clearly saving battery power means getting the XBee radio to sleep at the behest of the Arduino. This turns out to be fairly simple, but does require modifying the XBee shield&nbsp;slightly.</p>
+<!--more-->
+
+<p>Our <a href="../2013/07/31/power/">previous measurements</a> indicate that the XBee draws about 45mA of current &#8212; something we have to save for battery-powered nodes. Fortunately XBee radios have a hardware-controlled sleep mode, so the Arduino can sleep the radio when not in&nbsp;use.</p>
+<p>Since XBees work as a <a href="../2013/07/02/mesh-network/">mesh network</a>, it&#8217;s clearly going to be an issue as to <em>when</em> a radio sleeps, and for how long &#8212; since when asleep the radio can&#8217;t route packets, and so the network starts to break down. But that&#8217;s a higher-level concern: for the moment, we&#8217;ll focus on the mechanics of getting the XBee to&nbsp;sleep.</p>
+<p><img alt="Pins relating to XBee sleep mode" src="../images/citizen-sensing/sleep-pin.jpg"></p>
+<p>The basic mechanism is simple, and involves hardware and software. At the hardware level, the XBee uses pin 9 (shown in red right) as a control pin. This pin can be used to sleep the radio: setting it to 3,3V (&#8220;high&#8221; or &#8220;asserted&#8221;) causes the radio to sleep; setting it to 0V (&#8220;low&#8221; or &#8220;deasserted&#8221;) wakes the radio up. The XBee only takes account of the pin when in certain sleep modes, however: these are analogous to the <a href="../2013/07/23/arduino-watchdog/">Arduino&#8217;s sleep modes</a>. This is the software part: the XBee needs to be placed into the correct sleep mode, and can then be controlled from the&nbsp;Arduino.</p>
+<p>Also note I/O line 7, pin 12 (in green): we&#8217;ll come back to this&nbsp;later.</p>
+<p>We&#8217;ll deal with the hardware part first, and then the&nbsp;software.</p>
+<h3>Getting access to the sleep&nbsp;pin</h3>
+
+<p>The XBee shield doesn&#8217;t connect the sleep pin to anything by default, so to control it we have to connect it. There are several ways we could do this, with the simplest being to solder a wire from the pan on pin 9 to an appropriate header on the shield, which is then connected to a digital pin on the Arduino. For simplicity we&#8217;ll start with a wire that&#8217;s long enough to reach <em>any</em> header: we&#8217;ll actually plug it into the header for the Arduino&#8217;s D7&nbsp;pin.</p>
+<p>There&#8217;s a slight concern about voltage levels in this approach, as the
+Arduino operates at 5V while the XBee uses 3.3V. Experimentally this
+doesn&#8217;t seem to make a difference; for a production system we&#8217;d
+probably want to create a resistor network to drop the voltage to that
+needed by the radio, to avoid any risk of damage. We&#8217;d also probably
+want to solder a header to XBee pin 9&#8217;s pad to make it easier to
+connect the&nbsp;wiring.</p>
+<h3>Setting the sleep&nbsp;mode</h3>
+
+<p>The XBee&#8217;s sleep mode is controlled by a single <span class="caps">AT</span> command called (unsurprisingly) <span class="caps">SM</span>. The default (<span class="caps">SM</span> 0) is for the radio to be on all the time; <span class="caps">SM</span> 1 selects the pin-sleep mode described above, and is the one we&#8217;ll be using as it places the radio under the (hardware) control of the Arduino. (There are other sleep modes where the radio sleeps under the control of its own internal timer. Some projects use the radio&#8217;s timer to wake the Arduino rather than the other way round: we prefer to keep the Arduino in&nbsp;control.)</p>
+<p>Setting the sleep mode is simply a matter of <a href="../2013/08/02/at-commands-2">issuing the appropriate <span class="caps">AT</span> command</a>. However, as with a lot of things to do with hardware, we have to set things up slightly&nbsp;first.</p>
+<p>The first issue concerns the setting of the XBee&#8217;s sleep pin. If we
+select pin-sleep mode with the pin high, the XBee will sleep
+immediately, which might not be what we intended. So if we&#8217;ve
+connected the sleep pin to D7, we need to set things up so that the
+pin is low to keep the radio awake, and then select its sleep&nbsp;mode:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// Xbee sleep pin on D7</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>(Some early mistakes showed that &#8212; contrary to what might be expected &#8212; the sleep pin defaults to high (send radio to sleep) rather than low. So this step is&nbsp;important.)</p>
+<p>The next issue concerns the rather intricate behaviour of the XBee&#8217;s other pins when sleeping. When the radio enters sleep mode, it asserts its I/O 7 line (pin 12) so that external devices know that it&#8217;s asleep. This could be used to make sure that external peripherals wake up only when the radio is active, but for some reason the XBee shield&#8217;s designers have connected this pin to the Arduino&#8217;s reset line, which means that sleeping the radio will reset (and in fact freeze) the Arduino. <a href="http://rubenlaguna.com/wp/2009/03/05/setting-xbee-to-sleep-causes-arduino-reset/" target="_blank">Some posts suggest</a> that solving this requires cutting lines on the shield, which might have been true for earlier shields but now isn&#8217;t: we simply need to disable the output of this pin, using another <span class="caps">AT</span>&nbsp;command:</p>
+<div class="code"><pre class="code literal-block"><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
+<p>This disables the XBee&#8217;s D7 line (not to be confused with the Arduino&#8217;s D7 line, which we&#8217;ve attached to the XBee&#8217;s sleep pin), which is enough to stop the Arduino freezing. on sleep. (Yes, this <em>did</em> take quite a while to work out, since you&nbsp;ask&#8230;)</p>
+<p>We can now put all this together to place the XBee into <span class="caps">SM</span> 1  and let the Arduino sleep it at&nbsp;will:</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#define LED 13</span>
+<span class="cp">#define XBEE_SLEEP 7                </span><span class="c1">// XBee sleep pin on D7</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">            </span><span class="c1">// LED signal</span>
+<span class="w">   </span><span class="n">pinMode</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// sleep control</span>
+<span class="w">   </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">   </span><span class="n">radio</span><span class="p">.</span><span class="n">setSerial</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span>
+
+<span class="w">   </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">XBEE_SLEEP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// deassert to keep radio awake when sleep mode selected</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">atCommand</span><span class="p">(</span><span class="s">"D7"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">atCommand</span><span class="p">(</span><span class="s">"SM"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// AT commands failed, flash frantically</span>
+<span class="w">      </span><span class="p">...</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note that we&#8217;ve used local <span class="caps">AT</span> commands to set the radio&#8217;s mode. It&#8217;s
+also possible to do this <a href="../2013/07/xctu/">statically using
+X-<span class="caps">CTU</span></a>.</p>
+<h3>Results</h3>
+
+<p><img alt="XBee with sleep control" src="../images/citizen-sensing/xbee-sleep.jpg"></p>
+<p>The results of all this hacking are that the Arduino can put the XBee into sleep mode whenever it wants to simply by asserting D7. The voltages on pins are maintained even when the Arduino itself sleeps, so it can put the radio to sleep and then sleep itself, wake up and wake up the&nbsp;radio.</p>
+<p>Measuring current shows that the sleeping Arduino and XBee draw abour 35mA, the same as an Arduino alone. This makes sense, as the XBee datasheet suggests that when sleeping it draws current in the microamp range &#8212; far too small for a normal ammeter to measure, and dwarfed by the quiescent current of the Arduino board (which still needs some&nbsp;work).</p>
+<p>Waking the radio happens quickly when the sleep pin is deasserted, but it seems to take some time to re-connect to the mesh co-ordinator: around 7s, in fact, which is a little strange and needs some more&nbsp;exploration.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/08/02/at-commands-2/" rel="bookmark">Friday 2 August, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/08/02/at-commands-2/">Issuing <span class="caps">AT</span>&nbsp;commands</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Controlling the XBee requires issuing <span class="caps">AT</span> commands. The XBee library has the low-level machinery to do&nbsp;this.</p>
+<!--more-->
+
+<p><span class="caps">AT</span> commands are the basis for controlling almost all modems, and the XBee is no different. In <span class="caps">API</span> mode, <span class="caps">AT</span> commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use&nbsp;form.</p>
+<p>The basic approach is to send an <span class="caps">AT</span> command request packet and then
+read a returned packet acknowledging the command. For the moment we&#8217;ll
+stick to &#8220;setting&#8221; commands, where the <span class="caps">AT</span> command takes an integer
+parameter: the other are needed less frequently. We construct the
+request packet, send it, read the response, and check that all went
+well. This isolates the rest of the program from the message exchange,
+but also hides the exact nature of any&nbsp;error.</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span>
+
+<span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">atCommand</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// send local AT command</span>
+<span class="w">  </span><span class="n">AtCommandRequest</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandRequest</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">));</span>
+<span class="w">  </span><span class="n">radio</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// receive response frame</span>
+<span class="w">  </span><span class="n">AtCommandResponse</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandResponse</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">readPacket</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// read packet from radio</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getApiId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AT_RESPONSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// right type?</span>
+<span class="w">       </span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getAtCommandResponse</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">isOk</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span><span class="c1">// not an error?</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// if we get here, return a failure</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../2013/07/02/xctu/">set using X-<span class="caps">CTU</span> </a>when the radio firmware is installed, but commands are sometimes needed at run-time&nbsp;too.</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/31/power/" rel="bookmark">Wednesday 31 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/31/power/">Basic power&nbsp;measurements</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>Some initial measurements of power&nbsp;consumption.</p>
+<!--more-->
+
+<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes&nbsp;is:
+</p>
+<ul>
+<li>Normal <code>delay()</code> loop</li>
+    <li>Deep sleep for a period (deep&nbsp;sleep)</li>
+    <li>Flash the <span class="caps">LED</span>&nbsp;(awake)</li>
+    <li>Flash the <span class="caps">LED</span> differently while sending out radio messages (awake and&nbsp;transmitting)</li>
+</ul>
+We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
+<p>The results are as&nbsp;follows:</p>
+<table style="border: 1"><tbody>
+<tr>
+<td>Activity</td>
+<td>Power mode</td>
+<td>Current</td>
+</tr>
+<tr>
+<td>Nothing</td>
+<td>
+<code>delay()</code> loop</td>
+<td>43mA</td>
+</tr>
+<tr>
+<td>Nothing</td>
+<td>Deep sleep</td>
+<td>33mA</td>
+</tr>
+<tr>
+<td>Steady <span class="caps">LED</span></td>
+<td>Deep sleep</td>
+<td>34mA</td>
+</tr>
+<tr>
+<td>Flashing <span class="caps">LED</span></td>
+<td>Awake</td>
+<td>45mA</td>
+</tr>
+<tr>
+<td>Xbee (quiet)</td>
+<td>Deep sleep</td>
+<td>72mA</td>
+</tr>
+<tr>
+<td>Xbee (quiet)</td>
+<td>Awake</td>
+<td>85mA</td>
+</tr>
+<tr>
+<td>Xbee (transmitting)</td>
+<td>Awake</td>
+<td>87mA</td>
+</tr>
+</tbody></table>
+<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of&nbsp;using <code>delay()</code> is quite power-hungry. The bad news is that the &#8220;at rest&#8221; power consumption of an Arduino even in deep sleep  &#8212; the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing &#8212; is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there&#8217;s some variation happening faster than the ammeter&#8217;s sample&nbsp;time).</p>
+<p>The radio isn&#8217;t put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the&nbsp;time.</p>
+<p>[<span class="caps">UPDATE</span> 1Aug2013: made the table layout a bit&nbsp;clearer.]</p>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/31/big-rich/" rel="bookmark">Wednesday 31 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/31/big-rich/">Big, or just&nbsp;rich?</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>The current focus on &#8220;big data&#8221; may be obscuring something more interesting: it&#8217;s often not the pure size of a dataset that&#8217;s important.
+
+<!--more-->
+
+The idea of extracting insight from large bodies of data promises significant advances in science and commerce. Given a large dataset, &#8220;big data&#8221; techniques cover a number of possible&nbsp;approaches:
+</p>
+<ul>
+<li>Look through the data for recurring patterns (data&nbsp;mining)</li>
+    <li>Present a summary of the data to highlight features&nbsp;(analytics)</li>
+    <li>(Less commonly) Identify automatically from the dataset what&#8217;s happening in the real world (situation&nbsp;recognition)</li>
+</ul>
+There&#8217;s a wealth of <a href="http://data.gov.uk/" target="_blank"><span class="caps">UK</span> government data available</a>, for example. Making it machine-readable means it can be presented in different ways, for example <a href="http://www.telegraph.co.uk/news/uknews/crime/8294450/Crime-maps-are-just-the-beginning.html" target="_blank">geographically</a>. The real opportunities seem to come from cross-overs between datasets, though, where they can be mined and manipulated to find relationships that might otherwise remain hidden, for example the effects of crime on house prices.
+
+Although the size and availability of datasets clearly makes a difference here &#8212; big open data &#8212; we might be confusing two issues. In some circumstances we might be better looking for smaller but richer datasets, and for richer connections between them.
+
+<em>Big data</em> is a strange name to start with: when is data &#8220;big&#8221;? The only meaningful definition I can think of is &#8220;a dataset that&#8217;s large relative to the current computing and storage capacity being deployed against it&#8221; &#8212; which of course means that big data has always been with us, and indeed always will be. It also suggests that data might become less &#8220;big&#8221; if we become sufficiently interested in it to deploy more computing power to processing it. The alternative term popular in some places, <em>data science</em>, is equally tautologous, as I can&#8217;t readily name a science that <em>isn&#8217;t</em> based on data. (This isn&#8217;t just academic pedantry, by the way: terms matter, if only to distinguish what topics are, and aren&#8217;t, covered by big data/data science research.)
+
+It&#8217;s worth reviewing what big data lets us do. Having more data is useful when looking for patterns, since it makes the pattern stand out from the background noise. Those patterns in turn can reveal important processes at work in the world underlying the data, processes whose reach, significance, or even existence may be unsuspected. There may be patterns in the patterns, suggesting correlation or causality in the underling processes, and these can then be used for prediction: if pattern A almost always precedes pattern B in the dataset, then when I see a pattern A in the future I may infer that there&#8217;s an instance of B coming. The statistical machine learning techniques that let one do this kind of analysis are powerful, but dumb: it still requires human identification and interpretation of the underlying processes to to conclude that A <em>causes</em> B, as opposed to A and B simply occurring together through some acausal correlation, or being related by some third, undetected process. A data-driven analysis won&#8217;t reliably help you to distinguish between these options without further, non-data-driven insight.
+
+Are there are cases in which less data is better? Our experience with situation recognition certainly suggests that this is the case. When you&#8217;re trying to relate data to the the real world, it&#8217;s essential to have <em>ground truth</em>, a record of what <em>actually</em> happened. You can then make a prediction about what the data indicates about the real world, and verify that this prediction is true or not against known circumstances. Doing this well over a dataset provides some confidence that the technique will work well against other data, where your prediction is all you have. In this case, what matters is not simply the size of the dataset, but its relationship to another dataset recording the actual state of the world: it&#8217;s the <em>richness</em> that matters, not strictly the size (although having more data to train against is always welcome).
+
+Moreover, rich connections may help with the more problematic part of data science, the identification of the processes underlying the dataset. While there may be no way to distinguish causality from correlation within a single dataset &#8212; because they look indistinguishably alike &#8212; the patterns of data points in the one dataset may often be related to patterns and data points in another dataset in which they <em>don&#8217;t</em> look alike. So the richness provides a translation from one system to another, where the second provides discrimination not available in the first.
+
+I&#8217;ve been struggling to think of an example of this idea, and this is the best I&#8217;ve come up with (and it&#8217;s not all that good). Suppose we have tracking data for people around an area, and we see that person A repeatedly seems to follow person B around. Is A following B? Stalking them? Or do they live together, or work together (or even just close together)? We can distinguish between these alternatives by having a link from people to their jobs, homes, relationships and the like.
+
+There&#8217;s a converse concern, which is that poor discrimination can lead to the wrong conclusions being drawn: classifying person B as a potential stalker when he&#8217;s actually an innocent who happens to follow a similar schedule. An automated analysis of a single dataset risks finding spurious connections, and it&#8217;s increasingly the case that these false-positives (or -negatives, for that matter) could have real-world consequences.
+
+Focusing on connections between data has its own dangers, of course, since we already know that we can make very precise classifications of people&#8217;s actions from relatively small, but richly connected, datasets. Maybe the point here is that focusing exclusively on the size of a dataset masks both the advantages to be had from richer connections with other datasets, and the benefits and risks associated with smaller but better-connected datasets. Looking deeply can be as effective (or more so) as looking broadly.
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2013/07/26/improvements/" rel="bookmark">Friday 26 July, 2013</a>
+			</span>
+		    </div>
+		    <h1><a href="../2013/07/26/improvements/">Some improvements to&nbsp;SleepySketch</a></h1>
+		</div>
+		<div class="entry-content">
+			<p>It&#8217;s funny how even early experiences change the way you think about a design. Two minor changes to SleepySketch have been suggested by early&nbsp;testing.</p>
+<!--more-->
+
+<p>The first issue is obvious: milliseconds are a really inconvenient way to think about timing, especially when you&#8217;re planning on staying asleep for long periods. A single method in SleepySketch to convert from more programmer-friendly days/hours/minutes/seconds times makes a lot of&nbsp;difference.</p>
+<p>The second issue concerns scheduling &#8212; or rather regular
+scheduling. Most sampling and communication tasks occur on predictable
+schedules, say every five hours. In an <a href="../2013/06/01/actor-systems/" target="_blank">actor
+framework</a>, that means the actor instance (or another one) has to
+be re-scheduled after the first has run. We can do this within the
+definition of the actor, for example using&nbsp;the <code>post()</code>
+action:</p>
+<div class="code"><pre class="code literal-block"><span class="n">class</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">Actor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">post</span><span class="p">();</span>
+<span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="nf">behaviour</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">...</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">PeriodicActor</span><span class="o">::</span><span class="n">post</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>(This also demonstrates&nbsp;the <code>expandTime()</code> function to re-schedule after 0 days and 5 hours, incidentally.) Simple, but bad design: we can&#8217;t&nbsp;re-use <code>PeriodicActor</code> on a different schedule. If we add a variable to keep track of the repeating period, we&#8217;d be mixing up &#8220;real&#8221; behaviour with scheduling; more importantly, we&#8217;d have to do that for <em>every</em> actor that wants to run&nbsp;repeatedly.</p>
+<p>A better way is to use an actor combinator that takes an actor and a period and creates an actor that runs first re-schedules the actor to run after the given period, and then runs the underlying actor. (We do it this way so that the period isn&#8217;t affected by the time the actor actually takes to&nbsp;run.)</p>
+<div class="code"><pre class="code literal-block"><span class="n">Actor</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">RepeatingActor</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
+<span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleIn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+<p>The <code>RepeatingActor</code> runs the behaviour&nbsp;of
+<code>SomeActor</code> every 5 hours, and we initially schedule it to
+run in 5 hours. We can actually encapsulate all of this by adding a
+method&nbsp;to <code>SleepySketch</code> itself:</p>
+<div class="code"><pre class="code literal-block"><span class="n">Sleepy</span><span class="p">.</span><span class="n">scheduleEvery</span><span class="p">(</span><span class="n">new</span><span class="w"> </span><span class="n">SomeActor</span><span class="p">(),</span><span class="w"> </span><span class="n">Sleepy</span><span class="p">.</span><span class="n">expandTime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+
+<p>to perform the wrapping and initial scheduling&nbsp;automatically.</p>
+<p>Simple sleepy sketches can now be created at set-up, by scheduling
+repeating actors, and we can define the various actors and re-use them
+in different scheduling situations without complicating their own&nbsp;code.</p>
+		</div>
+	    </article>
+</div>
+    <!-- Lower Navigation links -->
+    <nav class="site-content navigation-post" role="navigation"><div class="previous">
+		<a href="index-45.html" rel="prev">
+		    <span class="meta-nav">Older Entries</span>		</a>
+	    </div>
+	    <div class="next">
+		<a href="index-47.html" rel="next">
+		    <span class="meta-nav">Newer Entries</span>		</a>
+	    </div>
+    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

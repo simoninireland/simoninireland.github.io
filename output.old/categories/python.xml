@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about python)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>The different energy footprints of different programming languages</title><link>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgb8af6ca" class="outline-2"&gt;
+&lt;h2 id="orgb8af6ca"&gt;The different energy footprints of different programming languages&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb8af6ca"&gt;
+&lt;p&gt;
+I've recently been thinking about low-power computing, from AI and
+data centres down to sensors, as part of a new initiative the
+University is considering. It's easy to forget the resource
+footprint of our computing systems – especially those that are "out
+of sight, out of mind" in the cloud – but there's growing evidence
+that their growth threatens the renewable energy transition. Some of
+the figures for AI electricity and water usage are astonishing.
+&lt;/p&gt;
+
+&lt;p&gt;
+One aspect of this is the effect of choice of programming language.
+I can across some work from 2017 on this:
+&lt;/p&gt;
+
+&lt;p&gt;
+Rui Pereira, Marco Couto, Francisco Ribeiro, Rui Rua, Cunha Jácome,
+João Paulo Fernandes, and João Saraiva. &lt;i&gt;&lt;a href="https://doi.org/10.1145/3136014.3136031"&gt;Energy Efficiency across
+Programming Languages: How Do Energy, Time, and Memory Relate?&lt;/a&gt;&lt;/i&gt; In
+&lt;i&gt;Proceedings of the 10th ACM SIGPLAN International Conference on
+Software Language Engineering&lt;/i&gt;. 2017.
+&lt;/p&gt;
+
+&lt;p&gt;
+The authors compare 13 benchmarks run in 27 different languages,
+with the benchmarks being chosen widely to avoid being biased by
+numeric performance. I was expecting some patterns: compiled
+languages doing better on performance, memory, and energy usage, for
+example. But I wasn't expecting exactly &lt;i&gt;how&lt;/i&gt; widely the figures
+diverged, or some of the details.
+&lt;/p&gt;
+
+&lt;p&gt;
+The following table is from the paper, annotated by me. The figures
+are normalised against the best result in each category (so the top
+language has value 1, and so on).
+&lt;/p&gt;
+
+&lt;p width="80%" align="center"&gt;
+&lt;img src="https://simondobson.org/attachments/fb/debea0-0913-41c2-90bc-726153de8d28/pl-energy.png" alt="pl-energy.png"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The two most-used languages for web application, Python and
+JavaScript, perform uniformly pretty badly: 75 times C's energy
+usage, in Python's case. But although JavaScript does substantially
+better on energy (only a factor of 4), TypeScript – which is
+usually thought of as JavaScript with type pre-processing –
+requires 21 times C's energy, or 5 times JavaScript's. Why is that?
+– I can't think of a reason.
+&lt;/p&gt;
+
+&lt;p&gt;
+But the real surprise was that "research" languages like Haskell and
+Lisp both hold up well: twice C's energy, in Lisp's case. I don't
+think that would surprise modern Lisp programmers, who are used to
+their compilers' efficiencies – but it would surprise someone used
+only to the "hearsay" about Lisp. The same for Haskell, actually,
+whose modern compilers really leverage the extra structure. When you
+consider that both those languages are pretty much dependent on
+garbage collection and so are doing substantially &lt;i&gt;more&lt;/i&gt; work than the
+equivalent C program, it's impressive.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Also look in the table for Racket, consistently lower than Lisp
+despite their close similarities. I suspect this is a compiler
+optimisation issue more than anything else.)
+&lt;/p&gt;
+
+&lt;p&gt;
+This work clearly isn't complete or definitive. Clojure is entirely
+missing, as is Scala, and there will have been compiler improvements
+since 2017 for the languages with the most active developer
+communities. But it's still quite sobering that the differences are
+&lt;i&gt;so&lt;/i&gt; wide, and that we've chosen to push languages that exacerbate
+energy usage rather than managing it.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>haskell</category><category>javascript</category><category>lisp</category><category>low power</category><category>programming</category><category>python</category><guid>https://simondobson.org/2024/09/27/the-different-energy-footprints-of-different-programming-languages/</guid><pubDate>Fri, 27 Sep 2024 15:15:23 GMT</pubDate></item><item><title>Notes on using Jupyter in the cloud</title><link>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org5aafa10" class="outline-2"&gt;
+&lt;h2 id="org5aafa10"&gt;Notes on using Jupyter in the cloud&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5aafa10"&gt;
+&lt;p&gt;
+I've been thinking about running &lt;a href="https://jupyter.org"&gt;Jupyter notebooks&lt;/a&gt; in the cloud for
+some fairly compute-intensive simulation. Specifically I want to do
+epidemic and other simulations over complex networks. These are
+CPU-intensive and don't make use of GPU acceleration (yet, anyway).
+Using the cloud would make things easier to scale-out, especially
+for those without access to a local compute cluster.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/12/02/jupyter-in-the-cloud/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>cloud computing</category><category>computational science</category><category>epydemic</category><category>jupyter</category><category>python</category><guid>https://simondobson.org/2022/12/02/jupyter-in-the-cloud/</guid><pubDate>Fri, 02 Dec 2022 16:36:55 GMT</pubDate></item><item><title>Adding filters to a Jinja2 template for Nikola</title><link>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org62bf913" class="outline-2"&gt;
+&lt;h2 id="org62bf913"&gt;Adding filters to a Jinja2 template for Nikola&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org62bf913"&gt;
+&lt;p&gt;
+The &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/"&gt;Jinja2&lt;/a&gt; template engine defines a suite of &lt;a href="https://jinja.palletsprojects.com/en/3.0.x/api/#custom-filters"&gt;filters&lt;/a&gt; that can be
+used to transform text as it's rendered. You can define extra custom
+filters, and also make them available within &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; templates (as
+long as the theme uses Jinja as its template engine, of course.)
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>jinja2</category><category>nikola</category><category>publishing</category><category>python</category><guid>https://simondobson.org/2022/10/19/adding-filters-to-a-jinja2-template-for-niklola/</guid><pubDate>Wed, 19 Oct 2022 11:08:59 GMT</pubDate></item><item><title>Talk at UK Systems on unit testing stochastic code</title><link>https://simondobson.org/2021/12/06/talk-at-uk-systems-on-unit-testing-stochastic-code/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;Last week I went to my first scientific meeting since February 2021 to
+talk about unit testing of stochastic code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2021/12/06/talk-at-uk-systems-on-unit-testing-stochastic-code/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>epydemic</category><category>python</category><category>talk</category><category>unit testing</category><guid>https://simondobson.org/2021/12/06/talk-at-uk-systems-on-unit-testing-stochastic-code/</guid><pubDate>Mon, 06 Dec 2021 16:49:30 GMT</pubDate></item><item><title>New version of epyc released</title><link>https://simondobson.org/2021/09/06/new-version-of-epyc-released/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I released a new version of my &lt;code&gt;epyc&lt;/code&gt; experimental management
+library.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2021/09/06/new-version-of-epyc-released/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>development</category><category>epyc</category><category>experimental design</category><category>python</category><category>software</category><guid>https://simondobson.org/2021/09/06/new-version-of-epyc-released/</guid><pubDate>Mon, 06 Sep 2021 12:50:48 GMT</pubDate></item><item><title>Generating functions for epydemic</title><link>https://simondobson.org/2021/06/10/generating-functions-for-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;The next version of &lt;code&gt;epydemic&lt;/code&gt; has just been released. It now
+includes a generating functions library.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2021/06/10/generating-functions-for-epydemic/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>development</category><category>epidemic spreading</category><category>epydemic</category><category>generating functions</category><category>python</category><category>simulation</category><guid>https://simondobson.org/2021/06/10/generating-functions-for-epydemic/</guid><pubDate>Thu, 10 Jun 2021 17:22:16 GMT</pubDate></item><item><title>"Epidemic modelling" added to the executable books gallery</title><link>https://simondobson.org/2021/06/04/epidemic-modelling-added-to-the-executable-books-gallery/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;figure&gt;&lt;img src="https://simondobson.org/images/posts/20210604-em-book-cover-small.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;p&gt;&lt;a href="https://simondobson.org/introduction-to-epidemics/"&gt;"Epidemic modelling: Some notes, maths, and
+code"&lt;/a&gt;, my book
+about using network science to model epidemics, is now featured in the
+gallery of the Executable Books project.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2021/06/04/epidemic-modelling-added-to-the-executable-books-gallery/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>book</category><category>epidemic spreading</category><category>python</category><category>research</category><guid>https://simondobson.org/2021/06/04/epidemic-modelling-added-to-the-executable-books-gallery/</guid><pubDate>Fri, 04 Jun 2021 07:24:05 GMT</pubDate></item><item><title>New, faster, release of epydemic</title><link>https://simondobson.org/2021/05/14/new-faster-release-of-epydemic/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I just made a new release of &lt;code&gt;epydemic&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2021/05/14/new-faster-release-of-epydemic/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>complex networks</category><category>development</category><category>epidemic spreading</category><category>epydemic</category><category>python</category><category>simulation</category><guid>https://simondobson.org/2021/05/14/new-faster-release-of-epydemic/</guid><pubDate>Fri, 14 May 2021 08:33:17 GMT</pubDate></item><item><title>IDE convergence</title><link>https://simondobson.org/2021/02/23/ide-convergence/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;I recently tried out a new development environment for my Python
+development, and noticed an unexpected convergence in the designs of
+the two tools.&lt;/p&gt;
+&lt;!-- TASTER_END --&gt;
+
+&lt;p&gt;I've been a long-time &lt;a href="https://emacs.org"&gt;Emacs&lt;/a&gt; user. I periodically
+get a desire to try something new, something less old-school, just to
+see whether there are advantages. There always &lt;em&gt;are&lt;/em&gt; advantages, of
+course -- but often significant disadvantages as well, which often
+keep me coming back to my comfort zone.&lt;/p&gt;
+&lt;p&gt;My most recent excursion was to try Microsoft's &lt;a href="https://code.visualstudio.com/"&gt;VS
+Code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Microsoft VS Code" src="https://simondobson.org/images/posts/20210223-vscode.png"&gt;&lt;/p&gt;
+&lt;p&gt;This is handily cross-platform, being built in Javascript on top of
+&lt;a href="https://www.electronjs.org/"&gt;Electron&lt;/a&gt;. It's got a lot of nice
+features: a tree view of the project in the left-hand pane, syntax
+colouring, code style linting, integrated debugging and unit test
+running, integrated connection to git, and so on. Looking a little
+closer there are all sorts of status markers around the code and in
+the ribbons at the bottom of panes and the window overall to show
+status that might be important.&lt;/p&gt;
+&lt;p&gt;But it's so &lt;em&gt;slow&lt;/em&gt;. That's a feature of VS Code, not of Electron (as I
+first suspected), because other Electron-based editors like
+&lt;a href="https://atom.io/"&gt;Atom&lt;/a&gt; aren't as slow. And my development box isn't
+the latest, but it also isn't &lt;em&gt;that&lt;/em&gt; old.&lt;/p&gt;
+&lt;p&gt;So I reverted to Emacs, but upgraded it a little to more modern
+standards. Specifically, I installed the
+&lt;a href="https://elpy.readthedocs.io/en/latest/index.html"&gt;elpy&lt;/a&gt; Python IDE,
+with assorted other packages suggested by various sites. The result is
+this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Emacs with elpy" src="https://simondobson.org/images/posts/20210223-emacs.png"&gt;&lt;/p&gt;
+&lt;p&gt;Now for anyone who's used Emacs for a while, it's definitely still
+Emacs -- not least with the convoluted keystrokes and infinite
+customisation you either love or hate. But it's striking how similar
+the two IDEs now are, and striking how VS Code has inherited some
+ideas from Emacs: resizeable panes, modelines in the ribbon, markers
+in pane gutters, and so forth -- things that Emacs-based applications
+have had for years, which have now migrated into "the mainstream".
+Both the feature sets and the visuals of the two systems are very
+similar indeed. Both are entirely cross-platform and extensible. For
+VS Code you write extensions in Javascript; for Emacs you write them
+in Lisp; and that's about it. And Emacs is a &lt;em&gt;lot&lt;/em&gt; faster on my
+set-up. There are some limitations -- I've yet to get the hang of
+using &lt;code&gt;pdb&lt;/code&gt; as a debugger, for example, especially for modules
+and from within tests -- but the functionality is really quite comparable.&lt;/p&gt;
+&lt;p&gt;I think it's safe to say there's been cross-fertilisation between VS
+Code (and other IDEs) and Emacs over the years. A lot of the
+developers of the former quite possibly used the latter. But I
+strongly suspect that most of the traffic has gone &lt;em&gt;from&lt;/em&gt; Emacs &lt;em&gt;to&lt;/em&gt;
+the other systems: the similarities are just too great to be
+accidental. It's interesting to think that a system that emerged at
+the dawn of the free-software movement has had -- and is still having
+-- such an influence on modern development tools. And I'm happily back
+in my comfort zone.&lt;/p&gt;</description><category>emacs</category><category>python</category><category>software engineering</category><category>vs code</category><guid>https://simondobson.org/2021/02/23/ide-convergence/</guid><pubDate>Tue, 23 Feb 2021 12:21:05 GMT</pubDate></item><item><title>Backporting Python type annotations</title><link>https://simondobson.org/2020/12/09/backporting-python-types/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div&gt;&lt;p&gt;I recently added type annotations to my
+&lt;a href="https://simondobson.org/development/epyc/"&gt;&lt;code&gt;epyc&lt;/code&gt;&lt;/a&gt; and
+&lt;a href="https://simondobson.org/development/epydemic/"&gt;&lt;code&gt;epydemic&lt;/code&gt;&lt;/a&gt; libraries. Making these work
+while not sacrificing interoperability a wide range of Python versions
+is quite delicate.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simondobson.org/2020/12/09/backporting-python-types/"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>epyc</category><category>epydemic</category><category>programming</category><category>python</category><guid>https://simondobson.org/2020/12/09/backporting-python-types/</guid><pubDate>Wed, 09 Dec 2020 10:45:43 GMT</pubDate></item></channel></rss>

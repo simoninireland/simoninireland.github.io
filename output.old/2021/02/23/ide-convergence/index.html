@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDE convergence | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Tuesday 23 February, 2021</a>
+	    </span>
+	</div>
+	<h1><span class="caps">IDE</span>&nbsp;convergence</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>I recently tried out a new development environment for my Python
+development, and noticed an unexpected convergence in the designs of
+the two&nbsp;tools.</p>
+<!-- TASTER_END -->
+
+<p>I&#8217;ve been a long-time <a href="https://emacs.org">Emacs</a> user. I periodically
+get a desire to try something new, something less old-school, just to
+see whether there are advantages. There always <em>are</em> advantages, of
+course &#8212; but often significant disadvantages as well, which often
+keep me coming back to my comfort&nbsp;zone.</p>
+<p>My most recent excursion was to try Microsoft&#8217;s <a href="https://code.visualstudio.com/"><span class="caps">VS</span>
+Code</a>.</p>
+<p><img alt="Microsoft VS Code" src="../../../../images/posts/20210223-vscode.png"></p>
+<p>This is handily cross-platform, being built in Javascript on top of
+<a href="https://www.electronjs.org/">Electron</a>. It&#8217;s got a lot of nice
+features: a tree view of the project in the left-hand pane, syntax
+colouring, code style linting, integrated debugging and unit test
+running, integrated connection to git, and so on. Looking a little
+closer there are all sorts of status markers around the code and in
+the ribbons at the bottom of panes and the window overall to show
+status that might be&nbsp;important.</p>
+<p>But it&#8217;s so <em>slow</em>. That&#8217;s a feature of <span class="caps">VS</span> Code, not of Electron (as I
+first suspected), because other Electron-based editors like
+<a href="https://atom.io/">Atom</a> aren&#8217;t as slow. And my development box isn&#8217;t
+the latest, but it also isn&#8217;t <em>that</em>&nbsp;old.</p>
+<p>So I reverted to Emacs, but upgraded it a little to more modern
+standards. Specifically, I installed the
+<a href="https://elpy.readthedocs.io/en/latest/index.html">elpy</a> Python <span class="caps">IDE</span>,
+with assorted other packages suggested by various sites. The result is&nbsp;this:</p>
+<p><img alt="Emacs with elpy" src="../../../../images/posts/20210223-emacs.png"></p>
+<p>Now for anyone who&#8217;s used Emacs for a while, it&#8217;s definitely still
+Emacs &#8212; not least with the convoluted keystrokes and infinite
+customisation you either love or hate. But it&#8217;s striking how similar
+the two IDEs now are, and striking how <span class="caps">VS</span> Code has inherited some
+ideas from Emacs: resizeable panes, modelines in the ribbon, markers
+in pane gutters, and so forth &#8212; things that Emacs-based applications
+have had for years, which have now migrated into &#8220;the mainstream&#8221;.
+Both the feature sets and the visuals of the two systems are very
+similar indeed. Both are entirely cross-platform and extensible. For
+<span class="caps">VS</span> Code you write extensions in Javascript; for Emacs you write them
+in Lisp; and that&#8217;s about it. And Emacs is a <em>lot</em> faster on my
+set-up. There are some limitations &#8212; I&#8217;ve yet to get the hang of&nbsp;using <code>pdb</code> as a debugger, for example, especially for modules
+and from within tests &#8212; but the functionality is really quite&nbsp;comparable.</p>
+<p>I think it&#8217;s safe to say there&#8217;s been cross-fertilisation between <span class="caps">VS</span>
+Code (and other IDEs) and Emacs over the years. A lot of the
+developers of the former quite possibly used the latter. But I
+strongly suspect that most of the traffic has gone <em>from</em> Emacs <em>to</em>
+the other systems: the similarities are just too great to be
+accidental. It&#8217;s interesting to think that a system that emerged at
+the dawn of the free-software movement has had &#8212; and is still having
+&#8212; such an influence on modern development tools. And I&#8217;m happily back
+in my comfort&nbsp;zone.</p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="IDE%20convergence%20%23emacs%20%23python%20%23softwareengineering%20%23vscode&amp;url=https://simondobson.org/2021/02/23/ide-convergence/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=IDE%20convergence%20%23emacs%20%23python%20%23softwareengineering%20%23vscode&amp;url=https://simondobson.org/2021/02/23/ide-convergence/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2021/02/23/ide-convergence/&amp;title=IDE%20convergence%20%23emacs%20%23python%20%23softwareengineering%20%23vscode" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2021/02/23/ide-convergence/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=IDE%20convergence&amp;body=https://simondobson.org/2021/02/23/ide-convergence/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/emacs/">emacs</a>
+		    <span>  </span>
+		<a href="../../../../categories/python/">python</a>
+		    <span>  </span>
+		<a href="../../../../categories/software-engineering/">software engineering</a>
+		    <span>  </span>
+		<a href="../../../../categories/vs-code/">vs code</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../../goodreads/american-kingpin-the-epic-hunt-for-the-criminal-mastermind-behind-the-silk-road/" rel="prev">
+		<span class="meta-nav">Older Post</span>American Kingpin: The Epic Hunt for the Criminal Mastermind Behind the Silk Road
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../../goodreads/november-1918-the-german-revolution/" rel="next">
+		<span class="meta-nav">Newer Post</span>November 1918: The German Revolution
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

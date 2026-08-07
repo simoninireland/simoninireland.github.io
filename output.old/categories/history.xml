@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about history)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/history.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Nov 2025 09:47:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Early LISP history 1956--1959</title><link>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbb236cc" class="outline-2"&gt;
+&lt;h2 id="orgbb236cc"&gt;Early LISP history (1956–1959)&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbb236cc"&gt;
+&lt;p&gt;
+Herbert Stoyan.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/800055.802047"&gt;Early Lisp History (1956–1959)&lt;/a&gt;&lt;/i&gt;. In &lt;i&gt;LFP ’84:
+Proceedings of the 1984 ACM Symposium on Lisp and Functional
+Programming&lt;/i&gt;, pp.299–310. 1984.
+&lt;/p&gt;
+
+&lt;p&gt;
+A study of Lisp's evolution from first proposal to practical
+implementation.
+&lt;/p&gt;
+
+&lt;p&gt;
+It begins with McCarthy's proposal (co-authored with Marvin
+Minsky, Nathaniel Rochester, and Claude Shannon, and dated 31
+August 1955) for a summer research project at Dartmouth College to
+"study the relationship of language to intelligence".
+&lt;/p&gt;
+
+&lt;p&gt;
+In a later (handwritten!) note McCarthy homed-in on the core
+challenges in this programme: the lack of a clear way to describe
+&lt;i&gt;procedures&lt;/i&gt; to each other (what &lt;a href="https://simondobson.org/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;Abelson and Sussman&lt;/a&gt; later refer to
+as &lt;i&gt;procedural epistemology&lt;/i&gt;), and the tight binding of programming
+systems at that time to specific machines, and hence their need to
+bow to engineering (rather than semantic) considerations. The
+language that became Lisp sought primarily to overcome these two
+challenges.
+&lt;/p&gt;
+
+&lt;p&gt;
+The journey proceeded by taking the list data structures developed
+by Allen Newell and Herb Simon as part of &lt;a href="https://en.wikipedia.org/wiki/Logic_Theorist"&gt;Logic Theorist&lt;/a&gt; and
+embedding them into FORTRAN (for which there was already a working
+compiler) – which also incidentally muddied the conceptual waters
+by trying to express list and list-functional concepts in a
+language built around numbers that barely allowed functions to be
+defined by the user at all. Indeed, McCarthy and others had
+long-running problems accepting that the list-processing functions
+&lt;i&gt;were&lt;/i&gt; functions, given that their result does not depend solely on
+their arguments when viewed at the lowest level. This shows how
+pernicious a low-level implementation can be. The final resulting
+language, the FORTRAN List Processing Language (FLPL), shared many
+programming approaches function names with what became Lisp.
+&lt;/p&gt;
+
+&lt;p&gt;
+McCarthy went on to champion the functional approach, including
+the invention of conditional expressions (alongside or replacing
+conditional statements) and the power of the different kinds of
+function composition and higher-order functions. It's important to
+remember that McCarthy's driving interest remained in AI, not
+programming languages &lt;i&gt;per se&lt;/i&gt;:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Already in 1956 it was clear that one had to work with symbolic
+expressions to reach the goal of artificial intelligence.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Which is a fascinating piece of history in itself, as a large
+branch of modern AI concerning machine learning and large language
+models has explicit rejects this view in favour of sub-symbolic
+AI. Which approach is "correct" in whatever sense remains to be
+seen.
+&lt;/p&gt;
+
+&lt;p&gt;
+But it remains McCarthy's contributions to programming languages
+that stand out. As well as conditional expressions he can be
+credited with garbage collection, meta-circular interpretation,
+and clarifying the relationship between programming and proof:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+We should mention here that McCarthy at the same time conceived the
+idea of logic-oriented programming, that is, the idea of using logical
+formulae to express goals that a program should try to establish and
+of using the prover as programming language interpreter.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+(Although it's important to recognise that Newell and Simon's
+work, on logic as an application rather than as a general
+programming language, pre-dates McCarthy's.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/early-lisp-history-11956-19591/</guid><pubDate>Fri, 07 Nov 2025 09:44:35 GMT</pubDate></item><item><title>The history of Lisp</title><link>https://simondobson.org/2025/11/07/the-history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org67a97ae" class="outline-2"&gt;
+&lt;h2 id="org67a97ae"&gt;The history of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org67a97ae"&gt;
+&lt;p&gt;
+Herbert Stoyan.  &lt;i&gt;&lt;a href="https://www.softwarepreservation.org/projects/LISP/book/Stoyan-Geschichte.pdf"&gt;The History of Lisp&lt;/a&gt;&lt;/i&gt;. 1980. Updated in the 1990s,
+translated into English 2023.
+&lt;/p&gt;
+
+&lt;p&gt;
+Includes a history of the route from PLANNER to CONNIVER, in which
+the former was criticised for being a theorem prover when a
+programming language was needed – an argument between two schools
+that's still going on today, as seen in the emergence of &lt;a href="https://lean-lang.org/"&gt;Lean&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/the-history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:49:57 GMT</pubDate></item><item><title>History of Lisp</title><link>https://simondobson.org/2025/11/07/history-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgd92a09b" class="outline-2"&gt;
+&lt;h2 id="orgd92a09b"&gt;History of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd92a09b"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html"&gt;History of Lisp&lt;/a&gt;&lt;/i&gt;. Artificial Intelligence
+Laboratory, Stanford University. 1979.
+&lt;/p&gt;
+
+&lt;p&gt;
+McCarthy's own take on the early history. It's quite brief, but is
+very careful to give broad credit to the others who were involved
+in the practical creation of the language.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's also got some great vignettes on &lt;i&gt;why&lt;/i&gt; certain features came
+about - for example garbage collection coming from the need to
+clean up intermediate structures when experimenting with symbolic
+differentiation. McCarthy acknowledges taking the notation for
+functions from Church, before admitting that he didn't understand
+the rest of &lt;i&gt;Calculi of lambda conversion&lt;/i&gt; and so wasn't tempted to
+add the more general aspects!
+&lt;/p&gt;
+
+&lt;p&gt;
+Perhaps the most fascinating part of the story is that it was
+originally so divorced from actual computers. The team had defined
+an &lt;code&gt;eval&lt;/code&gt; function for interpreting Lisp programs – in the process
+making the decision to represent the programs as lists – before
+realising that this could be made interactive to provide a running
+interpreter.
+&lt;/p&gt;
+
+&lt;p&gt;
+What did McCarthy think of his creation? He was conscious that it
+would have a lifetime:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+LISP will become obsolete when someone makes a more comprehensive
+language that dominates LISP practically and also gives a clear
+mathematical semantics to a more comprehensive set of features.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Haskell has a plausible claim to have accomplished the latter but
+this doesn't seem to have led domination in practice.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2025/11/07/history-of-lisp/</guid><pubDate>Fri, 07 Nov 2025 08:47:09 GMT</pubDate></item><item><title>Metacircular Semantics for Common Lisp Special Forms</title><link>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org298cb35" class="outline-2"&gt;
+&lt;h2 id="org298cb35"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org298cb35"&gt;
+&lt;p&gt;
+Henry G. Baker. &lt;i&gt;&lt;a href="https://doi.org/10.1145/382126.382662"&gt;Metacircular Semantics for Common Lisp Special Forms&lt;/a&gt;&lt;/i&gt;.
+ACM SIGPLAN Lisp Pointers &lt;b&gt;V&lt;/b&gt;, pp.11–20. 1992.
+&lt;/p&gt;
+
+&lt;p&gt;
+A response to the criticisms of McCarthy's semantics for Common
+Lisp that it didn't specify the behaviours of special forms, and
+of the standardisation process of adopting prose definitions that
+are too "lawyerly" for engineering.
+&lt;/p&gt;
+
+&lt;p&gt;
+The approach is to define the special forms in terms of other
+constructions, for example &lt;code&gt;if&lt;/code&gt; in terms of nested lambda
+abstractions to prevent execution of the unwanted branch. This is
+both useful for understanding and a way of minimising the number
+of under-defined special forms.
+&lt;/p&gt;
+
+&lt;p&gt;
+It suggests treating &lt;code&gt;catch&lt;/code&gt; / &lt;code&gt;throw&lt;/code&gt; as basic, both because other
+control-transfer forms can be expressed sing them and because it
+emphasises the interactions that preclude Common Lisp having
+continuations like Scheme's. However there's also an argument
+pursued that some other structures (like &lt;code&gt;values&lt;/code&gt;) provide extra
+information that can be useful for compilers looking to optimise.
+It's a deep exploration of the underpinnings of the language from
+both theoretical and practical perspectives.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><category>semantics</category><guid>https://simondobson.org/2024/08/02/metacircular-semantics-for-common-lisp-special-forms/</guid><pubDate>Fri, 02 Aug 2024 10:29:45 GMT</pubDate></item><item><title>The roots of Lisp</title><link>https://simondobson.org/2024/07/23/the-roots-of-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0029935" class="outline-2"&gt;
+&lt;h2 id="org0029935"&gt;The roots of Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0029935"&gt;
+&lt;p&gt;
+&lt;a href="http://www.paulgraham.com/rootsoflisp.html"&gt;http://www.paulgraham.com/rootsoflisp.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+(Only has an PostScript version, but a PDF is available
+&lt;a href="https://languagelog.ldc.upenn.edu/myl/llog/jmc.pdf"&gt;here&lt;/a&gt;.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Re-visits McCarthy's discoveries (or inventions, depending on
+your point of view), translating the &lt;a href="/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/"&gt;earliest work&lt;/a&gt; into modern
+Lisp notation.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+It's worth understanding what McCarthy discovered, not just as a
+landmark in the history of computers, but as a model for what
+programming is tending to become in our own time. It seems to me that
+there have been two really clean, consistent models of programming so
+far: the C model and the Lisp model. These two seem points of high
+ground, with swampy lowlands between them. As computers have grown
+more powerful, the new languages being developed have been moving
+steadily toward the Lisp model. A popular recipe for new programming
+languages in the past 20 years has been to take the C model of
+computing and add to it, piecemeal, parts taken from the Lisp model,
+like runtime typing and garbage collection.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Does a great job of making the central insights accessible,
+including re-phrasing the meta-circular Lisp interpreter so as to
+be executable in modern Common Lisp.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/07/23/the-roots-of-lisp/</guid><pubDate>Tue, 23 Jul 2024 08:00:41 GMT</pubDate></item><item><title>A micro-manual for Lisp: Not the whole truth</title><link>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org010c5f9" class="outline-2"&gt;
+&lt;h2 id="org010c5f9"&gt;A micro-manual for Lisp: Not the whole truth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org010c5f9"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/960118.808386"&gt;A Micro-Manual for Lisp: Not the Whole Truth&lt;/a&gt;&lt;/i&gt;. ACM
+SIGPLAN Notices &lt;b&gt;13&lt;/b&gt;, pp.215–216. 1978.
+&lt;/p&gt;
+
+&lt;p&gt;
+A "manual" in the sense of providing a complete implementation of
+Lisp – in Lisp itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+Is that useful? A semantics expert would say "no", since such a
+model has no real explanatory power: the recursion doesn't
+bottom-out to define the concepts. However, a programming language
+expert might disagree and observe that this is &lt;i&gt;meta-linguistic
+abstraction&lt;/i&gt;, the use of one high-level language to capture the
+definition of another. The "host" language provides a higher level
+of abstraction than is usual when writing interpreters and
+compilers, so it becomes easier to experiment with different forms
+of "target" language as there's less low-level work to do. This
+benefit exists even when host and target are the same: essentially
+the target is bootstrapped and can then be adjusted while running
+within an earlier version of itself.
+&lt;/p&gt;
+
+&lt;p&gt;
+As far as I know this is the first example of meta-linguistic
+abstraction in the computer science literature. The idea was
+popularised by &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt; (using Scheme), and forms the basis for a lot
+of modern bootstrapped compilers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/15/a-micro-manual-for-lisp-not-the-whole-truth/</guid><pubDate>Fri, 15 Mar 2024 17:25:10 GMT</pubDate></item><item><title>List processing</title><link>https://simondobson.org/2024/03/07/list-processing/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org38afa4d" class="outline-2"&gt;
+&lt;h2 id="org38afa4d"&gt;List processing&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org38afa4d"&gt;
+&lt;p&gt;
+J.M. Foster.  &lt;i&gt;List Processing&lt;/i&gt;. Macdonald and Co. 1967.
+&lt;/p&gt;
+
+&lt;p&gt;
+A slim volume discussing list processing with reference to Lisp
+and to other list processing systems of the time (including some
+libraries embedded into Fortran).
+&lt;/p&gt;
+
+&lt;p&gt;
+The most fascinating part of the book is its bibliography, which
+references a lot of papers that have disappeared from the
+collective memory of computer science, but whose implications
+were profound.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/list-processing/</guid><pubDate>Thu, 07 Mar 2024 19:39:09 GMT</pubDate></item><item><title>Recursive functions of symbolic expressions and their computation by machine, Part I</title><link>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6846515" class="outline-2"&gt;
+&lt;h2 id="org6846515"&gt;Recursive functions of symbolic expressions and their computation by machine, Part I&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6846515"&gt;
+&lt;p&gt;
+John McCarthy.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/367177.367199"&gt;Recursive Functions of Symbolic Expressions and
+Their Computation by Machine, Part I&lt;/a&gt;&lt;/i&gt;. Communications of the ACM
+&lt;b&gt;3&lt;/b&gt;, pp.184–195. 1960.
+&lt;/p&gt;
+
+&lt;p&gt;
+The original Lisp paper from 1960, which opens:
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+A programming system called LISP (for LISt Processor) has been
+developed for the IBM 704 computer…
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+The paper then proceeds to lay out everything that's since been
+built on: the basic constructs, the use of cons cells (pairs) as a
+data representation, the world's first garbage collection algorithm,
+an equational semantics, and ideas for interpretation and
+compilation. It's awesome, and humbling to read it and realise its
+age and the vision of computing it developed.
+&lt;/p&gt;
+
+&lt;p&gt;
+(Despite this paper being labelled Part I, incidentally, there
+isn't a part II.)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/03/07/recursive-functions-of-symbolic-expressions-and-their-computation-by-machine-part-i/</guid><pubDate>Thu, 07 Mar 2024 19:34:45 GMT</pubDate></item><item><title>TIL: The first ever .com domain</title><link>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org6e774fc" class="outline-2"&gt;
+&lt;h2 id="org6e774fc"&gt;TIL: The first ever .com domain&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6e774fc"&gt;
+&lt;p&gt;
+Today I learned that the first .com internet domain registered on
+the internet was &lt;a href="https://symbolics.com"&gt;https://symbolics.com&lt;/a&gt; and belonged to Symbolics, a
+company that made Lisp machines.
+&lt;/p&gt;
+
+&lt;p&gt;
+It doesn't relate to Lisp any more, of course. It's been sold to
+someone who "helps entrepreneurs and investors acquire high-end
+domain names", which seems about as meta as things can get: the
+first-ever .com domain name now points a company focused on
+acquiring domain names.
+&lt;/p&gt;
+
+&lt;p&gt;
+Symbolics itself has a storied history, spinning-out from the MIT AI
+lab to sell hardware dedicated to running Lisp: one of &lt;i&gt;two&lt;/i&gt; such
+start-ups actually. The &lt;a href="https://en.wikipedia.org/wiki/Symbolics"&gt;Wikipedia page&lt;/a&gt; is a good place to start.
+&lt;/p&gt;
+
+&lt;p&gt;
+Incidentally, the rest of the top-ten first .com domains can be
+found &lt;a href="https://www.theguardian.com/media/pda/2008/dec/22/internet-domains"&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>history</category><category>internet</category><category>lisp</category><category>til</category><guid>https://simondobson.org/2024/01/02/til-the-first-ever-com-domain/</guid><pubDate>Tue, 02 Jan 2024 11:44:10 GMT</pubDate></item><item><title>When not to return a library book</title><link>https://simondobson.org/2012/05/08/library-book/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;Beware of books bearing illnesses.
+
+&lt;!--more--&gt;
+
+I recently read &lt;em&gt;Hindenburg: the wooden titan&lt;/em&gt;, John Wheeler-Bennet's biography of the presidency of the man who ushered Hitler into power. It's an interesting book, written just after Hindenburg's death and so before the second world war and the realisation of exactly what had been brought forth. You can also find &lt;a href="http://www.vqronline.org/articles/1937/summer/hoover-wooden-titan/" target="_blank"&gt;contemporary book reviews online&lt;/a&gt; which are likewise fascinating in what they don't know. It really brings home AJP Taylor's comment (in &lt;em&gt;The struggle for mastery in Europe&lt;/em&gt;) that that hardest thing about the study of history to to remember that events now long in the past once lay in the future.
+
+&lt;a href="http://blogs.cs.st-andrews.ac.uk/simondobson/files/2012/05/2012-03-17-17.12.12-e1336223919163.jpg"&gt;&lt;img class="alignleft size-medium wp-image-1138" title="Bookplate" src="http://blogs.cs.st-andrews.ac.uk/simondobson/files/2012/05/2012-03-17-17.12.12-e1336223919163-190x300.jpg" alt="" width="190" height="300"&gt;&lt;/a&gt;What was unexpectedly fascinating was the bookplate in the front of the volume I borrowed from the university library, which was published in 1937. (I think it's a first edition.) The top half is fairly standard, but the bottom part describes something you wouldn't expect to find &lt;em&gt;&lt;/em&gt;in a library book:
+
+&lt;em&gt;"A person shall not return any public library book which he knows to have been exposed to infection from a notifiable disease ... [including] smallpox, cholera, diphtheria, ..."&lt;/em&gt;
+
+And so on. The list of diseases includes things against which we are now routinely vaccinated (diphtheria, tuberculosis), those we haven't seen in the UK in my lifetime (typhus), and those most people would now brush-off with a course of antibiotics (flu, pneumonia). Except, of course, that at the time there was far less vaccination and no antibiotics at all, since &lt;a href="https://en.wikipedia.org/wiki/Penicillin" target="_blank"&gt;mass production didn't start until the 1940's&lt;/a&gt;.
+
+So as well as being an observation of a period in history from a point in time from which its significance was only poorly understood, this book is a time capsule from a period when diseases were a lot bigger and broader threat than they are now.&lt;/p&gt;</description><category>history</category><guid>https://simondobson.org/2012/05/08/library-book/</guid><pubDate>Tue, 08 May 2012 07:00:55 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ditch project: a motivation | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Wednesday 19 June, 2013</a>
+	    </span>
+	</div>
+	<h1>The ditch project: a&nbsp;motivation</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Citizen Sensing&#8217;s first project is to perform environmental monitoring on a small scale with minimally-specification&nbsp;hardware.</p>
+<!--more-->
+
+<p><img alt="Orchids, Co Sligo" src="../../../../images/citizen-sensing/120720-0143-web.png"></p>
+<p>We have three sets of goals from this project. Firstly, we want a realistic scientific project that&#8217;s simple enough to accomplish over a summer. Secondly, we want to gain some experience with technologies in the field, what works and what doesn&#8217;t at this level of sophistication. Finally, we want to develop an initial software platform that can support further experimentation. To deal with these in&nbsp;order:</p>
+<p>The science will be very simple. Some areas have climates that vary over very short distances, and these variations can affect the flora and fauna that live there. In particular, areas like depressions and ditches often have different temperature profiles than the surrounding areas, with less variation in temperature, that may suit some species. While this is clear in general, the specifics often aren&#8217;t well-understood, so it&#8217;s a worthwhile scientific exercise to measure temperature variation around a small area. Specifically, we&#8217;ll seek to measure temperature variation around a ditch we have access to, in County Sligo in the West of&nbsp;Ireland.</p>
+<p>The technology will be off-the-shelf hardware, using Arduinos for processing and XBee radios for communications. These are extremely cheap commodity items that haven&#8217;t really been used for experimental environmental science, and it&#8217;s by no means clear that they&#8217;re appropriate for building a long-lived, robust sensor&nbsp;network.</p>
+<p>The main software challenges include working the hardware and &#8212; more significantly &#8212; managing the very limited power budget one gets with standard batteries and hardware. In building the software, we&#8217;re aiming for a re-usable platform that can be packaged in a form so that the experiment can be reproduced or used as the basis or other experiments by other groups of&nbsp;scientists.</p>
+<p>Is this a worthwhile project? From a scientific point of view its clearly questionable, but that&#8217;s not the point: this sort of experiment is representative of a wide range of environmental sensing, both citizen and professional, so making it work opens the door to a wider spectrum of investigations without getting bogged-down initially in the details of a scientific challenge when the computing is so new and&nbsp;uncertain.</p>
+<p>The <a href="../../../../development/projects/citizen-sensing/">blog</a> for the project will let you follow all the gory&nbsp;details.</p>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="The%20ditch%20project%3A%20a%20motivation%20%23making%20%23project%3Aditch%20%23sensing&amp;url=https://simondobson.org/2013/06/19/ditch-motivation/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20ditch%20project%3A%20a%20motivation%20%23making%20%23project%3Aditch%20%23sensing&amp;url=https://simondobson.org/2013/06/19/ditch-motivation/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2013/06/19/ditch-motivation/&amp;title=The%20ditch%20project%3A%20a%20motivation%20%23making%20%23project%3Aditch%20%23sensing" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/06/19/ditch-motivation/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20ditch%20project:%20a%20motivation&amp;body=https://simondobson.org/2013/06/19/ditch-motivation/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/making/">making</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectditch/">project:ditch</a>
+		    <span>  </span>
+		<a href="../../../../categories/sensing/">sensing</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../01/actor-systems/" rel="prev">
+		<span class="meta-nav">Older Post</span>Actor systems
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../20/parts-list/" rel="next">
+		<span class="meta-nav">Newer Post</span>Sensor mote initial parts list
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

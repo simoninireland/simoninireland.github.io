@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The only computer science book worth reading twice? | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 14 May, 2010</a>
+	    </span>
+	</div>
+	<h1>The only computer science book worth reading&nbsp;twice?</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>I was talking to one of my students earlier, and lent him a book to
+read over summer. It was only after he&#8217;d left that I realised that &#8212;
+for me at any rate &#8212; the book I&#8217;d given him is probably the most
+seminal work in the whole of computer science, and certainly the book
+that&#8217;s most influenced my career and research&nbsp;interests.</p>
+<!--more-->
+
+<p>So what&#8217;s the book? <em>Structure and interpretation of computer
+programs</em> by Hal Abelson and Jerry Sussman <span> (<span class="caps">MIT</span>
+Press. 1984. <span class="caps">ISBN</span> 0-262-01077-1), also known as <em><span class="caps">SICP</span></em>.
+</span>The book&#8217;s still in print, but &#8212; even better &#8212; is <a href="http://mitpress.mit.edu/sicp/">available online in its
+entirety</a>.</p>
+<p><span class="caps">OK</span>, everyone has their favourite book: why&#8217;s this one so special to
+me? The first reason is the time I first encountered it: in <a href="http://www.cs.newcastle.ac.uk/">Newcastle upon Tyne</a> in
+<span>the second year of my first degree. I was still finding my way
+in computer science, and this book was a recommended text after you&#8217;d
+finished the first programming courses. It&#8217;s the book that introduced
+me to programming <em>as it could be</em> (rather than programming
+<em>as it was</em>, in Pascal at the time). What I mean by that is
+that <span class="caps">SICP</span> starts out by introducing the elements of programming &#8212;
+values, names, binding, control and so on &#8212; and then runs with them
+to explore a quite dazzling breadth of issues&nbsp;including:</span></p>
+<p></p>
+<ul>
+<li><span>lambda-abstraction and higher-order&nbsp;computation</span></li>
+    <li><span>complex data structures, including structures with embedded computational&nbsp;content</span></li>
+    <li><span>modularity and&nbsp;mutability</span></li>
+    <li><span>streams</span></li>
+    <li><span>lazy&nbsp;evaluation</span></li>
+    <li><span>interpreter and compiler&nbsp;construction</span></li>
+    <li><span>storage management, garbage collection and virtual&nbsp;memory
+</span></li>
+    <li><span>machine&nbsp;code
+</span></li>
+    <li><span>domain-specific&nbsp;languages</span></li>
+</ul>
+<p>&#8230;and so forth. The list of concepts is bewildering, and only stays coherent because the authors are skilled writers devoted to their craft. But it&#8217;s also a remarkable achievement to handle all these concepts within a single language framework &#8212; Scheme &#8212; in such a way that each builds on what&#8217;s gone&nbsp;before.</p>
+<p>The second reason is the way in which Hal and Jerry view everything as
+an exercise in language&nbsp;design:</p>
+<blockquote>We have also obtained a glimpse of another crucial idea
+about languages and program design. This is the approach of stratified
+design, the notion that a complex system should be structured as a
+sequence of levels that are described using a sequence of languages.
+Each level is constructed by combining parts that are regarded as
+primitive at that level, and the parts constructed at each level are
+used as primitives at the next level. The language used at each level
+of a stratified design has primitives, means of combination, and means
+of abstraction appropriate to that level of detail.</blockquote>
+
+<p>Layered abstraction of course is second nature to all computer
+scientists. What&#8217;s novel in this view is that each level should be
+<em>programmable</em>: that the layers are all about computation and
+transformation, and not simply about hiding information. We don&#8217;t see
+that in the mainstream of programming languages, because layering
+doesn&#8217;t extend the language at all: Java is Java from top to bottom,
+with class and libraries but no new control structures. If a
+particular domain has concepts that would benefit from dedicated
+language constructs, that&#8217;s just tough. Conversely (and this is
+something that very much interests me) if there are constructs it&#8217;d be
+desirable <em>not</em> to have in some domain, they can&#8217;t be removed.
+(Within the language, anyway: Java-<span class="caps">ME</span> dumps some capabilities in the
+interests of running on small devices, but that&#8217;s not something you
+can do without re-writing the&nbsp;compiler.)</p>
+<p>The third influential feature is the clear-sighted view of what
+computer science is actually&nbsp;about:</p>
+<blockquote>The computer revolution is a revolution in the way we
+think and in the way we express what we think. The essence of this
+change is the emergence of what might best be called <em>procedural
+epistemology</em> &#8212; the study of the structure of knowledge from an
+imperative point of view, as opposed to the more declarative point of
+view taken by classical mathematical subjects. Mathematics provides a
+framework for dealing precisely with notions of &#8220;what is.&#8221; Computation
+provides a framework for dealing precisely with notions of &#8220;how
+to.&#8221;</blockquote>
+
+<p>I&#8217;ve taken a view before about <a href="../../../04/01/computer-microscope/">computers being the new
+microscopes</a>, opening-up new science on their own as well as
+facilitating existing approaches. The &#8220;how to&#8221; aspect of computer
+science re-appears everywhere in this: in describing the behaviours of
+sensor networks that can adapt while continuing the reflect the
+phenomena they&#8217;ve been deployed to sense; in the interpretation of
+large-scale data mined and mashed-up across the web; in capturing
+scientific methods and processes for automation; and so forth. The
+richness of these domains mitigates against packaged software and
+encourages integration through programming languages like <a href="http://www.r-project.org">R</a>, so that the interfaces and
+structures remain &#8220;soft&#8221; and open to&nbsp;experimentation.</p>
+<p>When I looked at my copy, the date I&#8217;d written on the inside was
+September 1988. So a book I bought nearly 22 years ago is still
+relevant. <em> </em>In fact, I&#8217;d go further and say that it&#8217;s the only
+computer science book of that age that I&#8217;d happily and usefully read
+again without it being just for historical interest: the content has
+barely aged at all. That&#8217;s not all that unusual for mathematics books,
+but it&#8217;s almost unheard of in computer science, where the ideas move
+so quickly and where much of what&#8217;s written about is ephemeral rather
+than foundational. It goes to show how well <span class="caps">SICP</span> nailed the core
+concepts. In this sense, it&#8217;s certainly one of the very few  books on
+computer science that it&#8217;s worth reading twice (or more). <span class="caps">SICP</span> is to
+computer science what Feynman&#8217;s <em>Lectures on Physics</em> are to
+physics: an accessible distillation of the essence of the subject
+that&#8217;s stood the test of&nbsp;time.</p>
+<p><span class="caps">UPDATED</span> 27Jan2024: This book also <a href="../../../../2024/01/27/structure-and-interpretation-of-computer-programs/">appears</a>
+in my <a href="../../../../development/annotated-lisp-bibliography/">annotated
+Lisp&nbsp;bibliography</a></p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="The%20only%20computer%20science%20book%20worth%20reading%20twice%3F%20%23book%20%23lisp%20%23programming%20%23review%20%23scheme&amp;url=https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20only%20computer%20science%20book%20worth%20reading%20twice%3F%20%23book%20%23lisp%20%23programming%20%23review%20%23scheme&amp;url=https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/&amp;title=The%20only%20computer%20science%20book%20worth%20reading%20twice%3F%20%23book%20%23lisp%20%23programming%20%23review%20%23scheme" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20only%20computer%20science%20book%20worth%20reading%20twice?&amp;body=https://simondobson.org/2010/05/14/cs-book-worth-reading-twice/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/book/">book</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+		    <span>  </span>
+		<a href="../../../../categories/review/">review</a>
+		    <span>  </span>
+		<a href="../../../../categories/scheme/">scheme</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../08/grey-philistines/" rel="prev">
+		<span class="meta-nav">Older Post</span>Are the grey philistines really in charge?
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../21/impressions-pervasive-2010/" rel="next">
+		<span class="meta-nav">Newer Post</span>Impressions of Pervasive 2010
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

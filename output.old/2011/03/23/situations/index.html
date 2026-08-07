@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The next challenges for situation recognition | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Wednesday 23 March, 2011</a>
+	    </span>
+	</div>
+	<h1>The next challenges for situation&nbsp;recognition</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>As a pervasive systems research community we&#8217;re doing quite well at  automatically identifying simple things happening in the world. What is  the state of the art, and what are the next steps?
+
+<!--more-->
+
+Pervasive  computing is about letting computers see and respond to human activity.  In healthcare applications, for example, this might involve monitoring  an elderly person in their home and checking for signs of normality:  doors opening, the fridge being accessed, the toilet flushing, the  bedroom lights going on and off at the right times, and so on. A  collection of simple sensors can provide the raw observational data, and  we can monitor this stream of data for the &#8220;expected&#8221; behaviours. If we  don&#8217;t see them &#8212; no movement for over two hours during daytime, for  example &#8212; then we can sound an alarm and alert a carer. Done correctly  this sort of system can literally be a life-saver, but also makes all  the difference for people with degenerative illnesses living in their  own homes.
+
+The science behind these systems is often referred to as <em>activity</em> and situation <em>recognition</em>, both of which are forms of <em>context fusion</em>.  To deal with these in the wrong order: context fusion is the ability to  take several streams of raw sensor (and other) data and use it to make  inferences; activity recognition is the detection of simple actions in  this data stream (lifting a cup, chopping with a knife); and situation  recognition is the semantic interpretation of a high-level process  (making tea, watching television, in a medical emergency). Having identified the situation we can then provide an appropriate <em>behaviour</em> for the system, which might involve changing the way the space is  configured (dimming the lights, turning down the sound volume), providing information (&#8220;here&#8217;s the recipe you chose for tonight&#8221;) or taking some external action (calling for help). This sort of <em>context-aware behaviour</em> is the overall goal.
+
+The state of the art in context fusion uses some sort of  uncertain reasoning including machine learning and other techniques that  are broadly in the domain of artificial intelligence. These are  typically more complicated than the complex event processing techniques  used in financial systems and the like, because they have to deal with  significant noise in the data stream. (Ye, Dobson and McKeever.  <a href="../../../../softcopy/situation-recognition-pmc11.pdf">Situation recognition techniques in pervasive computing: a review</a>.  Pervasive and Mobile Computing. 2011.) The results are rather mixed,  with a typical technique (a naive Bayesian classifier, for example)  being able to identify some situations well and others far more poorly:  there doesn&#8217;t seem to be a uniformly &#8220;good&#8221; technique yet. Despite this  we can now achieve 60-80% accuracy (by <a href="https://secure.wikimedia.org/wikipedia/en/wiki/F1_score">F-measure</a>, a unified measure of  the &#8220;goodness&#8221; of a classification technique) on simple activities and  situations.
+
+That sounds good, but the next steps are going to be far harder.
+
+To  see what the nest step is, consider that most of the systems explored  have been evaluated under laboratory conditions. These allow fine  control over the environment &#8212;<em> and that&#8217;s precisely the problem</em>. The next challenges for situation recognition come directly from the <em>loss</em> of control of what&#8217;s being observed.
+
+Let&#8217;s break down what needs to happen. Firstly, we need to be able to <em>describe</em> situations in a way that lets us capture human processes. This is easy  to do to another human but tricky to a computer: the precision with  which we need to express computational tasks gets in the way.
+
+For  example we might describe the process of making lunch as retrieving the  bread from the cupboard, the cheese and butter from the fridge, a plate  from the rack, and then spreading the butter, cutting the cheese, and  assembling the sandwich. That&#8217;s a good enough description for a human,  but most of the time isn&#8217;t exactly what happens. One might retrieve the  elements in a different order, or start making the sandwich (get the  bread, spread the butter) only to remember that you forgot the filling,  and therefore go back to get the cheese, then re-start assembling the  sandwich, and so forth. The point is that this isn&#8217;t programming: people  don&#8217;t do what you expect them to do, and there are so many variations  to the basic process that they seem to defy capture &#8212; although no human  observer would have the slightest difficulty in classifying what they  were seeing. A first challenge is therefore <em>a way of expressing the real-world processes and situations we want to recognise</em> in a way that&#8217;s robust to the things people actually do.
+
+(Incidentally,  this way of thinking about situations shows that it&#8217;s the dual of  traditional workflow. In a workflow system you specify a process and  force the human agents to comply; in a situation description the humans  do what they do and the computers try to keep up.)
+
+The second  challenge is that, even when captured, situations don&#8217;t occur in  isolation. We might define a second situation to control what happens  when the person answers the phone: quiet the <span class="caps">TV</span> and stereo, maybe. But  this situation could be happening at the same time as the lunch-making  situation and will inter-penetrate with it. There are dozens of possible  interactions: one might pause lunch to deal with the phone call, or one  might continue making the sandwich while chatting, or some other  combination. Again, fine for a human observer. But a computer trying to  make sense of these happenings only has a limited sensor-driven view,  and has to try to associate events with interpretations <em>without knowing what it&#8217;s seeing ahead of time</em>.  The fact that many things can happen simultaneously enormously  complicates the challenge of identifying what&#8217;s going on robustly,  damaging what is often already quite a tenuous process. We therefore  need techniques for describing <em>situation compositions and interactions</em> on top of the basic descriptions of the processes themselves.
+
+The  third challenge is also one of interaction, but this time involving  multiple people. One person might be making lunch whilst another watches  television, then the phone rings and one of them answers, realises the  call is for the other, and passes it over. So as well as  interpenetration we now have multiple agents generating sensor events,  perhaps without being able to determine exactly which person caused  which event. (A motion sensor sees movement: it doesn&#8217;t see who&#8217;s  moving, and the individuals may not be tagged in such a way that they  can be identified or even differentiated between.) Real spaces involve  multiple people, and this may place limits on the behaviours we can  demonstrate. But at the very least we need to be able to <em>describe processes involving multiple agents</em> and to <em>support simultaneous situations in the same or different populations</em>.
+
+So for me the next challenges of situation recognition boil down to how we describe what we&#8217;re expecting to observe in a way that reflects noise, complexity and concurrency of real-world conditions.  Once we have these we can explore and improve the techniques we use to  map from sensor data (itself <a href="../../../../2010/02/216/">noisy and hard to program with</a>) to identified situations, and thence  to behaviour. In many ways this is a real-world version of the  concurrency theories and process algebras that were developed to  describe concurrent computing processes: process languages brought into  the real world, perhaps. This is the approach we&#8217;re taking in a  European-funded research project, <a href="http://www.sapere-project.eu/"><span class="caps">SAPERE</span></a>, in which we&#8217;re hoping to understand how to engineer smart, context-aware systems on large and flexible&nbsp;scales.</p>
+	    </div>
+
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="The%20next%20challenges%20for%20situation%20recognition%20%23context%20%23pervasivesystems%20%23programming&amp;url=https://simondobson.org/2011/03/23/situations/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=The%20next%20challenges%20for%20situation%20recognition%20%23context%20%23pervasivesystems%20%23programming&amp;url=https://simondobson.org/2011/03/23/situations/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2011/03/23/situations/&amp;title=The%20next%20challenges%20for%20situation%20recognition%20%23context%20%23pervasivesystems%20%23programming" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2011/03/23/situations/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=The%20next%20challenges%20for%20situation%20recognition&amp;body=https://simondobson.org/2011/03/23/situations/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/context/">context</a>
+		    <span>  </span>
+		<a href="../../../../categories/pervasive-systems/">pervasive systems</a>
+		    <span>  </span>
+		<a href="../../../../categories/programming/">programming</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../15/jolicloud/" rel="prev">
+		<span class="meta-nav">Older Post</span>A very jolly cloud
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../04/11/spectrum/" rel="next">
+		<span class="meta-nav">Newer Post</span>Adventures at either end of the performance spectrum
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

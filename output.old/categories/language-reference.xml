@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about language-reference)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/language-reference.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 10 Jul 2026 14:45:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A programmable programming language</title><link>https://simondobson.org/2026/07/10/a-programmable-programming-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org90d39a3" class="outline-2"&gt;
+&lt;h2 id="org90d39a3"&gt;A programmable programming language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org90d39a3"&gt;
+&lt;p&gt;
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  &lt;i&gt;&lt;a href="https://doi.org/10.1145/3127323"&gt;A Programmable Programming Language&lt;/a&gt;&lt;/i&gt;.
+Communications of the ACM &lt;b&gt;61&lt;/b&gt;, pp.62–71. 2018.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lisp has been described as a "programmable programming language":
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with "real" Lisp in
+interesting ways.
+&lt;/p&gt;
+
+&lt;p&gt;
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+"natural" expression of the target domain. The languages don't
+even have to be Lisp-like.
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching
+terms.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+Racket languages are formed of two parts: a &lt;b&gt;reader&lt;/b&gt; that turns
+strings into properly bracketed S-expressions, and an &lt;b&gt;expander&lt;/b&gt;
+that turns these expressions into "real" Racket (or some other
+Racket-defined language).
+&lt;/p&gt;
+
+&lt;p&gt;
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don't readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It's a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp syntax.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/07/10/a-programmable-programming-language/</guid><pubDate>Fri, 10 Jul 2026 14:44:09 GMT</pubDate></item><item><title>Lush</title><link>https://simondobson.org/2026/04/30/lush/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org7c86248" class="outline-2"&gt;
+&lt;h2 id="org7c86248"&gt;Lush&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7c86248"&gt;
+&lt;p&gt;
+&lt;a href="https://scottlocklin.wordpress.com/2024/11/19/lush-my-favorite-small-programming-language/"&gt;Lush: my favorite small programming language&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A blog post all about &lt;a href="https://lush.sourceforge.net/"&gt;Lush&lt;/a&gt;, a small language that the authors
+present as a "Lisp Universal SHell" whose main features are its
+ability to integrate simply with underlying libraries with the
+interactivity of Lisp. And it's a full Lisp, with a compiler, a
+macro system, an object system, and (importantly for what comes
+next) high-performance arrays and tensors.
+&lt;/p&gt;
+
+&lt;p&gt;
+Lush's main claim to interest is that its authors include Yann
+LeCun, Yoshua Bengio, and the other researchers who went on to
+have a massive influence on the resurgences of interest in deep
+learning neural networks. Indeed, the first version of the Torch
+package, which later became &lt;a href="https://pytorch.org/"&gt;PyTorch&lt;/a&gt;, was written in Lush. Lush's
+arrays make use of a sub-language modelled on APL that leverage
+Lush's ease with foreign functions to call into underlying C
+kernels for tensor operations.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a great example of how Lisp's claim to fame as a language
+for doing AI has continued into the "new" AI era of deep learning
+models. It also shows that, if you believe that Lisp's dynamism
+and flexibility are an advantage to you, there are no barriers to
+continuing to benefit from that even if you need to access a wider
+ecosystem of tools. It'd be interesting to understand the
+performance trade-offs in this: what is the performance of a Lush
+algorithm that makes extensive use of its array language, and
+how can this performance be maximised using higher-level language
+constructs of the sort Lisp encourages?
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2026/04/30/lush/</guid><pubDate>Thu, 30 Apr 2026 14:03:14 GMT</pubDate></item><item><title>The CONNIVER reference manual</title><link>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org34b552e" class="outline-2"&gt;
+&lt;h2 id="org34b552e"&gt;The CONNIVER reference manual&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org34b552e"&gt;
+&lt;p&gt;
+Drew McDermott and Gerald Jay Sussman.  &lt;i&gt;&lt;a href="https://dspace.mit.edu/handle/1721.1/6204"&gt;The Conniver Reference
+Manual&lt;/a&gt;&lt;/i&gt;. Technical report AIM-259a. MIT AI Laboratory. 1974.
+&lt;/p&gt;
+
+&lt;p&gt;
+I think Conniver may have a claim to being the most influential
+language you've never heard of. It's a mostly forgotten Lisp
+variant that was a laboratory for some radically different
+language design ideas, and a precursor to a surprising set of
+features – many of which are still uncommon in the mainstream.
+&lt;/p&gt;
+
+&lt;p&gt;
+Conniver was intended to manage knowledge databases. This does
+make the report slightly hard to read in places, as there are a
+lot of explicit references to planning techniques wrapped-up with
+language mechanisms that don't really depend on them.
+&lt;/p&gt;
+
+&lt;p&gt;
+Conniver is (to the best of my knowledge) the first appearance of
+&lt;b&gt;generators&lt;/b&gt; in a programming language. It is therefore a distant
+precursor of all the lazy functional languages and libraries, as
+well as the generators found in Python. Implementing generators
+&lt;i&gt;within&lt;/i&gt; a language (rather than as a built-in part of one)
+requires control structures that can be exited and re-entered, and
+therefore needs more flexible frames for controlling executing
+code rather than conventional stack frames that are unwound
+destructively on return.
+&lt;/p&gt;
+
+&lt;p&gt;
+The obvious (for Lisp, anyway) next step is to make these "hairy"
+control structures visible within the language, to allow them to
+be re-arranged in interesting ways. It does this by exposing the
+structure of frames, consisting of:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;the bound variables&lt;/li&gt;
+&lt;li&gt;the state of the ongoing computation within the frame (&lt;i&gt;e.g.&lt;/i&gt;,
+the program counter)&lt;/li&gt;
+&lt;li&gt;a link (the &lt;code&gt;ALINK&lt;/code&gt;) to the frame within which free variables
+should be looked-up&lt;/li&gt;
+&lt;li&gt;a link (the &lt;code&gt;CLINK&lt;/code&gt;) to the frame to which control should return
+on exit from the frame&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+This structure in turn mandates the use of &lt;b&gt;spaghetti stack&lt;/b&gt; (or
+&lt;a href="https://en.wikipedia.org/wiki/Parent_pointer_tree"&gt;parent pointer trees&lt;/a&gt;) where frames are implemented using lists
+that can be combined in richer ways than actual, literal stacks.
+Thee are the underpinnings of several different common structures:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;generators and continuations&lt;/li&gt;
+&lt;li&gt;closures&lt;/li&gt;
+&lt;li&gt;non-local transfers, like &lt;code&gt;CATCH&lt;/code&gt; and &lt;code&gt;THROW&lt;/code&gt; in Common Lisp, and
+therefore probably encompassing the entire condition system&lt;/li&gt;
+&lt;li&gt;functions with access to extra state (as with object methods,
+but in this case used as callbacks for database updates)&lt;/li&gt;
+&lt;li&gt;symbolic debuggers (not mentioned in the text)&lt;/li&gt;
+&lt;li&gt;lexical &lt;i&gt;versus&lt;/i&gt; dynamic variable scope (not mentioned in the
+text, and I think it's a binary choice between one or the other
+depending on the &lt;code&gt;ALINK&lt;/code&gt;, rather than accommodating lexical and
+"special" variable classes as Common Lisp does)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+So these features are constructed in Conniver from more basic
+mechanisms rather than being provided built-in. I'm fascinated by
+what other structures one might build when every frame has &lt;i&gt;two&lt;/i&gt;
+independent super-frames (one for variable lookup,one for control
+return) instead of one, and both can be modified independently.
+This is radically different to most languages in which frames are
+hidden and their manipulation reserved for the compiler and
+run-time: it's a set of ideas that re-surface at the object level
+in metaobject protocols.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/the-conniver-reference-manual/</guid><pubDate>Fri, 02 Feb 2024 12:14:30 GMT</pubDate></item><item><title>Common Lisp: the language</title><link>https://simondobson.org/2024/02/02/common-lisp-the-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbab84a5" class="outline-2"&gt;
+&lt;h2 id="orgbab84a5"&gt;Common Lisp: the language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbab84a5"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/20/46d76e-4b50-4cf1-866c-7515d6fd427f/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Guy Steele.  &lt;i&gt;&lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;Common Lisp: The Language&lt;/a&gt;&lt;/i&gt;. Digital Press. ISBN
+1-55558-041-6. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+The reference manual for Common Lisp, also &lt;a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html"&gt;available online in its
+entirety&lt;/a&gt;. This is very much a reference manual and not a
+tutorial, but having said that it's a lot more accessible than
+many such documents.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's remarkable that Common Lisp's standard has been stable for
+over thirty years, despite enormous advances in Lisp practices in
+that time. It shows the care that went into the original
+standardisation process, but also the effects of some detailed
+technical choices and (especially) the use of macros in preference
+to new core mechanisms.
+&lt;/p&gt;
+
+&lt;p&gt;
+However, it has to be said that the standard also fixed in place
+certain choices that now seem questionable. It's a matter of
+opinion, of course, but personally I think the questionable set
+includes at least: multiple-value returns and binds, which are
+unnecessary when you can return lists and destructure them and
+that impinge on the minimalism of the core language; and allowing
+symbols to be bound simultaneously to values and functions, which
+unnecessarily treats the two differently (and for which reason it
+was removed from Scheme).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>language-reference</category><category>lisp</category><category>project:lisp-bibliography</category><guid>https://simondobson.org/2024/02/02/common-lisp-the-language/</guid><pubDate>Fri, 02 Feb 2024 12:10:26 GMT</pubDate></item></channel></rss>

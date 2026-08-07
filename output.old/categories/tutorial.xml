@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about tutorial)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/tutorial.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 09:00:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A road to Lisp Which Lisp</title><link>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orged1bd27" class="outline-2"&gt;
+&lt;h2 id="orged1bd27"&gt;A road to Lisp: Which Lisp?&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orged1bd27"&gt;
+&lt;p&gt;
+&lt;a href="https://scotto.me/blog/2026-07-17-which-lisp/"&gt;A Road to Lisp: Which Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A blog post reviewing four dialects of Lisp that a beginner
+wanting to start with Lisp can choose: Common Lisp, Clojure,
+Racket, and ELisp. The author, Elia Scotto, interestingly doesn't
+include Scheme, although he does present Racket as a Scheme
+dialect (which of course it is).
+&lt;/p&gt;
+
+&lt;p&gt;
+Does the choice too make initially matter?
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;
+Dialect matters, but not as much as a beginner might think.
+Learning Lisp is about learning a new type of programming. &lt;b&gt;A new
+way of thinking about problems using code.&lt;/b&gt; You will learn the
+fundamental concepts with any dialect. Then, once you have learned
+one, it will be relatively easy to switch to another.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;
+I think most Lisp devotees would agree with the sentiment that
+it's about a new relationship with code; I'm not totally convinced
+that Racket is a good place to start, given that it's essentially
+&lt;i&gt;several&lt;/i&gt; languages; and ELisp only makes sense if you are already a
+devoted Emacs user, otherwise the learning curve will be nearly
+vertical.
+&lt;/p&gt;
+
+&lt;p&gt;
+Scotto's conclusion is that Clojure is the safest first choice,
+giving you a modern syntax and full-stack environment with access
+to all the Java libraries, while Common Lisp gives you fast native
+compilation within a large, stable, and rock-solid ecosystem, and
+Racket is a good basis for language research.
+&lt;/p&gt;
+
+&lt;p&gt;
+For my own part I came to Scheme first when I was an
+undergraduate, then picked up ELisp when I started using Emacs,
+and then learned Common Lisp when I started wanting to write
+significant code – and there I've stayed with the latter two,
+quite happily. It's certainly the case that it's been easy to move
+between these dialects, modulo some differences that are purely
+syntactic. And it's certainly true that Lisp changed my
+relationship to code in a deep and persistent way.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2026/08/07/a-road-to-lisp-which-lisp/</guid><pubDate>Fri, 07 Aug 2026 08:59:43 GMT</pubDate></item><item><title>Beautiful Racket: An introduction to language-oriented programming using Racket</title><link>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orge66a136" class="outline-2"&gt;
+&lt;h2 id="orge66a136"&gt;Beautiful Racket: An introduction to language-oriented programming using Racket&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge66a136"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/e3/7de938-c600-4d44-ae6d-02798869a00b/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Matthew Butterick.  &lt;i&gt;&lt;a href="https://beautifulracket.com/"&gt;Beautiful Racket: An Introduction to
+Language-Oriented Programming Using Racket&lt;/a&gt;&lt;/i&gt;. 2024.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href="https://racket-lang.org/"&gt;Racket&lt;/a&gt; positions itself as a "programmable programming
+language" – more so than Lisp's usual claim to this title – which
+makes it attractive for exploring multi-paradigm and multi-language
+programming.
+&lt;/p&gt;
+
+&lt;p&gt;
+Racket's main claim to a niche is allowing a programmer to define
+new domain-specific languages (DSLs), not necessarily Lisp-like,
+that can be combined together to let a program be expressed in the
+"most appropriate" form for the problem. This books is structured
+around exactly this idea, defining a succession of languages of
+increasing sophistication to demonstrate Racket's capabilities.
+Each language has a "reader" to convert strings into Lisp
+S-expressions and an "expander" to translate these forms into
+Racket (or another Racket-defined language). The examples include
+a simple stack-based calculator, an embedded JSON parser, and a
+Basic interpreter that exercises the power of a full parser.
+&lt;/p&gt;
+
+&lt;p&gt;
+The description of Racket itself is very thorough, to the extent
+that this book could be treated as a language definition itself,
+complementing the &lt;a href="/2026/07/10/a-programmable-programming-language/"&gt;article&lt;/a&gt; about it. Certainly it provides the most
+accessible way to learn the language and explore what it means to
+explore "language-oriented" programming.
+&lt;/p&gt;
+
+&lt;p&gt;
+It's possible to define DSLs in Common Lisp or Scheme without
+Racket's extra functionality, and in many cases that will be
+sufficient – especially when the DSL is a Lisp itself. But there
+will certainly be applications for which Racket is absolutely the
+right tool.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2026/07/14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/</guid><pubDate>Tue, 14 Jul 2026 07:07:51 GMT</pubDate></item><item><title>Lisp as a second language</title><link>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org0e5ab39" class="outline-2"&gt;
+&lt;h2 id="org0e5ab39"&gt;Lisp as a second language&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0e5ab39"&gt;
+&lt;p&gt;
+Peter Desain.  &lt;i&gt;&lt;a href="https://hdl.handle.net/2066/74778"&gt;Lisp as a Second Language: Functional Aspects&lt;/a&gt;&lt;/i&gt;.
+Perspectives on New Music &lt;b&gt;20&lt;/b&gt;, pp.192–222. 1990.
+&lt;/p&gt;
+
+&lt;p&gt;
+In some ways this article should come under "applications", as
+it's mainly concerned with using Lisp to represent and manipulate
+music. Indeed, it presents a system that can be used to perform
+all sorts of common transformations of the tones and timing of a
+piece. It's easy to see how the resulting system could be used to
+compose and then to drive instruments, for example through a MIDI
+interface.
+&lt;/p&gt;
+
+&lt;p&gt;
+The music perspective is however secondary to the goal of teaching
+and showcasing Lisp through the medium of a realistic example of
+symbolic programming. It covers a lot of ground, starting with
+lists and functions and including first-class functions and
+combinators as means of implementing the musical structures. It's
+a great piece of pedagogy that treats the application and the
+language as closely linked, and not shying-away from some quite
+advanced techniques that have clear applications in the domain. It
+would be great to see this used as a basis for actual musical
+composition and performance.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/11/29/lisp-as-a-second-language/</guid><pubDate>Fri, 29 Nov 2024 15:01:40 GMT</pubDate></item><item><title>Casting SPELs in Lisp</title><link>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org49f0e11" class="outline-2"&gt;
+&lt;h2 id="org49f0e11"&gt;Casting SPELs in Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org49f0e11"&gt;
+&lt;p&gt;
+&lt;a href="https://www.lisperati.com/casting.html"&gt;https://www.lisperati.com/casting.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A tongue-in-cheek – but still excellent – comicbook-style
+introduction to Lisp programming. (There's also a version
+&lt;a href="https://www.lisperati.com/casting-spels-emacs/html/casting-spels-emacs-1.html"&gt;specifically for Emacs Lisp&lt;/a&gt;.) It's structured around building an
+adventure-style game, which as well as being a classic also offers
+lots of opportunities for exploring different data structures and
+algorithms: one can easily imagine expanding it to include (for
+example) an AI second player or autonomous non-player characters
+and gradually building a really complicated application from a
+standing start.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/08/02/casting-spels-in-lisp/</guid><pubDate>Fri, 02 Aug 2024 10:25:53 GMT</pubDate></item><item><title>A road to Common Lisp</title><link>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org353c80d" class="outline-2"&gt;
+&lt;h2 id="org353c80d"&gt;A road to Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org353c80d"&gt;
+&lt;p&gt;
+&lt;a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/"&gt;A Road to Common Lisp&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This a really brief, yet really interesting, approach to
+introducing Lisp to someone. Interesting because it covers all the
+usual ground, but also has copious pointers to other material
+slightly-beyond-introductory ("Where to go from here"). It also
+links to material that's essential to modern practice, such as
+Lisp packages and systems, and the essential "standard libraries"
+such as Alexandria, Bordeaux, CL-PPCRE, usocket, and the like: the
+things that are needed in practice and which in other languages
+would probably be built-in and included directly in an
+introduction.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/05/27/a-road-to-common-lisp/</guid><pubDate>Mon, 27 May 2024 16:00:55 GMT</pubDate></item><item><title>LISPcraft</title><link>https://simondobson.org/2024/02/02/lispcraft/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgcc8e5b0" class="outline-2"&gt;
+&lt;h2 id="orgcc8e5b0"&gt;LISPcraft&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcc8e5b0"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/fc/8f0d76-df2a-43eb-b5ca-a79b21c2351a/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Robert Wilensky.  &lt;i&gt;LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
+0-393-95442-0. 1984.
+&lt;/p&gt;
+
+&lt;p&gt;
+Hard to know whether to include this as an introduction or
+collection of applications, since it runs all the way from basic
+uses to pattern-matching and associative retrieval, by way of the
+non-list data types in Lisp, and includes discussion of the symbol
+table and other internals that definitely fall into the "advanced"
+category.
+&lt;/p&gt;
+
+&lt;p&gt;
+However, this was my second introduction to Lisp (after &lt;a href="/2024/01/27/structure-and-interpretation-of-computer-programs/"&gt;SICP&lt;/a&gt;), so
+it has a fond place in my memory. The fact that it deals with
+language internals isn't a bad thing, because it deals with the
+basics so well. It's very much a traditional programming
+introduction focusing on the "needed" parts of the language. It
+pre-dates the Common Lisp standard and doesn't touch on CLOS,
+which perhaps make it a less appropriate choice for newcomers
+these days than &lt;a href="/2024/01/27/practical-common-lisp/"&gt;Practical Common Lisp&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;
+There is also a second edition. I haven't read it, but it seems that
+it addresses at least the concern about being non-standard:
+&lt;/p&gt;
+
+&lt;p&gt;
+Robert Wilensky.  &lt;i&gt;Common LISPcraft&lt;/i&gt;. W.W. Norton. ISBN
+978-039395544-6. 1986.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/02/02/lispcraft/</guid><pubDate>Fri, 02 Feb 2024 12:23:08 GMT</pubDate></item><item><title>Learn Common Lisp in Y minutes</title><link>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org34abf93" class="outline-2"&gt;
+&lt;h2 id="org34abf93"&gt;Learn Common Lisp in Y minutes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org34abf93"&gt;
+&lt;p&gt;
+&lt;a href="https://learnxinyminutes.com/docs/common-lisp/"&gt;https://learnxinyminutes.com/docs/common-lisp/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+A one-web-page introduction to Common Lisp covering pretty much
+all the language in enough detail to at least start writing simple
+command-line programs (and understanding those of others).
+Includes macros and CLOS. Quite an achievement to make it all so
+readable.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>lisp</category><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/learn-common-lisp-in-y-minutes/</guid><pubDate>Sat, 27 Jan 2024 14:14:35 GMT</pubDate></item><item><title>Practical Common Lisp</title><link>https://simondobson.org/2024/01/27/practical-common-lisp/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org855ebb4" class="outline-2"&gt;
+&lt;h2 id="org855ebb4"&gt;Practical Common Lisp&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org855ebb4"&gt;
+&lt;p class="floater"&gt;
+&lt;img src="https://simondobson.org/attachments/b8/4b7fa7-83e9-4756-8ede-1c3cdeaeafef/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Peter Seibel.  &lt;i&gt;&lt;a href="https://gigamonkeys.com/book/"&gt;Practical Common Lisp&lt;/a&gt;&lt;/i&gt;. Apress. ISBN
+978-1-4302-0017-8. 2005.
+&lt;/p&gt;
+
+&lt;p&gt;
+The classic, very thorough and hands-on tutorial introduction that
+doesn't skip the hard parts like the condition system and
+non-local blocks and exists (and the relationship between the
+two). It's also got good chapters on CLOS.
+&lt;/p&gt;
+
+&lt;p&gt;
+The text is complemented by a set of modern examples, for web
+services, database, and binary file parsers: quite a long way
+removed from the examples in many introductory texts. It doesn't
+make much use of macro programming in these examples, which is a
+shame, so follow with &lt;a href="/2024/07/05/on-lisp/"&gt;On Lisp&lt;/a&gt; or &lt;a href="/2024/07/05/let-over-lambda/"&gt;Let over Lambda&lt;/a&gt; once the structure
+of the language is clear.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>project:lisp-bibliography</category><category>tutorial</category><guid>https://simondobson.org/2024/01/27/practical-common-lisp/</guid><pubDate>Sat, 27 Jan 2024 13:15:30 GMT</pubDate></item></channel></rss>

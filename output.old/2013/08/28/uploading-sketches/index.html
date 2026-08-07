@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uploading sketches to a breadboard Arduino | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Wednesday 28 August, 2013</a>
+	    </span>
+	</div>
+	<h1>Uploading sketches to a breadboard&nbsp;Arduino</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>It turns out there there are quite a few versions of the &#8220;same&#8221; components out there. Uploading sketches to an Arduino-on-a-breadboard is trickier than it first&nbsp;appears.</p>
+<!--more-->
+
+<p>The <a href="../../27/arduino-breadboard/">Arduino-on-a-breadboard showed</a> that we can get a lower power version of the same architecture. However, in doing the measurements I used a microcontroller already loaded with the code I used for the power measurements (sleeping and blinking). Trying to change this code and upload it <em>via</em> the <span class="caps">USB</span> breakout board didn&#8217;t work &#8212;&nbsp;repeatedly.</p>
+<p>It turns out that the <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">breadboard tutorial on the Arduino web site</a> is actually flawed for the current versions of the components concerned. There are actually two problems: the microcontroller needs to be manually reset before uploading a sketch; and the <span class="caps">USB</span> breakout board needs slightly more supporting electronics to talk to the&nbsp;microcontroller.</p>
+<p>The first problem stems from the microcontroller needing to be reset before code can be uploaded to it. Essentially the reset makes the bootloader wait for code for a few seconds, and start the existing program if none arrives. On older Arduino models you have to physically reset the board using the reset switch just before uploading a sketch; on newer models, this reset happens automatically. Setting up the breakout board to reset the microcontroller immediately before it tries to talk to it will solve&nbsp;this.</p>
+<p>The second problem is more subtle. The <span class="caps">USB</span> breakout board is actually a <span class="caps">USB</span> to serial converter. The <a href="http://arduino.cc/en/Main/Standalone" target="_blank" rel="noopener">tutorial</a> suggests that it is enough to connect the transmit and receive (Tx and Rx) lines to the microcontroller, but this turns out not to be the case: one also needs to connect some handshaking lines to make the system synchronise and communicate correctly. I eventually found a <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> that explains this: however, <em>that post is flawed too</em>, because it relies on a particular pin-out for the <span class="caps">USB</span> breakout board that&#8217;s different tothe one I have. So here&#8217;s a debugged explanation of what needs to&nbsp;happen.</p>
+<p><img alt="FT232r breakout board" src="../../../../images/citizen-sensing/ft232r-breakout.jpg"></p>
+<p>We need to connect the basic TxD, RxD, Vcc and Gnd lines on the breakout board as you&#8217;d expect. The picture to the right shows the the underside of my breakout board, with the pins named. If we number the pins counter-clockwise from the top left (so <span class="caps">DCD</span> is pin 1, <span class="caps">TXD</span> is 9, <span class="caps">TXLED</span> is 11, and <span class="caps">VCC</span> is 13), we connect pins 3 and 10 to ground, pin 13 to power, pin 9 to pin 2 of the ATMega microcontroller, and pin 5 to ATMega pin&nbsp;3.</p>
+<p>What now also need to happen is that we need to connect the <span class="caps">CTS</span> and <span class="caps">DTR</span> lines to something. <span class="caps">DTR</span> (Data Transfer Ready) is sent low when the <span class="caps">USB</span> has data ready: we want this to trigger a reset of at ATMega. We then need to send <span class="caps">CTS</span> (Clear To Send) low so that the board starts sending data. This is basic serial-port handshaking. The timing can be accomplished using an <span class="caps">RC</span> circuit consisting of a 100ohm resistor and a 100nF capacitor attached appropriately. Putting this circuit onto the breadboard sorts out the handshaking, and the Arduino <span class="caps">IDE</span> happily uploads sketches just as it would to a &#8220;real&#8221;&nbsp;Arduino.</p>
+<p>The net result of this is to add some more wiring to the <span class="caps">USB</span> end of the Arduino&nbsp;breadboard:</p>
+<p><img alt="USB end" src="../../../../images/citizen-sensing/usb-end.jpg"></p>
+<p>Note the resistor and capacitor. (The red wire crossing the breakout board is a Gnd connection, needed because my breadboard only had single power rails top and bottom.) The circuit involved is as&nbsp;follows:</p>
+<p><img alt="Handshaking circuit" src="../../../../images/citizen-sensing/breadboard-handshake.png"></p>
+<p>For my particular breakout board shown above, this means connecting pin 7 to the capacitor and pin 15 to the following resistor. (It&#8217;s this last step that the <a href="http://www.hobbytronics.co.uk/arduino-atmega328-hardcore" target="_blank" rel="noopener">post</a> gets wrong &#8212; or at least uses a different pin for <span class="caps">CTS</span>.) The net result is an Arduino-on-a-breadboard that looks like&nbsp;this:</p>
+<p><img alt="Second Arduino-on-a-breadboard" src="../../../../images/citizen-sensing/breadboard-arduino-2.jpg"></p>
+<p>Somewhat more complicated, but rather more&nbsp;functional.</p>
+<p>I think you have to maintain a sense of perspective about these issues, annoying as they are: in many ways it&#8217;s good that the components change and evolve rather than staying exactly the same, as it means that they&#8217;re being developed and refined over time. On the other hand, it means you have to be <em>very</em> circumspect about following blindly the tutorials and explanations on blog posts from even a relatively short time&nbsp;ago.</p>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Uploading%20sketches%20to%20a%20breadboard%20Arduino%20%23arduino%20%23making%20%23project%3Aditch%20%23usb&amp;url=https://simondobson.org/2013/08/28/uploading-sketches/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Uploading%20sketches%20to%20a%20breadboard%20Arduino%20%23arduino%20%23making%20%23project%3Aditch%20%23usb&amp;url=https://simondobson.org/2013/08/28/uploading-sketches/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2013/08/28/uploading-sketches/&amp;title=Uploading%20sketches%20to%20a%20breadboard%20Arduino%20%23arduino%20%23making%20%23project%3Aditch%20%23usb" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/08/28/uploading-sketches/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Uploading%20sketches%20to%20a%20breadboard%20Arduino&amp;body=https://simondobson.org/2013/08/28/uploading-sketches/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/arduino/">arduino</a>
+		    <span>  </span>
+		<a href="../../../../categories/making/">making</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectditch/">project:ditch</a>
+		    <span>  </span>
+		<a href="../../../../categories/usb/">usb</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../27/arduino-breadboard/" rel="prev">
+		<span class="meta-nav">Older Post</span>Low-power Arduino-on-a-breadboard
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../../goodreads/dereliction-of-duty-lyndon-johnson-robert-mcnamara-the-joint-chiefs-of-staff-and-the-lies-that-led-to-vietnam/" rel="next">
+		<span class="meta-nav">Newer Post</span>Dereliction of Duty: Lyndon Johnson, Robert McNamara, the Joint Chiefs of Staff, and the Lies That Led to Vietnam
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

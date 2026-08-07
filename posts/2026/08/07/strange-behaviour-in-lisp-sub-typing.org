@@ -1,0 +1,136 @@
+# -*- org-attach-id-dir: "../../../../files/attachments"; -*-
+#+BEGIN_COMMENT
+.. title: Unexpected (to me) behaviour in Lisp sub-typing
+.. slug: strange-behaviour-in-lisp-sub-typing
+.. date: 2026-08-07 10:27:05 UTC+01:00
+.. tags: lisp,programming
+.. category:
+.. link:
+.. description:
+.. type: text
+
+#+END_COMMENT
+
+* Unexpected (to me) behaviour in Lisp sub-typing
+
+  I just encountered some unexpected behaviour in how Common Lisp (or
+  at least [[https://sbcl.org][SBCL]]) handles array sub-typing.
+
+  Suppose you have a structure declaration like this:
+
+  #+begin_src lisp :results output silent
+(defstruct A
+  (a #1A() :type (simple-array integer)))
+  #+end_src
+
+  We can create instances of this struct by providing an initial
+  value, and it will be type-checked.
+
+  #+begin_src lisp :exports both
+(make-a :a #1A(1 2 3))
+  #+end_src
+
+#+RESULTS:
+: #S(A :A #(1 2 3))
+
+  We can also omit the argument and get the default specified in the
+  declaration:
+
+  #+begin_src lisp :exports both
+(make-a)
+  #+end_src
+
+#+RESULTS:
+: #S(A :A #())
+
+  So far so good. But suppose we now specialise the ~simple-array~ type
+  against a type such as ~(unsigned-byte 16)~ (the type of unsigned
+  16-bit integers).
+
+  #+begin_src lisp
+(defstruct B
+  (b #1A() :type (simple-array (unsigned-byte 16))))
+
+(make-b :b #1A(1 2 3))
+  #+end_src
+
+  This generates an error, as does using the default value.
+
+  Why is this? I eventually tracked the problem down to the fact that
+  the expression ~#1A()~ is given type ~(simple-vector 0)~ while the
+  expression ~#1A(1 2 3)~ is given type ~(simple-vector 3)~, and neither
+  of these are sub-types of ~(simple-array (unsigned-byte 16))~:
+
+  #+begin_src lisp :results scalar :exports both
+(type-of #1A())
+  #+end_src
+
+#+RESULTS:
+: (SIMPLE-VECTOR 0)
+
+  #+begin_src lisp :results scalar :exports both
+(type-of #1A(1 2 3))
+  #+end_src
+
+#+RESULTS:
+: (SIMPLE-VECTOR 3)
+
+#+begin_src lisp :results scalar :exports both
+(typep #1A(1 2 3) '(simple-vector 3))
+#+end_src
+
+#+RESULTS:
+: T
+
+#+begin_src lisp :results scalar :exports both
+(typep #1A(1 2 3) '(simple-array (unsigned-byte 16)))
+#+end_src
+
+#+RESULTS:
+: NIL
+
+  So the typing works for ~integer~ (and indeed for ~number~ and ~float~)
+  but not for the constrained types like ~(unsigned-byte 16)~ --
+  although it /does/ work for ~unsigned-byte~ (with no width).
+
+  Interestingly the tests fail for empty arrays as well:
+
+  #+begin_src lisp :result scalar  :exports both
+(typep #1A() '(simple-array (unsigned-byte 16)))
+  #+end_src
+
+#+RESULTS:
+: NIL
+
+  I assume that the behaviour is because the compiler is at liberty to
+  optimise the storage of arrays with specific types, and doing so
+  makes it awkward to compare against types like ~simple-vector~ that
+  don't contain their element type. This would also explain why the
+  check succeeds for types like ~integer~, whose values are stored
+  boxed and so can represented uniformly.
+
+  There's a simple way around this, of course, once you know what the
+  problem is: make the type of the value explicit rather than relying
+  on the reader macro. For example:
+
+  #+begin_src lisp :result scalar  :exports both
+(defstruct C
+  (c (make-array '(0) :element-type '(unsigned-byte 16)) :type (simple-array (unsigned-byte 16))))
+
+(make-c)
+  #+end_src
+
+#+RESULTS:
+: #S(C :C #())
+
+  and also:
+
+  #+begin_src lisp :result scalar  :exports both
+(make-c :c (make-array '(3) :element-type '(unsigned-byte 16) :initial-contents (alexandria:iota 3)))
+  #+end_src
+
+#+RESULTS:
+: #S(C :C #(0 1 2))
+
+  I can't find this behaviour detailed in the manuals (or anywhere
+  else) though. Perhaps it's only an artefact of optimisation.

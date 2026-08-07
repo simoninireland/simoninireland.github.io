@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic power measurements | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Wednesday 31 July, 2013</a>
+	    </span>
+	</div>
+	<h1>Basic power&nbsp;measurements</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Some initial measurements of power&nbsp;consumption.</p>
+<!--more-->
+
+<p>How much power does Arduino sleep mode save? The simplest way to work this out is to power an Arduino from a battery pack and measure the current being drawn in the different modes. A simple program to demonstrate the different modes&nbsp;is:
+</p>
+<ul>
+<li>Normal <code>delay()</code> loop</li>
+    <li>Deep sleep for a period (deep&nbsp;sleep)</li>
+    <li>Flash the <span class="caps">LED</span>&nbsp;(awake)</li>
+    <li>Flash the <span class="caps">LED</span> differently while sending out radio messages (awake and&nbsp;transmitting)</li>
+</ul>
+We perform these tasks repeatedly, keeping them going for 10s each to let the power draw stabilise.
+<p>The results are as&nbsp;follows:</p>
+<table style="border: 1"><tbody>
+<tr>
+<td>Activity</td>
+<td>Power mode</td>
+<td>Current</td>
+</tr>
+<tr>
+<td>Nothing</td>
+<td>
+<code>delay()</code> loop</td>
+<td>43mA</td>
+</tr>
+<tr>
+<td>Nothing</td>
+<td>Deep sleep</td>
+<td>33mA</td>
+</tr>
+<tr>
+<td>Steady <span class="caps">LED</span></td>
+<td>Deep sleep</td>
+<td>34mA</td>
+</tr>
+<tr>
+<td>Flashing <span class="caps">LED</span></td>
+<td>Awake</td>
+<td>45mA</td>
+</tr>
+<tr>
+<td>Xbee (quiet)</td>
+<td>Deep sleep</td>
+<td>72mA</td>
+</tr>
+<tr>
+<td>Xbee (quiet)</td>
+<td>Awake</td>
+<td>85mA</td>
+</tr>
+<tr>
+<td>Xbee (transmitting)</td>
+<td>Awake</td>
+<td>87mA</td>
+</tr>
+</tbody></table>
+<p>The good news is that SleepySketch makes it very easy to access the deep sleep mode, and to stay in it by default. This is good, as the normal approach of&nbsp;using <code>delay()</code> is quite power-hungry. The bad news is that the &#8220;at rest&#8221; power consumption of an Arduino even in deep sleep  &#8212; the quiescent current being drawn by the voltage regulator and other components on the board, regardless of what the microcontroller is doing &#8212; is about 35mA, with an XBee drawing an additional 40mA.There is very little difference in power whether the radio is transmitting or not (although the current being drawn looked more variable when transmitting, suggesting that there&#8217;s some variation happening faster than the ammeter&#8217;s sample&nbsp;time).</p>
+<p>The radio isn&#8217;t put to sleep when the Arduino is asleep, which is clearly something that needs to happen: it draws power even when the Arduino is incapable of using it. Something to explore. Potentially more serious is the power being drawn when the Arduino is asleep. A battery pack with 4 x 1500mAH batteries will be drained in about 7 days (6000mAH / 35mA) even with the system asleep all the&nbsp;time.</p>
+<p>[<span class="caps">UPDATE</span> 1Aug2013: made the table layout a bit&nbsp;clearer.]</p>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Basic%20power%20measurements%20%23arduino%20%23making%20%23powermanagement%20%23project%3Aditch%20%23xbee&amp;url=https://simondobson.org/2013/07/31/power/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Basic%20power%20measurements%20%23arduino%20%23making%20%23powermanagement%20%23project%3Aditch%20%23xbee&amp;url=https://simondobson.org/2013/07/31/power/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2013/07/31/power/&amp;title=Basic%20power%20measurements%20%23arduino%20%23making%20%23powermanagement%20%23project%3Aditch%20%23xbee" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/07/31/power/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Basic%20power%20measurements&amp;body=https://simondobson.org/2013/07/31/power/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/arduino/">arduino</a>
+		    <span>  </span>
+		<a href="../../../../categories/making/">making</a>
+		    <span>  </span>
+		<a href="../../../../categories/power-management/">power management</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectditch/">project:ditch</a>
+		    <span>  </span>
+		<a href="../../../../categories/xbee/">xbee</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../big-rich/" rel="prev">
+		<span class="meta-nav">Older Post</span>Big, or just rich?
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../../08/02/at-commands-2/" rel="next">
+		<span class="meta-nav">Newer Post</span>Issuing <span class="caps">AT</span> commands
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

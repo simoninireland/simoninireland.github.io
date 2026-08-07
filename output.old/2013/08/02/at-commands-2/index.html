@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issuing AT commands | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 2 August, 2013</a>
+	    </span>
+	</div>
+	<h1>Issuing <span class="caps">AT</span>&nbsp;commands</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<p>Controlling the XBee requires issuing <span class="caps">AT</span> commands. The XBee library has the low-level machinery to do&nbsp;this.</p>
+<!--more-->
+
+<p><span class="caps">AT</span> commands are the basis for controlling almost all modems, and the XBee is no different. In <span class="caps">API</span> mode, <span class="caps">AT</span> commands are issued in a similar manner to sending data. The Arduino XBee library has the low-level code needed, which can be wrapped into a slightly easier-to-use&nbsp;form.</p>
+<p>The basic approach is to send an <span class="caps">AT</span> command request packet and then
+read a returned packet acknowledging the command. For the moment we&#8217;ll
+stick to &#8220;setting&#8221; commands, where the <span class="caps">AT</span> command takes an integer
+parameter: the other are needed less frequently. We construct the
+request packet, send it, read the response, and check that all went
+well. This isolates the rest of the program from the message exchange,
+but also hides the exact nature of any&nbsp;error.</p>
+<div class="code"><pre class="code literal-block"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;XBee.h&gt;</span>
+
+<span class="n">XBee</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">atCommand</span><span class="p">(</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// send local AT command</span>
+<span class="w">  </span><span class="n">AtCommandRequest</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandRequest</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">));</span>
+<span class="w">  </span><span class="n">radio</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">req</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// receive response frame</span>
+<span class="w">  </span><span class="n">AtCommandResponse</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AtCommandResponse</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">readPacket</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// read packet from radio</span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getApiId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">AT_RESPONSE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// right type?</span>
+<span class="w">       </span><span class="n">radio</span><span class="p">.</span><span class="n">getResponse</span><span class="p">().</span><span class="n">getAtCommandResponse</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="w">       </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="n">isOk</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                                     </span><span class="c1">// not an error?</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// if we get here, return a failure</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>This function can be used to issue the different control codes for the radio. Some parameters can be <a href="../../../07/02/xctu/">set using X-<span class="caps">CTU</span> </a>when the radio firmware is installed, but commands are sometimes needed at run-time&nbsp;too.</p>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/projects/citizen-sensing/">Citizen sensing</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="Issuing%20AT%20commands%20%23arduino%20%23atcommand%20%23making%20%23project%3Aditch%20%23xbee&amp;url=https://simondobson.org/2013/08/02/at-commands-2/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=Issuing%20AT%20commands%20%23arduino%20%23atcommand%20%23making%20%23project%3Aditch%20%23xbee&amp;url=https://simondobson.org/2013/08/02/at-commands-2/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2013/08/02/at-commands-2/&amp;title=Issuing%20AT%20commands%20%23arduino%20%23atcommand%20%23making%20%23project%3Aditch%20%23xbee" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2013/08/02/at-commands-2/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=Issuing%20AT%20commands&amp;body=https://simondobson.org/2013/08/02/at-commands-2/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/arduino/">arduino</a>
+		    <span>  </span>
+		<a href="../../../../categories/at-command/">at command</a>
+		    <span>  </span>
+		<a href="../../../../categories/making/">making</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectditch/">project:ditch</a>
+		    <span>  </span>
+		<a href="../../../../categories/xbee/">xbee</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../07/31/power/" rel="prev">
+		<span class="meta-nav">Older Post</span>Basic power measurements
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../xbee-sleeping/" rel="next">
+		<span class="meta-nav">Newer Post</span>XBee sleeping
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

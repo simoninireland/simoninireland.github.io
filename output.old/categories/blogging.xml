@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about blogging)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/blogging.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making small changes to lots of files</title><link>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgfd33e58" class="outline-2"&gt;
+&lt;h2 id="orgfd33e58"&gt;Making small changes to lots of files&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfd33e58"&gt;
+&lt;p&gt;
+I recently had to make tiny changes to a large number of files
+spread nested through a directory structure. This turns out to be a
+lot easier than I expected with Emacs.
+&lt;/p&gt;
+
+&lt;p&gt;
+My use case was actually this blog. It's been on the go for a while
+in several different formats, and over the years I've used tags to
+drive different presentations – for example articles tagged 'news'
+ended up on the front page. I no longer do this, which meant a lot
+of redundant tags to be got rid of, mainly in Nikola's &lt;code&gt;.meta&lt;/code&gt;
+metadata files but also embedded into &lt;code&gt;.md&lt;/code&gt; markdown and &lt;code&gt;.rst&lt;/code&gt;
+restructured text..
+&lt;/p&gt;
+
+&lt;p&gt;
+My plan was to use Emacs' &lt;code&gt;rgrep&lt;/code&gt; command to recursively traverse
+the directory structure of posts to find the tags I wanted to
+remove. This would give me a &lt;code&gt;grep&lt;/code&gt;-mode buffer that hyperlinks to
+the files (and lines) needing changing, which I could then click
+through to get to where each change needed to be made.
+Straightforward, but time-consuming and error-prone when there were
+about 150 files to be changed. Clearly a problem in need of a better
+solution.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then discovered the &lt;a href="https://github.com/mhayashi1120/Emacs-wgrep/raw/master/wgrep.el"&gt;&lt;code&gt;wgrep&lt;/code&gt;&lt;/a&gt; ("writable &lt;code&gt;grep&lt;/code&gt;") package. This
+makes the &lt;code&gt;grep&lt;/code&gt;-mode buffer editable, with changes being
+written-back to the underlying files. &lt;i&gt;Exactly&lt;/i&gt; what I needed.
+&lt;/p&gt;
+
+&lt;p&gt;
+Once I'd installed &lt;code&gt;wgrep&lt;/code&gt;, the workflow is ridiculously easy:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Using &lt;code&gt;rgrep&lt;/code&gt; gets a &lt;code&gt;grep&lt;/code&gt;-mode buffer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-c C-p&lt;/code&gt; makes the buffer editable&lt;/li&gt;
+&lt;li&gt;Changing the lines. In my case I could use &lt;code&gt;string-replace&lt;/code&gt; to
+remove the tags I wanted rid of. More complicated cases might
+need &lt;code&gt;regexp-replace&lt;/code&gt; or even manual editing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-x C-s&lt;/code&gt; writes the changes back out&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+(There are several other keybindings that &lt;code&gt;wgrep&lt;/code&gt; makes
+available, notably &lt;code&gt;C-c C-k&lt;/code&gt; to discard all changes.)
+&lt;/p&gt;
+
+&lt;p&gt;
+That's it! A job that I expected to take an hour took about 3
+minutes.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>blogging</category><category>emacs</category><category>nikola</category><guid>https://simondobson.org/2024/01/01/making-small-changes-to-lots-of-files/</guid><pubDate>Mon, 01 Jan 2024 16:35:31 GMT</pubDate></item><item><title>New publishing setup and theme for the web site</title><link>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org1a5a668" class="outline-2"&gt;
+&lt;h2 id="org1a5a668"&gt;New publishing setup and theme for the web site&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a5a668"&gt;
+&lt;p&gt;
+I've moved to a slightly different set-up for publishing this
+site, as well as a new theme.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>publishing</category><guid>https://simondobson.org/2022/11/03/new-publishing-setup-and-theme-for-the-web-site/</guid><pubDate>Thu, 03 Nov 2022 14:24:03 GMT</pubDate></item><item><title>Where do all the comments go?</title><link>https://simondobson.org/2011/02/21/comments/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;p&gt;I don't get many comments on this blog: fortunately I do it for the opportunity to write amid the torrent of administrivia rather than for the affirmation. But I &lt;em&gt;do&lt;/em&gt; get more than's readily apparent, which tells us something about social media and opens up an opportunity.
+
+&lt;!--more--&gt;
+
+Blogging is up there with &lt;a href="http://www.twitter.com/simoninireland"&gt;Twitter&lt;/a&gt; and &lt;a href="http://www.facebook.com/simoninireland"&gt;Facebook&lt;/a&gt; as the epitome of social media: a way to share parts of your life and mind digitally with more-or-less unselected parts of the world. You could argue that it's also the epitome of egotism to think that anyone else might &lt;em&gt;want&lt;/em&gt; to share those parts of your life and mind that you foist upon them, but that's another story.
+
+The social media space has consolidated somewhat to yield several large services with a surrounding cloud of also-rans, which is pretty much what you expect in a market that places a premium on networking and connectedness: by definition one large network is more valuable (in many senses) than several smaller ones. But it shows no signs of consolidating into a single hegemony that captures &lt;em&gt;all&lt;/em&gt; the aspects of social media we've come to find: Twitter and Facebook are distinct but linked, and likely to remain that way. The same is true for blogging platforms. The reasons for this are complicated but relate to the ability of one company to climb several steep learning curves simultaneously. It's more efficient to focus on innovating in one area -- climbing the single curve quickly -- rather than trying to provide a unified experience that involves multiple areas of innovation. This is &lt;a href="http://www.divisionoflabour.com/archives/000006.php"&gt;Adam Smith's pin factory&lt;/a&gt; for the knowledge economy.
+
+This economically attractive choice has consequences, though. Since there isn't a single network, one needs to access multiple networks to reach the widest community. Many people -- including me -- do this by tying their services together. My Facebook status is updated from my Twitter feed, for example: I almost never update it directly. The same is true for my &lt;a href="http://www.linkedin.com/profile/view?id=7632144"&gt;LinkedIn&lt;/a&gt; status. My web site has the Twitter stream and the blog side by side, and if I post to the blog a notification goes out of on Twitter. Actually, if you're reading this at all, you probably know at least some of this by virtue of how you got here :-).
+
+This is the socialisation of social media, in effect, but it means that what one thinks of as a single conversation is actually going on in several places simultaneously, and that's where we need to ask where all the comments go.
+
+I get very few direct comments on the blog, despite some posts getting quite a lot of readers: the conversion rate of readers to commenters is significantly less than 1 comment per 500 distinct page views. However, that's not the whole story, because I also get comments by the other social media channels: as comments on my Facebook page, as replies and retweets of the announcements, as email from people who see these, and so on. That makes it hard to measure the impact of a post as measured by the comments it generates. The popularity of a post isn't what's important to me (although they're always nice to get, of course), but it does mean that a significant benefit of social media -- the ability to engage in a conversation over people's opinions -- is impeded by the fractured nature of the comment stream, even when it's being aided by wider distribution.
+
+So I think there's an opportunity here for someone: how can we aggregate comments? We aggregate blogs themselves using RSS feeds: can we do the same for the comments, and feed them back to a single point (the blog itself, perhaps) so that they're available for further comment regardless of the channel on which they were issued? It's not a trivial task, because you need to identify which comments relate to which blog posting, but it's certainly not insurmountable. Might make a good final-year undergraduate computer science project.
+
+Actually this sort of technology is useful more broadly. Any web site or &lt;a href="https://simondobson.org/2011/01/unpopular-book/"&gt;book&lt;/a&gt; that attracts comment is likely to attract them in different fora: how do you find them? How do you bring them to one place? This has both intellectual and commercial implications: intellectually it increases the network of the social media comment space and so should make it more efficient; commercially it improves the means for  assessing the popularity of a web site which is often what drives advertising revenues. Overall it would let the increasing specialisation of social media continue without this irretrievably fragmenting the very things that make it most valuable: the two-way flow of ideas.&lt;/p&gt;</description><category>blogging</category><category>innovation</category><category>social media</category><guid>https://simondobson.org/2011/02/21/comments/</guid><pubDate>Mon, 21 Feb 2011 08:00:13 GMT</pubDate></item></channel></rss>

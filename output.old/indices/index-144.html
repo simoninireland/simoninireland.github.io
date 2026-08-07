@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simon Dobson (old posts, page 144)</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../assets/fonts/libretto-icons.eot);
+	    src:url(../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../assets/css/code.css">
+<link rel="stylesheet" href="../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../index.html">Home</a></li>
+		    <li><a href="../personal/">About&nbsp;me</a></li>
+		    <li><a href="../research/">Research</a></li>
+		    <li><a href="../development/projects/">Software</a></li>
+		    <li><a href="../writing/">Writing</a></li>
+		    <li><a href="../personal/contact/">Contact</a></li>
+		<li>
+<a href="../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/" rel="bookmark">Friday 3 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/05/03/til-the-loudest-lisp-program-in-the-world/"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org8b56563" class="outline-2">
+<h2 id="org8b56563"><span class="caps">TIL</span>: The loudest Lisp program in the&nbsp;world</h2>
+<div class="outline-text-2" id="text-org8b56563">
+<p>
+Today I learned about a program that generates the sounds that help
+people navigate as they exit long tunnels when an emergency such as
+a fire has destroyed the&nbsp;visibility.
+</p>
+
+<p>
+<a href="https://blog.funcall.org//lisp%20psychoacoustics/2024/05/01/worlds-loudest-lisp-program/">The World&#8217;s Loudest Lisp Program to the&nbsp;Rescue</a>
+</p>
+
+<p>
+This describes the challenges of building a software system that has
+to work unmonitored once deployed, for years, as well as
+withstanding a fairly rugged environment where, for example, the
+installedc hardware will be periodically sprayed with a
+high-pressure hose as the walls get cleaned. Overall the system is
+soft real-time, but has to cope with component failure, network
+partitions, consensus, and all the usual distributed systems
+challenges, while be guaranteed to work when&nbsp;needed.
+</p>
+
+<p>
+The developers built the system in Common Lisp, which wouldn&#8217;t be
+the normal go-to choice for an embedded system. But their argument
+was that they could better handle complex and changing requirements
+by retaining a high level of abstraction, and that development was
+overall far faster than using C. Modern Common Lisp compilers are so
+efficient that there&#8217;s no significant performance hit at deployment.
+They made use of complicated components like planners (for which
+Lisp is an ideal choice), and built a set of macros to wrap-up the
+handling of industrial control and robust&nbsp;communications.
+</p>
+
+<p>
+It&#8217;s a great&nbsp;read.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/how-to-win-an-information-war-the-propagandist-who-outwitted-hitler/" rel="bookmark">Friday 3 May, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/how-to-win-an-information-war-the-propagandist-who-outwitted-hitler/">How to Win an Information War: The Propagandist Who Outwitted&nbsp;Hitler</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698420610l/182761575._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Peter Pomerantsev&nbsp;(2024)
+      </h2>
+    </div>
+    <p>
+      Part biography and part assessment of the modern media landscape in the face of prolonged and well-funded disinformation. Sefton Delmer crafted a lot of British propaganda against the Nazis, drawing on his own childhood in Germany.<br><br>As with <a href="https://www.goodreads.com/book/show/52382865.How_to_Lose_the_Information_War_Russia__Fake_News_and_the_Future_of_Conflict" title="How to Lose the Information War Russia, Fake News and the Future of Conflict by Nina Jankowicz" rel="nofollow noopener">How to Lose the Information War: Russia, Fake News and the Future of Conflict</a> – another take on the same issues, with less of an historical driver – Pomerentsev focuses on the importance of the perceived messenger as well as the message: the idea that &#8220;truth will prevail&#8221; simply isn&#8217;t true when untruth is being cleverly promoted. Delmer pioneered this approach by creating radio-based characters crafted to appeal to particular segments of German society and seed disquiet amongst them.<br><br>(I was reminded at one point of a character in <a href="https://www.goodreads.com/book/show/530965.The_Day_of_the_Triffids" title="The Day of the Triffids by John Wyndham" rel="nofollow noopener">The Day of the Triffids</a> who works as a professional agitator able to meet anyone on their own ground, changing his voice, dress, and presentation style to suit the audience, and arguing that the way you deliver a message is at least as important as its content. Delmer would have approved.)<br><br>One can see Delmer as the origin of the modern approach to &#8220;flood the zone&#8221; and undermine belief in <i>all</i> media and information. He was constantly criticised by his opponents (both those making moral arguments and those simply wanting to be in control) to demonstrate the efficacy of his techniques. That misses the point somewhat. He wasn&#8217;t looking to bring about concrete, short-term changes, but rather was trying to influence the medium-term attitudes his listeners had to their information sources: marketing rather than sales. It&#8217;s hard to measure the successes of this, other than to point out that now, eighty years later, his approach seems to have been refined and re-applied by people who are, in many cases, closely aligned to the politics he himself fought&nbsp;against.
+      </p>
+<p>
+	4/5.
+	  Finished Friday 3 May,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6149473453?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/beyond/" rel="bookmark">Sunday 21 April, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/beyond/">Beyond</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639479657l/58849383._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Stephen Walker&nbsp;(2021)
+      </h2>
+    </div>
+    <p>
+      The space race from the American perspective is well-known: this book presents the same race from the Soviet perspective.<br><br>The differences are profound, of course, mainly driven by the Soviet programme occurring in complete secrecy to duck the risks that failure would have on the programme&#8217;s image. The American programme by contrast was conducted in the open at least as far as the actual &#8220;shots&#8221; were concerned – and their public failures did indeed endanger their ability to continue, at least in part because neither public nor politicians understood the process of engineering or just how <i>hard</i> each shot was. The deep irony is that the Soviet successes appeared so sudden and dramatic they led directly to the deepening of the American programme and commitment or more money and effort than the Soviets seemed able to maintain to capitalise on their early lead.<br><br>There are plenty of revelations even for those with a detailed interest in space history. I remember hearing all through the 1970s that the Soviet spacecraft landed on land, but it turns out that in many cases the cosmonauts were bailing-out and parachuting to earth instead, with this being intensively covered-up even to the extent of falsifying reports to the international organisation responsible for certifying &#8220;firsts&#8221; in space.<br><br>While the achievements of both programmes were profound, they were perhaps doomed in the long term by a lack of vision for what they were actually <i>for</i>. The benefits of space technology are now obvious; those of exploration perhaps less so, although it doesn&#8217;t (in my opinion) require much suspension of disbelief to feel that science-driven activities lead almost inevitably to enormously valuable spin-offs. The fact that we can&#8217;t quantify these <i>a priori</i> shouldn&#8217;t (in my opinion, again) stop us keeping the faith in the value of experiments that advance our science <i>and</i> engineering in ways that wouldn&#8217;t otherwise&nbsp;happen.
+      </p>
+<p>
+	5/5.
+	  Finished Sunday 21 April,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6395477584?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/" rel="bookmark">Sunday 21 April, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../goodreads/the-emergence-of-numerical-weather-prediction-richardsons-dream/">The Emergence of Numerical Weather Prediction: Richardson&#8217;s&nbsp;Dream</a></h1>
+		</div>
+		<div class="entry-content">
+			<div>
+    <div>
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348662620l/275229._SX98_.jpg" style="float: left; margin-right: 10px"><h2>
+	Peter   Lynch&nbsp;(2006)
+      </h2>
+    </div>
+    <p>
+      A very technical examination of the world&#8217;s first numerical weather &#8220;prediction&#8221; – although in fact it was really a &#8220;postdiction&#8221;, taking detailed data and using it to compute a scenario that could be compared against a known ground truth. It was an incredible achievement anyway, performing manually and at low resolution the calculations now routinely performed by computers.<br><br>Richardson was the person who saw that this would be possible, realising that the physics and mathematics could be solved even though the computational capabilities didn&#8217;t exist. In this he foresaw the emergence of the modern power of data, where the existence of more and better data transforms both the way we do science and the sciene that we do. It&#8217;s something that should put him alongside Turing and Von Neumann as visionaries of what computation could&nbsp;achieve.
+      </p>
+<p>
+	4/5.
+	  Finished Sunday 21 April,&nbsp;2024.
+	</p>
+<p>
+	  (Originally published on <a href="https://www.goodreads.com/review/show/6326779093?utm_medium=api&amp;utm_source=rss">Goodreads</a>.)
+  </p>
+</div>
+		</div>
+	    </article>
+</div>
+	<div class="site-content">
+	    <article class="format-standard libretto-long-form"><div class="title-block post-format-icon-pin">
+		    <div class="entry-meta">
+			<span class="posted-on">
+			    Posted on <a href="../2024/04/12/til-cognitohazards/" rel="bookmark">Friday 12 April, 2024</a>
+			</span>
+		    </div>
+		    <h1><a href="../2024/04/12/til-cognitohazards/"><span class="caps">TIL</span>:&nbsp;Cognitohazards</a></h1>
+		</div>
+		<div class="entry-content">
+			<div id="outline-container-org9aba0f6" class="outline-2">
+<h2 id="org9aba0f6"><span class="caps">TIL</span>:&nbsp;Cognitohazards</h2>
+<div class="outline-text-2" id="text-org9aba0f6">
+<p>
+Could social media posts be actively damaging to our mental health?
+– literally, not just figuratively? That&#8217;s the premise of <a href="https://www.theguardian.com/technology/2024/apr/09/techscape-deepfakes-cognitohazards-science-fiction">a
+TechScape article in The Guardian</a>, that draws on both science
+fiction and psychological&nbsp;research.
+</p>
+
+<p>
+In Neal Stephenson&#8217;s &#8220;Snow crash&#8221; there is a plot device of an image
+in a metaverse that, when viewed, crashes the viewer&#8217;s brain. We
+haven&#8217;t seen this in social media (yet), but there&#8217;s an increasing
+concern about deepfake images and other forms of misinformation.
+Research suggests that such images are damaging <i>even if viewers
+know that they&#8217;re fakes</i>, which suggests that techniques like
+content-labelling images as <span class="caps">AI</span>-generated are insufficient to remove
+their harm. Other examples include massively engaging artificial
+images such as the &#8220;pong wars&#8221; animation of two simultaneous
+&#8220;Breakout&#8221; games going on between two algorithms: something that
+shouldn&#8217;t be as engaging as it is (as I can attest to&nbsp;myself).
+</p>
+
+<p>
+Social media attention grabbing at an industrial scale might
+therefore constitute a <i>cognitohazard</i>, a way of hacking people&#8217;s
+brains simply by being&nbsp;viewed.
+</p>
+</div>
+</div>
+		</div>
+	    </article>
+</div>
+    <!-- Lower Navigation links -->
+    <nav class="site-content navigation-post" role="navigation"><div class="previous">
+		<a href="index-143.html" rel="prev">
+		    <span class="meta-nav">Older Entries</span>		</a>
+	    </div>
+	    <div class="next">
+		<a href="index-145.html" rel="next">
+		    <span class="meta-nav">Newer Entries</span>		</a>
+	    </div>
+    </nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2025 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

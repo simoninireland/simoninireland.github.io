@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citizen sensing | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../index.html">Home</a></li>
+		    <li><a href="../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../research/">Research</a></li>
+		    <li><a href="../">Software</a></li>
+		    <li><a href="../../../writing/">Writing</a></li>
+		    <li><a href="../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<h1>Citizen&nbsp;sensing</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<section id="citizen-sensing"><h2>Citizen&nbsp;sensing</h2>
+<p>In 2013 I did a summer project on using the <a class="reference external" href="https://arduino.cc">Arduino</a>
+as a platform for &#8220;citizen
+sensing&#8221;. This rapidly became an exploration of how to create hardware
+and software that can do sensing while operating in a very low-power
+regime, such as one would need for an environmental&nbsp;sensor.</p>
+<p>There were several results from this project &#8212; one of which <em>wasn&#8217;t</em>
+an actual solution to the motivating problem I&#8217;d come up with.
+However, it did generate a lot of notes about low-power Arduino
+programming, both for hardware and software, and a software library
+that embodies some of them. These may still be of interest to anyone
+wanting to use Arduino technology for low-power environmental&nbsp;sensing.</p>
+<!-- Begin post-list post_list_ce7048ca883646a0823551379e166d50 -->
+<div id="post_list_ce7048ca883646a0823551379e166d50" class="post-list">
+    <ul class="post-list">
+<li class="post-list-item">
+            Wednesday 19 June, 2013
+             
+            <a href="../../../2013/06/19/ditch-motivation/">The ditch project: a&nbsp;motivation</a>
+            </li>
+            <li class="post-list-item">
+            Thursday 20 June, 2013
+             
+            <a href="../../../2013/06/20/parts-list/">Sensor mote initial parts&nbsp;list</a>
+            </li>
+            <li class="post-list-item">
+            Friday 21 June, 2013
+             
+            <a href="../../../2013/06/21/parts-arrive/">The parts&nbsp;arrive</a>
+            </li>
+            <li class="post-list-item">
+            Friday 28 June, 2013
+             
+            <a href="../../../2013/06/28/soldering/">First bit of soldering&nbsp;done</a>
+            </li>
+            <li class="post-list-item">
+            Monday 1 July, 2013
+             
+            <a href="../../../2013/07/01/xbee/">XBee&nbsp;radios</a>
+            </li>
+            <li class="post-list-item">
+            Tuesday 2 July, 2013
+             
+            <a href="../../../2013/07/02/mesh-network/">Mesh&nbsp;networking</a>
+            </li>
+            <li class="post-list-item">
+            Tuesday 2 July, 2013
+             
+            <a href="../../../2013/07/02/xctu/">XBee firmware management with&nbsp;X-<span class="caps">CTU</span></a>
+            </li>
+            <li class="post-list-item">
+            Wednesday 3 July, 2013
+             
+            <a href="../../../2013/07/03/xbee-arduino/">The xbee-arduino&nbsp;library</a>
+            </li>
+            <li class="post-list-item">
+            Saturday 6 July, 2013
+             
+            <a href="../../../2013/07/06/api-communications/"><span class="caps">API</span> communications now&nbsp;working</a>
+            </li>
+            <li class="post-list-item">
+            Monday 8 July, 2013
+             
+            <a href="../../../2013/07/08/ds18b20/"><span class="caps">DS18B20</span> digital&nbsp;thermometer</a>
+            </li>
+            <li class="post-list-item">
+            Tuesday 9 July, 2013
+             
+            <a href="../../../2013/07/09/temperature-sensors-working/">Temperature sensors&nbsp;working</a>
+            </li>
+            <li class="post-list-item">
+            Wednesday 10 July, 2013
+             
+            <a href="../../../2013/07/10/representing-samples/">Representing&nbsp;samples</a>
+            </li>
+            <li class="post-list-item">
+            Tuesday 23 July, 2013
+             
+            <a href="../../../2013/07/23/arduino-watchdog/">Understanding Arduino sleep modes: the watchdog&nbsp;timer</a>
+            </li>
+            <li class="post-list-item">
+            Thursday 25 July, 2013
+             
+            <a href="../../../2013/07/25/sleepy-sketches/">Sleepy&nbsp;sketches</a>
+            </li>
+            <li class="post-list-item">
+            Friday 26 July, 2013
+             
+            <a href="../../../2013/07/26/radio-survey/">Radio&nbsp;survey</a>
+            </li>
+            <li class="post-list-item">
+            Friday 26 July, 2013
+             
+            <a href="../../../2013/07/26/improvements/">Some improvements to&nbsp;SleepySketch</a>
+            </li>
+            <li class="post-list-item">
+            Wednesday 31 July, 2013
+             
+            <a href="../../../2013/07/31/power/">Basic power&nbsp;measurements</a>
+            </li>
+            <li class="post-list-item">
+            Friday 2 August, 2013
+             
+            <a href="../../../2013/08/02/at-commands-2/">Issuing <span class="caps">AT</span>&nbsp;commands</a>
+            </li>
+            <li class="post-list-item">
+            Friday 2 August, 2013
+             
+            <a href="../../../2013/08/02/xbee-sleeping/">XBee&nbsp;sleeping</a>
+            </li>
+            <li class="post-list-item">
+            Tuesday 27 August, 2013
+             
+            <a href="../../../2013/08/27/arduino-breadboard/">Low-power&nbsp;Arduino-on-a-breadboard</a>
+            </li>
+            <li class="post-list-item">
+            Wednesday 28 August, 2013
+             
+            <a href="../../../2013/08/28/uploading-sketches/">Uploading sketches to a breadboard&nbsp;Arduino</a>
+            </li>
+    </ul>
+</div>
+<!-- End post-list post_list_ce7048ca883646a0823551379e166d50 -->
+</section>
+</div>
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+
+	<!-- Tag Section -->
+
+	<!-- Post Navigation links -->
+
+    <!-- Page Footer -->
+    <section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2026 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A programmable programming language | Simon Dobson</title>
+<style>
+	@font-face {
+	    font-family: "libretto-icons";
+	    src:url(../../../../assets/fonts/libretto-icons.eot);
+	    src:url(../../../../assets/fonts/libretto-icons.eot#iefix) format("embedded-opentype"),
+	    url(../../../../assets/fonts/libretto-icons.woff) format("woff"),
+	    url(../../../../assets/fonts/libretto-icons.ttf) format("truetype"),
+	    url(../../../../assets/fonts/libretto-icons.svg#libretto-icons) format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+    </style>
+<link rel="icon" href="../../../../images/favicon.png" sizes="16x16">
+<link rel="alternate" type="application/rss+xml" href="../../../../rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Libre+Baskerville|Montserrat|Playfair+Display|Tangerine">
+<link rel="stylesheet" href="../../../../assets/css/libretto_styles.css">
+<link rel="stylesheet" href="../../../../assets/css/baguetteBox.min.css">
+<link rel="stylesheet" href="../../../../assets/css/code.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_rst.css">
+<link rel="stylesheet" href="../../../../assets/css/nikola_ipython.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="nav-bar"><div class="site-branding">
+	    <h1 class="site-title">
+		<a href="https://simondobson.org/" title="Simon Dobson" rel="home">Simon&nbsp;Dobson</a>
+	    </h1>
+	</div>
+	<nav class="site-navigation" role="navigation"><div class="menu-toggle">
+		<span class="mobile-site-title">Simon Dobson</span>
+	    </div>
+	    <ul class="menu">
+<li><a href="../../../../index.html">Home</a></li>
+		    <li><a href="../../../../personal/">About&nbsp;me</a></li>
+		    <li><a href="../../../../research/">Research</a></li>
+		    <li><a href="../../../../development/projects/">Software</a></li>
+		    <li><a href="../../../../writing/">Writing</a></li>
+		    <li><a href="../../../../personal/contact/">Contact</a></li>
+		<li>
+<a href="../../../../rss.xml"><i class="fa fa-rss"></i></a>
+	    </li>
+</ul></nav></header><!-- Page Header --><div class="title-block post-format-icon-pin">
+	<div class="entry-meta">
+	    <span class="posted-on">
+		Posted on <a href="." rel="bookmark">Friday 10 July, 2026</a>
+	    </span>
+	</div>
+	<h1>A programmable programming&nbsp;language</h1>
+    </div>
+
+	<!-- Page Content -->
+    <div class="site-content" role="main">
+	<article class="format-standard libretto-long-form"><div class="entry-content">
+		<div id="outline-container-org90d39a3" class="outline-2">
+<h2 id="org90d39a3">A programmable programming&nbsp;language</h2>
+<div class="outline-text-2" id="text-org90d39a3">
+<p>
+Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram
+Krishnamurthi, Eli Barzilay, Jay McCarthy, and Sam
+Tobin-Hochstadt.  <i><a href="https://doi.org/10.1145/3127323">A Programmable Programming Language</a></i>.
+Communications of the <span class="caps">ACM</span> <b>61</b>, pp.62–71.&nbsp;2018.
+</p>
+
+<p>
+Lisp has been described as a &#8220;programmable programming language&#8221;:
+the fact that Lisp code is valid Lisp data and can be manipulated
+as such, coupled with macros, makes it easy to construct new Lisp
+variants in Lisp, and to combine them with &#8220;real&#8221; Lisp in
+interesting&nbsp;ways.
+</p>
+
+<p>
+Racket is a Lisp that takes this to its logical conclusion, making
+domain-specific sub-languages into first-class objects that can be
+freely interleaved within programs and can be matched to the
+&#8220;natural&#8221; expression of the target domain. The languages don&#8217;t
+even have to be&nbsp;Lisp-like.
+</p>
+
+<blockquote>
+<p>
+In the ideal world, software developers would analyze each problem in
+the language of its domain and then articulate solutions in matching&nbsp;terms.
+</p>
+</blockquote>
+
+<p>
+Racket languages are formed of two parts: a <b>reader</b> that turns
+strings into properly bracketed S-expressions, and an <b>expander</b>
+that turns these expressions into &#8220;real&#8221; Racket (or some other
+Racket-defined&nbsp;language).
+</p>
+
+<p>
+This flexibility adds a whole new level to Lisp programming. For
+example, it allows languages that don&#8217;t readily translate to Lisp
+style to be implemented and integrated into Lisp. This may simply
+be for user convenience, or may have some deeper semantic
+structure. Racket also defines clean interfaces between languages,
+which is what allows them to be combined. It&#8217;s a deeper version
+of the usual Lisp multi-paradigm approach, reaching out beyond
+macros working on Lisp&nbsp;syntax.
+</p>
+</div>
+</div>
+	    </div>
+
+		<div>
+		  (Part of the series
+		  <a href="../../../../development/annotated-lisp-bibliography/">An annotated Lisp bibliography</a>.)
+		</div>
+
+	</article>
+</div>
+
+	<!-- Social sharing section -->
+  <div class="site-content">
+    <div class="social">
+      <ul>
+<li><a onclick="MastodonShare(this);" data-src="A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share on Mastodon"><i class="fab fa-mastodon"></i></span></a></li>
+	<li><a href="https://twitter.com/share?text=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography&amp;url=https://simondobson.org/2026/07/10/a-programmable-programming-language/" target="_blak"><span title="Share on Twitter"><i class="fab
+	fa-twitter"></i></span></a></li>
+	<li><a href="https://www.reddit.com/submit?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;title=A%20programmable%20programming%20language%20%23language-reference%20%23lisp%20%23project%3Alisp-bibliography" target="_blank"><span title="Share on Reddit"><i class="fab fa-reddit"></i></span></a></li>
+	<li><a href="https://www.linkedin.com/shareArticle?url=https://simondobson.org/2026/07/10/a-programmable-programming-language/&amp;source=https://simondobson.org/" target="_blank"><span title="Share on LinkedIn"><i class="fab fa-linkedin"></i></span></a></li>
+	<li><a href="mailto:?subject=A%20programmable%20programming%20language&amp;body=https://simondobson.org/2026/07/10/a-programmable-programming-language/"><span title="Share by email"><i class="fa fa-envelope"></i></span></a></li>
+      </ul>
+</div>
+  </div>
+
+	<!-- Tag Section -->
+    <div class="site-content navigation-post">
+	<div class="tag-head">Tags</div>
+	<div class="tag-list">
+		<a href="../../../../categories/language-reference/">language-reference</a>
+		    <span>  </span>
+		<a href="../../../../categories/lisp/">lisp</a>
+		    <span>  </span>
+		<a href="../../../../categories/projectlisp-bibliography/">project:lisp-bibliography</a>
+	</div>
+    </div>
+
+	<!-- Post Navigation links -->
+<nav class="site-content navigation-post" role="navigation"><div class="previous">
+	    <a href="../../../06/18/the-lisp-curse/" rel="prev">
+		<span class="meta-nav">Older Post</span>The Lisp curse
+	    </a>
+	</div>
+	<div class="next">
+	    <a href="../../14/beautiful-racket-an-introduction-to-language-oriented-programming-using-racket/" rel="next">
+		<span class="meta-nav">Newer Post</span>Beautiful Racket: An introduction to language-oriented programming using Racket
+	    </a>
+	</div>
+</nav><!-- Page Footer --><section class="footer-sidebar clear" role="complementary"><div class="widget-block">
+	    <aside class="widget"><h2 class="widget-title">Simon&nbsp;Dobson</h2>
+		<div class="widget-text">Aut tace aut loquere meliora silentio</div>
+	    </aside>
+</div>
+    </section><!-- Extra JavaScript --><script src="../../../../assets/js/mastodon-share.js"></script><!-- Site Attributions --><footer class="site-footer" role="contentinfo"><div class="site-info">
+	    <p></p>
+	    <p>
+	      Built with free and open-source software.
+	      Powered by <a href="https://getnikola.com/">Nikola</a> using a theme based on
+	      <a href="https://themes.getnikola.com/v7/libretto/">Libretto</a>.
+	    </p>
+	    <p>
+	      All content Copyright © 2010–2026 Simon Dobson and licensed under
+	      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><span class="caps">CC</span>-<span class="caps">BY</span>-<span class="caps">NC</span>-<span class="caps">SA</span>-4.0</a>
+	      unless otherwise&nbsp;noted.
+	    </p>
+	</div>
+	<div class="social">
+	    <ul class="menu"></ul>
+</div>
+    </footer>
+</body>
+</html>

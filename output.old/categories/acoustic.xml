@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simon Dobson (Posts about acoustic)</title><link>https://simondobson.org/</link><description></description><atom:link href="https://simondobson.org/categories/acoustic.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:simoninireland@gmail.com"&gt;Simon Dobson&lt;/a&gt; </copyright><lastBuildDate>Thu, 23 Jan 2025 17:21:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Processing MicroMoth recordings offline</title><link>https://simondobson.org/2024/06/10/processing-the-data-offline/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org2dfbe61" class="outline-2"&gt;
+&lt;h2 id="org2dfbe61"&gt;Processing MicroMoth recordings offline&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2dfbe61"&gt;
+&lt;p&gt;
+The uMoth generates &lt;code&gt;.wav&lt;/code&gt; files, uncompressed waveforms of what it
+records. These need to be processed to identify any bird calls
+within them.
+&lt;/p&gt;
+
+&lt;p&gt;
+This function is integrated in BirdNET-Pi, which does recording and
+classification, and provides a web GUI. With the uMoths we need to
+provide classification as part of a data processing pipeline. We
+can however make direct use of the classifier "brain" within
+BirdNET-PI, which is unsurprisingly called &lt;a href="https://github.com/kahst/BirdNET-Analyzer"&gt;BirdNET-Analyzer&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org5750290" class="outline-3"&gt;
+&lt;h3 id="org5750290"&gt;Installation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5750290"&gt;
+&lt;p&gt;
+I'm working on a 16-core Intel Core i7@3.8GHz running Arch Linux.
+&lt;/p&gt;
+
+&lt;p&gt;
+First we clone the BirdNET-Analyzer repo. This takes a long time
+as it includes the ML models, some of which are 40MB or more.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    git clone https://github.com/kahst/BirdNET-Analyzer.git
+    cd BirdNET-Analyzer
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The repo includes a Docker file that we can use to build the
+analyser in a container.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker build .
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+The container setup is quite basic and is probably intended for
+testing rather than production, but it gives a usable system that
+could then be embedded into something more usable. The core of the
+system is the &lt;code&gt;analyze.py&lt;/code&gt; script.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge096706" class="outline-3"&gt;
+&lt;h3 id="orge096706"&gt;Analysing some data (AKA identifying some birds!)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge096706"&gt;
+&lt;p&gt;
+The container as defined looks into its &lt;code&gt;/example&lt;/code&gt; directory for
+waveforms and analyses them, generating text file for each sample.
+The easiest way to get it to analyse captured data is to mount a
+data directory of files onto this mount point (thereby shadowing
+the example waveform provided).
+&lt;/p&gt;
+
+&lt;p&gt;
+There are various parameters that configure the classifier. I
+copied the &lt;a href="/2024/05/19/first-installation/"&gt;defaults I was using with BirdNET-Pi&lt;/a&gt;, only accepting classifications
+at or above 0.7 confidence.
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    docker run -v /var/run/media/sd80/DATA:/example birdnet-analyzer analyze.py --rtype=csv --min_conf=0.7 --sensitivity=1.25
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This crunches through all the files (982 of them from my first
+run) and generates a CSV file for each. An example is:
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-right"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-left"&gt;
+
+&lt;col class="org-right"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-right"&gt;Start (s)&lt;/td&gt;
+&lt;td class="org-right"&gt;End (s)&lt;/td&gt;
+&lt;td class="org-left"&gt;Scientific name&lt;/td&gt;
+&lt;td class="org-left"&gt;Common name&lt;/td&gt;
+&lt;td class="org-right"&gt;Confidence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;6.0&lt;/td&gt;
+&lt;td class="org-right"&gt;9.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.9360&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;9.0&lt;/td&gt;
+&lt;td class="org-right"&gt;12.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8472&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;12.0&lt;/td&gt;
+&lt;td class="org-right"&gt;15.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8681&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;15.0&lt;/td&gt;
+&lt;td class="org-right"&gt;18.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8677&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;24.0&lt;/td&gt;
+&lt;td class="org-right"&gt;27.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
+&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
+&lt;td class="org-right"&gt;0.9198&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;27.0&lt;/td&gt;
+&lt;td class="org-right"&gt;30.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Columba palumbus&lt;/td&gt;
+&lt;td class="org-left"&gt;Common Wood-Pigeon&lt;/td&gt;
+&lt;td class="org-right"&gt;0.7716&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;45.0&lt;/td&gt;
+&lt;td class="org-right"&gt;48.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.8023&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class="org-right"&gt;48.0&lt;/td&gt;
+&lt;td class="org-right"&gt;51.0&lt;/td&gt;
+&lt;td class="org-left"&gt;Corvus monedula&lt;/td&gt;
+&lt;td class="org-left"&gt;Eurasian Jackdaw&lt;/td&gt;
+&lt;td class="org-right"&gt;0.7696&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+Those are entirely credible identifications. The start- and
+end-point offsets allow rough location within the recording.
+(BirdNET segments the recordings into 3s chunks for analysis.)
+&lt;/p&gt;
+
+&lt;p&gt;
+This is clearly not as straightforward as BirdNET-Pi, nor as
+immediately satisfying. But it does scale to analysing lots of
+data (and could be made to do so even better, with a better
+front-end to the container), which is important for any
+large-scale deployment.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/processing-the-data-offline/</guid><pubDate>Mon, 10 Jun 2024 11:57:22 GMT</pubDate></item><item><title>Deploying a MicroMoth</title><link>https://simondobson.org/2024/06/10/configuring-the-board/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-orgbc702e3" class="outline-2"&gt;
+&lt;h2 id="orgbc702e3"&gt;Deploying a MicroMoth&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbc702e3"&gt;
+&lt;p&gt;
+The MicroMoth (or uMoth) from is the same as
+their better-known AudioMoth recorder but with a significantly
+smaller footprint. It's just a traditional recorder or data-logger,
+with now on-board analysis and no wireless connectivity. I got hold
+of some to use in a larger project we're thinking about running, and
+they're not kidding about the "micro" part.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240528_144150.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+The uMoth uses the same software as the AudioMoth, and therefore
+the same configuration app available from the &lt;a href="https://www.openacousticdevices.info/applications"&gt;apps page&lt;/a&gt; – for
+64-bit Linux in my case. It downloads as a &lt;code&gt;.appimage&lt;/code&gt; file, which
+is simply a self-contained archive. It needed to be marked as
+executable, and then ran directly from a double-click. (The page
+suggests that there may be some extra steps for some Linux
+distros: there weren't for Arch.)
+&lt;/p&gt;
+
+&lt;p&gt;
+I then followed the &lt;a href="https://www.openacousticdevices.info/config-app-guide"&gt;configuration guide&lt;/a&gt;. The time is set
+automatically from the computer's clock when you configure the
+device.
+&lt;/p&gt;
+
+&lt;p&gt;
+For testing I chose two recording periods, 0400–0800 and
+1400–1600.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/config.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+As shown this will, with the default 48KHz sampling, generate
+about 2GB of data per day and use about 70mAh of energy. For my
+tests I just hung the device out of the window on a USB tether for
+power: it works fine drawing power from the USB rather than from
+the battery connector.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/4b/0ad2d7-5cb3-4b93-a0ec-4963e2868155/IMG_20240608_141527.jpg" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+This turned out not to record anything, because the time is lost
+if the power is disconnected, even though the configuration is
+retained. (The manual does actually say this, with a suitably
+close reading. It could be clearer.) There's a smartphone app that
+can reset the time once the device is in the field and powered-up,
+though, by making an audio chime that encodes the current time and
+location in a way the board can understand. Flashing the device
+with the "Always require acoustic chime on switching to CUSTOM"
+makes it wait after power is applied until its time is set.
+&lt;/p&gt;
+
+&lt;p&gt;
+The red LED flashes when the device is recording. The green LED
+flashes when the device is waiting for a recording period to
+start. The red LED stays lit while the time is unset.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>sensing</category><guid>https://simondobson.org/2024/06/10/configuring-the-board/</guid><pubDate>Mon, 10 Jun 2024 10:11:02 GMT</pubDate></item><item><title>First installation of BirdNET-Pi</title><link>https://simondobson.org/2024/05/19/first-installation/</link><dc:creator>Simon Dobson</dc:creator><description>&lt;div id="outline-container-org9a2b0df" class="outline-2"&gt;
+&lt;h2 id="org9a2b0df"&gt;First installation of BirdNET-Pi&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9a2b0df"&gt;
+&lt;p&gt;
+The BirdNET-Pi system aims to provide out-of-the-box bird
+identification. It's slightly more awkward than that, but still
+pretty straightforward to get up and running.
+&lt;/p&gt;
+
+&lt;p&gt;
+My first hardware plan was to use a Raspberry Pi Zero as the
+compute host with a &lt;a href="https://www.waveshare.com/wm8960-audio-hat.htm"&gt;Waveshare WM8960 HAT&lt;/a&gt; for the sound capture. It
+turns out that BirdNET needs a 64-bit platform – why I'm not sure
+– and the Pi Zero only runs 32-bit Linux. I therefore moved to a
+Raspberry Pi B that I had lying around, and put a 64-bit "lite"
+install on it to run headless.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then basically just followed the &lt;a href="https://github.com/mcguirepr89/BirdNET-Pi/wiki/Installation-Guide"&gt;installation guide&lt;/a&gt;. There was an
+issue with the installation script when cloning the GitHub repo: I
+suspect this was because of limited memory on the Pi. I downloaded
+manually, and manually ran the rest of the install script, which did
+a &lt;i&gt;lot&lt;/i&gt; of setup of services and a PHP web server.
+&lt;/p&gt;
+
+&lt;p&gt;
+I compiled the &lt;a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT"&gt;drivers&lt;/a&gt; for the HAT, which worked fine. The new
+sound card is recognised but is not the system default.
+&lt;/p&gt;
+
+&lt;p&gt;
+The installed components seem to include:
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;code&gt;icecast2&lt;/code&gt;, a streaming server, used to replay recordings&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caddy&lt;/code&gt; web server&lt;/li&gt;
+&lt;li&gt;PHP for serving the web pages&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arecord&lt;/code&gt; to actually record audio&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ffmpeg&lt;/code&gt; to extract waveforms&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sqlite for the database&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;the actual machine learning model used for recognition&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+The recognition models are built with TensorFlow. This is a great
+example of how the standard Linux tools and services can be combined
+to get a scientific-grade sensor platform. (Caddy doesn't seem to be
+running over TLS by default, which would be an issue outside a
+firewall.)
+&lt;/p&gt;
+
+&lt;p&gt;
+Since the sound card isn't the default, the easiest way to get the
+system listening to the right mics is to change the device in the
+"advanced settings" panel: in my case I changed from "default" to
+"hw:2,0", reflecting the output of &lt;code&gt;arecord -l&lt;/code&gt; that shows the sound
+card devices.
+&lt;/p&gt;
+
+&lt;p&gt;
+I then deployed the Pi out of the kitchen window.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+To start with it wasn't hearing anything, which I think may be
+because of the waterfall in the courtyard: turning this off made
+things much more effective:
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://simondobson.org/attachments/18/408cf7-5f1f-4b07-81ef-e8f94d1c38d3/screenshot-1.png" alt="nil"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+That's an appropriate set of birds being seen – and we hardly ever
+&lt;i&gt;see&lt;/i&gt; magpies, but know they're around. There's actually quite a lot
+of background noise even in such a quiet village, but the bird
+calls do stand out.
+&lt;/p&gt;
+
+&lt;p&gt;
+I can't see any reason for the manual installation on bare metal:
+as far as I can see everything could be containerised, which would
+make deployment and management a &lt;i&gt;lot&lt;/i&gt; easier.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>acoustic</category><category>project:acoustic-birds</category><category>raspberry pi</category><category>sensing</category><guid>https://simondobson.org/2024/05/19/first-installation/</guid><pubDate>Sun, 19 May 2024 14:19:45 GMT</pubDate></item></channel></rss>
