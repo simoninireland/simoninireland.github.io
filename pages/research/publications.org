@@ -12,6 +12,8 @@
 <<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Spacetime Message Passing for Endemic Diseases/. Submitted to Physical Review E.
 
 <<citeproc_bib_item_3>>Alison Johnston, Vincent Lostanlen, Tiago A. Marques, Oliver Metcalf, Danielle Harris, Sophie Palmer, Brontë Stones, Simon Dobson, Steve Buckland, Holger Klinck, and Martin Cox.  /Distance Sampling with Acoustic Classification Confidence Scores/. Submitted to the Journal of Agricultural, Biological and Environmental Statistics.
+
+<<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /Age-Targetted Failure in Evolving Networks with Addition and Deletion/. Submitted to Physical Review E.
 #+end:
 
 ** Books
@@ -291,7 +293,7 @@
 ** Minor conferences and workshops
 
 #+begin: sd/bibliography :key category :value workshop
-<<citeproc_bib_item_1>>Simon Dobson.  /Engineering a TinyML System for Use off-Grid/. 2026. To appear at the 10th UK Systems Research Challenges workshop.
+<<citeproc_bib_item_1>>Simon Dobson.  /[[http://www.simondobson.org/softcopy/uk-systems-tinyml-26.pdf][Engineering a TinyML System for Use off-Grid]]/. In /10th UK Systems Research Challenges Workshop/. Co Durham, UK. 2026.
 
 <<citeproc_bib_item_2>>Simon Dobson.  /[[https://simondobson.org/softcopy/sparse-matrices.pdf][Understanding How to Implement Sparse Matrix Operations Efficiently]]/. In /9th UK Systems Research Challenges Workshop/. Co Durham, UK. 2025.
 
@@ -565,43 +567,41 @@
 ** Technical reports
 
 #+begin: sd/bibliography :key category :value "technical report"
-<<citeproc_bib_item_1>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://arxiv.org/abs/2210.02528v1][Mixing Patterns in Graphs with Higher-Order Structure]]/. Technical report arXiv:2210.02528. arXiv. 2022.
+<<citeproc_bib_item_1>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2004-05.pdf][Where’s Waldo? or, a Taxonomy for Thinking About Location in Pervasive Computing]]/. Technical report TCD-CS-2004-05. Department of Computer Science, Trinity College Dublin. 2004.
 
-<<citeproc_bib_item_2>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2004-05.pdf][Where’s Waldo? or, a Taxonomy for Thinking About Location in Pervasive Computing]]/. Technical report TCD-CS-2004-05. Department of Computer Science, Trinity College Dublin. 2004.
+<<citeproc_bib_item_2>>Howard Kim and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2001-49.pdf][An Improved Approach to Geographically Locating Web Clients]]/. Technical report TCD-CS-2001-49. Department of Computer Science, Trinity College Dublin. 2004.
 
-<<citeproc_bib_item_3>>Howard Kim and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2001-49.pdf][An Improved Approach to Geographically Locating Web Clients]]/. Technical report TCD-CS-2001-49. Department of Computer Science, Trinity College Dublin. 2004.
+<<citeproc_bib_item_3>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-11.pdf][As Strong as Possible Mobility: An Architecture for Stateful Object Migration on the Internet]]/. Technical report TCD-CS-2000-11. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_4>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-11.pdf][As Strong as Possible Mobility: An Architecture for Stateful Object Migration on the Internet]]/. Technical report TCD-CS-2000-11. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_4>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-13.pdf][A Review of Mobility Systems]]/. Technical report TCD-CS-2000-13. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_5>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-13.pdf][A Review of Mobility Systems]]/. Technical report TCD-CS-2000-13. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_5>>Linda Farragher and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-22.pdf][Java Decaffeinated: Experiences Building a Programming Language from Components]]/. Technical report TCD-CS-2000-22. Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_6>>Linda Farragher and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-2000-22.pdf][Java Decaffeinated: Experiences Building a Programming Language from Components]]/. Technical report TCD-CS-2000-22. Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_6>>Simon Dobson.  /[[https://simondobson.org/softcopy/ions-tr-1999.pdf][What’s in an Ion?]]/ Department of Computer Science, Trinity College Dublin. 2000.
 
-<<citeproc_bib_item_7>>Simon Dobson.  /[[https://simondobson.org/softcopy/ions-tr-1999.pdf][What’s in an Ion?]]/ Department of Computer Science, Trinity College Dublin. 2000.
+<<citeproc_bib_item_7>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1999-03.pdf][A Managed Architecture for Mobile Distributed Systems]]/. Technical report TCD-CS-1999-03. Department of Computer Science, Trinity College Dublin. 1999.
 
-<<citeproc_bib_item_8>>Tim Walsh, Paddy Nixon, and Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1999-03.pdf][A Managed Architecture for Mobile Distributed Systems]]/. Technical report TCD-CS-1999-03. Department of Computer Science, Trinity College Dublin. 1999.
+<<citeproc_bib_item_8>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-20.ps][A First Taste of Vanilla]]/. Technical report TCD-CS-1998-20. Department of Computer Science, Trinity College Dublin. 1998.
 
-<<citeproc_bib_item_9>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-20.ps][A First Taste of Vanilla]]/. Technical report TCD-CS-1998-20. Department of Computer Science, Trinity College Dublin. 1998.
+<<citeproc_bib_item_9>>Simon Dobson.  /The O2 Programming Language/. Department of Computer Science, Trinity College Dublin. 1998. Reference manual for the Vanilla implementation of Abadí and Cardelli’s O2 language.
 
-<<citeproc_bib_item_10>>Simon Dobson.  /The O2 Programming Language/. Department of Computer Science, Trinity College Dublin. 1998. Reference manual for the Vanilla implementation of Abadí and Cardelli’s O2 language.
+<<citeproc_bib_item_10>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-19.ps][Modular Parsers]]/. Technical report TCD-CS-1998-19. Department of Computer Science, Trinity College Dublin. 1998.
 
-<<citeproc_bib_item_11>>Simon Dobson.  /[[https://simondobson.org/softcopy/TCD-CS-1998-19.ps][Modular Parsers]]/. Technical report TCD-CS-1998-19. Department of Computer Science, Trinity College Dublin. 1998.
+<<citeproc_bib_item_11>>Chris Tofts, Don Goodeve, and Simon Dobson.  /[[https://simondobson.org/softcopy/YCS-98-307.pdf][Abstraction and Implementation of a Lightweight Distributed Termination Protocol]]/. Technical report YCS-98-307. Department of Computer Science, University of York. 1998.
 
-<<citeproc_bib_item_12>>Chris Tofts, Don Goodeve, and Simon Dobson.  /[[https://simondobson.org/softcopy/YCS-98-307.pdf][Abstraction and Implementation of a Lightweight Distributed Termination Protocol]]/. Technical report YCS-98-307. Department of Computer Science, University of York. 1998.
+<<citeproc_bib_item_12>>Simon Dobson.  /A Common Object Model for Large Experimental Systems: A Proposal/. Rutherford Appleton Laboratory. 1997.
 
-<<citeproc_bib_item_13>>Simon Dobson.  /A Common Object Model for Large Experimental Systems: A Proposal/. Rutherford Appleton Laboratory. 1997.
+<<citeproc_bib_item_13>>Simon Dobson.  /[[https://simondobson.org/softcopy/bulk-data-types.pdf][An Introduction to the Theories of Bulk Data Types]]/. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_14>>Simon Dobson.  /[[https://simondobson.org/softcopy/bulk-data-types.pdf][An Introduction to the Theories of Bulk Data Types]]/. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_14>>Simon Dobson, Victoria Burrill, and Julian Gallop.  /[[https://simondobson.org/softcopy/semantic-markup-94.pdf][Semantic Mark-up of Generalised Documents]]/. Technical report WWW/01/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_15>>Simon Dobson, Victoria Burrill, and Julian Gallop.  /[[https://simondobson.org/softcopy/semantic-markup-94.pdf][Semantic Mark-up of Generalised Documents]]/. Technical report WWW/01/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_15>>Simon Dobson and Victoria Burrill.  /[[https://simondobson.org/softcopy/preliminary-markup-94.pdf][Preliminary Results from the Database Markup of Hyperdocuments]]/. Technical report WWW/03/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_16>>Simon Dobson and Victoria Burrill.  /[[https://simondobson.org/softcopy/preliminary-markup-94.pdf][Preliminary Results from the Database Markup of Hyperdocuments]]/. Technical report WWW/03/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_16>>Simon Dobson and Victoria Burrill.  /Lightweight Data Mark-up/. Technical report WWW/04/94. Rutherford Appleton laboratory. 1994.
 
-<<citeproc_bib_item_17>>Simon Dobson and Victoria Burrill.  /Lightweight Data Mark-up/. Technical report WWW/04/94. Rutherford Appleton laboratory. 1994.
+<<citeproc_bib_item_17>>Simon Dobson.  /[[https://simondobson.org/softcopy/hyper-94.pdf][Data and Hypermodels Are Isomorphic: Manipulating Hyperdocuments at a Logical Level]]/. Technical report WWW/02/94. Rutherford Appleton Laboratory. 1994.
 
-<<citeproc_bib_item_18>>Simon Dobson.  /[[https://simondobson.org/softcopy/hyper-94.pdf][Data and Hypermodels Are Isomorphic: Manipulating Hyperdocuments at a Logical Level]]/. Technical report WWW/02/94. Rutherford Appleton Laboratory. 1994.
+<<citeproc_bib_item_18>>Simon Dobson.  /Writing Compilers Using ML/. Technical report PPG/99/93. Rutherford Appleton Laboratory. 1993.
 
-<<citeproc_bib_item_19>>Simon Dobson.  /Writing Compilers Using ML/. Technical report PPG/99/93. Rutherford Appleton Laboratory. 1993.
-
-<<citeproc_bib_item_20>>Simon Dobson.  /[[https://simondobson.org/softcopy/thesis-final.pdf][An Approach to Scalable Parallel Programming]]/. Technical report YCST/93/03. Department of Computer Science, University of York. 1993.
+<<citeproc_bib_item_19>>Simon Dobson.  /[[https://simondobson.org/softcopy/thesis-final.pdf][An Approach to Scalable Parallel Programming]]/. Technical report YCST/93/03. Department of Computer Science, University of York. 1993.
 #+end:

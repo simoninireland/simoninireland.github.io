@@ -12,12 +12,14 @@
 <<citeproc_bib_item_2>>Peter Mann and Simon Dobson.  /Spacetime Message Passing for Endemic Diseases/. Submitted to Physical Review E.
 
 <<citeproc_bib_item_3>>Alison Johnston, Vincent Lostanlen, Tiago A. Marques, Oliver Metcalf, Danielle Harris, Sophie Palmer, Brontë Stones, Simon Dobson, Steve Buckland, Holger Klinck, and Martin Cox.  /Distance Sampling with Acoustic Classification Confidence Scores/. Submitted to the Journal of Agricultural, Biological and Environmental Statistics.
+
+<<citeproc_bib_item_4>>Peter Mann and Simon Dobson.  /Age-Targetted Failure in Evolving Networks with Addition and Deletion/. Submitted to Physical Review E.
 #+end:
 
 #+begin: sd/bibliography-by-year :file ~/personal/dict/sd.bib
 ** 2026
 
-<<citeproc_bib_item_1>>Simon Dobson.  /Engineering a TinyML System for Use off-Grid/. 2026. To appear at the 10th UK Systems Research Challenges workshop.
+<<citeproc_bib_item_1>>Simon Dobson.  /[[http://www.simondobson.org/softcopy/uk-systems-tinyml-26.pdf][Engineering a TinyML System for Use off-Grid]]/. In /10th UK Systems Research Challenges Workshop/. Co Durham, UK. 2026.
 
 ** 2025
 
@@ -59,11 +61,9 @@
 
 <<citeproc_bib_item_7>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.106.014304][N-Strain Epidemic Model Using Bond Percolation]]/. Physical Review E *106*. 2022.
 
-<<citeproc_bib_item_8>>Peter Mann, Lei Fang, and Simon Dobson.  /[[https://arxiv.org/abs/2210.02528v1][Mixing Patterns in Graphs with Higher-Order Structure]]/. Technical report arXiv:2210.02528. arXiv. 2022.
+<<citeproc_bib_item_8>>Simon Dobson.  /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
 
-<<citeproc_bib_item_9>>Simon Dobson.  /[[https://simondobson.org/softcopy/sisco-22.pdf][Epidemic Modelling Using Networks]]/. 2022. Presentation at the St Andrews Interdisciplinary Science Conference (SISCO 2022).
-
-<<citeproc_bib_item_10>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
+<<citeproc_bib_item_9>>Peter Mann, V. Anne Smith, John Mitchell, and Simon Dobson.  /[[https://doi.org/10.1103/PhysRevE.105.044314][Degree Correlations in Graphs with Clique Clustering]]/. Physical Review E *105*. 2022.
 
 ** 2021
 
